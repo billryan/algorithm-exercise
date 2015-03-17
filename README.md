@@ -6,7 +6,7 @@ Data structure and algorithm exercise for yuanbin.
 
 ## Coding Style - 代码风格
 
-- 代码块可为三大块：异常处理，主体，返回
+- 代码块可为三大块：异常处理（空串和边界处理），主体，返回
 - 代码风格(可参考Google的编程语言规范)
     - 变量名的命名(有意义的变量名)
     - 缩进(语句块)
