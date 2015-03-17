@@ -1,5 +1,7 @@
 # Chapter01
 
+面试时写代码的几个注意事项：
+
 ## Coding Style
 
 1. 变量名的命名——有意义的命名
@@ -18,11 +20,8 @@
 
 > 对于一个给定的source字符串和一个target字符串，你应该在source字符串中找出target字符串出现的第一个位置(从0开始)。
 
-面试时写代码的几个注意事项：
 
-1. 代码可读性
-2. 代码风格
-3. 
+
 
 九章算法的实现 - [九章算法](http://www.ninechapter.com//solutions/implement-strstr/)
 
