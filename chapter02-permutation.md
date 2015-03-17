@@ -26,3 +26,5 @@ void subsetsHelper(ArrayList<Integer> path, int[] num, int pos) {
     }
 }
 ```
+
+回溯法可用图示和函数运行的堆栈图来理解。
