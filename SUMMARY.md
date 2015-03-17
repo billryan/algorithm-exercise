@@ -1,6 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [strstr](chapter1.md)
+* [字符串](chapter01-str.md)
 * 
 
