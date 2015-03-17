@@ -1,6 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [strstr](chapter01-str.md)
+* [字符串](chapter01-str.md)
 * Preface
 
