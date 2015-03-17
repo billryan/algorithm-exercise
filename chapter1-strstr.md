@@ -20,10 +20,11 @@
 
 > 对于一个给定的source字符串和一个target字符串，你应该在source字符串中找出target字符串出现的第一个位置(从0开始)。
 
+对于字符串查找问题，可使用双重for循环解决，效率更高的则为KMP算法。
 
 
-
-九章算法的实现 - [九章算法](http://www.ninechapter.com//solutions/implement-strstr/)
+九章算法的实现：
+1. [Java版](http://www.ninechapter.com//solutions/implement-strstr/)
 
 ```
 /**
