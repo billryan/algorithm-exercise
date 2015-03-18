@@ -16,7 +16,7 @@ Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/bin
 
 > **Challenge**
 
-> If the count of numbers is bigger than MAXINT, can your code work properly?
+> If the count of numbers is bigger than `MAXINT`, can your code work properly?
 
 ```
 class Solution {
