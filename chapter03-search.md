@@ -43,7 +43,7 @@ class Solution {
                 end = mid;
             } else if (target > nums[mid]) {
                 start = mid;
-            } else if (target == nums[mid]) {
+            } else {
                 end = mid;
             }
         }
@@ -68,6 +68,79 @@ class Solution {
 4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环
 5. 迭代终止时target应为start或者end中的一个
 6. 赋值语句`end = mid`有两个条件是相同的，为何不写到一起？
+
+## Search for a Range
+
+Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
+
+题解：
+
+由上题二分查找可找到满足条件的左边界，因此只需要再将右边界找出即可。注意到在`(target == nums[mid]`时
+
+```
+public class Solution {
+    /** 
+     *@param A : an integer sorted array
+     *@param target :  an integer to be inserted
+     *return : a list of length 2, [index1, index2]
+     */
+    public ArrayList<Integer> searchRange(ArrayList<Integer> A, int target) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        int start, end, mid;
+        result.add(-1);
+        result.add(-1);
+        
+        if (A == null || A.size() == 0) {
+            return result;
+        }
+        
+        // search for left bound
+        start = 0;
+        end = A.size() - 1;
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            if (A.get(mid) == target) {
+                end = mid; // set end = mid to find the minimum mid
+            } else if (A.get(mid) > target) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+        if (A.get(start) == target) {
+            result.set(0, start);
+        } else if (A.get(end) == target) {
+            result.set(0, end);
+        } else {
+            return result;
+        }
+        
+        // search for right bound
+        start = 0;
+        end = A.size() - 1;
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            if (A.get(mid) == target) {
+                start = mid; // set start = mid to find the maximum mid
+            } else if (A.get(mid) > target) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+        if (A.get(end) == target) {
+            result.set(1, end);
+        } else if (A.get(start) == target) {
+            result.set(1, start);
+        } else {
+            return result;
+        }
+        
+        return result;
+        // write your code here
+    }
+}
+```
 
 ## Reference
 
