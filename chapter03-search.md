@@ -18,6 +18,10 @@ Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/bin
 
 > If the count of numbers is bigger than `MAXINT`, can your code work properly?
 
+题解：
+
+对于已排序升序数组，使用二分查找可满足复杂度要求。
+
 ```
 class Solution {
     /**
