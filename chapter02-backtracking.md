@@ -87,6 +87,47 @@ class Solution {
 }
 ```
 
+```
+import java.util.*;
+
+class Solution {
+    /**
+     * @param S: A set of numbers.
+     * @return: A list of lists. All valid subsets.
+     */
+    public static ArrayList<ArrayList<Integer>> subsets(int[] num) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (num == null || num.length == 0) {
+            return result;
+        }
+        // write your code here
+        
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        backTrack(result, list, num, 0);
+        
+        return result;
+    }
+    
+    private static void backTrack(ArrayList<ArrayList<Integer>> result,
+        ArrayList<Integer> list, int[] num, int pos) {
+	    if (pos == num.length) {
+	        return;
+	    }
+
+        result.add(new ArrayList<Integer>(list));
+        for (int i = pos; i < num.length; i++) {
+            list.add(num[i]);
+            backTrack(result, list, num, pos + 1);
+            list.remove(list.size() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+	    int[] input = {1, 2};
+        ArrayList<ArrayList<Integer>> result = subsets(input);
+    }
+}
+```
 以测试数组[1,2]为例分析回溯法的调用栈。
 
 1. 首先由主函数 `subsets` 进入，初始化 `result` 为[]，接着进行异常处理，随后初始化 `list` 为[]，递归调用`backTrack()`, `num = [1, 2]`。
