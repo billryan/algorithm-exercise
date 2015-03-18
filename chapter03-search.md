@@ -65,6 +65,9 @@ class Solution {
 1. 首先对输入做异常处理，数组为空或者长度为0
 2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出
 3. **使用迭代而不是递归**进行二分查找
+4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环
+5. 迭代终止时target应为start或者end中的一个
+6. 赋值语句`end = mid`有两个条件是相同的，为何不写到一起？
 
 ## Reference
 
