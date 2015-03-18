@@ -67,7 +67,7 @@ class Solution {
 3. **使用迭代而不是递归**进行二分查找
 4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环
 5. 迭代终止时target应为start或者end中的一个
-6. 赋值语句`end = mid`有两个条件是相同的，为何不写到一起？
+6. 赋值语句`end = mid`有两个条件是相同的，为何不写到一起？程序执行时可能还要慢些？
 
 ## Search for a Range
 
@@ -75,7 +75,7 @@ Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/bin
 
 题解：
 
-由上题二分查找可找到满足条件的左边界，因此只需要再将右边界找出即可。注意到在`(target == nums[mid]`时
+由上题二分查找可找到满足条件的左边界，因此只需要再将右边界找出即可。注意到在`(target == nums[mid]`时赋值语句为`end = mid`，将其改为`start = mid`即可找到右边界，解毕。
 
 ```
 public class Solution {
@@ -141,6 +141,15 @@ public class Solution {
     }
 }
 ```
+
+源码分析：
+
+1. 首先对输入做异常处理，数组为空或者长度为0
+2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出
+3. **使用迭代而不是递归**进行二分查找
+4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环
+5. 迭代终止时target应为start或者end中的一个
+6. 赋值语句`end = mid`有两个条件是相同的，为何不写到一起？程序执行时可能还要慢些？
 
 ## Reference
 
