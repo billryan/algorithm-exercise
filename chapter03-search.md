@@ -3,6 +3,21 @@
 ## Binary Search - 二分查找
 
 Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
+
+> Binary search is a famous question in algorithm.
+
+> For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity.
+
+> If the target number does not exist in the array, return -1.
+
+> **Example**
+
+> If the array is [1, 2, 3, 3, 4, 5, 10], for given target 3, return 2.
+
+> **Challenge**
+
+> If the count of numbers is bigger than MAXINT, can your code work properly?
+
 ```
 class Solution {
     /**
