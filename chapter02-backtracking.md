@@ -151,7 +151,7 @@ class Solution {
         - 递归调用`backTrack([[], [1], [1, 2]], [2], 2，2)`
             + `pos = 2 == num.length = 2`, return
             + `reslut.add[[2]] -> result = [[], [1], [1, 2], [2]]`
-        - `list.remove(2 - 1) -> list = [1]`
+        - `list.remove(1 - 1) -> list = []`
         - `i++ -> i = 2`
     3. `i = 2`, 退出for循环。
 3. 的
