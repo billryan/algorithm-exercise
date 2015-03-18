@@ -143,7 +143,7 @@ class Solution {
                     + `pos = 2 == num.length = 2`, return
                 - `list.remove(2 - 1) -> list = [1]`
                 - `i++ -> i = 2`
-            3. 退出for循环
+            3. `i = 2`, 退出for循环
         3. `list.remove() -> list = []`
         4. `i++ -> i = 1`，进入下一次循环
     2. `i = 1`, for(i = 1 < 2)
