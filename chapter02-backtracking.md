@@ -110,14 +110,11 @@ class Solution {
     
     private static void backTrack(ArrayList<ArrayList<Integer>> result,
         ArrayList<Integer> list, int[] num, int pos) {
-	    if (pos == num.length) {
-	        return;
-	    }
-
         result.add(new ArrayList<Integer>(list));
+        
         for (int i = pos; i < num.length; i++) {
             list.add(num[i]);
-            backTrack(result, list, num, pos + 1);
+            backTrack(result, list, num, i + 1);
             list.remove(list.size() - 1);
         }
     }
@@ -147,7 +144,7 @@ class Solution {
         4. `i++ -> i = 1`，进入下一次循环
     2. `i = 1`, for(i = 1 < 2)
         - `list.add(num[1]) -> list = [2]`
-        - 递归调用`backTrack([[], [1], [1, 2]], [2], 2，1)`
+        - 递归调用`backTrack([[], [1], [1, 2]], [2], 2，2)`
             + `reslut.add[[2]] -> result = [[], [1], [1, 2], [2]]`
             + `i = 1`, for(i = 1 < 2)
                 - `list.add(num[1]) -> list = [2, 2]`
