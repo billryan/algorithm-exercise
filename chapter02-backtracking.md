@@ -139,6 +139,8 @@ class Solution {
             2. `i = 1`, for(i = 1 < 2)
                 - `list.add(num[0]) -> list = [1, 2]`
                 - 递归调用`backTrack([[], [1]], [1, 2], 2，2)`
+                    + `reslut.add[[1, 2]] -> result = [[], [1], [1, 2]]`
+                - list.remove()
             3. d
         3. `list.remove()`
     2. `i = 1`, 
