@@ -110,6 +110,7 @@ class Solution {
     
     private static void backTrack(ArrayList<ArrayList<Integer>> result,
         ArrayList<Integer> list, int[] num, int pos) {
+        
         result.add(new ArrayList<Integer>(list));
         
         for (int i = pos; i < num.length; i++) {
