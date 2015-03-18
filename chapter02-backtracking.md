@@ -143,6 +143,7 @@ class Solution {
                 - list.remove(2 - 1)
             3. d
         3. `list.remove()`
+        4. `i++ -> i = 1`
     2. `i = 1`, 
     3. `i = 2`, 退出for循环。
 3. 的
