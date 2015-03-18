@@ -140,9 +140,10 @@ class Solution {
                 - `list.add(num[0]) -> list = [1, 2]`
                 - 递归调用`backTrack([[], [1]], [1, 2], 2，2)`
                     + `reslut.add[[1, 2]] -> result = [[], [1], [1, 2]]`
+                    + `pos = 2 == num.length = 2`, return
                 - list.remove(2 - 1)
             3. d
-        3. `list.remove()`
+        3. `list.remove() -> list = []`
         4. `i++ -> i = 1`
     2. `i = 1`, 
     3. `i = 2`, 退出for循环。
