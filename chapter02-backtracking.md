@@ -7,6 +7,12 @@
 - [LeetCode OJ - Subsets](https://leetcode.com/problems/subsets/)
 - [lintcode - (17) 子集](http://lintcode.com/zh-cn/problem/subsets/)
 
+题解：
+
+1. 首先对数组按升序排序
+2. 回溯法递归
+ 
+
 以下为lintcode上提交的Java版代码
 ```
 class Solution {
