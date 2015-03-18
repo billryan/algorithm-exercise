@@ -20,7 +20,7 @@ Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/bin
 
 题解：
 
-对于已排序升序数组，使用二分查找可满足复杂度要求。
+对于已排序升序数组，使用二分查找可满足复杂度要求，注意数组中可能有重复值。
 
 ```
 class Solution {
