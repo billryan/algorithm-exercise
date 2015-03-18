@@ -131,10 +131,12 @@ class Solution {
 以测试数组[1,2]为例分析回溯法的调用栈。
 
 1. 首先由主函数 `subsets` 进入，初始化 `result` 为[]，接着进行异常处理，随后初始化 `list` 为[]，递归调用`backTrack()`, `num = [1, 2]`。
-2. `result = [], list = [], pos = 0`. 调用`result.add()`加入[], `result = [[]]。进入`for`循环，`num.length  = 2`。
+2. `result = [], list = [], pos = 0`. 调用`result.add()`加入[], `result = [[]]`。进入`for`循环，`num.length  = 2`。
     1. `i = 0`, 
         1. `list.add[num[0]] -> list = [1]`, 递归调用`backTrack()`前, `result = [[]], list = [1], pos = 1`
         2. 递归调用`backTrack([[]], [1], 2，1)`
+            3. `reslut.add[[1]] -> result = [[], [1]]`
+        3. `list.remove()`
     2. `i = 1`, 
     3. `i = 2`, 退出for循环。
 3. 的
