@@ -37,14 +37,14 @@ class Solution {
         int start = 0;
         int end = nums.length - 1;
         int mid;
-        while (start <= end) {
+        while (start + 1 < end) {
             mid = start + (end - start) / 2; // avoid overflow when (end + start)
             if (target < nums[mid]) {
-                end = mid - 1;
+                end = mid;
             } else if (target > nums[mid]) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
+                start = mid;
+            } else if (target == nums[mid]) {
+                end = mid;
             }
         }
         
