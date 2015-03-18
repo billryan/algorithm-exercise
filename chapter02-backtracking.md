@@ -103,6 +103,7 @@ class Solution {
         // write your code here
         
         ArrayList<Integer> list = new ArrayList<Integer>();
+        Array.sort(num);
         backTrack(result, list, num, 0);
         
         return result;
@@ -147,9 +148,7 @@ class Solution {
         - `list.add(num[1]) -> list = [2]`
         - 递归调用`backTrack([[], [1], [1, 2]], [2], 2，2)`
             + `reslut.add[[2]] -> result = [[], [1], [1, 2], [2]]`
-            + `i = 1`, for(i = 1 < 2)
-                - `list.add(num[1]) -> list = [2, 2]`
-                - 递归调用`backTrack([[], [1], [1, 2], [2]], [2, 2], 2，2)`
+            + `i = 2` 退出循环
         - `list.remove(1 - 1) -> list = []`
         - `i++ -> i = 2`
     3. `i = 2`, 退出for循环。
