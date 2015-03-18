@@ -60,6 +60,12 @@ class Solution {
 }
 ```
 
+源码分析：
+
+1. 首先对输入做异常处理，数组为空或者长度为0
+2. 初始化 `start, end, mid`三个变量
+3. **使用迭代而不是递归**进行二分查找
+
 ## Reference
 
 - [[NineChap 2.1] Binary Search - Woodstock Blog](http://okckd.github.io/blog/2014/06/08/NineChap-Binary-Search/)
