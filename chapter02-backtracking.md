@@ -137,14 +137,21 @@ class Solution {
         2. 递归调用`backTrack([[]], [1], 2，1)`
             1. `reslut.add[[1]] -> result = [[], [1]]`
             2. `i = 1`, for(i = 1 < 2)
-                - `list.add(num[0]) -> list = [1, 2]`
+                - `list.add(num[1]) -> list = [1, 2]`
                 - 递归调用`backTrack([[], [1]], [1, 2], 2，2)`
                     + `reslut.add[[1, 2]] -> result = [[], [1], [1, 2]]`
                     + `pos = 2 == num.length = 2`, return
-                - list.remove(2 - 1)
-            3. d
+                - `list.remove(2 - 1) -> list = [1]`
+                - `i++ -> i = 2`
+            3. 退出for循环
         3. `list.remove() -> list = []`
-        4. `i++ -> i = 1`
-    2. `i = 1`, 
+        4. `i++ -> i = 1`，进入下一次循环
+    2. `i = 1`, for(i = 1 < 2)
+        - `list.add(num[1]) -> list = [1, 2]`
+        - 递归调用`backTrack([[], [1]], [1, 2], 2，2)`
+            + `pos = 2 == num.length = 2`, return
+            + `reslut.add[[1, 2]] -> result = [[], [1], [1, 2]]`
+        - `list.remove(2 - 1) -> list = [1]`
+        - `i++ -> i = 2`
     3. `i = 2`, 退出for循环。
 3. 的
