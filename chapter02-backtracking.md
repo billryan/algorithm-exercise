@@ -147,7 +147,7 @@ class Solution {
         4. `i++ -> i = 1`，进入下一次循环
     2. `i = 1`, for(i = 1 < 2)
         - `list.add(num[1]) -> list = [2]`
-        - 递归调用`backTrack([[], [1], [1, 2]], [2], 2，2)`
+        - 递归调用`backTrack([[], [1], [1, 2]], [2], 2，1)`
             + `reslut.add[[2]] -> result = [[], [1], [1, 2], [2]]`
         - `list.remove(1 - 1) -> list = []`
         - `i++ -> i = 2`
