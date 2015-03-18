@@ -148,7 +148,8 @@ public class Solution {
 2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出
 3. **使用迭代而不是递归**进行二分查找
 4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环
-5. 迭代终止时target应为start或者end中的一个
+5. 先求左边界，迭代终止时先判断`A.get(start) == target`，再判断`A.get(end) == target`，因为迭代终止时target必取start或end中的一个，而end又大于start，取左边界即为start.
+6. 再求右边界，迭代终止时先判断`A.get(end) == target`，再判断`A.get(start) == target`
 6. 赋值语句`end = mid`有两个条件是相同的，为何不写到一起？程序执行时可能还要慢些？
 
 ## Reference
