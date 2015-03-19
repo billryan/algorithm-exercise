@@ -1,10 +1,13 @@
-Algorithm exercise
-=======
+# 算法练习
 
-Data structure and algorithm exercise for yuanbin.
-# 算法面试准备
+一晃就研二下了，离毕业只有一年了，终于快逃出无线通信的魔爪了，想想就有点小激动啊 ������，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯，以下整理了一些最近练习算法的网站资源，和大家共享之。
 
-## Coding Style - 代码风格
+首先手头备一本算法书还是有必要的，算法导论和TAOCP相对宏大一些，简单入门的有Robert Sedgewick的算法书，Java的第三版内容广些，第4版则删掉了不少如动态规划的内容。
+其他的一些算法书可参考 [数据结构与算法类 | Programming Notes](http://prog-notes.yuanbin.me/content/chapter7-textbooks/algo-data-struct.html)
+
+上一周看过『九章算法』的算法辅导公开课，总结了下在平时和面试过程中的一些注意事项如下。
+
+### coding Style - 代码风格
 
 - 代码块可为三大块：异常处理（空串和边界处理），主体，返回
 - 代码风格(可参考Google的编程语言规范)
@@ -13,12 +16,38 @@ Data structure and algorithm exercise for yuanbin.
     - 空格(运算符两边)
     - 代码可读性(即使if语句只有一句也要加花括号)
 
+### 面试过程
+
 面试过程要有适当的沟通：
+
 1. 听到问题后要讲自己的理解
 2. 与面试官沟通题目的细节
 3. 告诉面试官自己的想法或算法
 
-如何刷题？
+### 如何刷题？
+
 1. 总结归类相似题目
 2. 找出适合同一类题目的模板程序
 3. 对基础题熟练掌握
+
+## 学习/练习算法的好去处
+
+### 在线OJ及部分题解
+
+1. [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选比较方便，还可以在`source`处选择cc150或者其他来源的题。目前会根据系统locale选择中文或者英文，评判时也比leetcode快，总之是比较赞啦。
+2. [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，相应的题解非常多。
+3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details)
+4. [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解
+5. [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞
+6. [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
+
+### 其他资源
+
+- [有哪些学习算法的网站推荐？ - 知乎](http://www.zhihu.com/question/20368410)
+- [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.ninechapter.com/) - 代码质量不错，整理地也很好。
+- [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导
+- [结构之法 算法之道](http://blog.csdn.net/v_JULY_v) - 不得不服！
+- [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
+- [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
+- [POJ的部分题解 - Category: POJ | Beeder's Blog](http://beeder.me/categories/POJ/)
+- [算法练习 | billryan](http://yuanbin.gitbooks.io/algorithm/content/) - 恬不知耻地贴上了作为CS门外汉刷题的总结，求大神们轻拍
