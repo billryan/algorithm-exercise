@@ -269,12 +269,13 @@ public class Solution {
 
 第一次A掉这个题用的是分行分列两次搜索，好蠢...
 
-
+## Search a 2D Matrix II
 
 Question: [(38) Search a 2D Matrix II](http://lintcode.com/en/problem/search-a-2d-matrix-ii/)
 
-
 题解：
+
+在上题的基础上增加了复杂度要求——O(m+n) time and O(1) extra space
 
 1. 由于矩阵按升序排列，因此可将二维矩阵转换为一维问题。对原始的二分搜索进行适当改变即可(求行和列)。时间复杂度为O(log(mn))=O(log(m)+log(n))
 2. 先按行再按列进行搜索，即两次二分搜索。时间复杂度相同。
