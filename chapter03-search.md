@@ -219,6 +219,7 @@ Question: [(28) Search a 2D Matrix](http://www.lintcode.com/en/problem/search-a-
 2. 先按行再按列进行搜索，即两次二分搜索。时间复杂度相同。
 
 以思路1为例。
+
 ```
 /**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
@@ -267,6 +268,18 @@ public class Solution {
 2. 如果搜索结束时target与start或者end的值均不等时，则必在矩阵的值范围之外，避免了特殊情况的考虑。
 
 第一次A掉这个题用的是分行分列两次搜索，好蠢...
+
+
+
+Question: [(38) Search a 2D Matrix II](http://lintcode.com/en/problem/search-a-2d-matrix-ii/)
+
+
+题解：
+
+1. 由于矩阵按升序排列，因此可将二维矩阵转换为一维问题。对原始的二分搜索进行适当改变即可(求行和列)。时间复杂度为O(log(mn))=O(log(m)+log(n))
+2. 先按行再按列进行搜索，即两次二分搜索。时间复杂度相同。
+
+以思路1为例。
 
 ## Reference
 
