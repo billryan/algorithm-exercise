@@ -201,6 +201,20 @@ public class Solution {
 
 源码分析：已在源码处注释
 
+## Search a 2D Matrix
+
+Question: [(28) Search a 2D Matrix](http://www.lintcode.com/en/problem/search-a-2d-matrix/)
+
+题解：
+
+1. 由于矩阵按升序排列，因此对原始的二分搜索进行适当改变即可。但此种方法复杂度相对较高，为O(log(mn))
+2. 先按行再按列进行搜索，即两次二分搜索。时间复杂度为O(log(m)+log(n))
+
+以思路2为例。
+```
+
+```
+
 ## Reference
 
 - [[NineChap 2.1] Binary Search - Woodstock Blog](http://okckd.github.io/blog/2014/06/08/NineChap-Binary-Search/)
