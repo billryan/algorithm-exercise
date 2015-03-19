@@ -151,6 +151,54 @@ public class Solution {
 5. 先求左边界，迭代终止时先判断`A.get(start) == target`，再判断`A.get(end) == target`，因为迭代终止时target必取start或end中的一个，而end又大于start，取左边界即为start.
 6. 再求右边界，迭代终止时先判断`A.get(end) == target`，再判断`A.get(start) == target`
 
+## Search Insert Position
+
+Question: [(60) Search Insert Position](http://www.lintcode.com/en/problem/search-insert-position/)
+
+题解：
+
+由最原始的二分查找可找到不小于目标整数的最小下标。返回此下标即可。
+
+```
+public class Solution {
+    /** 
+     * param A : an integer sorted array
+     * param target :  an integer to be inserted
+     * return : an integer
+     */
+    public int searchInsert(int[] A, int target) {
+        if (A == null) {
+            return -1;
+        }
+        if (A.length == 0) {
+            return 0;
+        }
+
+        int start = 0, end = A.length - 1;
+        int mid;
+
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            if (A[mid] == target) {
+                return mid; // no duplicates, if not `end = target;`
+            } else if (A[mid] < target) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+
+        if (A[start] >= target) {
+            return start;
+        } else if (A[end] >= target) {
+            return end; // in most cases
+        } else {
+            return end + 1; // A[end] < target;
+        }
+    }
+}
+```
+
 ## Reference
 
 - [[NineChap 2.1] Binary Search - Woodstock Blog](http://okckd.github.io/blog/2014/06/08/NineChap-Binary-Search/)
