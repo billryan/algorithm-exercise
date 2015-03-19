@@ -331,8 +331,3 @@ public class Solution {
 ### Reference
 
 [Searching a 2D Sorted Matrix Part II | LeetCode](http://articles.leetcode.com/2010/10/searching-2d-sorted-matrix-part-ii.html)
-
-## Reference
-
-- [[NineChap 2.1] Binary Search - Woodstock Blog](http://okckd.github.io/blog/2014/06/08/NineChap-Binary-Search/)
-- [九章算法 - binary search](http://www.ninechapter.com//solutions/binary-search/)
