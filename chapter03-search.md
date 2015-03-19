@@ -23,6 +23,10 @@ Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/bin
 对于已排序升序数组，使用二分查找可满足复杂度要求，注意数组中可能有重复值。
 
 ```
+/**
+ * 本代码fork自九章算法。没有版权欢迎转发。
+ * http://www.ninechapter.com//solutions/binary-search/
+ */
 class Solution {
     /**
      * @param nums: The integer array.
@@ -71,13 +75,17 @@ class Solution {
 
 ## Search for a Range
 
-Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
+Question: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-for-a-range/)
 
 题解：
 
 由上题二分查找可找到满足条件的左边界，因此只需要再将右边界找出即可。注意到在`(target == nums[mid]`时赋值语句为`end = mid`，将其改为`start = mid`即可找到右边界，解毕。
 
 ```
+/**
+ * 本代码fork自九章算法。没有版权欢迎转发。
+ * http://www.ninechapter.com/solutions/search-for-a-range/
+ */
 public class Solution {
     /** 
      *@param A : an integer sorted array
@@ -207,13 +215,58 @@ Question: [(28) Search a 2D Matrix](http://www.lintcode.com/en/problem/search-a-
 
 题解：
 
-1. 由于矩阵按升序排列，因此对原始的二分搜索进行适当改变即可。但此种方法复杂度相对较高，为O(log(mn))
-2. 先按行再按列进行搜索，即两次二分搜索。时间复杂度为O(log(m)+log(n))
+1. 由于矩阵按升序排列，因此可将二维矩阵转换为一维问题。对原始的二分搜索进行适当改变即可(求行和列)。时间复杂度为O(log(mn))=O(log(m)+log(n))
+2. 先按行再按列进行搜索，即两次二分搜索。时间复杂度相同。
 
-以思路2为例。
+以思路1为例。
+```
+/**
+ * 本代码由九章算法编辑提供。没有版权欢迎转发。
+ * http://www.ninechapter.com/solutions/search-a-2d-matrix
+ */
+// Binary Search Once
+public class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0) {
+            return false;
+        }
+        if (matrix[0] == null || matrix[0].length == 0) {
+            return false;
+        }
+        
+        int row = matrix.length, column = matrix[0].length;
+        int start = 0, end = row * column - 1;
+        int mid, number;
+        
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            number = matrix[mid / column][mid % column];
+            if (number == target) {
+                return true;
+            } else if (number < target) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+        
+        if (matrix[start / column][start % column] == target) {
+            return true;
+        } else if (matrix[end / column][end % column] == target) {
+            return true;
+        }
+        
+        return false;
+    }
+}
 ```
 
-```
+源码分析：
+
+1. 首先对输入做异常处理，不仅要考虑到matrix为空串，还要考虑到matrix[0]也为空串。
+2. 如果搜索结束时target与start或者end的值均不等时，则必在矩阵的值范围之外，避免了特殊情况的考虑。
+
+第一次A掉这个题用的是分行分列两次搜索，好蠢...
 
 ## Reference
 
