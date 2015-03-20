@@ -57,7 +57,6 @@ public:
                 return mid;
             }
         }
-        // write your code here
     }
 };
 ```
