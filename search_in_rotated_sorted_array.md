@@ -85,3 +85,26 @@ public:
 4. 接着在有序数组`A[mid]~A[end]`间进行二分搜索，注意前提条件。
 5. 搜索完毕时索引若不是mid或者未满足while循环条件，则测试A[start]或者A[end]是否满足条件。
 6. 最后若未找到满足条件的索引，则返回-1.
+
+## Search in Rotated Sorted Array II
+
+Question: [(63) 搜索旋转排序数组 II](http://www.lintcode.com/zh-cn/problem/search-in-rotated-sorted-array-ii/)
+
+```
+跟进“搜索旋转排序数组”，假如有重复元素又将如何？
+
+是否会影响运行时间复杂度？
+
+如何影响？
+
+为何会影响？
+
+写出一个函数判断给定的目标值是否出现在数组中。
+
+样例
+给出[3,4,4,5,7,0,1,2]和target=4，返回 true
+```
+
+题解：
+
+仔细分析此题和之前一题的不同之处，前一题我们利用`A[start] < A[mid]`这一关键信息，而在此题中由于有重复元素的存在，在`A[start] == A[mid]`时还需要做其他处理以规避重复元素的影响。
