@@ -32,4 +32,32 @@ Time complexity O(logN)
 **C++**
 
 ```
+class Solution {
+public:
+    /**
+     * @param A: An integers array.
+     * @return: return any of peek positions.
+     */
+    int findPeak(vector<int> A) {
+        if (A.empty()) {
+            return -1;
+        }
+        
+        vector<int>::size_type start = 0;
+        vector<int>::size_type end = A.size() - 1;
+        vector<int>::size_type mid;
+        
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            if (A[mid] < A[mid - 1]) {
+                end = mid;
+            } else if (A[mid] < A[mid + 1]) {
+                start = mid;
+            } else {
+                return mid;
+            }
+        }
+        // write your code here
+    }
+};
 ```
