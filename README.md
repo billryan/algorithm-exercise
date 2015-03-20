@@ -40,6 +40,7 @@
 4. [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解
 5. [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞
 6. [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
+7. [牛客网-专业IT笔试面试备考平台,最全求职题库,全面提升IT编程能力](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
 
 ### 其他资源
 
