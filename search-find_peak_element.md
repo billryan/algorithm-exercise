@@ -24,3 +24,7 @@ return index 1 (which is number 2)  or 6 (which is number 7)
 Challenge
 Time complexity O(logN)
 ```
+
+题解：
+
+由时间复杂度的暗示可知应使用二分搜索。首先分析若使用传统的二分搜索，若`A[mid - 1] < A[mid] < A[mid + 1]`，则
