@@ -42,6 +42,7 @@ public:
         vector<int>::size_type start = 0;
         vector<int>::size_type end = A.size() - 1;
         vector<int>::size_type mid;
+        
         while (start + 1 < end) {
             mid = start + (end - start) / 2;
             if (target == A[mid]) {
@@ -56,7 +57,7 @@ public:
                 }
             } else {
                 // situation 2, numbers between mid and end are sorted
-                if (A[mid] <= target && target <= A[end]) {
+                if (A[mid] < target && target <= A[end]) {
                     start = mid;
                 } else {
                     end = mid;
@@ -78,3 +79,9 @@ public:
 
 源码分析：
 
+1. 若`target == A[mid]`，索引找到，直接返回
+2. 寻找局部有序数组，分析`A[mid]`和两段有序的数组特点，由于旋转后前面有序数组最小值都比后面有序数组最大值大。故若`A[start] < A[mid]`成立，则start与mid间的元素必有序（要么是前一段有序数组，要么是后一段有序数组，还有可能是未旋转数组）。
+3. 接着在有序数组`A[start]~A[mid]`间进行二分搜索，但能在`A[start]~A[mid]`间搜索的前提是`A[start] <= target <= A[mid]`。
+4. 接着在有序数组`A[mid]~A[end]`间进行二分搜索，注意前提条件。
+5. 搜索完毕时索引若不是mid或者未满足while循环条件，则测试A[start]或者A[end]是否满足条件。
+6. 最后若未找到满足条件的索引，则返回-1.
