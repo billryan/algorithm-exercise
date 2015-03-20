@@ -331,3 +331,93 @@ public class Solution {
 ### Reference
 
 [Searching a 2D Sorted Matrix Part II | LeetCode](http://articles.leetcode.com/2010/10/searching-2d-sorted-matrix-part-ii.html)
+
+## First Bad Version
+
+Question: [(74) First Bad Version](http://www.lintcode.com/en/problem/first-bad-version/)
+
+题 Search for a Range 的变形，找出左边界即可。
+
+**C++版**
+
+```
+/**
+ * class VersionControl {
+ *     public:
+ *     static bool isBadVersion(int k);
+ * }
+ * you can use VersionControl::isBadVersion(k) to judge wether 
+ * the kth code version is bad or not.
+*/
+class Solution {
+public:
+    /**
+     * @param n: An integers.
+     * @return: An integer which is the first bad version.
+     */
+    int findFirstBadVersion(int n) {
+        if (n < 1) {
+            return -1;
+        }
+        
+        int start = 1;
+        int end = n;
+        int mid;
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            if (VersionControl::isBadVersion(mid)) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+        
+        if (VersionControl::isBadVersion(start)) {
+            return start;
+        } else if (VersionControl::isBadVersion(end)) {
+            return end;
+        }
+        
+        return -1;  // find no bad version
+    }
+};
+```
+
+源码分析：
+
+找左边界和Search for a Range类似，但是最好要考虑到有可能end处也为good version，此部分异常也可放在开始的时候处理。
+
+**Python版**
+
+```
+#class VersionControl:
+#    @classmethod
+#    def isBadVersion(cls, id)
+#        # Run unit tests to check whether verison `id` is a bad version
+#        # return true if unit tests passed else false.
+# You can use VersionControl.isBadVersion(10) to check whether version 10 is a 
+# bad version.
+class Solution:
+    """
+    @param n: An integers.
+    @return: An integer which is the first bad version.
+    """
+    def findFirstBadVersion(self, n):
+        if n < 1:
+            return -1
+
+        start, end = 1, n
+        while start + 1 < end:
+            mid = start + (end - start) / 2
+            if VersionControl.isBadVersion(mid):
+                end = mid
+            else:
+                start = mid
+                
+        if VersionControl.isBadVersion(start):
+            return start
+        elif VersionControl.isBadVersion(end):
+            return end
+        
+        return -1
+```
