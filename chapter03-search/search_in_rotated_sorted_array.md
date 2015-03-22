@@ -1,5 +1,9 @@
 # Search in Rotated Sorted Array
 
+对于旋转数组的分析可使用画图的方法，如下图所示，升序数组经旋转后可能为如下两种形式。
+
+![Rotated Array](../figure/rotated_array.png)
+
 Question: [(62) Search in Rotated Sorted Array](http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/)
 
 ```
@@ -28,7 +32,7 @@ For [4, 5,1, 2, 3] and target=0, return -1
  * http://www.ninechapter.com/solutions/search-in-rotated-sorted-array/
  */
 class Solution {
-    /** 
+    /**
      * param A : an integer ratated sorted array
      * param target :  an integer to be searched
      * return : an integer
@@ -38,11 +42,11 @@ public:
         if (A.empty()) {
             return -1;
         }
-        
+
         vector<int>::size_type start = 0;
         vector<int>::size_type end = A.size() - 1;
         vector<int>::size_type mid;
-        
+
         while (start + 1 < end) {
             mid = start + (end - start) / 2;
             if (target == A[mid]) {
@@ -64,7 +68,7 @@ public:
                 }
             }
         }
-        
+
         if (A[start] == target) {
             return start;
         }
@@ -112,21 +116,21 @@ Question: [(63) 搜索旋转排序数组 II](http://www.lintcode.com/zh-cn/probl
 
 ```c++
 class Solution {
-    /** 
+    /**
      * param A : an integer ratated sorted array and duplicates are allowed
      * param target :  an integer to be search
-     * return : a boolean 
+     * return : a boolean
      */
 public:
     bool search(vector<int> &A, int target) {
         if (A.empty()) {
             return false;
         }
-        
+
         vector<int>::size_type start = 0;
         vector<int>::size_type end = A.size() - 1;
         vector<int>::size_type mid;
-        
+
         while (start + 1 < end) {
             mid = start + (end - start) / 2;
             if (target == A[mid]) {
@@ -147,11 +151,11 @@ public:
                     end = mid;
                 }
             } else  {
-                // increment start 
+                // increment start
                 ++start;
             }
         }
-        
+
         if (A[start] == target || A[end] == target) {
             return true;
         }

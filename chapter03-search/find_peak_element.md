@@ -42,11 +42,11 @@ public:
         if (A.empty()) {
             return -1;
         }
-        
+
         vector<int>::size_type start = 0;
         vector<int>::size_type end = A.size() - 1;
         vector<int>::size_type mid;
-        
+
         while (start + 1 < end) {
             mid = start + (end - start) / 2;
             if (A[mid] < A[mid - 1]) {
