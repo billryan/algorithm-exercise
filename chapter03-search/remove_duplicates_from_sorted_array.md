@@ -17,7 +17,7 @@ Example
 
 题解：
 
-遍历vector数组，只取不重复的数置于原vector中。
+使用双指针(下标)，一个指针(下标)遍历vector数组，另一个指针(下标)只取不重复的数置于原vector中。
 
 ```
 class Solution {
