@@ -1,10 +1,14 @@
 {
     "plugins": [
-        "disqus"
+        "disqus",
+        "ga"
     ],
     "pluginsConfig": {
         "disqus": {
             "shortName": "algorithm4bill"
+        },
+        "ga": {
+            "token": "UA-32317667-7"
         }
     }
 }
