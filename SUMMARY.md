@@ -10,4 +10,6 @@
    * [Find Minimum in Rotated Sorted Array](chapter03-search/find_minimum_in_rotated_sorted_array.md)
    * [￼Remove Duplicates from Sorted Array](chapter03-search/remove_duplicates_from_sorted_array.md)
    * [Merge Sorted Array](chapter03-search/merge_sorted_array.md)
+* [Reverse - 翻转法](chapter04-reverse/README.md)
+   * [Recover Rotated Sorted Array](chapter04-reverse/recover_rotated_sorted_array.md)
 
