@@ -8,4 +8,5 @@
    * [Find Peak Element](chapter03-search/find_peak_element.md)
    * [Search in Rotated Sorted Array](chapter03-search/search_in_rotated_sorted_array.md)
    * [Find Minimum in Rotated Sorted Array](chapter03-search/find_minimum_in_rotated_sorted_array.md)
+   * [￼Remove Duplicates from Sorted Array](chapter03-search/remove_duplicates_from_sorted_array)
 
