@@ -12,4 +12,5 @@
    * [Merge Sorted Array](search/merge_sorted_array.md)
 * [Reverse - 翻转法](reverse/README.md)
    * [Recover Rotated Sorted Array](reverse/recover_rotated_sorted_array.md)
+   * [Rotate String](reverse/rotate_string.md)
 
