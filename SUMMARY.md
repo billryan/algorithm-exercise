@@ -13,4 +13,5 @@
 * [Reverse - 翻转法](reverse/README.md)
    * [Recover Rotated Sorted Array](reverse/recover_rotated_sorted_array.md)
    * [Rotate String](reverse/rotate_string.md)
+   * [Reverse Words in a String](reverse/reverse_words_in_a_string.md)
 
