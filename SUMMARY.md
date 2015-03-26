@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Data Structure](data_structure/README.md)
+   * [Binary Tree](data_structure/binary_tree.md)
    * [Binary Search Trees](data_structure/binary_search_trees.md)
    * [Huffman Compression](data_structure/huffman_compression.md)
 * [字符串](string/strstr.md)
@@ -19,4 +20,6 @@
    * [Recover Rotated Sorted Array](reverse/recover_rotated_sorted_array.md)
    * [Rotate String](reverse/rotate_string.md)
    * [Reverse Words in a String](reverse/reverse_words_in_a_string.md)
+* [Binary Tree - 二叉树](binary_tree/README.md)
+   * [Binary Tree Preorder Traversal](binary_tree/binary_tree_preorder_traversal.md)
 
