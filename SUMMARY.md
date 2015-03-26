@@ -1,6 +1,9 @@
 # Summary
 
 * [Introduction](README.md)
+* [Data Structure](data_structure/README.md)
+   * [Binary Search Trees](data_structure/binary_search_trees.md)
+   * [Huffman Compression](data_structure/huffman_compression.md)
 * [字符串](string/strstr.md)
 * [backtracking - 回溯法](backtracking/backtracking.md)
 * [Search - 搜索](search/binary_search.md)
