@@ -22,4 +22,5 @@
    * [Reverse Words in a String](reverse/reverse_words_in_a_string.md)
 * [Binary Tree - 二叉树](binary_tree/README.md)
    * [Binary Tree Preorder Traversal](binary_tree/binary_tree_preorder_traversal.md)
+   * [Binary Tree Inorder Traversal](binary_tree/binary_tree_inorder_traversal.md)
 
