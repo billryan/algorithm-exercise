@@ -40,7 +40,6 @@ public:
         }
 
         ListNode *node = head;
-
         while (node->next) {
             if (node->val == node->next->val) {
                 ListNode *temp = node->next;
