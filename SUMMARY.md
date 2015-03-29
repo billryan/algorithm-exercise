@@ -23,4 +23,6 @@
 * [Binary Tree - 二叉树](binary_tree/README.md)
    * [Binary Tree Preorder Traversal](binary_tree/binary_tree_preorder_traversal.md)
    * [Binary Tree Inorder Traversal](binary_tree/binary_tree_inorder_traversal.md)
+* [Linked List](linked_list/README.md)
+   * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
 
