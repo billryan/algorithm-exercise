@@ -17,3 +17,6 @@ _book
 
 # MAC OS X
 .DS_Store
+
+# docs for other materials
+!docs/
