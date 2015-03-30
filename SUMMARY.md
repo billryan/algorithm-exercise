@@ -26,4 +26,6 @@
 * [Linked List](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [￼Reverse Linked List](linked_list/reverse_linked_list.md)
+* [Dynamic Programming](dynamic_programming/README.md)
+   * [Triangle](dynamic_programming/triangle.md)
 
