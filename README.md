@@ -1,11 +1,9 @@
 # 算法练习
 
-一晃就研二下了，离毕业只有一年了，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯，以下整理了一些最近练习算法的网站资源，和大家共享之。
+一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯，以下整理了一些最近练习算法的网站资源，和大家共享之。
 
-首先手头备一本算法书还是有必要的，算法导论和TAOCP相对宏大一些，简单入门的有Robert Sedgewick的算法书，Java的第三版内容广些，第4版则删掉了不少如动态规划的内容。
-其他的一些算法书可参考 [数据结构与算法类 | Programming Notes](http://prog-notes.yuanbin.me/content/chapter7-textbooks/algo-data-struct.html)
-
-上一周看过『九章算法』的算法辅导公开课，总结了下在平时和面试过程中的一些注意事项如下。
+首先手头备一本算法书还是有必要的，算法导论和TAOCP相对宏大一些，简单入门的有Robert Sedgewick的算法书，第三版内容广些，第4版则删掉了不少如动态规划的内容。
+其他的一些算法书可参考 [数据结构与算法类 | Programming Notes](http://prog-notes.yuanbin.me/chapter7-textbooks/algo-data-struct.html)
 
 ### coding Style - 代码风格
 
@@ -51,4 +49,8 @@
 - [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
 - [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
 - [POJ的部分题解 - Category: POJ | Beeder's Blog](http://beeder.me/categories/POJ/)
-- [算法练习 | billryan](http://yuanbin.gitbooks.io/algorithm/content/) - 恬不知耻地贴上了作为CS门外汉刷题的总结，求大神们轻拍
+- [算法练习 | billryan](http://algorithm.yuanbin.me) - 恬不知耻地贴上了作为CS门外汉刷题的总结和笔记，求大神们轻拍
+
+# 关于本文档
+
+在线托管仓库为 https://github.com/billryan/algorithm-excercise ，主要内容为学习算法和刷题过程中的笔记，很大程度上参考了[九章算法](http://www.ninechapter.com) 的代码和讲稿，先行谢过！全书使用[Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 授权。你可以在github中star本项目查看更新。
