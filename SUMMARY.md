@@ -25,4 +25,5 @@
    * [Binary Tree Inorder Traversal](binary_tree/binary_tree_inorder_traversal.md)
 * [Linked List](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
+   * [￼Reverse Linked List](linked_list/reverse_linked_list.md)
 
