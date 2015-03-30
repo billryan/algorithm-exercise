@@ -14,3 +14,6 @@ _book
 *.epub
 *.mobi
 *.pdf
+
+# MAC OS X
+.DS_Store
