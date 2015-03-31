@@ -51,6 +51,11 @@
 - [POJ的部分题解 - Category: POJ | Beeder's Blog](http://beeder.me/categories/POJ/)
 - [算法练习 | billryan](http://algorithm.yuanbin.me) - 恬不知耻地贴上了作为CS门外汉刷题的总结和笔记，求大神们轻拍
 
+### 书籍推荐
+
+- [Algorithm Design (豆瓣)](http://book.douban.com/subject/1475870/)
+- [The Algorithm Design Manual](http://www.amazon.com/exec/obidos/ASIN/1848000693/thealgorithmrepo), 作者还放出了自己上课的视频和slides - [Skiena's Audio Lectures](http://www3.cs.stonybrook.edu/~algorith/video-lectures/)，[The Algorithm Design Manual (豆瓣)](http://book.douban.com/subject/3072383/)
+
 # 关于本文档
 
 在线托管仓库为 https://github.com/billryan/algorithm-excercise ，主要内容为学习算法和刷题过程中的笔记，很大程度上参考了[九章算法](http://www.ninechapter.com) 的代码和讲稿，先行谢过！全书使用[Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 授权。你可以在github中star本项目查看更新。
