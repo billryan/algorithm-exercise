@@ -26,6 +26,7 @@
 * [Binary Tree - 二叉树](binary_tree/README.md)
    * [Binary Tree Preorder Traversal](binary_tree/binary_tree_preorder_traversal.md)
    * [Binary Tree Inorder Traversal](binary_tree/binary_tree_inorder_traversal.md)
+   * [Binary Tree Postorder Traversal](binary_tree/binary_tree_postorder_traversal.md)
 * [Backtracking - 回溯法](backtracking/backtracking.md)
    * [Subsets](backtracking/subsets.md)
    * [Permutation](backtracking/permutation.md)
