@@ -160,16 +160,16 @@ public:
 
         s.push(root);
         while (!s.empty()) {
-            const TreeNode *p = s.top();
+            const TreeNode *node = s.top();
             s.pop();
 
-            val_vec.push_back(p->val);
+            val_vec.push_back(node->val);
 
-            if (p->right != NULL) {
-                s.push(p->right);
+            if (node->right != NULL) {
+                s.push(node->right);
             }
-            if (p->left != NULL) {
-                s.push(p->left);
+            if (node->left != NULL) {
+                s.push(node->left);
             }
         }
 
@@ -183,7 +183,10 @@ public:
 1. 对root进行异常处理
 2. 将root压入栈
 3. 循环终止条件为栈s为空，所有元素均已处理完
-4. 首先取出栈顶元素，随后pop掉栈顶元素
-5. 取出当前节点的值入最终结果中
-6. 将右、左节点分别压入栈内，以便取元素时为先左后右。
-7. 返回最终结果
+4. 访问当前栈顶元素(首先取出栈顶元素，随后pop掉栈顶元素)并存入最终结果
+5. 将右、左节点分别压入栈内，以便取元素时为先左后右。
+6. 返回最终结果
+
+其中步骤4,5,6为迭代的核心，对应前序遍历「根左右」。
+
+所以说到底，**使用迭代，只不过是另外一种形式的递归。**使用递归的思想去理解遍历问题会容易理解许多。
