@@ -30,9 +30,7 @@ Can you do it without recursion?
 
 **面试时不推荐递归这种做法。**
 
-#### C++
-
-**Traverse**
+### Traverse - 递归遍历
 
 ```
 /**
@@ -78,7 +76,7 @@ private:
 
 使用了辅助递归函数`traverse`，传值时注意应使用vector的引用。
 
-**Divide and Conquer**
+### Divide and Conquer - 分治
 
 使用分治的方法和递归类似，但是不同的是递归是将结果作为参数传入递归函数中，而分治则是先将结果保留，随后再合并到最终结果中。
 
