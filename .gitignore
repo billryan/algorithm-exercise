@@ -19,4 +19,4 @@ _book
 .DS_Store
 
 # docs for other materials
-!docs/
+!/docs/*
