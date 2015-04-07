@@ -46,5 +46,6 @@
    * [￼Reverse Linked List](linked_list/reverse_linked_list.md)
 * [Dynamic Programming](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
-   * [Backpack](dynamic_programming/backpack.md)
+   * [Knapsack - 背包问题](dynamic_programming/knapsack.md)
+       * [Backpack](dynamic_programming/backpack.md)
 
