@@ -1,40 +1,49 @@
-# 算法练习
+# leetcode/lintcode题解/算法学习笔记
 
-一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯，以下整理了一些最近练习算法的网站资源，和大家共享之。
+一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯。本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
-首先手头备一本算法书还是有必要的，算法导论和TAOCP相对宏大一些，简单入门的有Robert Sedgewick的算法书，第三版内容广些，第4版则删掉了不少如动态规划的内容。
-其他的一些算法书可参考 [数据结构与算法类 | Programming Notes](http://prog-notes.yuanbin.me/chapter7-textbooks/algo-data-struct.html)
+## 关于本文档
 
-### coding Style - 代码风格
+- 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-excercise
+- 在线阅读网址为 http://algorithm.yuanbin.me
+- 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。dd
+- 本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 进行授权。你可以在github中star本项目查看更新。
 
-- 代码块可为三大块：异常处理（空串和边界处理），主体，返回
-- 代码风格(可参考Google的编程语言规范)
-    - 变量名的命名(有意义的变量名)
-    - 缩进(语句块)
-    - 空格(运算符两边)
-    - 代码可读性(即使if语句只有一句也要加花括号)
+主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.ninechapter.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
 
-### 面试过程
+### 如何准备算法及面试
 
-面试过程要有适当的沟通：
+除了日常进行算法外，对于找工作的小伙伴们来说，如何在面试过程中更好地在算法环节脱颖而出还是有迹可循的。从九章算法那可以总结如下：
 
+1. 面试过程要有适当的沟通
 1. 听到问题后要讲自己的理解
 2. 与面试官沟通题目的细节
 3. 告诉面试官自己的想法或算法
 
-### 如何刷题？
+虽说练习算法偏向于算法本身，但是好的代码风格还是很有必要的。粗略可分为以下几点：
+
+- 代码块可为三大块：异常处理（空串和边界处理），主体，返回
+- 代码风格(**可参考Google的编程语言规范**)
+    1. 变量名的命名(有意义的变量名)
+    2. 缩进(语句块)
+    3. 空格(运算符两边)
+    4. 代码可读性(即使if语句只有一句也要加花括号)
+- 《代码大全》中给出的参考
+
+而对于实战算法的过程中，我们可以采取如下策略：
 
 1. 总结归类相似题目
 2. 找出适合同一类题目的模板程序
 3. 对基础题熟练掌握
 
-## 学习/练习算法的好去处
+以下整理了一些最近练习算法的网站资源，和大家共享之。首先手头备一本算法书还是有必要的，算法导论和TAOCP相对宏大一些，简单入门的有Robert Sedgewick的算法书，第三版内容广些，第4版则删掉了不少如动态规划的内容。
+其他的一些算法书可参考 [数据结构与算法类 | Programming Notes](http://prog-notes.yuanbin.me/chapter7-textbooks/algo-data-struct.html)
 
 ### 在线OJ及部分题解
 
-1. [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选比较方便，还可以在`source`处选择cc150或者其他来源的题。目前会根据系统locale选择中文或者英文，评判时也比leetcode快，总之是比较赞啦。
-2. [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，相应的题解非常多。
-3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details)
+1. [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选比较方便，还可以在`source`处选择cc150或者其他来源的题。目前会根据系统locale选择中文或者英文，评判时也比leetcode快，总之是比较赞啦
+2. [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，相应的题解非常多
+3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解
 4. [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解
 5. [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞
 6. [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
@@ -49,13 +58,10 @@
 - [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
 - [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
 - [POJ的部分题解 - Category: POJ | Beeder's Blog](http://beeder.me/categories/POJ/)
+- [专栏：算法笔记——《算法设计与分析》](http://blog.csdn.net/column/details/lf-algoritnote.html) - CSDN上对《算法设计与分析》一书的学习笔记。
 - [算法练习 | billryan](http://algorithm.yuanbin.me) - 恬不知耻地贴上了作为CS门外汉刷题的总结和笔记，求大神们轻拍
 
 ### 书籍推荐
 
 - [Algorithm Design (豆瓣)](http://book.douban.com/subject/1475870/)
 - [The Algorithm Design Manual](http://www.amazon.com/exec/obidos/ASIN/1848000693/thealgorithmrepo), 作者还放出了自己上课的视频和slides - [Skiena's Audio Lectures](http://www3.cs.stonybrook.edu/~algorith/video-lectures/)，[The Algorithm Design Manual (豆瓣)](http://book.douban.com/subject/3072383/)
-
-# 关于本文档
-
-在线托管仓库为 https://github.com/billryan/algorithm-excercise ，主要内容为学习算法和刷题过程中的笔记，很大程度上参考了[九章算法](http://www.ninechapter.com) 的代码和讲稿，先行谢过！全书使用[Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 授权。你可以在github中star本项目查看更新。
