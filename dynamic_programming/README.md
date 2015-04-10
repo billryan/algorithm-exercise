@@ -21,9 +21,9 @@
 动态规划问题中一般从以下四个角度考虑：
 
 1. 状态(State)
-2. 状态间的转移方程(Transition)
+2. 状态间的转移方程(Function)
 3. 状态的初始化(Initialization)
-4. 返回结果(Result)
+4. 返回结果(Answer)
 
 动规适用的情形：
 
