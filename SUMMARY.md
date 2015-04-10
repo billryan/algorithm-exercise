@@ -44,8 +44,12 @@
 * [Linked List - 链表](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [￼Reverse Linked List](linked_list/reverse_linked_list.md)
+   * [Merge Two Sorted Lists](linked_list/merge_two_sorted_lists.md)
+   * [Partition List](linked_list/partition_list.md)
 * [Dynamic Programming - 动态规划](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Knapsack - 背包问题](dynamic_programming/knapsack.md)
        * [Backpack](dynamic_programming/backpack.md)
+   * [Matrix](dynamic_programming/matrix.md)
+       * [Minimum Path Sum](dynamic_programming/minimum_path_sum.md)
 
