@@ -52,4 +52,8 @@
        * [Backpack](dynamic_programming/backpack.md)
    * [Matrix](dynamic_programming/matrix.md)
        * [Minimum Path Sum](dynamic_programming/minimum_path_sum.md)
+       * [Unique Paths](dynamic_programming/unique_paths.md)
+   * [Sequence](dynamic_programming/sequence.md)
+       * [Climbing Stairs](dynamic_programming/climbing_stairs.md)
+       * [Jump Game](dynamic_programming/jump_game.md)
 
