@@ -207,6 +207,7 @@ private:
     }
 };
 ```
+
 ## Reference - 参考
 
 - [[NineChap 1.2] Permutation - Woodstock Blog](http://okckd.github.io/blog/2014/06/12/NineChap-Permutation/)
