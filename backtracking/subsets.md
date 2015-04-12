@@ -27,14 +27,14 @@ If S = [1,2,3], a solution is:
 ]
 ```
 
-题解：
+#### 题解
 
 1. 首先对数组按升序排序
 2. 回溯法递归
 
 
 **Java**
-```
+```java
 class Solution {
     /**
      * @param S: A set of numbers.
@@ -55,7 +55,6 @@ class Solution {
 
     private void backTrack(ArrayList<ArrayList<Integer>> result,
         ArrayList<Integer> list, ArrayList<Integer> num, int pos) {
-
         result.add(new ArrayList<Integer>(list));
 
         for (int i = pos; i < num.size(); i++) {
@@ -69,36 +68,40 @@ class Solution {
 
 **Notice: backTrack(result, list, num, i + 1);中的『i + 1』不可误写为『pos + 1』，第一次写subsets的时候在这坑了很久... :(**
 
-回溯法可用图示和函数运行的堆栈图来理解，强烈建议使用图形分析，以测试数组[1,2]为例分析回溯法的调用栈。
+回溯法可用图示和函数运行的堆栈图来理解，强烈建议**使用图形和递归的思想**分析，以数组`[1, 2, 3]`进行分析。下图所示为`list`及`result`动态变化的过程，箭头向下表示`list.add`及`result.add`操作，箭头向下表示`list.remove`操作。
+
+![Subsets运行递归调用图](../figure/subsets.jpg)
+
+如果你不相信以上的图形化分析，还可以自己在纸上分析代码的调用关系，下面以数组`[1,2]`为例分析回溯法的调用栈。
 
 1. 首先由主函数 `subsets` 进入，初始化 `result` 为[]，接着进行异常处理，随后初始化 `list` 为[]，递归调用`backTrack()`, `num = [1, 2]`。
 2. `result = [], list = [], pos = 0`. 调用`result.add()`加入[], `result = [[]]`。进入`for`循环，`num.size() = 2`。
-    1. `i = 0`,
+    - `i = 0`,
         1. `list.add(num[0]) -> list = [1]`, 递归调用`backTrack()`前, `result = [[]], list = [1], pos = 1`
         2. 递归调用`backTrack([[]], [1], [1, 2]，1)`
-            1. `reslut.add[[1]] -> result = [[], [1]]`
-            2. `i = 1`, for(i = 1 < 2)
-                - `list.add(num[1]) -> list = [1, 2]`
-                - 递归调用`backTrack([[], [1]], [1, 2], [1, 2]，2)`
-                    1. `reslut.add[[1, 2]] -> result = [[], [1], [1, 2]]`
-                    2. `i = 2` 退出for循环，退出此次调用
-                - `list.remove(2 - 1) -> list = [1]`
-                - `i++ -> i = 2`
-            3. `i = 2`, 退出for循环，退出此次调用
+            - `reslut.add[[1]] -> result = [[], [1]]`
+            - `i = 1`, for(i = 1 < 2)
+                1. `list.add(num[1]) -> list = [1, 2]`
+                2. 递归调用`backTrack([[], [1]], [1, 2], [1, 2]，2)`
+                    - `reslut.add[[1, 2]] -> result = [[], [1], [1, 2]]`
+                    - `i = 2` 退出for循环，退出此次调用
+                3. `list.remove(2 - 1) -> list = [1]`
+                4. `i++ -> i = 2`
+            - `i = 2`, 退出for循环，退出此次调用
         3. `list.remove() -> list = []`
         4. `i++ -> i = 1`，进入下一次循环
-    2. `i = 1`, for(i = 1 < 2)
-        - `list.add(num[1]) -> list = [2]`
-        - 递归调用`backTrack([[], [1], [1, 2]], [2], [1, 2]，2)`
-            + `reslut.add[[2]] -> result = [[], [1], [1, 2], [2]]`
-            + `i = 2` 退出for循环，退出此次调用
-        - `list.remove(1 - 1) -> list = []`
-        - `i++ -> i = 2`
-    3. `i = 2`, 退出for循环，退出此次调用
+    - `i = 1`, for(i = 1 < 2)
+        1. `list.add(num[1]) -> list = [2]`
+        2. 递归调用`backTrack([[], [1], [1, 2]], [2], [1, 2]，2)`
+            - `reslut.add[[2]] -> result = [[], [1], [1, 2], [2]]`
+            - `i = 2` 退出for循环，退出此次调用
+        3. `list.remove(1 - 1) -> list = []`
+        4. `i++ -> i = 2`
+    - `i = 2`, 退出for循环，退出此次调用
 3. 返回结果`result`
 
 **C++**
-```
+```c++
 class Solution {
 public:
     /**
