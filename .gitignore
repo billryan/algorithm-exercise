@@ -16,7 +16,7 @@ _book
 *.pdf
 
 # MAC OS X
-.DS_Store
+**/.DS_Store
 
 # docs for other materials
 !/docs/*
