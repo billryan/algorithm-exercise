@@ -15,8 +15,8 @@ _book
 *.mobi
 *.pdf
 
-# MAC OS X
-**/.DS_Store
-
 # docs for other materials
 !/docs/*
+
+# MAC OS X
+**/.DS_Store
