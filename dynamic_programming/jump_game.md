@@ -18,7 +18,7 @@ A = [3,2,1,0,4], return false.
 #### 题解(自顶向下-动态规划)
 
 1. State: f[i] 从起点出发能否达到i
-2. Function: $$f[i] = OR (f[j], j < i ~\&\&~ j + A[j] \geq i)$$, 状态 $$j$$ 转移到 $$i$$, 所有小于i的下标j的元素中是否存在能从j跳转到i得
+2. Function: `f[i] = OR (f[j], j < i ~\&\&~ j + A[j] \geq i)`, 状态 $$j$$ 转移到 $$i$$, 所有小于i的下标j的元素中是否存在能从j跳转到i得
 3. Initialization: f[0] = true;
 4. Answer: 递推到第 N - 1 个元素时，f[N-1]
 
