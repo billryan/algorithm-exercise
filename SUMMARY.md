@@ -46,6 +46,7 @@
    * [￼Reverse Linked List](linked_list/reverse_linked_list.md)
    * [Merge Two Sorted Lists](linked_list/merge_two_sorted_lists.md)
    * [Partition List](linked_list/partition_list.md)
+   * [Remove Nth Node From End of List](linked_list/remove_nth_node_from_end_of_list.md)
 * [Dynamic Programming - 动态规划](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Knapsack - 背包问题](dynamic_programming/knapsack.md)
