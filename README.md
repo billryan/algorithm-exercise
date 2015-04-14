@@ -125,9 +125,9 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 4. 题解中的核心部分对应的代码，代码中不能明显看出来的逻辑和一些编程上常用的技巧。
 5. 如参考了其他资源，尽可能给出有用的参考链接，附简单的说明。
 
-通过github合作时，添加/修改内容时给出能看懂的commit就好了。
+感觉还不错的风格 - [raw binary_tree_preorder_traversal.md](https://raw.githubusercontent.com/billryan/algorithm-excercise/master/binary_tree/binary_tree_preorder_traversal.md)
 
-暂时就想到这么多，其实没那么多讲究啦，感觉看着清楚就好，其他想到的再补充。:-)
+通过github合作时，添加/修改内容时给出能看懂的commit就好了。暂时就想到这么多，其实没那么多讲究啦，感觉看着清楚就好，其他想到的再补充。:-)
 
 #### 附件及图片引用
 
