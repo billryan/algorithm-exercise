@@ -2,8 +2,13 @@
 
 核心：不断地选择剩余元素中的最小者。
 
-1. 找到数组中最小元素并将其和数组第一个元素交换位置
-2. 在剩下的元素中找到最小元素并将其与数组第二个元素交换，直至整个数组排序
+1. 找到数组中最小元素并将其和数组第一个元素交换位置。
+2. 在剩下的元素中找到最小元素并将其与数组第二个元素交换，直至整个数组排序。
+
+下图来源为 [File:Selection-Sort-Animation.gif - IB Computer Science](http://wiki.ibcsstudent.org/index.php?title=File:Selection-Sort-Animation.gif) 
+
+![Selection Sort](../figure/selection_sort.gif)
+
 
 实现：
 

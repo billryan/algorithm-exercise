@@ -16,5 +16,27 @@
 
 稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。
 
+常见的排序算法根据是否需要比较可以分为如下几类：
+
+- Comparison Sorting
+    1. Bubble Sort
+    2. Selection Sort
+    3. Insertion Sort
+    4. Shell Sort
+    5. Merge Sort
+    6. Quck Sort
+    7. Heap Sort
+- Bucket Sort
+- Counting Sort
+- Radix Sort
+
+从稳定性角度考虑可分为如下两类：
+- 稳定
+- 非稳定
 
 
+## Reference
+
+- [Sorting algorithm - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Sorting_algorithm) - 各类排序算法的「平均、最好、最坏时间复杂度」总结。
+- [经典排序算法总结与实现 | Jark's Blog](http://wuchong.me/blog/2014/02/09/algorithm-sort-summary/) - 基于 Python 的较为清晰的总结。
+- [【面经】硅谷前沿Startup面试经验-排序算法总结及快速排序算法代码_九章算法](http://blog.sina.com.cn/s/blog_eb52001d0102v1k8.html) - 总结了一些常用常问的排序算法。
