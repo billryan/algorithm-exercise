@@ -14,6 +14,8 @@
    * [Merge Sort](basics_sorting/merge_sort.md)
    * [Quick Sort](basics_sorting/quick_sort.md)
    * [Heap Sort](basics_sorting/heap_sort.md)
+   * [Bucket Sort](basics_sorting/bucket_sort.md)
+   * [Counting Sort](basics_sorting/counting_sort.md)
 * [Part II - Coding](part_ii_coding/README.md)
 * [Search - 搜索](search/README.md)
    * [Binary Search](search/binary_search.md)
