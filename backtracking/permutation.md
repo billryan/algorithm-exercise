@@ -176,3 +176,7 @@ private:
 Unique Subsets 和 Unique Permutations 的源码模板非常经典！建议仔细研读并体会其中奥义。
 
 后记：在理解 Unique Subsets 和 Unique Permutations 的模板我花了差不多一整天时间才基本理解透彻，建议在想不清楚某些问题时先分析简单的问题，在纸上一步一步分析直至理解完全。
+
+## Reference
+
+- [九章算法 | Permutation II](http://new.ninechapter.com/solutions/permutations-ii/)
