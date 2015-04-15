@@ -21,14 +21,13 @@ Challenge
 Can you do it without recursion?
 ```
 
-题解：
+### 题解 - 递归
 
 首先使用递归便于理解。
 
-## Recurtion - 递归
+#### C++ Recursion
 
-**C++**
-```
+```c++
 /**
  * Definition of TreeNode:
  * class TreeNode {
@@ -68,15 +67,13 @@ private:
 };
 ```
 
-## Iteration - 迭代
+### 题解 - 迭代
 
-使用递归写后序遍历那是相当的简单，我们来个不使用递归的迭代版。
+使用递归写后序遍历那是相当的简单，我们来个不使用递归的迭代版。整体思路仍然为「左右根」，由于是最后才将元素取出。因此需要区分左右的访问记录。
 
-题解：
+#### C++ Iteration
 
-整体思路仍然为「左右根」，由于是最后才将元素取出。因此需要区分左右的访问记录。
-
-```
+```c++
 /**
  * Definition of TreeNode:
  * class TreeNode {
@@ -136,7 +133,7 @@ public:
 };
 ```
 
-源码解析：
+#### 源码解析
 
 使用`prevNode`记录之前的访问节点，`currNode`记录目前正在访问/操作的节点。每次进入while循环时给`currNode`赋值，结束时`prevNode = currNode`.
 
