@@ -3,6 +3,7 @@
 * [leetcode题解/算法笔记](README.md)
 * [Part I - Basics](part_i_basics/README.md)
 * [Data Structure](basics_data_structure/README.md)
+   * [Linked List](basics_data_structure/linked_list.md)
    * [Binary Tree](basics_data_structure/binary_tree.md)
    * [Binary Search Trees](basics_data_structure/binary_search_trees.md)
    * [Huffman Compression](basics_data_structure/huffman_compression.md)
