@@ -16,8 +16,7 @@
 - 访问某个节点 curt.next 时，要检验 curt 是否为 null。
 - 要把反转后的最后一个节点（即反转前的第一个节点）指向 null。
 
->
-
+```
 public ListNode reverse(ListNode head) {
     ListNode prev = null;
     while (head != null) {
@@ -28,12 +27,13 @@ public ListNode reverse(ListNode head) {
     }
     return prev;
 }
+```
 
 ### 删除链表中的某个节点
 
 删除链表中的某个节点一定需要知道这个点的前继节点，所以需要一直有指针指向前继节点。
 
-然后只需要把 prev -> next = prev -> next -> next 即可。但是由于链表表头可能在这个过程中产生变化，导致我们需要一些特别的技巧去处理这种情况。就是下面提到的 Dummy Node。
+然后只需要把 `prev -> next = prev -> next -> next` 即可。但是由于链表表头可能在这个过程中产生变化，导致我们需要一些特别的技巧去处理这种情况。就是下面提到的 Dummy Node。
 
 ## 链表指针的鲁棒性
 
