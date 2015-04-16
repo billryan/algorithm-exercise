@@ -294,7 +294,7 @@ public:
 
 ```c++
 /**
- * http://www.ninechapter.com/solutions/jump-game-ii/
+ * http://www.jiuzhang.com/solutions/jump-game-ii/
  */
 class Solution {
 public:

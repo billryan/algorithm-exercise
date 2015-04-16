@@ -29,7 +29,7 @@ For [4, 5,1, 2, 3] and target=0, return -1
 ```
 /**
  * 本代码fork自
- * http://www.ninechapter.com/solutions/search-in-rotated-sorted-array/
+ * http://www.jiuzhang.com/solutions/search-in-rotated-sorted-array/
  */
 class Solution {
     /**
