@@ -53,7 +53,7 @@ public:
 
 初始化ret[0]也为1，可以认为到第0级也是一种方法。
 
-以上答案的空间复杂度为 $$O(n)$$，仔细观察后可以发现在状态转移方程中，我们可以使用三个变量来替代长度为n+1的数组。具体代码可参考 [climbing-stairs | 九章算法 ](http://new.ninechapter.com/solutions/climbing-stairs/)
+以上答案的空间复杂度为 $$O(n)$$，仔细观察后可以发现在状态转移方程中，我们可以使用三个变量来替代长度为n+1的数组。具体代码可参考 [climbing-stairs | 九章算法 ](http://www.jiuzhang.com/solutions/climbing-stairs/)
 
 ```
 class Solution {

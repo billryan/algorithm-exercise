@@ -45,7 +45,7 @@ O(log(n) + log(m)) time
 ```java
 /**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
- * http://www.ninechapter.com/solutions/search-a-2d-matrix
+ * http://www.jiuzhang.com/solutions/search-a-2d-matrix
  */
 // Binary Search Once
 public class Solution {

@@ -109,5 +109,5 @@ private:
 
 ## reference
 
-- [九章算法 | Median of Two Sorted Arrays](http://www.ninechapter.com/solutions/median-of-two-sorted-arrays/)
+- [九章算法 | Median of Two Sorted Arrays](http://www.jiuzhang.com/solutions/median-of-two-sorted-arrays/)
 - [LeetCode: Median of Two Sorted Arrays 解题报告 - Yu's Garden - 博客园](http://www.cnblogs.com/yuzhangcmu/p/4138184.html)

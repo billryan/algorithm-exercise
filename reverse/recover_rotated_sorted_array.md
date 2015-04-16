@@ -30,7 +30,7 @@ What is rotated array:
 ```
 /**
  * forked from
- * http://www.ninechapter.com/solutions/recover-rotated-sorted-array/
+ * http://www.jiuzhang.com/solutions/recover-rotated-sorted-array/
  */
 class Solution {
 private:
