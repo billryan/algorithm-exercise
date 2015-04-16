@@ -34,7 +34,7 @@ head = temp;
 **C++**
 ```
 /**
- * http://www.ninechapter.com/solutions/reverse-linked-list/
+ * http://www.jiuzhang.com/solutions/reverse-linked-list/
  * Definition of ListNode
  *
  * class ListNode {

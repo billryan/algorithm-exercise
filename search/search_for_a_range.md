@@ -9,7 +9,7 @@ Question: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-fo
 ```
 /**
  * 本代码fork自九章算法。没有版权欢迎转发。
- * http://www.ninechapter.com/solutions/search-for-a-range/
+ * http://www.jiuzhang.com/solutions/search-for-a-range/
  */
 public class Solution {
     /**

@@ -65,7 +65,7 @@ public:
 
 ```
 /**
- * http://www.ninechapter.com/solutions/remove-duplicates-from-sorted-list/
+ * http://www.jiuzhang.com/solutions/remove-duplicates-from-sorted-list/
  */
 
 public class Solution {

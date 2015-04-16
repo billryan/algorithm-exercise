@@ -179,4 +179,4 @@ Unique Subsets 和 Unique Permutations 的源码模板非常经典！建议仔�
 
 ## Reference
 
-- [九章算法 | Permutation II](http://new.ninechapter.com/solutions/permutations-ii/)
+- [九章算法 | Permutation II](http://www.jiuzhang.com/solutions/permutations-ii/)

@@ -16,7 +16,7 @@ You function should return the max size we can fill in the given backpack.
 
 题解：
 
-本题是典型的01背包问题，每种类型的物品最多只能选择一件。先来看看 [九章算法](http://www.ninechapter.com/solutions/backpack/) 的题解：
+本题是典型的01背包问题，每种类型的物品最多只能选择一件。先来看看 [九章算法](http://www.jiuzhang.com/solutions/backpack/) 的题解：
 
 1. 状态: result[i][S] 表示前i个物品，取出一些物品能否组成体积和为S的背包
 2. 状态转移方程: $$f[i][S] = f[i-1][S-A[i]] ~or~ f[i-1][S]$$ (A[i]为第i个物品的大小)
@@ -233,5 +233,5 @@ public:
 
 - [Lintcode: Backpack - neverlandly - 博客园](http://www.cnblogs.com/EdwardLiu/p/4269149.html)
 - [Lintcode: Backpack II - neverlandly - 博客园](http://www.cnblogs.com/EdwardLiu/p/4272300.html)
-- [九章算法 | 背包问题](http://new.ninechapter.com/problem/58/)
+- [九章算法 | 背包问题](http://www.jiuzhang.com/problem/58/)
 - [崔添翼 § 翼若垂天之云 › 《背包问题九讲》2.0 alpha1](http://cuitianyi.com/blog/%E3%80%8A%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%B9%9D%E8%AE%B2%E3%80%8B2-0-alpha1/)

@@ -26,7 +26,7 @@ Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/bin
 ```
 /**
  * 本代码fork自九章算法。没有版权欢迎转发。
- * http://www.ninechapter.com//solutions/binary-search/
+ * http://www.jiuzhang.com//solutions/binary-search/
  */
 class Solution {
     /**
