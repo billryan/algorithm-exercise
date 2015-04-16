@@ -17,6 +17,8 @@
    * [Heap Sort](basics_sorting/heap_sort.md)
    * [Bucket Sort](basics_sorting/bucket_sort.md)
    * [Counting Sort](basics_sorting/counting_sort.md)
+* [Basics Misc](basics_misc/README.md)
+   * [Bit Manipulation](basics_misc/bit_manipulation.md)
 * [Part II - Coding](part_ii_coding/README.md)
 * [Search - 搜索](search/README.md)
    * [Binary Search](search/binary_search.md)
@@ -63,4 +65,8 @@
    * [Sequence](dynamic_programming/sequence.md)
        * [Climbing Stairs](dynamic_programming/climbing_stairs.md)
        * [Jump Game](dynamic_programming/jump_game.md)
+* [Bit Manipulation - 位运算](bit_manipulation/README.md)
+   * [Single Number](bit_manipulation/single_number.md)
+   * [Single Number II](bit_manipulation/single_number_ii.md)
+   * [Single Number III](bit_manipulation/single_number_iii)
 
