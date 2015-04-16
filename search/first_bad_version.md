@@ -42,9 +42,9 @@ Do not call isBadVersion exceed O(logn) times.
 
 题 Search for a Range 的变形，找出左边界即可。
 
-**C++版**
+#### C++
 
-```
+```c++
 /**
  * class VersionControl {
  *     public:
@@ -87,13 +87,13 @@ public:
 };
 ```
 
-源码分析：
+#### 源码分析
 
 找左边界和Search for a Range类似，但是最好要考虑到有可能end处也为good version，此部分异常也可放在开始的时候处理。
 
-**Python版**
+#### Python
 
-```
+```python
 #class VersionControl:
 #    @classmethod
 #    def isBadVersion(cls, id)

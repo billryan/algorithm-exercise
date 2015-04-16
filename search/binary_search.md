@@ -5,25 +5,27 @@
 
 Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
 
-> Binary search is a famous question in algorithm.
+```
+Binary search is a famous question in algorithm.
 
-> For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity.
+For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity.
 
-> If the target number does not exist in the array, return -1.
+If the target number does not exist in the array, return -1.
 
-> **Example**
+Example
+If the array is [1, 2, 3, 3, 4, 5, 10], for given target 3, return 2.
 
-> If the array is [1, 2, 3, 3, 4, 5, 10], for given target 3, return 2.
+Challenge
+If the count of numbers is bigger than MAXINT, can your code work properly?
+```
 
-> **Challenge**
-
-> If the count of numbers is bigger than `MAXINT`, can your code work properly?
-
-题解：
+### 题解
 
 对于已排序升序数组，使用二分查找可满足复杂度要求，注意数组中可能有重复值。
 
-```
+#### Java
+
+```java
 /**
  * 本代码fork自九章算法。没有版权欢迎转发。
  * http://www.jiuzhang.com//solutions/binary-search/
@@ -65,7 +67,7 @@ class Solution {
 }
 ```
 
-源码分析：
+#### 源码分析
 
 1. 首先对输入做异常处理，数组为空或者长度为0
 2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出

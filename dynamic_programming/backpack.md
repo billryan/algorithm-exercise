@@ -14,9 +14,9 @@ If we have 4 items with size [2, 3, 5, 7], the backpack size is 11, we can selec
 You function should return the max size we can fill in the given backpack.
 ```
 
-题解：
+### 题解
 
-本题是典型的01背包问题，每种类型的物品最多只能选择一件。先来看看 [九章算法](http://www.jiuzhang.com/solutions/backpack/) 的题解：
+本题是典型的01背包问题，每种类型的物品最多只能选择一件。先来看看 [九章算法](http://www.jiuzhang.com/solutions/backpack/) 的### 题解
 
 1. 状态: result[i][S] 表示前i个物品，取出一些物品能否组成体积和为S的背包
 2. 状态转移方程: $$f[i][S] = f[i-1][S-A[i]] ~or~ f[i-1][S]$$ (A[i]为第i个物品的大小)
@@ -26,8 +26,9 @@ You function should return the max size we can fill in the given backpack.
 3. 状态初始化: $$f[1 \cdots n][0]=true; ~f[0][1 \cdots m]=false$$. 前1~n个物品组成体积和为0的背包始终为真，其他情况为假。
 4. 返回结果: 寻找使 $$f[n][S]$$ 值为true的最大S ($$1 \leq S \leq m$$)
 
-**C++ 2D vector for result**
-```
+#### C++ 2D vector for result
+
+```c++
 class Solution {
 public:
     /**
@@ -71,7 +72,7 @@ public:
 };
 ```
 
-源码分析：
+#### 源码分析
 
 1. 异常处理
 2. 初始化结果矩阵，注意这里需要使用`resize`而不是`reserve`，否则可能会出现段错误
@@ -93,8 +94,9 @@ public:
 
 考虑背包问题的核心——状态转移方程，如何优化此转移方程？原始方案中用到了二维矩阵来保存result，注意到result的第i行仅依赖于第i-1行的结果，那么能否用一维数组来代替这种隐含的关系呢？我们**在内循环j处递减即可**。如此即可避免`result[i][S]`的值由本轮`result[i][S-A[i]]`递推得到。
 
-**C++ 1D vector for result**
-```
+#### C++ 1D vector for result
+
+```c++
 class Solution {
 public:
     /**
@@ -131,6 +133,7 @@ public:
     }
 };
 ```
+
 ## Backpack II
 
 Question: [(125) Backpack II](http://www.lintcode.com/en/problem/backpack-ii/)
@@ -143,15 +146,16 @@ Example
 Given 4 items with size [2, 3, 5, 7] and value [1, 5, 2, 4], and a backpack with size 10. The maximum value is 9.
 ```
 
-题解：
+### 题解
 
 首先定义状态 $$K(i,w)$$ 为前 $$i$$ 个物品放入size为 $$w$$ 的背包中所获得的最大价值，则相应的状态转移方程为：
 $$K(i,w) = \max \{K(i-1, w), K(i-1, w - w_i) + v_i\}$$
 
 详细分析过程见本节。
 
-**C++ 2D vector for result**
-```
+#### C++ 2D vector for result
+
+```c++
 class Solution {
 public:
     /**
@@ -187,15 +191,16 @@ public:
     }
 };
 ```
-源码分析：
+#### 源码分析
 
 1. 使用二维矩阵保存结果result
 2. 返回result矩阵的右下角元素——背包size限制为m时的最大价值
 
 按照第一题backpack的思路，这里可以使用一维数组进行空间复杂度优化。优化方法为逆序求`result[j]`，优化后的代码如下：
 
-**C++ 1D vector for result**
-```
+#### C++ 1D vector for result
+
+```c++
 class Solution {
 public:
     /**

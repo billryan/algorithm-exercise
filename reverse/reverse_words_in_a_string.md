@@ -22,7 +22,7 @@ Yes. However, your reversed string should not contain leading or trailing spaces
 Reduce them to a single space in the reversed string.
 ```
 
-题解：
+### 题解
 
 1. 由第一个提问可知：题中只有空格字符和非空格字符之分，因此空格字符应为其一关键突破口。
 2. 由第二个提问可知：输入的前导空格或者尾随空格在反转后应去掉。
@@ -30,7 +30,9 @@ Reduce them to a single space in the reversed string.
 
 首先找到各个单词(以空格隔开)，根据题目要求，单词应从后往前依次放入。正向取出比较麻烦，因此可尝试采用逆向思维——先将输入字符串数组中的单词从后往前逆序取出，取出单词后即翻转并append至新字符串数组。在append之前加入空格即可。
 
-```
+#### C++
+
+```c++
 class Solution {
 public:
     /**
@@ -66,7 +68,7 @@ public:
 };
 ```
 
-源码分析：
+#### 源码分析
 
 1. 首先处理异常，s为空时直接返回空。
 2. 索引初始值`ix = s.size()`，而不是`ix = s.size() - 1`，便于处理`ix == 0`时的特殊情况。
