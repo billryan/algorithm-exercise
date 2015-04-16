@@ -28,3 +28,8 @@ a ^ b ^ c = a ^ (b ^ c) = (a ^ b) ^ c // associative
 5. 将`x`最高位至第`n`位(含)清零 - `x & ((1 << n) - 1)`
 6. 将第`n`位至第0位(含)清零 - `x & (~((1 << (n + 1)) - 1))`
 7. 仅更新第`n`位，写入值为`v`; `v`为1则更新为1，否则为0 - `mask = ~(1 << n); x = (x & mask) | (v << i)`
+
+## Reference
+
+- [位运算简介及实用技巧（一）：基础篇 | Matrix67: The Aha Moments](http://www.matrix67.com/blog/archives/263)
+- *cc150* chapter 8.5 and chapter 9.5
