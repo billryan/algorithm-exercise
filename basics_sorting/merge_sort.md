@@ -2,6 +2,10 @@
 
 核心：将两个有序对数组归并成一个更大的有序数组。通常做法为递归排序，并将两个不同的有序数组归并到第三个数组中。
 
+先来看看动图，归并排序是一种典型的分治应用。
+
+![Merge Sort](../figure/merge_sort.gif)
+
 ## 原地归并
 
 辅助函数：用于将已排序好的两个数组归并。
@@ -31,3 +35,7 @@ merge(Comaprable[] a, int lo, int mid, int hi)
 ```
 
 时间复杂度为NlogN，但是空间复杂度为N。
+
+## Reference
+
+- [Mergesort](http://algs4.cs.princeton.edu/22mergesort/) - Robert Sedgewick 的大作，非常清晰。

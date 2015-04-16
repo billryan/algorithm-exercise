@@ -9,6 +9,8 @@
 5. 插入新元素至该位置
 6. 重复2~5
 
+![Insertion Sort](../figure/insertion_sort.gif)
+
 实现(C++)：
 
 ```
