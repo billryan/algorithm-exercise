@@ -11,7 +11,8 @@ For linked list 1->2->3, the reversed linked list is 3->2->1
 Challenge
 Reverse it in-place and in one-pass
 ```
-题解：
+
+### 题解
 
 联想到同样也可能需要翻转的数组，在数组中由于可以利用下标随机访问，翻转时使用下标即可完成。而在单向链表中，仅仅只知道头节点，而且只能单向往前走，故需另寻出路。分析由`1->2->3`变为`3->2->1`的过程，由于是单向链表，故只能由1开始遍历，1和2最开始的位置是`1->2`，最后变为`2->1`，故从这里开始寻找突破口，探讨如何交换1和2的节点。
 
@@ -31,8 +32,9 @@ head = temp;
 3. 将prev替换为head，波浪式前进
 4. 将第一步保存的下一节点替换为head，用于下一次循环
 
-**C++**
-```
+#### C++
+
+```c++
 /**
  * http://www.jiuzhang.com/solutions/reverse-linked-list/
  * Definition of ListNode
@@ -68,7 +70,7 @@ public:
 };
 ```
 
-源码分析：
+#### 源码分析
 
 题解中基本分析完毕，代码中的prev赋值比较精炼，值得借鉴。
 
@@ -92,7 +94,8 @@ Given 1->2->3->4->5->NULL, m = 2 and n = 4, return 1->4->3->2->5->NULL.
 Challenge
 Reverse it in-place and in one-pass
 ```
-题解：
+
+### 题解
 
 此题在上题的基础上加了位置要求，只翻转指定区域的链表。由于链表头节点不确定，祭出我们的dummy杀器。此题边界条件处理特别tricky，需要特别注意。
 
@@ -101,8 +104,9 @@ Reverse it in-place and in one-pass
 3. 处理第m-1个和第n+1个节点
 4. 返回dummy->next
 
-**C++**
-```
+#### C++
+
+```c++
 /**
  * Definition of singly-linked-list:
  *
@@ -161,7 +165,8 @@ public:
     }
 };
 ```
-源码分析：
+
+#### 源码分析
 
 1. 处理异常
 2. 使用dummy辅助节点
