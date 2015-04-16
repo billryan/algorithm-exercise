@@ -43,6 +43,7 @@
    * [Binary Tree Postorder Traversal](binary_tree/binary_tree_postorder_traversal.md)
    * [Binary Tree Level Order Traversal](binary_tree/binary_tree_level_order_traversal.md)
    * [Maximum Depth of Binary Tree](binary_tree/maximum_depth_of_binary_tree.md)
+   * [Balanced Binary Tree](binary_tree/balanced_binary_tree.md)
 * [Backtracking - 回溯法](backtracking/backtracking.md)
    * [Subsets](backtracking/subsets.md)
    * [Permutation](backtracking/permutation.md)
