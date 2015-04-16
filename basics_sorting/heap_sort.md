@@ -9,3 +9,5 @@
 ## Reference
 
 - [堆排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F)
+- [Priority Queues](http://algs4.cs.princeton.edu/24pq/) - Robert Sedgewick 的大作，详解了关于堆的操作。
+- [经典排序算法总结与实现 | Jark's Blog](http://wuchong.me/blog/2014/02/09/algorithm-sort-summary/) - 堆排序讲的很好。
