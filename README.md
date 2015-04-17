@@ -43,9 +43,11 @@
 
 ### 其他资源
 
-- [有哪些学习算法的网站推荐？ - 知乎](http://www.zhihu.com/question/20368410)
-- [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.jiuzhang.com/) - 代码质量不错，整理地也很好。
-- [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导
+- [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.jiuzhang.com/) - 代码质量不错，整理得也很好。
+- [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导。
+- [刷题 | 一亩三分地论坛](http://www.1point3acres.com/bbs/forum-84-1.html) - 时不时就会有惊喜放出。
+- [VisuAlgo - visualising data structures and algorithms through animation](http://www.comp.nus.edu.sg/~stevenha/visualization/index.html) - 相当碉堡的数据结构和算法可视化。
+- [Data Structure Visualization](http://www.cs.usfca.edu/~galles/visualization/Algorithms.html) - 同上，非常好的动画演示！！涵盖了常用的各种数据结构/排序/算法。
 - [结构之法 算法之道](http://blog.csdn.net/v_JULY_v) - 不得不服！
 - [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
 - [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
