@@ -11,7 +11,8 @@ Given an example n=3 , 1+1+1=2+1=1+2=3
 
 return 3
 ```
-题解
+
+### 题解
 
 题目问的是到达顶端的方法数，我们采用序列类问题的通用分析方法，可以得到如下四要素：
 
@@ -22,8 +23,9 @@ return 3
 
 尤其注意状态转移方程的写法，f[i]只可能由两个中间状态转化而来，一个是f[i-1]，由f[i-1]到f[i]其方法总数并未增加；另一个是f[i-2]，由f[i-2]到f[i]隔了两个台阶，因此有1+1和2两个方法，因此容易写成 f[i]=f[i-1]+f[i-2]+1，但仔细分析后能发现，由f[i-2]到f[i]的中间状态f[i-1]已经被利用过一次，故f[i]=f[i-1]+f[i-2]
 
-**C++**
-```
+#### C++
+
+```c++
 class Solution {
 public:
     /**
@@ -53,9 +55,11 @@ public:
 
 初始化ret[0]也为1，可以认为到第0级也是一种方法。
 
-以上答案的空间复杂度为 $$O(n)$$，仔细观察后可以发现在状态转移方程中，我们可以使用三个变量来替代长度为n+1的数组。具体代码可参考 [climbing-stairs | 九章算法 ](http://new.ninechapter.com/solutions/climbing-stairs/)
+以上答案的空间复杂度为 $$O(n)$$，仔细观察后可以发现在状态转移方程中，我们可以使用三个变量来替代长度为n+1的数组。具体代码可参考 [climbing-stairs | 九章算法 ](http://www.jiuzhang.com/solutions/climbing-stairs/)
 
-```
+#### C++
+
+```c++
 class Solution {
 public:
     /**

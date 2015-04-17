@@ -2,14 +2,28 @@
 
 Question: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-for-a-range/)
 
-题解：
+```
+Given a sorted array of integers, find the starting and ending position of a given target value.
+
+Your algorithm's runtime complexity must be in the order of O(log n).
+
+If the target is not found in the array, return [-1, -1].
+
+Example
+Given [5, 7, 7, 8, 8, 10] and target value 8,
+return [3, 4].
+```
+
+### 题解
 
 由上题二分查找可找到满足条件的左边界，因此只需要再将右边界找出即可。注意到在`(target == nums[mid]`时赋值语句为`end = mid`，将其改为`start = mid`即可找到右边界，解毕。
 
-```
+#### Java
+
+```java
 /**
  * 本代码fork自九章算法。没有版权欢迎转发。
- * http://www.ninechapter.com/solutions/search-for-a-range/
+ * http://www.jiuzhang.com/solutions/search-for-a-range/
  */
 public class Solution {
     /**
@@ -75,7 +89,7 @@ public class Solution {
 }
 ```
 
-源码分析：
+#### 源码分析
 
 1. 首先对输入做异常处理，数组为空或者长度为0
 2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出

@@ -27,13 +27,14 @@ If S = [1,2,3], a solution is:
 ]
 ```
 
-#### 题解
+### 题解
 
 1. 首先对数组按升序排序
 2. 回溯法递归
 
 
-**Java**
+#### Java
+
 ```java
 class Solution {
     /**
@@ -100,7 +101,8 @@ class Solution {
     - `i = 2`, 退出for循环，退出此次调用
 3. 返回结果`result`
 
-**C++**
+#### C++
+
 ```c++
 class Solution {
 public:
@@ -160,15 +162,16 @@ If S = [1,2,2], a solution is:
 ]
 ```
 
-#### 题解
+### 题解
 
 此题在上一题的基础上加了有重复元素的情况，因此需要对回溯函数进行一定的剪枝，对于排列组合的模板程序，剪枝通常可以从两个地方出发，一是在返回结果`result.add`之前进行剪枝，另一个则是在`list.add`处剪枝，具体使用哪一种需要视情况而定，哪种简单就选谁。
 
-由于此题所给数组不一定有序，故首先需要排序。有重复元素对最终结果的影响在于重复元素最多只能出现`n`次(重复个数为n时)。具体分析过程如下(此分析过程改编自 [九章算法](http://www.ninechapter.com))。
+由于此题所给数组不一定有序，故首先需要排序。有重复元素对最终结果的影响在于重复元素最多只能出现`n`次(重复个数为n时)。具体分析过程如下(此分析过程改编自 [九章算法](http://www.jiuzhang.com))。
 
 以 $$[1, 2_1, 2_2]$$ 为例，若不考虑重复，组合有 $$[], [1], [1, 2_1], [1, 2_1, 2_2], [1, 2_2], [2_1], [2_1, 2_2], [2_2]$$. 其中重复的有 $$[1, 2_2], [2_2]$$. 从中我们可以看出只能从重复元素的第一个持续往下添加到列表中，而不能取第二个或之后的重复元素。参考上一题Subsets的模板，能代表「重复元素的第一个」即为 for 循环中的`pos`变量，`i == pos`时，`i`处所代表的变量即为某一层遍历中得「第一个元素」，因此去重时只需判断`i != pos && s[i] == s[i - 1]`.
 
-**C++**
+#### C++
+
 ```c++
 class Solution {
 public:
@@ -211,6 +214,6 @@ private:
 ## Reference - 参考
 
 - [[NineChap 1.2] Permutation - Woodstock Blog](http://okckd.github.io/blog/2014/06/12/NineChap-Permutation/)
-- [九章算法 - subsets模板](http://www.ninechapter.com/solutions/subsets/)
+- [九章算法 - subsets模板](http://www.jiuzhang.com/solutions/subsets/)
 - [LeetCode: Subsets 解题报告 - Yu's Garden - 博客园](http://www.cnblogs.com/yuzhangcmu/p/4211815.html)
-- [九章算法 | Subsets II](http://www.ninechapter.com/solutions/subsets-ii/)
+- [九章算法 | Subsets II](http://www.jiuzhang.com/solutions/subsets-ii/)

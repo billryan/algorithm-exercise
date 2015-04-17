@@ -29,7 +29,7 @@ Challenge
 O(log(n) + log(m)) time
 ```
 
-#### 题解 - 一次二分搜索 V.S. 两次二分搜索
+### 题解 - 一次二分搜索 V.S. 两次二分搜索
 
 **一次二分搜索**
 
@@ -41,11 +41,12 @@ O(log(n) + log(m)) time
 
 以一次二分搜素的方法为例。
 
-**Java**
+#### Java
+
 ```java
 /**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
- * http://www.ninechapter.com/solutions/search-a-2d-matrix
+ * http://www.jiuzhang.com/solutions/search-a-2d-matrix
  */
 // Binary Search Once
 public class Solution {
@@ -126,7 +127,7 @@ Challenge
 O(m+n) time and O(1) extra space
 ```
 
-#### 题解 - 自右上而左下
+### 题解 - 自右上而左下
 
 1. 复杂度要求——O(m+n) time and O(1) extra space，同时输入只满足自顶向下和自左向右的升序，行与行之间不再有递增关系，与上题有较大区别。时间复杂度为线性要求，因此可从元素排列特点出发，从一端走向另一端无论如何都需要m+n步，因此可分析对角线元素。
 2. 首先分析如果从左上角开始搜索，由于元素升序为自左向右和自上而下，因此如果target大于当前搜索元素时还有两个方向需要搜索，不太合适。
@@ -134,7 +135,8 @@ O(m+n) time and O(1) extra space
 
 **在遇到之前没有遇到过的复杂题目时，可先使用简单的数据进行测试去帮助发现规律。**
 
-**C++**
+#### C++
+
 ```c++
 class Solution {
 public:
@@ -169,7 +171,8 @@ public:
 };
 ```
 
-**Java**
+#### Java
+
 ```java
 public class Solution {
     /**
