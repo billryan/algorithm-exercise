@@ -1,6 +1,7 @@
 # Binary Search - 二分查找
 
 - 能使用二分搜索的前提是数组已排序。
+- 二分查找的使用场景：（1）可转换为find the first/last position of...（2）时间复杂度至少为O(lgn)。
 - 递归和迭代的使用场景：能用迭代就用迭代，特别复杂时采用递归。
 
 Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
@@ -69,9 +70,10 @@ class Solution {
 
 #### 源码分析
 
-1. 首先对输入做异常处理，数组为空或者长度为0
-2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出
-3. **使用迭代而不是递归**进行二分查找
-4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环。**即循环终止条件是相邻或相交元素时推出。**
-5. 迭代终止时target应为start或者end中的一个——由上述循环终止条件有两个，具体谁先谁后视题目而定。
+1. 首先对输入做异常处理，数组为空或者长度为0。
+2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出。
+3. **使用迭代而不是递归**进行二分查找，因为工程中递归写法存在潜在溢出的可能。
+4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环。**即循环终止条件是相邻或相交元素时退出。**
+5. 迭代终止时target应为start或者end中的一个——由上述循环终止条件有两个，具体谁先谁后视题目是找 first position or last position 而定。
 6. 赋值语句`end = mid`有两个条件是相同的，可以选择写到一块。
+7. 配合while终止条件`start + 1 < end`（相邻即退出）的赋值语句mid永远没有`+1`或者`-1`，这样不会死循环。
