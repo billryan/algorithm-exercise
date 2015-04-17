@@ -16,7 +16,7 @@ Challenge
 Time Complexity O(logn)
 ```
 
-题解：
+### 题解
 
 何谓"Median"? 由题目意思可得即为两个数组中一半数据比它大，另一半数据比它小的那个数。详见 [中位数 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E4%B8%AD%E4%BD%8D%E6%95%B8)，题中已有信息两个数组均为有序，题目要求时间复杂度为O(log)，因此应该往二分法上想。
 
@@ -26,9 +26,9 @@ Time Complexity O(logn)
 1. A[k/2 - 1] <= B[k/2 - 1] => A和B合并后的第k大数中必包含A[0]~A[k/2  -1]，可使用归并的思想去理解。
 2. 若k/2 - 1超出A的长度，则必取B[0]~B[k/2 - 1]
 
-**C++**
+#### C++
 
-```
+```c++
 class Solution {
 public:
     /**
@@ -93,7 +93,7 @@ private:
 };
 ```
 
-源码分析：
+#### 源码分析
 
 此题的边界条件较多，不容易直接从代码看清思路。首先分析找k大的辅助程序。
 
@@ -109,5 +109,5 @@ private:
 
 ## reference
 
-- [九章算法 | Median of Two Sorted Arrays](http://www.ninechapter.com/solutions/median-of-two-sorted-arrays/)
+- [九章算法 | Median of Two Sorted Arrays](http://www.jiuzhang.com/solutions/median-of-two-sorted-arrays/)
 - [LeetCode: Median of Two Sorted Arrays 解题报告 - Yu's Garden - 博客园](http://www.cnblogs.com/yuzhangcmu/p/4138184.html)

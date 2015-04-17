@@ -42,7 +42,7 @@
 ### 其他资源
 
 - [有哪些学习算法的网站推荐？ - 知乎](http://www.zhihu.com/question/20368410)
-- [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.ninechapter.com/) - 代码质量不错，整理地也很好。
+- [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.jiuzhang.com/) - 代码质量不错，整理地也很好。
 - [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导
 - [结构之法 算法之道](http://blog.csdn.net/v_JULY_v) - 不得不服！
 - [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
@@ -64,7 +64,7 @@
 - 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。dd
 - 本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 进行授权。你可以在github中star本项目查看更新。
 
-主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.ninechapter.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
+主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.jiuzhang.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
 
 ### Contribution - 如何贡献本文档
 
