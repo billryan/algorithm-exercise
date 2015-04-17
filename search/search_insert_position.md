@@ -2,11 +2,25 @@
 
 Question: [(60) Search Insert Position](http://www.lintcode.com/en/problem/search-insert-position/)
 
-题解：
+```
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You may assume no duplicates in the array.
+
+Example
+[1,3,5,6], 5 → 2
+[1,3,5,6], 2 → 1
+[1,3,5,6], 7 → 4
+[1,3,5,6], 0 → 0
+```
+
+### 题解
 
 由最原始的二分查找可找到不小于目标整数的最小下标。返回此下标即可。
 
-```
+#### Java
+
+```java
 public class Solution {
     /**
      * param A : an integer sorted array
@@ -45,6 +59,3 @@ public class Solution {
     }
 }
 ```
-
-源码分析：已在源码处注释
-

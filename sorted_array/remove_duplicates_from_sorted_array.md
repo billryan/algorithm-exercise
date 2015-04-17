@@ -15,11 +15,11 @@ Your function should return length = 2, and A is now [1,2].
 Example
 ```
 
-题解：
+### 题解
 
 使用双指针(下标)，一个指针(下标)遍历vector数组，另一个指针(下标)只取不重复的数置于原vector中。
 
-```
+```c++
 class Solution {
 public:
     /**
@@ -42,7 +42,7 @@ public:
 };
 ```
 
-源码分析：
+#### 源码分析
 
 注意最后需要返回的是`++size`或者`size + 1`
 
@@ -61,13 +61,13 @@ Your function should return length = 5, and A is now [1,1,2,2,3].
 Example
 ```
 
-题解：
+### 题解
 
 在上题基础上加了限制条件元素最多可重复出现两次。因此可以在原题的基础上添加一变量跟踪元素重复出现的次数，小于指定值时执行赋值操作。但是需要注意的是重复出现次数`occurence`的初始值(从1开始，而不是0)和reset的时机。
 
-**C++**
+#### C++
 
-```
+```c++
 class Solution {
 public:
     /**
@@ -97,7 +97,7 @@ public:
 };
 ```
 
-源码分析：
+#### 源码分析
 
 1. 在数组元素小于3(即为2)时可直接返回vector数组大小。
 2. 初始化`occurence`的值为1，而不是0. 理解起来也方便些。

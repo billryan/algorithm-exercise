@@ -20,16 +20,17 @@ For example, given the following triangle
 The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 ```
 
-题解：
+### 题解
 
 题中要求最短路径和，每次只能访问下行的相邻元素，将triangle视为二维坐标。此题方法较多，下面分小节详述。
 
-## Method 1 - Traverse without hashmap
+### Method 1 - Traverse without hashmap
 
 首先考虑最容易想到的方法——递归遍历，逐个累加所有自上而下的路径长度，最后返回这些不同的路径长度的最小值。由于每个点往下都有2条路径，使用此方法的时间复杂度约为 $$O(2^n)$$, 显然是不可接受的解，不过我们还是先看看其实现思路。
 
-**C++**
-```
+#### C++ Traverse without hashmap
+
+```c++
 class Solution {
 public:
     /**
@@ -62,18 +63,20 @@ private:
     }
 };
 ```
-源码分析：
+
+#### 源码分析
 
 `dfs()`的循环终止条件为`x == n`，而不是`x == n - 1`，主要是方便在递归时sum均可使用`sum + triangle[x][y]`，而不必根据不同的y和y+1改变，代码实现相对优雅一些。理解方式则变为从第x行走到第x+1行时的最短路径和，也就是说在此之前并不将第x行的元素值计算在内。
 
 这种遍历的方法时间复杂度如此之高的主要原因是因为在n较大时递归计算了之前已经得到的结果，而这些结果计算一次后即不再变化，可再次利用。因此我们可以使用hashmap记忆已经计算得到的结果从而对其进行优化。
 
-## Method 2 - Divide and Conquer without hashmap
+### Method 2 - Divide and Conquer without hashmap
 
 既然可以使用递归遍历，当然也可以使用「分治」的方法来解。「分治」与之前的遍历区别在于「分治」需要返回每次「分治」后的计算结果，下面看代码实现。
 
-**C++**
-```
+#### C++ Divide and Conquer without hashmap
+
+```c++
 class Solution {
 public:
     /**
@@ -101,14 +104,16 @@ private:
     }
 };
 ```
+
 使用「分治」的方法代码相对简洁一点，接下来我们使用hashmap保存triangle中不同坐标的点计算得到的路径和。
 
-## Method 3 - Divide and Conquer with hashmap
+### Method 3 - Divide and Conquer with hashmap
 
 新建一份大小和triangle一样大小的hashmap，并对每个元素赋以`INT_MIN`以做标记区分。
 
-**C++**
-```
+#### C++ Divide and Conquer with hashmap
+
+```c++
 class Solution {
 public:
     /**
@@ -150,9 +155,10 @@ private:
     }
 };
 ```
+
 由于已经计算出的最短路径值不再重复计算，计算复杂度由之前的 $$O(2^n)$$，变为 $$O(n^2)$$, 每个坐标的元素仅计算一次，故共计算的次数为 $$1+2+...+n \approx O(n^2)$$.
 
-## Method 4 - Dynamic Programming
+### Method 4 - Dynamic Programming
 
 从主章节中对动态规划的简介我们可以知道使用动态规划的难点和核心在于**状态的定义及转化方程的建立**。那么问题来了，到底如何去找适合这个问题的状态及转化方程呢？
 
@@ -169,10 +175,9 @@ $$f_2(x,y) = min\{f_2(x-1, y), f_2(x-1, y-1)\} + triangle[x][y]$$
 
 两个状态所对应的初始状态分别为 $$f_1(n-1, y), 0 \leq y \leq n-1$$ 和 $$f_2(0,0)$$. 在代码中应注意考虑边界条件。下面分别就这种不同的状态进行动态规划。
 
-### From Bottom to Top
+#### C++ From Bottom to Top
 
-**C++**
-```
+```c++
 class Solution {
 public:
     /**
@@ -202,7 +207,8 @@ public:
     }
 };
 ```
-源码分析：
+
+#### 源码分析
 
 1. 异常处理
 2. 使用hashmap保存结果
@@ -212,10 +218,9 @@ public:
 
 从空间利用角度考虑也可直接使用triangle替代hashmap，但是此举会改变triangle的值，不推荐。
 
-### From Top to Bottom
+#### C++ From Top to Bottom
 
-**C++**
-```
+```c++
 class Solution {
 public:
     /**
@@ -255,7 +260,8 @@ public:
     }
 };
 ```
-源码解析：
+
+#### 源码解析
 
 自顶向下的实现略微有点复杂，在寻路时需要考虑最左边和最右边的边界，还需要在最后返回结果时比较最小值。
 
