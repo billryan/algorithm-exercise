@@ -35,7 +35,8 @@
 
 1. [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选比较方便，还可以在`source`处选择cc150或者其他来源的题。目前会根据系统locale选择中文或者英文，评判时也比leetcode快，总之是比较赞啦
 2. [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，相应的题解非常多
-3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解
+3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解。
+4. [FreeTymeKiyan/LeetCode-Sol-Res](https://github.com/FreeTymeKiyan/LeetCode-Sol-Res) - Clean, Understandable Solutions and Resources on LeetCode Online Judge Algorithms Problems.
 4. [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解
 5. [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞
 6. [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
