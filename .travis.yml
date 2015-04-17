@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - "stable"
+
+before_install:
+  # Install Gitbook
+  - npm install gitbook-cli -g
+  # Clone the repository
+  - git clone https://github.com/hexojs/hexojs.github.io .deploy
+  - git clone --depth=10 --branch=master git://github.com/billryan/algorithm-excercise.git
+
+script:
+  - cd algorithm-excercise
+  - gitbook build ./ --format=json
+  - gitbook build
+
+branches:
+  only:
+    - master
