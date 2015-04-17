@@ -1,5 +1,7 @@
 # leetcode/lintcode题解/算法学习笔记
 
+[![Build Status](https://travis-ci.org/billryan/algorithm-excercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-excercise)
+
 一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯。本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
 ## 如何准备算法及面试
@@ -60,8 +62,12 @@
 ## About - 关于本文档
 
 - 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-excercise
-- 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发gitbook的编译。
-- 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。dd
+- 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发gitbook的编译，编译状态 - [![Build Status](https://travis-ci.org/billryan/algorithm-excercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-excercise)
+    1. Read on the [website](http://algorithm.yuanbin.me). **Recommended**
+    2. [PDF](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm)
+    3. [EPUB](https://www.gitbook.com/download/epub/book/yuanbin/algorithm)
+    4. [MOBI](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm)
+- 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。
 - 本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 进行授权。你可以在github中star本项目查看更新。
 
 主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.jiuzhang.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
