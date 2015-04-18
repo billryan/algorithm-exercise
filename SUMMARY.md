@@ -52,6 +52,8 @@
    * [Binary Tree Level Order Traversal](binary_tree/binary_tree_level_order_traversal.md)
    * [Maximum Depth of Binary Tree](binary_tree/maximum_depth_of_binary_tree.md)
    * [Balanced Binary Tree](binary_tree/balanced_binary_tree.md)
+* [Binary Search Tree - 二叉搜索树](binary_search_tree/README.md)
+   * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
 * [Backtracking - 回溯法](backtracking/backtracking.md)
    * [Subsets](backtracking/subsets.md)
    * [Permutation](backtracking/permutation.md)
@@ -69,6 +71,4 @@
    * [Single Number](bit_manipulation/single_number.md)
    * [Single Number II](bit_manipulation/single_number_ii.md)
    * [Single Number III](bit_manipulation/single_number_iii.md)
-* [Binary Search Tree](binary_search_tree/README.md)
-   * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
 
