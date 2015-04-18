@@ -65,6 +65,10 @@ public:
 
 分三种情况遍历比较。
 
+#### Challenge
+
+两个倒排列表，一个特别大，一个特别小，如何 Merge？此时应该考虑用一个二分法插入小的，即内存拷贝。
+
 ## Merge Sorted Array II
 
 Question: [(64) Merge Sorted Array II](http://www.lintcode.com/en/problem/merge-sorted-array-ii/)
@@ -84,6 +88,38 @@ After merge, A will be filled as [1,2,3,4,5]
 ### 题解
 
 在上题的基础上加入了in-place的限制。将上题的新数组视为length相对较大的数组即可，仍然从数组末尾进行归并，取出较大的元素。
+
+#### Java
+```java
+class Solution {
+    /**
+     * @param A: sorted integer array A which has m elements,
+     *           but size of A is m+n
+     * @param B: sorted integer array B which has n elements
+     * @return: void
+     */
+    public void mergeSortedArray(int A[], int m, int B[], int n) {
+        int index = n + m;
+
+        while (m > 0 && n > 0) {
+            if (A[m - 1] > B[n - 1]) {
+                A[--index] = A[--m];
+            } else {
+                A[--index] = B[--n];
+            }
+        }
+        while (n > 0) {
+            A[--index] = B[--n];
+        }
+        while (m > 0) {
+            A[--index] = A[--m];
+        }
+    }
+};
+```
+#### 源码分析
+
+1. 因为本题有了 in-place 的限制，则必须从数组末尾的两个元素开始比较；否则就会产生挪动，一旦挪动就会是 O(n^2) 的。
 
 #### C++
 
