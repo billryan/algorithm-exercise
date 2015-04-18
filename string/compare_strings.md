@@ -2,6 +2,8 @@
 
 ## strstr
 
+Question: [lintcode - (13) strstr](http://www.lintcode.com/zh-cn/problem/strstr/)
+
 ```
 strstr (a.k.a find sub string), is a useful function in string operation. You task is to implement this function.
 
@@ -33,6 +35,49 @@ Do I need to implement KMP Algorithm in an interview?
 /**
  * http://www.jiuzhang.com//solutions/implement-strstr
  */
+class Solution {
+    /**
+     * Returns a index to the first occurrence of target in source,
+     * or -1  if target is not part of source.
+     * @param source string to be scanned.
+     * @param target string containing the sequence of characters to match.
+     */
+    public int strStr(String source, String target) {
+        if (source == null || target == null) {
+            return -1;
+        }
+        
+        int i, j;
+        for (i = 0; i < source.length() - target.length() + 1; i++) {
+            for (j = 0; j < target.length(); j++) {
+                if (source.charAt(i + j) != target.charAt(j)) {
+                    break;
+                } //if
+            } //for j
+            if (j == target.length()) {
+                return i;
+            }
+        } //for i
+
+        // did not find the target
+        return -1;
+    }
+}
+```
+
+#### 源码分析
+
+1. 边界检查：`source`和`target`有可能是空串。
+2. 边界检查之下标溢出：注意变量`i`的循环判断条件，如果是单纯的`i < source.length()`则在后面的`source.charAt(i + j)`时有可能溢出。
+2. 代码风格：（1）运算符`==`两边应加空格；（2）变量名不要起`s1``s2`这类，要有意义，如`target``source`；（3）即使if语句中只有一句话也要加大括号，即`{return -1;}`；（4）Java 代码的大括号一般在同一行右边，C++ 代码的大括号一般另起一行；（5）`int i, j;`声明前有一行空格，是好的代码风格。
+3. 不要在for的条件中声明`i`,`j`，容易在循环外再使用时造成编译错误，错误代码示例：
+
+### Another Similar Question
+
+```java
+/**
+ * http://www.jiuzhang.com//solutions/implement-strstr
+ */
 public class Solution {
     public String strStr(String haystack, String needle) {
         if(haystack == null || needle == null) {
@@ -53,6 +98,7 @@ public class Solution {
     }
 }
 ```
+
 
 ## Compare Strings
 
