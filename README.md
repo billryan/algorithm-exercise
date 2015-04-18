@@ -1,5 +1,7 @@
 # leetcode/lintcode题解/算法学习笔记
 
+[![Build Status](https://travis-ci.org/billryan/algorithm-excercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-excercise)
+
 一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯。本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
 ## 如何准备算法及面试
@@ -33,7 +35,8 @@
 
 1. [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选比较方便，还可以在`source`处选择cc150或者其他来源的题。目前会根据系统locale选择中文或者英文，评判时也比leetcode快，总之是比较赞啦
 2. [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，相应的题解非常多
-3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解
+3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解。
+4. [FreeTymeKiyan/LeetCode-Sol-Res](https://github.com/FreeTymeKiyan/LeetCode-Sol-Res) - Clean, Understandable Solutions and Resources on LeetCode Online Judge Algorithms Problems.
 4. [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解
 5. [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞
 6. [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
@@ -41,9 +44,11 @@
 
 ### 其他资源
 
-- [有哪些学习算法的网站推荐？ - 知乎](http://www.zhihu.com/question/20368410)
-- [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.jiuzhang.com/) - 代码质量不错，整理地也很好。
-- [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导
+- [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.jiuzhang.com/) - 代码质量不错，整理得也很好。
+- [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导。
+- [刷题 | 一亩三分地论坛](http://www.1point3acres.com/bbs/forum-84-1.html) - 时不时就会有惊喜放出。
+- [VisuAlgo - visualising data structures and algorithms through animation](http://www.comp.nus.edu.sg/~stevenha/visualization/index.html) - 相当碉堡的数据结构和算法可视化。
+- [Data Structure Visualization](http://www.cs.usfca.edu/~galles/visualization/Algorithms.html) - 同上，非常好的动画演示！！涵盖了常用的各种数据结构/排序/算法。
 - [结构之法 算法之道](http://blog.csdn.net/v_JULY_v) - 不得不服！
 - [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
 - [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
@@ -60,8 +65,12 @@
 ## About - 关于本文档
 
 - 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-excercise
-- 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发gitbook的编译。
-- 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。dd
+- 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发gitbook的编译，编译状态 - [![Build Status](https://travis-ci.org/billryan/algorithm-excercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-excercise)
+    1. Read on the [website](http://algorithm.yuanbin.me). **Recommended**
+    2. [PDF](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm)
+    3. [EPUB](https://www.gitbook.com/download/epub/book/yuanbin/algorithm)
+    4. [MOBI](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm)
+- 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。
 - 本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 进行授权。你可以在github中star本项目查看更新。
 
 主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.jiuzhang.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
