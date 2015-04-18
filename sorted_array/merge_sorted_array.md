@@ -20,6 +20,41 @@ How can you optimize your algorithm if one array is very large and the other is 
 
 逐个比较两个数组内的元素，取较大的置于新数组尾部元素中。
 
+#### Java
+
+```java
+class Solution {
+    /**
+     * @param A and B: sorted integer array A and B.
+     * @return: A new sorted integer array
+     */
+    public ArrayList<Integer> mergeSortedArray(ArrayList<Integer> A, ArrayList<Integer> B) {
+        // write your code here
+        int aLen = A.size();
+        int bLen = B.size();
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        int i = 0, j = 0;
+        while (i < aLen || j < bLen) {
+            if (i == aLen) {
+                res.add(B.get(j++));
+                continue;
+            } else if (j == bLen) {
+                res.add(A.get(i++));
+                continue;
+            }
+
+            if (A.get(i) < B.get(j)) {
+                res.add(A.get(i++));
+            } else {
+                res.add(B.get(j++));
+            }
+        }
+        return res;
+    }
+}
+```
+
 #### C++
 
 ```c++
@@ -119,7 +154,7 @@ class Solution {
 ```
 #### 源码分析
 
-1. 因为本题有了 in-place 的限制，则必须从数组末尾的两个元素开始比较；否则就会产生挪动，一旦挪动就会是 O(n^2) 的。
+1. 因为本题有了 in-place 的限制，则必须从数组末尾的两个元素开始比较；否则就会产生挪动，一旦挪动就会是 $$O(n^2)$$ 的。
 
 #### C++
 
