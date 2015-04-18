@@ -69,4 +69,6 @@
    * [Single Number](bit_manipulation/single_number.md)
    * [Single Number II](bit_manipulation/single_number_ii.md)
    * [Single Number III](bit_manipulation/single_number_iii.md)
+* [Binary Search Tree](binary_search_tree/README.md)
+   * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
 
