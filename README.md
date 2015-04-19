@@ -65,11 +65,11 @@
 ## About - 关于本文档
 
 - 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-excercise
-- 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发gitbook的编译，编译状态 - [![Build Status](https://travis-ci.org/billryan/algorithm-excercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-excercise)
+- 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发gitbook的编译，编译状态 - [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
     1. Read on the [website](http://algorithm.yuanbin.me). **Recommended**
-    2. [PDF](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm)
-    3. [EPUB](https://www.gitbook.com/download/epub/book/yuanbin/algorithm)
-    4. [MOBI](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm)
+    2. [PDF](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm) - Recommended for Desktop
+    3. [EPUB](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - Recommended for iPhone/iPad
+    4. [MOBI](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Recommended for Kindle
 - 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。
 - 本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 进行授权。你可以在github中star本项目查看更新。
 
