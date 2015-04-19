@@ -4,6 +4,7 @@
     "dependencies": {
         "gitbook-plugin-disqus": "*",
         "gitbook-plugin-ga": "*",
-        "gitbook-plugin-katex": "*"
+        "gitbook-plugin-katex": "*",
+        "gitbook-plugin-richquotes": "*"
     }
 }
