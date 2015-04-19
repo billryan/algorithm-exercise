@@ -79,7 +79,7 @@ private:
             return;
         }
 
-        if ((NULL != root->left) && (root->val >= k1)) {
+        if ((NULL != root->left) && (root->val > k1)) {
             inorder_dfs(ret, root->left, k1, k2);
         } // cut-off for left sub tree
 
@@ -87,7 +87,7 @@ private:
             ret.push_back(root->val);
         } // add valid value
 
-        if ((NULL != root->right) && (root->val <= k2)) {
+        if ((NULL != root->right) && (root->val < k2)) {
             inorder_dfs(ret, root->right, k1, k2);
         } // cut-off for right sub tree
     }
