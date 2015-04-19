@@ -11,7 +11,7 @@ before_install:
   - git clone --depth=10 --branch=master git://github.com/billryan/algorithm-exercise.git
 
 script:
-  - cd algorithm-excercise
+  - cd algorithm-exercise
   - gitbook build ./ --format=json
   - gitbook build
 
