@@ -2,7 +2,8 @@
     "plugins": [
         "disqus",
         "ga",
-        "katex"
+        "katex",
+        "richquotes"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -10,6 +11,9 @@
         },
         "ga": {
             "token": "UA-32317667-7"
+        },
+        "richquotes": {
+            "todos": true
         }
     }
 }
