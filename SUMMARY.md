@@ -55,6 +55,7 @@
 * [Binary Search Tree - 二叉搜索树](binary_search_tree/README.md)
    * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
    * [Validate Binary Search Tree](binary_search_tree/validate_binary_search_tree.md)
+   * [Binary Tree Maximum Path Sum](binary_search_tree/binary_tree_maximum_path_sum.md)
 * [Backtracking - 回溯法](backtracking/backtracking.md)
    * [Subsets](backtracking/subsets.md)
    * [Permutation](backtracking/permutation.md)
