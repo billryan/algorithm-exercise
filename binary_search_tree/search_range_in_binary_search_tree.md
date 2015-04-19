@@ -1,6 +1,6 @@
 # Search Range in Binary Search Tree
 
-Question: [(11) Search Range in Binary Search Tree](http://www.lintcode.com/en/problem/search-range-in-binary-search-tree/) </i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+Question: [(11) Search Range in Binary Search Tree](http://www.lintcode.com/en/problem/search-range-in-binary-search-tree/) <i class="fa fa-star"></i><i class="fa fa-star"></i>
 
 ```
 Given two values k1 and k2 (where k1 < k2) and a root pointer to a Binary Search Tree.
