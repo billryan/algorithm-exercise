@@ -40,7 +40,7 @@ after_success:
   - tar cvzf algorithm_html.tar.gz algorithm_html/
   - cp algorithm_html.tar.gz upload/
   # upload to qiniu
-  - ../qrsync ../qiniu_sync.json
+  - ./qrsync ../qiniu_sync.json
 
 branches:
   only:
