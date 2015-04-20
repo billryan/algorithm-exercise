@@ -5,6 +5,7 @@
         "gitbook-plugin-disqus": "*",
         "gitbook-plugin-ga": "*",
         "gitbook-plugin-katex": "*",
-        "gitbook-plugin-richquotes": "*"
+        "gitbook-plugin-richquotes": "*",
+        "gitbook-plugin-yahei": "*"
     }
 }
