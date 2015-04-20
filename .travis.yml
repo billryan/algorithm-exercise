@@ -18,20 +18,28 @@ before_script:
   # install qiniu sync
   - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
   - tar xfz qiniu-devtools-linux_amd64-current.tar.gz
-  # download qiniu sync json
-  - wget --no-check-certificate https://gist.githubusercontent.com/billryan/5a1ea08ab8e7470bf24e/raw/520b280985594e45568f51865bfa6cc9bb944a73/qiniu_sync
-
+  - cp algorithm-exercise/conf/qiniu_sync.json ./
 
 script:
   # replace with real key
-  - sed -i "s/AccessKey/$QAK/g" qiniu_sync
-  - sed -i "s/SecretKey/$QSK/g" qiniu_sync
-  - mkdir -p /root/upload
+  - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
+  - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
+  - mkdir -p ./upload
+  - mkdir -p ./algorithm_html
   - cd algorithm-exercise
   - gitbook build ./ --format=json
-  - gitbook build
-  - gitbook pdf ./ /root/upload/algorithm.pdf
-  - ../qrsync ../qiniu_sync
+  - gitbook pdf ./ ../upload/algorithm.pdf
+  - gitbook epub ./ ../upload/algorithm.epub
+  - gitbook mobi ./ ../upload/algorithm.mobi
+  - gitbook build ./ --output=../algorithm_html
+
+after_success:
+  # copy website html files to upload
+  - cd ../
+  - tar cvzf algorithm_html.tar.gz algorithm_html/
+  - cp algorithm_html.tar.gz upload/
+  # upload to qiniu
+  - ../qrsync ../qiniu_sync.json
 
 branches:
   only:
