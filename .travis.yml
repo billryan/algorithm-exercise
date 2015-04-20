@@ -15,12 +15,23 @@ before_install:
 before_script:
   # install calibre latest version
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+  # install qiniu sync
+  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
+  - tar xfz qiniu-devtools-linux_amd64-current.tar.gz
+  # download qiniu sync json
+  - wget --no-check-certificate https://gist.githubusercontent.com/billryan/5a1ea08ab8e7470bf24e/raw/520b280985594e45568f51865bfa6cc9bb944a73/qiniu_sync
+
 
 script:
+  # replace with real key
+  - sed -i "s/AccessKey/$QAK/g" qiniu_sync
+  - sed -i "s/SecretKey/$QSK/g" qiniu_sync
+  - mkdir -p /root/upload
   - cd algorithm-exercise
   - gitbook build ./ --format=json
   - gitbook build
-  - gitbook pdf ./ ./algorithm.pdf
+  - gitbook pdf ./ /root/upload/algorithm.pdf
+  - ../qrsync ../qiniu_sync
 
 branches:
   only:
