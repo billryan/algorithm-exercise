@@ -4,16 +4,23 @@ node_js:
   - "stable"
 
 before_install:
+  # update first
+  - sudo apt-get update -qq
+  - sudo apt-get install -y ttf-wqy-microhei
   # Install Gitbook
   - npm install gitbook-cli -g
   # Clone the repository
-  - git clone https://github.com/hexojs/hexojs.github.io .deploy
   - git clone --depth=10 --branch=master git://github.com/billryan/algorithm-exercise.git
+
+before_script:
+  # install calibre latest version
+  - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 script:
   - cd algorithm-exercise
   - gitbook build ./ --format=json
   - gitbook build
+  - gitbook pdf ./ ./algorithm.pdf
 
 branches:
   only:
