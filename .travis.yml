@@ -6,7 +6,8 @@ node_js:
 before_install:
   # update first
   - sudo apt-get update -qq
-  - sudo apt-get install -y ttf-wqy-microhei
+  # install sans and serif Chinese fonts
+  - sudo apt-get install -y ttf-wqy-microhei fonts-arphic-gbsn00lp
   # Install Gitbook
   - npm install gitbook-cli -g
   # Clone the repository
