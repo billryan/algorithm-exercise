@@ -3,7 +3,8 @@
         "disqus",
         "ga",
         "katex",
-        "richquotes"
+        "richquotes",
+        "yahei"
     ],
     "pluginsConfig": {
         "disqus": {
