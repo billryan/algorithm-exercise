@@ -32,7 +32,7 @@ script:
   - gitbook build ./ --format=json
   - gitbook build ./ 
   - gitbook pdf ./ ~/upload/algorithm_billryan_print.pdf
-  - gitbook epub ./ ~/upload/algorithm_bilryan.epub
+  - gitbook epub ./ ~/upload/algorithm_billryan.epub
   - gitbook mobi ./ ~/upload/algorithm_billryan.mobi
 
 after_success:
