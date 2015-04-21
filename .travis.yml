@@ -62,17 +62,16 @@ after_success:
   # update fonts
   - cd ~
   - cp ~/algorithm-exercise/conf/10-latin.conf ~/.fonts/fontconfig/conf.d/
+  - cp ~/algorithm-exercise/conf/15-noto-cjksc.conf ~/.fonts/fontconfig/conf.d/
   - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
   - sudo fc-cache -f -v
   # generate different locales
   - sudo locale-gen zh_CN.UTF-8
-  # debug
-  - pwd
   - cd ~/algorithm-exercise
   - export LANG=zh_CN.UTF-8
   - gitbook pdf ./ ~/upload/algorithm_billryan_desktop.pdf
+  - gitbook epub ./ ~/upload/algorithm_billryan_noto.epub
   - ~/qrsync ~/qiniu_sync.json
-  - echo $LANG
 
 branches:
   only:
