@@ -11,6 +11,7 @@ before_install:
   # Install Gitbook
   - npm install gitbook-cli -g
   # Clone the repository
+  - cd ~
   - git clone --depth=10 --branch=master git://github.com/billryan/algorithm-exercise.git
 
 before_script:
@@ -19,14 +20,14 @@ before_script:
   # install qiniu sync
   - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
   - tar xfz qiniu-devtools-linux_amd64-current.tar.gz
-  - cp algorithm-exercise/conf/qiniu_sync.json ./
+  - cp algorithm-exercise/conf/qiniu_sync.json ~/
 
 script:
   # replace with real key
   - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
   - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
-  - mkdir -p ./upload
-  - cd algorithm-exercise
+  - mkdir -p ~/upload
+  - cd ~/algorithm-exercise
   - gitbook install
   - gitbook build ./ --format=json
   - gitbook pdf ./ ../upload/algorithm_billryan_print.pdf
@@ -35,12 +36,12 @@ script:
 
 after_success:
   # copy website html files to upload
-  - tar cvzf algorithm_html.tar.gz _book/
+  - tar czf algorithm_billryan_html.tar.gz _book/
   - cp algorithm_bilryan_html.tar.gz ../upload/
   # upload to qiniu
-  - ../qrsync ../qiniu_sync.json
+  - ~/qrsync ~/qiniu_sync.json
   # cd ~
-  - cd
+  - cd ~
   # install source code pro
   - mkdir -p /tmp/code_pro
   - cd /tmp/code_pro/
@@ -59,16 +60,19 @@ after_success:
   - mkdir -p ~/.fonts/noto
   - mv *.otf ~/.fonts/noto
   # update fonts
-  - cd 
-  - cp algorithm-exercise/conf/10-latin.conf ~/.fonts/fontconfig/conf.d/
-  - cp algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
+  - cd ~
+  - cp ~/algorithm-exercise/conf/10-latin.conf ~/.fonts/fontconfig/conf.d/
+  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
   - sudo fc-cache -f -v
   # generate different locales
   - sudo locale-gen zh_CN.UTF-8
-  - cd algorithm-exercise
-  - export $LANG="zh_CN.UTF-8"
-  - gitbook pdf ./ ../upload/algorithm_billryan_desktop.pdf
-  - ../qrsync ../qiniu_sync.json
+  # debug
+  - pwd
+  - cd ~/algorithm-exercise
+  - export LANG=zh_CN.UTF-8
+  - gitbook pdf ./ ~/upload/algorithm_billryan_desktop.pdf
+  - ~/qrsync ~/qiniu_sync.json
+  - echo $LANG
 
 branches:
   only:
