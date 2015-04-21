@@ -6,8 +6,8 @@ node_js:
 before_install:
   # update first
   - sudo apt-get update -qq
-  # install sans and serif Chinese fonts
-  - sudo apt-get install -y ttf-wqy-microhei fonts-arphic-gbsn00lp
+  # install Chinese fonts
+  - sudo apt-get install -y fonts-arphic-gbsn00lp
   # Install Gitbook
   - npm install gitbook-cli -g
   # Clone the repository
@@ -26,32 +26,49 @@ script:
   - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
   - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
   - mkdir -p ./upload
-  - mkdir -p ./algorithm_html
   - cd algorithm-exercise
+  - gitbook install
   - gitbook build ./ --format=json
-  - gitbook pdf ./ ../upload/algorithm.pdf
-  - gitbook epub ./ ../upload/algorithm.epub
-  - gitbook mobi ./ ../upload/algorithm.mobi
-  - gitbook build ./ --output=../algorithm_html
+  - gitbook pdf ./ ../upload/algorithm_billryan_print.pdf
+  - gitbook epub ./ ../upload/algorithm_bilryan.epub
+  - gitbook mobi ./ ../upload/algorithm_billryan.mobi
 
 after_success:
   # copy website html files to upload
-  - cd ../
-  - tar cvzf algorithm_html.tar.gz algorithm_html/
-  - cp algorithm_html.tar.gz upload/
+  - tar cvzf algorithm_html.tar.gz _book/
+  - cp algorithm_bilryan_html.tar.gz ../upload/
   # upload to qiniu
-  - ./qrsync ./qiniu_sync.json
-  # test for source hans pro fonts
+  - ../qrsync ../qiniu_sync.json
+  # cd ~
+  - cd
+  # install source code pro
+  - mkdir -p /tmp/code_pro
+  - cd /tmp/code_pro/
+  - wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz
+  - tar xzf 1.017R.tar.gz
+  - mkdir -p ~/.fonts/fontconfig/conf.d/
+  - cp source-code-pro-1.017R/OTF/*.otf ~/.fonts/
+  - sudo fc-cache -f -v
+  # install google noto Simplified Chinese
   - mkdir -p /tmp/noto
   - cd /tmp/noto
-  - wget http://www.google.com/get/noto/pkgs/Noto-hinted.zip
-  - unzip Noto-hinted.zip
+  - wget https://www.google.com/get/noto/pkgs/NotoSansCJKSC-hinted.zip 
+  - https://www.google.com/get/noto/pkgs/NotoSerif-unhinted.zip
+  - unzip NotoSansCJKSC-hinted.zip
+  - unzip NotoSerif-unhinted.zip
   - mkdir -p ~/.fonts/noto
   - mv *.otf ~/.fonts/noto
-  - cd /tmp
-  - wget -O fonts.conf https://gist.githubusercontent.com/ingramchen/21533bbfc0d2dead94a7/raw/c750592f750cb446f6a6a19d75892c7d2fb5395f/gistfile1.xml
-  - cp -i fonts.conf ~/.fonts.conf
+  # update fonts
+  - cd 
+  - cp algorithm-exercise/conf/10-latin.conf ~/.fonts/fontconfig/conf.d/
+  - cp algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
   - sudo fc-cache -f -v
+  # generate different locales
+  - sudo locale-gen zh_CN.UTF-8
+  - cd algorithm-exercise
+  - export $LANG="zh_CN.UTF-8"
+  - gitbook pdf ./ ../upload/algorithm_billryan_desktop.pdf
+  - ../qrsync ../qiniu_sync.json
 
 branches:
   only:
