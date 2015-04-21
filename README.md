@@ -35,12 +35,28 @@
 
 1. [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选比较方便，还可以在`source`处选择cc150或者其他来源的题。目前会根据系统locale选择中文或者英文，评判时也比leetcode快，总之是比较赞啦
 2. [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，相应的题解非常多
-3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解。
+3. [leetcode/lintcode题解/算法学习笔记 | billryan](http://algorithm.yuanbin.me) - 恬不知耻地贴上了作为CS门外汉刷题的总结和笔记，求大神们轻拍。
+3. [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解，但部分题目不全。
 4. [FreeTymeKiyan/LeetCode-Sol-Res](https://github.com/FreeTymeKiyan/LeetCode-Sol-Res) - Clean, Understandable Solutions and Resources on LeetCode Online Judge Algorithms Problems.
-4. [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解
-5. [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞
+4. [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解。
+5. [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞。
 6. [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
 7. [牛客网-专业IT笔试面试备考平台,最全求职题库,全面提升IT编程能力](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
+
+### 面试相关
+
+本小节部分摘自九章微信的分享。
+
+- [www.geeksforgeeks.org](http://www.geeksforgeeks.org/) -  非常著名的漏题网站之一。上面会时不时的有各种公司的面试真题漏出。有一些题也会有解法分析。
+- [Programming Interview Questions | CareerCup](http://www.careercup.com/) -  CC150作者搞的网站，也是著名的漏题网站之一。大家会在上面讨论各个公司的面试题。
+- [Glassdoor – Get Hired. Love Your Job.](http://www.glassdoor.com/index.htm) - 一个给公司打分的网站，类似yelp的公司版。会有一些人在上面讨论面试题，适合你在面某个公司的时候专门去看一下。
+- [面经网 | 汇集热气腾腾的求职咨询](http://www.themianjing.com/) - 面经网。应该是个人经营的一个积累面经的网站。面经来源主要是一亩三分地，mitbbs之类的地方。
+- [一亩三分地论坛-美国加拿大留学申请|工作就业|英语考试|学习生活信噪比最高的网站](http://www.1point3acres.com/bbs/) - 人气非常高的论坛。
+- [待字闺中(JobHunting)版 | 未名空间(mitbbs.com)](http://www.mitbbs.com/bbsdoc/JobHunting.html)  jobhunting版，美华人找工作必上。
+- [程序员面试：电话面试问答Top 50 - 博客 - 伯乐在线](http://blog.jobbole.com/84618/) - 其实不仅仅只是 Top 50，扩展连接还给出了其他参考。
+- [如何写好技术简历 —— 实例、模板及工具 | @Get社区](http://get.jobdeer.com/744.get) - 挺不错的技术简历实战。
+- [想加入硅谷顶级科技公司，你该知道这些-LinkedIn中国](http://www.vhao123.com/t/LinkedIn-China/519524) - 数据工程师董飞的求职分享。
+- [求职在美国，面试攻略我知道 on Vimeo](https://vimeo.com/113182965) - Coursera 数据工程师董飞的视频分享。
 
 ### 其他资源
 
@@ -52,28 +68,34 @@
 - [结构之法 算法之道](http://blog.csdn.net/v_JULY_v) - 不得不服！
 - [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
 - [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
-- [POJ的部分题解 - Category: POJ | Beeder's Blog](http://beeder.me/categories/POJ/)
 - [专栏：算法笔记——《算法设计与分析》](http://blog.csdn.net/column/details/lf-algoritnote.html) - CSDN上对《算法设计与分析》一书的学习笔记。
-- [算法练习 | billryan](http://algorithm.yuanbin.me) - 恬不知耻地贴上了作为CS门外汉刷题的总结和笔记，求大神们轻拍
 
 ### 书籍推荐
+
+本节后三项参考自九章微信分享，谢过。
 
 - [Algorithm Design (豆瓣)](http://book.douban.com/subject/1475870/)
 - [The Algorithm Design Manual](http://www.amazon.com/exec/obidos/ASIN/1848000693/thealgorithmrepo), 作者还放出了自己上课的视频和slides - [Skiena's Audio Lectures](http://www3.cs.stonybrook.edu/~algorith/video-lectures/)，[The Algorithm Design Manual (豆瓣)](http://book.douban.com/subject/3072383/)
 - 大部头有 *Introduction to Algorithm* 和 TAOCP
+- *Cracking The Coding Interview*. 著名的CC150，Google, Mircosoft, LinkedIn 前HR离职之后写的书，从很全面的角度剖析了面试的各个环节和题目。之所以叫CC150就是有150道面试题，除了算法数据结构等题以外，还包含OO Design, Database, System Design, Brain Teaser等类型的题目。准备北美面试的同学一定要看。
+- *剑指Offer*。适合国内找工作的同学看看，英文版叫Coding Interviews. 作者是何海涛(Harry He)。Amazon上可以买到。有大概50多题，题目的分析比较全面，会从面试官的角度给出很多的建议和show各种坑。
+- *进军硅谷* -- 程序员面试揭秘。有差不多150题。
 
 ## About - 关于本文档
 
-- 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-excercise
+主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.jiuzhang.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
+
+- 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-exercise 你可以在github中star本项目查看更新。
 - 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发gitbook的编译，编译状态 - [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
     1. Read on the [website](http://algorithm.yuanbin.me). **Recommended**
-    2. [PDF](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm) - Recommended for Desktop
-    3. [EPUB](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - Recommended for iPhone/iPad
-    4. [MOBI](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Recommended for Kindle
+    2. [PDF](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm) - Recommended for Desktop. 中文字型还有问题，不建议下载。
+    3. [EPUB](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - Recommended for iPhone/iPad. 最适合离线查看的。
+    4. [MOBI](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Recommended for Kindle. 未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
 - 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。
-- 本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 进行授权。你可以在github中star本项目查看更新。
 
-主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.jiuzhang.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
+### License
+
+本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) - (知识共享署名-相同方式共享 4.0 国际许可协议)进行许可，**欢迎 fork 和传播本文档，但是请注意使用的协议。**
 
 ### Contribution - 如何贡献本文档
 
@@ -143,3 +165,13 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 图片统一存放在`figure`目录下，其他附件存放在`docs`目录下。引用图片链接一般可以通过`![Caption](../figure/xxx.png)`声明。
 
 图片体积太大不利于页面加载，建议先压缩后再放入，如果是png图片可考虑使用 [TinyPNG – Compress PNG images while preserving transparency](https://tinypng.com/)
+
+## To-Do
+
+- [ ] 探索适合用于后期批处理的书写及排版格式。
+- [ ] 完善 leetcode/lintcode 部分 C++, Java, Python 三大语言的实现。
+- [ ] Part I 部分基础知识的总结。
+- [ ] CC150 书中题目及基础知识的引入。
+- [ ] 添加一些较好的最近面试真题。
+- [x] 完善在线版本 http://algorithm.yuanbin.me 的 css, 使用 yahei 插件初步达到目标。
+- [ ] 完善离线版本如 PDF(适合打印的字型) 的中文支持。
