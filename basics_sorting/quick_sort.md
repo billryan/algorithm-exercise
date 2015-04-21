@@ -8,7 +8,7 @@
 
 先来一张动图看看快速排序的过程。
 
-![Quick Sort Animation](../figure/quicksort_example.gif)
+![Quick Sort Animation](../images/quicksort_example.gif)
 
 1. 选中`3`作为基准
 2. `lo`指针指向元素`6`, `hi`指针指向`4`, 移动`lo`直至其指向的元素大于等于`3`, 移动`hi`直至其指向的元素小于`3`。找到后交换`lo`和`hi`指向的元素——交换元素`6`和`2`。

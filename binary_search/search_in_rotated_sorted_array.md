@@ -2,7 +2,7 @@
 
 对于旋转数组的分析可使用画图的方法，如下图所示，升序数组经旋转后可能为如下两种形式。
 
-![Rotated Array](../figure/rotated_array.png)
+![Rotated Array](../images/rotated_array.png)
 
 Question: [(62) Search in Rotated Sorted Array](http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/)
 

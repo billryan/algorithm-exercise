@@ -7,7 +7,7 @@
 
 下图来源为 [File:Selection-Sort-Animation.gif - IB Computer Science](http://wiki.ibcsstudent.org/index.php?title=File:Selection-Sort-Animation.gif) 
 
-![Selection Sort](../figure/selection_sort.gif)
+![Selection Sort](../images/selection_sort.gif)
 
 
 实现：

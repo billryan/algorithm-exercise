@@ -71,7 +71,7 @@ class Solution {
 
 回溯法可用图示和函数运行的堆栈图来理解，强烈建议**使用图形和递归的思想**分析，以数组`[1, 2, 3]`进行分析。下图所示为`list`及`result`动态变化的过程，箭头向下表示`list.add`及`result.add`操作，箭头向下表示`list.remove`操作。
 
-![Subsets运行递归调用图](../figure/subsets.jpg)
+![Subsets运行递归调用图](../images/subsets.jpg)
 
 如果你不相信以上的图形化分析，还可以自己在纸上分析代码的调用关系，下面以数组`[1,2]`为例分析回溯法的调用栈。
 

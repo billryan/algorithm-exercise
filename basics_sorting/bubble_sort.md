@@ -3,7 +3,7 @@
 核心：**冒泡**，持续比较相邻元素，大的挪到后面，因此大的会逐步往后挪，故称之为冒泡。
 
 
-![Bubble Sort](../figure/bubble_sort.gif)
+![Bubble Sort](../images/bubble_sort.gif)
 
 ## Reference
 
