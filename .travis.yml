@@ -30,6 +30,7 @@ script:
   - cd ~/algorithm-exercise
   - gitbook install
   - gitbook build ./ --format=json
+  - gitbook build ./ 
   - gitbook pdf ./ ~/upload/algorithm_billryan_print.pdf
   - gitbook epub ./ ~/upload/algorithm_bilryan.epub
   - gitbook mobi ./ ~/upload/algorithm_billryan.mobi
