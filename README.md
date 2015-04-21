@@ -11,15 +11,17 @@
 - 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-exercise 你可以在github中star本项目查看更新。
 - 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发 gitbook 和 travis-ci 的编译，相应的编译输出下载链接提供Gitbook官网和七牛两种下载方式，七牛的链接中文显示比较好。
     1. Read on the [website](http://algorithm.yuanbin.me). **力荐**
-    2. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [七牛](http://docs4bill.qiniudn.com/doc/algorithm_billryan.epub) - Recommended for iPhone/iPad. 最适合离线查看。
+    2. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [七牛](http://docs4bill.qiniudn.com/doc/algorithm_billryan.epub) - Recommended for iPhone/iPad/MAC. 最适合离线查看，实测效果极好。
     3. 离线html. [七牛](http://docs4bill.qiniudn.com/doc/algorithm_billryan_html.tar.gz) - 解压后即为整个网站的内容，用于本地查看，目前内容更新频繁，不推荐下载。
-    4. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [七牛- 适合打印版](http://docs4bill.qiniudn.com/doc/algorithm_billryan_print.pdf), [七牛-适合电子阅读版](http://docs4bill.qiniudn.com/doc/algorithm_billryan_desktop.pdf) - Recommended for Desktop. 推荐下载七牛的版本。
+    4. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [七牛- 适合打印版](http://docs4bill.qiniudn.com/doc/algorithm_billryan_print.pdf) - Recommended for Desktop. 推荐下载七牛的版本。
     5. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [七牛](http://docs4bill.qiniudn.com/doc/algorithm_billryan.mobi) - Recommended for Kindle. 未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
 - 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。
 
-### License
+### License(许可证)
 
-本文档使用 [Creative Commons — Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) - (知识共享署名-相同方式共享 4.0 国际许可协议)进行许可，**欢迎 fork 和传播本文档，但是请注意遵循以上许可协议。**
+![pic](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+如无特殊说明，本作品采用 [知识共享署名-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-sa/4.0/) 进行许可。**欢迎 fork 和传播本文档，但是请注意遵循以上许可协议。**
 
 ### Contribution - 如何贡献本文档
 
@@ -68,7 +70,7 @@
 
 #### 正文书写风格
 
-1. 中英文混排贯穿全文，优雅美观起见，尽可能在英文单词前后加空格。
+1. 中英文混排贯穿全文，优雅美观起见，尽可能在英文单词前后加空格，这个使能输入法的中英文间加入空格功能就好了。
 2. 代码的函数名或短代码建议使用 \`code\`
 3. 使用空行进行分段，嗯，markdown通用
 
