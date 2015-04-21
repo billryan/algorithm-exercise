@@ -30,14 +30,14 @@ script:
   - cd ~/algorithm-exercise
   - gitbook install
   - gitbook build ./ --format=json
-  - gitbook pdf ./ ../upload/algorithm_billryan_print.pdf
-  - gitbook epub ./ ../upload/algorithm_bilryan.epub
-  - gitbook mobi ./ ../upload/algorithm_billryan.mobi
+  - gitbook pdf ./ ~/upload/algorithm_billryan_print.pdf
+  - gitbook epub ./ ~/upload/algorithm_bilryan.epub
+  - gitbook mobi ./ ~/upload/algorithm_billryan.mobi
 
 after_success:
   # copy website html files to upload
   - tar czf algorithm_billryan_html.tar.gz _book/
-  - cp algorithm_bilryan_html.tar.gz ../upload/
+  - cp algorithm_bilryan_html.tar.gz ~/upload/
   # upload to qiniu
   - ~/qrsync ~/qiniu_sync.json
   # cd ~
