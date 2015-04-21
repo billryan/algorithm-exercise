@@ -22,7 +22,7 @@
 
 二叉树的广度优先遍历和树的前序/中序/后序遍历不太一样，前/中/后序遍历使用递归，也就是栈的思想对二叉树进行遍历，广度优先一般使用队列的思想对二叉树进行遍历。
 
-![Binary Tree Traversal](../figure/binary_tree_traversal.png)
+![Binary Tree Traversal](../images/binary_tree_traversal.png)
 
 ## 相关算法——递归法遍历
 

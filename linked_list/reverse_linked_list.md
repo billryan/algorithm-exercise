@@ -25,7 +25,7 @@ head = temp;
 
 要点在于维护两个指针变量`prev`和`head`. 分析如下图所示：
 
-![Reverse Linked List](../figure/reverse_linked_list_i.jpg)
+![Reverse Linked List](../images/reverse_linked_list_i.jpg)
 
 1. 保存head下一节点
 2. 将head所指向的下一节点改为prev
