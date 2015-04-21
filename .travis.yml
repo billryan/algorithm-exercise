@@ -71,7 +71,6 @@ after_success:
   - cd ~/algorithm-exercise
   - export LANG=zh_CN.UTF-8
   - gitbook pdf ./ ~/upload/algorithm_billryan_desktop.pdf
-  - gitbook epub ./ ~/upload/algorithm_billryan_noto.epub
   - ~/qrsync ~/qiniu_sync.json
 
 branches:
