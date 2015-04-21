@@ -1,5 +1,5 @@
 {
-    "src":          "./upload",
+    "src":          "/home/travis/upload",
     "dest":         "qiniu:access_key=AccessKey&secret_key=SecretKey&bucket=docs4bill&key_prefix=doc/",
     "deletable":    0,
     "debug_level":  1

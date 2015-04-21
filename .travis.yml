@@ -37,7 +37,7 @@ script:
 after_success:
   # copy website html files to upload
   - tar czf algorithm_billryan_html.tar.gz _book/
-  - cp algorithm_bilryan_html.tar.gz ~/upload/
+  - cp algorithm_billryan_html.tar.gz ~/upload/
   # upload to qiniu
   - ~/qrsync ~/qiniu_sync.json
   # cd ~
