@@ -41,37 +41,37 @@ after_success:
   - cp algorithm_billryan_html.tar.gz ~/upload/
   # upload to qiniu
   - ~/qrsync ~/qiniu_sync.json
-  # cd ~
-  - cd ~
-  # install source code pro
-  - mkdir -p /tmp/code_pro
-  - cd /tmp/code_pro/
-  - wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz
-  - tar xzf 1.017R.tar.gz
-  - mkdir -p ~/.fonts/fontconfig/conf.d/
-  - cp source-code-pro-1.017R/OTF/*.otf ~/.fonts/
-  - sudo fc-cache -f -v
-  # install google noto Simplified Chinese
-  - mkdir -p /tmp/noto
-  - cd /tmp/noto
-  - wget https://www.google.com/get/noto/pkgs/NotoSansCJKSC-hinted.zip 
-  - https://www.google.com/get/noto/pkgs/NotoSerif-unhinted.zip
-  - unzip NotoSansCJKSC-hinted.zip
-  - unzip NotoSerif-unhinted.zip
-  - mkdir -p ~/.fonts/noto
-  - mv *.otf ~/.fonts/noto
-  # update fonts
-  - cd ~
-  - cp ~/algorithm-exercise/conf/10-latin.conf ~/.fonts/fontconfig/conf.d/
-  - cp ~/algorithm-exercise/conf/15-noto-cjksc.conf ~/.fonts/fontconfig/conf.d/
-  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
-  - sudo fc-cache -f -v
-  # generate different locales
-  - sudo locale-gen zh_CN.UTF-8
-  - cd ~/algorithm-exercise
-  - export LANG=zh_CN.UTF-8
-  - gitbook pdf ./ ~/upload/algorithm_billryan_desktop.pdf
-  - ~/qrsync ~/qiniu_sync.json
+#  # cd ~
+#  - cd ~
+#  # install source code pro
+#  - mkdir -p /tmp/code_pro
+#  - cd /tmp/code_pro/
+#  - wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz
+#  - tar xzf 1.017R.tar.gz
+#  - mkdir -p ~/.fonts/fontconfig/conf.d/
+#  - cp source-code-pro-1.017R/OTF/*.otf ~/.fonts/
+#  - sudo fc-cache -f -v
+#  # install google noto Simplified Chinese
+#  - mkdir -p /tmp/noto
+#  - cd /tmp/noto
+#  - wget https://www.google.com/get/noto/pkgs/NotoSansCJKSC-hinted.zip 
+#  - https://www.google.com/get/noto/pkgs/NotoSerif-unhinted.zip
+#  - unzip NotoSansCJKSC-hinted.zip
+#  - unzip NotoSerif-unhinted.zip
+#  - mkdir -p ~/.fonts/noto
+#  - mv *.otf ~/.fonts/noto
+#  # update fonts
+#  - cd ~
+#  - cp ~/algorithm-exercise/conf/10-latin.conf ~/.fonts/fontconfig/conf.d/
+#  - cp ~/algorithm-exercise/conf/15-noto-cjksc.conf ~/.fonts/fontconfig/conf.d/
+#  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
+#  - sudo fc-cache -f -v
+#  # generate different locales
+#  - sudo locale-gen zh_CN.UTF-8
+#  - cd ~/algorithm-exercise
+#  - export LANG=zh_CN.UTF-8
+#  - gitbook pdf ./ ~/upload/algorithm_billryan_desktop.pdf
+#  - ~/qrsync ~/qiniu_sync.json
 
 branches:
   only:
