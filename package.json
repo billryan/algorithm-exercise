@@ -6,7 +6,6 @@
         "gitbook-plugin-ga": "*",
         "gitbook-plugin-katex": "*",
         "gitbook-plugin-richquotes": "*",
-        "gitbook-plugin-yahei": "*",
-        "gitbook-plugin-image-captions": "*"
+        "gitbook-plugin-yahei": "*"
     }
 }
