@@ -1,6 +1,6 @@
 # leetcode/lintcode题解/算法学习笔记
 
-[![Building Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
+[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
 
 一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯。本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
@@ -82,7 +82,7 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 4. 题解中的核心部分对应的代码，代码中不能明显看出来的逻辑和一些编程上常用的技巧。
 5. 如参考了其他资源，尽可能给出有用的参考链接，附简单的说明。
 
-感觉还不错的风格 - [raw binary_tree_preorder_traversal.md](https://raw.githubusercontent.com/billryan/algorithm-excercise/master/binary_tree/binary_tree_preorder_traversal.md)
+感觉还不错的风格 - [raw convert_sorted_list_to_binary_search_tree.md](https://raw.githubusercontent.com/billryan/algorithm-excercise/master/binary_search_tree/convert_sorted_list_to_binary_search_tree.md)
 
 通过github合作时，添加/修改内容时给出能看懂的commit就好了。暂时就想到这么多，其实没那么多讲究啦，感觉看着清楚就好，其他想到的再补充。:-)
 
