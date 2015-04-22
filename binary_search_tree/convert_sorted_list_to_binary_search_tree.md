@@ -1,5 +1,7 @@
 # Convert Sorted List to Binary Search Tree <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
 
+tags: linked list, binary tree, binary search tree, recursion
+
 ## Source
 
 - leetcode - [Convert Sorted List to Binary Search Tree | LeetCode OJ](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)
