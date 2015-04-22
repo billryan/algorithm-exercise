@@ -59,6 +59,7 @@
    * [Validate Binary Search Tree](binary_search_tree/validate_binary_search_tree.md)
    * [Search Range in Binary Search Tree](binary_search_tree/search_range_in_binary_search_tree.md)
    * [Convert Sorted Array to Binary Search Tree](binary_search_tree/convert_sorted_array_to_binary_search_tree.md)
+   * [Convert Sorted List to Binary Search Tree](binary_search_tree/convert_sorted_list_to_binary_search_tree.md)
 * [Backtracking - 回溯法](backtracking/backtracking.md)
    * [Subsets](backtracking/subsets.md)
    * [Permutation](backtracking/permutation.md)
