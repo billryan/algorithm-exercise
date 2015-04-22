@@ -2,7 +2,6 @@
 
 ## Source
 
-- lintcode -
 - leetcode - [Convert Sorted Array to Binary Search Tree | LeetCode OJ](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
 
 ```
