@@ -4,7 +4,8 @@
         "ga",
         "katex",
         "richquotes",
-        "yahei"
+        "yahei",
+        "image-captions"
     ],
     "pluginsConfig": {
         "disqus": {
