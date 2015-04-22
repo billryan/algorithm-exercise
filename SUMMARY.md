@@ -39,6 +39,8 @@
    * [Merge Two Sorted Lists](linked_list/merge_two_sorted_lists.md)
    * [Partition List](linked_list/partition_list.md)
    * [Remove Nth Node From End of List](linked_list/remove_nth_node_from_end_of_list.md)
+   * [Two Lists Sum](linked_list/two_lists_sum.md)
+   * [Two Lists Sum Advanced](linked_list/two_lists_sum_advanced.md)
 * [Reverse - 翻转法](reverse/README.md)
    * [Recover Rotated Sorted Array](reverse/recover_rotated_sorted_array.md)
    * [Rotate String](reverse/rotate_string.md)
