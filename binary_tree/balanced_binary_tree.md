@@ -1,10 +1,8 @@
 # Balanced Binary Tree
 
-
 ## Source
 
 - lintcode: [(93) Balanced Binary Tree](http://www.lintcode.com/en/problem/balanced-binary-tree/)
-
 
 ```
 Given a binary tree, determine if it is height-balanced.

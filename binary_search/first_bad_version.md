@@ -1,10 +1,8 @@
 # First Bad Version
 
-
 ## Source
 
 - lintcode: [(74) First Bad Version](http://www.lintcode.com/en/problem/first-bad-version/)
-
 
 ```
 The code base version is an integer and start from 1 to n. One day, someone commit a bad version in the code case, so it caused itself and the following versions are all failed in the unit tests.

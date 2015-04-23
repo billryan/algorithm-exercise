@@ -1,6 +1,5 @@
 # Remove Nth Node From End of List
 
-
 ## Source
 
 - lintcode: [(174) Remove Nth Node From End of List](http://www.lintcode.com/en/problem/remove-nth-node-from-end-of-list/)
@@ -80,7 +79,6 @@ public:
 ```
 
 以上代码单独判断了是否需要删除头节点的情况，在遇到头节点不确定的情况下，引入`dummy`节点将会使代码更加优雅，改进的代码如下。
-
 
 #### C++ dummy node
 

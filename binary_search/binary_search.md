@@ -1,10 +1,8 @@
 # Binary Search - 二分查找
 
-
 ## Source
 
 - lintcode: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
-
 
 ```
 Binary search is a famous question in algorithm.

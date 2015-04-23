@@ -1,10 +1,8 @@
 # Find Minimum in Rotated Sorted Array
 
-
 ## Source
 
 - lintcode: [(159) Find Minimum in Rotated Sorted Array](http://www.lintcode.com/en/problem/find-minimum-in-rotated-sorted-array/)
-
 
 ```
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
@@ -68,11 +66,9 @@ public:
 
 ## Find Minimum in Rotated Sorted Array II
 
-
 ## Source
 
 - lintcode: [(160) Find Minimum in Rotated Sorted Array II](http://www.lintcode.com/en/problem/find-minimum-in-rotated-sorted-array-ii/)
-
 
 ### 题解
 

@@ -1,6 +1,5 @@
 # Unique Paths
 
-
 ## Source
 
 - lintcode: [(114) Unique Paths](http://www.lintcode.com/en/problem/unique-paths/)
@@ -61,11 +60,9 @@ public:
 
 ## Unique Paths II
 
-
 ## Source
 
 - lintcode: [(115) Unique Paths II](http://www.lintcode.com/en/problem/unique-paths-ii/)
-
 
 ```
 Follow up for "Unique Paths":

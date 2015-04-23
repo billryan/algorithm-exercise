@@ -1,10 +1,8 @@
 # Reverse Words in a String
 
-
 ## Source
 
 - lintcode: [(53) Reverse Words in a String](http://www.lintcode.com/en/problem/reverse-words-in-a-string/)
-
 
 ```
 Given an input string, reverse the string word by word.

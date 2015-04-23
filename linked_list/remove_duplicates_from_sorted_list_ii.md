@@ -1,6 +1,5 @@
 # ￼Remove Duplicates from Sorted List II
 
-
 ## Source
 
 - lintcode: [(113) Remove Duplicates from Sorted List II](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list-ii/)
@@ -26,7 +25,6 @@ ListNode *node = dummy;
 与上题不同的是，由于此题引入了新的节点`dummy`，不可再使用`node->val == node->next->val`，因为`dummy->val`有可能与第一个节点的值相等。故在判断val是否相等时需先确定`node->next`和`node->next->next`均不为空，否则不可对其进行取值。
 
 说多了都是泪，先看看我的错误实现：
-
 
 #### C++ Wrong
 
@@ -86,7 +84,6 @@ public:
 图中上半部分为ListNode的内存示意图，每个框底下为其内存地址。`dummy`指针变量本身的地址为ox7fff5d0d2500，其保存着指针变量值为0x7fbe7bc04c50. `head`指针变量本身的地址为ox7fff5d0d2508，其保存着指针变量值为0x7fbe7bc04c00.
 
 好了，接下来看看正确实现及解析。
-
 
 #### C++
 

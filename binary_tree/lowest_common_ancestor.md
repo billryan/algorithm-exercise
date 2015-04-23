@@ -1,10 +1,8 @@
 # Lowest Common Ancestor
 
-
 ## Source
 
 - lintcode: [(88) Lowest Common Ancestor](http://www.lintcode.com/en/problem/lowest-common-ancestor/) <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
 
 ```
 Given the root and two nodes in a Binary Tree. Find the lowest common ancestor(LCA) of the two nodes.

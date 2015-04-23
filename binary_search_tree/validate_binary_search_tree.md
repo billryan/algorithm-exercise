@@ -1,10 +1,8 @@
 # Validate Binary Search Tree
 
-
 ## Source
 
 - lintcode: [(95) Validate Binary Search Tree](http://www.lintcode.com/en/problem/validate-binary-search-tree/)
-
 
 ```
 Given a binary tree, determine if it is a valid binary search tree (BST).
