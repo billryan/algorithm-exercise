@@ -17,7 +17,7 @@ Challenge
 Reverse it in-place and in one-pass
 ```
 
-### 题解
+## 题解
 
 此题在上题的基础上加了位置要求，只翻转指定区域的链表。由于链表头节点不确定，祭出我们的dummy杀器。此题边界条件处理特别tricky，需要特别注意。
 
@@ -26,7 +26,7 @@ Reverse it in-place and in one-pass
 3. 处理第m-1个和第n+1个节点
 4. 返回dummy->next
 
-#### C++
+### C++
 
 ```c++
 /**
@@ -88,7 +88,7 @@ public:
 };
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 处理异常
 2. 使用dummy辅助节点

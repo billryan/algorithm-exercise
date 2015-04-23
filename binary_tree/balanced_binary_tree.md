@@ -22,11 +22,11 @@ A)  3            B)    3
 The binary tree A is a height-balanced binary tree, but B is not.
 ```
 
-### 题解 - 递归
+## 题解 - 递归
 
 根据题意，平衡树的定义是两子树的深度差最大不超过1，显然使用递归进行分析较为方便。既然使用递归，那么接下来就需要分析递归调用的终止条件。和之前的 [Maximum Depth of Binary Tree | Algorithm](http://algorithm.yuanbin.me/binary_tree/maximum_depth_of_binary_tree.html) 类似，`NULL == root`必然是其中一个终止条件，返回`0`；根据题意还需的另一终止条件应为「左右子树高度差大于1」，但对应此终止条件的返回值是多少？——`INT_MAX` or `INT_MIN`？想想都不合适，为何不在传入参数中传入`bool`指针或者`bool`引用咧？并以此变量作为最终返回值，此法看似可行，先来看看鄙人最开始想到的这种方法。
 
-#### C++ Recursion with extra bool variable
+### C++ Recursion with extra bool variable
 
 ```c++
 /**
@@ -83,7 +83,7 @@ private:
 
 初看起来上述代码好像还不错的样子，但是在看了九章的实现后，瞬间觉得自己弱爆了... 首先可以确定`abs(leftDepth - rightDepth) > 1`肯定是需要特殊处理的，如果返回`-1`呢？咋一看似乎在下一步返回`max(leftDepth, rightDepth) + 1`时会出错，再进一步想想，我们能否不让`max...`这一句执行呢？如果返回了`-1`，其接盘侠必然是`leftDepth`或者`rightDepth`中的一个，因此我们只需要在判断子树高度差大于1的同时也判断下左右子树深度是否为`-1`即可都返回`-1`，不得不说这种处理方法要精妙的多，赞！
 
-#### C++ Recursion without extra bool variable
+### C++ Recursion without extra bool variable
 
 ```c++
 /**

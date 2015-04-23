@@ -16,11 +16,11 @@ Given [5, 7, 7, 8, 8, 10] and target value 8,
 return [3, 4].
 ```
 
-### 题解
+## 题解
 
 Search for a range 的题目可以拆解为找 first & last position 的题目，即要做两次二分。由上题二分查找可找到满足条件的左边界，因此只需要再将右边界找出即可。注意到在`(target == nums[mid]`时赋值语句为`end = mid`，将其改为`start = mid`即可找到右边界，解毕。
 
-#### Java
+### Java
 
 ```java
 /**
@@ -91,7 +91,7 @@ public class Solution {
 }
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 首先对输入做异常处理，数组为空或者长度为0
 2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出

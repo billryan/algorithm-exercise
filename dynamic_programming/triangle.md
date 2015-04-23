@@ -22,7 +22,7 @@ For example, given the following triangle
 The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 ```
 
-### 题解
+## 题解
 
 题中要求最短路径和，每次只能访问下行的相邻元素，将triangle视为二维坐标。此题方法较多，下面分小节详述。
 
@@ -30,7 +30,7 @@ The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 
 首先考虑最容易想到的方法——递归遍历，逐个累加所有自上而下的路径长度，最后返回这些不同的路径长度的最小值。由于每个点往下都有2条路径，使用此方法的时间复杂度约为 $$O(2^n)$$, 显然是不可接受的解，不过我们还是先看看其实现思路。
 
-#### C++ Traverse without hashmap
+### C++ Traverse without hashmap
 
 ```c++
 class Solution {
@@ -66,7 +66,7 @@ private:
 };
 ```
 
-#### 源码分析
+### 源码分析
 
 `dfs()`的循环终止条件为`x == n`，而不是`x == n - 1`，主要是方便在递归时sum均可使用`sum + triangle[x][y]`，而不必根据不同的y和y+1改变，代码实现相对优雅一些。理解方式则变为从第x行走到第x+1行时的最短路径和，也就是说在此之前并不将第x行的元素值计算在内。
 
@@ -76,7 +76,7 @@ private:
 
 既然可以使用递归遍历，当然也可以使用「分治」的方法来解。「分治」与之前的遍历区别在于「分治」需要返回每次「分治」后的计算结果，下面看代码实现。
 
-#### C++ Divide and Conquer without hashmap
+### C++ Divide and Conquer without hashmap
 
 ```c++
 class Solution {
@@ -113,7 +113,7 @@ private:
 
 新建一份大小和triangle一样大小的hashmap，并对每个元素赋以`INT_MIN`以做标记区分。
 
-#### C++ Divide and Conquer with hashmap
+### C++ Divide and Conquer with hashmap
 
 ```c++
 class Solution {
@@ -177,7 +177,7 @@ $$f_2(x,y) = min\{f_2(x-1, y), f_2(x-1, y-1)\} + triangle[x][y]$$
 
 两个状态所对应的初始状态分别为 $$f_1(n-1, y), 0 \leq y \leq n-1$$ 和 $$f_2(0,0)$$. 在代码中应注意考虑边界条件。下面分别就这种不同的状态进行动态规划。
 
-#### C++ From Bottom to Top
+### C++ From Bottom to Top
 
 ```c++
 class Solution {
@@ -210,7 +210,7 @@ public:
 };
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 异常处理
 2. 使用hashmap保存结果
@@ -220,7 +220,7 @@ public:
 
 从空间利用角度考虑也可直接使用triangle替代hashmap，但是此举会改变triangle的值，不推荐。
 
-#### C++ From Top to Bottom
+### C++ From Top to Bottom
 
 ```c++
 class Solution {

@@ -18,11 +18,11 @@ Challenge
 How can you optimize your algorithm if one array is very large and the other is very small?
 ```
 
-### 题解
+## 题解
 
 逐个比较两个数组内的元素，取较大的置于新数组尾部元素中。
 
-#### Java
+### Java
 
 ```java
 class Solution {
@@ -57,7 +57,7 @@ class Solution {
 }
 ```
 
-#### C++
+### C++
 
 ```c++
 class Solution {
@@ -98,7 +98,7 @@ public:
 };
 ```
 
-#### 源码分析
+### 源码分析
 
 分三种情况遍历比较。
 
@@ -124,11 +124,12 @@ A = [1, 2, 3, empty, empty] B = [4,5]
 After merge, A will be filled as [1,2,3,4,5]
 ```
 
-### 题解
+## 题解
 
 在上题的基础上加入了in-place的限制。将上题的新数组视为length相对较大的数组即可，仍然从数组末尾进行归并，取出较大的元素。
 
-#### Java
+### Java
+
 ```java
 class Solution {
     /**
@@ -156,11 +157,12 @@ class Solution {
     }
 };
 ```
-#### 源码分析
+
+### 源码分析
 
 1. 因为本题有了 in-place 的限制，则必须从数组末尾的两个元素开始比较；否则就会产生挪动，一旦挪动就会是 $$O(n^2)$$ 的。
 
-#### C++
+### C++
 
 ```c++
 class Solution {

@@ -34,11 +34,11 @@ Challenge
 Do it without recursion
 ```
 
-### 题解
+## 题解
 
 使用之前subsets的模板，但是在取结果时只能取`list.size() == nums.size()`的解，且在添加list元素的时候需要注意除重。
 
-#### C++
+### C++
 
 ```c++
 class Solution {
@@ -80,7 +80,7 @@ private:
 };
 ```
 
-#### 源码分析
+### 源码分析
 
 在除重时使用了标准库`find`(不可使用时间复杂度更低的`binary_search`，因为`list`中元素不一定有序)，时间复杂度为 $$O(N)$$, 也可使用`hashmap`记录`nums`中每个元素是否被添加到`list`中，这样一来空间复杂度为 $$O(N)$$, 查找的时间复杂度为 $$O(1)$$.
 
@@ -114,7 +114,7 @@ Challenge
 Do it without recursion.
 ```
 
-### 题解
+## 题解
 
 在上题的基础上进行剪枝，剪枝的过程和 [Subsets | Algorithm](http://algorithm.yuanbin.me/backtracking/subsets.html) 中的 Unique Subsets 一题极为相似。为了便于分析，我们可以先分析简单的例子，以 $$[1, 2_1, 2_2]$$ 为例。按照上题 Permutations 的解法，我们可以得到如下全排列。
 
@@ -131,7 +131,7 @@ Do it without recursion.
 
 一句话总结即为：在遇到当前元素和前一个元素相等时，如果前一个元素`visited[i - 1] == false`,  那么我们就跳过当前元素并进入下一次循环，这就是剪枝的关键所在。另一点需要特别注意的是这种剪枝的方法能使用的前提是提供的`nums`是有序数组，否则无效。
 
-#### C++
+### C++
 
 ```c++
 class Solution {
