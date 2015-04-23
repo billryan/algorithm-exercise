@@ -2,14 +2,6 @@
 
 Question: [(174) Remove Nth Node From End of List](http://www.lintcode.com/en/problem/remove-nth-node-from-end-of-list/)
 ```
-
-Language
-Problem
-My Submissions
-billryan
-Easy Remove Nth Node From End of List
-
-38% Accepted
 Given a linked list, remove the nth node from the end of list and return its head.
 
 Note
@@ -19,6 +11,7 @@ Example
 Given linked list: 1->2->3->4->5->null, and n = 2.
 
 After removing the second node from the end, the linked list becomes 1->2->3->5->null.
+
 Challenge
 O(n) time
 ```
@@ -51,7 +44,7 @@ public:
      * @return: The head of linked list.
      */
     ListNode *removeNthFromEnd(ListNode *head, int n) {
-        if (NULL == head || n < 1) {
+        if (NULL == head || n < 0) {
             return NULL;
         }
 
