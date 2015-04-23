@@ -1,6 +1,10 @@
 # Search a 2D Matrix
 
-Question: [(28) Search a 2D Matrix](http://www.lintcode.com/en/problem/search-a-2d-matrix/)
+
+## Source
+
+- lintcode: [(28) Search a 2D Matrix](http://www.lintcode.com/en/problem/search-a-2d-matrix/)
+
 ```
 Write an efficient algorithm that searches for a value in an m x n matrix.
 
@@ -96,7 +100,11 @@ public class Solution {
 
 ## Search a 2D Matrix II
 
-Question: [(38) Search a 2D Matrix II](http://lintcode.com/en/problem/search-a-2d-matrix-ii/)
+
+## Source
+
+- lintcode: [(38) Search a 2D Matrix II](http://lintcode.com/en/problem/search-a-2d-matrix-ii/)
+
 ```
 Write an efficient algorithm that searches for a value in an m x n matrix, return the occurrence of it.
 

@@ -1,6 +1,10 @@
 # Maximum Depth of Binary Tree
 
-Question: [(97) Maximum Depth of Binary Tree](http://www.lintcode.com/en/problem/maximum-depth-of-binary-tree/)
+
+## Source
+
+- lintcode: [(97) Maximum Depth of Binary Tree](http://www.lintcode.com/en/problem/maximum-depth-of-binary-tree/)
+
 
 ```
 Given a binary tree, find its maximum depth.

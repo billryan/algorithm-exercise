@@ -1,6 +1,10 @@
 # Recover Rotated Sorted Array
 
-Question: [(39) Recover Rotated Sorted Array](http://lintcode.com/en/problem/recover-rotated-sorted-array/)
+
+## Source
+
+- lintcode: [(39) Recover Rotated Sorted Array](http://lintcode.com/en/problem/recover-rotated-sorted-array/)
+
 
 ```
 Given a rotated sorted array, recover it to sorted array in-place.

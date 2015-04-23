@@ -1,6 +1,10 @@
 # Binary Tree Postorder Traversal
 
-Question: [(68) Binary Tree Postorder Traversal](http://www.lintcode.com/en/problem/binary-tree-postorder-traversal/)
+
+## Source
+
+- lintcode: [(68) Binary Tree Postorder Traversal](http://www.lintcode.com/en/problem/binary-tree-postorder-traversal/)
+
 
 ```
 Given a binary tree, return the postorder traversal of its nodes' values.
