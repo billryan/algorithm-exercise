@@ -29,6 +29,7 @@
    * [Find Peak Element](binary_search/find_peak_element.md)
    * [Search in Rotated Sorted Array](binary_search/search_in_rotated_sorted_array.md)
    * [Find Minimum in Rotated Sorted Array](binary_search/find_minimum_in_rotated_sorted_array.md)
+   * [Search a 2D Matrix II](binary_search/search_a_2d_matrix_ii.md)
 * [Sorted Array - 有序数组](sorted_array/README.md)
    * [Remove Duplicates from Sorted Array](sorted_array/remove_duplicates_from_sorted_array.md)
    * [Merge Sorted Array](sorted_array/merge_sorted_array.md)
