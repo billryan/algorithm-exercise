@@ -2,11 +2,9 @@
 
 ## strstr
 
-
 ## Source
 
 - lintcode: [lintcode - (13) strstr](http://www.lintcode.com/zh-cn/problem/strstr/)
-
 
 ```
 strstr (a.k.a find sub string), is a useful function in string operation. You task is to implement this function.
@@ -103,14 +101,11 @@ public class Solution {
 }
 ```
 
-
 ## Compare Strings
-
 
 ## Source
 
 - lintcode: [(55) Compare Strings](http://www.lintcode.com/en/problem/compare-strings/)
-
 
 ```
 Compare two strings A and B, determine whether A contains all of the characters in B.

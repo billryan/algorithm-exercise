@@ -9,7 +9,6 @@
 
 ![Selection Sort](../images/selection_sort.gif)
 
-
 实现：
 
 ```

@@ -4,11 +4,9 @@
 
 ## Permutations - 全排列
 
-
 ## Source
 
 - lintcode: [(15) Permutations](http://www.lintcode.com/en/problem/permutations/)
-
 
 ```
 Given a list of numbers, return all possible permutations.
@@ -39,7 +37,6 @@ Do it without recursion
 ### 题解
 
 使用之前subsets的模板，但是在取结果时只能取`list.size() == nums.size()`的解，且在添加list元素的时候需要注意除重。
-
 
 #### C++
 
@@ -92,7 +89,6 @@ private:
 使用回溯法解题的**关键在于如何确定正确解及排除不符条件的解(剪枝)**。
 
 ## Unique Permutations
-
 
 ## Source
 

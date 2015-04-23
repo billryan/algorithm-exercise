@@ -1,6 +1,5 @@
 # Jump Game
 
-
 ## Source
 
 - lintcode:
@@ -129,11 +128,9 @@ public:
 
 ## Jump Game II
 
-
 ## Source
 
 - lintcode: [(117) Jump Game II](http://www.lintcode.com/en/problem/jump-game-ii/)
-
 
 ```
 Given an array of non-negative integers, you are initially positioned at the first index of the array.

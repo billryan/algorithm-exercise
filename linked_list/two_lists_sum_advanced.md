@@ -2,7 +2,6 @@
 
 ## Source
 
-
 - CC150 - [Add two numbers represented by linked lists | Set 2 - GeeksforGeeks](http://www.geeksforgeeks.org/sum-of-two-linked-lists/)
 
 ```

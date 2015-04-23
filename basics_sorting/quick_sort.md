@@ -22,7 +22,6 @@
 
 Robert Sedgewick 在其网站上对 [Quicksort](http://algs4.cs.princeton.edu/23quicksort/) 做了较为完整的介绍，建议去围观下。
 
-
 ## Reference
 
 - [快速排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F)

@@ -1,6 +1,5 @@
 # Partition List
 
-
 ## Source
 
 - lintcode: [(96) Partition List](http://www.lintcode.com/en/problem/partition-list/)

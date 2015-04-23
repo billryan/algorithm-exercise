@@ -2,11 +2,9 @@
 
 子集类问题类似Combination。
 
-
 ## Source
 
 - lintcode: [(17) Subsets](http://www.lintcode.com/en/problem/subsets/)
-
 
 ```
 Given a set of distinct integers, return all possible subsets.
@@ -35,7 +33,6 @@ If S = [1,2,3], a solution is:
 
 1. 首先对数组按升序排序
 2. 回溯法递归
-
 
 #### Java
 
@@ -141,7 +138,6 @@ private:
 ```
 
 ## Unique Subsets
-
 
 ## Source
 
