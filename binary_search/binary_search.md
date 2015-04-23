@@ -1,9 +1,5 @@
 # Binary Search - 二分查找
 
-- 能使用二分搜索的前提是数组已排序。
-- 二分查找的使用场景：（1）可转换为find the first/last position of...（2）时间复杂度至少为O(lgn)。
-- 递归和迭代的使用场景：能用迭代就用迭代，特别复杂时采用递归。
-
 Question: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
 
 ```
