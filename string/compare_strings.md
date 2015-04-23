@@ -27,11 +27,11 @@ Do I need to implement KMP Algorithm in an interview?
     - Not necessary. When this problem occurs in an interview, the interviewer just want to test your basic implementation ability.
 ```
 
-### 题解
+## 题解
 
 对于字符串查找问题，可使用双重for循环解决，效率更高的则为KMP算法。
 
-#### Java
+### Java
 
 ```java
 /**
@@ -67,7 +67,7 @@ class Solution {
 }
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 边界检查：`source`和`target`有可能是空串。
 2. 边界检查之下标溢出：注意变量`i`的循环判断条件，如果是单纯的`i < source.length()`则在后面的`source.charAt(i + j)`时有可能溢出。
@@ -118,13 +118,13 @@ For A = "ABCD", B = "ABC", return true.
 For A = "ABCD" B = "AABC", return false.
 ```
 
-### 题解
+## 题解
 
 题目意思是问B中的所有字符是否都在A中，而不是单个字符。比如B="AABC"包含两个「A」，而A="ABCD"只包含一个「A」，故返回false.
 
 既然不是类似strstr那样的匹配，直接使用两重循环就不太合适了。题目中另外给的条件则是A和B都是全大小单词，理解题意后容易想到的方案就是先遍历A和B统计各字符出现的频次，然后比较频次大小即可。嗯，祭出万能的哈希表。
 
-#### C++
+### C++
 
 ```c++
 class Solution {
@@ -170,7 +170,7 @@ public:
 
 最后一步比较`freqA`和`freqB`的频次时，其实是可以放到遍历B字符串的时候处理的。优化后的代码如下：
 
-#### C++
+### C++
 
 ```c++
 class Solution {
@@ -209,4 +209,5 @@ public:
 ```
 
 ## Reference
+
 - [Lintcode: Compare Strings - neverlandly - 博客园](http://www.cnblogs.com/EdwardLiu/p/4273817.html)

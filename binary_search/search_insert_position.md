@@ -16,11 +16,11 @@ Example
 [1,3,5,6], 0 → 0
 ```
 
-### 题解
+## 题解
 
 应该把二分法的问题拆解为`find the first/last position of...`的问题。由最原始的二分查找可找到不小于目标整数的最小下标。返回此下标即可。
 
-#### Java
+### Java
 
 ```java
 public class Solution {
@@ -61,6 +61,7 @@ public class Solution {
     }
 }
 ```
+
 ### 源码分析
 
 要注意例子中的第三个, [1,3,5,6], 7 → 4，即找不到要找的数字的情况，此时应返回数组长度，即代码中最后一个else的赋值语句`return end + 1;`
