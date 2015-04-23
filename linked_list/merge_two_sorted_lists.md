@@ -3,6 +3,7 @@
 ## Source
 
 - lintcode: [(165) Merge Two Sorted Lists](http://www.lintcode.com/en/problem/merge-two-sorted-lists/)
+- leetcode: [Merge Two Sorted Lists | LeetCode OJ](https://leetcode.com/problems/merge-two-sorted-lists/)
 
 ```
 Merge two sorted linked lists and return it as a new list.
@@ -22,32 +23,19 @@ Given 1->3->8->11->15->null, 2->null , return 1->2->3->8->11->15->null
 
 ```c++
 /**
- * Definition of ListNode
- * class ListNode {
- * public:
+ * Definition for singly-linked list.
+ * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int val) {
- *         this->val = val;
- *         this->next = NULL;
- *     }
- * }
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
  */
 class Solution {
 public:
-    /**
-     * @param ListNode l1 is the head of the linked list
-     * @param ListNode l2 is the head of the linked list
-     * @return: ListNode head of linked list
-     */
-    ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
-        if (NULL == l1 || NULL == l2) {
-            return NULL != l1 ? l1 : l2;
-        }
-
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         ListNode *dummy = new ListNode(0);
         ListNode *lastNode = dummy;
-        while (l1 && l2) {
+        while ((NULL != l1) && (NULL != l2)) {
             if (l1->val < l2->val) {
                 lastNode->next = l1;
                 l1 = l1->next;
@@ -55,10 +43,12 @@ public:
                 lastNode->next = l2;
                 l2 = l2->next;
             }
+
             lastNode = lastNode->next;
         }
 
-        lastNode->next = (NULL != l1) ? l1 : l2;
+        // do not forget this line!
+        lastNode->next =  (NULL != l1) ? l1 : l2;
 
         return dummy->next;
     }
@@ -67,10 +57,16 @@ public:
 
 ### 源码分析
 
-1. 异常处理，l1或者l2之一为空时返回非空链表
+1. 异常处理，包含在`dummy->next`中。
 2. 引入`dummy`和`lastNode`节点，此时`lastNode`指向的节点为`dummy`
 3. 对非空l1,l2循环处理，将l1/l2的较小者链接到`lastNode->next`，往后递推`lastNode`
 4. 最后处理l1/l2中某一链表为空退出while循环，将非空链表头链接到`lastNode->next`
 5. 返回`dummy->next`，即最终的首指针
 
 注意`lastNode`的递推并不影响`dummy->next`的值，因为`lastNode`和`dummy`是两个不同的指针变量。
+
+> **Note** 链表的合并为常用操作，务必非常熟练，以上的模板非常精炼，有两个地方需要记牢。1. 循环结束条件中为条件与操作；2. 最后处理`lastNode->next`指针的值。
+
+## Reference
+
+- [Merge Two Sorted Lists | 九章算法](http://www.jiuzhang.com/solutions/merge-two-sorted-lists/)
