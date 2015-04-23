@@ -18,11 +18,11 @@ Challenge
 If the count of numbers is bigger than MAXINT, can your code work properly?
 ```
 
-### 题解
+## 题解
 
 对于已排序升序数组，使用二分查找可满足复杂度要求，注意数组中可能有重复值。
 
-#### Java
+### Java
 
 ```java
 /**
@@ -66,7 +66,7 @@ class Solution {
 }
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 首先对输入做异常处理，数组为空或者长度为0。
 2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出。

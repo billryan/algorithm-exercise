@@ -11,7 +11,7 @@ Note
 You can only move either down or right at any point in time.
 ```
 
-### 题解
+## 题解
 
 1. State: f[x][y] 从坐标(0,0)走到(x,y)的最短路径和
 2. Function: f[x][y] = (x, y) + min{f[x-1][y], f[x][y-1]}
@@ -23,7 +23,7 @@ You can only move either down or right at any point in time.
 首先看看如下正确但不合适的答案，OJ上会出现TLE。
 未使用hashmap并且使用了递归的错误版本。
 
-#### C++ dfs without hashmap: ~~Wrong answer~~
+### C++ dfs without hashmap: ~~Wrong answer~~
 
 ```c++
 class Solution {
@@ -63,7 +63,7 @@ private:
 
 使用迭代思想进行求解的正确实现：
 
-#### C++ Iterative
+### C++ Iterative
 
 ```c++
 class Solution {
@@ -100,7 +100,7 @@ public:
 };
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 异常处理，不仅要对grid还要对grid[0]分析
 2. 对返回结果矩阵进行初始化，注意ret[0][0]须单独初始化以便使用ret[i-1]
@@ -111,7 +111,7 @@ public:
 
 优化空间复杂度，要么对行遍历进行优化，要么对列遍历进行优化，通常我们习惯先按行遍历再按列遍历，有状态转移方程 f[x][y] = (x, y) + min{f[x-1][y], f[x][y-1]} 知，想要优化行遍历，那么f[y]保存的值应为第x行第y列的和。由于无行下标信息，故初始化时仅能对第一个元素初始化，分析时建议画图理解。
 
-#### C++ 1D vector
+### C++ 1D vector
 
 ```c++
 class Solution {

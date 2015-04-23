@@ -21,11 +21,11 @@ for offset=3, return "efgabcd"
 ...
 ```
 
-### 题解
+## 题解
 
 常见的翻转法应用题，仔细观察规律可知翻转的分割点在从数组末尾数起的offset位置。
 
-#### C++
+### C++
 
 ```c++
 class Solution {
@@ -65,7 +65,7 @@ private:
 
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 异常处理，A为空或者offset模sizeA后为0
 2. offset可能超出A的大小，应模sizeA后再用

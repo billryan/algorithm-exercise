@@ -14,7 +14,7 @@ Challenge
 One-pass, constant exstra space
 ```
 
-### 题解 - 逐位处理
+## 题解 - 逐位处理
 
 上题 Single Number 用到了二进制中异或的运算特性，这题给出的元素数目为`3*n + 1`，因此我们很自然地想到如果有种运算能满足「三三运算」为0该有多好！对于三个相同的数来说，其相加的和必然是3的倍数，仅仅使用这一个特性还不足以将单数找出来，我们再来挖掘隐含的信息。以3为例，若使用不进位加法，三个3相加的结果为：
 
@@ -27,7 +27,7 @@ One-pass, constant exstra space
 ```
 注意到其中的奥义了么？三个相同的数相加，不仅其和能被3整除，其二进制位上的每一位也能被3整除！因此我们只需要一个和`int`类型相同大小的数组记录每一位累加的结果即可。时间复杂度约为 $$O((3n+1)\cdot sizeof(int) \cdot 8)$$
 
-#### C++ bit by bit
+### C++ bit by bit
 
 ```c++
 class Solution {
@@ -80,7 +80,7 @@ In the equation, the first part indicates the the carries from previous one. The
 
 Then the algorithms run in `O(kn)` and the extra space `O(k)`.
 
-#### Java
+### Java
 
 ```java
 public class Solution {

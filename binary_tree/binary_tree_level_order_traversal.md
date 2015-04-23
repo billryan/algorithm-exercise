@@ -27,11 +27,11 @@ Challenge
 Using only 1 queue to implement it.
 ```
 
-### 题解 - 使用队列
+## 题解 - 使用队列
 
 此题为广搜的基础题，使用一个队列保存每层的节点即可。
 
-#### C++ queue
+### C++ queue
 
 ```c++
 /**
@@ -84,7 +84,7 @@ public:
 };
 ```
 
-#### 源码分析
+### 源码分析
 
 1. 异常，还是异常
 2. 使用STL的`queue`数据结构，将`root`添加进队列
