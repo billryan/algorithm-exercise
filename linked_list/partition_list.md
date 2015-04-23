@@ -1,4 +1,4 @@
-# Partition List - 链表分割
+# Partition List
 
 Question: [(96) Partition List](http://www.lintcode.com/en/problem/partition-list/)
 ```
