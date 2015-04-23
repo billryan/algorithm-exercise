@@ -4,7 +4,11 @@
 
 ## Permutations - 全排列
 
-Question: [(15) Permutations](http://www.lintcode.com/en/problem/permutations/)
+
+## Source
+
+- lintcode: [(15) Permutations](http://www.lintcode.com/en/problem/permutations/)
+
 
 ```
 Given a list of numbers, return all possible permutations.
@@ -89,7 +93,11 @@ private:
 
 ## Unique Permutations
 
-Question: [(16) Unique Permutations](http://www.lintcode.com/en/problem/unique-permutations/)
+
+## Source
+
+- lintcode: [(16) Unique Permutations](http://www.lintcode.com/en/problem/unique-permutations/)
+
 ```
 Given a list of numbers with duplicate number in it. Find all unique permutations.
 

@@ -1,6 +1,10 @@
 # Unique Paths
 
-Question: [(114) Unique Paths](http://www.lintcode.com/en/problem/unique-paths/)
+
+## Source
+
+- lintcode: [(114) Unique Paths](http://www.lintcode.com/en/problem/unique-paths/)
+
 ```
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 
@@ -57,7 +61,11 @@ public:
 
 ## Unique Paths II
 
-Question: [(115) Unique Paths II](http://www.lintcode.com/en/problem/unique-paths-ii/)
+
+## Source
+
+- lintcode: [(115) Unique Paths II](http://www.lintcode.com/en/problem/unique-paths-ii/)
+
 
 ```
 Follow up for "Unique Paths":

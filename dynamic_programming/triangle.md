@@ -1,6 +1,10 @@
 # Triangle - Find the minimum path sum from top to bottom
 
-Question: [(109) Triangle](http://www.lintcode.com/en/problem/triangle/)
+
+## Source
+
+- lintcode: [(109) Triangle](http://www.lintcode.com/en/problem/triangle/)
+
 
 ```
 Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.

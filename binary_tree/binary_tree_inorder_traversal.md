@@ -1,6 +1,10 @@
 # Binary Tree Inorder Traversal
 
-Question: [(67) Binary Tree Inorder Traversal](http://www.lintcode.com/en/problem/binary-tree-inorder-traversal/)
+
+## Source
+
+- lintcode: [(67) Binary Tree Inorder Traversal](http://www.lintcode.com/en/problem/binary-tree-inorder-traversal/)
+
 
 ```
 Given a binary tree, return the inorder traversal of its nodes' values.

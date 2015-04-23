@@ -1,6 +1,10 @@
 # Jump Game
 
-Question:
+
+## Source
+
+- lintcode:
+
 [(116) Jump Game](http://www.lintcode.com/en/problem/jump-game/)
 ```
 Given an array of non-negative integers, you are initially positioned at the first index of the array.
@@ -125,7 +129,11 @@ public:
 
 ## Jump Game II
 
-Question: [(117) Jump Game II](http://www.lintcode.com/en/problem/jump-game-ii/)
+
+## Source
+
+- lintcode: [(117) Jump Game II](http://www.lintcode.com/en/problem/jump-game-ii/)
+
 
 ```
 Given an array of non-negative integers, you are initially positioned at the first index of the array.

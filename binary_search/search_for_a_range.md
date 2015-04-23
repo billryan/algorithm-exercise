@@ -1,6 +1,10 @@
 # Search for a Range
 
-Question: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-for-a-range/)
+
+## Source
+
+- lintcode: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-for-a-range/)
+
 
 ```
 Given a sorted array of integers, find the starting and ending position of a given target value.

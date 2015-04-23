@@ -1,6 +1,10 @@
 # Find Peak Element
 
-Question: [(75) Find Peak Element](http://www.lintcode.com/en/problem/find-peak-element/)
+
+## Source
+
+- lintcode: [(75) Find Peak Element](http://www.lintcode.com/en/problem/find-peak-element/)
+
 
 ```
 There is an integer array which has the following features:

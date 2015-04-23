@@ -1,6 +1,10 @@
 # ￼Reverse Linked List- 链表翻转
 
-Question: [(35) Reverse Linked List](http://www.lintcode.com/en/problem/reverse-linked-list/)
+
+## Source
+
+- lintcode: [(35) Reverse Linked List](http://www.lintcode.com/en/problem/reverse-linked-list/)
+
 
 ```
 Reverse a linked list.
