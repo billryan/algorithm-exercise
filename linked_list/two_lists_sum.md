@@ -1,6 +1,4 @@
-# Two Lists Sum <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-tags: linked list, recursion, iteration
+# Two Lists Sum <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
 
 ## Source
 
