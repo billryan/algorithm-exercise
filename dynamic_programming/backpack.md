@@ -1,6 +1,10 @@
 # Backpack
 
-Question: [(92) Backpack](http://www.lintcode.com/en/problem/backpack/)
+
+## Source
+
+- lintcode: [(92) Backpack](http://www.lintcode.com/en/problem/backpack/)
+
 
 ```
 Given n items with size A[i], an integer m denotes the size of a backpack. How full you can fill this backpack?
@@ -136,7 +140,11 @@ public:
 
 ## Backpack II
 
-Question: [(125) Backpack II](http://www.lintcode.com/en/problem/backpack-ii/)
+
+## Source
+
+- lintcode: [(125) Backpack II](http://www.lintcode.com/en/problem/backpack-ii/)
+
 ```
 Given n items with size A[i] and value V[i], and a backpack with size m. What's the maximum value can you put into the backpack?
 

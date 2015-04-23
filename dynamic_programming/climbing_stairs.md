@@ -1,6 +1,10 @@
 # Climbing Stairs
 
-Question: [(111) Climbing Stairs](http://www.lintcode.com/en/problem/climbing-stairs/)
+
+## Source
+
+- lintcode: [(111) Climbing Stairs](http://www.lintcode.com/en/problem/climbing-stairs/)
+
 ```
 You are climbing a stair case. It takes n steps to reach to the top.
 

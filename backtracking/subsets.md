@@ -2,7 +2,11 @@
 
 子集类问题类似Combination。
 
-Question: [(17) Subsets](http://www.lintcode.com/en/problem/subsets/)
+
+## Source
+
+- lintcode: [(17) Subsets](http://www.lintcode.com/en/problem/subsets/)
+
 
 ```
 Given a set of distinct integers, return all possible subsets.
@@ -138,7 +142,11 @@ private:
 
 ## Unique Subsets
 
-Question: [(18) Unique Subsets](http://www.lintcode.com/en/problem/unique-subsets/)
+
+## Source
+
+- lintcode: [(18) Unique Subsets](http://www.lintcode.com/en/problem/unique-subsets/)
+
 ```
 Given a list of numbers that may has duplicate numbers, return all possible subsets
 

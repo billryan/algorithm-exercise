@@ -1,6 +1,10 @@
 # Remove Nth Node From End of List
 
-Question: [(174) Remove Nth Node From End of List](http://www.lintcode.com/en/problem/remove-nth-node-from-end-of-list/)
+
+## Source
+
+- lintcode: [(174) Remove Nth Node From End of List](http://www.lintcode.com/en/problem/remove-nth-node-from-end-of-list/)
+
 ```
 Given a linked list, remove the nth node from the end of list and return its head.
 

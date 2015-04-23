@@ -1,6 +1,10 @@
 # Partition List
 
-Question: [(96) Partition List](http://www.lintcode.com/en/problem/partition-list/)
+
+## Source
+
+- lintcode: [(96) Partition List](http://www.lintcode.com/en/problem/partition-list/)
+
 ```
 Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
 

@@ -1,6 +1,10 @@
 # Remove Duplicates from Sorted Array
 
-Question: [(100) Remove Duplicates from Sorted Array](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array/)
+
+## Source
+
+- lintcode: [(100) Remove Duplicates from Sorted Array](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array/)
+
 
 ```
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
@@ -48,7 +52,11 @@ public:
 
 ## Remove Duplicates from Sorted Array II
 
-Question: [(101) Remove Duplicates from Sorted Array II](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array-ii/)
+
+## Source
+
+- lintcode: [(101) Remove Duplicates from Sorted Array II](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array-ii/)
+
 
 ```
 Follow up for "Remove Duplicates":
