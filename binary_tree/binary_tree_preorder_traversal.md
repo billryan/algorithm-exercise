@@ -1,10 +1,8 @@
 # Binary Tree Preorder Traversal - 前序遍历
 
-
 ## Source
 
 - lintcode: [(66) Binary Tree Preorder Traversal](http://www.lintcode.com/en/problem/binary-tree-preorder-traversal/)
-
 
 ```
 Given a binary tree, return the preorder traversal of its nodes' values.
@@ -17,7 +15,6 @@ Given binary tree {1,#,2,3},
      2
     /
    3
-
 
 return [1,2,3].
 

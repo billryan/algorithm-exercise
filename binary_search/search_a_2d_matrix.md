@@ -1,6 +1,5 @@
 # Search a 2D Matrix
 
-
 ## Source
 
 - lintcode: [(28) Search a 2D Matrix](http://www.lintcode.com/en/problem/search-a-2d-matrix/)
@@ -99,7 +98,6 @@ public class Solution {
 第一次A掉这个题用的是分行分列两次搜索，好蠢...
 
 ## Search a 2D Matrix II
-
 
 ## Source
 
@@ -225,7 +223,6 @@ public class Solution {
 ```
 
 #### 源码分析
-
 
 1. 首先对输入做异常处理，不仅要考虑到matrix为空串，还要考虑到matrix[0]也为空串。
 2. 注意循环终止条件。

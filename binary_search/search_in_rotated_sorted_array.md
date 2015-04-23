@@ -4,11 +4,9 @@
 
 ![Rotated Array](../images/rotated_array.png)
 
-
 ## Source
 
 - lintcode: [(62) Search in Rotated Sorted Array](http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/)
-
 
 ```
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
@@ -95,11 +93,9 @@ public:
 
 ## Search in Rotated Sorted Array II
 
-
 ## Source
 
 - lintcode: [(63) 搜索旋转排序数组 II](http://www.lintcode.com/zh-cn/problem/search-in-rotated-sorted-array-ii/)
-
 
 ```
 跟进“搜索旋转排序数组”，假如有重复元素又将如何？

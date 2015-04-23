@@ -34,7 +34,6 @@
 - 稳定
 - 非稳定
 
-
 ## Reference
 
 - [Sorting algorithm - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Sorting_algorithm) - 各类排序算法的「平均、最好、最坏时间复杂度」总结。

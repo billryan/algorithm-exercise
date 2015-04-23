@@ -1,10 +1,8 @@
 # Remove Duplicates from Sorted List
 
-
 ## Source
 
 - lintcode: [(112) Remove Duplicates from Sorted List](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list/)
-
 
 ```
 Given a sorted linked list, delete all duplicates such that each element appear only once.

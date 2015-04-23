@@ -1,10 +1,8 @@
 # Merge Sorted Array
 
-
 ## Source
 
 - lintcode: [(6) Merge Sorted Array](http://www.lintcode.com/en/problem/merge-sorted-array/)
-
 
 ```
 Merge two given sorted integer array A and B into a new sorted integer array.
@@ -110,11 +108,9 @@ public:
 
 ## Merge Sorted Array II
 
-
 ## Source
 
 - lintcode: [(64) Merge Sorted Array II](http://www.lintcode.com/en/problem/merge-sorted-array-ii/)
-
 
 ```
 Given two sorted integer arrays A and B, merge B into A as one sorted array.

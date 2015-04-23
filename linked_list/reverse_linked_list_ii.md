@@ -1,10 +1,8 @@
 # Reverse Linked List II
 
-
 ## Source
 
 - lintcode: [(36) Reverse Linked List II](http://www.lintcode.com/en/problem/reverse-linked-list-ii/)
-
 
 ```
 Reverse a linked list from position m to n.

@@ -1,6 +1,5 @@
 # Merge Two Sorted Lists
 
-
 ## Source
 
 - lintcode: [(165) Merge Two Sorted Lists](http://www.lintcode.com/en/problem/merge-two-sorted-lists/)

@@ -2,7 +2,6 @@
 
 ## Source
 
-
 - CC150 - [(167) Two Lists Sum](http://www.lintcode.com/en/problem/two-lists-sum/)
 
 ```

@@ -1,10 +1,8 @@
 # Backpack
 
-
 ## Source
 
 - lintcode: [(92) Backpack](http://www.lintcode.com/en/problem/backpack/)
-
 
 ```
 Given n items with size A[i], an integer m denotes the size of a backpack. How full you can fill this backpack?
@@ -139,7 +137,6 @@ public:
 ```
 
 ## Backpack II
-
 
 ## Source
 
