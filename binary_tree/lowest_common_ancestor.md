@@ -151,7 +151,7 @@ private:
 
 ## Reference
 
-- [^leetcode][Lowest Common Ancestor of a Binary Tree Part I | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-tree-part-i.html) - 清晰易懂的题解和实现。
+- [^leetcode]: [Lowest Common Ancestor of a Binary Tree Part I | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-tree-part-i.html) - 清晰易懂的题解和实现。
 - [Lowest Common Ancestor of a Binary Tree Part II | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-tree-part-ii.html) - 如果存在指向父节点的指针，我们能否有更好的解决方案？
 - [Lowest Common Ancestor of a Binary Search Tree (BST) | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-search-tree.html) - 二叉搜索树中求最小公共祖先。
 - [Lowest Common Ancestor | 九章算法](http://www.jiuzhang.com/solutions/lowest-common-ancestor/) - 第一种方法可以在知道父节点时使用，第二种 Divide and Conquer 才是本题需要的解。
