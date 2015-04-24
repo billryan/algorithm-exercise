@@ -204,4 +204,4 @@ private:
 ## Reference
 
 - [Sort List | 九章算法](http://www.jiuzhang.com/solutions/sort-list/)
-- [fast_slow_pointer]: [LeetCode: Sort List 解题报告 - Yu's Garden - 博客园](http://www.cnblogs.com/yuzhangcmu/p/4131885.html)
+- [^fast_slow_pointer]: [LeetCode: Sort List 解题报告 - Yu's Garden - 博客园](http://www.cnblogs.com/yuzhangcmu/p/4131885.html)
