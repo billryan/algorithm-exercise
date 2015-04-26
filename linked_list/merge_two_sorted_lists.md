@@ -67,6 +67,11 @@ public:
 
 > **Note** 链表的合并为常用操作，务必非常熟练，以上的模板非常精炼，有两个地方需要记牢。1. 循环结束条件中为条件与操作；2. 最后处理`lastNode->next`指针的值。
 
+### 复杂度分析
+
+最好情况下，一个链表为空，时间复杂度为 $$O(1)$$. 最坏情况下，`lastNode`遍历两个链表中的每一个节点，时间复杂度为 $$O(l1+l2)$$. 空间复杂度近似为 $$O(1)$$.
+
+
 ## Reference
 
 - [Merge Two Sorted Lists | 九章算法](http://www.jiuzhang.com/solutions/merge-two-sorted-lists/)
