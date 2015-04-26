@@ -46,6 +46,7 @@
    * [￼Reverse Linked List](linked_list/reverse_linked_list.md)
    * [Reverse Linked List II](linked_list/reverse_linked_list_ii.md)
    * [Merge Two Sorted Lists](linked_list/merge_two_sorted_lists.md)
+   * [Merge k Sorted Lists](linked_list/merge_k_sorted_lists.md)
    * [Sort List](linked_list/sort_list.md)
    * [Reorder List](linked_list/reorder_list.md)
 * [Reverse - 翻转法](reverse/README.md)
