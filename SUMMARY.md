@@ -54,6 +54,7 @@
    * [Rotate String](reverse/rotate_string.md)
    * [Reverse Words in a String](reverse/reverse_words_in_a_string.md)
 * [String - 字符串](string/README.md)
+   * [strStr](string/strstr.md)
    * [Compare Strings](string/compare_strings.md)
 * [Binary Tree - 二叉树](binary_tree/README.md)
    * [Binary Tree Preorder Traversal](binary_tree/binary_tree_preorder_traversal.md)
