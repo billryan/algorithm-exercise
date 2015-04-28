@@ -38,6 +38,7 @@
    * [strStr](string/strstr.md)
    * [Two Strings Are Anagrams](string/two_strings_are_anagrams.md)
    * [Compare Strings](string/compare_strings.md)
+   * [Anagrams](string/anagrams.md)
 * [Linked List - 链表](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
