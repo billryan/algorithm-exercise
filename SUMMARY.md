@@ -36,6 +36,7 @@
    * [Median of two Sorted Arrays](sorted_array/median_of_two_sorted_arrays.md)
 * [String - 字符串](string/README.md)
    * [strStr](string/strstr.md)
+   * [Two Strings Are Anagrams](string/two_strings_are_anagrams.md)
    * [Compare Strings](string/compare_strings.md)
 * [Linked List - 链表](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
