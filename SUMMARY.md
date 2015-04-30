@@ -33,6 +33,7 @@
 * [Integer Array - 整数数组](integer_array/README.md)
    * [Remove Element](integer_array/remove_element.md)
    * [Zero Sum Subarray](integer_array/zero_sum_subarray.md)
+   * [Subarray Sum K](integer_array/subarray_sum_k.md)
 * [Binary Search - 二分搜索](binary_search/README.md)
    * [Binary Search](binary_search/binary_search.md)
    * [Search Insert Position](binary_search/search_insert_position.md)
