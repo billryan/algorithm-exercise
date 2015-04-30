@@ -134,23 +134,22 @@ public:
      */
     vector<int> subarraySum(vector<int> nums){
         vector<int> result;
-
-        int curr_sum = 0;
-        vector<pair<int, int> > sum_i;
-        sum_i.push_back(make_pair(0, 0));
-        for (int i = 0; i != nums.size(); ++i) {
-            curr_sum += nums[i];
-            sum_i.push_back(make_pair(curr_sum, i + 1));
+        if (nums.empty()) {
+            return result;
         }
 
-        // sort(sum_i.begin(), sum_i.end(), sort_pair_first());
-        sort(sum_i.begin(), sum_i.end());
-        for (int i = 1; i < sum_i.size(); ++i) {
-            if (sum_i[i].first == sum_i[i - 1].first) {
-                int min_index = min(sum_i[i - 1].second, sum_i[i].second);
-                int max_index = max(sum_i[i - 1].second, sum_i[i].second) - 1;
-                result.push_back(min_index);
-                result.push_back(max_index);
+        const int num_size = nums.size();
+        vector<pair<int, int> > sum_index(num_size + 1);
+        for (int i = 0; i != num_size; ++i) {
+            sum_index[i + 1].first = sum_index[i].first + nums[i];
+            sum_index[i + 1].second = i + 1;
+        }
+
+        sort(sum_index.begin(), sum_index.end());
+        for (int i = 1; i < num_size + 1; ++i) {
+            if (sum_index[i].first == sum_index[i - 1].first) {
+                result.push_back(sum_index[i - 1].second);
+                result.push_back(sum_index[i].second - 1);
                 return result;
             }
         }
@@ -162,9 +161,7 @@ public:
 
 ### 源码分析
 
-没啥好分析的，注意好边界条件即可。按道理对`pair`排序后即为我们需要的排序结果，可以不必先求出`min_index`和`max_index`，即可直接用`sum_i[i - 1].second`代替`min_index`，`sum_i[i].second - 1`代替`max_index`，但实际运行发现先求得`min_index`和`max_index`反而更快！不适用`min()`和`max()`要1700ms，而用了`min()`和`max()`后反而只要1500ms !
-
-这种排序的方法需要先求得所有子串和然后再排序，最后还需要遍历排序后的数组，效率自然是比不上哈希表。
+没啥好分析的，注意好边界条件即可。这里采用了链表中常用的「dummy」节点方法，`pair`排序后即为我们需要的排序结果。这种排序的方法需要先求得所有子串和然后再排序，最后还需要遍历排序后的数组，效率自然是比不上哈希表。但是在某些情况下这种方法有一定优势。
 
 ### 复杂度分析
 
