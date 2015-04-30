@@ -5,7 +5,8 @@
 - lintcode: [(139) Subarray Sum Closest](http://www.lintcode.com/en/problem/subarray-sum-closest/)
 
 ```
-Given an integer array, find a subarray with sum closest to zero. Return the indexes of the first number and last number.
+Given an integer array, find a subarray with sum closest to zero.
+Return the indexes of the first number and last number.
 
 Example
 Given [-3, 1, 1, -3, 5], return [0, 2], [1, 3], [1, 1], [2, 2] or [0, 4]
@@ -80,3 +81,7 @@ public:
 3. 遍历排序后的子串和数组，时间复杂度为 $$O(n)$$.
 
 总的时间复杂度为 $$O(n \log n)$$, 空间复杂度为 $$O(n)$$.
+
+## 扩展
+
+- [algorithm - How to find the subarray that has sum closest to zero or a certain value t in O(nlogn) - Stack Overflow](http://stackoverflow.com/questions/16388930/how-to-find-the-subarray-that-has-sum-closest-to-zero-or-a-certain-value-t-in-o)
