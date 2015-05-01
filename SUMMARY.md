@@ -36,6 +36,7 @@
    * [Subarray Sum K](integer_array/subarray_sum_k.md)
    * [Subarray Sum Closest](integer_array/subarray_sum_closest.md)
    * [Product of Array Exclude Itself](integer_array/product_of_array_exclude_itself.md)
+   * [Partition Array](integer_array/partition_array.md)
 * [Binary Search - 二分搜索](binary_search/README.md)
    * [Binary Search](binary_search/binary_search.md)
    * [Search Insert Position](binary_search/search_insert_position.md)
