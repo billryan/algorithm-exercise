@@ -99,3 +99,5 @@ public class Solution {
 4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环
 5. 先求左边界，迭代终止时先判断`A.get(start) == target`，再判断`A.get(end) == target`，因为迭代终止时target必取start或end中的一个，而end又大于start，取左边界即为start.
 6. 再求右边界，迭代终止时先判断`A.get(end) == target`，再判断`A.get(start) == target`
+7. 两次二分查找除了终止条件不同，中间逻辑也不同，即当`A.get(mid) == target`如果是左边界（first postion），中间逻辑是`end = mid`；若是右边界（last position），中间逻辑是`start = mid`
+8. 两次二分查找中间勿忘记重置 `start, end` 的变量值。
