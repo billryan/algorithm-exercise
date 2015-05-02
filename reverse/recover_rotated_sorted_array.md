@@ -27,6 +27,43 @@ What is rotated array:
 
 由以上3个步骤可知其核心为『翻转』的in-place实现。使用两个指针，一个指头，一个指尾，使用for循环移位交换即可。
 
+### Java
+
+```java
+public class Solution {
+    /**
+     * @param nums: The rotated sorted array
+     * @return: The recovered sorted array
+     */
+    public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
+        if (nums == null || nums.size() <= 1) {
+            return;
+        }
+        
+        int pos = 1;
+        while (pos < nums.size()) { // find the break point
+            if (nums.get(pos - 1) > nums.get(pos)) {
+                break;
+            }
+            pos++;
+        }
+        myRotate(nums, 0, pos - 1);
+        myRotate(nums, pos, nums.size() - 1);
+        myRotate(nums, 0, nums.size() - 1);
+    }
+
+    private void myRotate(ArrayList<Integer> nums, int left, int right) { // in-place rotate
+        while (left < right) {
+            int temp = nums.get(left);
+            nums.set(left, nums.get(right));
+            nums.set(right, temp);
+            left++;
+            right--;
+        }
+    }
+}
+```
+
 ### C++
 
 ```c++
