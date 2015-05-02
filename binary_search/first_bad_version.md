@@ -44,6 +44,48 @@ Do not call isBadVersion exceed O(logn) times.
 
 题 Search for a Range 的变形，找出左边界即可。
 
+### Java
+
+```java
+/**
+ * public class VersionControl {
+ *     public static boolean isBadVersion(int k);
+ * }
+ * you can use VersionControl.isBadVersion(k) to judge wether 
+ * the kth code version is bad or not.
+*/
+class Solution {
+    /**
+     * @param n: An integers.
+     * @return: An integer which is the first bad version.
+     */
+    public int findFirstBadVersion(int n) {
+        // write your code here
+        if (n == 0) {
+            return -1;
+        }
+        
+        int start = 1, end = n, mid;
+        while (start + 1 < end) {
+            mid = start + (end - start)/2;
+            if (VersionControl.isBadVersion(mid) == false) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+        
+        if (VersionControl.isBadVersion(start) == true) {
+            return start;
+        } else if (VersionControl.isBadVersion(end) == true) {
+            return end;
+        } else {
+            return -1; // not found
+        }
+    }
+}
+```
+
 ### C++
 
 ```c++
