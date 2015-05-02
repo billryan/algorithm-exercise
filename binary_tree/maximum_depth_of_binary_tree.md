@@ -65,6 +65,36 @@ public:
 };
 ```
 
+### Java Recursion
+```java
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+public class Solution {
+    /**
+     * @param root: The root of binary tree.
+     * @return: An integer.
+     */
+    public int maxDepth(TreeNode root) {
+        // write your code here
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;  
+    }
+}
+```
+
+
+
 ## 题解 - 迭代(显式栈)
 
 使用递归可能会导致栈空间溢出，这里使用显式栈空间(使用堆内存)来代替之前的隐式栈空间。从上节递归版的代码(先处理左子树，后处理右子树，最后返回其中的较大值)来看，是可以使用类似后序遍历的迭代思想去实现的。
@@ -185,4 +215,55 @@ public:
         return max_depth;
     }
 };
+```
+
+### Java Iterative with queue
+```java
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+public class Solution {
+    /**
+     * @param root: The root of binary tree.
+     * @return: An integer.
+     */
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+    
+        int level = 0;
+        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        int curNum = 1; //num of nodes left in current level
+        int nextNum = 0; //num of nodes in next level
+    
+        while(!queue.isEmpty()) {
+            TreeNode n = queue.poll();
+            curNum--;
+            if (n.left != null) {
+                queue.add(n.left);
+                nextNum++;
+            }
+            if (n.right != null) {
+                queue.add(n.right);
+                nextNum++;
+            }
+            if (curNum == 0) {
+                curNum = nextNum;
+                nextNum = 0;
+                level++;
+            }
+        }
+        return level;
+    }
+}
 ```
