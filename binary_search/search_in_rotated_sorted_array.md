@@ -91,6 +91,53 @@ public:
 5. 搜索完毕时索引若不是mid或者未满足while循环条件，则测试A[start]或者A[end]是否满足条件。
 6. 最后若未找到满足条件的索引，则返回-1.
 
+### Java
+
+```java
+public class Solution {
+    /** 
+     *@param A : an integer rotated sorted array
+     *@param target :  an integer to be searched
+     *return : an integer
+     */
+    public int search(int[] A, int target) {
+        // write your code here
+        if (A == null || A.length == 0) { 
+            return -1;
+        }
+        
+        int start = 0, end = A.length - 1, mid = 0;
+        while (start + 1 < end) {
+            mid = start + (end - start)/2;
+            if (A[mid] == target) {
+                return mid;
+            }
+            if (A[start] < A[mid]) {//part 1
+                if (A[start] <= target && target <= A[mid]) {
+                    end = mid;
+                } else {
+                    start = mid;
+                }
+            } else { //part 2
+                if (A[mid] <= target && target <= A[end]) {
+                    start = mid;
+                } else {
+                    end = mid;
+                }
+            }
+        } // end while
+        
+        if (A[start] == target) {
+            return start;
+        } else if (A[end] == target) {
+            return end;
+        } else {
+            return -1; // not found
+        }
+    }
+}
+```
+
 ## Search in Rotated Sorted Array II
 
 ## Source
