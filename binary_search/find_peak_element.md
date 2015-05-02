@@ -33,6 +33,39 @@ Time complexity O(logN)
 
 备注：如果本题是找 first/last peak，就不能用二分法了。
 
+
+### Java
+
+```java
+class Solution {
+    /**
+     * @param A: An integers array.
+     * @return: return any of peek positions.
+     */
+    public int findPeak(int[] A) {
+        // write your code here
+        if (A == null) {
+            return -1;
+        }
+        if (A.length == 0) {
+            return 0;
+        }
+        
+        int start = 0, end = A.length - 1, mid;
+        while (start + 1 < end) {
+            mid = start + (end - start)/2;
+            if (A[mid] < A[mid - 1]) {
+                end = mid;
+            } else if (A[mid] < A[mid + 1]) {
+                start = mid;
+            } else {
+                return mid;
+            }
+        }
+    }
+}
+```
+
 ### C++
 
 ```c++
