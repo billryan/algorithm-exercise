@@ -34,7 +34,6 @@ Time complexity O(logN)
 
 备注：如果本题是找 first/last peak，就不能用二分法了。
 
-
 ### Java
 
 ```java
@@ -52,7 +51,7 @@ class Solution {
             return 0;
         }
 
-        int start = 0, end = A.length - 1, mid;
+        int start = 0, end = A.length - 1, mid = end / 2;
         while (start + 1 < end) {
             mid = start + (end - start)/2;
             if (A[mid] < A[mid - 1]) {
@@ -63,6 +62,9 @@ class Solution {
                 return mid;
             }
         }
+
+        mid = (A[start] > A[end]) ? start : end;
+        return mid;
     }
 }
 ```
@@ -95,6 +97,9 @@ public:
                 return mid;
             }
         }
+
+        mid = (A[start] > A[end]) ? start : end;
+        return mid;
     }
 };
 ```
@@ -188,7 +193,7 @@ public class Solution {
 }
 ```
 
-> **Warning** leetcode 和 lintcode 上给的入口参数不一样，leetcode 上的为`int[] nums`而 lintcode 上为`int[] A`，弄混的话会编译错误。
+> **Warning** leetcode 和 lintcode 上给的方法名不一样，leetcode 上的为`findPeakElement`而 lintcode 上为`findPeak`，弄混的话会编译错误。
 
 ## Reference
 
