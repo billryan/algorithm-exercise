@@ -68,6 +68,29 @@ public:
 
 哈希表用了和数组等长的空间，空间复杂度为 $$O(n)$$, 遍历一次数组，时间复杂度为 $$O(n)$$.
 
+### Python
+
+```python
+class Solution:
+    """
+    @param numbers : An array of Integer
+    @param target : target = numbers[index1] + numbers[index2]
+    @return : [index1 + 1, index2 + 1] (index1 < index2)
+    """
+    def twoSum(self, numbers, target):
+        hashdict = {}
+        for i, item in enumerate(numbers):
+            if (target - item) in hashdict:
+                return (hashdict[target - item] + 1, i + 1)
+            hashdict[item] = i
+
+        return (-1, -1)
+```
+
+### 源码分析
+
+Python 中的`dict`就是天然的哈希表，使用 enumerate 可以同时返回索引和值，甚为方便。按题意似乎是要返回 list, 但个人感觉返回 tuple 更为合理。最后如果未找到符合题意的索引，返回`(-1, -1)`.
+
 ## 题解2 - 排序后使用两根指针
 
 但凡可以用空间换时间的做法，往往也可以使用时间换空间。另外一个容易想到的思路就是先对数组排序，然后使用两根指针分别指向首尾元素，逐步向中间靠拢，直至找到满足条件的索引为止。
@@ -130,4 +153,4 @@ public:
 
 遍历一次原数组得到`pair`类型的新数组，时间复杂度为 $$O(n)$$, 空间复杂度也为 $$O(n)$$. 标准库中的排序方法时间复杂度近似为 $$O(n \log n)$$, 两根指针遍历数组时间复杂度为 $$O(n)$$.
 
-> **Note** lintcode 上的题要求时间复杂度在 $$O(n \log n)$$ 时，空间复杂度为 $$O(1)$$, 但问题是排序后索引会乱掉，如果要保存之前的索引，空间复杂度一定是 $$O(n)$$，所以个人认为不存在较为简洁的 $$O(1)$$ 实现。
+> **Note** lintcode 上的题要求时间复杂度在 $$O(n \log n)$$ 时，空间复杂度为 $$O(1)$$, 但问题是排序后索引会乱掉，如果要保存之前的索引，空间复杂度一定是 $$O(n)$$，所以个人认为不存在较为简洁的 $$O(1)$$ 实现。如果一定要 $$O(n)$$ 的空间复杂度，那么只能用暴搜了，此时的时间复杂度为 $$O(n^2)$$.
