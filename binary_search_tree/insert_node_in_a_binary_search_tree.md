@@ -87,6 +87,28 @@ public:
 };
 ```
 
+### Java Recursion
+```java
+public class Solution {
+    /**
+     * @param root: The root of the binary search tree.
+     * @param node: insert this node into the binary search tree
+     * @return: The root of the new binary search tree.
+     */
+    public TreeNode insertNode(TreeNode root, TreeNode node) {
+        if (root == null) {
+            return node;
+        }
+        if (root.val > node.val) {
+            root.left = insertNode(root.left, node);
+        } else {
+            root.right = insertNode(root.right, node);
+        }
+        return root;
+    }
+}
+```
+
 ## 题解 - 迭代
 
 看过了以上递归版的题解，对于这个题来说，将递归转化为迭代的思路也是非常清晰易懂的。迭代比较当前节点的值和插入节点的值，到了二叉树的最后一层时选择是链接至左子结点还是右子节点。
