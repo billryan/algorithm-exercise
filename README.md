@@ -95,6 +95,7 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 ## To-Do
 
 - [ ] 探索适合用于后期批处理的书写及排版格式。
+- [ ] 添加多国语言支持(English, 繁體中文, 简体中文)。
 - [ ] 完善 leetcode/lintcode 部分 C++, Java, Python 三大语言的实现。
 - [ ] 加入时间/空间复杂度分析。
 - [ ] Part I 部分基础知识的总结。
