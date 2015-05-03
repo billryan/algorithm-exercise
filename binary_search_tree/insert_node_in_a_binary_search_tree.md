@@ -143,3 +143,34 @@ public:
 ### 源码分析
 
 在`NULL == tempNode->right`或者`NULL == tempNode->left`时需要在链接完`node`后立即返回`root`，避免死循环。
+
+### Java Iterative
+```java
+public class Solution {
+    /**
+     * @param root: The root of the binary search tree.
+     * @param node: insert this node into the binary search tree
+     * @return: The root of the new binary search tree.
+     */
+    public TreeNode insertNode(TreeNode root, TreeNode node) {
+        // write your code here
+        if (root == null) return node;
+        if (node == null) return root;
+        
+        TreeNode rootcopy = root;
+        while (root != null) {
+            if (root.val <= node.val && root.right == null) {
+                root.right = node;
+                break;
+            }
+            else if (root.val > node.val && root.left == null) {
+                root.left = node;
+                break;
+            }
+            else if(root.val <= node.val) root = root.right;
+            else root = root.left;
+        }
+        return rootcopy;
+    }
+}
+```
