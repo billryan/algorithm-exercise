@@ -40,6 +40,7 @@
    * [First Missing Positive](integer_array/first_missing_positive.md)
    * [2 Sum](integer_array/2_sum.md)
    * [3 Sum](integer_array/3_sum.md)
+   * [3 Sum Closest](integer_array/3_sum_closest.md)
 * [Binary Search - 二分搜索](binary_search/README.md)
    * [Binary Search](binary_search/binary_search.md)
    * [Search Insert Position](binary_search/search_insert_position.md)
