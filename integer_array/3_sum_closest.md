@@ -42,7 +42,7 @@ class Solution:
                 if abs(sum3 - target) < abs(result - target):
                     result = sum3
 
-                # optimization 2 - filter the sum3 cloest to target
+                # optimization 2 - filter the sum3 closest to target
                 sum_flag = 0
                 if sum3 > target:
                     end -= 1
