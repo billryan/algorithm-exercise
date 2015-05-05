@@ -53,6 +53,7 @@
    * [Search a 2D Matrix II](binary_search/search_a_2d_matrix_ii.md)
    * [Median of two Sorted Arrays](binary_search/median_of_two_sorted_arrays.md)
    * [Sqrt x](binary_search/sqrt_x.md)
+   * [Wood Cut](binary_search/wood_cut.md)
 * [Linked List - 链表](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
