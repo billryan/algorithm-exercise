@@ -21,8 +21,7 @@ class Solution:
         elif x == 0:
             return 0
 
-        start = 1
-        end = x
+        start, end = 1, x
         while start + 1 < end:
             mid = start + (end - start) / 2
             if mid**2 == x:
