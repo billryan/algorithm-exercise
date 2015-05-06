@@ -5,32 +5,28 @@
 1. 找到数组中最小元素并将其和数组第一个元素交换位置。
 2. 在剩下的元素中找到最小元素并将其与数组第二个元素交换，直至整个数组排序。
 
-下图来源为 [File:Selection-Sort-Animation.gif - IB Computer Science](http://wiki.ibcsstudent.org/index.php?title=File:Selection-Sort-Animation.gif) 
+下图来源为 [File:Selection-Sort-Animation.gif - IB Computer Science](http://wiki.ibcsstudent.org/index.php?title=File:Selection-Sort-Animation.gif)
 
 ![Selection Sort](../images/selection_sort.gif)
 
-实现：
+以上排序过程使用 Python 实现如下所示：
 
-```
-public class Selection
-{
-    public static void sort(Comparable[] a)
-    {
-        int N = a.length();
-        for (int i = 0; i < N; i++)
-        {
-            int min = i;
-            for (int j = i+1; j < N; j++)
-            {
-                if (less(a[j], a[min]))
-                {
-                    min = j;
-                }
-            }
-            exch(a, i, min);
-        }
-    }
-}
+```python
+#!/usr/bin/env python
+
+
+def selectionSort(alist):
+    for i in xrange(len(alist)):
+        print(alist)
+        min_index = i
+        for j in xrange(i + 1, len(alist)):
+            if alist[j] < alist[min_index]:
+                min_index = j
+        alist[min_index], alist[i] = alist[i], alist[min_index]
+    return alist
+
+unsorted_list = [8, 5, 2, 6, 9, 3, 1, 4, 0, 7]
+print(selectionSort(unsorted_list))
 ```
 
 性质：
@@ -42,4 +38,5 @@ public class Selection
 
 ## Reference
 
-[选择排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F)
+- [选择排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F)
+- [The Selection Sort — Problem Solving with Algorithms and Data Structures](http://interactivepython.org/runestone/static/pythonds/SortSearch/TheSelectionSort.html)
