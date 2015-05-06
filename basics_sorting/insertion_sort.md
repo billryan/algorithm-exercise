@@ -11,6 +11,29 @@
 
 ![Insertion Sort](../images/insertion_sort.gif)
 
+
+以上排序过程使用 Python 实现如下所示：
+
+```python
+#!/usr/bin/env python
+
+
+def insertionSort(alist):
+    for i, item_i in enumerate(alist):
+        print alist
+        index = i
+        while index > 0 and alist[index - 1] > item_i:
+            alist[index] = alist[index - 1]
+            index -= 1
+
+        alist[index] = item_i
+
+    return alist
+
+unsorted_list = [6, 5, 3, 1, 8, 7, 2, 4]
+print(insertionSort(unsorted_list))
+```
+
 实现(C++)：
 
 ```
@@ -62,3 +85,4 @@ void shell_sort(T arr[], int len) {
 
 - [插入排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F)
 - [希尔排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F)
+- [The Insertion Sort — Problem Solving with Algorithms and Data Structures](http://interactivepython.org/runestone/static/pythonds/SortSearch/TheInsertionSort.html)
