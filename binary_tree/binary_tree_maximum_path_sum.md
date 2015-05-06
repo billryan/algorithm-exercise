@@ -174,6 +174,60 @@ public:
 
 如果还不理解的建议就以上面那个根节点为-10的例子画一画。
 
+### C++ using self-defined class
+```c++
+/**
+ * Definition of TreeNode:
+ * class TreeNode {
+ * public:
+ *     int val;
+ *     TreeNode *left, *right;
+ *     TreeNode(int val) {
+ *         this->val = val;
+ *         this->left = this->right = NULL;
+ *     }
+ * }
+ */
+class Solution {
+    class ResultType {
+    public:
+        int singlePath, maxPath;
+        ResultType(int s, int m):singlePath(s), maxPath(m) {}
+    };
+
+private:
+    ResultType helper(TreeNode *root) {
+        if (root == NULL) {
+            ResultType *nullResult = new ResultType(0, INT_MIN);
+            return *nullResult;
+        }
+        // Divide
+        ResultType left = helper(root->left);
+        ResultType right = helper(root->right);
+
+        // Conquer
+        int singlePath = max(left.singlePath, right.singlePath) + root->val;
+        singlePath = max(singlePath, 0);
+
+        int maxPath = max(left.maxPath, right.maxPath);
+        maxPath = max(maxPath, left.singlePath + right.singlePath + root->val);
+        
+        ResultType *result = new ResultType(singlePath, maxPath);
+        return *result;
+    }
+
+public:
+    int maxPathSum(TreeNode *root) {
+        ResultType result = helper(root);
+        return result.maxPath;
+    }
+};
+```
+
+### 源码分析
+1. 如果不用 `ResultType *XXX = new ResultType ...` 再 `return *XXX` 的方式，则需要在自定义 class 中重载 `new` operator。
+2. 如果遇到 `...private` 的编译错误，则是因为自定义 class 中需要把成员声明为 public，否则需要把访问这个成员的函数也做 class 内部处理。
+
 ## Reference
 
 - [^pair_is_harmful]: [std::pair considered harmful! « Modern Maintainable Code](http://maintainablecode.logdown.com/posts/158531-stdpair-considered-harmful) - 作者指出了`pair`不能滥用的原因，如不可维护，信息量小。
