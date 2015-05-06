@@ -2,6 +2,7 @@
 
 ## Source
 
+- leetcode: [Merge Sorted Array | LeetCode OJ](https://leetcode.com/problems/merge-sorted-array/)
 - lintcode: [(6) Merge Sorted Array](http://www.lintcode.com/en/problem/merge-sorted-array/)
 
 ```
@@ -20,7 +21,36 @@ How can you optimize your algorithm if one array is very large and the other is 
 
 ## 题解
 
-逐个比较两个数组内的元素，取较大的置于新数组尾部元素中。
+自尾部向首部逐个比较两个数组内的元素，取较大的置于新数组尾部元素中。
+
+### Python
+
+```python
+class Solution:
+    # @param {integer[]} nums1
+    # @param {integer} m
+    # @param {integer[]} nums2
+    # @param {integer} n
+    # @return {void} Do not return anything, modify nums1 in-place instead.
+    def merge(self, nums1, m, nums2, n):
+        # resize nums1 to required size
+        nums1 += [0] * (n + m - len(nums1))
+        index = m + n
+        while m > 0 and n > 0:
+            if nums1[m - 1] > nums2[n - 1]:
+                index -= 1
+                m -= 1
+                nums1[index] = nums1[m]
+            else:
+                index -= 1
+                n -= 1
+                nums1[index] = nums2[n]
+
+        while n > 0:
+            index -= 1
+            n -= 1
+            nums1[index] = nums2[n]
+```
 
 ### Java
 
@@ -100,7 +130,11 @@ public:
 
 ### 源码分析
 
-分三种情况遍历比较。
+分三种情况遍历比较。实际上在能确定最后返回的数组时，只需要分两次遍历即可。
+
+### 复杂度分析
+
+最坏情况下需要遍历两个数组中所有元素，时间复杂度为 $$O(n)$$. 空间复杂度 $$O(1)$$.
 
 #### Challenge
 
