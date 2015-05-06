@@ -94,7 +94,7 @@ public:
 1. 引入`dummy node`，这个对于链表头不确定时特别有效。
 2. 引入`INT_MAX`, `INT_MIN`等最大/最小值，对于比较类问题很有效(需要考虑到本身值就为最值，这种情况一般极少见)。
 
-显然，对于这个问题，`dummy node`是不太适用，我们来探讨下取最值的可能性。从以上代码可知边界处理的关键在于需要判断`root->left`和`root-right`是否为`NULL`, `key`的比较则相对固定，分别为`root->left->val`和`root->right->val`, 由此我们自然可以联想到可以使用`left_val`和`right_val`对左右子树的`key`进行「包装」，在子节点与根节点的`key`进行比较之前对`left_val`和`right_val`赋值即可（这一思想在 lintcode: [(65) Median of two Sorted Arrays](http://www.lintcode.com/en/problem/median-of-two-sorted-arrays/) 中也有使用）。
+显然，对于这个问题，`dummy node`是不太适用，我们来探讨下取最值的可能性。从以上代码可知边界处理的关键在于需要判断`root->left`和`root-right`是否为`NULL`, `key`的比较则相对固定，分别为`root->left->val`和`root->right->val`, 由此我们自然可以联想到可以使用`left_val`和`right_val`对左右子树的`key`进行「包装」，在子节点与根节点的`key`进行比较之前对`left_val`和`right_val`赋值即可（这一思想在 lintcode: [(65) Median of two Sorted Arrays](http://www.lintcode.com/en/problem/median-of-two-sorted-arrays/) 和 lintcode: [(93) Balanced Binary Tree](http://www.lintcode.com/en/problem/balanced-binary-tree/) 中也有使用）。
 
 ### C++ Recursion(wrapper for root->*->val)
 
