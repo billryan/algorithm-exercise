@@ -84,6 +84,35 @@ public:
 
 > **fixme** 细心的你也许会发现，其实题解的分析漏掉了一种情况，即树中可能只含有 A/B 中的一个节点！这种情况应该返回空值，但上述实现均返回非空节点。重复节点就不考虑了，太复杂了...
 
+### 不会漏掉 A/B 中只有一个节点的情况的方法
+```java
+public class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
+        if (root == null || root == A || root == B) {
+            return root;
+        }
+        
+        // Divide
+        TreeNode left = lowestCommonAncestor(root.left, A, B);
+        TreeNode right = lowestCommonAncestor(root.right, A, B);
+        
+        // Conquer
+        if (left != null && right != null) {
+            return root;
+        } 
+        if (left != null) {
+            return left;
+        }
+        if (right != null) {
+            return right;
+        }
+        return null;
+    }
+}
+```
+
+其实这个代码只是把上一个版本的代码最后简洁的判断语句改成复杂的多层判断就可以了。同样是分治法实现。
+
 ## 题解 - 自底向上(计数器)
 
 为了解决上述方法可能导致误判的情况，我们可以对返回结果添加计数器来解决。**由于此计数器的值只能由子树向上递推，故不能再使用中序遍历，而应该改用后序遍历。**
@@ -154,4 +183,4 @@ private:
 - [^leetcode]: [Lowest Common Ancestor of a Binary Tree Part I | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-tree-part-i.html) - 清晰易懂的题解和实现。
 - [Lowest Common Ancestor of a Binary Tree Part II | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-tree-part-ii.html) - 如果存在指向父节点的指针，我们能否有更好的解决方案？
 - [Lowest Common Ancestor of a Binary Search Tree (BST) | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-search-tree.html) - 二叉搜索树中求最小公共祖先。
-- [Lowest Common Ancestor | 九章算法](http://www.jiuzhang.com/solutions/lowest-common-ancestor/) - 第一种方法可以在知道父节点时使用，第二种 Divide and Conquer 才是本题需要的解。
+- [Lowest Common Ancestor | 九章算法](http://www.jiuzhang.com/solutions/lowest-common-ancestor/) - 第一种和第二种方法可以在知道父节点时使用，但第二种 Divide and Conquer 才是本题需要的思想（第二种解法可以轻易改成不需要 parent 的指针的）。
