@@ -29,6 +29,31 @@ Can you do it without recursion?
 
 递归版很好理解，首先判断当前节点(根节点)是否为`null`，是则返回空vector，否则先返回当前节点的值，然后对当前节点的左节点递归，最后对当前节点的右节点递归。递归时对结果的处理方式不同可进一步细分为遍历和分治两种方法。
 
+### Python
+
+```python
+"""
+Definition of TreeNode:
+class TreeNode:
+    def __init__(self, val):
+        this.val = val
+        this.left, this.right = None, None
+"""
+
+
+class Solution:
+    """
+    @param root: The root of binary tree.
+    @return: Preorder in ArrayList which contains node values.
+    """
+    def preorderTraversal(self, root):
+        if root == None:
+            return []
+
+        return [root.val] + self.preorderTraversal(root.left) \
+                          + self.preorderTraversal(root.right)
+```
+
 ### C++ Traverse - 递归遍历
 
 ```c++
@@ -130,6 +155,41 @@ public:
 ## 题解 - 迭代
 
 迭代时需要利用栈来保存遍历到的节点，首先进行出栈抛出当前节点，保存当前节点的值，随后将右、左节点分别入栈，迭代到其为叶子节点(NULL)为止。
+
+### Python
+
+```python
+"""
+Definition of TreeNode:
+class TreeNode:
+    def __init__(self, val):
+        this.val = val
+        this.left, this.right = None, None
+"""
+
+
+class Solution:
+    """
+    @param root: The root of binary tree.
+    @return: Preorder in ArrayList which contains node values.
+    """
+    def preorderTraversal(self, root):
+        result = []
+        if root == None:
+            return result
+
+        stack = []
+        stack.append(root)
+        while stack:
+            node = stack.pop()
+            result.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+
+        return result
+```
 
 ### C++ Iteration
 
