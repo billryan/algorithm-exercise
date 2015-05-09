@@ -60,6 +60,42 @@ public:
 
 总共要进行两次扫描，所以时间复杂度是O(2*n)=O(n)。空间上需要一个哈希表来做结点的映射，所以空间复杂度也是O(n)。
 
+### Solution 1.5
+####C++
+```c++
+class Solution {
+public:
+    RandomListNode *copyRandomList(RandomListNode *head) {
+        if(head == NULL) {
+            return NULL;
+        }
+
+        RandomListNode *dummy = new RandomListNode(0);
+        RandomListNode *prev = dummy;
+        map<RandomListNode *, RandomListNode *> random_map;
+        
+        while (head != NULL) {
+            RandomListNode *newNode = new RandomListNode(head->label);
+            random_map[head] = newNode;
+            prev->next = newNode;
+            
+            if (head->random != NULL) {
+                if (random_map.find(head->random) == random_map.end()) {
+                    newNode->random = new RandomListNode(head->random->label);
+                    random_map[head->random] = newNode->random;
+                } else {
+                    newNode->random = random_map[head->random];
+                }
+            }
+            
+            prev = newNode;
+            head = head->next;
+        }
+        return dummy->next;
+    }
+};
+```
+
 ####Java
 ```java
 public class Solution {
