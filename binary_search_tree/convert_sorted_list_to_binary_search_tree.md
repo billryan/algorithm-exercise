@@ -124,26 +124,27 @@ private:
 class Solution {
 public:
     TreeNode *sortedListToBST(ListNode *head) {
-        int count = 0;
-        ListNode *curr = NULL;
-        for (curr = head; curr != NULL;) {
+        int length = 0;
+        ListNode *curr = head;
+        while (curr != NULL) {
             curr = curr->next;
-            ++count;
+            ++length;
         }
-        return helper(head, count);
+        return helper(head, length);
     }
 private:
-    TreeNode *helper(ListNode *&pos, int count) {
-        if (count <= 0) {
+    TreeNode *helper(ListNode *&pos, int length) {
+        if (length <= 0) {
             return NULL;
         }
         
-        TreeNode *left = helper(pos, count / 2);
-        TreeNode *res = new TreeNode(pos->val);
+        TreeNode *left = helper(pos, length / 2);
+        TreeNode *root = new TreeNode(pos->val); // the sequence cannot be changed!
+                                                 // this is important difference of the solution above
         pos = pos->next;
-        res->left = left;
-        res->right = helper(pos, count - count / 2 - 1);
-        return res;
+        root->left = left;
+        root->right = helper(pos, length - length / 2 - 1);
+        return root;
     }
 };
 ```
@@ -151,6 +152,7 @@ private:
 ### 源码分析
 1. 可以进一步简化 helper 函数代码，注意参数的接口设计。
 2. 即是把传入的链表指针向前递进 n 步，并返回经过的链表节点转化成的二分查找树的根节点。
+3. 注意注释中的那两句实现，`new root` 和 `new left` 不可调换顺序。这才是精简的要点。但是这种方法不如上面的分治法容易理解。
 
 
 ### O(nlogn) 的实现，避免 length 边界
