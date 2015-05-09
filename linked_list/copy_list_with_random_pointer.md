@@ -18,6 +18,7 @@ Return a deep copy of the list.
 
 所有类似的**深度拷贝**题目的传统做法，都是维护一个 `hash table`。即先按照复制一个正常链表的方式复制，复制的时候把复制的结点做一个 `hash table`，以旧结点为 key，新节点为 value。这么做的目的是为了第二遍扫描的时候我们按照这个哈希表把结点的 random 指针接上。
 
+####C++
 ```c++
 class Solution {
 public:
@@ -58,6 +59,49 @@ public:
 #### 复杂度分析
 
 总共要进行两次扫描，所以时间复杂度是O(2*n)=O(n)。空间上需要一个哈希表来做结点的映射，所以空间复杂度也是O(n)。
+
+####Java
+```java
+public class Solution {
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        HashMap<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+        RandomListNode dummy = new RandomListNode(0);
+        RandomListNode pre = dummy, newNode;
+        while (head != null) {
+            if (map.containsKey(head)) {
+                newNode = map.get(head);
+            } else {
+                newNode = new RandomListNode(head.label);
+                map.put(head, newNode);
+            }
+            pre.next = newNode;
+
+            if (head.random != null) {
+                if (map.containsKey(head.random)) {
+                    newNode.random = map.get(head.random);
+                } else {
+                    newNode.random = new RandomListNode(head.random.label);
+                    map.put(head.random, newNode.random);
+                }
+            }
+
+            pre = newNode;
+            head = head.next;
+        }
+
+        return dummy.next;
+    }
+}
+```
+
+#### 复杂度分析
+
+可以算作是 Solution 1.5 的版本，因为这样不需要遍历两次。而是在同一次遍历中，如果遇到 random 的指针指向的结点还没有访问过的情况，就当即存入 map 即可。但是时间复杂度还是 $$O(n)$$。
+
 
 ### Solution 2
 
