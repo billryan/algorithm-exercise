@@ -119,6 +119,106 @@ private:
 
 首先遍历链表得到链表长度，复杂度为 $$O(n)$$. 递归遍历链表时，每个链表节点被访问一次，故时间复杂度为 $$O(n)$$, 两者加起来总的时间复杂度仍为 $$O(n)$$.
 
+### 进一步简化代码
+```c++
+class Solution {
+public:
+    TreeNode *sortedListToBST(ListNode *head) {
+        int count = 0;
+        ListNode *curr = NULL;
+        for (curr = head; curr != NULL;) {
+            curr = curr->next;
+            ++count;
+        }
+        return helper(head, count);
+    }
+private:
+    TreeNode *helper(ListNode *&pos, int count) {
+        if (count == 0) {
+            return NULL;
+        }
+        
+        TreeNode *left = helper(pos, count / 2);
+        TreeNode *res = new TreeNode(pos->val);
+        pos = pos->next;
+        res->left = left;
+        res->right = helper(pos, count - count / 2 - 1);
+        return res;
+    }
+};
+```
+
+### 源码分析
+1. 可以进一步简化 helper 函数代码，注意参数的接口设计。
+2. 即是把传入的链表指针向前递进 n 步，并返回经过的链表节点转化成的二分查找树的根节点。
+
+
+### O(nlogn) 的实现，避免 length 边界
+```java
+/**
+ * Definition for ListNode.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int val) {
+ *         this.val = val;
+ *         this.next = null;
+ *     }
+ * }
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */ 
+public class Solution {
+    /**
+     * @param head: The first node of linked list.
+     * @return: a tree node
+     */
+    public TreeNode sortedListToBST(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        return helper(head);
+    } 
+
+    private TreeNode helper(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        if (head.next == null) {
+            return new TreeNode(head.val);
+        }
+
+        ListNode pre = null;
+        ListNode slow = head, fast = head;
+
+        while (fast != null && fast.next != null) {
+            pre = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        pre.next = null;
+
+        TreeNode root = new TreeNode(slow.val);
+        TreeNode L = helper(head);
+        TreeNode R = helper(slow.next);
+        root.left = L;
+        root.right = R;
+
+        return root;
+    } 
+}
+```
+### 源码分析
+1. 如果想避免上述 length 边界搞错的问题，可以使用分治法遍历树求中点的方法。
+2. 但这种时间复杂度是 O(nlogn)，性能上还是比 O(n) 差一点。
+
 ## Reference
 
 - [Convert Sorted List to Binary Search Tree | 九章算法](http://www.jiuzhang.com/solutions/convert-sorted-list-to-binary-search-tree/)
