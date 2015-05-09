@@ -36,8 +36,6 @@ public:
         }
 
         RandomListNode *dummy = new RandomListNode(0);
-        //RandomListNode *dummy_head = new RandomListNode(0);
-        //dummy->next = head;
         RandomListNode *prev = dummy;
         map<RandomListNode *, RandomListNode *> random_map;
         
@@ -62,6 +60,11 @@ public:
     }
 };
 ```
+
+#### 源码分析
+1. 只需要一个 `dummy` 存储新的拷贝出来的链表头，以用来第二次遍历时链接 random 指针。
+2. 第一次链接时勿忘记同时拷贝 random 指针，但此时的 random 指针并没有真正“链接”上，实际上是链接到了原始链表的 node 上。
+3. 第二次遍历是为了把原始链表的被链接的 node 映射到新链表中的 node，从而完成真正“链接”。
 
 #### 复杂度分析
 
