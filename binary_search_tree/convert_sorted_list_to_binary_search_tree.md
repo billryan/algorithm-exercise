@@ -134,7 +134,7 @@ public:
     }
 private:
     TreeNode *helper(ListNode *&pos, int count) {
-        if (count == 0) {
+        if (count <= 0) {
             return NULL;
         }
         
