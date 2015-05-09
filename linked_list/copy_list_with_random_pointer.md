@@ -20,6 +20,14 @@ Return a deep copy of the list.
 
 ####C++
 ```c++
+/**
+ * Definition for singly-linked list with a random pointer.
+ * struct RandomListNode {
+ *     int label;
+ *     RandomListNode *next, *random;
+ *     RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
+ * };
+ */
 class Solution {
 public:
     RandomListNode *copyRandomList(RandomListNode *head) {
@@ -27,31 +35,30 @@ public:
             return NULL;
         }
 
-        RandomListNode dummy(0);
-        RandomListNode* n = &dummy;
-        RandomListNode* h = head;
-        map<RandomListNode*, RandomListNode*> m;
-        while(h) {
-            RandomListNode* node = new RandomListNode(h->label);
-            n->next = node;
-            n = node;
-
-            node->random = h->random;
-
-            m[h] = node;
-
-            h = h->next;
+        RandomListNode *dummy = new RandomListNode(0);
+        //RandomListNode *dummy_head = new RandomListNode(0);
+        //dummy->next = head;
+        RandomListNode *prev = dummy;
+        map<RandomListNode *, RandomListNode *> random_map;
+        
+        while (head != NULL) {
+            RandomListNode *newNode = new RandomListNode(head->label);
+            random_map[head] = newNode;
+            newNode->random = head->random;
+            prev->next = newNode;
+            
+            head = head->next;
+            prev = prev->next;
         }
-
-        h = dummy.next;
-        while(h) {
-            if(h->random != NULL) {
-                h->random = m[h->random];
+        
+        prev = dummy->next;
+        while (prev != NULL) {
+            if (prev->random != NULL) {
+                prev->random = random_map[prev->random];
             }
-            h = h->next;
+            prev = prev->next;
         }
-
-        return dummy.next;
+        return dummy->next;
     }
 };
 ```
