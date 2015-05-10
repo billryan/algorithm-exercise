@@ -17,6 +17,7 @@
    * [Heap Sort](basics_sorting/heap_sort.md)
    * [Bucket Sort](basics_sorting/bucket_sort.md)
    * [Counting Sort](basics_sorting/counting_sort.md)
+   * [Radix Sort](basics_sorting/radix_sort.md)
 * [Basics Misc](basics_misc/README.md)
    * [Bit Manipulation](basics_misc/bit_manipulation.md)
 * [Part II - Coding](part_ii_coding/README.md)
