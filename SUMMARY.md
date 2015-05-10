@@ -76,6 +76,7 @@
    * [Merge k Sorted Lists](linked_list/merge_k_sorted_lists.md)
    * [Sort List](linked_list/sort_list.md)
    * [Reorder List](linked_list/reorder_list.md)
+   * [Copy List with Random Pointer](linked_list/copy_list_with_random_pointer.md)
 * [Reverse - 翻转法](reverse/README.md)
    * [Recover Rotated Sorted Array](reverse/recover_rotated_sorted_array.md)
    * [Rotate String](reverse/rotate_string.md)
