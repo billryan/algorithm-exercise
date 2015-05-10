@@ -1,5 +1,6 @@
 # Copy List with Random Pointer
 
+
 ## Source
 
 - lintcode: [(105) Copy List with Random Pointer](http://www.lintcode.com/en/problem/copy-list-with-random-pointer/)
@@ -38,17 +39,17 @@ public:
         RandomListNode *dummy = new RandomListNode(0);
         RandomListNode *prev = dummy;
         map<RandomListNode *, RandomListNode *> random_map;
-        
+
         while (head != NULL) {
             RandomListNode *newNode = new RandomListNode(head->label);
             random_map[head] = newNode;
             newNode->random = head->random;
             prev->next = newNode;
-            
+
             head = head->next;
             prev = prev->next;
         }
-        
+
         prev = dummy->next;
         while (prev != NULL) {
             if (prev->random != NULL) {
@@ -83,12 +84,12 @@ public:
         RandomListNode *dummy = new RandomListNode(0);
         RandomListNode *prev = dummy;
         map<RandomListNode *, RandomListNode *> random_map;
-        
+
         while (head != NULL) {
             RandomListNode *newNode = new RandomListNode(head->label);
             random_map[head] = newNode;
             prev->next = newNode;
-            
+
             if (head->random != NULL) {
                 if (random_map.find(head->random) == random_map.end()) {
                     newNode->random = new RandomListNode(head->random->label);
@@ -97,7 +98,7 @@ public:
                     newNode->random = random_map[head->random];
                 }
             }
-            
+
             prev = newNode;
             head = head->next;
         }
@@ -247,6 +248,6 @@ Solution 2 总共进行三次线性扫描，所以时间复杂度是 $$O(n)$$。
 ## Reference
 
 - [Copy List with Random Pointer - siddontang's leetcode Solution Book](http://siddontang.gitbooks.io/leetcode-solution/content/linked_list/copy_list_with_random_pointer.html/)
-- 
+-
 
 - [Copy List with Random Pointer - Code Ganker](http://blog.csdn.net/linhuanmars/article/details/22463599)
