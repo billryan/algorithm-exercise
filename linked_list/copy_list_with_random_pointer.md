@@ -239,6 +239,52 @@ public:
     }
 };
 ```
+
+```java
+public class Solution {
+    private void copyNext(RandomListNode head) {
+        while (head != null) {
+            RandomListNode newNode = new RandomListNode(head.label);
+            newNode.random = head.random;
+            newNode.next = head.next;
+            head.next = newNode;
+            head = head.next.next;
+        }
+    }
+
+    private void copyRandom(RandomListNode head) {
+        while (head != null) {
+            if (head.next.random != null) {
+                head.next.random = head.random.next;
+            }
+            head = head.next.next;
+        }
+    }
+
+    private RandomListNode splitList(RandomListNode head) {
+        RandomListNode newHead = head.next;
+        while (head != null) {
+            RandomListNode temp = head.next;
+            head.next = temp.next;
+            head = head.next;
+            if (temp.next != null) {
+                temp.next = temp.next.next;
+            }
+        }
+        return newHead;
+    }
+
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) {
+            return null;
+        }
+        copyNext(head);
+        copyRandom(head);
+        return splitList(head);
+    }
+}
+```
+
 #### 复杂度分析
 
 Solution 2 总共进行三次线性扫描，所以时间复杂度是 $$O(n)$$。但不再需要额外空间的 `hash table`，所以空间复杂度是 $$O(1)$$。
