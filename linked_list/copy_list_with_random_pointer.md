@@ -192,53 +192,60 @@ public class Solution {
 #### C++
 
 ```c++
+/**
+ * Definition for singly-linked list with a random pointer.
+ * struct RandomListNode {
+ *     int label;
+ *     RandomListNode *next, *random;
+ *     RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
+ * };
+ */
 class Solution {
 public:
     RandomListNode *copyRandomList(RandomListNode *head) {
-        if(head == NULL) {
+        if (head == NULL) {
             return NULL;
         }
-
-        //遍历并插入新的节点
-        RandomListNode* n = NULL;
-        RandomListNode* h = head;
-        while(h) {
-            RandomListNode* node = new RandomListNode(h->label);
-            node->random = h->random;
-
-            n = h->next;
-
-            h->next = node;
-            node->next = n;
-            h = n;
+        
+        RandomListNode *dummy = new RandomListNode(0);
+        RandomListNode *temp = NULL;
+        dummy->next = head;
+        
+        // copy next
+        while (head != NULL) {
+            RandomListNode *newNode = new RandomListNode(head->label);
+            newNode->random = head->random;
+            
+            temp = head->next;
+            head->next = newNode;
+            newNode->next = temp;
+            
+            head = temp;
         }
-
-        //调整random
-        h = head->next;
-        while(h) {
-            if(h->random != NULL) {
-                h->random = h->random->next;
+        
+        // copy random pointer
+        head = dummy->next;
+        
+        while (head != NULL) {
+            if (head->random != NULL) {
+                head->next->random = head->random->next;
             }
-            if(!h->next) {
-                break;
+            head = head->next->next;
+        }
+        
+        // split list
+        head = dummy->next;
+        
+        RandomListNode *newHead = head->next;
+        while (head != NULL) {
+            RandomListNode *temp = head->next;
+            head->next = temp->next;
+            head = head->next;
+            if (temp->next != NULL) {
+                temp->next = temp->next->next;
             }
-            h = h->next->next;
         }
-
-        //断开链表
-        h = head;
-        RandomListNode dummy(0);
-        RandomListNode* p = &dummy;
-        while(h) {
-            n = h->next;
-            p->next = n;
-            p = n;
-            RandomListNode* nn = n->next;
-            h->next = n->next;
-            h = n->next;
-        }
-
-        return dummy.next;
+        return newHead;
     }
 };
 ```
