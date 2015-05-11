@@ -62,6 +62,7 @@
    * [O1 Check Power of 2](math_and_bit_manipulation/o1_check_power_of_2.md)
    * [Convert Integer A to Integer B](math_and_bit_manipulation/convert_integer_a_to_integer_b.md)
    * [Factorial Trailing Zeroes](math_and_bit_manipulation/factorial_trailing_zeroes.md)
+   * [Unique Binary Search Trees](math_and_bit_manipulation/unique_binary_search_trees.md)
 * [Linked List - 链表](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
