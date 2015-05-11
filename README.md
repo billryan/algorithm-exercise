@@ -1,8 +1,6 @@
 # leetcode/lintcode题解/算法学习笔记
 
-[![Join the chat at https://gitter.im/billryan/algorithm-exercise](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/billryan/algorithm-exercise?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
+[![Join the chat at https://gitter.im/billryan/algorithm-exercise](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/billryan/algorithm-exercise?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
 
 一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯。本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
