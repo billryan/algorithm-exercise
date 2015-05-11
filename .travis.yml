@@ -10,6 +10,7 @@ before_install:
   - sudo apt-get install -y fonts-arphic-gbsn00lp
   # Install Gitbook
   - npm install gitbook-cli -g
+  - npm install svgexport -g
   # Clone the repository
   - cd ~
   - git clone --depth=10 --branch=master git://github.com/billryan/algorithm-exercise.git
