@@ -196,4 +196,5 @@ Robert Sedgewick 在其网站上对 [Quicksort](http://algs4.cs.princeton.edu/23
 - [快速排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F)
 - [Quicksort |  Robert Sedgewick](http://algs4.cs.princeton.edu/23quicksort/)
 - Programming Pearls Column 11 Sorting - 深入探讨了插入排序和快速排序
+- [Quicksort Analysis](../docs/quicksort_analysis.pdf)
 - [^programming_pearls]: Programming Pearls(第二版修订版) 一书中第11章排序中注明需要 $$n\log2n$$ 次比较，翻译有误？
