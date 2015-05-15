@@ -6,26 +6,26 @@
 2. 划分区——所有比基准小的元素置于基准左侧，比基准大的元素置于右侧，
 3. 递归调用——递归地调用此切分过程。
 
-## 递归实现
+## out-in-place - 非原地快排
 
-容易实现和理解的一个方法是采用递归，Python 的实现如下所示：
+容易实现和理解的一个方法是采用递归，使用 Python 的 list comprehension 实现如下所示：
 
 ```python
 #!/usr/bin/env python
 
 
-def qsort(alist):
+def qsort1(alist):
     print(alist)
     if len(alist) <= 1:
         return alist
     else:
         pivot = alist[0]
-        return qsort([x for x in alist[1:] if x < pivot]) + \
+        return qsort1([x for x in alist[1:] if x < pivot]) + \
                [pivot] + \
-               qsort([x for x in alist[1:] if x >= pivot])
+               qsort1([x for x in alist[1:] if x >= pivot])
 
 unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
-print(qsort(unsortedArray))
+print(qsort1(unsortedArray))
 ```
 
 输出如下所示：
@@ -45,7 +45,7 @@ print(qsort(unsortedArray))
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-递归 + not-in-place 的实现虽然简单易懂，但是如此一来『快速排序』便不再是『最快』的排序算法了，因为递归调用过程中空间复杂度颇高。
+『递归 + 非原地排序』的实现虽然简单易懂，但是如此一来『快速排序』便不再是最快的通用排序算法了，因为递归调用过程中非原地排序需要生成新数组，空间复杂度颇高。list comprehension 大法虽然好写，但是用在『快速排序』算法上就不是那么可取了。
 
 ### 复杂度分析
 
@@ -60,23 +60,134 @@ $$\sum _{i=0} ^{} \frac {n}{2^i} = 2n$$
 
 $$\sum_{i=0}^n (n-i+1) = O(n^2)$$
 
-![Quicksort Recursive](../images/qsort_recursive.png)
+![Quicksort Recursive](../images/qsort1.png)
 
 ## in-place - 原地快排
 
-先来一张动图看看快速排序的过程。
+### one index for partition
 
-![Quick Sort Animation](../images/quicksort_example.gif)
+先来看一种简单的 in-place 实现，仍然以`[6, 5, 3, 1, 8, 7, 2, 4]`为例，结合下图进行分析。以下标 $$l$$ 和 $$u$$ 表示数组待排序部分的下界(lower bound)和上界(upper bound)，下标 $$m$$ 表示遍历到数组第 $$i$$ 个元素时当前 partition 的索引，基准元素为 $$t$$, 即图中的 target.
+
+![Quick Sort one index for partition](../images/qsort2.png)
+
+在遍历到第 $$i$$ 个元素时，$$x[i]$$ 有两种可能，第一种是 $$x[i] \geq t$$, $$i$$ 自增往后遍历；第二种是 $$x[i] < t$$, 此时需要将 $$x[i]$$ 置于前半部分，比较简单的实现为 `swap(x[++m], x[i])`. 直至 `i == u` 时划分阶段结束，分两截递归进行快排。既然说到递归，就不得不提递归的终止条件，容易想到递归的终止步为 `l >= u`, 即索引相等或者交叉时退出。使用 Python 的实现如下所示：
+
+```python
+#!/usr/bin/env python
+
+
+def qsort2(alist, l, u):
+    print(alist)
+    if l >= u:
+        return
+
+    m = l
+    for i in xrange(l + 1, u + 1):
+        if alist[i] < alist[l]:
+            m += 1
+            alist[m], alist[i] = alist[i], alist[m]
+    # swap between m and l after partition, important!
+    alist[m], alist[l] = alist[l], alist[m]
+    qsort2(alist, l, m - 1)
+    qsort2(alist, m + 1, u)
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort2(unsortedArray, 0, len(unsortedArray) - 1))
+```
+
+容易出错的地方在于当前 partition 结束时未将 $$i$$ 和 $$m$$ 交换。比较`alist[i]`和`alist[l]`时只能使用`<`而不是`<=`!
+
+相应的结果输出为：
+
+```
+[6, 5, 3, 1, 8, 7, 2, 4]
+[4, 5, 3, 1, 2, 6, 8, 7]
+[2, 3, 1, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+None
+```
+
+### Two-way partitioning
+
+对于仅使用一个索引进行 partition 操作的快排对于随机分布数列的效果还是不错的，但若数组本身就已经有序或者相等的情况下，每次划分仅能确定一个元素的最终位置，故最坏情况下的时间复杂度变为 $$O(n^2)$$. 那么有什么办法尽可能避免这种最坏情况吗？聪明的人类总是能找到更好地解决办法——使用两个索引分别向右向左进行 partition.
+
+先来一张动图看看使用两个索引进行 partition 的过程。
+
+![Quick Sort two index for partition](../images/qsort3.gif)
 
 1. 选中`3`作为基准
 2. `lo`指针指向元素`6`, `hi`指针指向`4`, 移动`lo`直至其指向的元素大于等于`3`, 移动`hi`直至其指向的元素小于`3`。找到后交换`lo`和`hi`指向的元素——交换元素`6`和`2`。
 3. `lo`递增，`hi`递减，重复步骤2，此时`lo`指向元素为`5`, `hi`指向元素为`1`. 交换元素。
 4. `lo`递增，`hi`递减，发现其指向元素相同，此轮划分结束。递归排序元素`3`左右两边的元素。
 
-与归并排序的区别：
+对上述过程进行适当的抽象：
 
-- 归并排序将数组分成两个子数组分别排序，并将有序的子数组归并以将整个数组排序。递归调用发生在处理整个数组之前。
-- 快速排序将一个数组分成两个子数组并对这两个子数组独立地排序，两个子数组有序时整个数组也就有序了。递归调用发生在处理整个数组之后。
+1. 下标 $$i$$ 和 $$j$$ 初始化为待排序数组的两端。
+2. 基准元素设置为数组的第一个元素。
+3. 执行 partition 操作，大循环内包含两个内循环：
+   - 左侧内循环自增 $$i$$, 直到遇到**不小于**基准元素的值为止。
+   - 右侧内循环自减 $$j$$, 直到遇到**不大于**基准元素的值为止。
+4. 大循环测试两个下标是否相等或交叉，交换其值。
+
+这样一来对于数组元素均相等的情形下，每次 partition 恰好在中间元素，故共递归调用 $$\log n$$ 次，每层递归调用进行 partition 操作的比较次数总和近似为 $$n$$. 故总计需 $$n \log n$$ 次比较。[^programming_pearls]
+
+```python
+#!/usr/bin/env python
+
+
+def qsort3(alist, l, u):
+    print(alist)
+    if l >= u:
+        return
+
+    t = alist[l]
+    i = l + 1
+    j = u
+    while True:
+        while i <= u and alist[i] < t:
+            i += 1
+        while alist[j] > t:
+            j -= 1
+        if i > j:
+            break
+        # swap after make sure i > j
+        alist[i], alist[j] = alist[j], alist[i]
+    # do not forget swap l and j
+    alist[l], alist[j] = alist[j], alist[l]
+
+    qsort3(alist, l, j - 1)
+    qsort3(alist, j + 1, u)
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort3(unsortedArray, 0, len(unsortedArray) - 1))
+```
+
+相应的输出为：
+
+```
+[6, 5, 3, 1, 8, 7, 2, 4]
+[2, 5, 3, 1, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+None
+```
+
+从以上3种快排的实现我们可以发现其与『归并排序』的区别主要有如下两点：
+
+1. 归并排序将数组分成两个子数组分别排序，并将有序的子数组归并以将整个数组排序。递归调用发生在处理整个数组之前。
+2. 快速排序将一个数组分成两个子数组并对这两个子数组独立地排序，两个子数组有序时整个数组也就有序了。递归调用发生在处理整个数组之后。
 
 Robert Sedgewick 在其网站上对 [Quicksort](http://algs4.cs.princeton.edu/23quicksort/) 做了较为完整的介绍，建议去围观下。
 
@@ -84,3 +195,5 @@ Robert Sedgewick 在其网站上对 [Quicksort](http://algs4.cs.princeton.edu/23
 
 - [快速排序 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F)
 - [Quicksort |  Robert Sedgewick](http://algs4.cs.princeton.edu/23quicksort/)
+- Programming Pearls Column 11 Sorting - 深入探讨了插入排序和快速排序
+- [^programming_pearls]: Programming Pearls(第二版修订版) 一书中第11章排序中注明需要 $$n\log2n$$ 次比较，翻译有误？
