@@ -102,6 +102,7 @@
 * [Backtracking - 回溯法](backtracking/backtracking.md)
    * [Subsets](backtracking/subsets.md)
    * [Permutation](backtracking/permutation.md)
+   * [Unique Binary Search Trees II](backtracking/unique_binary_search_trees_ii.md)
 * [Dynamic Programming - 动态规划](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Knapsack - 背包问题](dynamic_programming/knapsack.md)
