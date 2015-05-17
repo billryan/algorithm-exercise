@@ -135,3 +135,5 @@ public:
 ## Reference
 
 - [c++ - logical shift right on signed data - Stack Overflow](http://stackoverflow.com/questions/13221369/logical-shift-right-on-signed-data)
+- [Update Bits | 九章算法](http://www.jiuzhang.com/solutions/update-bits/)
+- *CTCI 5th Chapter 9.5 中文版* p163
