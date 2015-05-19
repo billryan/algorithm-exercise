@@ -81,11 +81,11 @@ class Solution {
     - `i = 0`,
         1. `list.add(num[0]) -> list = [1]`, 递归调用`backTrack()`前, `result = [[]], list = [1], pos = 1`
         2. 递归调用`backTrack([[]], [1], [1, 2]，1)`
-            - `reslut.add[[1]] -> result = [[], [1]]`
+            - `result.add[[1]] -> result = [[], [1]]`
             - `i = 1`, for(i = 1 < 2)
                 1. `list.add(num[1]) -> list = [1, 2]`
                 2. 递归调用`backTrack([[], [1]], [1, 2], [1, 2]，2)`
-                    - `reslut.add[[1, 2]] -> result = [[], [1], [1, 2]]`
+                    - `result.add[[1, 2]] -> result = [[], [1], [1, 2]]`
                     - `i = 2` 退出for循环，退出此次调用
                 3. `list.remove(2 - 1) -> list = [1]`
                 4. `i++ -> i = 2`
@@ -95,7 +95,7 @@ class Solution {
     - `i = 1`, for(i = 1 < 2)
         1. `list.add(num[1]) -> list = [2]`
         2. 递归调用`backTrack([[], [1], [1, 2]], [2], [1, 2]，2)`
-            - `reslut.add[[2]] -> result = [[], [1], [1, 2], [2]]`
+            - `result.add[[2]] -> result = [[], [1], [1, 2], [2]]`
             - `i = 2` 退出for循环，退出此次调用
         3. `list.remove(1 - 1) -> list = []`
         4. `i++ -> i = 2`
