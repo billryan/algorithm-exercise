@@ -100,20 +100,12 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 - [ ] 加入时间/空间复杂度分析。
 - [ ] Part I 部分基础知识的总结。
 - [ ] CC150 书中题目及基础知识的引入。
-- [ ] 添加一些较好的最近面试真题。
 - [x] 完善在线版本 http://algorithm.yuanbin.me 的 css, 使用 yahei 插件初步达到目标。
 - [x] 完善离线版本如 PDF(适合打印的字型) 的中文支持。
 - [ ] 完善离线版本如 PDF(适合在电子屏上浏览的字型) 的中文支持。
 
 
-## 如何准备算法及面试
-
-除了日常进行算法练习外，对于找工作的小伙伴们来说，如何在面试过程中更好地在算法环节脱颖而出还是有迹可循的。从九章算法那可以总结如下：
-
-1. 面试过程要有适当的沟通
-1. 听到问题后要讲自己的理解
-2. 与面试官沟通题目的细节
-3. 告诉面试官自己的想法或算法
+## 如何练习算法
 
 虽说练习算法偏向于算法本身，但是好的代码风格还是很有必要的。粗略可分为以下几点：
 
@@ -146,21 +138,6 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 - [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
 - [牛客网-专业IT笔试面试备考平台,最全求职题库,全面提升IT编程能力](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
 
-### 面试相关
-
-本小节部分摘自九章微信的分享。
-
-- [www.geeksforgeeks.org](http://www.geeksforgeeks.org/) -  非常著名的漏题网站之一。上面会时不时的有各种公司的面试真题漏出。有一些题也会有解法分析。
-- [Programming Interview Questions | CareerCup](http://www.careercup.com/) -  CC150作者搞的网站，也是著名的漏题网站之一。大家会在上面讨论各个公司的面试题。
-- [Glassdoor – Get Hired. Love Your Job.](http://www.glassdoor.com/index.htm) - 一个给公司打分的网站，类似yelp的公司版。会有一些人在上面讨论面试题，适合你在面某个公司的时候专门去看一下。
-- [面经网 | 汇集热气腾腾的求职咨询](http://www.themianjing.com/) - 面经网。应该是个人经营的一个积累面经的网站。面经来源主要是一亩三分地，mitbbs之类的地方。
-- [一亩三分地论坛-美国加拿大留学申请|工作就业|英语考试|学习生活信噪比最高的网站](http://www.1point3acres.com/bbs/) - 人气非常高的论坛。
-- [待字闺中(JobHunting)版 | 未名空间(mitbbs.com)](http://www.mitbbs.com/bbsdoc/JobHunting.html)  jobhunting版，美华人找工作必上。
-- [程序员面试：电话面试问答Top 50 - 博客 - 伯乐在线](http://blog.jobbole.com/84618/) - 其实不仅仅只是 Top 50，扩展连接还给出了其他参考。
-- [如何写好技术简历 —— 实例、模板及工具 | @Get社区](http://get.jobdeer.com/744.get) - 挺不错的技术简历实战。
-- [想加入硅谷顶级科技公司，你该知道这些-LinkedIn中国](http://www.vhao123.com/t/LinkedIn-China/519524) - 数据工程师董飞的求职分享。
-- [求职在美国，面试攻略我知道 on Vimeo](https://vimeo.com/113182965) - Coursera 数据工程师董飞的视频分享。
-
 ### 其他资源
 
 - [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.jiuzhang.com/) - 代码质量不错，整理得也很好。
@@ -172,6 +149,7 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 - [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
 - [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
 - [专栏：算法笔记——《算法设计与分析》](http://blog.csdn.net/column/details/lf-algoritnote.html) - CSDN上对《算法设计与分析》一书的学习笔记。
+- [我的算法学习之路 - Lucida](http://zh.lucida.me/blog/on-learning-algorithms/) - Google 工程师的算法学习经验分享。
 
 ### 书籍推荐
 
@@ -180,6 +158,6 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 - [Algorithm Design (豆瓣)](http://book.douban.com/subject/1475870/)
 - [The Algorithm Design Manual](http://www.amazon.com/exec/obidos/ASIN/1848000693/thealgorithmrepo), 作者还放出了自己上课的视频和slides - [Skiena's Audio Lectures](http://www3.cs.stonybrook.edu/~algorith/video-lectures/)，[The Algorithm Design Manual (豆瓣)](http://book.douban.com/subject/3072383/)
 - 大部头有 *Introduction to Algorithm* 和 TAOCP
-- *Cracking The Coding Interview*. 著名的CC150，Google, Mircosoft, LinkedIn 前HR离职之后写的书，从很全面的角度剖析了面试的各个环节和题目。之所以叫CC150就是有150道面试题，除了算法数据结构等题以外，还包含OO Design, Database, System Design, Brain Teaser等类型的题目。准备北美面试的同学一定要看。
+- *Cracking The Coding Interview*. 著名的CTCI(又称CC150)，Google, Mircosoft, LinkedIn 前HR离职之后写的书，从很全面的角度剖析了面试的各个环节和题目。除了算法数据结构等题以外，还包含OO Design, Database, System Design, Brain Teaser等类型的题目。准备北美面试的同学一定要看。
 - *剑指Offer*。适合国内找工作的同学看看，英文版叫Coding Interviews. 作者是何海涛(Harry He)。Amazon上可以买到。有大概50多题，题目的分析比较全面，会从面试官的角度给出很多的建议和show各种坑。
 - *进军硅谷* -- 程序员面试揭秘。有差不多150题。
