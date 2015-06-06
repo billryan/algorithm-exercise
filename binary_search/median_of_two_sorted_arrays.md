@@ -119,6 +119,9 @@ class Solution {
      */
     public double findMedianSortedArrays(int[] A, int[] B) {
         // write your code here
+        if (A.length == 0 && B.length == 0) {
+            return 0;
+        }
         int len = A.length + B.length;
         if (len % 2 == 0) {
             return (findKth(A, 0, B, 0, len/2) + findKth(A, 0, B, 0, len/2+1)) / 2.0;
