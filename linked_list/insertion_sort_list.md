@@ -33,7 +33,7 @@ class Solution:
     """
     @param head: The first node of linked list.
     @return: The head of linked list.
-    """ 
+    """
     def insertionSortList(self, head):
         dummy = ListNode(0)
         cur = head
@@ -113,7 +113,7 @@ public class Solution {
             pre.next = cur;
             cur = temp;
         }
-        
+
         return dummy.next;
     }
 }
@@ -132,7 +132,7 @@ Python 的实现在 lintcode 上会提示 TLE, leetcode 上勉强通过，这里
 
 最好情况：原链表已经有序，每得到一个新节点都需要 $$i$$ 次比较和一次交换, 时间复杂度为 $$1/2O(n^2) + O(n)$$, 使用了 dummy 和 pre, 空间复杂度近似为 $$O(1)$$.
 
-最坏情况：原链表正好逆序，由于是单向链表只能从前往后依次遍历，交换和比较次数均为 $$1/2 O(n^2)$$, 总的时间复杂度近似为 $$(n^2)$$, 空间复杂度同上，近似为 $$O(1)$$.
+最坏情况：原链表正好逆序，由于是单向链表只能从前往后依次遍历，交换和比较次数均为 $$1/2 O(n^2)$$, 总的时间复杂度近似为 $$O(n^2)$$, 空间复杂度同上，近似为 $$O(1)$$.
 
 ## 题解2 - 优化有序链表
 
@@ -153,7 +153,7 @@ class Solution:
     """
     @param head: The first node of linked list.
     @return: The head of linked list.
-    """ 
+    """
     def insertionSortList(self, head):
         dummy = ListNode(0)
         dummy.next = head
@@ -253,7 +253,7 @@ public class Solution {
                 cur = cur.next;
             }
         }
-        
+
         return dummy.next;
     }
 }
