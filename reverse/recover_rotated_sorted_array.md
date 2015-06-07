@@ -39,7 +39,7 @@ public class Solution {
         if (nums == null || nums.size() <= 1) {
             return;
         }
-        
+
         int pos = 1;
         while (pos < nums.size()) { // find the break point
             if (nums.get(pos - 1) > nums.get(pos)) {

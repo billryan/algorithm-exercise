@@ -16,9 +16,9 @@ Note
 All inputs will be in lower-case
 ```
 
-## 题解1 - 双重`for`循环(TLE) <i class="fa fa-thumbs-o-down"></i>
+## 题解1 - 双重`for`循环(TLE)
 
-题 [Two Strings Are Anagrams | Data Structure and Algorithm](http://algorithm.yuanbin.me/string/two_strings_are_anagrams.html) 的升级版，容易想到的方法为使用双重`for`循环两两判断字符串数组是否互为变位字符串。但显然此法的时间复杂度较高。还需要 $$O(n)$$ 的数组来记录字符串是否被加入到最终结果中。
+题 [Two Strings Are Anagrams](http://algorithm.yuanbin.me/string/two_strings_are_anagrams.html) 的升级版，容易想到的方法为使用双重`for`循环两两判断字符串数组是否互为变位字符串。但显然此法的时间复杂度较高。还需要 $$O(n)$$ 的数组来记录字符串是否被加入到最终结果中。
 
 ### C++
 
@@ -83,11 +83,11 @@ private:
 
 ### 复杂度分析
 
-私有方法`isAnagrams`最坏的时间复杂度为 $$O(2L)$$, 其中 $$L$$ 为字符串长度。双重`for`循环时间复杂度近似为 $$\frac {1}{2} O(n^2)$$, $$n$$ 为给定字符串数组数目。总的时间复杂度近似为 $$O(n^2 L)$$.
+私有方法`isAnagrams`最坏的时间复杂度为 $$O(2L)$$, 其中 $$L$$ 为字符串长度。双重`for`循环时间复杂度近似为 $$\frac {1}{2} O(n^2)$$, $$n$$ 为给定字符串数组数目。总的时间复杂度近似为 $$O(n^2 L)$$. 使用了含有26个元素的 int 数组，空间复杂度可认为是 $$O(1)$$.
 
 ## 题解2 - 排序 + hashmap
 
-在题 [Two Strings Are Anagrams | Data Structure and Algorithm](http://algorithm.yuanbin.me/string/two_strings_are_anagrams.html) 中曾介绍过使用排序和 hashmap 两种方法判断变位词。这里我们将这两种方法同时引入！只不过此时的 hashmap 的 key 为字符串，value 为该字符串在 vector 中出现的次数。两次遍历字符串数组，第一次遍历求得排序后的字符串数量，第二次遍历将排序后相同的字符串取出放入最终结果中。
+在题 [Two Strings Are Anagrams](http://algorithm.yuanbin.me/string/two_strings_are_anagrams.html) 中曾介绍过使用排序和 hashmap 两种方法判断变位词。这里我们将这两种方法同时引入！只不过此时的 hashmap 的 key 为字符串，value 为该字符串在 vector 中出现的次数。两次遍历字符串数组，第一次遍历求得排序后的字符串数量，第二次遍历将排序后相同的字符串取出放入最终结果中。
 
 ### C++
 
