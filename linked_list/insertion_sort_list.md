@@ -266,6 +266,10 @@ public class Solution {
 3. 由于已经确认链表逆序，故仅需将较小值(`cur->next`而不是`cur`)的节点插入到链表的合适位置。
 4. 将`cur->next`插入到`pre`之后，这里需要四个步骤，需要特别小心！
 
+![Insertion Sort](../images/insertion_sort_list.png)
+
+如上图所示，将`cur->next`插入到`pre`节点后大致分为3个步骤。
+
 ### 复杂度分析
 
 最好情况下时间复杂度降至 $$O(n)$$, 其他同题解1.
