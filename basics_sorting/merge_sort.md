@@ -6,6 +6,8 @@
 
 ![Merge Sort](../images/merge_sort.gif)
 
+### Python
+
 ```python
 #!/usr/bin/env python
 
@@ -47,33 +49,68 @@ print(merge_sort.mergeSort(unsortedArray))
 
 ## 原地归并
 
-辅助函数：用于将已排序好的两个数组归并。
+### Java
 
 ```
-merge(Comaprable[] a, int lo, int mid, int hi)
-{   //将a[lo..mid] 和 a[mid+1..hi] 归并
-    int i = lo, j = mid + 1;
+public class MergeSort {
+	public static void main(String[] args) {
+		int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+		mergeSort(unsortedArray);
+		System.out.println("After sort: ");
+		for (int item : unsortedArray) {
+			System.out.print(item + " ");
+		}
+	}
 
-    // 拷贝a[lo..hi]原数组至aux中
-    for (int k = lo; k <= hi; k++) {
-        aux[k] = a[k];
-    }
+	private static void merge(int[] array, int low, int mid, int high) {
+		int[] helper = new int[array.length];
+		// copy array to helper
+		for (int k = low; k <= high; k++) {
+			helper[k] = array[k];
+		}
+		// merge array[low...mid] and array[mid + 1...high]
+		int i = low, j = mid + 1;
+		for (int k = low; k <= high; k++) {
+			// k means current location
+			if (i > mid) {
+			// no item in left part
+				array[k] = helper[j];
+				j++;
+			} else if (j > high) {
+			// no item in right part
+				array[k] = helper[i];
+				i++;
+			} else if (helper[i] > helper[j]) {
+			// get smaller item in the right side
+				array[k] = helper[j];
+				j++;
+			} else {
+			// get smaller item in the left side
+				array[k] = helper[i];
+				i++;
+			}
+		}
+	}
 
-    for (int k = lo; k <= hi; k++) {
-        if (i > mid) { //左半边用尽，取右半边元素
-            a[k] = aux[j++];
-        } else if (j > hi) { //右半边用尽，取左半边元素
-            a[k] = aux[i++];
-        } else if (less(aux[j], aux[i])) { //右半边的当前元素小于左半边的当前元素，取右半边的元素
-            a[k] = aux[j++];
-        } else { //右半边的当前元素大于等于左半边的当前元素，取左半边的元素
-            a[k] = aux[i++];
-        }
-    }
+	public static void sort(int[] array, int low, int high) {
+		if (high <= low) return;
+		int mid = low + (high - low) / 2;
+		sort(array, low, mid);
+		sort(array, mid + 1, high);
+		merge(array, low, mid, high);
+		for (int item : array) {
+			System.out.print(item + " ");
+		}
+		System.out.println();
+	}
+
+	public static void mergeSort(int[] array) {
+		sort(array, 0, array.length - 1);
+	}
 }
 ```
 
-时间复杂度为NlogN，但是空间复杂度为N。
+时间复杂度为 $$O(N \log N)$$, 使用了等长的辅助数组，空间复杂度为 $$O(N)$$。
 
 ## Reference
 
