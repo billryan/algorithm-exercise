@@ -4,7 +4,9 @@
 
 ![Bubble Sort](../images/bubble_sort.gif)
 
-以上排序过程使用 Python 实现如下所示：
+## Implementation
+
+### Python
 
 ```python
 #!/usr/bin/env python
@@ -22,6 +24,42 @@ def bubbleSort(alist):
 unsorted_list = [6, 5, 3, 1, 8, 7, 2, 4]
 print(bubbleSort(unsorted_list))
 ```
+
+### Java
+
+```java
+public class Sort {
+	public static void main(String[] args) {
+		int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+		bubbleSort(unsortedArray);
+		System.out.println("After sort: ");
+		for (int item : unsortedArray) {
+			System.out.print(item + " ");
+		}
+	}
+
+	public static void bubbleSort(int[] array) {
+		int len = array.length;
+		for (int i = 0; i < len; i++) {
+			for (int item : array) {
+				System.out.print(item + " ");
+			}
+			System.out.println();
+			for (int j = 1; j < len - i; j++) {
+				if (array[j - 1] > array[j]) {
+					int temp = array[j - 1];
+					array[j - 1] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+	}
+}
+```
+
+### 复杂度分析
+
+平均情况与最坏情况均为 $$O(n^2)$$, 使用了 temp 作为临时交换变量，空间复杂度为 $$O(1)$$.
 
 ## Reference
 

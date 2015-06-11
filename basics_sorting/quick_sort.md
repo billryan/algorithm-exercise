@@ -3,8 +3,8 @@
 核心：快排是一种采用分治思想的排序算法，大致分为三个步骤。
 
 1. 定基准——首先随机选择一个元素最为基准
-2. 划分区——所有比基准小的元素置于基准左侧，比基准大的元素置于右侧，
-3. 递归调用——递归地调用此切分过程。
+2. 划分区——所有比基准小的元素置于基准左侧，比基准大的元素置于右侧
+3. 递归调用——递归地调用此切分过程
 
 ## out-in-place - 非原地快排
 
@@ -72,6 +72,8 @@ $$\sum_{i=0}^n (n-i+1) = O(n^2)$$
 
 在遍历到第 $$i$$ 个元素时，$$x[i]$$ 有两种可能，第一种是 $$x[i] \geq t$$, $$i$$ 自增往后遍历；第二种是 $$x[i] < t$$, 此时需要将 $$x[i]$$ 置于前半部分，比较简单的实现为 `swap(x[++m], x[i])`. 直至 `i == u` 时划分阶段结束，分两截递归进行快排。既然说到递归，就不得不提递归的终止条件，容易想到递归的终止步为 `l >= u`, 即索引相等或者交叉时退出。使用 Python 的实现如下所示：
 
+### Python
+
 ```python
 #!/usr/bin/env python
 
@@ -95,7 +97,52 @@ unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
 print(qsort2(unsortedArray, 0, len(unsortedArray) - 1))
 ```
 
-容易出错的地方在于当前 partition 结束时未将 $$i$$ 和 $$m$$ 交换。比较`alist[i]`和`alist[l]`时只能使用`<`而不是`<=`!
+### Java
+
+```java
+public class Sort {
+	public static void main(String[] args) {
+		int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+		quickSort(unsortedArray);
+		System.out.println("After sort: ");
+		for (int item : unsortedArray) {
+			System.out.print(item + " ");
+		}
+	}
+
+	public static void quickSort1(int[] array, int l, int u) {
+		for (int item : array) {
+			System.out.print(item + " ");
+		}
+		System.out.println();
+
+		if (l >= u) return;
+		int m = l;
+		for (int i = l + 1; i <= u; i++) {
+			if (array[i] < array[l]) {
+				m += 1;
+				int temp = array[m];
+				array[m] = array[i];
+				array[i] = temp;
+			}
+		}
+		// swap between array[m] and array[l]
+		// put pivot in the mid
+		int temp = array[m];
+		array[m] = array[l];
+		array[l] = temp;
+
+		quickSort1(array, l, m - 1);
+		quickSort1(array, m + 1, u);
+	}
+
+	public static void quickSort(int[] array) {
+		quickSort1(array, 0, array.length - 1);
+	}
+}
+```
+
+容易出错的地方在于当前 partition 结束时未将 $$i$$ 和 $$m$$ 交换。比较`alist[i]`和`alist[l]`时只能使用`<`而不是`<=`! 因为只有取`<`才能进入收敛条件，`<=`则可能会出现死循环，因为在`=`时第一个元素可能保持不变进而产生死循环。
 
 相应的结果输出为：
 
@@ -109,7 +156,6 @@ print(qsort2(unsortedArray, 0, len(unsortedArray) - 1))
 [1, 2, 3, 4, 5, 6, 8, 7]
 [1, 2, 3, 4, 5, 6, 7, 8]
 [1, 2, 3, 4, 5, 6, 7, 8]
-None
 ```
 
 ### Two-way partitioning
@@ -135,6 +181,8 @@ None
 4. 大循环测试两个下标是否相等或交叉，交换其值。
 
 这样一来对于数组元素均相等的情形下，每次 partition 恰好在中间元素，故共递归调用 $$\log n$$ 次，每层递归调用进行 partition 操作的比较次数总和近似为 $$n$$. 故总计需 $$n \log n$$ 次比较。[^programming_pearls]
+
+### Python
 
 ```python
 #!/usr/bin/env python
@@ -167,6 +215,57 @@ unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
 print(qsort3(unsortedArray, 0, len(unsortedArray) - 1))
 ```
 
+### Java
+
+```java
+public class Sort {
+	public static void main(String[] args) {
+		int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+		quickSort(unsortedArray);
+		System.out.println("After sort: ");
+		for (int item : unsortedArray) {
+			System.out.print(item + " ");
+		}
+	}
+
+	public static void quickSort2(int[] array, int l, int u) {
+		for (int item : array) {
+			System.out.print(item + " ");
+		}
+		System.out.println();
+
+		if (l >= u) return;
+		int pivot = array[l];
+		int left = l + 1;
+		int right = u;
+		while (left <= right) {
+			while (left <= right && array[left] < pivot) {
+				left++;
+			}
+			while (array[right] > pivot) {
+				right--;
+			}
+			if (left > right) break;
+			// swap array[left] with array[right] while left <= right
+			int temp = array[left];
+			array[left] = array[right];
+			array[right] = temp;
+		}
+		/* swap the smaller with pivot */
+		int temp = array[right];
+		array[right] = array[l];
+		array[l] = temp;
+
+		quickSort2(array, l, right - 1);
+		quickSort2(array, right + 1, u);
+	}
+
+	public static void quickSort(int[] array) {
+		quickSort2(array, 0, array.length - 1);
+	}
+}
+```
+
 相应的输出为：
 
 ```
@@ -181,7 +280,6 @@ print(qsort3(unsortedArray, 0, len(unsortedArray) - 1))
 [1, 2, 3, 4, 5, 6, 7, 8]
 [1, 2, 3, 4, 5, 6, 7, 8]
 [1, 2, 3, 4, 5, 6, 7, 8]
-None
 ```
 
 从以上3种快排的实现我们可以发现其与『归并排序』的区别主要有如下两点：
