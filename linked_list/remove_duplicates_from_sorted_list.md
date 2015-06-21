@@ -6,7 +6,8 @@
 - lintcode: [(112) Remove Duplicates from Sorted List](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list/)
 
 ```
-Given a sorted linked list, delete all duplicates such that each element appear only once.
+Given a sorted linked list,
+delete all duplicates such that each element appear only once.
 
 Example
 Given 1->1->2, return 1->2.
@@ -32,16 +33,16 @@ class Solution:
     def deleteDuplicates(self, head):
         if head is None:
             return None
-        
+
         node = head
         while node.next is not None:
             if node.val == node.next.val:
                 node.next = node.next.next
             else:
                 node = node.next
-                
+
         return head
-        
+
 ```
 
 ### C++
@@ -100,7 +101,7 @@ public:
 public class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null) return null;
-        
+
         ListNode node = head;
         while (node.next != null) {
             if (node.val == node.next.val) {
@@ -109,7 +110,7 @@ public class Solution {
                 node = node.next;
             }
         }
-        
+
         return head;
     }
 }
@@ -122,3 +123,11 @@ public class Solution {
 3. 不相等时移动当前节点至下一节点，注意这个步骤必须包含在`else`中，否则逻辑较为复杂
 
 `while` 循环处也可使用`node != null && node->next != null`, 这样就不用单独判断`head` 是否为空了，但是这样会降低遍历的效率，因为需要判断两处。
+
+### 复杂度分析
+
+遍历链表一次，时间复杂度为 $$O(n)$$, 使用了一个中间变量进行遍历，空间复杂度为 $$O(1)$$.
+
+## Reference
+
+- [Remove Duplicates from Sorted List 参考程序 | 九章](http://www.jiuzhang.com/solutions/remove-duplicates-from-sorted-list/)
