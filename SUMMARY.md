@@ -70,6 +70,7 @@
 * [Linked List - 链表](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
+   * [Remove Duplicates from Unsorted List](linked_list/remove_duplicates_from_an_unsorted_linked_list.md)
    * [Partition List](linked_list/partition_list.md)
    * [Two Lists Sum](linked_list/two_lists_sum.md)
    * [Two Lists Sum Advanced](linked_list/two_lists_sum_advanced.md)
