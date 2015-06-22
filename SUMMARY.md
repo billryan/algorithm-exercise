@@ -85,6 +85,7 @@
    * [Copy List with Random Pointer](linked_list/copy_list_with_random_pointer.md)
    * [Sort List](linked_list/sort_list.md)
    * [Insertion Sort List](linked_list/insertion_sort_list.md)
+   * [Check if a singly linked list is palindrome](linked_list/check_if_a_singly_linked_list_is_palindrome.md)
 * [Reverse - 翻转法](reverse/README.md)
    * [Recover Rotated Sorted Array](reverse/recover_rotated_sorted_array.md)
 * [Binary Tree - 二叉树](binary_tree/README.md)
