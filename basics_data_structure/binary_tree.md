@@ -24,7 +24,23 @@
 
 ![Binary Tree Traversal](../images/binary_tree_traversal.png)
 
+## 节点定义
+这里的节点统一使用LeetCode的定义
+```c++
+struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+  };
+```
+
 ## 相关算法——递归法遍历
+###pre-order travese
+```c++
+
+```
+
 
 ## 相关算法——分治法（Divide & Conquer)
 
