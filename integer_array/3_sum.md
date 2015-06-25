@@ -70,7 +70,7 @@ class Solution:
 
 目前这段源码为比较简易的实现，leetcode 上的运行时间为500 + ms, 还有较大的优化空间，嗯，后续再进行优化。
 
-### C++
+### C++ 
 ```c++
 class Solution {
 public:
