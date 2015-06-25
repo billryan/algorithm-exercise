@@ -29,7 +29,30 @@ a ^ b ^ c = a ^ (b ^ c) = (a ^ b) ^ c // associative
 6. 将第`n`位至第0位(含)清零 - `x & (~((1 << (n + 1)) - 1))`
 7. 仅更新第`n`位，写入值为`v`; `v`为1则更新为1，否则为0 - `mask = ~(1 << n); x = (x & mask) | (v << i)`
 
+###实际应用
+####位图(Bitmap)
+位图一般用于替代flag array，节约空间。<br>
+一个int型的数组用位图替换后，占用的空间可以缩小到原来的$$1/32$$.<br>
+下面代码定义了一个100万大小的类图，setbit和testbit函数
+```c++
+#define N 1000000 // 1 million
+#define WORD_LENGTH sizeof(int) * 8 //sizeof返回字节数，乘以8，为int类型总位数
+
+//bits为数组，i控制具体哪位，即i为0~1000000
+void setbit(unsigned int* bits, unsigned int i){
+  bits[i / WORD_LENGTH] |= 1<<(i % WORD_LENGTH);  
+}
+
+int testbit(unsigned int* bits, unsigned int i){
+  return bits[i/WORD_LENGTH] & (1<<(i % WORD_LENGTH));
+}
+
+unsigned int bits[N/WORD_LENGTH + 1];
+```
+
 ## Reference
 
 - [位运算简介及实用技巧（一）：基础篇 | Matrix67: The Aha Moments](http://www.matrix67.com/blog/archives/263)
 - *cc150* chapter 8.5 and chapter 9.5
+- 《编程珠玑2》
+- 《Elementary Algorithms》 Larry LIU Xinyu
