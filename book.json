@@ -4,7 +4,8 @@
         "ga",
         "katex",
         "richquotes",
-        "yahei"
+        "yahei",
+        "swiftype"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -15,6 +16,10 @@
         },
         "richquotes": {
             "todos": true
+        },
+        "swiftype": {
+            "token": "utQHy1R2XyiVqDqaZqws",
+            "version": "2.0.0"
         }
     }
 }
