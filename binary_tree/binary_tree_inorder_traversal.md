@@ -48,8 +48,8 @@ class Solution:
         if root is None:
             return []
         else:
-            return self.inorderTraversal(root.left) + [root.val] + \
-                self.inorderTraversal(root.right)
+            return [root.val] + self.inorderTraversal(root.left) \
+                              + self.inorderTraversal(root.right)
 ```
 
 ### Python - with helper
@@ -139,7 +139,8 @@ public class Solution {
 
 ### 源码分析
 
-Python 这种动态语言在写递归时返回结果好处理点，无需辅助函数。通用的方法为在递归函数入口参数中传入返回结果。
+Python 这种动态语言在写递归时返回结果好处理点，无需声明类型。通用的方法为在递归函数入口参数中传入返回结果，
+也可使用分治的方法替代辅助函数。
 
 ### 复杂度分析
 
@@ -260,7 +261,7 @@ public class Solution {
 
 ### 源码分析
 
-使用栈的思想模拟递归，注意好边界条件即可。
+使用栈的思想模拟递归，注意迭代的演进和边界条件即可。
 
 ### 复杂度分析
 
