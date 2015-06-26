@@ -1,7 +1,8 @@
-# Binary Tree Preorder Traversal - 前序遍历
+# Binary Tree Preorder Traversal
 
 ## Source
 
+- leetcode: [Binary Tree Preorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 - lintcode: [(66) Binary Tree Preorder Traversal](http://www.lintcode.com/en/problem/binary-tree-preorder-traversal/)
 
 ```
@@ -23,13 +24,13 @@ Challenge
 Can you do it without recursion?
 ```
 
-## 题解 - 递归
+## 题解1 - 递归
 
 **面试时不推荐递归这种做法。**
 
-递归版很好理解，首先判断当前节点(根节点)是否为`null`，是则返回空vector，否则先返回当前节点的值，然后对当前节点的左节点递归，最后对当前节点的右节点递归。递归时对结果的处理方式不同可进一步细分为遍历和分治两种方法。
+递归版很好理解，首先判断当前节点(根节点)是否为`null`，是则返回空vector，否则先返回当前节点的值，然后对当前节点的左节点递归，最后对当前节点的右节点递归。递归时对返回结果的处理方式不同可进一步细分为遍历和分治两种方法。
 
-### Python
+### Python - Divide and Conquer
 
 ```python
 """
@@ -49,12 +50,11 @@ class Solution:
     def preorderTraversal(self, root):
         if root == None:
             return []
-
         return [root.val] + self.preorderTraversal(root.left) \
                           + self.preorderTraversal(root.right)
 ```
 
-### C++ Traverse - 递归遍历
+### C++ - Divide and Conquer
 
 ```c++
 /**
@@ -77,121 +77,140 @@ public:
      * @return: Preorder in vector which contains node values.
      */
     vector<int> preorderTraversal(TreeNode *root) {
-        vector<int> val_vec;
-        traverse(root, val_vec);
+        vector<int> result;
+        if (root != NULL) {
+            // Divide (分)
+            vector<int> left = preorderTraversal(root->left);
+            vector<int> right = preorderTraversal(root->right);
+            // Merge
+            result.push_back(root->val);
+            result.insert(result.end(), left.begin(), left.end());
+            result.insert(result.end(), right.begin(), right.end());
+        }
 
-        return val_vec;
+        return result;
+    }
+};
+```
+
+### C++ - Traversal
+
+```c++
+/**
+ * Definition of TreeNode:
+ * class TreeNode {
+ * public:
+ *     int val;
+ *     TreeNode *left, *right;
+ *     TreeNode(int val) {
+ *         this->val = val;
+ *         this->left = this->right = NULL;
+ *     }
+ * }
+ */
+
+class Solution {
+public:
+    /**
+     * @param root: The root of binary tree.
+     * @return: Preorder in vector which contains node values.
+     */
+    vector<int> preorderTraversal(TreeNode *root) {
+        vector<int> result;
+        traverse(root, result);
+
+        return result;
     }
 
 private:
     void traverse(TreeNode *root, vector<int> &ret) {
-        if (root == NULL) {
-            return;
+        if (root != NULL) {
+            ret.push_back(root->val);
+            traverse(root->left, ret);
+            traverse(root->right, ret);
         }
-
-        ret.push_back(root->val);
-        traverse(root->left, ret);
-        traverse(root->right, ret);
     }
 };
 ```
 
-### 源码分析
+### Java - Divide and Conquer
 
-使用了辅助递归函数`traverse`，传值时注意应使用`vector`的引用。
-
-## 题解 - 分治
-
-使用分治的方法和递归类似，但是不同的是递归是将结果作为参数传入递归函数中，而分治则是先将结果保留，随后再合并到最终结果中。
-
-### C++ Divide and Conquer
-
-```c++
+```java
 /**
- * Definition of TreeNode:
- * class TreeNode {
- * public:
+ * Definition for a binary tree node.
+ * public class TreeNode {
  *     int val;
- *     TreeNode *left, *right;
- *     TreeNode(int val) {
- *         this->val = val;
- *         this->left = this->right = NULL;
- *     }
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
  * }
  */
-
-class Solution {
-public:
-    /**
-     * @param root: The root of binary tree.
-     * @return: Preorder in vector which contains node values.
-     */
-    vector<int> preorderTraversal(TreeNode *root) {
-        vector<int> val_vec;
-
-        // NULL or leaf(叶子节点)
-        if (root == NULL) {
-            return val_vec;
+public class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (root != null) {
+            // Divide
+            List<Integer> left = preorderTraversal(root.left);
+            List<Integer> right = preorderTraversal(root.right);
+            // Merge
+            result.add(root.val);
+            result.addAll(left);
+            result.addAll(right);
         }
-
-        // Divide (分)
-        vector<int> left = preorderTraversal(root->left);
-        vector<int> right = preorderTraversal(root->right);
-
-        // Conquer (治)
-        val_vec.push_back(root->val);
-        val_vec.insert(val_vec.end(), left.begin(), left.end());
-        val_vec.insert(val_vec.end(), right.begin(), right.end());
-
-        return val_vec;
+        
+        return result;
     }
-};
+}
 ```
 
 ### 源码分析
 
-由于是使用vector, 将新的vector插入另一vector不能再使用push_back, 而应该使用insert。
+使用遍历的方法保存递归返回结果需要使用辅助递归函数`traverse`，将结果作为参数传入递归函数中，传值时注意应使用`vector`的引用。
+分治方法首先分开计算各结果，最后合并到最终结果中。
+C++ 中由于是使用vector, 将新的vector插入另一vector不能再使用push_back, 而应该使用insert。
+Java 中使用`addAll`方法.
 
-## 题解 - 迭代
+### 复杂度分析
 
-迭代时需要利用栈来保存遍历到的节点，首先进行出栈抛出当前节点，保存当前节点的值，随后将右、左节点分别入栈，迭代到其为叶子节点(NULL)为止。
+遍历树中节点，时间复杂度 $$O(n)$$, 未使用额外空间。
+
+## 题解2 - 迭代
+
+迭代时需要利用栈来保存遍历到的节点，纸上画图分析后发现应首先进行出栈抛出当前节点，保存当前节点的值，随后将右、左节点分别入栈(注意入栈顺序，先右后左)，迭代到其为叶子节点(NULL)为止。
 
 ### Python
 
 ```python
-"""
-Definition of TreeNode:
-class TreeNode:
-    def __init__(self, val):
-        this.val = val
-        this.left, this.right = None, None
-"""
-
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
 class Solution:
-    """
-    @param root: The root of binary tree.
-    @return: Preorder in ArrayList which contains node values.
-    """
+    # @param {TreeNode} root
+    # @return {integer[]}
     def preorderTraversal(self, root):
+        if root is None:
+            return []
+
         result = []
-        if root == None:
-            return result
-
-        stack = []
-        stack.append(root)
-        while stack:
-            node = stack.pop()
-            result.append(node.val)
-            if node.right:
-                stack.append(node.right)
-            if node.left:
-                stack.append(node.left)
-
+        s = []
+        s.append(root)
+        while s:
+            root = s.pop()
+            result.append(root.val)
+            if root.right is not None:
+                s.append(root.right)
+            if root.left is not None:
+                s.append(root.left)
+                
         return result
+        
 ```
 
-### C++ Iteration
+### C++
 
 ```c++
 /**
@@ -214,20 +233,15 @@ public:
      * @return: Preorder in vector which contains node values.
      */
     vector<int> preorderTraversal(TreeNode *root) {
-        vector<int> val_vec;
-        stack<const TreeNode *> s;
+        vector<int> result;
+        if (root == NULL) return result;
 
-        if (root == NULL) {
-            return val_vec;
-        }
-
+        stack<TreeNode *> s;
         s.push(root);
         while (!s.empty()) {
-            const TreeNode *node = s.top();
+            TreeNode *node = s.top();
             s.pop();
-
-            val_vec.push_back(node->val);
-
+            result.push_back(node->val);
             if (node->right != NULL) {
                 s.push(node->right);
             }
@@ -236,9 +250,40 @@ public:
             }
         }
 
-        return val_vec;
+        return result;
     }
 };
+```
+
+### Java
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (root == null) return result;
+        
+        Stack<TreeNode> s = new Stack<TreeNode>();
+        s.push(root);
+        while (!s.empty()) {
+            TreeNode node = s.pop();
+            result.add(node.val);
+            if (node.right != null) s.push(node.right);
+            if (node.left != null) s.push(node.left);
+        }
+        
+        return result;
+    }
+}
 ```
 
 ### 源码分析
@@ -253,3 +298,7 @@ public:
 其中步骤4,5,6为迭代的核心，对应前序遍历「根左右」。
 
 所以说到底，**使用迭代，只不过是另外一种形式的递归。**使用递归的思想去理解遍历问题会容易理解许多。
+
+### 复杂度分析
+
+使用辅助栈，最坏情况下栈空间与节点数相等，空间复杂度近似为 $$O(n)$$, 对每个节点遍历一次，时间复杂度近似为 $$O(n)$$.
