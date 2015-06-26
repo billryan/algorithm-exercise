@@ -70,6 +70,69 @@ class Solution:
 
 目前这段源码为比较简易的实现，leetcode 上的运行时间为500 + ms, 还有较大的优化空间，嗯，后续再进行优化。
 
+### C++ 
+```c++
+class Solution {
+public:
+    vector<vector<int> > threeSum(vector<int> &num) 
+    {
+        vector<vector<int> > result;
+        if (num.size() < 3) return result;
+        
+        int ans = 0;
+
+        sort(num.begin(), num.end());
+        
+        for (int i = 0;i < num.size() - 2; ++i)
+        {
+            if (i > 0 && num[i] == num[i - 1])  
+                continue;
+            int j = i + 1;
+            int k = num.size() - 1;
+
+            while (j < k)
+            {
+                ans = num[i] + num[j] + num[k];
+
+                if (ans == 0)
+                {
+                    result.push_back({num[i], num[j], num[k]});
+                    ++j;
+                    while (j < num.size() && num[j] == num[j - 1])
+                        ++j;
+                    --k;
+                    while (k >= 0 && num[k] == num[k + 1])
+                        --k;
+                }
+                else if (ans > 0) 
+                    --k;
+                else 
+                    ++j;
+            }
+        }
+        
+        return result;
+    }
+};
+```
+###源码分析
+
+同python解法不同，没有使用hash map
+```
+S = {-1 0 1 2 -1 -4}
+排序后：
+S = {-4 -1 -1 0 1 2}
+      ↑  ↑        ↑
+      i  j        k
+         →        ←
+i每轮只走一步，j和k根据S[i]+S[j]+S[k]=ans和0的关系进行移动，且j只向后走（即S[j]只增大），k只向前走（即S[k]只减小）
+如果ans>0说明S[k]过大，k向前移；如果ans<0说明S[j]过小，j向后移；ans==0即为所求。
+至于如何取到所有解，看代码即可理解，不再赘述。
+```
+###复杂度分析
+
+外循环i走了n轮,每轮j和k一共走n-i步，所以时间复杂度为$$O(n^2)$$。
+最终运行时间为52ms
 ## Reference
 
 - [3Sum | 九章算法](http://www.jiuzhang.com/solutions/3sum/)
