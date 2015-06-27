@@ -104,7 +104,7 @@
    * [Convert Sorted Array to Binary Search Tree](binary_search_tree/convert_sorted_array_to_binary_search_tree.md)
    * [Convert Sorted List to Binary Search Tree](binary_search_tree/convert_sorted_list_to_binary_search_tree.md)
    * [Binary Search Tree Iterator](binary_search_tree/binary_search_tree_iterator.md)
-* [Exhaustive Search - 穷竭搜素](exhaustive_search/backtracking.md)
+* [Exhaustive Search - 穷竭搜索](exhaustive_search/README.md)
    * [Subsets](exhaustive_search/subsets.md)
    * [Unique Subsets](exhaustive_search/unique_subsets.md)
    * [Permutation](exhaustive_search/permutation.md)
