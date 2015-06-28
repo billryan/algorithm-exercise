@@ -122,6 +122,7 @@
        * [Jump Game](dynamic_programming/jump_game.md)
    * [Word Break](dynamic_programming/word_break.md)
    * [Longest Increasing Subsequence](dynamic_programming/longest_increasing_subsequence.md)
+   * [Palindrome Partitioning II](dynamic_programming/palindrome_partitioning_ii.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
