@@ -21,7 +21,7 @@ Time complexity O(n^2) or O(nlogn)
 Clarification
 What's the definition of longest increasing subsequence?
 
-    * The longest increasing subsequence problem is to find a subsequence of 
+    * The longest increasing subsequence problem is to find a subsequence of
     a given sequence in which the subsequence's elements are in sorted order,
     lowest to highest, and in which the subsequence is as long as possible.
     This subsequence is not necessarily contiguous, or unique.
@@ -44,7 +44,7 @@ class Solution:
     def longestIncreasingSubsequence(self, nums):
         if not nums:
             return 0
-        
+
         lis = [1] * len(nums)
         for i in xrange(1, len(nums)):
             for j in xrange(i):
@@ -64,10 +64,10 @@ public:
      */
     int longestIncreasingSubsequence(vector<int> nums) {
         if (nums.empty()) return 0;
-        
+
         int len = nums.size();
         vector<int> lis(len, 1);
-        
+
         for (int i = 1; i < len; ++i) {
             for (int j = 0; j < i; ++j) {
                 if (nums[j] <= nums[i] && (lis[i] < lis[j] + 1)) {
@@ -75,7 +75,7 @@ public:
                 }
             }
         }
-        
+
         return *max_element(lis.begin(), lis.end());
     }
 };
@@ -91,10 +91,10 @@ public class Solution {
      */
     public int longestIncreasingSubsequence(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
-        
+
         int[] lis = new int[nums.length];
         Arrays.fill(lis, 1);
-        
+
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[j] <= nums[i] && (lis[i] < lis[j] + 1)) {
@@ -102,7 +102,7 @@ public class Solution {
                 }
             }
         }
-        
+
         // get the max lis
         int max_lis = 0;
         for (int i = 0; i < lis.length; i++) {
@@ -110,7 +110,7 @@ public class Solution {
                 max_lis = lis[i];
             }
         }
-        
+
         return max_lis;
     }
 }
