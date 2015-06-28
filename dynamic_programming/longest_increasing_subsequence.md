@@ -10,7 +10,6 @@
 ```
 Given a sequence of integers, find the longest increasing subsequence (LIS).
 You code should return the length of the LIS.
-Have you met this question in a real interview? Yes
 Example
 For [5, 4, 1, 2, 3], the LIS  is [1, 2, 3], return 3
 
