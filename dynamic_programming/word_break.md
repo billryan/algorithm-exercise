@@ -67,7 +67,9 @@ public:
 
         // get the max word length of wordDict
         int max_word_len = 0;
-        for (unordered_set<string>::iterator it = wordDict.begin(); it != wordDict.end(); ++it) {
+        for (unordered_set<string>::iterator it = wordDict.begin();
+	     it != wordDict.end(); ++it) {
+
             max_word_len = max(max_word_len, (*it).size());
         }
 
@@ -78,7 +80,9 @@ public:
                 // optimize for too long interval
                 if (i - j > max_word_len) break;
 
-                if (can_break[j] && wordDict.find(s.substr(j, i - j)) != wordDict.end()) {
+                if (can_break[j] && 
+		    wordDict.find(s.substr(j, i - j)) != wordDict.end()) {
+
                     can_break[i] = true;
                     break;
                 }
