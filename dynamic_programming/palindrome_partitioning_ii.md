@@ -8,7 +8,7 @@
 - lintcode: [(108) Palindrome Partitioning II](http://www.lintcode.com/en/problem/palindrome-partitioning-ii/)
 
 ```
-Given a string s, cut s into some substrings such that 
+Given a string s, cut s into some substrings such that
 every substring is a palindrome.
 
 Return the minimum cuts needed for a palindrome partitioning of s.
@@ -16,7 +16,7 @@ Return the minimum cuts needed for a palindrome partitioning of s.
 Example
 For example, given s = "aab",
 
-Return 1 since the palindrome partitioning ["aa","b"] could be produced 
+Return 1 since the palindrome partitioning ["aa","b"] could be produced
 using 1 cut.
 ```
 
@@ -33,9 +33,9 @@ class Solution:
     def minCut(self, s):
         if not s:
             print 0
-        
+
         cut = [i - 1 for i in xrange(1 + len(s))]
-        
+
         for i in xrange(1 + len(s)):
             for j in xrange(i):
                 # s[j:i] is palindrome
@@ -103,14 +103,14 @@ class Solution {
 public:
     int minCut(string s) {
         if (s.empty()) return 0;
-        
+
         int len = s.size();
         vector<int> cut;
         for (int i = 0; i < 1 + len; ++i) {
             cut.push_back(i - 1);
         }
         vector<vector<bool> > mat = getMat(s);
-        
+
         for (int i = 1; i < 1 + len; ++i) {
             for (int j = 0; j < i; ++j) {
                 if (mat[j][i - 1]) {
@@ -118,10 +118,10 @@ public:
                 }
             }
         }
-        
+
         return cut[len];
     }
-    
+
     vector<vector<bool> > getMat(string s) {
         int len = s.size();
         vector<vector<bool> > mat = vector<vector<bool> >(len, vector<bool>(len, true));
@@ -136,7 +136,7 @@ public:
                 }
             }
         }
-        
+
         return mat;
     }
 };
@@ -148,14 +148,14 @@ public:
 public class Solution {
     public int minCut(String s) {
         if (s == null || s.length() == 0) return 0;
-        
+
         int len = s.length();
         int[] cut = new int[1 + len];
         for (int i = 0; i < 1 + len; ++i) {
             cut[i] = i - 1;
         }
         boolean[][] mat = paMat(s);
-        
+
         for (int i = 1; i < 1 + len; i++) {
             for (int j = 0; j < i; j++) {
                 if (mat[j][i - 1]) {
@@ -163,14 +163,14 @@ public class Solution {
                 }
             }
         }
-        
+
         return cut[len];
     }
-    
+
     private boolean[][] paMat(String s) {
         int len = s.length();
         boolean[][] mat = new boolean[len][len];
-        
+
         for (int i = len - 1; i >= 0; i--) {
             for (int j = i; j < len; j++) {
                 if (j == i) {
@@ -182,7 +182,7 @@ public class Solution {
                 }
             }
         }
-        
+
         return mat;
     }
 }
