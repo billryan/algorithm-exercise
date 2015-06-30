@@ -149,4 +149,4 @@ public class Solution {
 
 ### 复杂度分析
 
-两重 for 循环，时间复杂度为 $$O(len1 \cdots len2)$$. 使用二维矩阵，空间复杂度为 $$O(len1 \cdots len2)$$.
+两重 for 循环，时间复杂度为 $$O(len1 \cdot len2)$$. 使用二维矩阵，空间复杂度为 $$O(len1 \cdot len2)$$.
