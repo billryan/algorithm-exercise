@@ -44,6 +44,7 @@
    * [Remove Duplicates from Sorted Array II](integer_array/remove_duplicates_from_sorted_array_ii.md)
    * [Merge Sorted Array](integer_array/merge_sorted_array.md)
    * [Merge Sorted Array II](integer_array/merge_sorted_array_ii.md)
+   * [Median](integer_array/median.md)
 * [Binary Search - 二分搜索](binary_search/README.md)
    * [Binary Search](binary_search/binary_search.md)
    * [Search Insert Position](binary_search/search_insert_position.md)
