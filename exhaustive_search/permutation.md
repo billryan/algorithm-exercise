@@ -188,13 +188,92 @@ class Solution:
         return result
 ```
 
+### C++
+
+```c++
+class Solution {
+public:
+    /**
+     * @param nums: A list of integers.
+     * @return: A list of permutations.
+     */
+    vector<vector<int> > permute(vector<int>& nums) {
+        vector<vector<int> > result;
+
+        if (nums.size() == 1) {
+            result.push_back(nums);
+            return result;
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            vector<int> nums_new = nums;
+            nums_new.erase(nums_new.begin() + i);
+
+            vector<vector<int> > res_tmp = permute(nums_new);
+            for (int j = 0; j < res_tmp.size(); ++j) {
+                vector<int> temp = res_tmp[j];
+                temp.push_back(nums[i]);
+                result.push_back(temp);
+            }
+        }
+
+        return result;
+    }
+};
+```
+
+### Java
+
+```java
+public class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<Integer> numsList = new ArrayList<Integer>();
+
+        if (nums == null) {
+            return result;
+        } else {
+            // convert int[] to List<Integer>
+            for (int item : nums) numsList.add(item);
+        }
+
+        if (nums.length <= 1) {
+            result.add(numsList);
+            return result;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int[] numsNew = new int[nums.length - 1];
+            System.arraycopy(nums, 0, numsNew, 0, i);
+            System.arraycopy(nums, i + 1, numsNew, i, nums.length - i - 1);
+
+            List<List<Integer>> resTemp = permute(numsNew);
+            for (List<Integer> temp : resTemp) {
+                temp.add(nums[i]);
+                result.add(temp);
+            }
+        }
+
+        return result;
+    }
+}
+```
+
 ### 源码分析
 
 Python 中使用`len()`时需要防止`None`, 递归终止条件为数组中仅剩一个元素或者为空，否则遍历`nums`数组，取出第`i`个元素并将其加入至最终结果。`nums[:i] + nums[i + 1:]`即为去掉第`i`个元素后的新列表。
 
+Java 中 ArrayList 和 List 的类型转换需要特别注意。
+
 ### 复杂度分析
 
-由于取的结果都是最终结果，无需去重判断，故时间复杂度为 $$O(n!)$$, 但是由于`nums[:i] + nums[i + 1:]`会产生新的列表，实际运行会比第一种方法慢不少，而且栈上的空间会消耗比较多。
+由于取的结果都是最终结果，无需去重判断，故时间复杂度为 $$O(n!)$$, 但是由于`nums[:i] + nums[i + 1:]`会产生新的列表，实际运行会比第一种方法慢不少。
+
+## 题解3 - Iteration
+
+递归版的程序比较简单，咱们来个迭代的实现。
+
+**TBD**
 
 ## Reference
 
