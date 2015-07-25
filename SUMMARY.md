@@ -126,6 +126,7 @@
    * [Palindrome Partitioning II](dynamic_programming/palindrome_partitioning_ii.md)
    * [Longest Common Subsequence](dynamic_programming/longest_common_subsequence.md)
    * [Edit Distance](dynamic_programming/edit_distance.md)
+   * [Jump Game II](dynamic_programming/jump_game_ii.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
