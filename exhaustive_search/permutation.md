@@ -2,6 +2,7 @@
 
 ## Source
 
+- leetcode: [Permutations | LeetCode OJ](https://leetcode.com/problems/permutations/)
 - lintcode: [(15) Permutations](http://www.lintcode.com/en/problem/permutations/)
 
 ```
@@ -30,11 +31,43 @@ Challenge
 Do it without recursion
 ```
 
-## 题解
+## 题解1 - Recursion(using subsets template)
 
 排列常见的有数字全排列，字符串排列等。
 
-使用之前subsets的模板，但是在取结果时只能取`list.size() == nums.size()`的解，且在添加list元素的时候需要注意除重。此题假设前提为输入数据中无重复元素。
+使用之前 [Subsets](http://algorithm.yuanbin.me/exhaustive_search/subsets.html) 的模板，但是在取结果时只能取`list.size() == nums.size()`的解，且在添加list元素的时候需要注意除重以满足全排列的要求。此题假设前提为输入数据中无重复元素。
+
+### Python
+
+```python
+class Solution:
+    """
+    @param nums: A list of Integers.
+    @return: A list of permutations.
+    """
+    def permute(self, nums):
+        alist = []
+        result = [];
+        if not nums:
+            return result
+
+        self.helper(nums, alist, result)
+
+        return result
+
+    def helper(self, nums, alist, ret):
+        if len(alist) == len(nums):
+            # new object
+            ret.append([] + alist)
+            return
+
+        for i, item in enumerate(nums):
+            if item not in alist:
+                alist.append(item)
+                self.helper(nums, alist, ret)
+                alist.pop()
+
+```
 
 ### C++
 
@@ -131,7 +164,44 @@ class Solution {
 
 由于最终的排列结果中每个列表的长度都为 n, 各列表的相同元素并不共享，故时间复杂度的下界为 $$O(n \cdot n!)$$, 上界为 $$n \cdot n^n$$. 实测`helper`中 for 循环的遍历次数在 $$O(2n \cdot n!)$$ 以下，注意这里的时间复杂度并不考虑查找列表里是否包含重复元素。
 
+## 题解2 - Recursion
+
+与题解1基于 subsets 的模板不同，这里我们直接从全排列的数学定义本身出发，要求给定数组的全排列，可将其模拟为某个袋子里有编号为1到 n 的球，将其放入 n 个不同的盒子怎么放？基本思路就是从袋子里逐个拿球放入盒子，直到袋子里的球拿完为止，拿完时即为一种放法。
+
+### Python
+
+```python
+class Solution:
+    # @param {integer[]} nums
+    # @return {integer[][]}
+    def permute(self, nums):
+        if nums is None:
+            return [[]]
+        elif len(nums) <= 1:
+            return [nums]
+
+        result = []
+        for i, item in enumerate(nums):
+            for p in self.permute(nums[:i] + nums[i + 1:]):
+                result.append(p + [item])
+
+        return result
+```
+
+### 源码分析
+
+Python 中使用`len()`时需要防止`None`, 递归终止条件为数组中仅剩一个元素或者为空，否则遍历`nums`数组，取出第`i`个元素并将其加入至最终结果。`nums[:i] + nums[i + 1:]`即为去掉第`i`个元素后的新列表。
+
+### 复杂度分析
+
+由于取的结果都是最终结果，无需去重判断，故时间复杂度为 $$O(n!)$$, 但是由于`nums[:i] + nums[i + 1:]`会产生新的列表，实际运行会比第一种方法慢不少，而且栈上的空间会消耗比较多。
+
 ## Reference
 
 - [Programming Interview Questions 11: All Permutations of String | Arden DertatArden Dertat](http://www.ardendertat.com/2011/10/28/programming-interview-questions-11-all-permutations-of-string/)
 - [algorithm - complexity of recursive string permutation function - Stack Overflow](http://stackoverflow.com/questions/5363619/complexity-of-recursive-string-permutation-function)
+- [[leetcode]Permutations @ Python - 南郭子綦 - 博客园](http://www.cnblogs.com/zuoyuan/p/3758816.html)
+- [[leetcode] permutations的讨论 - tuantuanls的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/tuantuanls/article/details/8717262)
+- [非递归排列算法（Permutation Generation）](http://arieshout.me/2012/04/non-recursive-permutation-generation.html)
+- [闲谈permutations | HelloYou](http://helloyou2012.me/?p=133)
+- [9.7. itertools — Functions creating iterators for efficient looping — Python 2.7.10 documentation](https://docs.python.org/2/library/itertools.html#itertools.permutations)
