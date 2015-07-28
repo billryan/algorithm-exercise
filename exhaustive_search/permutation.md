@@ -271,12 +271,180 @@ Java 中 ArrayList 和 List 的类型转换需要特别注意。
 
 ## 题解3 - Iteration
 
-递归版的程序比较简单，咱们来个迭代的实现。
+递归版的程序比较简单，咱们来个迭代的实现。非递归版的实现也有好几种，这里基于 C++ STL 中`next_permutation`的字典序实现方法。参考 Wikipedia 上的字典序算法，大致步骤如下：
 
-**TBD**
+1. 从后往前寻找索引满足 `a[k] < a[k + 1]`, 如果此条件不满足，则说明已遍历到最后一个。
+2. 从后往前遍历，找到第一个比`a[k]`大的数`a[l]`, 即`a[k] < a[l]`.
+3. 交换`a[k]`与`a[l]`.
+4. 反转`k + 1 ~ n`之间的元素。
+
+### Python
+
+```python
+class Solution:
+    # @param {integer[]} nums
+    # @return {integer[][]}
+    def permute(self, nums):
+        if nums is None:
+            return [[]]
+        elif len(nums) <= 1:
+            return [nums]
+
+        # sort nums first
+        nums.sort()
+
+        result = []
+        while True:
+            result.append([] + nums)
+            # step1: find nums[i] < nums[i + 1], Loop backwards
+            i = 0
+            for i in xrange(len(nums) - 2, -1, -1):
+                if nums[i] < nums[i + 1]:
+                    break
+                elif i == 0:
+                    return result
+            # step2: find nums[i] < nums[j], Loop backwards
+            j = 0
+            for j in xrange(len(nums) - 1, i, -1):
+                if nums[i] < nums[j]:
+                    break
+            # step3: swap betwenn nums[i] and nums[j]
+            nums[i], nums[j] = nums[j], nums[i]
+            # step4: reverse between [i + 1, n - 1]
+            nums[i + 1:len(nums)] = nums[len(nums) - 1:i:-1]
+
+        return result
+```
+
+### C++
+
+```c++
+class Solution {
+public:
+    /**
+     * @param nums: A list of integers.
+     * @return: A list of permutations.
+     */
+    vector<vector<int> > permute(vector<int>& nums) {
+        vector<vector<int> > result;
+    	if (nums.empty() || nums.size() <= 1) {
+    	    result.push_back(nums);
+    	    return result;
+    	}
+
+        // sort nums first
+        sort(nums.begin(), nums.end());
+        for (;;) {
+            result.push_back(nums);
+
+            // step1: find nums[i] < nums[i + 1]
+            int i = 0;
+            for (i = nums.size() - 2; i >= 0; --i) {
+                if (nums[i] < nums[i + 1]) {
+                    break;
+                } else if (0 == i) {
+                    return result;
+                }
+            }
+
+            // step2: find nums[i] < nums[j]
+            int j = 0;
+            for (j = nums.size() - 1; j > i; --j) {
+                if (nums[i] < nums[j]) break;
+            }
+
+            // step3: swap betwenn nums[i] and nums[j]
+            int temp = nums[j];
+            nums[j] = nums[i];
+            nums[i] = temp;
+
+            // step4: reverse between [i + 1, n - 1]
+            reverse(nums, i + 1, nums.size() - 1);
+        }
+    	return result;
+    }
+
+private:
+    void reverse(vector<int>& nums, int start, int end) {
+        for (int i = start, j = end; i < j; ++i, --j) {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+        }
+    }
+};
+```
+
+### Java
+
+```java
+public class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<Integer> numsList = new ArrayList<Integer>();
+
+        if (nums == null) {
+            return result;
+        } else {
+            // convert int[] to List<Integer>
+            for (int item : nums) numsList.add(item);
+    	    if (nums.length <= 1) {
+    		    result.add(numsList);
+    		    return result;
+    	    }
+        }
+
+        Collections.sort(numsList);
+
+	    boolean flag = true;
+        while (flag) {
+            result.add(new ArrayList<Integer>(numsList));
+            // step1: find nums[i] < nums[i + 1]
+            int i = 0;
+            for (i = nums.length - 2; i >= 0; i--) {
+                if (numsList.get(i) < numsList.get(i + 1)) {
+                    break;
+                } else if (i == 0) {
+                    return result;
+		        }
+            }
+            // step2: find nums[i] < nums[j]
+            int j = 0;
+            for (j = nums.length - 1; j > i; j--) {
+                if (numsList.get(i) < numsList.get(j)) break;
+            }
+            // step3: swap betwenn nums[i] and nums[j]
+            Collections.swap(numsList, i, j);
+            // step4: reverse between [i + 1, n - 1]
+            reverse(numsList, i + 1, nums.length - 1);
+        }
+
+        return result;
+    }
+
+    private void reverse(List<Integer> nums, int start, int end) {
+        for (int i = start, j = end; i < j; i++, j--) {
+            int temp = nums.get(i);
+            nums.set(i, nums.get(j));
+            nums.set(j, temp);
+        }
+    }
+}
+```
+
+### 源码分析
+
+Java 中需要使用`while (flag)`, 否则编译可能通不过。其他细节如边界条件和 corner case 需要注意下。
+
+### 复杂度分析
+
+除了将 $$n!$$ 个元素添加至最终结果外，首先对元素排序，时间复杂度近似为 $$O(n \log n)$$, 反转操作近似为 $$O(n)$$, 故总的时间复杂度为 $$O(n!)$$. 除了保存结果的`result`外，其他空间可忽略不计，所以此题用生成器来实现较为高效，扩展题可见底下的 Python itertools 中的实现，从 n 个元素中选出 m 个进行全排列。
 
 ## Reference
 
+- [Permutation Generation](../docs/permutation_generation.pdf) - Robert Sedgewick 的大作，总结了诸多 Permutation 的产生方法。
+- [Next lexicographical permutation algorithm](http://www.nayuki.io/page/next-lexicographical-permutation-algorithm) - 此题非递归方法更为详细的解释。
+- [Permutation - Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order) - 字典序实现。
 - [Programming Interview Questions 11: All Permutations of String | Arden DertatArden Dertat](http://www.ardendertat.com/2011/10/28/programming-interview-questions-11-all-permutations-of-string/)
 - [algorithm - complexity of recursive string permutation function - Stack Overflow](http://stackoverflow.com/questions/5363619/complexity-of-recursive-string-permutation-function)
 - [[leetcode]Permutations @ Python - 南郭子綦 - 博客园](http://www.cnblogs.com/zuoyuan/p/3758816.html)
