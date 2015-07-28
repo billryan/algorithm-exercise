@@ -111,6 +111,7 @@
    * [Permutation](exhaustive_search/permutation.md)
    * [Unique Permutations](exhaustive_search/unique_permutations.md)
    * [Unique Binary Search Trees II](exhaustive_search/unique_binary_search_trees_ii.md)
+   * [Next Permutation](exhaustive_search/next_permutation.md)
 * [Dynamic Programming - 动态规划](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Knapsack - 背包问题](dynamic_programming/knapsack.md)
