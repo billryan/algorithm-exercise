@@ -424,9 +424,7 @@ public class Solution {
 
     private void reverse(List<Integer> nums, int start, int end) {
         for (int i = start, j = end; i < j; i++, j--) {
-            int temp = nums.get(i);
-            nums.set(i, nums.get(j));
-            nums.set(j, temp);
+            Collections.swap(nums, i, j);
         }
     }
 }
