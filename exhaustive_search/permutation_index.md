@@ -13,7 +13,7 @@ Example
 Given [1,2,4], return 1.
 ```
 
-## 题解1 - 双重 for 循环
+## 题解
 
 做过 next permutation 系列题的话自然能想到不断迭代直至最后一个，最后返回计数器的值即可。这种方法理论上自然是可行的，但是最坏情况下时间复杂度为 $$O(n!)$$, 显然是不能接受的。由于这道题只是列出某给定 permutation 的相对顺序(index), 故我们可从 permutation 的特点出发进行分析。
 
@@ -108,9 +108,6 @@ public class Solution {
 
 双重 for 循环，时间复杂度为 $$O(n^2)$$. 使用了部分额外空间，空间复杂度 $$O(1)$$.
 
-## 题解2 - 哈希表
-
 ## Reference
 
 - [Permutation Index](http://www.geekviewpoint.com/java/numbers/permutation_index)
-- [permutation-index | 九章算法](http://www.jiuzhang.com/solutions/permutation-index/)
