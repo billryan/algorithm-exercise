@@ -136,6 +136,7 @@
    * [Best Time to Buy and Sell Stock II](dynamic_programming/best_time_to_buy_and_sell_stock_ii.md)
    * [Best Time to Buy and Sell Stock III](dynamic_programming/best_time_to_buy_and_sell_stock_iii.md)
    * [Best Time to Buy and Sell Stock IV](dynamic_programming/best_time_to_buy_and_sell_stock_iv.md)
+   * [Distinct Subsequences](dynamic_programming/distinct_subsequences.md)
 * [Problem Misc](problem_misc/README.md)
    * [Nuts and Bolts Problem](problem_misc/nuts_and_bolts_problem.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
