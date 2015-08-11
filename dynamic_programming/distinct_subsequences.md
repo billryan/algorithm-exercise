@@ -26,6 +26,55 @@ O(n2) memory is also acceptable if you do not know how to optimize memory.
 
 要想得知不同子序列的个数，那么我们就不能在 S 和 T 中首字符不等时简单移除 S 中的首字符了，取而代之的方法应该是先将 S 复制一份，再用移除 S 中首字符后的新字符串和 T 进行比较，这点和深搜中的剪枝函数的处理有点类似。
 
+### Python
+
+```python
+class Solution: 
+    # @param S, T: Two string.
+    # @return: Count the number of distinct subsequences
+    def numDistinct(self, S, T):
+        if S is None or T is None:
+            return 0
+        if len(S) < len(T):
+            return 0
+        if len(T) == 0:
+            return 1
+        
+        num = 0
+        for i, Si in enumerate(S):
+            if Si == T[0]:
+                num += self.numDistinct(S[i + 1:], T[1:])
+        
+        return num
+```
+
+### C++
+
+```c++
+class Solution {
+public:    
+    /**
+     * @param S, T: Two string.
+     * @return: Count the number of distinct subsequences
+     */
+    int numDistinct(string &S, string &T) {
+        if (S.size() < T.size()) return 0;
+        if (T.empty()) return 1;
+        
+        int num = 0;
+        for (int i = 0; i < S.size(); ++i) {
+            if (S[i] == T[0]) {
+                string Si = S.substr(i + 1);
+                string t = T.substr(1);
+                num += numDistinct(Si, t);
+            }
+        }
+        
+        return num;
+    }
+};
+```
+
 ### Java
 
 ```java
@@ -54,7 +103,7 @@ public class Solution {
 
 ### 源码分析
 
-1. 对 null 异常处理
+1. 对 null 异常处理(C++ 中对 string 赋NULL 是错的，函数内部无法 handle 这种情况)
 2. S 字符串长度若小于 T 字符串长度，T 必然不是 S 的子序列，返回0
 3. T 字符串长度为0，证明 T 是 S 的子序列，返回1
 
@@ -62,7 +111,11 @@ public class Solution {
 
 ### 复杂度分析
 
-最好情况下，S 中没有和 T 相同的字符，时间复杂度为 $$O(n)$$; 最坏情况下，S 中的字符和 T 中字符完全相同，此时可以画出递归调用栈，发现和深搜非常类似，数学关系为 $$f(n) = \sum _{i = 1} ^{n - 1} f(i)$$, 这是指数级别的复杂度。
+最好情况下，S 中没有和 T 相同的字符，时间复杂度为 $$O(n)$$; 最坏情况下，S 中的字符和 T 中字符完全相同，此时可以画出递归调用栈，发现和深搜非常类似，数学关系为 $$f(n) = \sum _{i = 1} ^{n - 1} f(i)$$, 这比 Fibonacci 的复杂度还要高很多。
+
+## 题解2 - Dynamic Programming
+
+从题解1 的复杂度分析中我们能发现由于存在较多的重叠子状态(相同子串被比较多次), 因此可以想到使用动态规划优化。但是动规的三大要素如何建立？由于本题为两个字符串之间的关系，故可以尝试使用双序列动规的思路求解。
 
 ## Reference
 
