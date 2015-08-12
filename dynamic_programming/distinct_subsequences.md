@@ -29,7 +29,7 @@ O(n2) memory is also acceptable if you do not know how to optimize memory.
 ### Python
 
 ```python
-class Solution: 
+class Solution:
     # @param S, T: Two string.
     # @return: Count the number of distinct subsequences
     def numDistinct(self, S, T):
@@ -39,12 +39,12 @@ class Solution:
             return 0
         if len(T) == 0:
             return 1
-        
+
         num = 0
         for i, Si in enumerate(S):
             if Si == T[0]:
                 num += self.numDistinct(S[i + 1:], T[1:])
-        
+
         return num
 ```
 
@@ -52,7 +52,7 @@ class Solution:
 
 ```c++
 class Solution {
-public:    
+public:
     /**
      * @param S, T: Two string.
      * @return: Count the number of distinct subsequences
@@ -60,7 +60,7 @@ public:
     int numDistinct(string &S, string &T) {
         if (S.size() < T.size()) return 0;
         if (T.empty()) return 1;
-        
+
         int num = 0;
         for (int i = 0; i < S.size(); ++i) {
             if (S[i] == T[0]) {
@@ -69,7 +69,7 @@ public:
                 num += numDistinct(Si, t);
             }
         }
-        
+
         return num;
     }
 };
@@ -127,7 +127,7 @@ public class Solution {
 ### Python
 
 ```python
-class Solution: 
+class Solution:
     # @param S, T: Two string.
     # @return: Count the number of distinct subsequences
     def numDistinct(self, S, T):
@@ -137,7 +137,7 @@ class Solution:
             return 0
         if len(T) == 0:
             return 1
-        
+
         f = [[0 for i in xrange(len(T) + 1)] for j in xrange(len(S) + 1)]
         for i, Si in enumerate(S):
             f[i][0] = 1
@@ -146,7 +146,7 @@ class Solution:
                     f[i + 1][j + 1] = f[i][j + 1] + f[i][j]
                 else:
                     f[i + 1][j + 1] = f[i][j + 1]
-        
+
         return f[len(S)][len(T)]
 ```
 
@@ -154,7 +154,7 @@ class Solution:
 
 ```c++
 class Solution {
-public:    
+public:
     /**
      * @param S, T: Two string.
      * @return: Count the number of distinct subsequences
@@ -162,9 +162,8 @@ public:
     int numDistinct(string &S, string &T) {
         if (S.size() < T.size()) return 0;
         if (T.empty()) return 1;
-        
-        vector<vector<int> > f = \
-            vector<vector<int> >(S.size() + 1, vector<int>(T.size() + 1, 0));
+
+        vector<vector<int> > f(S.size() + 1, vector<int>(T.size() + 1, 0));
         for (int i = 0; i < S.size(); ++i) {
             f[i][0] = 1;
             for (int j = 0; j < T.size(); ++j) {
@@ -175,7 +174,7 @@ public:
                 }
             }
         }
-        
+
         return f[S.size()][T.size()];
     }
 };
@@ -193,7 +192,7 @@ public class Solution {
         if (S == null || T == null) return 0;
         if (S.length() < T.length()) return 0;
         if (T.length() == 0) return 1;
-        
+
         int[][] f = new int[S.length() + 1][T.length() + 1];
         for (int i = 0; i < S.length(); i++) {
             f[i][0] = 1;
@@ -205,7 +204,7 @@ public class Solution {
                 }
             }
         }
-        
+
         return f[S.length()][T.length()];
     }
 }
