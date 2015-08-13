@@ -17,3 +17,12 @@ Breadth-First Search, 广度优先搜索
 ## DP_Two_Sequence
 
 一般有两个数组或者两个字符串，计算其匹配关系. 通常可用 `f[i][j]`表示第一个数组的前 i 位和第二个数组的前 j 位的关系。
+
+## DP_Matrix
+
+根据动态规划解题的四要素，矩阵类动态规划问题可以从以下四个方面进行分析：
+
+1. State: f[x][y] 从起点走到坐标(x,y)的值
+2. Function: 走到坐标(x,y)之前的状态转移
+3. Initialization: 初始状态 - 起点
+4. Answer: 终点
