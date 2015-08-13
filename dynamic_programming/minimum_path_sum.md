@@ -1,5 +1,7 @@
 # Minimum Path Sum
 
+- category: [DP_Matrix]
+
 ## Source
 
 - lintcode: [(110) Minimum Path Sum](http://www.lintcode.com/en/problem/minimum-path-sum/)
