@@ -117,6 +117,7 @@
    * [Permutation Index](exhaustive_search/permutation_index.md)
    * [Permutation Index II](exhaustive_search/permutation_index_ii.md)
    * [Permutation Sequence](exhaustive_search/permutation_sequence.md)
+   * [Palindrome Partitioning](exhaustive_search/palindrome_partitioning.md)
 * [Dynamic Programming - 动态规划](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Knapsack - 背包问题](dynamic_programming/knapsack.md)
