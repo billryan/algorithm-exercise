@@ -30,6 +30,7 @@
    * [Rotate String](string/rotate_string.md)
    * [Reverse Words in a String](string/reverse_words_in_a_string.md)
    * [Valid Palindrome](string/valid_palindrome.md)
+   * [Longest Palindromic Substring](string/longest_palindromic_substring.md)
 * [Integer Array - 整型数组](integer_array/README.md)
    * [Remove Element](integer_array/remove_element.md)
    * [Zero Sum Subarray](integer_array/zero_sum_subarray.md)
