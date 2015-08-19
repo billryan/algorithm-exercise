@@ -37,7 +37,47 @@
 
 ## 双序列(DP_Two_Sequence)
 
-一般有两个数组或者两个字符串，计算其匹配关系。
+一般有两个数组或者两个字符串，计算其匹配关系。双序列中常用二维数组表示状态转移关系，但往往可以使用滚动数组的方式对空间复杂度进行优化。举个例子，以题 [Distinct Subsequences](http://algorithm.yuanbin.me/dynamic_programming/distinct_subsequences.html) 为例，状态转移方程如下：
+
+```
+f[i+1][j+1] = f[i][j+1] + f[i][j] (if S[i] == T[j])
+f[i+1][j+1] = f[i][j+1] (if S[i] != T[j])
+```
+
+从以上转移方程可以看出 `f[i+1][*]` 只与其前一个状态 `f[i][*]` 有关，而对于 `f[*][j]` 来说则基于当前索引又与前一个索引有关，故我们以递推的方式省略第一维的空间，并以第一维作为外循环，内循环为 j, 由递推关系可知在使用滚动数组时，若内循环 j 仍然从小到大遍历，那么对于 `f[j+1]` 来说它得到的 `f[j]` 则是当前一轮(`f[i+1][j]`)的值，并不是需要的 `f[i][j]` 的值。所以若想得到上一轮的结果，必须在内循环使用逆推的方式进行。文字表述比较模糊，可以自行画一个二维矩阵的转移矩阵来分析，认识到这一点非常重要。
+
+小结一下，使用滚动数组的核心在于：
+
+1. 状态转移矩阵中只能取 `f[i+1][*]` 和 `f[i][*]`, 这是使用滚动数组的前提。
+2. 外循环使用 i, 内循环使用 j 并同时使用逆推，这是滚动数组使用的具体实践。
+
+代码如下：
+
+```java
+public class Solution {
+    /**
+     * @param S, T: Two string.
+     * @return: Count the number of distinct subsequences
+     */
+    public int numDistinct(String S, String T) {
+        if (S == null || T == null) return 0;
+        if (S.length() < T.length()) return 0;
+        if (T.length() == 0) return 1;
+        
+        int[] f = new int[T.length() + 1];
+        f[0] = 1;
+        for (int i = 0; i < S.length(); i++) {
+            for (int j = T.length() - 1; j >= 0; j--) {
+                if (S.charAt(i) == T.charAt(j)) {
+                        f[j + 1] += f[j];
+                }
+            }
+        }
+        
+        return f[T.length()];
+    }
+}
+```
 
 纸上得来终觉浅，绝知此事要躬行。光说不练假把戏，下面就来几道DP的题练练手。
 
