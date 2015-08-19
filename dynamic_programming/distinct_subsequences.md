@@ -216,9 +216,40 @@ public class Solution {
 
 ### 复杂度分析
 
-由于免去了重叠子状态的计算，双重 for 循环，时间复杂度为 $$O(n^2)$$, 使用了二维矩阵保存状态，空间复杂度为 $$O(n^2)$$. 空间复杂度可以通过滚动数组的方式优化，背包问题中详细探讨过这一方法。
+由于免去了重叠子状态的计算，双重 for 循环，时间复杂度为 $$O(n^2)$$, 使用了二维矩阵保存状态，空间复杂度为 $$O(n^2)$$. 空间复杂度可以通过滚动数组的方式优化，详见 [Dynamic Programming - 动态规划](http://algorithm.yuanbin.me/dynamic_programming/index.html).
+
+空间复杂度优化之后的代码如下：
+
+#### Java
+
+```java
+public class Solution {
+    /**
+     * @param S, T: Two string.
+     * @return: Count the number of distinct subsequences
+     */
+    public int numDistinct(String S, String T) {
+        if (S == null || T == null) return 0;
+        if (S.length() < T.length()) return 0;
+        if (T.length() == 0) return 1;
+        
+        int[] f = new int[T.length() + 1];
+        f[0] = 1;
+        for (int i = 0; i < S.length(); i++) {
+            for (int j = T.length() - 1; j >= 0; j--) {
+                if (S.charAt(i) == T.charAt(j)) {
+                        f[j + 1] += f[j];
+                }
+            }
+        }
+        
+        return f[T.length()];
+    }
+}
+```
 
 ## Reference
 
 - [LeetCode: Distinct Subsequences（不同子序列的个数） - 亦忘却_亦纪念](http://blog.csdn.net/abcbc/article/details/8978146)
 - soulmachine leetcode-cpp 中 Distinct Subsequences 部分
+- [Distinct Subsequences | Training dragons the hard way](http://traceformula.blogspot.com/2015/08/distinct-subsequences.html)
