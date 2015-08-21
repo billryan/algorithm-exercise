@@ -21,5 +21,6 @@ _book
 # MAC OS X
 **/.DS_Store
 
-# Python *.pyc
-scripts/*.pyc
+# Python
+*.py[cod]
+*$py.class
