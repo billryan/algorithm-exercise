@@ -26,7 +26,7 @@ This work is licensed under the **Creative Commons Attribution-ShareAlike 4.0 In
 
 ## How to Contribute
 
-If you find any mistakes or want to update/translate the awesome notes, please follow the contributing guidelines.
+If you find any mistakes or want to update/translate the awesome notes, please follow the [contributing guidelines](https://github.com/billryan/algorithm-exercise/blob/master/contributing.md).
 
 ## To Do
 
@@ -68,7 +68,11 @@ If you find any mistakes or want to update/translate the awesome notes, please f
 
 本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
-## To-Do
+## 如何贡献
+
+如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [贡献指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-cn.md).
+
+## To Do
 
 - [ ] 添加多国语言支持(English, 繁體中文, 简体中文)
 - [ ] 探索适合用于后期批处理的书写及排版格式
