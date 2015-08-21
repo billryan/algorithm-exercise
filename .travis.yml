@@ -28,11 +28,11 @@ script:
   - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
   - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
   - mkdir -p ~/upload
-  - cd ~/algorithm-exercise
+  - cd ~/algorithm-exercise/zh-cn
   - gitbook install
   # - gitbook build ./ --format=json
   # - gitbook build ./ 
-  - gitbook pdf ./ ~/upload/algorithm_billryan_print.pdf
+  - gitbook pdf ./ ~/upload/algorithm_zh-cn_billryan_print.pdf
   # - gitbook epub ./ ~/upload/algorithm_billryan.epub
   # - gitbook mobi ./ ~/upload/algorithm_billryan.mobi
 
