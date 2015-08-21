@@ -1,109 +1,39 @@
-# leetcode/lintcode题解/算法学习笔记
+# 数据结构与算法学习笔记/leetcode/lintcode题解
 
 [![Join the chat at https://gitter.im/billryan/algorithm-exercise](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/billryan/algorithm-exercise?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
 
-一晃就研二下了，离毕业也只有短短一年，终于快逃出无线通信的魔爪了，想想就有点小激动啊，由于自己是非CS科班出身，一些CS方面的基础肯定是得在找工作/实习之前夯实的啦，比如数据结构和算法、编程语言、操作系统、数据库等等啦，最最重要的自然就是算法和编程语言了咯。本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
-## About - 关于本文档
+## 简介
 
-主要内容为学习算法和刷leetcode/lintcode过程中的笔记，很大程度上参考了[九章算法](http://www.jiuzhang.com) 的代码和讲稿，先行谢过！同时也参考了一些其他教材和优质博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
+本文档为数据结构和算法学习笔记，全文大致分为以下三大部分：
 
-- 本笔记的在线托管仓库为 https://github.com/billryan/algorithm-exercise 你可以在github中star本项目查看更新。
-- 在线阅读网址为 http://algorithm.yuanbin.me 在线阅读的网页通过gitbook后端生成，推送到github后会触发 gitbook 和 travis-ci 的编译，相应的编译输出下载链接提供Gitbook官网和七牛两种下载方式，七牛的链接中文显示比较好。
-    1. Read on the [website](http://algorithm.yuanbin.me). **力荐**
-    2. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - Recommended for iPhone/iPad/MAC. 最适合离线查看，实测效果极好。
-    3. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [七牛- 适合打印版](http://docs4bill.qiniudn.com/doc/algorithm_billryan_print.pdf) - Recommended for Desktop. 推荐下载七牛的版本。
-    4. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Recommended for Kindle. 未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
-- 可使用网页下方的 `Search this site` 进行站内搜索，也可 Google 站内搜索
-- 全文大体上分为两大部分，第一部分为算法基础，是自己参考书籍及一些网页的总结；第二部分为代码实战，是自己在leetcode/lintcode上刷题的总结。
+1. Part I为数据结构和算法基础，介绍一些基础的排序/链表/基础算法
+2. Part II为 OJ 上的编程题目实战，按题目的内容分章节编写，主要来源为 <https://leetcode.com/> 和 <http://www.lintcode.com/>.
+3. Part III 为附录部分，包含如何写简历和其他附加材料
 
-### License(许可证)
+本文参考了很多教材和博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
 
-![License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。你可以在 GitHub 中 star 该项目查看更新，RSS 种子功能正在开发中。
 
-如无特殊说明，本作品采用 [知识共享署名-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-sa/4.0/) 进行许可。**欢迎 fork 和传播本文档，但是请注意遵循以上许可协议。**
+你可以在线或者离线查看/搜索本文档，以下方式任君选择~
 
-### Contribution - 如何贡献本文档
+- 在线阅读(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
+- 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的部分编译输出提供七牛的静态文件加速下载。
+    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
+    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [简体中文 - 适合打印版](http://docs4bill.qiniudn.com/doc/algorithm_zh-cn_billryan_print.pdf) - 推荐下载七牛的版本，Gitbook 官方使用的中文字体有点问题。
+    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Kindle 专用. 未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
+- Google 站内搜索: `keywords site:algorithm.yuanbin.me`
+- Swiftype 站内搜索: 可使用网页右下方的 `Search this site` 进行站内搜索
 
-如果你发现本文档有任何可以改进之处，欢迎提交你的改进，具体形式有如下几种。
+## 许可证
 
-1. 成为本项目的contributor, 发邮件并把你的github账户名告诉我就可以了，我收到邮件后把你的github账号加到Collaborators中。
-2. 提交Pull Request, fork本文档的github repo, 发PR给我就好了。
-3. 在本文档的github repo处提交issue, 指出有问题的地方。
-4. 在 website http://algorithm.yuanbin.me 相应网页下的disqus评论框中添加评论，指出一些typo或者可以改进的地方。
+本作品采用 **知识共享署名-相同方式共享 4.0 国际许可协议**  进行许可。**传播此文档时请注意遵循以上许可协议。** 关于本许可证的更多详情可参考 <http://creativecommons.org/licenses/by-sa/4.0/>
 
-既然涉及到文档合作，那么最好是能有个像样的文档规范之类的东西方便大家更好的合(jiao)作(ji)，目前想到的有如下几点。
+本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
-#### 全文组织架构
+## 如何贡献
 
-1. Part I为基础知识复习，介绍一些基础的排序/链表/基础算法，这一块目前我没怎么写，毕竟功力还有限就没写太多 :(
-2. Part II为leetcode/lintcode题解，按题目的内容分章节编写。
-3. Part III cc150和《剑指offer》的笔记，暂无，有可能分散到Part I和Part II。
-
-把这三块吃透后对付找工作方面的算法应该是绰绰有余了。
-
-#### 文档格式及编辑工具 - GFM && kramdown Markdown
-
-使用markdown编写，只使用 gitbook 支持的 markdown 语法。gitbook 底层的 markdown renderer 为改动的 kramdown，并增加了GFM支持, 支持的扩展 markdown 语法算是非常多了，具体特性详见 [GitbookIO/kramed](https://github.com/GitbookIO/kramed)
-
-推荐的 markdown 编辑器为 gitbook 自家的 [GitbookIO/editor](https://github.com/GitbookIO/editor), 支持 Windows/Linux/MAC 三大平台，业界良心！但是实测在Arch Linux下可能会出现占用内存过高的情况... OS X 下目前表现还算良好，编辑界面如下图所示，最左边为章节预览，中间为 markdown 编辑框，右边为实时渲染页面，可选择使用全屏模式。
-
-![Gitbook Editor](./images/gitbook_editor.png)
-
-使用其他如 Mou/Vim/Emacs/Sublime Text也不错，但是在新增Chapter/Section时就比较闹心了，嗯，你也可以新建 Section 后再使用其他编辑器编辑。
-
-对 Gitbook 不熟的建议看看 [Gitbook Documentation](http://help.gitbook.com/)，有助于了解 http://algorithm.yuanbin.me 网页上的文字及各章节等是如何编辑及渲染的。
-
-#### 章节名及编号
-
-章节等文件名全部采用英文，子章节最多到三级，章节编号无需操心，这种琐事交给 Gitbook 去做就好，如果一定要手动调整，修改`SUMMARY.md`文件，注意其中的缩进关系，Gitbook就指望这个自动给章节编号了。
-
-举个例子，我现在想新增「动态规划」及其子章节。首先在 Gitbook 顶部菜单栏「Book」中找到「Add Chapter」，填入「Dynamic Programming」。好了，在Gitbook左侧章节栏中就能看到新生成的「10. Dynamic Programming」了，左键击之，Gitbook 就会生成「dynamic_programming」目录及本章的说明文件「dynamic_programming/README.md」。如果想在「10. Dynamic Programming」下新增子章节，右键击之，「Add Section」即可，同上，子章节文件名仍然使用英文名，网页显示的标题可以通过 rename 更改再加入中文。
-
-嗯，以上步骤均可直接新建文件夹及操作`SUMMARY.md`文件完成。
-
-#### 数学公式
-
-其实代码里是用不着写数学公式的，但是偶尔分析算法可能会用着，用过 LaTeX 的都知道她生成的数学公式有多优雅，以至于不用她来写数学公式都有点不舒服...
-
-这个文档里对于较复杂的数学公式建议使用 LaTeX, 因为托管在gitbook上，所以就用了轻量级的katex插件，没有用重量级的 MathJax。行内和行间公式都是 两个$, 区别在于行间公式写到下一行行首，而行内公式不能写在行首(废话...)。katex非常脆弱，对一些高级的 LaTeX 语法不支持，否则无法编译输出到网站和pdf，尽量用简单的 LaTeX 语法或者不用。
-
-#### 正文书写风格
-
-1. 中英文混排贯穿全文，优雅美观起见，尽可能在英文单词前后加空格，这个使能输入法的中英文间加入空格功能就好了。
-2. 代码的函数名或短代码建议使用 \`code\`
-3. 使用空行进行分段，嗯，markdown通用
-
-Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大致遵循如下风格：
-
-1. 给出题目链接及原文，引用的原文部分简单起见我对题目使用了blockquote ，具体可参考我的那些markdown文本。
-2. 给出自己的题解，尽可能清晰易懂。
-3. 给出能AC的code, 如遇TLE或者错误的看情况给出错误的实现。使用blockquote, 给出语言类别以便高亮。具体可参看原markdown文件。
-4. 题解中的核心部分对应的代码，代码中不能明显看出来的逻辑和一些编程上常用的技巧。
-5. 如参考了其他资源，尽可能给出有用的参考链接，附简单的说明。
-
-感觉还不错的风格 - [raw convert_sorted_list_to_binary_search_tree.md](https://raw.githubusercontent.com/billryan/algorithm-excercise/master/binary_search_tree/convert_sorted_list_to_binary_search_tree.md)
-
-通过github合作时，添加/修改内容时给出能看懂的commit就好了。暂时就想到这么多，其实没那么多讲究啦，感觉看着清楚就好，其他想到的再补充。:-)
-
-#### 附件及图片引用
-
-图片统一存放在`images`目录下，其他附件存放在`docs`目录下。引用图片链接一般可以通过`![Caption](../images/xxx.png)`声明。
-
-图片体积太大不利于页面加载，建议先压缩后再放入，如果是png图片可考虑使用 [TinyPNG – Compress PNG images while preserving transparency](https://tinypng.com/)
-
-## To-Do
-
-- [ ] 探索适合用于后期批处理的书写及排版格式。
-- [ ] 添加多国语言支持(English, 繁體中文, 简体中文)。
-- [ ] 完善 leetcode/lintcode 部分 C++, Java, Python 三大语言的实现。
-- [ ] 加入时间/空间复杂度分析。
-- [ ] Part I 部分基础知识的总结。
-- [ ] CC150 书中题目及基础知识的引入。
-- [x] 完善在线版本 http://algorithm.yuanbin.me 的 css, 使用 yahei 插件初步达到目标。
-- [x] 完善离线版本如 PDF(适合打印的字型) 的中文支持。
-- [ ] 完善离线版本如 PDF(适合在电子屏上浏览的字型) 的中文支持。
-
+如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [贡献指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-cn.md).
 
 ## 如何练习算法
 
@@ -125,7 +55,7 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 
 以下整理了一些最近练习算法的网站资源，和大家共享之。
 
-### 在线OJ及部分题解
+## 在线OJ及部分题解
 
 - [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，每道题都有 discuss 页面，可以看别人分享的代码和讨论，很有参考价值，相应的题解非常多。不过在线代码编辑框不太好用，写着写着框就拉下来了，最近评测速度比 lintcode 快很多，而且做完后可以看自己代码的运行时间分布，首推此 OJ 刷面试相关的题。
 - [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选和写代码时比较方便，左边为题目，右边为代码框。还可以在`source`处选择 CC150 或者其他来源的题。会根据系统locale选择中文或者英文，可以拿此 OJ 辅助 leetcode 进行练习。
@@ -138,7 +68,7 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 - [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
 - [牛客网-专业IT笔试面试备考平台,最全求职题库,全面提升IT编程能力](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
 
-### 其他资源
+## 其他资源
 
 - [九章算法 | 帮助更多的中国人找到好工作，美国硅谷一线工程师实时在线授课](http://www.jiuzhang.com/) - 代码质量不错，整理得也很好。
 - [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导。
@@ -151,7 +81,7 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，大�
 - [专栏：算法笔记——《算法设计与分析》](http://blog.csdn.net/column/details/lf-algoritnote.html) - CSDN上对《算法设计与分析》一书的学习笔记。
 - [我的算法学习之路 - Lucida](http://zh.lucida.me/blog/on-learning-algorithms/) - Google 工程师的算法学习经验分享。
 
-### 书籍推荐
+## 书籍推荐
 
 本节后三项参考自九章微信分享，谢过。
 
