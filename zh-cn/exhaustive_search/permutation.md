@@ -35,7 +35,7 @@ Do it without recursion
 
 排列常见的有数字全排列，字符串排列等。
 
-使用之前 [Subsets](http://algorithm.yuanbin.me/exhaustive_search/subsets.html) 的模板，但是在取结果时只能取`list.size() == nums.size()`的解，且在添加list元素的时候需要注意除重以满足全排列的要求。此题假设前提为输入数据中无重复元素。
+使用之前 [Subsets](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/subsets.html) 的模板，但是在取结果时只能取`list.size() == nums.size()`的解，且在添加list元素的时候需要注意除重以满足全排列的要求。此题假设前提为输入数据中无重复元素。
 
 ### Python
 

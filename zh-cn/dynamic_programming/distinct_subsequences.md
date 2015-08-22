@@ -216,7 +216,7 @@ public class Solution {
 
 ### 复杂度分析
 
-由于免去了重叠子状态的计算，双重 for 循环，时间复杂度为 $$O(n^2)$$, 使用了二维矩阵保存状态，空间复杂度为 $$O(n^2)$$. 空间复杂度可以通过滚动数组的方式优化，详见 [Dynamic Programming - 动态规划](http://algorithm.yuanbin.me/dynamic_programming/index.html).
+由于免去了重叠子状态的计算，双重 for 循环，时间复杂度为 $$O(n^2)$$, 使用了二维矩阵保存状态，空间复杂度为 $$O(n^2)$$. 空间复杂度可以通过滚动数组的方式优化，详见 [Dynamic Programming - 动态规划](http://algorithm.yuanbin.me/zh-cn/dynamic_programming/index.html).
 
 空间复杂度优化之后的代码如下：
 

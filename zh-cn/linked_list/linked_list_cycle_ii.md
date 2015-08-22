@@ -18,7 +18,7 @@ Can you solve it without using extra space?
 
 ## 题解 - 快慢指针
 
-题 [Linked List Cycle | Data Structure and Algorithm](http://algorithm.yuanbin.me/linked_list/linked_list_cycle.html) 的升级版，题目要求不适用额外空间，则必然还是使用快慢指针解决问题。首先设组成环的节点个数为 $$r$$, 链表中节点个数为 $$n$$. 首先我们来分析下在链表有环时都能推出哪些特性：
+题 [Linked List Cycle | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/linked_list/linked_list_cycle.html) 的升级版，题目要求不适用额外空间，则必然还是使用快慢指针解决问题。首先设组成环的节点个数为 $$r$$, 链表中节点个数为 $$n$$. 首先我们来分析下在链表有环时都能推出哪些特性：
 
 1. 快慢指针第一次相遇时快指针比慢指针多走整数个环, 这个容易理解，相遇问题。
 2. 每次相遇都在同一个节点。第一次相遇至第二次相遇，快指针需要比慢指针多走一个环的节点个数，而快指针比慢指针多走的步数正好是慢指针自身移动的步数，故慢指针恰好走了一圈回到原点。

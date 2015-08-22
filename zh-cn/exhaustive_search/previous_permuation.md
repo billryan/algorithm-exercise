@@ -20,7 +20,7 @@ The list may contains duplicate integers.
 
 ## 题解
 
-和前一题 [Next Permutation](http://algorithm.yuanbin.me/exhaustive_search/next_permutation.html) 非常类似，这里找上一个排列，仍然使用字典序算法，大致步骤如下：
+和前一题 [Next Permutation](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/next_permutation.html) 非常类似，这里找上一个排列，仍然使用字典序算法，大致步骤如下：
 
 1. 从后往前寻找索引满足 `a[k] > a[k + 1]`, 如果此条件不满足，则说明已遍历到最后一个。
 2. 从后往前遍历，找到第一个比`a[k]`小的数`a[l]`, 即`a[k] > a[l]`.
@@ -166,4 +166,4 @@ public class Solution {
 
 ## Reference
 
-- [Permutation | Data Structure and Algorithm](http://algorithm.yuanbin.me/exhaustive_search/permutation.html)
+- [Permutation | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation.html)

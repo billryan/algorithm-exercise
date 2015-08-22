@@ -27,7 +27,7 @@ O(n) time without extra memory.
 
 ## 题解
 
-字符串的回文判断问题，由于字符串可随机访问，故逐个比较首尾字符是否相等最为便利，即常见的『两根指针』技法。此题忽略大小写，并只考虑字母和数字字符。链表的回文判断总结见 [Check if a singly linked list is palindrome](http://algorithm.yuanbin.me/linked_list/check_if_a_singly_linked_list_is_palindrome.html).
+字符串的回文判断问题，由于字符串可随机访问，故逐个比较首尾字符是否相等最为便利，即常见的『两根指针』技法。此题忽略大小写，并只考虑字母和数字字符。链表的回文判断总结见 [Check if a singly linked list is palindrome](http://algorithm.yuanbin.me/zh-cn/linked_list/check_if_a_singly_linked_list_is_palindrome.html).
 
 ### Python
 

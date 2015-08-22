@@ -44,7 +44,7 @@
 
 ## 双序列(DP_Two_Sequence)
 
-一般有两个数组或者两个字符串，计算其匹配关系。双序列中常用二维数组表示状态转移关系，但往往可以使用滚动数组的方式对空间复杂度进行优化。举个例子，以题 [Distinct Subsequences](http://algorithm.yuanbin.me/dynamic_programming/distinct_subsequences.html) 为例，状态转移方程如下：
+一般有两个数组或者两个字符串，计算其匹配关系。双序列中常用二维数组表示状态转移关系，但往往可以使用滚动数组的方式对空间复杂度进行优化。举个例子，以题 [Distinct Subsequences](http://algorithm.yuanbin.me/zh-cn/dynamic_programming/distinct_subsequences.html) 为例，状态转移方程如下：
 
 ```
 f[i+1][j+1] = f[i][j+1] + f[i][j] (if S[i] == T[j])

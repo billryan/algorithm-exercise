@@ -16,7 +16,7 @@ Sort a linked list in O(n log n) time using constant space complexity.
 既然确定使用归并排序，我们就来思考归并排序实现的几个要素。
 
 1. 按长度等分链表，归并虽然不严格要求等分，但是等分能保证线性对数的时间复杂度。由于链表不能随机访问，故可以先对链表进行遍历求得其长度。
-2. 合并链表，细节已在 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/linked_list/merge_two_sorted_lists.html) 中详述。
+2. 合并链表，细节已在 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/linked_list/merge_two_sorted_lists.html) 中详述。
 
 在按长度等分链表时进行「后序归并」——先求得左半部分链表的表头，再求得右半部分链表的表头，最后进行归并操作。
 
@@ -103,8 +103,8 @@ private:
 
 ### 源码分析
 
-1. 归并子程序没啥好说的了，见 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/linked_list/merge_two_sorted_lists.html).
-2. 在递归处理链表长度时，分析方法和 [Convert Sorted List to Binary Search Tree | Data Structure and Algorithm](http://algorithm.yuanbin.me/binary_search_tree/convert_sorted_list_to_binary_search_tree.html) 一致，**`count`表示遍历到链表中间时表头指针需要移动的节点数。**在纸上分析几个简单例子后即可确定，由于这个题需要的是「左右」而不是二叉搜索树那道题需要三分——「左中右」，故将`count`初始化为1更为方便，左半部分链表长度为`length / 2`, 这两个值的确定最好是先用纸笔分析再视情况取初值，不可死记硬背。
+1. 归并子程序没啥好说的了，见 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/linked_list/merge_two_sorted_lists.html).
+2. 在递归处理链表长度时，分析方法和 [Convert Sorted List to Binary Search Tree | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/binary_search_tree/convert_sorted_list_to_binary_search_tree.html) 一致，**`count`表示遍历到链表中间时表头指针需要移动的节点数。**在纸上分析几个简单例子后即可确定，由于这个题需要的是「左右」而不是二叉搜索树那道题需要三分——「左中右」，故将`count`初始化为1更为方便，左半部分链表长度为`length / 2`, 这两个值的确定最好是先用纸笔分析再视情况取初值，不可死记硬背。
 3. 找到中间节点后首先将其作为右半部分链表处理，然后将其`next`值置为`NULL`, 否则归并子程序无法正确求解。这里需要注意的是`midNode`是左半部分的最后一个节点，`midNode->next`才是链表右半部分的起始节点。
 4. 递归模型中**左、右、合并**三者的顺序可以根据分治思想确定，即先找出左右链表，最后进行归并(因为归并排序的前提是两个子链表各自有序)。
 

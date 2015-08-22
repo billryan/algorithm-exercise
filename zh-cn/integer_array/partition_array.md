@@ -62,7 +62,7 @@ public:
 
 ## 题解2 - 两根指针
 
-有了解过 [Quick Sort](http://algorithm.yuanbin.me/basics_sorting/quick_sort.html) 的做这道题自然是分分钟的事，使用左右两根指针 $$left, right$$ 分别代表小于、大于等于 k 的索引，左右同时开工，直至 $$left > right$$.
+有了解过 [Quick Sort](http://algorithm.yuanbin.me/zh-cn/basics_sorting/quick_sort.html) 的做这道题自然是分分钟的事，使用左右两根指针 $$left, right$$ 分别代表小于、大于等于 k 的索引，左右同时开工，直至 $$left > right$$.
 
 ### C++
 

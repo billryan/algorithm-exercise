@@ -7,7 +7,7 @@
 
 ## 题解1 - 选择归并(TLE) <i class="fa fa-thumbs-o-down"></i>
 
-参考 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/linked_list/merge_two_sorted_lists.html) 中对两个有序链表的合并方法，这里我们也可以采用从 k 个链表中选择其中最小值的节点链接到`lastNode->next`(和选择排序思路有点类似)，同时该节点所在的链表表头节点往后递推一个。直至`lastNode`遍历完 k 个链表的所有节点，此时表头节点均为`NULL`, 返回`dummy->next`.
+参考 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/linked_list/merge_two_sorted_lists.html) 中对两个有序链表的合并方法，这里我们也可以采用从 k 个链表中选择其中最小值的节点链接到`lastNode->next`(和选择排序思路有点类似)，同时该节点所在的链表表头节点往后递推一个。直至`lastNode`遍历完 k 个链表的所有节点，此时表头节点均为`NULL`, 返回`dummy->next`.
 
 这种方法非常简单直接，但是时间复杂度较高，容易出现 TLE.
 
@@ -82,7 +82,7 @@ public:
 
 ## 题解2 - 迭代调用`Merge Two Sorted Lists`(TLE) <i class="fa fa-thumbs-o-down"></i>
 
-鉴于题解1时间复杂度较高，题解2中我们可以反复利用时间复杂度相对较低的 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/linked_list/merge_two_sorted_lists.html). 即先合并链表1和2，接着将合并后的新链表再与链表3合并，如此反复直至 vector 内所有链表均已完全合并[^soulmachine]。
+鉴于题解1时间复杂度较高，题解2中我们可以反复利用时间复杂度相对较低的 [Merge Two Sorted Lists | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/linked_list/merge_two_sorted_lists.html). 即先合并链表1和2，接着将合并后的新链表再与链表3合并，如此反复直至 vector 内所有链表均已完全合并[^soulmachine]。
 
 ### C++
 
