@@ -35,6 +35,13 @@
 
 单序列动态规划的状态通常定义为：数组前 i 个位置, 数字, 字母 或者 以第i个为... 返回结果通常为数组的最后一个元素。
 
+按照动态规划的四要素，此类题可从以下四个角度分析。
+
+1. State: f[i] 前i个位置/数字/字母...
+2. Function: f[i] = f[i-1]... 找递推关系
+3. Initialization: 根据题意进行必要的初始化
+4. Answer: f[n-1]
+
 ## 双序列(DP_Two_Sequence)
 
 一般有两个数组或者两个字符串，计算其匹配关系。双序列中常用二维数组表示状态转移关系，但往往可以使用滚动数组的方式对空间复杂度进行优化。举个例子，以题 [Distinct Subsequences](http://algorithm.yuanbin.me/dynamic_programming/distinct_subsequences.html) 为例，状态转移方程如下：
