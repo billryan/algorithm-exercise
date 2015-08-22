@@ -33,7 +33,7 @@
 
 ## 如何貢獻
 
-如果你發現任何有錯誤的地方或是想更新/翻譯本文檔，請毫不猶豫地猛點擊 [貢獻指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-cn.md).
+如果你發現任何有錯誤的地方或是想更新/翻譯本文檔，請毫不猶豫地猛點擊 [貢獻指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-tw.md).
 
 ## 如何練習演算法
 
