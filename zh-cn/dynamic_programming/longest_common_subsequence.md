@@ -1,6 +1,6 @@
 # Longest Common Subsequence
 
-- category: [DP_Two_Sequence]
+- tags: [DP_Two_Sequence]
 
 ## Source
 
