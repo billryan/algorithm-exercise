@@ -31,7 +31,7 @@ $$\sum _{i = 1} ^{n} \frac {L[i]}{l} \geq k$$
 
 > **Warning** 注意求和与取整的顺序，是先求 `L[i]/l`的单个值，而不是先对`L[i]`求和。
 
-分析到这里就和题 [Sqrt x](http://algorithm.yuanbin.me/binary_search/sqrt_x.html) 差不多一样了，要求的是 $$l$$ 的最大可能取值，同时 $$l$$ 可以看做是从有序序列`[1, max(L[i])]`的一个元素，典型的二分搜素！
+分析到这里就和题 [Sqrt x](http://algorithm.yuanbin.me/zh-cn/binary_search/sqrt_x.html) 差不多一样了，要求的是 $$l$$ 的最大可能取值，同时 $$l$$ 可以看做是从有序序列`[1, max(L[i])]`的一个元素，典型的二分搜素！
 
 ### Python
 

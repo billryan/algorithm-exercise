@@ -15,7 +15,7 @@ Given the permutation [1, 4, 2, 2], return 3.
 
 ## 题解
 
-题 [Permutation Index](http://algorithm.yuanbin.me/exhaustive_search/permutation_index.html) 的扩展，这里需要考虑重复元素，有无重复元素最大的区别在于原来的`1!, 2!, 3!...`等需要除以重复元素个数的阶乘，颇有点高中排列组合题的味道。记录重复元素个数同样需要动态更新，引入哈希表这个万能的工具较为方便。
+题 [Permutation Index](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation_index.html) 的扩展，这里需要考虑重复元素，有无重复元素最大的区别在于原来的`1!, 2!, 3!...`等需要除以重复元素个数的阶乘，颇有点高中排列组合题的味道。记录重复元素个数同样需要动态更新，引入哈希表这个万能的工具较为方便。
 
 ### Python
 

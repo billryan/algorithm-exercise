@@ -22,7 +22,7 @@ The solution set must not contain duplicate triplets.
 
 ## 题解1 - 排序 + 哈希表 + 2 Sum
 
-相比之前的 [2 Sum](http://algorithm.yuanbin.me/integer_array/2_sum.html), 3 Sum 又多加了一个数，按照之前 2 Sum 的分解为『1 Sum + 1 Sum』的思路，我们同样可以将 3 Sum 分解为『1 Sum + 2 Sum』的问题，具体就是首先对原数组排序，排序后选出第一个元素，随后在剩下的元素中使用 2 Sum 的解法。
+相比之前的 [2 Sum](http://algorithm.yuanbin.me/zh-cn/integer_array/2_sum.html), 3 Sum 又多加了一个数，按照之前 2 Sum 的分解为『1 Sum + 1 Sum』的思路，我们同样可以将 3 Sum 分解为『1 Sum + 2 Sum』的问题，具体就是首先对原数组排序，排序后选出第一个元素，随后在剩下的元素中使用 2 Sum 的解法。
 
 ### Python
 

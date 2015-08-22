@@ -17,7 +17,7 @@ O(nlogn) time
 
 ## 题解
 
-题 [Zero Sum Subarray | Data Structure and Algorithm](http://algorithm.yuanbin.me/integer_array/zero_sum_subarray.html) 的变形题，由于要求的子串和不一定，故哈希表的方法不再适用，使用解法4 - 排序即可在 $$O(n \log n)$$ 内解决。具体步骤如下：
+题 [Zero Sum Subarray | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/integer_array/zero_sum_subarray.html) 的变形题，由于要求的子串和不一定，故哈希表的方法不再适用，使用解法4 - 排序即可在 $$O(n \log n)$$ 内解决。具体步骤如下：
 
 1. 首先遍历一次数组求得子串和。
 2. 对子串和排序。
