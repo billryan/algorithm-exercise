@@ -1,6 +1,6 @@
 # Palindrome Partitioning
 
-- tags: [Palindrome]
+- tags: [palindrome]
 
 ## Source
 

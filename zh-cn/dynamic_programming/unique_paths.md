@@ -1,6 +1,6 @@
 # Unique Paths
 
-- category: [DP_Matrix]
+- tags: [DP_Matrix]
 
 ## Source
 

@@ -1,6 +1,6 @@
 # Valid Palindrome
 
-- tags: [Palindrome]
+- tags: [palindrome]
 
 ## Source
 

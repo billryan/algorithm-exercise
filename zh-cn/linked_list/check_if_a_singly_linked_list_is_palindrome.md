@@ -1,5 +1,7 @@
 # Check if a singly linked list is palindrome
 
+- tags: [palindrome, linked_list]
+
 ## Source
 
 - [Function to check if a singly linked list is palindrome - GeeksforGeeks](http://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/)
@@ -8,8 +10,6 @@
 Given a singly linked list of characters, write a function that
 returns true if the given list is palindrome, else false.
 ```
-
-- tags: palindrome, linked_list
 
 ## 题解1 - 使用辅助栈
 

@@ -1,6 +1,6 @@
 # Word Break
 
-- category: [DP_Sequence]
+- tags: [DP_Sequence]
 
 ## Source
 
