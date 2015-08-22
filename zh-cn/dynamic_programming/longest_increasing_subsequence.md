@@ -1,6 +1,6 @@
 # Longest Increasing Subsequence
 
-- category: [DP_Sequence]
+- tags: [DP_Sequence]
 
 ## Source
 

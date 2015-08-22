@@ -1,6 +1,6 @@
 # Palindrome Partitioning II
 
-- category: [DP_Sequence]
+- tags: [DP_Sequence]
 
 ## Source
 

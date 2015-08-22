@@ -1,6 +1,6 @@
 # Longest Palindromic Substring
 
-- tags: [Palindrome]
+- tags: [palindrome]
 
 ## Source
 
