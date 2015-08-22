@@ -12,7 +12,7 @@ convert it to a height balanced BST.
 
 ## 题解 - 折半取中
 
-题 [Convert Sorted Array to Binary Search Tree | Data Structure and Algorithm](http://algorithm.yuanbin.me/binary_search_tree/convert_sorted_array_to_binary_search_tree.html) 的升级版，不过这里把「有序数组」换成了「有序链表」。我们可以参考上题的题解思路，思考如何才能在链表中找到「中间节点」。对于本题的单向链表来说，要想知道中间位置的节点，则必须需要知道链表的长度，因此我们就自然联想到了可以通过遍历链表来求得其长度。求得长度我们就知道了链表中间位置节点的索引了，进而根据头节点和当前节点则可将链表分为左右两半形成递归模型。到这里还只能算是解决了问题的一半，这道题另一比较麻烦的地方在于边界条件的取舍，很难第一次就 AC, 下面结合代码做进一步的分析。
+题 [Convert Sorted Array to Binary Search Tree | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/binary_search_tree/convert_sorted_array_to_binary_search_tree.html) 的升级版，不过这里把「有序数组」换成了「有序链表」。我们可以参考上题的题解思路，思考如何才能在链表中找到「中间节点」。对于本题的单向链表来说，要想知道中间位置的节点，则必须需要知道链表的长度，因此我们就自然联想到了可以通过遍历链表来求得其长度。求得长度我们就知道了链表中间位置节点的索引了，进而根据头节点和当前节点则可将链表分为左右两半形成递归模型。到这里还只能算是解决了问题的一半，这道题另一比较麻烦的地方在于边界条件的取舍，很难第一次就 AC, 下面结合代码做进一步的分析。
 
 ### C++
 

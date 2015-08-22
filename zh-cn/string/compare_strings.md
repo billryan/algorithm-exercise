@@ -17,7 +17,7 @@ For A = "ABCD" B = "AABC", return false.
 
 ## 题解
 
-题 [Two Strings Are Anagrams | Data Structure and Algorithm](http://algorithm.yuanbin.me/string/two_strings_are_anagrams.html) 的变形题。题目意思是问B中的所有字符是否都在A中，而不是单个字符。比如B="AABC"包含两个「A」，而A="ABCD"只包含一个「A」，故返回false. 做题时注意题意，必要时可向面试官确认。
+题 [Two Strings Are Anagrams | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/string/two_strings_are_anagrams.html) 的变形题。题目意思是问B中的所有字符是否都在A中，而不是单个字符。比如B="AABC"包含两个「A」，而A="ABCD"只包含一个「A」，故返回false. 做题时注意题意，必要时可向面试官确认。
 
 既然不是类似 strstr 那样的匹配，直接使用两重循环就不太合适了。题目中另外给的条件则是A和B都是全大写单词，理解题意后容易想到的方案就是先遍历 A 和 B 统计各字符出现的频次，然后比较频次大小即可。嗯，祭出万能的哈希表。
 

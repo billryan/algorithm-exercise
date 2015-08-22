@@ -24,7 +24,7 @@ The binary tree A is a height-balanced binary tree, but B is not.
 
 ## 题解 - 递归
 
-根据题意，平衡树的定义是两子树的深度差最大不超过1，显然使用递归进行分析较为方便。既然使用递归，那么接下来就需要分析递归调用的终止条件。和之前的 [Maximum Depth of Binary Tree | Algorithm](http://algorithm.yuanbin.me/binary_tree/maximum_depth_of_binary_tree.html) 类似，`NULL == root`必然是其中一个终止条件，返回`0`；根据题意还需的另一终止条件应为「左右子树高度差大于1」，但对应此终止条件的返回值是多少？——`INT_MAX` or `INT_MIN`？想想都不合适，为何不在传入参数中传入`bool`指针或者`bool`引用咧？并以此变量作为最终返回值，此法看似可行，先来看看鄙人最开始想到的这种方法。
+根据题意，平衡树的定义是两子树的深度差最大不超过1，显然使用递归进行分析较为方便。既然使用递归，那么接下来就需要分析递归调用的终止条件。和之前的 [Maximum Depth of Binary Tree | Algorithm](http://algorithm.yuanbin.me/zh-cn/binary_tree/maximum_depth_of_binary_tree.html) 类似，`NULL == root`必然是其中一个终止条件，返回`0`；根据题意还需的另一终止条件应为「左右子树高度差大于1」，但对应此终止条件的返回值是多少？——`INT_MAX` or `INT_MIN`？想想都不合适，为何不在传入参数中传入`bool`指针或者`bool`引用咧？并以此变量作为最终返回值，此法看似可行，先来看看鄙人最开始想到的这种方法。
 
 ### C++ Recursion with extra bool variable
 
