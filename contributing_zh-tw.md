@@ -9,7 +9,7 @@
 3. 提交 Pull Request, fork 本文檔的 GitHub repo, 發PR給我就好了。
 4. 成為本項目的 contributor, 發郵件並把你的 GitHub 賬戶名告訴我就可以了，我收到郵件後把你的 GitHub 賬號加到Collaborators中。在對 git 操作不是特別熟悉的情況下建議通過方式3提交 PR，相對安全很多。
 
-方式3 和4 push 到 GitHub 前都需要先更新-`git pull`, 可能需要處理沖突和合並。對 git 不熟的可以看看 [git - the simple guide - no deep shit!](http://rogerdudler.github.io/git-guide/), 大概只用到了 `add & commit`, `pushing changes`, `update & merge`. 可以先在自己的 Repo 內玩玩後再在 GitHub 上提交 Pull Request, 等你有足夠信心掌握 git 的這些基本操作後可以大膽地申請為本項目的 Contributer, 這樣就不用頻繁提交 PR 啦~
+方式3 和4 push 到 GitHub 前都需要先更新-`git pull`, 可能需要處理衝突和合併。對 git 不熟的可以看看 [git - the simple guide - no deep shit!](http://rogerdudler.github.io/git-guide/), 大概只用到了 `add & commit`, `pushing changes`, `update & merge`. 可以先在自己的 Repo 內玩玩後再在 GitHub 上提交 Pull Request, 等你有足夠信心掌握 git 的這些基本操作後可以大膽地申請為本項目的 Contributer, 這樣就不用頻繁提交 PR 啦~
 
 既然涉及到文檔合作，那麼最好是能有個像樣的文檔規範之類的東西方便大家合作得更好，目前想到的有如下幾點。
 
@@ -57,7 +57,7 @@ Part II為leetcode/lintcode題解，這部分的風格相對容易統一，感�
 
 ### 數學公式
 
-其實程式碼裏是用不著寫數學公式的，但是偶爾分析演算法可能會用著，用過 LaTeX 的都知道她生成的數學公式有多優雅，以至於不用她來寫數學公式都有點不舒服...
+其實程式碼裡是用不著寫數學公式的，但是偶爾分析演算法可能會用到，用過 LaTeX 的都知道她生成的數學公式有多優雅，以至於不用她來寫數學公式都有點不舒服...
 
 這個文檔裏對於較複雜的數學公式建議使用 LaTeX, 因為托管在gitbook上，所以就用了輕量級的katex插件，沒有用重量級的 MathJax。行內和行間公式都是 兩個$, 區別在於行間公式寫到下一行行首，而行內公式不能寫在行首(廢話...)。katex非常脆弱，對一些高級的 LaTeX 語法不支持，否則無法編譯輸出到網站和pdf，盡量用簡單的 LaTeX 語法或者不用。
 
