@@ -30,7 +30,9 @@ a ^ b ^ c = a ^ (b ^ c) = (a ^ b) ^ c // associative
 7. 仅更新第`n`位，写入值为`v`; `v`为1则更新为1，否则为0 - `mask = ~(1 << n); x = (x & mask) | (v << i)`
 
 ###实际应用
+
 ####位图(Bitmap)
+
 位图一般用于替代flag array，节约空间。<br>
 一个int型的数组用位图替换后，占用的空间可以缩小到原来的$$1/32$$.<br>
 下面代码定义了一个100万大小的类图，setbit和testbit函数
@@ -52,6 +54,8 @@ unsigned int bits[N/WORD_LENGTH + 1];
 
 ## Reference
 
+- [位运算应用技巧（1） » NoAlGo博客](http://noalgo.info/344.html)
+- [位运算应用技巧（2） » NoAlGo博客](http://noalgo.info/353.html)
 - [位运算简介及实用技巧（一）：基础篇 | Matrix67: The Aha Moments](http://www.matrix67.com/blog/archives/263)
 - *cc150* chapter 8.5 and chapter 9.5
 - 《编程珠玑2》
