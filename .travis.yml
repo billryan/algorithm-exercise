@@ -6,6 +6,8 @@ node_js:
 before_install:
   # update first
   - sudo apt-get update -qq
+  # install sshpass
+  - sudo apt-get install -y sshpass
   # install Chinese fonts
   - sudo apt-get install -y fonts-arphic-gbsn00lp
   # Install Gitbook
@@ -28,13 +30,23 @@ script:
   - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
   - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
   - mkdir -p ~/upload
+  # build static website
+  - cd ~/algorithm-exercise/
+  - gitbook install && gitbook build .
+  # build Simplified Chinese pdf
   - cd ~/algorithm-exercise/zh-cn
-  - gitbook install
+  #- gitbook install
   # - gitbook build ./ --format=json
   # - gitbook build ./ 
   - gitbook pdf ./ ~/upload/algorithm_zh-cn_billryan_print.pdf
   # - gitbook epub ./ ~/upload/algorithm_billryan.epub
   # - gitbook mobi ./ ~/upload/algorithm_billryan.mobi
+  # build Traditional Chinese pdf
+  - cd ~/algorithm-exercise/zh-tw
+  - gitbook pdf ./ ~/upload/algorithm_zh-tw_billryan_print.pdf
+  # build English version pdf
+  - cd ~/algorithm-exercise/en
+  - gitbook pdf ./ ~/upload/algorithm_en_billryan_print.pdf
 
 after_success:
   # copy website html files to upload
@@ -42,6 +54,8 @@ after_success:
   # - cp algorithm_billryan_html.tar.gz ~/upload/
   # upload to qiniu
   - ~/qrsync ~/qiniu_sync.json
+  # upload to VPS
+  - rsync -a --rsh="/usr/bin/sshpass -p $FTP_PASSWORD ssh -p $FTP_PORT -o StrictHostKeyChecking=no -l $FTP_USER" ~/algorithm-exercise/_book/  $FTP_USER@ftp.yuanbin.me:/home/$FTP_USER/ftp/docs/
 #  # cd ~
 #  - cd ~
 #  # install source code pro
