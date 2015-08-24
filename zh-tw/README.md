@@ -91,3 +91,19 @@
 - *Cracking The Coding Interview*. 著名的CTCI(又稱CC150)，Google, Mircosoft, LinkedIn 前HR離職之後寫的書，從很全面的角度剖析了面試的各個環節和題目。除了演算法資料結構等題以外，還包含OO Design, Database, System Design, Brain Teaser等類型的題目。準備北美面試的同學一定要看。
 - *劍指Offer*。適合中國找工作的同學看看，英文版叫Coding Interviews. 作者是何海濤(Harry He)。Amazon.cn上可以買到。有大概50多題，題目的分析比較全面，會從面試官的角度給出很多的建議和show各種坑。
 - *進軍矽谷* -- 程序員面試揭秘。有差不多150題。
+
+
+## 學習資源推薦(繁體中文譯者)
+###入門
+- [Data Structures and Algorithms in C++](http://www.wiley.com/WileyCDA/WileyTitle/productCd-EHEP001657.html)
+-by Michael T. Goodrich, Roberto Tamassia and David M. Mount
+
+    台大資工系的**資料結構與演算法**上課用書，內容好懂易讀，習題量大且深度廣度兼具，程式碼風格俐落而不失功能完整性，對C++背景的同學來說是良好的資料結構入門書。
+
+- [Data Structures • 數據結構](https://www.edx.org/course/data-structures-shu-ju-jie-gou-tsinghuax-30240184x-2)(MOOC)
+
+    北京清華大學的鄧俊輝老師開設的中文MOOC，以C++為主要的程式語言，對於一上來就看書覺得枯燥的同學是一帖入門良藥，講解深入淺出，投影片視覺化做得極好，程式作業禁用了部分STL如vector、list、set等，要求學生必須自己實現需要用的資料結構，程式作業使用清華自建的OJ平台，可以同時跟其他線上學習的同學競爭，作業表現優良的同學還可以加入清華內部的討論群組與清華的學生切磋，相當受用。
+
+
+
+###進階
