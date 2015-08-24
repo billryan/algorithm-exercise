@@ -70,7 +70,7 @@
 
 ## 其他資源
 
-- [九章算法 | 幫助更多的中國人找到好工作，美國矽谷一線工程師實時在線授課](http://www.jiuzhang.com/) - 程式碼質量不錯，整理得也很好。
+- [九章算法 | 幫助更多的中國人找到好工作，美國矽谷一線工程師實時在線授課](http://www.jiuzhang.com/) - 程式碼品質不錯，整理得也很好。
 - [七月算法 - julyedu.com ](http://julyedu.com/) - july大神主導的在線演算法輔導。
 - [刷題 | 一畝三分地論壇 ](http://www.1point3acres.com/bbs/forum-84-1.html) - 時不時就會有驚喜放出。
 - [VisuAlgo - visualising data structures and algorithms through animation](http://http://visualgo.net/) - 相當猛的資料結構和演算法可視化。
