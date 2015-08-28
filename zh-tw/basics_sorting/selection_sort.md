@@ -86,6 +86,7 @@ void selectionSort(vector<int> & arr){
         std::swap(arr[i], arr[min_idx]);
     }
 }
+```
 
 ## Reference
 
