@@ -26,7 +26,7 @@ Do it without recursion.
 
 ## 题解
 
-在上题的基础上进行剪枝，剪枝的过程和 [Subsets | Algorithm](http://algorithm.yuanbin.me/zh-cn/backtracking/subsets.html) 中的 Unique Subsets 一题极为相似。为了便于分析，我们可以先分析简单的例子，以 $$[1, 2_1, 2_2]$$ 为例。按照上题 Permutations 的解法，我们可以得到如下全排列。
+在上题的基础上进行剪枝，剪枝的过程和 [Unique Subsets](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/unique_subsets.html) 一题极为相似。为了便于分析，我们可以先分析简单的例子，以 $$[1, 2_1, 2_2]$$ 为例。按照上题 Permutations 的解法，我们可以得到如下全排列。
 
 1. $$[1, 2_1, 2_2]$$
 2. $$[1, 2_2, 2_1]$$
