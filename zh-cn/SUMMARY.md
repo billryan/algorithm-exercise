@@ -141,6 +141,8 @@
    * [Interleaving String](dynamic_programming/interleaving_string.md)
 * [Problem Misc](problem_misc/README.md)
    * [Nuts and Bolts Problem](problem_misc/nuts_and_bolts_problem.md)
+* [Graph](graph/README.md)
+   * [Topological Sorting](graph/topological_sorting.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
