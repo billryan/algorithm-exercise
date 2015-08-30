@@ -115,25 +115,23 @@ public:
      * @return: A list of integers includes the index of the first number
      *          and the index of the last number
      */
-    vector<int> subarraySum2(vector<int> nums, int k){
+    vector<int> subarraySum2(vector<int> &nums, int k){
         vector<int> result;
 
-        int left_index = 0;
-        int curr_sum = 0;
+        int left_index = 0, curr_sum = 0;
         for (int i = 0; i != nums.size(); ++i) {
-            curr_sum += nums[i];
-            if (curr_sum == k) {
-                result.push_back(left_index);
-                result.push_back(i);
-                return result;
-            }
-
             while (curr_sum > k) {
                 curr_sum -= nums[left_index];
                 ++left_index;
             }
-        }
 
+            if (curr_sum == k) {
+                result.push_back(left_index);
+                result.push_back(i - 1);
+                return result;
+            }
+            curr_sum += nums[i];
+        }
         return result;
     }
 };
@@ -164,7 +162,7 @@ int main(int argc, char *argv[])
 
 ### 源码分析
 
-使用`for`循环累加`curr_sum`, 在`curr_sum > k`时再使用`while`递减`curr_sum`, 同时递增左边索引`left_index`.
+使用`for`循环, 在`curr_sum > k`时使用`while`递减`curr_sum`, 同时递增左边索引`left_index`, 最后累加`curr_sum`。如果顺序不对就会出现 bug, 原因在于判断子串和是否满足条件时在递增之后(谢谢 @glbrtchen 汇报 bug)。
 
 ### 复杂度分析
 
