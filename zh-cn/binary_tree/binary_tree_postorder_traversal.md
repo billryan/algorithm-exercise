@@ -112,7 +112,7 @@ public class Solution {
             result.addAll(right);
             result.add(root.val);
         }
-        
+
         return result;
     }
 }
@@ -165,7 +165,7 @@ class Solution:
                     s.append(curr.right)
                 if curr.left is not None:
                     s.append(curr.left)
-            
+
         return result
 ```
 
@@ -186,7 +186,7 @@ public:
     vector<int> postorderTraversal(TreeNode* root) {
         vector<int> result;
         if (root == NULL) return result;
-        
+
         TreeNode *prev = NULL;
         stack<TreeNode *> s;
         s.push(root);
@@ -200,7 +200,7 @@ public:
             if (prev != NULL && (curr->left == prev || curr->right == prev)) {
                 childVisited = true;
             }
-            
+
             // traverse
             if (noChild || childVisited) {
                 result.push_back(curr->val);
@@ -211,7 +211,7 @@ public:
                 if (curr->left != NULL) s.push(curr->left);
             }
         }
-        
+
         return result;
     }
 };
@@ -233,7 +233,7 @@ public class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         if (root == null) return result;
-        
+
         Stack<TreeNode> s = new Stack<TreeNode>();
         s.push(root);
         TreeNode prev = null;
@@ -247,7 +247,7 @@ public class Solution {
             if (prev != null && (curr.left == prev || curr.right == prev)) {
                 childVisited = true;
             }
-            
+
             // traverse
             if (noChild || childVisited) {
                 result.add(curr.val);
@@ -259,7 +259,7 @@ public class Solution {
             }
 
         }
-        
+
         return result;
     }
 }
@@ -274,6 +274,60 @@ public class Solution {
 ### 复杂度分析
 
 最坏情况下栈内存储所有节点，空间复杂度近似为 $$O(n)$$, 每个节点遍历两次或以上，时间复杂度近似为 $$O(n)$$.
+
+## 题解3 - Iterative
+
+要想得到『左右根』的后序遍历结果，我们发现只需将『根右左』的结果转置即可，而先序遍历通常为『根左右』，故改变『左右』的顺序即可，所以如此一来后序遍历的非递归实现起来就非常简单了。
+
+### C++
+
+```c++
+/**
+ * Definition of TreeNode:
+ * class TreeNode {
+ * public:
+ *     int val;
+ *     TreeNode *left, *right;
+ *     TreeNode(int val) {
+ *         this->val = val;
+ *         this->left = this->right = NULL;
+ *     }
+ * }
+ */
+class Solution {
+    /**
+     * @param root: The root of binary tree.
+     * @return: Postorder in vector which contains node values.
+     */
+public:
+    vector<int> postorderTraversal(TreeNode *root) {
+        vector<int> result;
+        if (root == NULL) return result;
+
+        stack<TreeNode*> s;
+        s.push(root);
+        while (!s.empty()) {
+            TreeNode *node = s.top();
+            s.pop();
+            result.push_back(node->val);
+            // root, right, left => left, right, root
+            if (node->left != NULL) s.push(node->left);
+            if (node->right != NULL) s.push(node->right);
+        }
+        // reverse
+        std::reverse(result.begin(), result.end());
+        return result;
+    }
+};
+```
+
+### 源码分析
+
+注意入栈的顺序和最后转置即可。
+
+### 复杂度分析
+
+同先序遍历。
 
 ## Reference
 
