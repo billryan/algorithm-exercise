@@ -35,7 +35,7 @@ struct TreeNode {
 };
 ```
 
-## 相關演算算法——遞迴法遍歷
+## 相關演算法——遞迴法遍歷
 請參考Chapter 11
 ## 相關演算法——分治法(Divide & Conquer)
 
