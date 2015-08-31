@@ -100,6 +100,7 @@
    * [Balanced Binary Tree](binary_tree/balanced_binary_tree.md)
    * [Binary Tree Maximum Path Sum](binary_tree/binary_tree_maximum_path_sum.md)
    * [Lowest Common Ancestor](binary_tree/lowest_common_ancestor.md)
+   * [Invert Binary Tree](binary_tree/invert_binary_tree.md)
 * [Binary Search Tree](binary_search_tree/README.md)
    * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
    * [Validate Binary Search Tree](binary_search_tree/validate_binary_search_tree.md)
