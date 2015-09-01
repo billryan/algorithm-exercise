@@ -19,9 +19,9 @@
 
 - 線上閱讀(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
 - 離線閱讀: 推送到GitHub後會觸發 travis-ci 的編譯，相應的部分編譯輸出提供七牛的靜態文件加速下載。
-    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - 適合在 iPhone/iPad/MAC 上離線查看，實測效果極好。
-    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [簡體中文 - 適合列印版](http://docs4bill.qiniudn.com/doc/algorithm_zh-cn_billryan_print.pdf) - 推薦下載七牛的版本，Gitbook 官方使用的中文字體有點問題。
-    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Kindle 專用. 未測試，感覺不適合在 Kindle 上看此類書籍，儘管 Kindle 的屏幕對眼睛很好...
+    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-tw) - 適合在 iPhone/iPad/MAC 上離線查看，實測效果極好。
+    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-tw), [ 繁體中文 - 適合列印版](http://docs4bill.qiniudn.com/doc/algorithm_zh-tw_billryan_print.pdf) - 推薦下載七牛的版本，Gitbook 官方使用的中文字體有點問題。
+    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-tw) - Kindle 專用. 未測試，感覺不適合在 Kindle 上看此類書籍，儘管 Kindle 的屏幕對眼睛很好...
 - Google 站內搜索: `keywords site:algorithm.yuanbin.me`
 - Swiftype 站內搜索: 可使用網頁右下方的 `Search this site` 進行站內搜索
 
