@@ -16,9 +16,9 @@ You can view/search this document online or offline, feel free to read it. :)
 
 - Online(Rendered by Gitbook): <http://algorithm.yuanbin.me>
 - Offline(Compiled by Gitbook and Travis-CI):
-    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - Recommended for iPhone/iPad/MAC
-    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm) - Recommended for Desktop
-    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Recommended for Kindle
+    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=en) - Recommended for iPhone/iPad/MAC
+    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=en) - Recommended for Desktop
+    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=en) - Recommended for Kindle
 - Site Search via Google: `keywords site:algorithm.yuanbin.me`
 - Site Search via Swiftype: Click `Search this site` on the right bottom of webpages
 
