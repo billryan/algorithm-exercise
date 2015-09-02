@@ -43,7 +43,7 @@ public:
             --letterCount[t[i]];
         }
         for (int i = 0; i != t.size(); ++i) {
-            if (letterCount[t[i]] < 0) {
+            if (letterCount[t[i]] != 0) {
                 return false;
             }
         }
