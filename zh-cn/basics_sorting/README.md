@@ -36,6 +36,7 @@
 
 ## Reference
 
+- [常用排序算法总结（性能+代码） - SegmentFault](http://segmentfault.com/a/1190000002595152#articleHeader15)
 - [Sorting algorithm - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Sorting_algorithm) - 各类排序算法的「平均、最好、最坏时间复杂度」总结。
 - [经典排序算法总结与实现 | Jark's Blog](http://wuchong.me/blog/2014/02/09/algorithm-sort-summary/) - 基于 Python 的较为清晰的总结。
 - [【面经】硅谷前沿Startup面试经验-排序算法总结及快速排序算法代码_九章算法](http://blog.sina.com.cn/s/blog_eb52001d0102v1k8.html) - 总结了一些常用常问的排序算法。
