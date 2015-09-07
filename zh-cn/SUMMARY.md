@@ -74,6 +74,8 @@
    * [Update Bits](math_and_bit_manipulation/update_bits.md)
    * [Fast Power](math_and_bit_manipulation/fast_power.md)
    * [Count 1 in Binary](math_and_bit_manipulation/count_1_in_binary.md)
+   * [Fibonacci](math_and_bit_manipulation/fibonacci.md)
+   * [A plus B Problem](math_and_bit_manipulation/a_plus_b_problem.md)
 * [Linked List](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
