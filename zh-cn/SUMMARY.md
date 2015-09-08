@@ -106,6 +106,7 @@
    * [Lowest Common Ancestor](binary_tree/lowest_common_ancestor.md)
    * [Invert Binary Tree](binary_tree/invert_binary_tree.md)
    * [Diameter of a Binary Tree](binary_tree/diameter_of_a_binary_tree.md)
+   * [Construct Binary Tree from Preorder and Inorder Traversal](binary_tree/construct_binary_tree_from_preorder_and_inorder_traversal.md)
 * [Binary Search Tree](binary_search_tree/README.md)
    * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
    * [Validate Binary Search Tree](binary_search_tree/validate_binary_search_tree.md)
