@@ -79,6 +79,7 @@
    * [A plus B Problem](math_and_bit_manipulation/a_plus_b_problem.md)
    * [Print Numbers by Recursion](math_and_bit_manipulation/print_numbers_by_recursion.md)
    * [Majority Number](math_and_bit_manipulation/majority_number.md)
+   * [Majority Number II](math_and_bit_manipulation/majority_number_ii.md)
 * [Linked List](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
