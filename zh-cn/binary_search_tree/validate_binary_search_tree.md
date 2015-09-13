@@ -62,7 +62,7 @@ public class Solution {
     
     private boolean helper(TreeNode root, long lower, long upper) {
         if (root == null) return true;
-	System.out.println("root.val = " + root.val + ", lower = " + lower + ", upper = " + upper);
+        // System.out.println("root.val = " + root.val + ", lower = " + lower + ", upper = " + upper);
         // left node value < root node value < right node value
         if (root.val >= upper || root.val <= lower) return false;
         boolean isLeftValidBST = helper(root.left, lower, root.val);
