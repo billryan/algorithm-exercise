@@ -89,7 +89,9 @@ private:
 
 在题 [Two Strings Are Anagrams](http://algorithm.yuanbin.me/zh-cn/string/two_strings_are_anagrams.html) 中曾介绍过使用排序和 hashmap 两种方法判断变位词。这里我们将这两种方法同时引入！只不过此时的 hashmap 的 key 为字符串，value 为该字符串在 vector 中出现的次数。两次遍历字符串数组，第一次遍历求得排序后的字符串数量，第二次遍历将排序后相同的字符串取出放入最终结果中。
 
-### C++
+**leetcode 上此题的 signature 已经更新，需要将 anagrams 按组输出，稍微麻烦一点点。**
+
+### C++ - lintcode
 
 ```c++
 class Solution {
@@ -121,11 +123,51 @@ public:
 };
 ```
 
+### Java - leetcode
+
+```java
+public class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> result = new ArrayList<List<String>>();
+        if (strs == null) return result;
+        
+        // one key to multiple value multiMap
+        Map<String, ArrayList<String>> multiMap = new HashMap<String, ArrayList<String>>();
+        for (String str : strs) {
+            char[] strChar = str.toCharArray();
+            Arrays.sort(strChar);
+            String strSorted = String.valueOf(strChar);
+            if (multiMap.containsKey(strSorted)) {
+                ArrayList<String> aList = multiMap.get(strSorted);
+		        aList.add(str);
+                multiMap.put(strSorted, aList);
+            } else {
+                ArrayList<String> aList = new ArrayList<String>();
+                aList.add(str);
+                multiMap.put(strSorted, aList);
+            }
+        }
+        
+        // add List group to result
+        Set<String> keySet = multiMap.keySet();
+        for (String key : keySet) {
+            ArrayList<String> aList = multiMap.get(key);
+            Collections.sort(aList);
+            result.add(aList);
+        }
+        
+        return result;
+    }
+}
+```
+
 ### 源码分析
 
 建立 key 为字符串，value 为相应计数器的hashmap, `unordered_map`为 C++ 11中引入的哈希表数据结构[^unordered_map], 这种新的数据结构和之前的 map 有所区别，详见[^map-unordered_map]。
 
 第一次遍历字符串数组获得排序后的字符串计数器信息，第二次遍历字符串数组将哈希表中计数器值大于1的字符串取出。
+
+leetcode 中题目 signature 已经有所变化，这里使用一对多的 HashMap 较为合适，使用 ArrayList<String> 作为 value. Java 中对 String 排序可先将其转换为 char[], 排序后再转换为新的 String.
 
 ### 复杂度分析
 
