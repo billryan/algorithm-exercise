@@ -110,3 +110,7 @@ public class Solution {
 ### 复杂度分析
 
 时间复杂度 $$O(n)$$, 使用了哈希表，空间复杂度 $$O(k)$$.
+
+## Reference
+
+- [Majority Number III 参考程序 Java/C++/Python](http://www.jiuzhang.com/solutions/majority-number-iii/)
