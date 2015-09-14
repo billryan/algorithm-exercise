@@ -51,6 +51,7 @@
    * [Merge Sorted Array II](integer_array/merge_sorted_array_ii.md)
    * [Median](integer_array/median.md)
    * [Partition Array by Odd and Even](integer_array/partition_array_by_odd_and_even.md)
+   * [Kth Largest Element](integer_array/kth_largest_element.md)
 * [Binary Search](binary_search/README.md)
    * [Binary Search](binary_search/binary_search.md)
    * [Search Insert Position](binary_search/search_insert_position.md)
