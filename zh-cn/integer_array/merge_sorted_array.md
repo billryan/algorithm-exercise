@@ -6,85 +6,53 @@
 - lintcode: [(6) Merge Sorted Array](http://www.lintcode.com/en/problem/merge-sorted-array/)
 
 ```
-Merge two given sorted integer array A and B into a new sorted integer array.
+Given two sorted integer arrays A and B, merge B into A as one sorted array.
 
 Example
-A=[1,2,3,4]
+A = [1, 2, 3, empty, empty], B = [4, 5]
 
-B=[2,4,5,6]
+After merge, A will be filled as [1, 2, 3, 4, 5]
 
-return [1,2,2,3,4,4,5,6]
-
-Challenge
-How can you optimize your algorithm if one array is very large and the other is very small?
+Note
+You may assume that A has enough space (size that is greater or equal to m + n)
+to hold additional elements from B.
+The number of elements initialized in A and B are m and n respectively.
 ```
 
 ## 题解
 
-自尾部向首部逐个比较两个数组内的元素，取较大的置于新数组尾部元素中。
+因为本题有 in-place 的限制，故必须从数组末尾的两个元素开始比较；否则就会产生挪动，一旦挪动就会是 $$O(n^2)$$ 的。
+自尾部向首部逐个比较两个数组内的元素，取较大的置于数组 A 中。由于 A 的容量较 B 大，故最后 `m == 0` 或者 `n == 0` 时仅需处理 B 中的元素，因为 A 中的元素已经在 A 中，无需处理。
 
 ### Python
 
 ```python
 class Solution:
-    # @param {integer[]} nums1
-    # @param {integer} m
-    # @param {integer[]} nums2
-    # @param {integer} n
-    # @return {void} Do not return anything, modify nums1 in-place instead.
-    def merge(self, nums1, m, nums2, n):
-        # resize nums1 to required size
-        nums1 += [0] * (n + m - len(nums1))
-        index = m + n
+    """
+    @param A: sorted integer array A which has m elements,
+              but size of A is m+n
+    @param B: sorted integer array B which has n elements
+    @return: void
+    """
+    def mergeSortedArray(self, A, m, B, n):
+        if B is None:
+            return A
+
+        index = m + n - 1
         while m > 0 and n > 0:
-            if nums1[m - 1] > nums2[n - 1]:
-                index -= 1
+            if A[m - 1] > B[n - 1]:
+                A[index] = A[m - 1]
                 m -= 1
-                nums1[index] = nums1[m]
             else:
-                index -= 1
+                A[index] = B[n - 1]
                 n -= 1
-                nums1[index] = nums2[n]
-
-        while n > 0:
             index -= 1
+
+        # B has elements left
+        while n > 0:
+            A[index] = B[n - 1]
             n -= 1
-            nums1[index] = nums2[n]
-```
-
-### Java
-
-```java
-class Solution {
-    /**
-     * @param A and B: sorted integer array A and B.
-     * @return: A new sorted integer array
-     */
-    public ArrayList<Integer> mergeSortedArray(ArrayList<Integer> A, ArrayList<Integer> B) {
-        // write your code here
-        int aLen = A.size();
-        int bLen = B.size();
-        ArrayList<Integer> res = new ArrayList<Integer>();
-
-        int i = 0, j = 0;
-        while (i < aLen || j < bLen) {
-            if (i == aLen) {
-                res.add(B.get(j++));
-                continue;
-            } else if (j == bLen) {
-                res.add(A.get(i++));
-                continue;
-            }
-
-            if (A.get(i) < B.get(j)) {
-                res.add(A.get(i++));
-            } else {
-                res.add(B.get(j++));
-            }
-        }
-        return res;
-    }
-}
+            index -= 1
 ```
 
 ### C++
@@ -93,50 +61,74 @@ class Solution {
 class Solution {
 public:
     /**
-     * @param A and B: sorted integer array A and B.
-     * @return: A new sorted integer array
+     * @param A: sorted integer array A which has m elements,
+     *           but size of A is m+n
+     * @param B: sorted integer array B which has n elements
+     * @return: void
      */
-    vector<int> mergeSortedArray(vector<int> &A, vector<int> &B) {
-        if (A.empty()) {
-            return B;
-        }
-        if (B.empty()) {
-            return A;
-        }
-
-        vector<int>::size_type sizeA = A.size();
-        vector<int>::size_type sizeB = B.size();
-        vector<int>::size_type sizeC = sizeA + sizeB;
-        vector<int> C(sizeC);
-
-        while (sizeA > 0 && sizeB > 0) {
-            if (A[sizeA - 1] > B[sizeB - 1]) {
-                C[--sizeC] = A[--sizeA];
+    void mergeSortedArray(int A[], int m, int B[], int n) {
+        int index = m + n - 1;
+        while (m > 0 && n > 0) {
+            if (A[m - 1] > B[n - 1]) {
+                A[index] = A[m - 1];
+                --m;
             } else {
-                C[--sizeC] = B[--sizeB];
+                A[index] = B[n - 1];
+                --n;
             }
-        }
-        while (sizeA > 0) {
-            C[--sizeC] = A[--sizeA];
-        }
-        while (sizeB > 0) {
-            C[--sizeC] = B[--sizeB];
+            --index;
         }
 
-        return C;
+        // B has elements left
+        while (n > 0) {
+            A[index] = B[n - 1];
+            --n;
+            --index;
+        }
     }
 };
 ```
 
+### Java
+
+```java
+class Solution {
+    /**
+     * @param A: sorted integer array A which has m elements,
+     *           but size of A is m+n
+     * @param B: sorted integer array B which has n elements
+     * @return: void
+     */
+    public void mergeSortedArray(int[] A, int m, int[] B, int n) {
+        if (A == null || B == null) return;
+
+        int index = m + n - 1;
+        while (m > 0 && n > 0) {
+            if (A[m - 1] > B[n - 1]) {
+                A[index] = A[m - 1];
+                m--;
+            } else {
+                A[index] = B[n - 1];
+                n--;
+            }
+            index--;
+        }
+
+        // B has elements left
+        while (n > 0) {
+            A[index] = B[n - 1];
+            n--;
+            index--;
+        }
+    }
+}
+```
+
 ### 源码分析
 
-分三种情况遍历比较。实际上在能确定最后返回的数组时，只需要分两次遍历即可。
+第一个 while 只能用条件与。
 
 ### 复杂度分析
 
 最坏情况下需要遍历两个数组中所有元素，时间复杂度为 $$O(n)$$. 空间复杂度 $$O(1)$$.
-
-#### Challenge
-
-两个倒排列表，一个特别大，一个特别小，如何 Merge？此时应该考虑用一个二分法插入小的，即内存拷贝。
 
