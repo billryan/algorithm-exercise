@@ -70,7 +70,7 @@ public class Solution {
         if (S == null || T == null) return 0;
         if (S.length() < T.length()) return 0;
         if (T.length() == 0) return 1;
-        
+
         int[] f = new int[T.length() + 1];
         f[0] = 1;
         for (int i = 0; i < S.length(); i++) {
@@ -80,7 +80,7 @@ public class Solution {
                 }
             }
         }
-        
+
         return f[T.length()];
     }
 }
