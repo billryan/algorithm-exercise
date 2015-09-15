@@ -38,23 +38,23 @@ public class Solution {
         // -1 is not proper for illegal input
         if (nums == null || nums.isEmpty()) return -1;
 
-        int sum = 0, maxSum = Integer.MIN_VALUE;
+        int sum = 0, maxSub = Integer.MIN_VALUE;
         for (int num : nums) {
             // drop negtive sum
             sum = Math.max(sum, 0);
             sum += num;
-            // update maxSum
-            maxSum = Math.max(maxSum, sum);
+            // update maxSub
+            maxSub = Math.max(maxSub, sum);
         }
 
-        return maxSum;
+        return maxSub;
     }
 }
 ```
 
 ### 源码分析
 
-贪心的实现较为巧妙，需要`sum`和`maxSum`配合运作才能正常工作。
+贪心的实现较为巧妙，需要`sum`和`maxSub`配合运作才能正常工作。
 
 ### 复杂度分析
 
