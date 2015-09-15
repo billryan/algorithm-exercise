@@ -158,6 +158,7 @@
    * [Best Time to Buy and Sell Stock IV](dynamic_programming/best_time_to_buy_and_sell_stock_iv.md)
    * [Distinct Subsequences](dynamic_programming/distinct_subsequences.md)
    * [Interleaving String](dynamic_programming/interleaving_string.md)
+   * [Maximum Subarray](dynamic_programming/maximum_subarray.md)
 * [Graph](graph/README.md)
    * [Topological Sorting](graph/topological_sorting.md)
 * [Data Structure](data_structure/README.md)
