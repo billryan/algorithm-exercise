@@ -159,6 +159,7 @@
    * [Distinct Subsequences](dynamic_programming/distinct_subsequences.md)
    * [Interleaving String](dynamic_programming/interleaving_string.md)
    * [Maximum Subarray](dynamic_programming/maximum_subarray.md)
+   * [Maximum Subarray II](dynamic_programming/maximum_subarray_ii.md)
 * [Graph](graph/README.md)
    * [Topological Sorting](graph/topological_sorting.md)
 * [Data Structure](data_structure/README.md)
