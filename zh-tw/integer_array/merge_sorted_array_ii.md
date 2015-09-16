@@ -2,58 +2,62 @@
 
 ## Source
 
-- leetcode: [Merge Sorted Array | LeetCode OJ](https://leetcode.com/problems/merge-sorted-array/)
-- lintcode: [(6) Merge Sorted Array II](http://www.lintcode.com/en/problem/merge-sorted-array-ii/)
+- lintcode: [(64) Merge Sorted Array II](http://www.lintcode.com/en/problem/merge-sorted-array-ii/)
 
 ```
-Given two sorted integer arrays A and B, merge B into A as one sorted array.
-
-Note
-You may assume that A has enough space (size that is greater or equal to m + n) to hold additional elements from B. The number of elements initialized in A and B are mand n respectively.
+Merge two given sorted integer array A and B into a new sorted integer array.
 
 Example
-A = [1, 2, 3, empty, empty] B = [4,5]
+A=[1,2,3,4]
 
-After merge, A will be filled as [1,2,3,4,5]
+B=[2,4,5,6]
+
+return [1,2,2,3,4,4,5,6]
+
+Challenge
+How can you optimize your algorithm
+if one array is very large and the other is very small?
 ```
 
 ## 題解
 
-在上題的基礎上加入了in-place的限制。將上題的新陣列視為length相對較大的陣列即可，仍然從陣列末尾合併，取出較大的元素。
+上題要求 in-place, 此題要求返回新陣列。由於可以生成新陣列，故使用常規思路按順序遍歷即可。
 
-### Java
+### Python
 
-```java
-class Solution {
-    /**
-     * @param A: sorted integer array A which has m elements,
-     *           but size of A is m+n
-     * @param B: sorted integer array B which has n elements
-     * @return: void
-     */
-    public void mergeSortedArray(int A[], int m, int B[], int n) {
-        int index = n + m;
+```python
+class Solution:
+    #@param A and B: sorted integer array A and B.
+    #@return: A new sorted integer array
+    def mergeSortedArray(self, A, B):
+        if A is None or len(A) == 0:
+            return B
+        if B is None or len(B) == 0:
+            return A
 
-        while (m > 0 && n > 0) {
-            if (A[m - 1] > B[n - 1]) {
-                A[--index] = A[--m];
-            } else {
-                A[--index] = B[--n];
-            }
-        }
-        while (n > 0) {
-            A[--index] = B[--n];
-        }
-        while (m > 0) {
-            A[--index] = A[--m];
-        }
-    }
-};
+        C = []
+        aLen, bLen = len(A), len(B)
+        i, j = 0, 0
+        while i < aLen and j < bLen:
+            if A[i] < B[j]:
+                C.append(A[i])
+                i += 1
+            else:
+                C.append(B[j])
+                j += 1
+
+        # A has elements left
+        while i < aLen:
+            C.append(A[i])
+            i += 1
+
+        # B has elements left
+        while j < bLen:
+            C.append(B[j])
+            j += 1
+
+        return C
 ```
-
-### 源碼分析
-
-1. 因為本題有了 in-place 的限制，則必須從陣列末尾的兩個元素開始比較；否則就會產生挪動，一旦挪動就會是 $$O(n^2)$$ 的。
 
 ### C++
 
@@ -61,27 +65,93 @@ class Solution {
 class Solution {
 public:
     /**
-     * @param A: sorted integer array A which has m elements,
-     *           but size of A is m+n
-     * @param B: sorted integer array B which has n elements
-     * @return: void
+     * @param A and B: sorted integer array A and B.
+     * @return: A new sorted integer array
      */
-    void mergeSortedArray(int A[], int m, int B[], int n) {
-        int index = n + m;
+    vector<int> mergeSortedArray(vector<int> &A, vector<int> &B) {
+        if (A.empty()) return B;
+        if (B.empty()) return A;
 
-        while (m > 0 && n > 0) {
-            if (A[m - 1] > B[n - 1]) {
-                A[--index] = A[--m];
+        int aLen = A.size(), bLen = B.size();
+        vector<int> C;
+        int i = 0, j = 0;
+        while (i < aLen && j < bLen) {
+            if (A[i] < B[j]) {
+                C.push_back(A[i]);
+                ++i;
             } else {
-                A[--index] = B[--n];
+                C.push_back(B[j]);
+                ++j;
             }
         }
-        while (n > 0) {
-            A[--index] = B[--n];
+
+        // A has elements left
+        while (i < aLen) {
+            C.push_back(A[i]);
+            ++i;
         }
-        while (m > 0) {
-            A[--index] = A[--m];
+
+        // B has elements left
+        while (j < bLen) {
+            C.push_back(B[j]);
+            ++j;
         }
+
+        return C;
     }
 };
 ```
+
+### Java
+
+```java
+class Solution {
+    /**
+     * @param A and B: sorted integer array A and B.
+     * @return: A new sorted integer array
+     */
+    public ArrayList<Integer> mergeSortedArray(ArrayList<Integer> A, ArrayList<Integer> B) {
+        if (A == null || A.isEmpty()) return B;
+        if (B == null || B.isEmpty()) return A;
+
+        ArrayList<Integer> C = new ArrayList<Integer>();
+        int aLen = A.size(), bLen = B.size();
+        int i = 0, j = 0;
+        while (i < aLen && j < bLen) {
+            if (A.get(i) < B.get(j)) {
+                C.add(A.get(i));
+                i++;
+            } else {
+                C.add(B.get(j));
+                j++;
+            }
+        }
+
+        // A has elements left
+        while (i < aLen) {
+            C.add(A.get(i));
+            i++;
+        }
+
+        // B has elements left
+        while (j < bLen) {
+            C.add(B.get(j));
+            j++;
+        }
+
+        return C;
+    }
+}
+```
+
+### 源碼分析
+
+分三步走，後面分別單獨處理剩餘的元素。
+
+### 複雜度分析
+
+遍歷 A, B 陣列各一次，時間複雜度 $$O(n)$$, 空間複雜度 $$O(1)$$.
+
+#### Challenge
+
+兩個倒排列表，一個特別大，一個特別小，如何 Merge？此時應該考慮用一個二分法插入小的，即記憶體拷貝。
