@@ -168,6 +168,7 @@
 * [Problem Misc](problem_misc/README.md)
    * [Nuts and Bolts Problem](problem_misc/nuts_and_bolts_problem.md)
    * [Heapify](problem_misc/heapify.md)
+   * [String to Integer](problem_misc/string_to_integer.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
