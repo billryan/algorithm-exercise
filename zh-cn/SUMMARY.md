@@ -167,6 +167,7 @@
 * [Data Structure](data_structure/README.md)
    * [Implement Queue by Two Stacks](data_structure/implement_queue_by_two_stacks.md)
    * [Min Stack](data_structure/min_stack.md)
+   * [Sliding Window Maximum](data_structure/sliding_window_maximum.md)
 * [Problem Misc](problem_misc/README.md)
    * [Nuts and Bolts Problem](problem_misc/nuts_and_bolts_problem.md)
    * [Heapify](problem_misc/heapify.md)
