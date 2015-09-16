@@ -120,6 +120,7 @@
    * [Construct Binary Tree from Inorder and Postorder Traversal](binary_tree/construct_binary_tree_from_inorder_and_postorder_traversal.md)
    * [Subtree](binary_tree/subtree.md)
    * [Binary Tree Zigzag Level Order Traversal](binary_tree/binary_tree_zigzag_level_order_traversal.md)
+   * [Binary Tree Serialization](binary_tree/binary_tree_serialization.md)
 * [Binary Search Tree](binary_search_tree/README.md)
    * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
    * [Validate Binary Search Tree](binary_search_tree/validate_binary_search_tree.md)
