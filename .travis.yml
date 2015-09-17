@@ -64,7 +64,7 @@ after_success:
   - mkdir -p ~/.fonts/fontconfig/conf.d/
   # update fonts
   - cd ~
-  - cp ~/algorithm-exercise/conf/fonts.conf ~/.fonts/fontconfig/conf.d/
+  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
   - sudo fc-cache -f -v
 
 # blacklist
