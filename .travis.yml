@@ -29,6 +29,19 @@ before_script:
 
 script:
   - mkdir -p ~/upload
+  # install source code pro
+  - mkdir -p ~/fonts
+  - cd ~/fonts
+  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
+  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
+  - unzip -o NotoSansCJKSC-hinted.zip
+  - unzip -o NotoSansCJKTC-hinted.zip
+  - mkdir -p ~/.fonts/noto
+  - mv *.otf ~/.fonts/noto
+  - mkdir -p ~/.fonts/fontconfig/conf.d/
+  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
+  - sudo fc-cache -f -v
+  # gitbook build
   - cd ~/algorithm-exercise/
   - gitbook install && gitbook build .
   - gitbook pdf .
@@ -52,20 +65,6 @@ after_success:
   - git commit -m "Updated $(date)"
   - git push -u gitcafe HEAD:deploy --force
   - git push -u origin HEAD:deploy --force
-  # install source code pro
-  - mkdir -p ~/fonts
-  - cd ~/fonts
-  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
-  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
-  - unzip NotoSansCJKSC-hinted.zip
-  - unzip NotoSansCJKTC-hinted.zip
-  - mkdir -p ~/.fonts/noto
-  - mv *.otf ~/.fonts/noto
-  - mkdir -p ~/.fonts/fontconfig/conf.d/
-  # update fonts
-  - cd ~
-  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
-  - sudo fc-cache -f -v
 
 # blacklist
 branches:
