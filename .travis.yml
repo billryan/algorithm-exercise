@@ -15,10 +15,6 @@ before_install:
   - git config --global user.email yuanbin2014@gmail.com
   # update first
   - sudo apt-get update -qq
-  # install sshpass
-  - sudo apt-get install -y sshpass
-  # install Chinese fonts
-  - sudo apt-get install -y fonts-arphic-gbsn00lp fonts-arphic-bsmi00lp
   # Install Gitbook
   - npm install gitbook-cli -g
   - npm install svgexport -g
@@ -33,7 +29,6 @@ before_script:
 
 script:
   - mkdir -p ~/upload
-  # build static website
   - cd ~/algorithm-exercise/
   - gitbook install && gitbook build .
   - gitbook pdf .
@@ -58,28 +53,19 @@ after_success:
   - git push -u gitcafe HEAD:deploy --force
   - git push -u origin HEAD:deploy --force
   # install source code pro
-#  - mkdir -p /tmp/code_pro
-#  - cd /tmp/code_pro/
-#  - wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz
-#  - tar xzf 1.017R.tar.gz
-#  - mkdir -p ~/.fonts/fontconfig/conf.d/
-#  - cp source-code-pro-1.017R/OTF/*.otf ~/.fonts/
-#  - sudo fc-cache -f -v
-#  # install google noto Simplified Chinese
-#  - mkdir -p /tmp/noto
-#  - cd /tmp/noto
-#  - wget https://www.google.com/get/noto/pkgs/NotoSansCJKSC-hinted.zip 
-#  - https://www.google.com/get/noto/pkgs/NotoSerif-unhinted.zip
-#  - unzip NotoSansCJKSC-hinted.zip
-#  - unzip NotoSerif-unhinted.zip
-#  - mkdir -p ~/.fonts/noto
-#  - mv *.otf ~/.fonts/noto
-#  # update fonts
-#  - cd ~
-#  - cp ~/algorithm-exercise/conf/10-latin.conf ~/.fonts/fontconfig/conf.d/
-#  - cp ~/algorithm-exercise/conf/15-noto-cjksc.conf ~/.fonts/fontconfig/conf.d/
-#  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
-#  - sudo fc-cache -f -v
+  - mkdir -p ~/fonts
+  - cd ~/fonts
+  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
+  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
+  - unzip NotoSansCJKSC-hinted.zip
+  - unzip NotoSansCJKTC-hinted.zip
+  - mkdir -p ~/.fonts/noto
+  - mv *.otf ~/.fonts/noto
+  - mkdir -p ~/.fonts/fontconfig/conf.d/
+  # update fonts
+  - cd ~
+  - cp ~/algorithm-exercise/conf/fonts.conf ~/.fonts/fontconfig/conf.d/
+  - sudo fc-cache -f -v
 
 # blacklist
 branches:
