@@ -77,7 +77,7 @@ public class Solution {
 
 ### 源码分析
 
-对数组首先进行排序是必须的，递归函数中本应该传入 target 作为入口参数，但如果这样一来还得需要一个变量记录 list 中的的数组和，这里借用了 Soulmachine 的实现，使用 gap 一箭双雕。注意在将临时 list 添加至 result 中时需要 new 一个新的对象。
+对数组首先进行排序是必须的，递归函数中本应该传入 target 作为入口参数，这里借用了 Soulmachine 的实现，使用 gap 更容易理解。注意在将临时 list 添加至 result 中时需要 new 一个新的对象。
 
 ### 复杂度分析
 

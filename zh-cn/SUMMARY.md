@@ -143,6 +143,7 @@
    * [Palindrome Partitioning](exhaustive_search/palindrome_partitioning.md)
    * [Combinations](exhaustive_search/combinations.md)
    * [Combination Sum](exhaustive_search/combination_sum.md)
+   * [Combination Sum II](exhaustive_search/combination_sum_ii.md)
 * [Dynamic Programming](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Backpack](dynamic_programming/backpack.md)
