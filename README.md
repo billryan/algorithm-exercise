@@ -14,9 +14,9 @@ You can view/search this document online or offline, feel free to read it. :)
 
 - Online(Rendered by Gitbook): <http://algorithm.yuanbin.me>
 - Offline(Compiled by Gitbook and Travis-CI):
-    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - Recommended for iPhone/iPad/MAC
-    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm) - Recommended for Desktop
-    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Recommended for Kindle
+    1. EPUB: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [GitCafe(mainland China)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/epub) - Recommended for iPhone/iPad/MAC
+    2. PDF: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [GitCafe(mainland China)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/pdf) - Recommended for Desktop
+    3. MOBI: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [GitCafe(mainland China)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/mobi) - Recommended for Kindle
 - Site Search via Google: `keywords site:algorithm.yuanbin.me`
 - Site Search via Swiftype: Click `Search this site` on the right bottom of webpages
 
@@ -55,10 +55,10 @@ If you find any mistakes or want to update/translate the awesome notes, please f
 你可以在线或者离线查看/搜索本文档，以下方式任君选择~
 
 - 在线阅读(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
-- 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的部分编译输出提供七牛的静态文件加速下载。
-    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
-    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [简体中文 - 适合打印版](http://docs4bill.qiniudn.com/doc/algorithm_zh-cn_billryan_print.pdf) - 推荐下载七牛的版本，Gitbook 官方使用的中文字体有点问题。
-    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm) - Kindle 专用. 未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
+- 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的部分编译输出提供 GitHub 和 GitCafe 下载。
+    1. EPUB: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/epub) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
+    2. PDF: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/pdf) - 推荐下载GitHub 和 GitCafe 的版本，Gitbook 官方使用的中文字体有点问题。
+    3. MOBI: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
 - Google 站内搜索: `keywords site:algorithm.yuanbin.me`
 - Swiftype 站内搜索: 可使用网页右下方的 `Search this site` 进行站内搜索
 
@@ -71,6 +71,30 @@ If you find any mistakes or want to update/translate the awesome notes, please f
 ## 如何贡献
 
 如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [贡献指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-cn.md).
+
+## 捐助
+
+添加这一小节其实是有点诚惶诚恐的，毕竟这本小书目前还很不完善，把捐助信息贴出来不脸红吗？:-( 但既然前些天有网友专门发邮件来问这个事，我就大概说下我目前的想法，先以 @billryan 为例，其他 Contributor 后续补充，捐助者后期会单独整理公布，当然这是在征得捐助人同意的前提下进行的。除了在 GitHub 上协助编写文档外，你还可以以下面几种方式回馈各位贡献者:
+
+### 邮寄明信片
+
+@billryan 喜欢收集各种明信片，来者不拒~ 邮寄的话可以邮寄至 `上海市闵行区上海交通大学闵行校区电院群楼5号楼307`，这个地址2016 年3月前有效，收件人：`袁斌`。
+
+### 送书
+
+除了邮寄明信片，你还可以买本书送给各位贡献者，@billryan 的地址见上节。
+
+### 支付宝打赏
+
+![alipay-billryan](images/alipay_billryan_qr15x15.png)
+
+金额随意。
+
+### PayPal
+
+账户名：yuanbin2014(at)gmail.com 付款时选择 friends and family
+
+金额随意。
 
 ## To Do
 
