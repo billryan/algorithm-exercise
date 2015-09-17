@@ -23,9 +23,9 @@ before_install:
   - npm install gitbook-cli -g
   - npm install svgexport -g
   - cd ~
-  - cp ./scripts/rename_ebook.sh .
-  - chmod +x rename_ebook.sh
   - git clone git@github.com:billryan/algorithm-exercise.git
+  - cp algorithm-exercise/scripts/rename_ebook.sh ~/
+  - chmod +x rename_ebook.sh
 
 before_script:
   # install calibre latest version
@@ -55,9 +55,7 @@ after_success:
   - git commit -m "Updated $(date)"
   - git push -u gitcafe HEAD:deploy --force
   - git push -u origin HEAD:deploy --force
-#  # cd ~
-#  - cd ~
-#  # install source code pro
+  # install source code pro
 #  - mkdir -p /tmp/code_pro
 #  - cd /tmp/code_pro/
 #  - wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz
@@ -80,12 +78,6 @@ after_success:
 #  - cp ~/algorithm-exercise/conf/15-noto-cjksc.conf ~/.fonts/fontconfig/conf.d/
 #  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
 #  - sudo fc-cache -f -v
-#  # generate different locales
-#  - sudo locale-gen zh_CN.UTF-8
-#  - cd ~/algorithm-exercise
-#  - export LANG=zh_CN.UTF-8
-#  - gitbook pdf ./ ~/upload/algorithm_billryan_desktop.pdf
-#  - ~/qrsync ~/qiniu_sync.json
 
 branches:
   only:
