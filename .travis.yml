@@ -22,49 +22,30 @@ before_install:
   # Install Gitbook
   - npm install gitbook-cli -g
   - npm install svgexport -g
-  # Clone the repository
   - cd ~
+  - cp ./scripts/rename_ebook.sh .
+  - chmod +x rename_ebook.sh
   - git clone git@github.com:billryan/algorithm-exercise.git
 
 before_script:
   # install calibre latest version
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
-  # install qiniu sync
-  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
-  - tar xfz qiniu-devtools-linux_amd64-current.tar.gz
-  - cp algorithm-exercise/conf/qiniu_sync.json ~/
 
 script:
-  # replace with real key
-  - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
-  - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
   - mkdir -p ~/upload
   # build static website
   - cd ~/algorithm-exercise/
   - gitbook install && gitbook build .
-  # build Simplified Chinese pdf
-  - cd ~/algorithm-exercise/zh-cn
-  #- gitbook install
-  # - gitbook build ./ --format=json
-  # - gitbook build ./ 
-  - gitbook pdf ./ ~/upload/algorithm_zh-cn_billryan_print.pdf
-  # - gitbook epub ./ ~/upload/algorithm_billryan.epub
-  # - gitbook mobi ./ ~/upload/algorithm_billryan.mobi
-  # build Traditional Chinese pdf
-  - cd ~/algorithm-exercise/zh-tw
-  - gitbook pdf ./ ~/upload/algorithm_zh-tw_billryan_print.pdf
-  # build English version pdf
-  - cd ~/algorithm-exercise/en
-  - gitbook pdf ./ ~/upload/algorithm_en_billryan_print.pdf
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
+  - mv *.pdf *.epub *.mobi ~/upload
+  - cd ~/upload
+  - sh ~/rename_ebook.sh
 
 after_success:
-  # copy website html files to upload
-  # - tar czf algorithm_billryan_html.tar.gz _book/
-  # - cp algorithm_billryan_html.tar.gz ~/upload/
-  # upload to qiniu
-  #- ~/qrsync ~/qiniu_sync.json
   - cd ~/algorithm-exercise
-  - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
+  - git checkout deploy
   - cp ~/upload/*.epub epub
   - cp ~/upload/*.pdf pdf
   - cp ~/upload/*.mobi mobi
