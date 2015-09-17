@@ -33,6 +33,7 @@
    * [Valid Palindrome](string/valid_palindrome.md)
    * [Longest Palindromic Substring](string/longest_palindromic_substring.md)
    * [Space Replacement](string/space_replacement.md)
+   * [Wildcard Matching](string/wildcard_matching.md)
 * [Integer Array](integer_array/README.md)
    * [Remove Element](integer_array/remove_element.md)
    * [Zero Sum Subarray](integer_array/zero_sum_subarray.md)
