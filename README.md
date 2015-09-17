@@ -24,9 +24,15 @@ You can view/search this document online or offline, feel free to read it. :)
 
 This work is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License**. To view a copy of this license, please visit <http://creativecommons.org/licenses/by-sa/4.0/>
 
+## Multilanguage
+
+- [English](http://algorithm.yuanbin.me/en/index.html) maintained by who?
+- [简体中文](http://algorithm.yuanbin.me/zh-cn/index.html) maintained by [@billryan](https://github.com/billryan)
+- [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) maintained by [@CrossLuna](https://github.com/CrossLuna)
+
 ## How to Contribute
 
-If you find any mistakes or want to update/translate the awesome notes, please follow the [contributing guidelines](https://github.com/billryan/algorithm-exercise/blob/master/contributing.md).
+If you find any mistakes or want to update/translate the awesome notes, please follow the [contributing guidelines](https://github.com/billryan/algorithm-exercise/blob/master/contributing.md). Any comments or suggestions would be greatly appreciated.
 
 ## To Do
 
@@ -67,6 +73,12 @@ If you find any mistakes or want to update/translate the awesome notes, please f
 本作品采用 **知识共享署名-相同方式共享 4.0 国际许可协议**  进行许可。**传播此文档时请注意遵循以上许可协议。** 关于本许可证的更多详情可参考 <http://creativecommons.org/licenses/by-sa/4.0/>
 
 本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
+
+## 多国语言
+
+- [English](http://algorithm.yuanbin.me/en/index.html) maintained by who?
+- [简体中文](http://algorithm.yuanbin.me/zh-cn/index.html) maintained by [@billryan](https://github.com/billryan)
+- [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) maintained by [@CrossLuna](https://github.com/CrossLuna)
 
 ## 如何贡献
 
