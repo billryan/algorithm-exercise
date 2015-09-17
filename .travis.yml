@@ -24,7 +24,7 @@ before_install:
   - npm install svgexport -g
   # Clone the repository
   - cd ~
-  - git clone --depth=10 --branch=master git://github.com/billryan/algorithm-exercise.git
+  - git clone git@github.com:billryan/algorithm-exercise.git
 
 before_script:
   # install calibre latest version
@@ -65,15 +65,13 @@ after_success:
   #- ~/qrsync ~/qiniu_sync.json
   - cd ~/algorithm-exercise
   - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
-  - git branch -d publish
-  - git checkout --orphan deploy
-  - git rm -rf .
-  - mkdir pdf epub mobi
+  - cp ~/upload/*.epub epub
   - cp ~/upload/*.pdf pdf
+  - cp ~/upload/*.mobi mobi
   - git add -A
-  - git commit -m 'update'
-  - git push gitcafe publish
-  - git push origin publish
+  - git commit -m "Updated $(date)"
+  - git push -u gitcafe HEAD:deploy --force
+  - git push -u origin HEAD:deploy --force
 #  # cd ~
 #  - cd ~
 #  # install source code pro
