@@ -79,7 +79,7 @@ public class Solution {
 
 
 ### C++
-```
+```c++
 class Solution {
 public:
     bool overflow(string str, string help){
