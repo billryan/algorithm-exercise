@@ -10,13 +10,7 @@ node_modules
 # Book build output
 _book
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
-
-# docs for other materials
-!/docs/*
+*.log
 
 # MAC OS X
 **/.DS_Store
