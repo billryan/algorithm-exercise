@@ -20,7 +20,7 @@ The list may contains duplicate integers.
 
 ## 题解
 
-找下一个升序排列，C++ STL 源码剖析一书中有提及，[Permutation](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation.html) 一小节中也有详细介绍，下面简要介绍一下字典序算法：
+找下一个升序排列，C++ STL 源码剖析一书中有提及，[Permutations](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations.html) 一小节中也有详细介绍，下面简要介绍一下字典序算法：
 
 1. 从后往前寻找索引满足 `a[k] < a[k + 1]`, 如果此条件不满足，则说明已遍历到最后一个。
 2. 从后往前遍历，找到第一个比`a[k]`大的数`a[l]`, 即`a[k] < a[l]`.
@@ -171,4 +171,4 @@ public class Solution {
 
 ## Reference
 
-- [Permutation | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation.html)
+- [Permutations](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations.html)
