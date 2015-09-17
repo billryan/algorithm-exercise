@@ -46,6 +46,7 @@ script:
 after_success:
   - cd ~/algorithm-exercise
   - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
+  - git push -u gitcafe HEAD:master --force
   - git checkout deploy
   - cp ~/upload/*.epub epub
   - cp ~/upload/*.pdf pdf
