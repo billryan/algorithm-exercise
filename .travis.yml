@@ -4,10 +4,11 @@ node_js:
   - "stable"
 
 before_install:
+  # add id_rsa private key
   - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
     -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
-  - eval $(ssh-agent)
+  - eval "$(ssh-agent -s)"
   - ssh-add ~/.ssh/id_rsa
   - cp ssh_config ~/.ssh/config
   - git config --global user.name "billryan"
@@ -61,17 +62,18 @@ after_success:
   # - tar czf algorithm_billryan_html.tar.gz _book/
   # - cp algorithm_billryan_html.tar.gz ~/upload/
   # upload to qiniu
-  - ~/qrsync ~/qiniu_sync.json
+  #- ~/qrsync ~/qiniu_sync.json
   - cd ~/algorithm-exercise
+  - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
   - git branch -d publish
-  - git checkout --orphan publish
+  - git checkout --orphan deploy
   - git rm -rf .
   - mkdir pdf epub mobi
   - cp ~/upload/*.pdf pdf
   - git add -A
-  - git commmit -m 'update'
-  - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
+  - git commit -m 'update'
   - git push gitcafe publish
+  - git push origin publish
 #  # cd ~
 #  - cd ~
 #  # install source code pro
@@ -107,3 +109,4 @@ after_success:
 branches:
   only:
     - master
+    - deploy
