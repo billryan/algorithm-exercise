@@ -4,6 +4,14 @@ node_js:
   - "stable"
 
 before_install:
+  - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
+    -in id_rsa.enc -out ~/.id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+  # - cp ssh_config ~/.ssh/config
+  - git config --global user.name "billryan"
+  - git config --global user.email yuanbin2014@gmail.com
   # update first
   - sudo apt-get update -qq
   # install sshpass
@@ -54,8 +62,16 @@ after_success:
   # - cp algorithm_billryan_html.tar.gz ~/upload/
   # upload to qiniu
   - ~/qrsync ~/qiniu_sync.json
-  # upload to VPS
-  - rsync -a --rsh="/usr/bin/sshpass -p $FTP_PASSWORD ssh -p $FTP_PORT -o StrictHostKeyChecking=no -l $FTP_USER" ~/algorithm-exercise/_book/  $FTP_USER@ftp.yuanbin.me:/home/$FTP_USER/ftp/docs/algorithm
+  - cd ~/algorithm-exercise
+  - git branch -d publish
+  - git checkout --orphan publish
+  - git rm -rf .
+  - mkdir pdf epub mobi
+  - cp ~/upload/*.pdf pdf
+  - git add -A
+  - git commmit -m 'update'
+  - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
+  - git push gitcafe publish
 #  # cd ~
 #  - cd ~
 #  # install source code pro
