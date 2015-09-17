@@ -31,7 +31,7 @@ Note
 
 ## 题解
 
-和 [Permutation](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation.html) 十分类似，区别在于剪枝函数不同。这里允许一个元素被多次使用，故递归时传入的索引值不自增，而是由 for 循环改变。
+和 [Permutations](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations.html) 十分类似，区别在于剪枝函数不同。这里允许一个元素被多次使用，故递归时传入的索引值不自增，而是由 for 循环改变。
 
 ### Java
 

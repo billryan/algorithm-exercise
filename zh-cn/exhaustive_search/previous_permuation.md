@@ -166,4 +166,4 @@ public class Solution {
 
 ## Reference
 
-- [Permutation | Data Structure and Algorithm](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation.html)
+- [Permutations](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations.html)
