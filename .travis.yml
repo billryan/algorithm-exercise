@@ -5,7 +5,7 @@ node_js:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
-    -in id_rsa.enc -out ~/.id_rsa -d
+    -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)
   - ssh-add ~/.ssh/id_rsa
