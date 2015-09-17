@@ -45,6 +45,7 @@ script:
 
 after_success:
   - cd ~/algorithm-exercise
+  - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
   - git checkout deploy
   - cp ~/upload/*.epub epub
   - cp ~/upload/*.pdf pdf
@@ -79,6 +80,12 @@ after_success:
 #  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
 #  - sudo fc-cache -f -v
 
+# blacklist
+branches:
+  except:
+    - deploy
+
+# whitelist
 branches:
   only:
     - master
