@@ -35,6 +35,7 @@
    * [Space Replacement](string/space_replacement.md)
    * [Wildcard Matching](string/wildcard_matching.md)
    * [Length of Last Word](string/length_of_last_word.md)
+   * [Count and Say](string/count_and_say.md)
 * [Integer Array](integer_array/README.md)
    * [Remove Element](integer_array/remove_element.md)
    * [Zero Sum Subarray](integer_array/zero_sum_subarray.md)
