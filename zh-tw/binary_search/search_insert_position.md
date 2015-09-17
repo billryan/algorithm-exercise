@@ -67,7 +67,7 @@ public class Solution {
 要注意例子中的第三個, [1,3,5,6], 7 → 4，即找不到要找的數字的情況，此時應返回數組長度，即代碼中最後一個else的賦值語句`return end + 1;`
 
 ### C++
-```
+```c++
 class Solution {
     /** 
      * param A : an integer sorted array
