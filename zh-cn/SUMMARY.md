@@ -141,6 +141,7 @@
    * [Permutation Index II](exhaustive_search/permutation_index_ii.md)
    * [Permutation Sequence](exhaustive_search/permutation_sequence.md)
    * [Palindrome Partitioning](exhaustive_search/palindrome_partitioning.md)
+   * [Combination Sum](exhaustive_search/combination_sum.md)
 * [Dynamic Programming](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Backpack](dynamic_programming/backpack.md)
