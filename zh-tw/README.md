@@ -4,7 +4,6 @@
 
 ## 簡介
 
-
 本文檔為資料結構和演算法學習筆記，全文大致分為以下三大部分：
 
 1. Part I為資料結構和演算法基礎，介紹一些基礎的排序/鏈表/基礎演算法
@@ -19,9 +18,10 @@
 
 - 線上閱讀(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
 - 離線閱讀: 推送到GitHub後會觸發 travis-ci 的編譯，相應的部分編譯輸出提供七牛的靜態文件加速下載。
-    1. EPUB. [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-tw) - 適合在 iPhone/iPad/MAC 上離線查看，實測效果極好。
-    2. PDF. [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-tw), [繁體中文 ﹣ 適合電子屏閱讀](http://public.yuanbin.me/ebook/algorithm-ebook_zh-tw.pdf), [繁體中文 - 適合列印版](http://docs4bill.qiniudn.com/doc/algorithm_zh-tw_billryan_print.pdf) - 推薦下載適合電子屏閱讀的版本，Gitbook 官方使用的中文字體有點問題。
-    3. MOBI. [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-tw) - Kindle 專用. 未測試，感覺不適合在 Kindle 上看此類書籍，儘管 Kindle 的屏幕對眼睛很好...
+    1. EPUB. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/epub/algorithm-ebook_zh-tw.epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/epub/algorithm-ebook_zh-tw.epub) - 適合在 iPhone/iPad/MAC 上離線查看，實測效果極好。
+    2. PDF. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/pdf/algorithm-ebook_zh-tw.pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/pdf/algorithm-ebook_zh-tw.pdf) - 推薦下載適合電子屏閱讀的版本，Gitbook 官方使用的中文字體有點問題。
+    3. MOBI. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/mobi/algorithm-ebook_zh-tw.mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/mobi/algorithm-ebook_zh-tw.mobi) - Kindle 專用. 未測試，感覺不適合在 Kindle 上看此類書籍，儘管 Kindle 的屏幕對眼睛很好...
+
 - Google 站內搜索: `keywords site:algorithm.yuanbin.me`
 - Swiftype 站內搜索: 可使用網頁右下方的 `Search this site` 進行站內搜索
 
@@ -30,6 +30,12 @@
 本作品採用 **創用CC 姓名標示-相同方式分享 4.0 國際許可協議**  進行許可。**傳播此文檔時請注意遵循以上許可協議。** 關於本授權的更多詳情可參考 <http://creativecommons.org/licenses/by-sa/4.0/>
 
 本著獨樂樂不如眾樂樂的開源精神，我將自己的演算法學習筆記公開和小夥伴們討論，希望高手們不吝賜教。
+
+## 多國文字
+
+- [English](http://algorithm.yuanbin.me/en/index.html) maintained by who?
+- [简体中文](http://algorithm.yuanbin.me/zh-cn/index.html) maintained by [@billryan](https://github.com/billryan)
+- [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) maintained by [@CrossLuna](https://github.com/CrossLuna)
 
 ## 如何貢獻
 
@@ -59,7 +65,6 @@
 
 - [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一個OJ，每道題都有 discuss 頁面，可以看別人分享的程式碼和討論，很有參考價值，相應的題解非常多。不過線上程式碼編輯框不太好用，寫著寫著框就拉下來了，最近評測速度比 lintcode 快很多，而且做完後可以看自己程式碼的運行時間分布，首推此 OJ 刷面試相關的題。
 - [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode類似的在線OJ，但是篩選和寫程式碼時比較方便，左邊為題目，右邊為程式碼框。還可以在`source`處選擇 CC150 或者其他來源的題。會根據系統locale選擇中文或者英文，可以拿此 OJ 輔助 leetcode 進行練習。
-- [leetcode/lintcode題解/演算法學習筆記 | billryan](http://algorithm.yuanbin.me) - 恬不知恥地貼上了作為CS門外漢刷題的總結和筆記，求大神們多多指點。
 - [LeetCode題解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 題解部分十分詳細，比較容易理解，但部分題目不全。
 - [FreeTymeKiyan/LeetCode-Sol-Res](https://github.com/FreeTymeKiyan/LeetCode-Sol-Res) - Clean, Understandable Solutions and Resources on LeetCode Online Judge Algorithms Problems.
 - [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java兩個版本的題解。
@@ -70,7 +75,7 @@
 
 ## 其他資源
 
-- [九章算法 | 幫助更多的中國人找到好工作，美國矽谷一線工程師實時在線授課](http://www.jiuzhang.com/) - 程式碼品質不錯，整理得也很好。
+- [九章算法](http://www.jiuzhang.com/) - 程式碼品質不錯，整理得也很好。
 - [七月算法 - julyedu.com ](http://julyedu.com/) - july大神主導的在線演算法輔導。
 - [刷題 | 一畝三分地論壇 ](http://www.1point3acres.com/bbs/forum-84-1.html) - 時不時就會有驚喜放出。
 - [VisuAlgo - visualising data structures and algorithms through animation](http://http://visualgo.net/) - 相當猛的資料結構和演算法可視化。
