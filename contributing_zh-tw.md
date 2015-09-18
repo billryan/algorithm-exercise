@@ -9,7 +9,7 @@
 3. 提交 Pull Request, fork 本文檔的 GitHub repo, 發PR給我就好了。
 4. 成為本項目的 contributor, 發郵件並把你的 GitHub 賬戶名告訴我就可以了，我收到郵件後把你的 GitHub 賬號加到Collaborators中。在對 git 操作不是特別熟悉的情況下建議通過方式3提交 PR，相對安全很多。
 
-方式3 和4 push 到 GitHub 前都需要先更新-`git pull`, 可能需要處理衝突和合併。對 git 不熟的可以看看 [git - the simple guide - no deep shit!](http://rogerdudler.github.io/git-guide/), 大概只用到了 `add & commit`, `pushing changes`, `update & merge`. 可以先在自己的 Repo 內玩玩後再在 GitHub 上提交 Pull Request, 等你有足夠信心掌握 git 的這些基本操作後可以大膽地申請為本項目的 Contributer, 這樣就不用頻繁提交 PR 啦~
+方式3 和4 push 到 GitHub 前都需要先更新-`git pull origin master`, 可能需要處理衝突和合併。對 git 不熟的可以看看 [git - the simple guide - no deep shit!](http://rogerdudler.github.io/git-guide/), 大概只用到了 `add & commit`, `pushing changes`, `update & merge`. 可以先在自己的 Repo 內玩玩後再在 GitHub 上提交 Pull Request, 等你有足夠信心掌握 git 的這些基本操作後可以大膽地申請為本項目的 Contributer, 這樣就不用頻繁提交 PR 啦~
 
 既然涉及到文檔合作，那麼最好是能有個像樣的文檔規範之類的東西方便大家合作得更好，目前想到的有如下幾點。
 
