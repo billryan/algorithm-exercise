@@ -1,12 +1,27 @@
-# Convert Sorted Array to Binary Search Tree <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+# Convert Sorted Array to Binary Search Tree
 
 ## Source
 
-- leetcode - [Convert Sorted Array to Binary Search Tree | LeetCode OJ](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+- leetcode: [Convert Sorted Array to Binary Search Tree | LeetCode OJ](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+- lintcode: [(177) Convert Sorted Array to Binary Search Tree With Minimal Height](http://www.lintcode.com/en/problem/convert-sorted-array-to-binary-search-tree-with-minimal-height/)
 
 ```
 Given an array where elements are sorted in ascending order,
 convert it to a height balanced BST.
+
+Given a sorted (increasing order) array,
+Convert it to create a binary tree with minimal height.
+
+Example
+Given [1,2,3,4,5,6,7], return
+
+     4
+   /   \
+  2     6
+ / \    / \
+1   3  5   7
+Note
+There may exist multiple valid solutions, return any of them.
 ```
 
 ## 题解 - 折半取中
@@ -50,6 +65,44 @@ private:
         return root;
     }
 };
+```
+
+### Java
+
+```java
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+public class Solution {
+    /**
+     * @param A: an integer array
+     * @return: a tree node
+     */
+    public TreeNode sortedArrayToBST(int[] A) {
+        if (A == null || A.length == 0) return null;
+
+        return helper(A, 0, A.length - 1);
+    }
+
+    private TreeNode helper(int[] nums, int start, int end) {
+        if (start > end) return null;
+
+        int mid = start + (end - start) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = helper(nums, start, mid - 1);
+        root.right = helper(nums, mid + 1, end);
+
+        return root;
+    }
+}
 ```
 
 ### 源码分析
