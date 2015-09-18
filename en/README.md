@@ -100,7 +100,7 @@ If you find any mistakes or want to update/translate the awesome notes, please f
 
 ### 支付宝打赏
 
-![alipay-billryan](images/alipay_billryan_qr15x15.png)
+![alipay-billryan](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/images/alipay_billryan_qr15x15.png)
 
 金额随意。
 
