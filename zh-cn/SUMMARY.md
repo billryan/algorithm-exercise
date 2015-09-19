@@ -79,6 +79,7 @@
    * [Unique Binary Search Trees](math_and_bit_manipulation/unique_binary_search_trees.md)
    * [Update Bits](math_and_bit_manipulation/update_bits.md)
    * [Fast Power](math_and_bit_manipulation/fast_power.md)
+   * [Hash Function](math_and_bit_manipulation/hash_function.md)
    * [Count 1 in Binary](math_and_bit_manipulation/count_1_in_binary.md)
    * [Fibonacci](math_and_bit_manipulation/fibonacci.md)
    * [A plus B Problem](math_and_bit_manipulation/a_plus_b_problem.md)
