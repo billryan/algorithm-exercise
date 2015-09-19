@@ -184,6 +184,7 @@
    * [String to Integer](problem_misc/string_to_integer.md)
    * [Insert Interval](problem_misc/insert_interval.md)
    * [Minimum Subarray](problem_misc/minimum_subarray.md)
+   * [Matrix Zigzag Traversal](problem_misc/matrix_zigzag_traversal.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
