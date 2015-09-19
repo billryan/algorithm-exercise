@@ -186,6 +186,7 @@
    * [Minimum Subarray](problem_misc/minimum_subarray.md)
    * [Matrix Zigzag Traversal](problem_misc/matrix_zigzag_traversal.md)
    * [Valid Sudoku](problem_misc/valid_sudoku.md)
+   * [Add Binary](problem_misc/add_binary.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
