@@ -89,6 +89,7 @@
    * [Majority Number III](math_and_bit_manipulation/majority_number_iii.md)
    * [Digit Counts](math_and_bit_manipulation/digit_counts.md)
    * [Ugly Number](math_and_bit_manipulation/ugly_number.md)
+   * [Plus One](math_and_bit_manipulation/plus_one.md)
 * [Linked List](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
