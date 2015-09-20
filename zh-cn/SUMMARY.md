@@ -184,6 +184,7 @@
    * [Heapify](problem_misc/heapify.md)
    * [String to Integer](problem_misc/string_to_integer.md)
    * [Insert Interval](problem_misc/insert_interval.md)
+   * [Merge Intervals](problem_misc/merge_intervals.md)
    * [Minimum Subarray](problem_misc/minimum_subarray.md)
    * [Matrix Zigzag Traversal](problem_misc/matrix_zigzag_traversal.md)
    * [Valid Sudoku](problem_misc/valid_sudoku.md)
