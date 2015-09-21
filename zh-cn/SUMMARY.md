@@ -173,6 +173,7 @@
    * [Maximum Subarray](dynamic_programming/maximum_subarray.md)
    * [Maximum Subarray II](dynamic_programming/maximum_subarray_ii.md)
    * [Longest Increasing Continuous subsequence](dynamic_programming/longest_increasing_continuous_subsequence.md)
+   * [Longest Increasing Continuous subsequence II](dynamic_programming/longest_increasing_continuous_subsequence_ii.md)
 * [Graph](graph/README.md)
    * [Topological Sorting](graph/topological_sorting.md)
 * [Data Structure](data_structure/README.md)
