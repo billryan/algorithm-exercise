@@ -172,6 +172,7 @@
    * [Interleaving String](dynamic_programming/interleaving_string.md)
    * [Maximum Subarray](dynamic_programming/maximum_subarray.md)
    * [Maximum Subarray II](dynamic_programming/maximum_subarray_ii.md)
+   * [Longest Increasing Continuous subsequence](dynamic_programming/longest_increasing_continuous_subsequence.md)
 * [Graph](graph/README.md)
    * [Topological Sorting](graph/topological_sorting.md)
 * [Data Structure](data_structure/README.md)
