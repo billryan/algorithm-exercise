@@ -25,7 +25,18 @@
 ![Binary Tree Traversal](../images/binary_tree_traversal.png)
 
 ## 节点定义
-这里的节点统一使用LeetCode的定义
+
+### Python
+
+```python
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left, self.right = None, None
+```
+
+### C++
+
 ```c++
 struct TreeNode {
       int val;
@@ -35,12 +46,23 @@ struct TreeNode {
   };
 ```
 
-## 相关算法——递归法遍历
-###pre-order travese
-```c++
+### Java
 
+```java
+public class TreeNode {
+    public int val;
+    public TreeNode left, right;
+    public TreeNode(int val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
 ```
 
+## 相关算法——递归法遍历
+
+与树有关的题用递归实现往往比较自然，但缺点在于可能会导致栈溢出。因此尽可能使用迭代的方法遍历。
 
 ## 相关算法——分治法（Divide & Conquer)
 
