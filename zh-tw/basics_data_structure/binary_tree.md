@@ -8,7 +8,7 @@
 
 ## Tree traversal 樹的遍歷
 
-從二元樹的根節點出發，節點的遍歷分為三個主要步驟：對當前節點進行操作（稱為「訪問」節點，或者根節點）、遍歷左邊子節點、遍歷右邊子節點。訪問節點順序的不同也就形成了不同的遍歷方式。需要注意的是樹的遍歷通常使用遞歸的方法進行理解和實現，在訪問元素時也需要使用遞歸的思想去理解。
+從二元樹的根節點出發，節點的遍歷分為三個主要步驟：對當前節點進行操作（稱為「訪問」節點，或者根節點）、遍歷左邊子節點、遍歷右邊子節點。訪問節點順序的不同也就形成了不同的遍歷方式。需要注意的是樹的遍歷通常使用遞迴的方法進行理解和實現，在訪問元素時也需要使用遞迴的思想去理解。
 
 按照訪問根元素(當前元素)的前後順序，遍歷方式可劃分為如下幾種：
 
@@ -20,12 +20,22 @@
 
 如下圖所示，遍歷順序在右側框中，紅色A為根節點。使用遞迴和整體的思想去分析遍歷順序較為清晰。
 
-二元樹的廣度優先遍歷和樹的前序/中序/後序遍歷不太一樣，前/中/後序遍歷使用遞歸，也就是用堆疊(stack)的思想對二元樹進行遍歷，廣度優先一般使用隊列(queue)的思想對二元樹進行遍歷。
+二元樹的廣度優先遍歷和樹的前序/中序/後序遍歷不太一樣，前/中/後序遍歷使用遞迴，也就是用堆疊(stack)的思想對二元樹進行遍歷，廣度優先一般使用隊列(queue)的思想對二元樹進行遍歷。
 
 ![Binary Tree Traversal](../images/binary_tree_traversal.png)
 
 ## 節點定義
-這裏的節點統一使用LeetCode的定義
+這裡的節點統一使用LeetCode的定義
+
+### Python
+```python
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left, self.right = None, None
+```
+
+### C++
 ```c++
 struct TreeNode {
     int val;
@@ -33,6 +43,19 @@ struct TreeNode {
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+```
+
+### Java
+```java
+public class TreeNode {
+    public int val;
+    public TreeNode left, right;
+    public TreeNode(int val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
 ```
 
 ## 相關演算法——遞迴法遍歷
