@@ -6,7 +6,7 @@ Queue 是一个 FIFO（先进先出）的数据结构，并发中使用较多，
 
 ### Java
 
-Queue 在 Java 中是 Interface, 一种实现是 LinkedList, LinkedList 向上转型为 Queue.
+Queue 在 Java 中是 Interface, 一种实现是 LinkedList, LinkedList 向上转型为 Queue, Queue 通常不能存储 `null` 元素，否则与 `poll()` 等方法的返回值混淆。
 
 ```
 Queue<Integer> q = new LinkedList<Integer>();
@@ -21,7 +21,7 @@ int qLen = q.size(); // get queue length
 | Remove | remove() | poll() |
 | Examine | element() | peek() |
 
-优先考虑右侧方法，右侧元素不存在时返回 null.
+优先考虑右侧方法，右侧元素不存在时返回 `null`. 判断非空时使用`isEmpty()`方法，继承自 Collection.
 
 ## Priority Queue - 优先队列
 
@@ -31,7 +31,7 @@ int qLen = q.size(); // get queue length
 
 ### Java
 
-Java 中提供`PriorityQueue`类，该类是 Interface Queue 的另外一种实现，和`LinkedList`的却别主要在于排序行为而不是性能。基于 priority heap 实现，非`synchronized`，故多线程下应使用`PriorityBlockingQueue`. 默认为自然序（小根堆），需要其他排序方式可自行实现`Comparator`接口，选用合适的构造器初始化。使用迭代器遍历时不保证有序，有序访问时需要使用`Arrays.sort(pq.toArray())`.
+Java 中提供`PriorityQueue`类，该类是 Interface Queue 的另外一种实现，和`LinkedList`的区别主要在于排序行为而不是性能，基于 priority heap 实现，非`synchronized`，故多线程下应使用`PriorityBlockingQueue`. 默认为自然序（小根堆），需要其他排序方式可自行实现`Comparator`接口，选用合适的构造器初始化。使用迭代器遍历时不保证有序，有序访问时需要使用`Arrays.sort(pq.toArray())`.
 
 不同方法的时间复杂度：
 
@@ -45,7 +45,11 @@ Java 中提供`PriorityQueue`类，该类是 Interface Queue 的另外一种实�
 
 ### Java
 
-Java 在1.6之后提供了 Deque 接口，
+Java 在1.6之后提供了 Deque 接口，既可使用`ArrayDeque`（数组）来实现，也可以使用`LinkedList`（链表）来实现。前者是一个数组外加首尾索引，后者是双向链表。
+
+```
+Deque<Integer> deque = new ArrayDeque<Integer>();
+```
 
 #### Methods
 
