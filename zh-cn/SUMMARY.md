@@ -199,6 +199,7 @@
    * [Add Binary](problem_misc/add_binary.md)
    * [Reverse Integer](problem_misc/reverse_integer.md)
    * [Gray Code](problem_misc/gray_code.md)
+   * [Find the Missing Number](problem_misc/find_the_missing_number.md)
 * [Part III - Contest](part_iii_contest/README.md)
 * [Google APAC](google_apac/README.md)
    * [APAC 2015 Round B](google_apac/google_apac_2015_round_b/README.md)
