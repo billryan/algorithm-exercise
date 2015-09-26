@@ -24,6 +24,7 @@
    * [Radix Sort](basics_sorting/radix_sort.md)
 * [Basics Algorithm](basics_algorithm/README.md)
    * [Divide and Conquer](basics_algorithm/divide_and_conquer.md)
+   * [Math](basics_algorithm/math.md)
 * [Basics Misc](basics_misc/README.md)
    * [Bit Manipulation](basics_misc/bit_manipulation.md)
    * [Knapsack](basics_misc/knapsack.md)
