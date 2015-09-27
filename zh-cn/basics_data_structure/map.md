@@ -17,7 +17,9 @@ int point = map.get("bill"); // get value by key
 int point = map.remove("bill") // remove by key, return value
 Set<String> set = map.keySet();
 // iterate Map
-for (Entry<String, Integer> entry : map.entrySet()) {
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    String key = entry.getKey();
+    int value = entry.getValue();
     // do some thing
 }
 ```
