@@ -60,6 +60,12 @@ $$K(i,\omega) = \max \{K(i-1, \omega), K(i-1, \omega - \omega_i) + v_i\}$$
 
 这里的分析是以容量递推的，但是在容量特别大时，我们可能需要以价值作为转移方程。定义状态`dp[i + 1][j]`为前`i`个物品中挑选出价值总和为`j` 时总重量的最小值（所以对于不满足条件的索引应该用充分大的值而不是最大值替代，防止溢出）。相应的转移方程为：前`i - 1` 个物品价值为`j`, 要么为`j - v[i]`(选中第`i`个物品). 即`dp[i + 1][j] = min{dp[i][j], dp[i][j - v[i]] + w[i]}`. 最终返回结果为`dp[n][j] ≤ W` 中最大的 j.
 
+## 扩展
+
+以上我们只是求得了最终的最大获利，假如还需要输出选择了哪些项如何破？
+
+以普通的01背包为例，如果某元素被选中，那么其必然满足`w[i] > j`且大于之前的`dp[i][j]`, 这还只是充分条件，因为有可能被后面的元素代替。保险起见，我们需要跟踪所有可能满足条件的项，然后反向计算有可能满足条件的元素，有可能最终输出不止一项。
+
 ### Java
 
 ```java
@@ -67,9 +73,10 @@ import java.util.*;
 
 public class Backpack {
     // 01 backpack with small datasets(O(nW), W is small)
-    public static int backpack(int W, int[] w, int[] v) {
+    public static int backpack(int W, int[] w, int[] v, boolean[] itemTake) {
         int N = w.length;
         int[][] dp = new int[N + 1][W + 1];
+        boolean[][] matrix = new boolean[N + 1][W + 1];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j <= W; j++) {
                 if (w[i] > j) {
@@ -77,7 +84,19 @@ public class Backpack {
                     dp[i + 1][j] = dp[i][j];
                 } else {
                     dp[i + 1][j] = Math.max(dp[i][j], dp[i][j - w[i]] + v[i]);
+                    // pick item i and get value j
+                    matrix[i][j] = (dp[i][j - w[i]] + v[i] > dp[i][j]);
                 }
+            }
+        }
+
+        // determine which items to take
+        for (int i = N - 1, j = W; i >= 0; i--) {
+            if (matrix[i][j]) {
+                itemTake[i] = true;
+                j -= w[i];
+            } else {
+                itemTake[i] = false;
             }
         }
 
@@ -141,9 +160,15 @@ public class Backpack {
         int[] w1 = new int[]{2, 1, 3, 2};
         int[] v1 = new int[]{3, 2, 4, 2};
         int W1 = 5;
+        boolean[] itemTake = new boolean[w1.length + 1];
         System.out.println("Testcase for 01 backpack.");
-        int bp1 = backpack(W1, w1, v1); // bp1 should be 7
+        int bp1 = backpack(W1, w1, v1, itemTake); // bp1 should be 7
         System.out.println("Maximum value: " + bp1);
+        for (int i = 0; i < itemTake.length; i++) {
+            if (itemTake[i]) {
+                System.out.println("item " + i + ", weight " + w1[i] + ", value " + v1[i]);
+            }
+        }
 
         System.out.println("Testcase for 01 backpack with large W.");
         int bp2 = backpack2(W1, w1, v1); // bp2 should be 7
@@ -165,4 +190,4 @@ public class Backpack {
 - Chapter 6.4 Knapsack *Algorithm - S. Dasgupta*
 - [0019算法笔记——【动态规划】0-1背包问题 - liufeng_king的专栏](http://blog.csdn.net/liufeng_king/article/details/8683136)
 - [崔添翼 § 翼若垂天之云 › 《背包问题九讲》2.0 alpha1](http://cuitianyi.com/blog/%E3%80%8A%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%B9%9D%E8%AE%B2%E3%80%8B2-0-alpha1/)
-
+- [Knapsack.java](http://introcs.cs.princeton.edu/java/96optimization/Knapsack.java.html)
