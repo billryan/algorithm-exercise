@@ -30,10 +30,52 @@ O(n x m) memory is also acceptable if you do not know how to optimize memory.
 
 ## 题解1
 
-本题是典型的01背包问题，每种类型的物品最多只能选择一件。
+本题是典型的01背包问题，每种类型的物品最多只能选择一件。参考前文 [Knapsack](http://algorithm.yuanbin.me/zh-cn/basics_algorithm/knapsack.html) 中总结的解法，这个题中可以将背包的 size 理解为传统背包中的重量；题目问的是能达到的最大 size, 故可将每个背包的 size 类比为传统背包中的价值。
 
+考虑到数组索引从0开始，故定义状态`bp[i + 1][j]`为前 `i` 个物品中选出重量不超过`j`时总价值的最大值。状态转移方程则为分`A[i] > j` 与否两种情况考虑。初始化均为0，相当于没有放任何物品。
 
-先来看看 [九章算法](http://www.jiuzhang.com/solutions/backpack/) 的题解。
+### Java
+
+```java
+public class Solution {
+    /**
+     * @param m: An integer m denotes the size of a backpack
+     * @param A: Given n items with size A[i]
+     * @return: The maximum size
+     */
+    public int backPack(int m, int[] A) {
+        if (A == null || A.length == 0) return 0;
+
+        final int M = m;
+        final int N = A.length;
+        int[][] bp = new int[N + 1][M + 1];
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j <= M; j++) {
+                if (A[i] > j) {
+                    bp[i + 1][j] = bp[i][j];
+                } else {
+                    bp[i + 1][j] = Math.max(bp[i][j], bp[i][j - A[i]] + A[i]);
+                }
+            }
+        }
+
+        return bp[N][M];
+    }
+}
+```
+
+### 源码分析
+
+注意索引及初始化的值，尤其是 N 和 M 的区别，内循环处可等于 M。
+
+### 复杂度分析
+
+两重 for 循环，时间复杂度为 $$O(m \times n)$$, 二维矩阵的空间复杂度为 $$O(m \times n)$$, 一维矩阵的空间复杂度为 $$O(m)$$.
+
+## 题解2
+
+接下来看看 [九章算法](http://www.jiuzhang.com/solutions/backpack/) 的题解，**这种解法感觉不是很直观，推荐使用题解1的解法。**
 
 1. 状态: result[i][S] 表示前i个物品，取出一些物品能否组成体积和为S的背包
 2. 状态转移方程: $$f[i][S] = f[i-1][S-A[i]] ~or~ f[i-1][S]$$ (A[i]为第i个物品的大小)
@@ -151,9 +193,13 @@ public:
 };
 ```
 
+### 复杂度分析
+
+两重 for 循环，时间复杂度均为 $$O(m \times n)$$, 二维矩阵的空间复杂度为 $$O(m \times n)$$, 一维矩阵的空间复杂度为 $$O(m)$$.
+
 ## Reference
 
+- 《挑战程序设计竞赛》第二章
 - [Lintcode: Backpack - neverlandly - 博客园](http://www.cnblogs.com/EdwardLiu/p/4269149.html)
-- [Lintcode: Backpack II - neverlandly - 博客园](http://www.cnblogs.com/EdwardLiu/p/4272300.html)
 - [九章算法 | 背包问题](http://www.jiuzhang.com/problem/58/)
 - [崔添翼 § 翼若垂天之云 › 《背包问题九讲》2.0 alpha1](http://cuitianyi.com/blog/%E3%80%8A%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%B9%9D%E8%AE%B2%E3%80%8B2-0-alpha1/)
