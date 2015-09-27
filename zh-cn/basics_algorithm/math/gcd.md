@@ -66,4 +66,4 @@ public class Solution {
 
 **扩展提：题中等式右边为1，假如为2又会怎样？**
 
-提示：此时`gcd(a, b) == c`, c 为等式右边的正整数值。推导过程同上，如有误请指出。
+提示：此时$$c = k \cdot gcd(a, b), x^\prime = k\cdot x ==> c\ \%\ gcd(a, b) == 0$$, c 为等式右边的正整数值。详细推导见 [How to find solutions of linear Diophantine ax + by = c?](http://math.stackexchange.com/questions/20717/how-to-find-solutions-of-linear-diophantine-ax-by-c)
