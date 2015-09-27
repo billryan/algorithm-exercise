@@ -26,6 +26,7 @@
    * [Divide and Conquer](basics_algorithm/divide_and_conquer.md)
    * [Math](basics_algorithm/math/README.md)
        * [Greatest Common Divisor](basics_algorithm/math/gcd.md)
+       * [Prime](basics_algorithm/math/prime.md)
 * [Basics Misc](basics_misc/README.md)
    * [Bit Manipulation](basics_misc/bit_manipulation.md)
    * [Knapsack](basics_misc/knapsack.md)
