@@ -53,16 +53,61 @@ class Leetcode(object):
         search_url = "https://leetcode.com/problemset/algorithms/"
 
 
+class Hihocoder(object):
+    def __init__(self):
+        self.url_algo = "http://hihocoder.com/contest/mstest2015april/problems"
+
+    def get_src_page(self, src_url):
+        return pq(filename=src_url)
+
+    def get_src_title(self, src_page):
+        raw_title = src_page('h3.panel-title').text()
+        # Title begins after ': '
+        start_index = raw_title.find(': ')
+        return raw_title[start_index + 2:]
+
+    def get_src_detail(self, src_url):
+        src_page = self.get_src_page(src_url)
+        src_detail = {}
+        raw_detail = src_page('#tl-problem-content').html()
+        title = self.get_src_title(src_page)
+        body = raw_detail
+        src_detail['title'] = title
+        src_detail['body'] = body
+        return src_detail
+
+
 def main(argv):
     if (len(argv) != 2):
         print("Usage: python parse_source.py problem_url")
     scripts, url = argv
-    lintcode = Lintcode()
-    src_body = lintcode.get_src_detail(url)['body']
+    print("url = " + url)
+    hihocoder_url = 'http://hihocoder.com'
+    lintcode_url = 'http://www.lintcode.com'
+    leetcode_url = 'https://leetcode.com'
     h = html2text.HTML2Text()
-    print("### Problem")
-    print("")
-    print(h.handle(src_body))
+    if url.startswith(lintcode_url):
+        lintcode = Lintcode()
+        src_body = lintcode.get_src_detail(url)['body']
+        print("### Problem")
+        print("")
+        print(h.handle(src_body))
+    elif url.startswith(leetcode_url):
+        # to be done
+        print("### Problem")
+        print("")
+    else:
+        # temp
+        hihocoder = Hihocoder()
+        src_title = hihocoder.get_src_detail(url)['title']
+        src_body = hihocoder.get_src_detail(url)['body']
+        print("# " + src_title)
+        print("")
+        print("## Source")
+        print("")
+        print("### Problem")
+        print("")
+        print(h.handle(src_body))
 
 if __name__ == "__main__":
     main(sys.argv)
