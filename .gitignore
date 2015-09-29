@@ -18,3 +18,4 @@ _book
 # Python
 *.py[cod]
 *$py.class
+.python-version
