@@ -81,7 +81,6 @@ def main(argv):
     if (len(argv) != 2):
         print("Usage: python parse_source.py problem_url")
     scripts, url = argv
-    print("url = " + url)
     hihocoder_url = 'http://hihocoder.com'
     lintcode_url = 'http://www.lintcode.com'
     leetcode_url = 'https://leetcode.com'
