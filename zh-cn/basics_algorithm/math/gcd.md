@@ -10,6 +10,14 @@
 
 与最大公约数相关的还有最小公倍数(LCM, Lowest Common Multiple), 它们两者之间的关系为 $$ lcm(a, b) \times gcd(a, b) = |ab|$$.
 
+### Java
+
+```java
+public static long gcd(long a, long b) {
+    return (b == 0) ? a : gcd(b, a % b);
+}
+```
+
 ### Problem
 
 给定平面上两个坐标 P1=(x1, y1), P2=(x2,y2), 问线段 P1P2 上除 P1, P2以外还有几个整数坐标点？
