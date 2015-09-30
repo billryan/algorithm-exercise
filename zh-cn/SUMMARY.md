@@ -223,6 +223,8 @@
        * [Problem A. Lucky Substrings](microsoft/mstest2015april2/problem_a_lucky_substrings.md)
        * [Problem B. Numeric Keypad](microsoft/mstest2015april2/problem_b_numeric_keypad.md)
        * [Problem C. Spring Outing](microsoft/mstest2015april2/problem_c_spring_outing.md)
+   * [Microsoft 2015 September 2](microsoft/mstest2015sept2/README.md)
+       * [Problem A. Farthest Point](microsoft/mstest2015sept2/problem_a_farthest_point.md)
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
