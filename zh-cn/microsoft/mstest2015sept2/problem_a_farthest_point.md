@@ -41,25 +41,86 @@ y-coordinate.
 
 #### 样例输入
 
-
-
-
-
     1.000 1.000 5.000
 
 #### 样例输出
 
-
-
-
-
     6 1
 
-## 题解1 - 整数分解
+## 题解1 - 圆周枚举
 
-看似容易实则比较难的一道题，现场通过率非常低。通过枚举只能过小数据，稍微大点的数会 TLE. 我们仔细审下题，求圆周上的整点，有多个整点时输出最大的 x 和最大的 y. 容易想到的方案是枚举所有可能的 x 和 y, 然后代入等式测试是否相等，这个过不了大的 x 和 y. 如果用开方的方法必然有误差，我用这种方法不知道贡献了多少 WA, 泪流满面... 作为在线测试，**更为合理的方案应为先暴力搜索拿到百分之八十的分数。**
+其实自己最开始做这道题时用的就是枚举，但是似乎忘记加圆心坐标了，一直 WA... 题目要求是返回最大的 x, 所以我们首先根据半径范围将 x 的整数解范围求出来。然后求出可能的 y, 由于题中给出的解有3位小数，如果要精确求解的话，可以将圆方程两边同乘1000，然后判断是否为整数。
 
-从 Microsoft 和 Google APAC 在线测试的风格来看是偏向于程序设计竞赛的，那么题目的考点自然就在竞赛范围之内，这道题看似是浮点型的数据，实际上考的却是整数中数论的基础。**注意题中的 accurate to three decimal places, 那么也就意味着我们对给定的数据同乘 $$10^3$$ 后一定是整数！！**！这个关键的信息我在测试过程中也没注意到，直到第二天早上醒来后突然就想到了！兴奋地六点多就爬起来了。
+### Java
+
+```java
+import java.io.*;
+import java.util.*;
+import java.util.Queue;
+
+class Point {
+    long x;
+    long y;
+    Point(long x, long y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        double xd = in.nextDouble(), yd = in.nextDouble(), rd = in.nextDouble();
+        Point result = solve(xd, yd, rd);
+        System.out.println(result.x + " " + result.y);
+    }
+
+    private static Point solve(double x0, double y0, double r) {
+        // convert double to long(accurate)
+        long xl0 = (long)(x0 * 1000), yl0 = (long)(y0 * 1000), rl0 = (long)(r * 1000);
+        Point res = new Point(Long.MIN_VALUE, Long.MIN_VALUE);
+        int lower_x = (int)Math.ceil(x0 - r), upper_x = (int)Math.floor(x0 + r);
+        for (int i = upper_x; i >= lower_x; i--) {
+            // circle above
+            long y1l = yl0 + (long)(Math.sqrt(rl0*rl0 - (i*1000 - xl0)*(i*1000 - xl0)) + 0.5);
+            if ((i*1000 - xl0)*(i*1000 - xl0) + (y1l - yl0)*(y1l - yl0) == rl0*rl0) {
+                // ensure y1 is integer
+                if (y1l % 1000 == 0) {
+                    res.x = i;
+                    res.y = y1l / 1000;
+                    return res;
+                }
+            }
+            // circle below
+            y1l = yl0 - (long)(Math.sqrt(rl0*rl0 - (i*1000 - xl0)*(i*1000 - xl0)) + 0.5);
+            if ((i*1000 - xl0)*(i*1000 - xl0) + (y1l - yl0)*(y1l - yl0) == rl0*rl0) {
+                // ensure y1 is integer
+                if (y1l % 1000 == 0) {
+                    res.x = i;
+                    res.y = y1l / 1000;
+                    return res;
+                }
+            }
+        }
+
+        return res;
+    }
+}
+```
+
+### 源码分析
+
+自右向左枚举，先枚举圆的上半部分，再枚举圆的下半部分。注意1000的转换。
+
+### 复杂度分析
+
+最坏情况下 $$O(R)$$.
+
+## 题解2 - 整数分解
+
+看似容易实则比较难的一道题，现场通过率非常低。我们仔细审下题，求圆周上的整点，有多个整点时输出最大的 x 和最大的 y. 容易想到的方案是枚举所有可能的 x 和 y, 然后代入等式测试是否相等，这个过不了大的 x 和 y. 如果用开方的方法必然有误差，我用这种方法不知道贡献了多少 WA, 泪流满面... 作为在线测试，**更为合理的方案应为先暴力搜索拿到百分之八十的分数。**
+
+从 Microsoft 和 Google APAC 在线测试的风格来看是偏向于程序设计竞赛的，那么题目的考点自然就在竞赛范围之内，这道题看似是浮点型的数据，~~实际上考的却是整数中数论的基础。~~**注意题中的 accurate to three decimal places, 那么也就意味着我们对给定的数据同乘 $$10^3$$ 后一定是整数！！**！这个关键的信息我在测试过程中也没注意到，直到第二天早上醒来后突然就想到了！兴奋地六点多就爬起来了。
 
 首先肯定是要写出圆方程的，设圆心坐标为 $$(x_0, y_0)$$, 半径为 $$r$$, 那么我们有：
 $$
@@ -193,7 +254,7 @@ public class Main {
 
 求所有素数时间复杂度 $$O(\sqrt{n})$$, 判断是否互质时间复杂度 $$O(\log n)$$. 枚举最大公约数时间复杂度约 $$(\sqrt{n})$$，总的时间复杂度估算应该比 $$O(n)$$ 小一些，但是小的不明显。**所以说，这种方法费了老大劲，但是吃力不讨好！笔试中这种方法极不可取！**
 
-## 题解2 - 勾股数
+## 题解3 - 勾股数
 
 除了以上使用数论部分整数分解的方法外，还可以巧用勾股数的特性，这种方法需要熟知勾股数的特性。设正整数 $$m, n, r$$ 满足：
 $$
@@ -264,15 +325,15 @@ public class Main {
                     long kx = k * pyth.x;
                     long ky = k * pyth.y;
                     List<Point> points = new ArrayList<Point>();
-                    points.add(new Point(kx, ky));
-                    points.add(new Point(-kx, ky));
-                    points.add(new Point(kx, -ky));
-                    points.add(new Point(-kx, -ky));
+                    points.add(new Point(x0 + kx, y0 + ky));
+                    points.add(new Point(x0 - kx, y0 + ky));
+                    points.add(new Point(x0 + kx, y0 - ky));
+                    points.add(new Point(x0 - kx, y0 - ky));
                     if (kx != ky) {
-                        points.add(new Point(ky, kx));
-                        points.add(new Point(-ky, kx));
-                        points.add(new Point(ky, -kx));
-                        points.add(new Point(-ky, -kx));
+                        points.add(new Point(y0 + ky, x0 + kx));
+                        points.add(new Point(y0 - ky, x0 + kx));
+                        points.add(new Point(y0 + ky, x0 - kx));
+                        points.add(new Point(y0 - ky, x0 - kx));
                     }
                     for (Point point : points) {
                         updateAns(point, res);
@@ -353,3 +414,4 @@ public class Main {
 - [BZOJ 1041 [HAOI2008] 圆上的整点 题解与分析 - 初学者 - 博客频道 - CSDN.NET](http://blog.csdn.net/csyzcyj/article/details/10044629)
 - [[BZOJ1041 [HAOI2008]圆上的整点]数论、勾股数相关定理 | edward_mj](http://edward-mj.com/archives/166)
 - [勾股数 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%8B%BE%E8%82%A1%E6%95%B0)
+- [hihoCoder](http://hihocoder.com/discuss/question/2619)
