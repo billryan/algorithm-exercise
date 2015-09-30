@@ -2,7 +2,7 @@
 
 ## Source
 
-- leetcode: [Binary Tree Zigzag Level Order Traversal 参考程序 Java/C++/Python](http://www.jiuzhang.com/solutions/binary-tree-zigzag-level-order-traversal/)
+- leetcode: [Binary Tree Zigzag Level Order Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 - lintcode: [(71) Binary Tree Zigzag Level Order Traversal](http://www.lintcode.com/en/problem/binary-tree-zigzag-level-order-traversal/)
 
 ```
