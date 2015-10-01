@@ -42,6 +42,10 @@ def sitemap(suffix='.md'):
     sitemap_fn = os.path.join(ROOT_DIR, 'sitemap.xml')
     with open(sitemap_fn, 'w') as sf:
         sf.write(sitemap_xml)
+    sitemap_fn = os.path.join(ROOT_DIR, 'sitemap.txt')
+    with open(sitemap_fn, 'w') as sf:
+        urls = [root_url + '/' + page['url'] + '\n' for page in pages]
+        sf.writelines(urls)
 
 
 if __name__ == "__main__":
