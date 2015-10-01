@@ -3,7 +3,7 @@
 
 import os
 from pathlib import Path
-from jinja2 import Template
+from jinja2 import Environment, FileSystemLoader
 from subprocess import check_output
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -31,13 +31,17 @@ def sitemap(suffix='.md'):
                 p = p.with_suffix('.html')
                 fn = p.as_posix().lower()
                 page = {}
-                page['date'] = date
+                page['lastmod'] = date
                 page['url'] = fn
                 pages.append(page)
     root_url = 'http://algorithm.yuanbin.me'
-    template = Template(os.path.join(BASE_DIR, 'sitemap.xml'))
-    template.render(root_url=root_url, pages=pages)
-    # print(sitemap_xml)
+    templates = os.path.join(BASE_DIR, 'sitemap' + os.sep + 'templates')
+    env = Environment(loader=FileSystemLoader(templates))
+    template = env.get_template('sitemap.xml')
+    sitemap_xml = template.render(root_url=root_url, pages=pages, freq='daily')
+    sitemap_fn = os.path.join(ROOT_DIR, 'sitemap.xml')
+    with open(sitemap_fn, 'w') as sf:
+        sf.write(sitemap_xml)
 
 
 if __name__ == "__main__":
