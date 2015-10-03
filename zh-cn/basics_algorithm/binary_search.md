@@ -80,7 +80,7 @@ N = 4, L = {8.02, 7.43, 4.57, 5.39}, K = 11
 
 ### 题解
 
-这道题看似是一个最优化问题，我们来尝试下使用模板二的思想求解，**令 $$C(x)$$ 为『可以得到 $$K$$ 条长度为 $$x$$ 的绳子』。根据题意，我们可以将上述条件进一步细化为：
+这道题看似是一个最优化问题，我们来尝试下使用模板二的思想求解，**令 $$C(x)$$ 为『可以得到 $$K$$ 条长度为 $$x$$ 的绳子』。**根据题意，我们可以将上述条件进一步细化为：
 $$
 C(x) = \sum_i(floor(L_i / x)) \geq K
 $$
@@ -106,8 +106,9 @@ public class Main {
     }
 
     public static double solve(double[] nums, int K) {
-        double lb = 0.01, ub = 10e5 + 0.01;
-        while (lb + 0.001 < ub) {
+        double lb = 0.00, ub = 10e5 + 0.01;
+        // while (lb + 0.001 < ub) {
+	for (int i = 0; i < 100; i++) {
             double mid = lb + (ub - lb) / 2;
             if (C(nums, mid, K)) {
                 lb = mid;
