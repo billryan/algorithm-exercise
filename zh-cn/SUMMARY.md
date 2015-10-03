@@ -25,6 +25,7 @@
    * [Radix Sort](basics_sorting/radix_sort.md)
 * [Basics Algorithm](basics_algorithm/README.md)
    * [Divide and Conquer](basics_algorithm/divide_and_conquer.md)
+   * [Binary Search](basics_algorithm/binary_search.md)
    * [Math](basics_algorithm/math/README.md)
        * [Greatest Common Divisor](basics_algorithm/math/gcd.md)
        * [Prime](basics_algorithm/math/prime.md)
