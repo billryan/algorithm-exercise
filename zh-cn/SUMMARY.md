@@ -162,6 +162,7 @@
    * [Combination Sum](exhaustive_search/combination_sum.md)
    * [Combination Sum II](exhaustive_search/combination_sum_ii.md)
    * [Minimum Depth of Binary Tree](exhaustive_search/minimum_depth_of_binary_tree.md)
+   * [Word Search](exhaustive_search/word_search.md)
 * [Dynamic Programming](dynamic_programming/README.md)
    * [Triangle](dynamic_programming/triangle.md)
    * [Backpack](dynamic_programming/backpack.md)
