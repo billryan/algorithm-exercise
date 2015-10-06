@@ -62,7 +62,7 @@ after_success:
   - git add epub
   - git add pdf
   - git add mobi
-  - git commit -m "Updated $(date)"
+  - git commit --amend -m "Updated $(date)"
   - git push -u gitcafe HEAD:deploy --force
   - git push -u origin HEAD:deploy --force
 
