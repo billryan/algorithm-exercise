@@ -5,26 +5,34 @@
 - leetcode: [Permutation Sequence | LeetCode OJ](https://leetcode.com/problems/permutation-sequence/)
 - lintcode: [(388) Permutation Sequence](http://www.lintcode.com/en/problem/permutation-sequence/)
 
-```
-Given n and k, return the k-th permutation sequence.
+### Problem
 
-Example
-For n = 3, all permutations are listed as follows:
+Given _n_ and _k_, return the _k_-th permutation sequence.
 
-"123"
-"132"
-"213"
-"231"
-"312"
-"321"
-If k = 4, the fourth permutation is "231"
+#### Example
 
-Note
-n will be between 1 and 9 inclusive.
+For `n = 3`, all permutations are listed as follows:
 
-Challenge
+
+
+    "123"
+    "132"
+    "213"
+    "231"
+    "312"
+    "321"
+
+
+If `k = 4`, the fourth permutation is `"231"`
+
+#### Note
+
+_n_ will be between 1 and 9 inclusive.
+
+#### Challenge
+
 O(n*k) in time complexity is easy, can you do it in O(n^2) or less?
-```
+
 
 ## 题解
 
@@ -106,34 +114,32 @@ class Solution {
       * @return: return the k-th permutation
       */
     public String getPermutation(int n, int k) {
-        // generate factorial list
-        int[] factorial = new int[n + 1];
-        factorial[0] = 1;
-        for (int i = 1; i < n + 1; i++) {
-            factorial[i] = factorial[i - 1] * i;
+        // get factorial array
+        int[] fact = new int[n];
+        fact[0] = 1;
+        for (int i = 1; i < n; i++) {
+            fact[i] = fact[i - 1] * i;
         }
-        // generate digits ranging from 1 to n
-        ArrayList<Integer> nums = new ArrayList<Integer>(n);
-        for (int i = 0; i < n; i++) {
-            nums.add(i + 1);
+        // generate nums 1 to n
+        List<Integer> nums = new ArrayList<Integer>();
+        for (int i = 1; i <= n; i++) {
+            nums.add(i);
         }
-
-        int[] perm = new int[n];
+        // get the permutation digit
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
-            int rank = (k - 1) / factorial[n - i - 1];
-            k = (k - 1) % factorial[n - i - 1] + 1;
-
-            perm[i] = nums.get(rank);
+            // k begins from 1, so (1, 2) is a group
+            int rank = (k - 1) / fact[n - i - 1];
+            k = (k - 1) % fact[n - i - 1] + 1;
+            // ajust the mapping of rank to num
+            sb.append(nums.get(rank));
             nums.remove(nums.get(rank));
         }
 
-        StringBuilder result = new StringBuilder();
-        for (int digit : perm) {
-          result.append(digit);
-        }
-        return result.toString();
+        return sb.toString();
     }
 }
+
 ```
 
 ### 源码分析
