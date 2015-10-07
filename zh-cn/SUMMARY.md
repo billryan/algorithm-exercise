@@ -215,6 +215,7 @@
    * [N Queens](problem_misc/n_queens.md)
    * [N Queens II](problem_misc/n_queens_ii.md)
    * [Minimum Window Substring](problem_misc/minimum_window_substring.md)
+   * [Continuous Subarray Sum](problem_misc/continuous_subarray_sum.md)
 * [Part III - Contest](part_iii_contest/README.md)
 * [Google APAC](google_apac/README.md)
    * [APAC 2015 Round B](google_apac/google_apac_2015_round_b/README.md)
