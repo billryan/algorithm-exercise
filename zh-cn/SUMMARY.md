@@ -218,6 +218,7 @@
    * [Minimum Window Substring](problem_misc/minimum_window_substring.md)
    * [Continuous Subarray Sum](problem_misc/continuous_subarray_sum.md)
    * [Continuous Subarray Sum II](problem_misc/continuous_subarray_sum_ii.md)
+   * [Longest Consecutive Sequence](problem_misc/longest_consecutive_sequence.md)
 * [Part III - Contest](part_iii_contest/README.md)
 * [Google APAC](google_apac/README.md)
    * [APAC 2015 Round B](google_apac/google_apac_2015_round_b/README.md)
