@@ -5,24 +5,56 @@
 - leetcode: [Two Sum | LeetCode OJ](https://leetcode.com/problems/two-sum/)
 - lintcode: [(56) 2 Sum](http://www.lintcode.com/en/problem/2-sum/)
 
-```
-Given an array of integers, find two numbers such that they add up to a specific target number.
+### Problem
 
-The function twoSum should return indices of the two numbers
-such that they add up to the target, where index1 must be less than index2.
-Please note that your returned answers (both index1 and index2) are not zero-based.
+Given an array of integers, find two numbers such that they add up to a
+specific target number.
 
-You may assume that each input would have exactly one solution.
+The function `twoSum` should return _indices_ of the two numbers such that
+they add up to the target, where index1 must be less than index2. Please note
+that your returned answers (both index1 and index2) are **NOT** zero-based.
 
-Input: numbers={2, 7, 11, 15}, target=9
-Output: index1=1, index2=2
-```
+#### Example
+
+numbers=`[2, 7, 11, 15]`, target=`9`
+
+return `[1, 2]`
+
+#### Note
+
+You may assume that each input would have exactly one solution
+
+#### Challenge
+
+Either of the following solutions are acceptable:
+
+  * O(n) Space, O(nlogn) Time
+  * O(n) Space, O(n) Time
 
 ## 题解1 - 哈希表
 
 找两数之和是否为`target`, 如果是找数组中一个值为`target`该多好啊！遍历一次就知道了，我只想说，too naive... 难道要将数组中所有元素的两两组合都求出来与`target`比较吗？时间复杂度显然为 $$O(n^2)$$, 显然不符题目要求。找一个数时直接遍历即可，那么可不可以将两个数之和转换为找一个数呢？我们先来看看两数之和为`target`所对应的判断条件—— $$x_i + x_j = target$$, 可进一步转化为 $$x_i = target - x_j$$, 其中 $$i$$ 和 $$j$$ 为数组中的下标。一段神奇的数学推理就将找两数之和转化为了找一个数是否在数组中了！可见数学是多么的重要...
 
-基本思路有了，现在就来看看怎么实现，显然我们需要额外的空间(也就是哈希表)来保存已经处理过的 $$x_j$$, 如果不满足等式条件，那么我们就往后遍历，并把之前的元素加入到哈希表中，如果`target`减去当前索引后的值在哈希表中找到了，那么就将哈希表中相应的索引返回，大功告成！
+基本思路有了，现在就来看看怎么实现，显然我们需要额外的空间(也就是哈希表)来保存已经处理过的 $$x_j$$(**注意这里并不能先初始化哈希表，否则无法排除两个相同的元素相加为 target 的情况**), 如果不满足等式条件，那么我们就往后遍历，并把之前的元素加入到哈希表中，如果`target`减去当前索引后的值在哈希表中找到了，那么就将哈希表中相应的索引返回，大功告成！
+
+### Python
+
+```python
+class Solution:
+    """
+    @param numbers : An array of Integer
+    @param target : target = numbers[index1] + numbers[index2]
+    @return : [index1 + 1, index2 + 1] (index1 < index2)
+    """
+    def twoSum(self, numbers, target):
+        hashdict = {}
+        for i, item in enumerate(numbers):
+            if (target - item) in hashdict:
+                return (hashdict[target - item] + 1, i + 1)
+            hashdict[item] = i
+
+        return (-1, -1)
+```
 
 ### C++
 
@@ -58,38 +90,44 @@ public:
 };
 ```
 
+### Java
+
+```java
+public class Solution {
+    /*
+     * @param numbers : An array of Integer
+     * @param target : target = numbers[index1] + numbers[index2]
+     * @return : [index1 + 1, index2 + 1] (index1 < index2)
+     */
+    public int[] twoSum(int[] numbers, int target) {
+        if (numbers == null || numbers.length == 0) return new int[]{0, 0};
+        
+        Map<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
+        int index1 = 0, index2 = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (hashmap.containsKey(target - numbers[i])) {
+                index1 = hashmap.get(target - numbers[i]);
+                index2 = i;
+                return new int[]{1 + index1, 1 + index2};
+            } else {
+                hashmap.put(numbers[i], i);
+            }
+        }
+        
+        return new int[]{0, 0};
+    }
+}
+```
+
 ### 源码分析
 
 1. 异常处理。
-2. 使用 C++ 11 中的哈希表实现`unordered_map`映射值和索引。
+2. 使用 C++ 11 中的哈希表实现`unordered_map`映射值和索引。Python 中的`dict`就是天然的哈希表。
 3. 找到满足条件的解就返回，找不到就加入哈希表中。注意题中要求返回索引值的含义。
 
 ### 复杂度分析
 
 哈希表用了和数组等长的空间，空间复杂度为 $$O(n)$$, 遍历一次数组，时间复杂度为 $$O(n)$$.
-
-### Python
-
-```python
-class Solution:
-    """
-    @param numbers : An array of Integer
-    @param target : target = numbers[index1] + numbers[index2]
-    @return : [index1 + 1, index2 + 1] (index1 < index2)
-    """
-    def twoSum(self, numbers, target):
-        hashdict = {}
-        for i, item in enumerate(numbers):
-            if (target - item) in hashdict:
-                return (hashdict[target - item] + 1, i + 1)
-            hashdict[item] = i
-
-        return (-1, -1)
-```
-
-### 源码分析
-
-Python 中的`dict`就是天然的哈希表，使用 enumerate 可以同时返回索引和值，甚为方便。按题意似乎是要返回 list, 但个人感觉返回 tuple 更为合理。最后如果未找到符合题意的索引，返回`(-1, -1)`.
 
 ## 题解2 - 排序后使用两根指针
 
