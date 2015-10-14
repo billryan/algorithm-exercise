@@ -39,8 +39,21 @@ class Leetcode(object):
     def __init__(self):
         self.url_algo = "https://leetcode.com/problemset/algorithms/"
 
-    def get_src_page(src_url):
+    def get_src_page(self, src_url):
         return pq(url=src_url)
+
+    def get_src_detail(self, src_url):
+        src_page = self.get_src_page(src_url)
+        src_detail = {}
+        problem_detail = src_page('.question-content')
+        raw_detail = problem_detail.html()
+        body_start = raw_detail.find('<p>')
+        body_end = raw_detail.find('<div>')
+        raw_body = raw_detail[body_start:body_end]
+        body = raw_body.replace('<b>', '<h4>')
+        body = body.replace('</b>', '</h4>')
+        src_detail['body'] = body
+        return src_detail
 
     def get_src_tags(src_page):
         raw_tags = src_page('.btn.btn-xs.btn-primary')
@@ -92,9 +105,11 @@ def main(argv):
         print("")
         print(h.handle(src_body))
     elif url.startswith(leetcode_url):
-        # to be done
+        leetcode = Leetcode()
+        src_body = leetcode.get_src_detail(url)['body']
         print("### Problem")
         print("")
+        print(h.handle(src_body))
     else:
         # temp
         hihocoder = Hihocoder()
