@@ -4,18 +4,22 @@
 
 - lintcode: [(36) Reverse Linked List II](http://www.lintcode.com/en/problem/reverse-linked-list-ii/)
 
-```
+### Problem
+
 Reverse a linked list from position m to n.
 
-Note
+#### Example
+
+Given **1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL**, m = 2 and n = 4, return
+1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;NULL.
+
+#### Note
+
 Given m, n satisfy the following condition: 1 ≤ m ≤ n ≤ length of list.
 
-Example
-Given 1->2->3->4->5->NULL, m = 2 and n = 4, return 1->4->3->2->5->NULL.
+#### Challenge
 
-Challenge
 Reverse it in-place and in one-pass
-```
 
 ## 题解
 
@@ -86,6 +90,55 @@ public:
         return dummy->next;
     }
 };
+```
+
+### Java
+
+```java
+/**
+ * Definition for ListNode
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    /**
+     * @param ListNode head is the head of the linked list 
+     * @oaram m and n
+     * @return: The head of the reversed ListNode
+     */
+    public ListNode reverseBetween(ListNode head, int m , int n) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        
+        // find the mth node
+        ListNode premNode = dummy;
+        for (int i = 1; i < m; i++) {
+            premNode = premNode.next;
+        }
+        
+        // reverse node between m and n
+        ListNode prev = null, curr = premNode.next;
+        while (curr != null && (m <= n)) {
+            ListNode nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+            m++;
+        }
+        
+        // join head and tail before m and after n
+        premNode.next.next = curr;
+        premNode.next = prev;
+        
+        return dummy.next;
+    }
+}
 ```
 
 ### 源码分析
