@@ -177,7 +177,7 @@ public class Sort {
 2. 基准元素设置为数组的第一个元素。
 3. 执行 partition 操作，大循环内包含两个内循环：
    - 左侧内循环自增 $$i$$, 直到遇到**不小于**基准元素的值为止。
-   - 右侧内循环自减 $$j$$, 直到遇到**不大于**基准元素的值为止。
+   - 右侧内循环自减 $$j$$, 直到遇到**小于**基准元素的值为止。
 4. 大循环测试两个下标是否相等或交叉，交换其值。
 
 这样一来对于数组元素均相等的情形下，每次 partition 恰好在中间元素，故共递归调用 $$\log n$$ 次，每层递归调用进行 partition 操作的比较次数总和近似为 $$n$$. 故总计需 $$n \log n$$ 次比较。[^programming_pearls]
@@ -242,7 +242,7 @@ public class Sort {
 			while (left <= right && array[left] < pivot) {
 				left++;
 			}
-			while (array[right] > pivot) {
+			while (left <= right && array[right] >= pivot) {
 				right--;
 			}
 			if (left > right) break;
