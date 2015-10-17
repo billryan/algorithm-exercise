@@ -123,7 +123,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/basics_data_structure/linked_list.html</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -213,7 +213,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/basics_sorting/quick_sort.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-14</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -387,7 +387,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_tree/binary_tree_postorder_traversal.html</loc>
-        <lastmod>2015-08-31</lastmod>
+        <lastmod>2015-10-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -441,7 +441,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_tree/maximum_depth_of_binary_tree.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-13</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -699,7 +699,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation_sequence.html</loc>
-        <lastmod>2015-08-22</lastmod>
+        <lastmod>2015-10-06</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -735,7 +735,13 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/unique_subsets.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/word_search.html</loc>
+        <lastmod>2015-10-06</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -777,7 +783,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/graph/route_between_two_nodes_in_graph.html</loc>
-        <lastmod>2015-09-28</lastmod>
+        <lastmod>2015-10-08</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -795,7 +801,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/integer_array/2_sum.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-14</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -1005,7 +1011,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/reorder_list.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-14</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -1017,7 +1023,13 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/reverse_linked_list_ii.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-14</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/rotate_list.html</loc>
+        <lastmod>2015-10-08</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -1268,6 +1280,18 @@
     </url>
     
     <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/problem_misc/continuous_subarray_sum.html</loc>
+        <lastmod>2015-10-07</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/problem_misc/continuous_subarray_sum_ii.html</loc>
+        <lastmod>2015-10-08</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/problem_misc/find_the_missing_number.html</loc>
         <lastmod>2015-09-26</lastmod>
         <changefreq>daily</changefreq>
@@ -1286,6 +1310,12 @@
     </url>
     
     <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/problem_misc/longest_consecutive_sequence.html</loc>
+        <lastmod>2015-10-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/problem_misc/matrix_zigzag_traversal.html</loc>
         <lastmod>2015-09-19</lastmod>
         <changefreq>daily</changefreq>
@@ -1300,6 +1330,12 @@
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/problem_misc/minimum_subarray.html</loc>
         <lastmod>2015-09-18</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/problem_misc/minimum_window_substring.html</loc>
+        <lastmod>2015-10-06</lastmod>
         <changefreq>daily</changefreq>
     </url>
     

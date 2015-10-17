@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from shutil import copyfile
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 from subprocess import check_output
@@ -42,10 +43,13 @@ def sitemap(suffix='.md'):
     sitemap_fn = os.path.join(ROOT_DIR, 'sitemap.xml')
     with open(sitemap_fn, 'w') as sf:
         sf.write(sitemap_xml)
-    sitemap_fn = os.path.join(ROOT_DIR, 'sitemap.txt')
-    with open(sitemap_fn, 'w') as sf:
+    sitemap_txt_fn = os.path.join(ROOT_DIR, 'sitemap.txt')
+    with open(sitemap_txt_fn, 'w') as sf:
         urls = [root_url + '/' + page['url'] + '\n' for page in pages]
         sf.writelines(urls)
+    # gitbook do not serve static files under root dir
+    sitemap_en_fn = os.path.join(ROOT_DIR, 'en' + os.sep + 'sitemap.xml')
+    copyfile(sitemap_fn, sitemap_en_fn)
 
 
 if __name__ == "__main__":
