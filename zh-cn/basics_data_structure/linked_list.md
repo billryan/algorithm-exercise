@@ -27,11 +27,21 @@ public class ListNode {
 
 ### 反转链表
 
+#### 单向链表
+
 链表的基本形式是：`1 -> 2 -> 3 -> null`，反转需要变为 `3 -> 2 -> 1 -> null`。这里要注意：
 - 访问某个节点 curt.next 时，要检验 curt 是否为 null。
 - 要把反转后的最后一个节点（即反转前的第一个节点）指向 null。
 
 ```java
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+
 public ListNode reverse(ListNode head) {
     ListNode prev = null;
     while (head != null) {
@@ -41,6 +51,32 @@ public ListNode reverse(ListNode head) {
         head = next;
     }
     return prev;
+}
+```
+
+#### 双向链表
+
+和单向链表的区别在于：双向链表的反转核心在于`next`和`prev`域的交换，还需要注意的是当前节点和上一个节点的递推。
+
+```java
+class DListNode {
+    int val;
+    DListNode prev, next;
+    DListNode(int val) {
+        this.val = val;
+        this.prev = this.next = null;
+    }
+}
+
+public DListNode reverse(DListNode head) {
+    DListNode curr = null;
+    while (head != null) {
+        curr = head;
+        head = curr.next;
+        curr.next = curr.prev;
+        curr.prev = head;
+    }
+    return curr;
 }
 ```
 
