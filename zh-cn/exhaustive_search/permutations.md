@@ -5,31 +5,31 @@
 - leetcode: [Permutations | LeetCode OJ](https://leetcode.com/problems/permutations/)
 - lintcode: [(15) Permutations](http://www.lintcode.com/en/problem/permutations/)
 
-```
+### Problem
+
 Given a list of numbers, return all possible permutations.
 
-Example
-For nums [1,2,3], the permutaions are:
+#### Example
 
-[
+For nums = `[1,2,3]`, the permutations are:
 
-    [1,2,3],
+    
+    
+    [
+      [1,2,3],
+      [1,3,2],
+      [2,1,3],
+      [2,3,1],
+      [3,1,2],
+      [3,2,1]
+    ]
+    
 
-    [1,3,2],
+#### Challenge
 
-    [2,1,3],
+Do it without recursion.
 
-    [2,3,1],
 
-    [3,1,2],
-
-    [3,2,1]
-
-]
-
-Challenge
-Do it without recursion
-```
 
 ## 题解1 - Recursion(using subsets template)
 
@@ -114,36 +114,27 @@ private:
 ### Java
 
 ```java
-class Solution {
-    /**
-     * @param nums: A list of integers.
-     * @return: A list of permutations.
-     */
-    public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> list = new ArrayList<Integer>();
-
-        if (nums == null || nums.isEmpty()) return result;
-
-        helper(nums, list, result);
-
+public class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (nums == null || nums.length == 0) return result;
+        
+        List<Integer> list = new ArrayList<Integer>();
+        dfs(nums, list, result);
+        
         return result;
     }
-
-    private void helper(ArrayList<Integer> nums, ArrayList<Integer> list,
-                        ArrayList<ArrayList<Integer>> ret
-                        ) {
-
-        if (list.size() == nums.size()) {
-            ret.add(new ArrayList<Integer>(list));
+    
+    private void dfs(int[] nums, List<Integer> list, List<List<Integer>> result) {
+        if (list.size() == nums.length) {
+            result.add(new ArrayList<Integer>(list));
             return;
         }
-
-        for (int i = 0; i < nums.size(); i++) {
-            if (list.contains(nums.get(i))) continue;
-
-            list.add(nums.get(i));
-            helper(nums, list, ret);
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (list.contains(nums[i])) continue;
+            list.add(nums[i]);
+            dfs(nums, list, result);
             list.remove(list.size() - 1);
         }
     }
