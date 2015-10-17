@@ -11,9 +11,7 @@ Given a list of numbers that may has duplicate numbers, return all possible subs
 
 #### Example
 
-If **_S_
-
-= `[1,2,2]`, a solution is:
+If **_S_** = `[1,2,2]`, a solution is:
 
     
     
