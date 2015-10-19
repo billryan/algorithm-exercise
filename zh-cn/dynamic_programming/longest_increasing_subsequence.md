@@ -128,11 +128,13 @@ public class Solution {
 
 使用了与 nums 等长的空间，空间复杂度 $$O(n)$$. 两重 for 循环，最坏情况下 $$O(n^2)$$, 遍历求得最大值，时间复杂度为 $$O(n)$$, 故总的时间复杂度为 $$O(n^2)$$.
 
-## Follow up
+# Follow up
 
-上述问题均只输出最大值，现在需要输出 LIS 中的每一个值。
+上述问题均只输出最大值，现在需要输出 LIS 中的每一个原始元素值。
 
-由于以上递归推导式只能返回最大值，如果现在需要返回 LIS 中的每个元素，我们不妨从后往前考虑，依次移除 lis[i] 数组中的值(减一)和索引，遇到和 lis[i]的值相等的 LIS 时即加入到最终返回结果。
+## 题解1 - LIS
+
+由于以上递归推导式只能返回最大值，如果现在需要返回 LIS 中的每个元素，直观来讲，构成 LIS 数组中的值对应的原数组值即为我们想要的结果。我们不妨从后往前考虑，依次移除 lis[i] 数组中的值(减一)和索引，遇到和 lis[i]的值相等的 LIS 时即加入到最终返回结果。
 
 ### Java
 
@@ -142,7 +144,7 @@ import java.util.*;
 public class Solution {
     /**
      * @param nums: The integer array
-     * @return: The length of LIS (longest increasing subsequence)
+     * @return: LIS array
      */
     public int[] longestIncreasingSubsequence(int[] nums) {
         if (nums == null || nums.length == 0) return null;
@@ -190,4 +192,4 @@ public class Solution {
 }
 ```
 
-关于`// get result` 那一节中为何`max_lis` 自减一定是会得到最终想要的结果？假如有和其一样的lis如何破？不妨用反证法证明之，假如存在，那么可以分三种情况讨论，前/后/中。
+关于`// get result` 那一节中为何`max_lis` 自减一定是会得到最终想要的结果？假如有和其一样的lis如何破？根据 DP 中状态的定义可知正好为其逆过程，只不过答案不唯一，反向输出的答案输出的是最靠右的结果。
