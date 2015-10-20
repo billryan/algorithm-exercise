@@ -2,91 +2,75 @@
 
 ## Source
 
+- leetcode: [Search for a Range | LeetCode OJ](https://leetcode.com/problems/search-for-a-range/)
 - lintcode: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-for-a-range/)
 
-```
-Given a sorted array of integers, find the starting and ending position of a given target value.
+### Problem
 
-Your algorithm's runtime complexity must be in the order of O(log n).
+Given a sorted array of _n_ integers, find the starting and ending position of
+a given target value.
 
-If the target is not found in the array, return [-1, -1].
+If the target is not found in the array, return `[-1, -1]`.
 
-Example
-Given [5, 7, 7, 8, 8, 10] and target value 8,
-return [3, 4].
-```
+#### Example
+
+Given `[5, 7, 7, 8, 8, 10]` and target value `8`, return `[3, 4]`.
+
+#### Challenge
+
+O(log _n_) time.
 
 ## 题解
 
-Search for a range 的题目可以拆解为找 first & last position 的题目，即要做两次二分。由上题二分查找可找到满足条件的左边界，因此只需要再将右边界找出即可。注意到在`(target == nums[mid]`时赋值语句为`end = mid`，将其改为`start = mid`即可找到右边界，解毕。
+lower/upper bound 的结合，做两次搜索即可。
 
 ### Java
 
 ```java
-/**
- * 本代码fork自九章算法。没有版权欢迎转发。
- * http://www.jiuzhang.com/solutions/search-for-a-range/
- */
 public class Solution {
-    /**
+    /** 
      *@param A : an integer sorted array
      *@param target :  an integer to be inserted
      *return : a list of length 2, [index1, index2]
      */
-    public ArrayList<Integer> searchRange(ArrayList<Integer> A, int target) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        int start, end, mid;
-        result.add(-1);
-        result.add(-1);
-
-        if (A == null || A.size() == 0) {
-            return result;
-        }
-
-        // search for left bound
-        start = 0;
-        end = A.size() - 1;
-        while (start + 1 < end) {
-            mid = start + (end - start) / 2;
-            if (A.get(mid) == target) {
-                end = mid; // set end = mid to find the minimum mid
-            } else if (A.get(mid) > target) {
-                end = mid;
+    public int[] searchRange(int[] A, int target) {
+        int[] result = new int[]{-1, -1};
+        if (A == null || A.length == 0) return result;
+        
+        int lb = -1, ub = A.length;
+        // lower bound
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (A[mid] < target) {
+                lb = mid;
             } else {
-                start = mid;
+                ub = mid;
             }
         }
-        if (A.get(start) == target) {
-            result.set(0, start);
-        } else if (A.get(end) == target) {
-            result.set(0, end);
+        // whether A[lb + 1] == target, check lb + 1 first
+        if ((lb + 1 < A.length) && (A[lb + 1] == target)) {
+            result[0] = lb + 1;
         } else {
+            result[0] = -1;
+            result[1] = -1;
+            // target is not in the array
             return result;
         }
-
-        // search for right bound
-        start = 0;
-        end = A.size() - 1;
-        while (start + 1 < end) {
-            mid = start + (end - start) / 2;
-            if (A.get(mid) == target) {
-                start = mid; // set start = mid to find the maximum mid
-            } else if (A.get(mid) > target) {
-                end = mid;
+        
+        // upper bound, since ub >= lb, we do not reset lb
+        ub = A.length;
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (A[mid] > target) {
+                ub = mid;
             } else {
-                start = mid;
+                lb = mid;
             }
         }
-        if (A.get(end) == target) {
-            result.set(1, end);
-        } else if (A.get(start) == target) {
-            result.set(1, start);
-        } else {
-            return result;
-        }
-
+        // target must exist in the array
+        result[1] = ub - 1;
+        
         return result;
-        // write your code here
     }
 }
 ```
@@ -94,10 +78,9 @@ public class Solution {
 ### 源码分析
 
 1. 首先对输入做异常处理，数组为空或者长度为0
-2. 初始化 `start, end, mid`三个变量，注意mid的求值方法，可以防止两个整型值相加时溢出
-3. **使用迭代而不是递归**进行二分查找
-4. while终止条件应为`start + 1 < end`而不是`start <= end`，`start == end`时可能出现死循环
-5. 先求左边界，迭代终止时先判断`A.get(start) == target`，再判断`A.get(end) == target`，因为迭代终止时target必取start或end中的一个，而end又大于start，取左边界即为start.
-6. 再求右边界，迭代终止时先判断`A.get(end) == target`，再判断`A.get(start) == target`
-7. 两次二分查找除了终止条件不同，中间逻辑也不同，即当`A.get(mid) == target`如果是左边界（first postion），中间逻辑是`end = mid`；若是右边界（last position），中间逻辑是`start = mid`
-8. 两次二分查找中间勿忘记重置 `start, end` 的变量值。
+2. 分 lower/upper bound 两次搜索，注意如果在 lower bound 阶段未找到目标值时，upper bound 也一定找不到。
+3. 取`A[lb + 1]` 时一定要注意判断索引是否越界！
+
+### 复杂度分析
+
+两次二分搜索，时间复杂度仍为 $$O(\log n)$$.
