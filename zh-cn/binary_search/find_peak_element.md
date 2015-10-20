@@ -5,31 +5,35 @@
 - leetcode: [Find Peak Element | LeetCode OJ](https://leetcode.com/problems/find-peak-element/)
 - lintcode: [(75) Find Peak Element](http://www.lintcode.com/en/problem/find-peak-element/)
 
-```
-There is an integer array which has the following features:
+### Problem
 
-    * The numbers in adjacent positions are different.
-    * A[0] < A[1] && A[A.length - 2] > A[A.length - 1].
+A peak element is an element that is greater than its neighbors.
 
-We define a position P is a peek if A[P] > A[P-1] && A[P] > A[P+1].
+Given an input array where `num[i] ≠ num[i+1]`, find a peak element and return
+its index.
 
-Find a peak element in this array. Return the index of the peak.
+The array may contain multiple peaks, in that case return the index to any one
+of the peaks is fine.
 
-Note
-The array may contains multiple peeks, find any of them.
+You may imagine that `num[-1] = num[n] = -∞`.
 
-Example
-[1, 2, 1, 3, 4, 5, 7, 6]
+For example, in array `[1, 2, 3, 1]`, 3 is a peak element and your function
+should return the index number 2.
 
-return index 1 (which is number 2)  or 6 (which is number 7)
+#### Note:
 
-Challenge
-Time complexity O(logN)
-```
+Your solution should be in logarithmic complexity.
 
-## 题解1 - lintcode
+#### Credits:
+
+
+Special thanks to [@ts](https://oj.leetcode.com/discuss/user/ts) for adding
+this problem and creating all test cases.
+
+## 题解1
 
 由时间复杂度的暗示可知应使用二分搜索。首先分析若使用传统的二分搜索，若`A[mid] > A[mid - 1] && A[mid] < A[mid + 1]`，则找到一个peak为A[mid]；若`A[mid - 1] > A[mid]`，则A[mid]左侧必定存在一个peak，可用反证法证明：若左侧不存在peak，则A[mid]左侧元素必满足`A[0] > A[1] > ... > A[mid -1] > A[mid]`，与已知`A[0] < A[1]`矛盾，证毕。同理可得若`A[mid + 1] > A[mid]`，则A[mid]右侧必定存在一个peak。如此迭代即可得解。
+由于题中假设端点外侧的值均为负无穷大，即`num[-1] < num[0] && num[n-1] > num[n]`, 那么问题来了，这样一来就不能确定峰值一定存在了，因为给定数组为单调序列的话就咩有峰值了，但是实际情况是——题中有负无穷的假设，也就是说在单调序列的情况下，峰值为数组首部或者尾部元素，谁大就是谁了。
 
 备注：如果本题是找 first/last peak，就不能用二分法了。
 
@@ -97,73 +101,21 @@ class Solution {
     public int findPeak(int[] A) {
         if (A == null || A.length == 0) return -1;
 
-        int l = 0, r = A.length - 1;
-        while (l + 1 < r) {
-            int mid = l + (r - l) / 2;
-            if (A[mid] < A[mid - 1]) {
-                r = mid;
-            } else if (A[mid] < A[mid + 1]) {
-                l = mid;
+        int lb = 0, ub = A.length - 1;
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (A[mid] < A[mid + 1]) {
+                lb = mid;
+            } else if (A[mid] < A[mid - 1]){
+                ub = mid;
             } else {
+                // find a peak
                 return mid;
             }
         }
 
-        int mid = A[l] > A[r] ? l : r;
-        return mid;
-    }
-}
-```
-
-## 题解2 - leetcode
-
-leetcode 上的题和 lintcode 上有细微的变化，题目如下：
-
-```
-A peak element is an element that is greater than its neighbors.
-
-Given an input array where num[i] ≠ num[i+1],
-find a peak element and return its index.
-
-The array may contain multiple peaks,
-in that case return the index to any one of the peaks is fine.
-
-You may imagine that num[-1] = num[n] = -∞.
-
-For example, in array [1, 2, 3, 1], 3 is a peak element and
-your function should return the index number 2.
-
-click to show spoilers.
-
-Note:
-Your solution should be in logarithmic complexity.
-```
-
-如果一开始做的是 leetcode 上的版本而不是 lintcode 上的话，这道题难度要大一些。有了以上的分析基础再来刷 leetcode 上的这道题就是小 case 了，注意题中的关键提示`num[-1] = num[n] = -∞`, 虽然不像 lintcode 上那么直接，但是稍微变通下也能想到。即`num[-1] < num[0] && num[n-1] > num[n]`, 那么问题来了，这样一来就不能确定峰值一定存在了，因为给定数组为单调序列的话就咩有峰值了，但是实际情况是——题中有负无穷的假设，也就是说在单调序列的情况下，峰值为数组首部或者尾部元素，谁大就是谁了。
-
-### Java
-
-```java
-public class Solution {
-    public int findPeakElement(int[] nums) {
-        if (nums == null || nums.length == 0) return -1;
-
-        int l = 0, r = nums.length - 1;
-        while (l + 1 < r) {
-            mid = l + (r - l) / 2;
-            if (nums[mid] < nums[mid - 1]) {
-                // 1 peak at least in the left side
-                r = mid;
-            } else if (nums[mid] < nums[mid + 1]) {
-                // 1 peak at least in the right side
-                l = mid;
-            } else {
-                return mid;
-            }
-        }
-
-        mid = nums[l] > nums[r] ? l : r;
-        return mid;
+        // return a larger number
+        return A[lb] > A[ub] ? lb : ub;
     }
 }
 ```
@@ -176,7 +128,7 @@ public class Solution {
 
 二分法，时间复杂度 $$O(\log n)$$.
 
-### Java - compact implementation[^leetcode_discussion]
+#### Java - compact implementation[^leetcode_discussion]
 
 ```java
 public class Solution {

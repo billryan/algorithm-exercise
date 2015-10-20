@@ -18,12 +18,12 @@ bad one. The details interface can be found in the code's annotation part.
 
 Given n = `5`:
 
-    
-    
+
+
     isBadVersion(3) -> false
     isBadVersion(5) -> true
     isBadVersion(4) -> true
-    
+
 
 Here we are 100% sure that the 4th version is the first bad version.
 
@@ -49,7 +49,7 @@ You should call _isBadVersion_ as few as possible.
 #    def isBadVersion(cls, id)
 #        # Run unit tests to check whether verison `id` is a bad version
 #        # return true if unit tests passed else false.
-# You can use VersionControl.isBadVersion(10) to check whether version 10 is a 
+# You can use VersionControl.isBadVersion(10) to check whether version 10 is a
 # bad version.
 class Solution:
     """
@@ -64,7 +64,7 @@ class Solution:
                 ub = mid
             else:
                 lb = mid
-        
+
         return lb + 1
 ```
 
@@ -76,7 +76,7 @@ class Solution:
  *     public:
  *     static bool isBadVersion(int k);
  * }
- * you can use VersionControl::isBadVersion(k) to judge whether 
+ * you can use VersionControl::isBadVersion(k) to judge whether
  * the kth code version is bad or not.
 */
 class Solution {
@@ -95,7 +95,7 @@ public:
                 lb = mid;
             }
         }
-        
+
         return lb + 1;
     }
 };
@@ -108,7 +108,7 @@ public:
  * public class VersionControl {
  *     public static boolean isBadVersion(int k);
  * }
- * you can use VersionControl.isBadVersion(k) to judge whether 
+ * you can use VersionControl.isBadVersion(k) to judge whether
  * the kth code version is bad or not.
 */
 class Solution {
@@ -126,7 +126,7 @@ class Solution {
                 lb = mid;
             }
         }
-        
+
         return lb + 1;
     }
 }
