@@ -1,34 +1,27 @@
-# Find Minimum in Rotated Sorted Array
+# Find Minimum in Rotated Sorted Array II
 
 ## Source
 
-- leetcode: [Find Minimum in Rotated Sorted Array | LeetCode OJ](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-- lintcode: [(159) Find Minimum in Rotated Sorted Array](http://www.lintcode.com/en/problem/find-minimum-in-rotated-sorted-array/)
+- leetcode: [Find Minimum in Rotated Sorted Array II | LeetCode OJ](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)
+- lintcode: [(160) Find Minimum in Rotated Sorted Array II](http://www.lintcode.com/en/problem/find-minimum-in-rotated-sorted-array-ii/)
 
 ### Problem
 
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 
-(i.e., `0 1 2 4 5 6 7` might become `4 5 6 7 0 1 2`).
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
 
 Find the minimum element.
 
+The array may contain duplicates.
+
 #### Example
 
-Given `[4, 5, 6, 7, 0, 1, 2]` return `0`
-
-#### Note
-
-You may assume no duplicate exists in the array.
-
+Given [4,4,5,6,7,0,1,2] return 0
 
 ## 题解
 
-如前节所述，对于旋转数组的分析可使用画图的方法，如下图所示，升序数组经旋转后可能为如下两种形式。
-
-![Rotated Array](../images/rotated_array.png)
-
-最小值可能在上图中的两种位置出现，如果仍然使用数组首部元素作为target去比较，则需要考虑图中右侧情况。**使用逆向思维分析，如果使用数组尾部元素分析，则无需图中右侧的特殊情况。**不过考虑在内的话也算是一种优化。
+由于此题输入可能有重复元素，因此在`num[mid] == num[end]`时无法使用二分的方法缩小start或者end的取值范围。此时只能使用递增start/递减end逐步缩小范围。
 
 ### C++
 
@@ -49,10 +42,12 @@ public:
         vector<int>::size_type mid;
         while (start + 1 < end) {
             mid = start + (end - start) / 2;
-            if (num[mid] < num[end]) {
+            if (num[mid] > num[end]) {
+                start = mid;
+            } else if (num[mid] < num[end]) {
                 end = mid;
             } else {
-                start = mid;
+                --end;
             }
         }
 
@@ -85,8 +80,10 @@ public class Solution {
             int mid = lb + (ub - lb) / 2;
             if (num[mid] < num[ub]) {
                 ub = mid;
-            } else {
+            } else if (num[mid] > num[ub]){
                 lb = mid;
+            } else {
+                ub--;
             }
         }
 
@@ -97,8 +94,8 @@ public class Solution {
 
 ### 源码分析
 
-仅需注意使用`num[end]`(使用 num[lb]不是那么直观)作为判断依据即可，由于题中已给无重复数组的条件，故无需处理`num[mid] == num[end]`特殊条件。
+注意`num[mid] > num[ub]`时应递减 ub 或者递增 lb.
 
 ### 复杂度分析
 
-由于无重复元素，平均情况下复杂度为 $$O(\log n)$$.
+最坏情况下 $$O(n)$$, 平均情况下 $$O(\log n)$$.

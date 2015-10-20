@@ -2,37 +2,32 @@
 
 ## Source
 
+- leetcode: [Search a 2D Matrix II | LeetCode OJ](https://leetcode.com/problems/search-a-2d-matrix-ii/)
 - lintcode: [(38) Search a 2D Matrix II](http://lintcode.com/en/problem/search-a-2d-matrix-ii/)
 
-```
+### Problem
+
 Write an efficient algorithm that searches for a value in an m x n matrix, return the occurrence of it.
 
 This matrix has the following properties:
 
-    * Integers in each row are sorted from left to right.
+* Integers in each row are sorted from left to right.
+* Integers in each column are sorted from up to bottom.
+* No duplicate integers in each row or column.
 
-    * Integers in each column are sorted from up to bottom.
+#### Example
 
-    * No duplicate integers in each row or column.
-
-Example
 Consider the following matrix:
 
-[
-
     [1, 3, 5, 7],
-
     [2, 4, 7, 8],
-
     [3, 5, 9, 10]
 
-]
+Given target = **3**, return **2**.
 
-Given target = 3, return 2.
+#### Challenge
 
-Challenge
 O(m+n) time and O(1) extra space
-```
 
 ## 题解 - 自右上而左下
 
@@ -88,37 +83,24 @@ public class Solution {
      * @return: An integer indicate the occurrence of target in the given matrix
      */
     public int searchMatrix(int[][] matrix, int target) {
-        int occurence = 0;
-
-        if (matrix == null || matrix.length == 0) {
-            return occurence;
-        }
-        if (matrix[0] == null || matrix[0].length == 0) {
-            return occurence;
+        int occurrence = 0;
+        if (matrix == null || matrix[0] == null) {
+            return occurrence;
         }
 
-        int row = matrix.length - 1;
-        int column = matrix[0].length - 1;
-        int index_row = 0, index_column = column;
-        int number;
-
-        if (target < matrix[0][0] || target > matrix[row][column]) {
-            return occurence;
-        }
-
-        while (index_row < row + 1 && index_column + 1 > 0) {
-            number = matrix[index_row][index_column];
-            if (target == number) {
-                occurence++;
-                index_column--;
-            } else if (target < number) {
-                index_column--;
-            } else if (target > number) {
-                index_row++;
+        int row = 0, col = matrix[0].length - 1;
+        while (row >= 0 && row < matrix.length && col >= 0 && col < matrix[0].length) {
+            if (matrix[row][col] == target) {
+                occurrence++;
+                col--;
+            } else if (matrix[row][col] > target) {
+                col--;
+            } else {
+                row++;
             }
         }
 
-        return occurence;
+        return occurrence;
     }
 }
 ```
@@ -128,6 +110,12 @@ public class Solution {
 1. 首先对输入做异常处理，不仅要考虑到matrix为空串，还要考虑到matrix[0]也为空串。
 2. 注意循环终止条件。
 3. 在找出`target`后应继续向左搜索其他可能相等的元素，下方比当前元素大，故排除此列。
+
+**严格来讲每次取二维矩阵元素前都应该进行 null 检测。**
+
+### 复杂度分析
+
+由于每行每列遍历一次，故时间复杂度为 $$O(m + n)$$.
 
 ## Reference
 
