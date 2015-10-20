@@ -76,7 +76,7 @@ public class Main {
 
 **有时复杂的边界条件处理可以通过『补项』这种优雅的方式巧妙处理。**
 
-除了常规的 lower/upper bound, 有时问题往往不是返回目标值可能的索引，此时可能需要判断下 lb/ub 是否越界并和目标值分别比较。如 [Search for a Range](http://algorithm.yuanbin.me/zh-cn/binary_search/search_for_a_range.html).
+关于lb 和 ub 的初始化，由于`mid = lb + (ub - lb) / 2`, 且有`lb + 1 < ub`，故 mid 还是有可能为`ub - 1`或者`lb + 1`的，在需要访问`mid + 1`或者`mid - 1`处索引的元素时可能会越界。这时候就需要将初始化方式改为`lb = 0, ub = A.length - 1` 了，最后再加一个关于`lb, ub` 处索引元素的判断即可。如 [Search for a Range](http://algorithm.yuanbin.me/zh-cn/binary_search/search_for_a_range.html) 和 [Find Peak Element](http://algorithm.yuanbin.me/zh-cn/binary_search/find_peak_element.html). 尤其是 Find Peak Element 中 lb 和 ub 的初始值如果初始化为-1和数组长度会带来一些麻烦。
 
 ## 模板二 - 最优解
 
