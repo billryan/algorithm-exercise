@@ -2,59 +2,81 @@
 
 二分搜索是一种在有序数组中寻找目标值的经典方法，也就是说使用前提是『有序数组』。非常简单的题中『有序』特征非常明显，但更多时候可能需要我们自己去构造『有序数组』。下面我们从最基本的二分搜索开始逐步深入。
 
-## 模板一 - 从有序数组中寻找目标值
+## 模板一 - lower/upper bound
 
-以 lintcode 上一道测试题 [search insert position](http://algorithm.yuanbin.me/zh-cn/binary_search/search_insert_position.html) 为例，题目要求寻找目标值在升序数组中插入的索引。我们先直接看代码。
+定义 lower bound 为在给定升序数组中大于等于目标值的最小索引，upper bound 则为小于等于目标值的最大索引，下面上代码和测试用例。
 
 ### Java
 
 ```java
-public class Solution {
-    /**
-     * param A : an integer sorted array
-     * param target :  an integer to be inserted
-     * return : an integer
-     */
-    public int searchInsert(int[] A, int target) {
-        if (A == null || A.length == 0) {
-            return -1;
-        }
-        // lower bound, upper bound
-        int lb = -1, ub = A.length;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,2,2,3,4,6,6,6,13,18};
+        System.out.println(lowerBound(nums, 6)); // 5
+        System.out.println(upperBound(nums, 6)); // 7
+        System.out.println(lowerBound(nums, 7)); // 8
+        System.out.println(upperBound(nums, 7)); // 7
+    }
+
+    /*
+    * nums[index] >= target, min(index)
+    */
+    public static int lowerBound(int[] nums, int target) {
+        if (nums == null || nums.length == 0) return -1;
+        int lb = -1, ub = nums.length;
         while (lb + 1 < ub) {
             int mid = lb + (ub - lb) / 2;
-            if (A[mid] == target) {
-                return mid; // no duplicates
-            } else if (A[mid] < target) {
+            if (nums[mid] < target) {
                 lb = mid;
             } else {
                 ub = mid;
             }
         }
 
-	    return lb + 1;
+        return lb + 1;
+    }
+
+    /*
+    * nums[index] <= target, max(index)
+    */
+    public static int upperBound(int[] nums, int target) {
+        if (nums == null || nums.length == 0) return -1;
+        int lb = -1, ub = nums.length;
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (nums[mid] > target) {
+                ub = mid;
+            } else {
+                lb = mid;
+            }
+        }
+
+        return ub - 1;
     }
 }
 ```
 
 ### 源码分析
 
-以上二分搜索的模板有两个非常优雅的实现：
+以`lowerBound`的实现为例，以上二分搜索的模板有几个非常优雅的实现：
 
-1. `while` 循环中 `start + 1 < end`, 而不是等号，因为取等号可能会引起死循环。初始化`start < end` 时，最后循环退出时一定有`start + 1 == end`.
-2. `start` 和 `end` 的初始化，初始化为数组的两端以外，这种初始化方式比起`0` 和`nums.length - 1` 有不少优点，详述如下。
+1. `while` 循环中 `lb + 1 < ub`, 而不是等号，因为取等号可能会引起死循环。初始化`lb < ub` 时，最后循环退出时一定有`lb + 1 == ub`.
+2. `mid = lb + (ub - lb) / 2`, 可有效防止两数相加后溢出。
+3. `lb` 和 `ub` 的初始化，初始化为数组的两端以外，这种初始化方式比起`0` 和`nums.length - 1` 有不少优点，详述如下。
 
-插入位置可以分三种典型情况：
+如果遇到有问插入索引的位置时，可以分三种典型情况：
 
-1. 目标值在数组范围之内，最后返回值一定是`start + 1`
-2. 目标值比数组最小值还小，此时`start` 一直为`-1`, 故最后返回`start + 1` 也没错，也可以将`-1` 理解为数组前一个更小的值
-3. 目标值大于等于数组最后一个值，由于循环退出条件为`start + 1 == end`, 那么循环退出时一定有`start = A.length - 1`, 应该返回`start + 1`
+1. 目标值在数组范围之内，最后返回值一定是`lb + 1`
+2. 目标值比数组最小值还小，此时`lb` 一直为`-1`, 故最后返回`lb + 1` 也没错，也可以将`-1` 理解为数组前一个更小的值
+3. 目标值大于等于数组最后一个值，由于循环退出条件为`lb + 1 == lb`, 那么循环退出时一定有`lb = A.length - 1`, 应该返回`lb + 1`
 
-综上所述，返回`start + 1`是非常优雅的实现。其实以上三种情况都可以统一为一种方式来理解，即索引`-1` 对应于数组前方一个非常小的数，索引`end` 即对应数组后方一个非常大的数，那么要插入的数就一定在`start` 和`end` 之间了。
+综上所述，返回`lb + 1`是非常优雅的实现。其实以上三种情况都可以统一为一种方式来理解，即索引`-1` 对应于数组前方一个非常小的数，索引`ub` 即对应数组后方一个非常大的数，那么要插入的数就一定在`lb` 和`ub` 之间了。
 
 **有时复杂的边界条件处理可以通过『补项』这种优雅的方式巧妙处理。**
 
-使用这个模板可以直接解决的问题有如 lower/upper bound, 有序数组中寻找目标值等。
+除了常规的 lower/upper bound, 有时问题往往不是返回目标值可能的索引，此时可能需要判断下 lb/ub 是否越界并和目标值分别比较。如 [Search for a Range](http://algorithm.yuanbin.me/zh-cn/binary_search/search_for_a_range.html).
 
 ## 模板二 - 最优解
 
@@ -135,7 +157,7 @@ public class Main {
 
 ## 模板三 - 二分搜索的 `while` 结束条件判定
 
-> **Note** 对于整型我们通常使用`lb + 1 < ub`, 但对于`double`型数据来说会有些精度上的丢失，使得结束条件不是那么好确定。像上题中采用的方法是题目中使用的精度除10。但有时候这种精度可能还是不够，如果结束条件`lb + EPS < ub`中使用的 EPS 过小时 double 型数据精度有可能不够从而导致死循环的产生！这时候我们将`while`循环体替换为`for (int i = 0; i < 100; i++)`, 100 次循环后可以达到 $$10^{-30}$$ 精度范围，一般都没问题。
+对于整型我们通常使用`lb + 1 < ub`, 但对于`double`型数据来说会有些精度上的丢失，使得结束条件不是那么好确定。像上题中采用的方法是题目中使用的精度除10。但有时候这种精度可能还是不够，如果结束条件`lb + EPS < ub`中使用的 EPS 过小时 double 型数据精度有可能不够从而导致死循环的产生！这时候我们将`while`循环体替换为`for (int i = 0; i < 100; i++)`, 100 次循环后可以达到 $$10^{-30}$$ 精度范围，一般都没问题。
 
 ## Reference
 
