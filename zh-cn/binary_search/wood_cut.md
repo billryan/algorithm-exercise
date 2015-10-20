@@ -4,21 +4,24 @@
 
 - lintcode: [(183) Wood Cut](http://www.lintcode.com/en/problem/wood-cut/)
 
-```
-Given n pieces of wood with length L[i] (integer array).
-Cut them into small pieces to guarantee you could have equal or more than k pieces with the same length.
-What is the longest length you can get from the n pieces of wood?
-Given L & k, return the maximum length of the small pieces.
+### Problem
 
-Example
-For L=[232, 124, 456], k=7, return 114.
+Given n pieces of wood with length `L[i]` (integer array). Cut them into small
+pieces to guarantee you could have equal or more than k pieces with the same
+length. What is the longest length you can get from the n pieces of wood?
+Given L &amp; k, return the maximum length of the small pieces.
 
-Note
+#### Example
+
+For `L=[232, 124, 456]`, `k=7`, return `114`.
+
+#### Note
+
 You couldn't cut wood into float length.
 
-Challenge
+#### Challenge
+
 O(n log Len), where Len is the longest length of the wood.
-```
 
 ## 题解 - 二分搜索
 
@@ -32,6 +35,8 @@ $$\sum _{i = 1} ^{n} \frac {L[i]}{l} \geq k$$
 > **Warning** 注意求和与取整的顺序，是先求 `L[i]/l`的单个值，而不是先对`L[i]`求和。
 
 分析到这里就和题 [Sqrt x](http://algorithm.yuanbin.me/zh-cn/binary_search/sqrt_x.html) 差不多一样了，要求的是 $$l$$ 的最大可能取值，同时 $$l$$ 可以看做是从有序序列`[1, max(L[i])]`的一个元素，典型的二分搜素！
+
+P.S. 关于二分搜索总结在 [Binary Search](http://algorithm.yuanbin.me/zh-cn/basics_algorithm/binary_search.html) 一小节，直接套用『模板二——最优化』即可。
 
 ### Python
 
@@ -63,16 +68,45 @@ class Solution:
         return start
 ```
 
+### Java
+
+```java
+public class Solution {
+    /**
+     *@param L: Given n pieces of wood with length L[i]
+     *@param k: An integer
+     *return: The maximum length of the small pieces.
+     */
+    public int woodCut(int[] L, int k) {
+        if (L == null || L.length == 0) return 0;
+
+        int lb = 0, ub = Integer.MAX_VALUE;
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (C(L, k, mid)) {
+                lb = mid;
+            } else {
+                ub = mid;
+            }
+        }
+
+        return lb;
+    }
+
+    // whether it cut with length x and get more than k pieces
+    private boolean C(int[] L, int k, int x) {
+        int sum = 0;
+        for (int l : L) {
+            sum += l / x;
+        }
+        return sum >= k;
+    }
+}
+```
+
 ### 源码分析
 
-1. 异常处理，若对 L 求和所得长度都小于 k，那么肯定无解。
-2. 初始化`start`和`end`, 使用二分搜索。
-3. 使用 list comprehension 求 $$\sum _{i = 1} ^{n} \frac {L[i]}{l}$$.
-4. 若求得的`pieces_sum`小于 k，则说明`mid`偏大，下一次循环应缩小`mid`，对应为将当前`mid`赋给`end`.
-5. 与一般的二分搜索不同，即使有`pieces_sum == k`也不应立即返回`mid`, 因为这里使用了取整运算，满足`pieces_sum == k`的值不止一个，应取其中最大的`mid`, 具体实现中可以将`pieces_sum < k`写在前面，大于等于的情况直接用`start = end`代替。
-6. 排除`end == 2`之后返回`start`即可。
-
-简单对第6条做一些说明，首先需要进行二分搜索的前提是 `sum(L) >= k`且`end`不满足`end == 1 || end == 2`, `end`为2时单独考虑即可。
+定义私有方法`C`为切分为 x 长度时能否大于等于 k 段。若满足条件则更新`lb`, 由于 lb 和 ub 的初始化技巧使得我们无需单独对最后的 lb 和 ub 单独求和判断。九章算法网站上的方法初始化为1和某最大值，还需要单独判断，虽然不会出bug, 但稍显复杂。这个时候lb, ub初始化为两端不满足条件的值的优雅之处就体现出来了。
 
 ### 复杂度分析
 
@@ -80,4 +114,4 @@ class Solution:
 
 ## Reference
 
-- [Wood Cut | 九章算法](http://www.jiuzhang.com/solutions/wood-cut/)
+- [Binary Search](http://algorithm.yuanbin.me/zh-cn/basics_algorithm/binary_search.html)
