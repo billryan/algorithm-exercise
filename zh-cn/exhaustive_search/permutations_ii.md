@@ -1,15 +1,19 @@
-# Unique Permutations
+# Permutations II
 
 ## Source
 
-- lintcode: [(16) Unique Permutations](http://www.lintcode.com/en/problem/unique-permutations/)
+- leetcode: [Permutations II | LeetCode OJ](https://leetcode.com/problems/permutations-ii/)
+- lintcode: [(16) Permutations II](http://www.lintcode.com/en/problem/permutations-ii/)
+
+### Problem
+
+Given a list of numbers with duplicate number in it. Find all **unique** permutations.
+
+#### Example
+
+For numbers `[1,2,2]` the unique permutations are:
 
 ```
-Given a list of numbers with duplicate number in it. Find all unique permutations.
-
-Example
-For numbers [1,2,2] the unique permutations are:
-
 [
 
     [1,2,2],
@@ -19,12 +23,13 @@ For numbers [1,2,2] the unique permutations are:
     [2,2,1]
 
 ]
-
-Challenge
-Do it without recursion.
 ```
 
-## 题解
+#### Challenge
+
+Do it without recursion.
+
+## 题解1 - backtracking
 
 在上题的基础上进行剪枝，剪枝的过程和 [Unique Subsets](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/unique_subsets.html) 一题极为相似。为了便于分析，我们可以先分析简单的例子，以 $$[1, 2_1, 2_2]$$ 为例。按照上题 Permutations 的解法，我们可以得到如下全排列。
 
@@ -94,6 +99,75 @@ private:
 Unique Subsets 和 Unique Permutations 的源码模板非常经典！建议仔细研读并体会其中奥义。
 
 后记：在理解 Unique Subsets 和 Unique Permutations 的模板我花了差不多一整天时间才基本理解透彻，建议在想不清楚某些问题时先分析简单的问题，在纸上一步一步分析直至理解完全。
+
+## 题解2 - 字典序
+
+Permutation 的题使用字典序的做法其实更为简单，且为迭代的解法，效率也更高。代码和之前的 Permutations 那道题一模一样。
+
+### Java
+
+```java
+public class Solution {
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (nums == null || nums.length == 0) {
+            return result;
+        }
+        
+        Arrays.sort(nums);
+        while (true) {
+            // step1: add list to result
+            List<Integer> list = new ArrayList<Integer>();
+            for (int i : nums) {
+                list.add(i);
+            }
+            result.add(list);
+            
+            // step2: find nums[k] < nums[k + 1] backward
+            int k = -1;
+            for (int i = nums.length - 2; i >= 0; i--) {
+                if (nums[i] < nums[i + 1]) {
+                    k = i;
+                    break;
+                }
+            }
+            if (k == -1) break;
+            
+            // step3: swap with nums[l]
+            int l = nums.length - 1;
+            while (l > k && nums[l] <= nums[k]) {
+                l--;
+            }
+            int temp = nums[l];
+            nums[l] = nums[k];
+            nums[k] = temp;
+            
+            // step4: reverse between k+1, nums.length - 1
+            reverse(nums, k + 1, nums.length - 1);
+        }
+        
+        return result;
+    }
+    
+    private void reverse(int[] nums, int lb, int ub) {
+        while (lb < ub) {
+            int temp = nums[lb];
+            nums[lb] = nums[ub];
+            nums[ub] = temp;
+            lb++;
+            ub--;
+        }
+    }
+}
+```
+
+### 源码分析
+
+见前一题，略。
+
+### 复杂度分析
+
+略
 
 ## Reference
 

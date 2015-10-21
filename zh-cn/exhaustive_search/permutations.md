@@ -372,50 +372,52 @@ private:
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        List<Integer> numsList = new ArrayList<Integer>();
-
-        if (nums == null) {
-            return result;
-        } else {
-            // convert int[] to List<Integer>
-            for (int item : nums) numsList.add(item);
-    	    if (nums.length <= 1) {
-    		    result.add(numsList);
-    		    return result;
-    	    }
-        }
-
-        Collections.sort(numsList);
-
-	    boolean flag = true;
-        while (flag) {
-            result.add(new ArrayList<Integer>(numsList));
-            // step1: find nums[i] < nums[i + 1]
-            int i = 0;
-            for (i = nums.length - 2; i >= 0; i--) {
-                if (numsList.get(i) < numsList.get(i + 1)) {
+        if (nums == null || nums.length == 0) return result;
+        
+        Arrays.sort(nums);
+        while (true) {
+            // step0: add nums into result
+            List<Integer> list = new ArrayList<Integer>();
+            for (int i : nums) {
+                list.add(i);
+            }
+            result.add(list);
+            
+            // step2: find the first nums[k] < nums[k + 1] from the end to start
+            int k = -1;
+            for (int i = nums.length - 2; i >= 0; i--) {
+                if (nums[i] < nums[i + 1]) {
+                    k = i;
                     break;
-                } else if (i == 0) {
-                    return result;
-		        }
+                }
             }
-            // step2: find nums[i] < nums[j]
-            int j = 0;
-            for (j = nums.length - 1; j > i; j--) {
-                if (numsList.get(i) < numsList.get(j)) break;
+            if (k == -1) break;
+            
+            // step3: find the first nums[l] > nums[k] from the end to start
+            int l = nums.length - 1;
+            while (nums[l] <= nums[k]) {
+                l--;
             }
-            // step3: swap betwenn nums[i] and nums[j]
-            Collections.swap(numsList, i, j);
-            // step4: reverse between [i + 1, n - 1]
-            reverse(numsList, i + 1, nums.length - 1);
+            
+            // step3: swap between l and k
+            int temp = nums[l];
+            nums[l] = nums[k];
+            nums[k] = temp;
+            
+            // step4: reverse between k + 1, nums.length - 1
+            reverse(nums, k + 1, nums.length - 1);
         }
-
+        
         return result;
     }
-
-    private void reverse(List<Integer> nums, int start, int end) {
-        for (int i = start, j = end; i < j; i++, j--) {
-            Collections.swap(nums, i, j);
+    
+    private void reverse(int[] nums, int lb, int ub) {
+        while (lb < ub) {
+            int temp = nums[lb];
+            nums[lb] = nums[ub];
+            nums[ub] = temp;
+            lb++;
+            ub--;
         }
     }
 }
@@ -423,7 +425,7 @@ public class Solution {
 
 ### 源码分析
 
-Java 中需要使用`while (flag)`, 否则编译可能通不过。其他细节如边界条件和 corner case 需要注意下。
+注意好步骤即可，其中对于数组的 reverse 操作不可在 while 循环中自增，极易出 bug! 对于 Java 来说其实可以首先将数组转化为 List, 相应的方法多一些。
 
 ### 复杂度分析
 

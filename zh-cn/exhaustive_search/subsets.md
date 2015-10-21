@@ -5,28 +5,28 @@
 - leetcode: [Subsets | LeetCode OJ](https://leetcode.com/problems/subsets/)
 - lintcode: [(17) Subsets](http://www.lintcode.com/en/problem/subsets/)
 
-```
-Given a set of distinct integers, return all possible subsets.
+### Problem
 
-Note
-Elements in a subset must be in non-descending order.
+Given a set of distinct integers, _nums_, return all possible subsets.
 
-The solution set must not contain duplicate subsets.
+#### Note:
 
-Example
-If S = [1,2,3], a solution is:
+  * Elements in a subset must be in non-descending order.
+  * The solution set must not contain duplicate subsets.
 
-[
-  [3],
-  [1],
-  [2],
-  [1,2,3],
-  [1,3],
-  [2,3],
-  [1,2],
-  []
-]
-```
+For example,  
+If _nums_ = `[1,2,3]`, a solution is:
+    
+    [
+      [3],
+      [1],
+      [2],
+      [1,2,3],
+      [1,3],
+      [2,3],
+      [1,2],
+      []
+    ]
 
 ## 题解
 
