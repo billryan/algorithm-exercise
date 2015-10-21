@@ -153,7 +153,7 @@
    * [Subsets](exhaustive_search/subsets.md)
    * [Unique Subsets](exhaustive_search/unique_subsets.md)
    * [Permutations](exhaustive_search/permutations.md)
-   * [Unique Permutations](exhaustive_search/unique_permutations.md)
+   * [Unique Permutations](exhaustive_search/permutations_ii.md)
    * [Next Permutation](exhaustive_search/next_permutation.md)
    * [Previous Permuation](exhaustive_search/previous_permuation.md)
    * [Unique Binary Search Trees II](exhaustive_search/unique_binary_search_trees_ii.md)
