@@ -125,6 +125,8 @@
    * [Delete Node in the Middle of Singly Linked List](linked_list/delete_node_in_the_middle_of_singly_linked_list.md)
    * [LRU Cache](linked_list/lru_cache.md)
    * [Rotate List](linked_list/rotate_list.md)
+   * [Swap Nodes in Pairs](linked_list/swap_nodes_in_pairs.md)
+   * [Remove Linked List Elements](linked_list/remove_linked_list_elements.md)
 * [Binary Tree](binary_tree/README.md)
    * [Binary Tree Preorder Traversal](binary_tree/binary_tree_preorder_traversal.md)
    * [Binary Tree Inorder Traversal](binary_tree/binary_tree_inorder_traversal.md)
