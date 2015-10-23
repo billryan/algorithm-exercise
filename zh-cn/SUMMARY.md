@@ -31,6 +31,8 @@
        * [Prime](basics_algorithm/math/prime.md)
    * [Knapsack](basics_algorithm/knapsack.md)
    * [Counting Problem](basics_algorithm/counting_problem.md)
+   * [Probability](basics_algorithm/probability/README.md)
+       * [Shuffle](basics_algorithm/probability/shuffle.md)
 * [Basics Misc](basics_misc/README.md)
    * [Bit Manipulation](basics_misc/bit_manipulation.md)
 * [Part II - Coding](part_ii_coding/README.md)
