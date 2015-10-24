@@ -4,14 +4,15 @@
 
 - lintcode: [(198) Permutation Index II](http://www.lintcode.com/en/problem/permutation-index-ii/)
 
-```
-Given a permutation which may contain repeated numbers,
-find its index in all the permutations of these numbers,
-which are ordered in lexicographical order. The index begins at 1.
+### Problem
 
-Example
-Given the permutation [1, 4, 2, 2], return 3.
-```
+Given a permutation which may contain repeated numbers, find its index in all
+the permutations of these numbers, which are ordered in lexicographical order.
+The index begins at 1.
+
+#### Example
+
+Given the permutation `[1, 4, 2, 2]`, return `3`.
 
 ## 题解
 
@@ -129,57 +130,36 @@ public class Solution {
      * @return a long integer
      */
     public long permutationIndexII(int[] A) {
-        if (A == null || A.length == 0) return 0;
+        if (A == null || A.length == 0) return 0L;
 
-        long index = 1;
-        long factor = 1;
+        Map<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
+        long index = 1, fact = 1, multiFact = 1;
         for (int i = A.length - 1; i >= 0; i--) {
-            HashMap<Integer, Integer> hash = new HashMap<Integer, Integer>();
-            hash.put(A[i], 1);
+            // collect its repeated times and update multiFact
+            if (hashmap.containsKey(A[i])) {
+                hashmap.put(A[i], hashmap.get(A[i]) + 1);
+                multiFact *= hashmap.get(A[i]);
+            } else {
+                hashmap.put(A[i], 1);
+            }
+            // get rank every turns
             int rank = 0;
             for (int j = i + 1; j < A.length; j++) {
-                if (hash.containsKey(A[j])) {
-                    hash.put(A[j], hash.get(A[j]) + 1);
-                } else {
-                    hash.put(A[j], 1);
-                }
-
-                if (A[i] > A[j]) {
-                    rank++;
-                }
+                if (A[i] > A[j]) rank++;
             }
-            index += rank * factor / dupPerm(hash);
-            factor *= (A.length - i);
+            // do not divide by multiFact
+            index += rank * fact / multiFact;
+            fact *= (A.length - i);
         }
 
         return index;
-    }
-
-    private long dupPerm(HashMap<Integer, Integer> hash) {
-        if (hash == null || hash.isEmpty()) return 1;
-
-        long dup = 1;
-        for (int val : hash.values()) {
-            dup *= fact(val);
-        }
-
-        return dup;
-    }
-
-    private long fact(int num) {
-        long val = 1;
-        for (int i = 1; i <= num; i++) {
-            val *= i;
-        }
-
-        return val;
     }
 }
 ```
 
 ### 源码分析
 
-在计算重复元素个数的阶乘时需要注意`dup *= fact(val);`, 而不是`dup *= val;`. 对元素`A[i]`需要加入哈希表 - `hash.put(A[i], 1);`，设想一下`2, 2, 1, 1`的计算即可知。
+在计算重复元素个数的阶乘时需要注意更新`multiFact`的值即可，不必每次都去计算哈希表中的值。对元素`A[i]`需要加入哈希表 - `hash.put(A[i], 1);`，设想一下`2, 2, 1, 1`的计算即可知。
 
 ### 复杂度分析
 

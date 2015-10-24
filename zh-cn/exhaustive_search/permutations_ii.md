@@ -107,55 +107,52 @@ Permutation 的题使用字典序的做法其实更为简单，且为迭代的�
 ### Java
 
 ```java
-public class Solution {
-    public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        if (nums == null || nums.length == 0) {
-            return result;
-        }
-        
-        Arrays.sort(nums);
+class Solution {
+    /**
+     * @param nums: A list of integers.
+     * @return: A list of unique permutations.
+     */
+    public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (nums == null || nums.size() == 0) return result;
+
+        // deep copy(do not change nums)
+        List<Integer> perm = new ArrayList<Integer>(nums);
+        // sort first!!!
+        Collections.sort(perm);
+
         while (true) {
-            // step1: add list to result
-            List<Integer> list = new ArrayList<Integer>();
-            for (int i : nums) {
-                list.add(i);
-            }
-            result.add(list);
-            
-            // step2: find nums[k] < nums[k + 1] backward
+            // step0: add perm into result
+            result.add(new ArrayList<Integer>(perm));
+
+            // step1: search the first num[k] < num[k+1] backward
             int k = -1;
-            for (int i = nums.length - 2; i >= 0; i--) {
-                if (nums[i] < nums[i + 1]) {
+            for (int i = perm.size() - 2; i >= 0; i--) {
+                if (perm.get(i) < perm.get(i + 1)) {
                     k = i;
                     break;
                 }
             }
+            // if current rank is the largest, exit while loop
             if (k == -1) break;
-            
-            // step3: swap with nums[l]
-            int l = nums.length - 1;
-            while (l > k && nums[l] <= nums[k]) {
-                l--;
-            }
-            int temp = nums[l];
-            nums[l] = nums[k];
-            nums[k] = temp;
-            
-            // step4: reverse between k+1, nums.length - 1
-            reverse(nums, k + 1, nums.length - 1);
+
+            // step2: search the first perm[k] < perm[l] backward
+            int l = perm.size() - 1;
+            while (l > k && perm.get(l) <= perm.get(k)) l--;
+
+            // step3: swap perm[k] with perm[l]
+            Collections.swap(perm, k, l);
+
+            // step4: reverse between k+1 and perm.length-1;
+            reverse(perm, k + 1, perm.size() - 1);
         }
-        
+
         return result;
     }
-    
-    private void reverse(int[] nums, int lb, int ub) {
-        while (lb < ub) {
-            int temp = nums[lb];
-            nums[lb] = nums[ub];
-            nums[ub] = temp;
-            lb++;
-            ub--;
+
+    private void reverse(List<Integer> nums, int lb, int ub) {
+        for (int i = lb, j = ub; i < j; i++, j--) {
+            Collections.swap(nums, i, j);
         }
     }
 }
