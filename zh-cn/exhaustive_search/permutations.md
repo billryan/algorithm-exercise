@@ -13,8 +13,8 @@ Given a list of numbers, return all possible permutations.
 
 For nums = `[1,2,3]`, the permutations are:
 
-    
-    
+
+
     [
       [1,2,3],
       [1,3,2],
@@ -23,7 +23,7 @@ For nums = `[1,2,3]`, the permutations are:
       [3,1,2],
       [3,2,1]
     ]
-    
+
 
 #### Challenge
 
@@ -118,19 +118,19 @@ public class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (nums == null || nums.length == 0) return result;
-        
+
         List<Integer> list = new ArrayList<Integer>();
         dfs(nums, list, result);
-        
+
         return result;
     }
-    
+
     private void dfs(int[] nums, List<Integer> list, List<List<Integer>> result) {
         if (list.size() == nums.length) {
             result.add(new ArrayList<Integer>(list));
             return;
         }
-        
+
         for (int i = 0; i < nums.length; i++) {
             if (list.contains(nums[i])) continue;
             list.add(nums[i]);
@@ -366,58 +366,115 @@ private:
 };
 ```
 
-### Java
+### Java - Array
 
 ```java
-public class Solution {
+class Solution {
+    /**
+     * @param nums: A list of integers.
+     * @return: A list of permutations.
+     */
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (nums == null || nums.length == 0) return result;
-        
-        Arrays.sort(nums);
+
+        // deep copy(do not change nums)
+        int[] perm = Arrays.copyOf(nums, nums.length);
+        // sort first!!!
+        Arrays.sort(perm);
+
         while (true) {
-            // step0: add nums into result
-            List<Integer> list = new ArrayList<Integer>();
-            for (int i : nums) {
-                list.add(i);
-            }
-            result.add(list);
-            
-            // step2: find the first nums[k] < nums[k + 1] from the end to start
+            // step0: add perm into result
+            List<Integer> tempList = new ArrayList<Integer>();
+            for (int i : perm) tempList.add(i);
+            result.add(tempList);
+
+            // step1: search the first perm[k] < perm[k+1] backward
             int k = -1;
-            for (int i = nums.length - 2; i >= 0; i--) {
-                if (nums[i] < nums[i + 1]) {
+            for (int i = perm.length - 2; i >= 0; i--) {
+                if (perm[i] < perm[i + 1]) {
                     k = i;
                     break;
                 }
             }
+            // if current rank is the largest, exit while loop
             if (k == -1) break;
-            
-            // step3: find the first nums[l] > nums[k] from the end to start
-            int l = nums.length - 1;
-            while (nums[l] <= nums[k]) {
-                l--;
-            }
-            
-            // step3: swap between l and k
-            int temp = nums[l];
-            nums[l] = nums[k];
-            nums[k] = temp;
-            
-            // step4: reverse between k + 1, nums.length - 1
-            reverse(nums, k + 1, nums.length - 1);
+
+            // step2: search the first perm[k] < perm[l] backward
+            int l = perm.length - 1;
+            while (l > k && perm[l] <= perm[k]) l--;
+
+            // step3: swap perm[k] with perm[l]
+            int temp = perm[k];
+            perm[k] = perm[l];
+            perm[l] = temp;
+
+            // step4: reverse between k+1 and perm.length-1;
+            reverse(perm, k + 1, perm.length - 1);
         }
-        
+
         return result;
     }
-    
+
     private void reverse(int[] nums, int lb, int ub) {
-        while (lb < ub) {
-            int temp = nums[lb];
-            nums[lb] = nums[ub];
-            nums[ub] = temp;
-            lb++;
-            ub--;
+        for (int i = lb, j = ub; i < j; i++, j--) {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+        }
+    }
+}
+```
+
+### Java - List
+
+```java
+class Solution {
+    /**
+     * @param nums: A list of integers.
+     * @return: A list of permutations.
+     */
+    public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (nums == null || nums.size() == 0) return result;
+
+        // deep copy(do not change nums)
+        List<Integer> perm = new ArrayList<Integer>(nums);
+        // sort first!!!
+        Collections.sort(perm);
+
+        while (true) {
+            // step0: add perm into result
+            result.add(new ArrayList<Integer>(perm));
+
+            // step1: search the first num[k] < num[k+1] backward
+            int k = -1;
+            for (int i = perm.size() - 2; i >= 0; i--) {
+                if (perm.get(i) < perm.get(i + 1)) {
+                    k = i;
+                    break;
+                }
+            }
+            // if current rank is the largest, exit while loop
+            if (k == -1) break;
+
+            // step2: search the first perm[k] < perm[l] backward
+            int l = perm.size() - 1;
+            while (l > k && perm.get(l) <= perm.get(k)) l--;
+
+            // step3: swap perm[k] with perm[l]
+            Collections.swap(perm, k, l);
+
+            // step4: reverse between k+1 and perm.size()-1;
+            reverse(perm, k + 1, perm.size() - 1);
+        }
+
+        return result;
+    }
+
+    private void reverse(List<Integer> nums, int lb, int ub) {
+        for (int i = lb, j = ub; i < j; i++, j--) {
+            Collections.swap(nums, i, j);
         }
     }
 }
@@ -425,7 +482,7 @@ public class Solution {
 
 ### 源码分析
 
-注意好步骤即可，其中对于数组的 reverse 操作不可在 while 循环中自增，极易出 bug! 对于 Java 来说其实可以首先将数组转化为 List, 相应的方法多一些。
+注意好字典序算法的步骤即可，对于 Java 来说其实可以首先将数组转化为 List, 相应的方法多一些。吐槽下 Lintcode 上的接口设计，总是见到一长串的`ArrayList`, 个人觉得采用 Leetcode 上的`List`更灵活（代码更短，哈哈），不知道 Lintcode 那样的接口设计有什么其他考虑吗？
 
 ### 复杂度分析
 

@@ -4,19 +4,21 @@
 
 - lintcode: [(51) Previous Permuation](http://www.lintcode.com/en/problem/previous-permuation/)
 
-```
+### Problem
+
 Given a list of integers, which denote a permutation.
 
 Find the previous permutation in ascending order.
 
-Example
-For [1,3,2,3], the previous permutation is [1,2,3,3]
+#### Example
 
-For [1,2,3,4], the previous permutation is [4,3,2,1]
+For `[1,3,2,3]`, the previous permutation is `[1,2,3,3]`
 
-Note
+For `[1,2,3,4]`, the previous permutation is `[4,3,2,1]`
+
+#### Note
+
 The list may contains duplicate integers.
-```
 
 ## 题解
 
@@ -119,37 +121,40 @@ public class Solution {
      * @return: A list of integers that's previous permuation
      */
     public ArrayList<Integer> previousPermuation(ArrayList<Integer> nums) {
-        if (nums == null || nums.size() <= 1) {
-            return nums;
-        }
-        // step1: find nums[i] > nums[i + 1]
-        int i = 0;
-        for (i = nums.size() - 2; i >= 0; i--) {
-            if (nums.get(i) > nums.get(i + 1)) {
-                break;
-            } else if (i == 0) {
-                // reverse nums if reach minimum
-                reverse(nums, 0, nums.size() - 1);
-                return nums;
-            }
-        }
-        // step2: find nums[i] > nums[j]
-        int j = 0;
-        for (j = nums.size() - 1; j > i; j--) {
-            if (nums.get(i) > nums.get(j)) {
-                break;
-            }
-        }
-        // step3: swap betwenn nums[i] and nums[j]
-        Collections.swap(nums, i, j);
-        // step4: reverse between [i + 1, n - 1]
-        reverse(nums, i + 1, nums.size() - 1);
+        ArrayList<Integer> perm = new ArrayList<Integer>(nums);
+        if (nums == null || nums.size() == 0) return perm;
 
-        return nums;
+        // step1: search the first num[k] > num[k+1] backward
+        int k = -1;
+        for (int i = perm.size() - 2; i >= 0; i--) {
+            if (perm.get(i) > perm.get(i + 1)) {
+                k = i;
+                break;
+            }
+        }
+        // if current rank is the smallest, reverse it to largest, return
+        if (k == -1) {
+            reverse(perm, 0, perm.size() - 1);
+            return perm;
+        }
+
+        // step2: search the first perm[k] > perm[l] backward
+        int l = perm.size() - 1;
+        while (l > k && perm.get(l) >= perm.get(k)) {
+            l--;
+        }
+
+        // step3: swap perm[k] with perm[l]
+        Collections.swap(perm, k, l);
+
+        // step4: reverse between k+1 and perm.length-1;
+        reverse(perm, k + 1, perm.size() - 1);
+
+        return perm;
     }
 
-    private void reverse(List<Integer> nums, int start, int end) {
-        for (int i = start, j = end; i < j; i++, j--) {
+    private void reverse(List<Integer> nums, int lb, int ub) {
+        for (int i = lb, j = ub; i < j; i++, j--) {
             Collections.swap(nums, i, j);
         }
     }
@@ -158,12 +163,8 @@ public class Solution {
 
 ### 源码分析
 
-和 Permutation 一小节类似，这里只需要注意在step 1中`i == 0`时需要反转之以获得最大的序列。对于有重复元素，只要在 step1和 step2中判断元素大小时不取等号即可。
+和 Permutation 一小节类似，这里只需要注意在step 1中`i == -1`时需要反转之以获得最大的序列。对于有重复元素，只要在 step1和 step2中判断元素大小时不取等号即可。
 
 ### 复杂度分析
 
 最坏情况下，遍历两次原数组，反转一次数组，时间复杂度为 $$O(n)$$, 使用了 temp 临时变量，空间复杂度可认为是 $$O(1)$$.
-
-## Reference
-
-- [Permutations](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations.html)
