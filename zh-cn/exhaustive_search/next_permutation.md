@@ -2,21 +2,25 @@
 
 ## Source
 
+- leetcode: [Next Permutation | LeetCode OJ](https://leetcode.com/problems/next-permutation/)
 - lintcode: [(52) Next Permutation](http://www.lintcode.com/en/problem/next-permutation/)
 
-```
+### Problem
+
 Given a list of integers, which denote a permutation.
 
 Find the next permutation in ascending order.
 
-Example
-For [1,3,2,3], the next permutation is [1,3,3,2]
+#### Example
 
-For [4,3,2,1], the next permutation is [1,2,3,4]
+For `[1,3,2,3]`, the next permutation is `[1,3,3,2]`
 
-Note
+For `[4,3,2,1]`, the next permutation is `[1,2,3,4]`
+
+#### Note
+
 The list may contains duplicate integers.
-```
+
 
 ## 题解
 
@@ -117,42 +121,40 @@ private:
 public class Solution {
     /**
      * @param nums: an array of integers
-     * @return: return nums in-place
+     * @return: return nothing (void), do not return anything, modify nums in-place instead
      */
-    public int[] nextPermutation(int[] nums) {
-        if (nums == null || nums.length <= 1) {
-            return nums;
-        }
-        // step1: find nums[i] < nums[i + 1]
-        int i = 0;
-        for (i = nums.length - 2; i >= 0; i--) {
-            if (nums[i] < nums[i + 1]) {
-                break;
-            } else if (i == 0) {
-                // reverse nums if reach maximum
-                reverse(nums, 0, nums.length - 1);
-                return nums;
-            }
-        }
-        // step2: find nums[i] < nums[j]
-        int j = 0;
-        for (j = nums.length - 1; j > i; j--) {
-            if (nums[i] < nums[j]) {
-                break;
-            }
-        }
-        // step3: swap betwenn nums[i] and nums[j]
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
-        // step4: reverse between [i + 1, n - 1]
-        reverse(nums, i + 1, nums.length - 1);
+    public void nextPermutation(int[] nums) {
+        if (nums == null || nums.length == 0) return;
 
-        return nums;
+        // step1: search the first nums[k] < nums[k+1] backward
+        int k = -1;
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if (nums[i] < nums[i + 1]) {
+                k = i;
+                break;
+            }
+        }
+        // if current rank is the largest, reverse it to smallest, return
+        if (k == -1) {
+            reverse(nums, 0, nums.length - 1);
+            return;
+        }
+
+        // step2: search the first nums[k] < nums[l] backward
+        int l = nums.length - 1;
+        while (l > k && nums[l] <= nums[k]) l--;
+
+        // step3: swap nums[k] with nums[l]
+        int temp = nums[k];
+        nums[k] = nums[l];
+        nums[l] = temp;
+
+        // step4: reverse between k+1 and nums.length-1;
+        reverse(nums, k + 1, nums.length - 1);
     }
 
-    private void reverse(int[] nums, int start, int end) {
-        for (int i = start, j = end; i < j; i++, j--) {
+    private void reverse(int[] nums, int lb, int ub) {
+        for (int i = lb, j = ub; i < j; i++, j--) {
             int temp = nums[i];
             nums[i] = nums[j];
             nums[j] = temp;
@@ -163,12 +165,8 @@ public class Solution {
 
 ### 源码分析
 
-和 Permutation 一小节类似，这里只需要注意在step 1中`i == 0`时需要反转之以获得最小的序列。对于有重复元素，只要在 step1和 step2中判断元素大小时不取等号即可。
+和 Permutation 一小节类似，这里只需要注意在step 1中`i == -1`时需要反转之以获得最小的序列。对于有重复元素，只要在 step1和 step2中判断元素大小时不取等号即可。Lintcode 上给的注释要求（其实是 Leetcode 上的要求）和实际给出的输出不一样。
 
 ### 复杂度分析
 
 最坏情况下，遍历两次原数组，反转一次数组，时间复杂度为 $$O(n)$$, 使用了 temp 临时变量，空间复杂度可认为是 $$O(1)$$.
-
-## Reference
-
-- [Permutations](http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations.html)

@@ -114,32 +114,31 @@ class Solution {
       * @return: return the k-th permutation
       */
     public String getPermutation(int n, int k) {
-        // get factorial array
-        int[] fact = new int[n];
-        fact[0] = 1;
-        for (int i = 1; i < n; i++) {
-            fact[i] = fact[i - 1] * i;
-        }
+        if (n <= 0 && k <= 0) return "";
+
+        int fact = 1;
         // generate nums 1 to n
         List<Integer> nums = new ArrayList<Integer>();
         for (int i = 1; i <= n; i++) {
+            fact *= i;
             nums.add(i);
         }
+
         // get the permutation digit
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < n; i++) {
-            // k begins from 1, so (1, 2) is a group
-            int rank = (k - 1) / fact[n - i - 1];
-            k = (k - 1) % fact[n - i - 1] + 1;
+        for (int i = n; i >= 1; i--) {
+            fact /= i;
+            // take care of rank and k
+            int rank = (k - 1) / fact;
+            k = (k - 1) % fact + 1;
             // ajust the mapping of rank to num
             sb.append(nums.get(rank));
-            nums.remove(nums.get(rank));
+            nums.remove(rank);
         }
 
         return sb.toString();
     }
 }
-
 ```
 
 ### 源码分析
