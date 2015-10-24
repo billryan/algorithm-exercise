@@ -147,7 +147,7 @@ public class Solution {
             for (int j = i + 1; j < A.length; j++) {
                 if (A[i] > A[j]) rank++;
             }
-            // do not divide by multiFact
+            // do divide by multiFact
             index += rank * fact / multiFact;
             fact *= (A.length - i);
         }
