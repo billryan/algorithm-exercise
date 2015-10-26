@@ -57,7 +57,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/basics_algorithm/binary_search.html</loc>
-        <lastmod>2015-10-04</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -88,6 +88,18 @@
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/basics_algorithm/math/prime.html</loc>
         <lastmod>2015-09-27</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/basics_algorithm/probability/index.html</loc>
+        <lastmod>2015-10-23</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/basics_algorithm/probability/shuffle.html</loc>
+        <lastmod>2015-10-23</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -243,55 +255,67 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/find_minimum_in_rotated_sorted_array.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-20</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/find_minimum_in_rotated_sorted_array_ii.html</loc>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/find_peak_element.html</loc>
-        <lastmod>2015-08-30</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/first_bad_version.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/median_of_two_sorted_arrays.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-21</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/search_a_2d_matrix.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/search_a_2d_matrix_ii.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/search_for_a_range.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/search_in_rotated_sorted_array.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-20</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/search_in_rotated_sorted_array_ii.html</loc>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/search_insert_position.html</loc>
-        <lastmod>2015-10-02</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -303,7 +327,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search/wood_cut.html</loc>
-        <lastmod>2015-08-22</lastmod>
+        <lastmod>2015-10-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -339,7 +363,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_search_tree/search_range_in_binary_search_tree.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-19</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -435,7 +459,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/binary_tree/lowest_common_ancestor.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -585,7 +609,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/dynamic_programming/longest_increasing_subsequence.html</loc>
-        <lastmod>2015-08-22</lastmod>
+        <lastmod>2015-10-19</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -663,7 +687,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/combinations.html</loc>
-        <lastmod>2015-09-17</lastmod>
+        <lastmod>2015-10-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -675,7 +699,7 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/next_permutation.html</loc>
-        <lastmod>2015-09-17</lastmod>
+        <lastmod>2015-10-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -687,49 +711,49 @@
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation_index.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation_index_ii.html</loc>
-        <lastmod>2015-08-22</lastmod>
+        <lastmod>2015-10-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutation_sequence.html</loc>
-        <lastmod>2015-10-06</lastmod>
+        <lastmod>2015-10-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations.html</loc>
-        <lastmod>2015-09-18</lastmod>
+        <lastmod>2015-10-24</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/permutations_ii.html</loc>
+        <lastmod>2015-10-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/previous_permuation.html</loc>
-        <lastmod>2015-09-17</lastmod>
+        <lastmod>2015-10-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/subsets.html</loc>
-        <lastmod>2015-08-21</lastmod>
+        <lastmod>2015-10-21</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/unique_binary_search_trees_ii.html</loc>
         <lastmod>2015-08-22</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    
-    <url>
-        <loc>http://algorithm.yuanbin.me/zh-cn/exhaustive_search/unique_permutations.html</loc>
-        <lastmod>2015-08-29</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -932,12 +956,6 @@
     </url>
     
     <url>
-        <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/check_if_a_singly_linked_list_is_palindrome.html</loc>
-        <lastmod>2015-08-22</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    
-    <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/copy_list_with_random_pointer.html</loc>
         <lastmod>2015-08-21</lastmod>
         <changefreq>daily</changefreq>
@@ -980,6 +998,12 @@
     </url>
     
     <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/palindrome_linked_list.html</loc>
+        <lastmod>2015-10-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/partition_list.html</loc>
         <lastmod>2015-08-21</lastmod>
         <changefreq>daily</changefreq>
@@ -1000,6 +1024,12 @@
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/remove_duplicates_from_sorted_list_ii.html</loc>
         <lastmod>2015-08-21</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/remove_linked_list_elements.html</loc>
+        <lastmod>2015-10-22</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
@@ -1036,6 +1066,12 @@
     <url>
         <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/sort_list.html</loc>
         <lastmod>2015-08-22</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://algorithm.yuanbin.me/zh-cn/linked_list/swap_nodes_in_pairs.html</loc>
+        <lastmod>2015-10-22</lastmod>
         <changefreq>daily</changefreq>
     </url>
     
