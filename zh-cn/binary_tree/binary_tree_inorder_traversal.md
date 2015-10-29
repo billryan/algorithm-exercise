@@ -5,23 +5,28 @@
 - leetcode: [Binary Tree Inorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 - lintcode: [(67) Binary Tree Inorder Traversal](http://www.lintcode.com/en/problem/binary-tree-inorder-traversal/)
 
-```
-Given a binary tree, return the inorder traversal of its nodes' values.
+### Problem
 
-Example
-Given binary tree {1,#,2,3},
+Given a binary tree, return the _inorder_ traversal of its nodes' values.
 
-   1
-    \
-     2
-    /
-   3
+#### Example
 
-return [1,3,2].
+Given binary tree `{1,#,2,3}`,
 
-Challenge
+
+
+       1
+        \
+         2
+        /
+       3
+
+
+return `[1,3,2]`.
+
+#### Challenge
+
 Can you do it without recursion?
-```
 
 ## 题解1 - 递归版
 
@@ -69,7 +74,7 @@ class Solution:
         result = []
         self.helper(root, result)
         return result
-    
+
     def helper(self, root, ret):
         if root is not None:
             self.helper(root.left, ret)
@@ -96,7 +101,7 @@ public:
         helper(root, result);
         return result;
     }
-    
+
 private:
     void helper(TreeNode *root, vector<int> &ret) {
         if (root != NULL) {
@@ -126,7 +131,7 @@ public class Solution {
         helper(root, result);
         return result;
     }
-    
+
     private void helper(TreeNode root, List<Integer> ret) {
         if (root != null) {
             helper(root.left, ret);
@@ -181,7 +186,7 @@ class Solution:
                 root = s.pop()
                 result.append(root.val)
                 root = root.right
-                
+
         return result
 ```
 
@@ -242,18 +247,20 @@ public:
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
-        Stack<TreeNode> s = new Stack<TreeNode>();
-        while (root != null || !s.empty()) {
+        if (root == null) return result;
+
+        Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+        while (root != null || (!stack.isEmpty())) {
             if (root != null) {
-                s.push(root);
+                stack.push(root);
                 root = root.left;
             } else {
-                root = s.pop();
+                root = stack.pop();
                 result.add(root.val);
                 root = root.right;
             }
         }
-        
+
         return result;
     }
 }
