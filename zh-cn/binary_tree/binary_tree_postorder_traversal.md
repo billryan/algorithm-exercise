@@ -5,23 +5,29 @@
 - leetcode: [Binary Tree Postorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 - lintcode: [(68) Binary Tree Postorder Traversal](http://www.lintcode.com/en/problem/binary-tree-postorder-traversal/)
 
-```
-Given a binary tree, return the postorder traversal of its nodes' values.
+### Problem
 
-Example
-Given binary tree {1,#,2,3},
+Given a binary tree, return the _postorder_ traversal of its nodes' values.
 
-   1
-    \
-     2
-    /
-   3
+#### Example
 
-return [3,2,1].
+Given binary tree `{1,#,2,3}`,
 
-Challenge
+
+
+       1
+        \
+         2
+        /
+       3
+
+
+return `[3,2,1]`.
+
+#### Challenge
+
 Can you do it without recursion?
-```
+
 
 ## 题解1 - 递归
 
@@ -234,30 +240,25 @@ public class Solution {
         List<Integer> result = new ArrayList<Integer>();
         if (root == null) return result;
 
-        Stack<TreeNode> s = new Stack<TreeNode>();
-        s.push(root);
+        Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+        stack.push(root);
         TreeNode prev = null;
-        while (!s.empty()) {
-            TreeNode curr = s.peek();
-            boolean noChild = false;
-            if (curr.left == null && curr.right == null) {
-                noChild = true;
-            }
+        while (!stack.isEmpty()) {
+            TreeNode curr = stack.peek();
+            boolean noChild = (curr.left == null && curr.right == null);
             boolean childVisited = false;
             if (prev != null && (curr.left == prev || curr.right == prev)) {
                 childVisited = true;
             }
 
-            // traverse
             if (noChild || childVisited) {
                 result.add(curr.val);
-                s.pop();
+                stack.pop();
                 prev = curr;
             } else {
-                if (curr.right != null) s.push(curr.right);
-                if (curr.left != null) s.push(curr.left);
+                if (curr.right != null) stack.push(curr.right);
+                if (curr.left != null) stack.push(curr.left);
             }
-
         }
 
         return result;
@@ -275,7 +276,7 @@ public class Solution {
 
 最坏情况下栈内存储所有节点，空间复杂度近似为 $$O(n)$$, 每个节点遍历两次或以上，时间复杂度近似为 $$O(n)$$.
 
-## 题解3 - Iterative
+## 题解3 - 反转先序遍历
 
 要想得到『左右根』的后序遍历结果，我们发现只需将『根右左』的结果转置即可，而先序遍历通常为『根左右』，故改变『左右』的顺序即可，所以如此一来后序遍历的非递归实现起来就非常简单了。
 
@@ -343,7 +344,7 @@ public class Solution {
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         if (root == null) return result;
-        
+
         Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
         stack.push(root);
         while (!stack.isEmpty()) {
@@ -353,7 +354,7 @@ public class Solution {
             if (node.right != null) stack.push(node.right);
         }
         Collections.reverse(result);
-        
+
         return result;
     }
 }
