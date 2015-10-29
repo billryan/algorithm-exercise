@@ -5,24 +5,28 @@
 - leetcode: [Binary Tree Preorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 - lintcode: [(66) Binary Tree Preorder Traversal](http://www.lintcode.com/en/problem/binary-tree-preorder-traversal/)
 
-```
+### Problem
+
 Given a binary tree, return the preorder traversal of its nodes' values.
 
-Note
-Given binary tree {1,#,2,3},
+#### Example
 
-   1
-    \
-     2
-    /
-   3
+Given binary tree `{1,#,2,3}`:
 
-return [1,2,3].
+    
+    
+    1
+     \
+      2
+     /
+    3
+    
 
-Example
-Challenge
+return `[1,2,3]`.
+
+#### Challenge
+
 Can you do it without recursion?
-```
 
 ## 题解1 - 递归
 
@@ -272,13 +276,14 @@ public class Solution {
         List<Integer> result = new ArrayList<Integer>();
         if (root == null) return result;
         
-        Stack<TreeNode> s = new Stack<TreeNode>();
-        s.push(root);
-        while (!s.empty()) {
-            TreeNode node = s.pop();
+        Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
             result.add(node.val);
-            if (node.right != null) s.push(node.right);
-            if (node.left != null) s.push(node.left);
+            
+            if (node.right != null) stack.push(node.right);
+            if (node.left != null) stack.push(node.left);
         }
         
         return result;
