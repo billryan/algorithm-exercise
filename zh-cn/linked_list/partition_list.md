@@ -5,17 +5,18 @@
 - leetcode: [Partition List | LeetCode OJ](https://leetcode.com/problems/partition-list/)
 - lintcode: [(96) Partition List](http://www.lintcode.com/en/problem/partition-list/)
 
-```
-Given a linked list and a value x, partition it such that all nodes
-less than x come before nodes greater than or equal to x.
 
-You should preserve the original relative order of the nodes
-in each of the two partitions.
+### Problem
 
-For example,
-Given 1->4->3->2->5->2->null and x = 3,
-return 1->2->2->4->3->5->null.
-```
+Given a linked list and a value _x_, partition it such that all nodes less
+than _x_ come before nodes greater than or equal to _x_.
+
+You should preserve the original relative order of the nodes in each of the
+two partitions.
+
+For example,  
+Given `1->4->3->2->5->2` and _x_ = 3,  
+return `1->2->2->4->3->5`.
 
 ## 题解
 
@@ -117,27 +118,27 @@ public:
  */
 public class Solution {
     public ListNode partition(ListNode head, int x) {
-        if (head == null) return null;
-
         ListNode leftDummy = new ListNode(0);
-        ListNode left = leftDummy;
+        ListNode leftCurr = leftDummy;
         ListNode rightDummy = new ListNode(0);
-        ListNode right = rightDummy;
-        ListNode node = head;
-        while (node != null) {
-            if (node.val < x) {
-                left.next = node;
-                left = left.next;
+        ListNode rightCurr = rightDummy;
+        
+        ListNode runner = head;
+        while (runner != null) {
+            if (runner.val < x) {
+                leftCurr.next = runner;
+                leftCurr = leftCurr.next;
             } else {
-                right.next = node;
-                right = right.next;
+                rightCurr.next = runner;
+                rightCurr = rightCurr.next;
             }
-            node = node.next;
+            runner = runner.next;
         }
-        // post-processing
-        right.next = null;
-        left.next = rightDummy.next;
-
+        
+        // cut off ListNode after rightCurr to avoid cylic
+        rightCurr.next = null;
+        leftCurr.next = rightDummy.next;
+        
         return leftDummy.next;
     }
 }
@@ -148,7 +149,7 @@ public class Solution {
 1. 异常处理
 2. 引入左右两个dummy节点及left和right左右尾指针
 3. 遍历原链表
-4. 处理右链表，置`right->next`为空，将右链表的头部链接到左链表尾指针的next，返回左链表的头部
+4. 处理右链表，置`right->next`为空(否则如果不为尾节点则会报错，处理链表时 以 null 为判断)，将右链表的头部链接到左链表尾指针的next，返回左链表的头部
 
 ### 复杂度分析
 
