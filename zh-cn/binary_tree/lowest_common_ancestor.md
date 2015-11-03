@@ -2,27 +2,36 @@
 
 ## Source
 
-- lintcode: [(88) Lowest Common Ancestor](http://www.lintcode.com/en/problem/lowest-common-ancestor/) <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+- lintcode: [(88) Lowest Common Ancestor](http://www.lintcode.com/en/problem/lowest-common-ancestor/)
 
-```
-Given the root and two nodes in a Binary Tree. Find the lowest common ancestor(LCA) of the two nodes.
 
-The lowest common ancestor is the node with largest depth which is the ancestor of both nodes.
-Example
-        4
+### Problem
 
-    /     \
+Given the root and two nodes in a Binary Tree. Find the lowest common
+ancestor(LCA) of the two nodes.
 
-  3         7
+The lowest common ancestor is the node with largest depth which is the
+ancestor of both nodes.
 
-          /     \
+#### Example
 
-        5         6
-For 3 and 5, the LCA is 4.
+For the following binary tree:
 
-For 5 and 6, the LCA is 7.
-For 6 and 7, the LCA is 7.
-```
+    
+    
+      4
+     / \
+    3   7
+       / \
+      5   6
+    
+
+LCA(3, 5) = `4`
+
+LCA(5, 6) = `7`
+
+LCA(6, 7) = `7`
+
 
 ## 题解1 - 自底向上
 
@@ -36,9 +45,9 @@ For 6 and 7, the LCA is 7.
     - 若左右子树均返回`NULL`, 则向父节点返回`NULL`. // 节点不在这棵树中
 2. 当前节点即为两个节点中的一个，此时向父节点返回当前节点。
 
-根据此递归模型容易看出应该使用中序遍历来实现。
+根据此递归模型容易看出应该使用先序/后序遍历来实现。
 
-### C++ Recursion From Bottom to Top <i class="fa fa-bug"></i>
+### C++ Recursion From Bottom to Top
 
 ```c++
 /**
@@ -76,21 +85,58 @@ public:
 };
 ```
 
+### Java
+
+```java
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+public class Solution {
+    /**
+     * @param root: The root of the binary search tree.
+     * @param A and B: two nodes in a Binary.
+     * @return: Return the least common ancestor(LCA) of the two nodes.
+     */
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
+        if (root == null) return null;
+        
+        TreeNode lNode = lowestCommonAncestor(root.left, A, B);
+        TreeNode rNode = lowestCommonAncestor(root.right, A, B);
+        // root is the LCA of A and B
+        if (lNode != null && rNode != null) return root;
+        // root node is A/B(including the case below)
+        if (root == A || root == B) return root;
+        // return lNode/rNode if root is not LCA
+        return (lNode != null) ? lNode : rNode;
+    }
+}
+```
+
 ### 源码分析
 
 结合例子和递归的整体思想去理解代码，在`root == A || root == B`后即层层上浮(自底向上)，直至找到最终的最小公共祖先节点。
 
 最后一行`return (NULL != left) ? left : right;`将非空的左右子树节点和空值都包含在内了，十分精炼！[^leetcode]
 
-> **fixme** 细心的你也许会发现，其实题解的分析漏掉了一种情况，即树中可能只含有 A/B 中的一个节点！这种情况应该返回空值，但上述实现均返回非空节点。重复节点就不考虑了，太复杂了...
+> **fixme** 细心的你也许会发现，其实题解的分析漏掉了一种情况，即树中可能只含有 A/B 中的一个节点！这种情况应该返回空值，但上述实现均返回非空节点。
+
+关于重复节点：由于这里比较的是元素地址，因此可以认为树中不存在重复元素，否则不符合树的数据结构。
 
 ## 题解 - 自底向上(计数器)
 
-为了解决上述方法可能导致误判的情况，我们可以对返回结果添加计数器来解决。**由于此计数器的值只能由子树向上递推，故不能再使用中序遍历，而应该改用后序遍历。**
+为了解决上述方法可能导致误判的情况，我们可以对返回结果添加计数器来解决。**由于此计数器的值只能由子树向上递推，故应该用后序遍历。**在类中添加私有变量较为方便, C++中的写法较为复杂，后续再优化。
 
 定义`pair<TreeNode *, int> result(node, counter)`表示遍历到某节点时的返回结果，返回的`node`表示LCA 路径中的可能的最小节点，相应的计数器`counter`则表示目前和`A`或者`B`匹配的节点数，若计数器为2，则表示已匹配过两次，该节点即为所求，若只匹配过一次，还需进一步向上递推。表述地可能比较模糊，还是看看代码吧。
 
-### C++ Post-order(counter)
+### C++
 
 ```c++
 /**
@@ -143,6 +189,54 @@ private:
         return (NULL != left.first) ? left : right;
     }
 };
+```
+
+### Java
+
+```java
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+public class Solution {
+    private int count = 0;
+    /**
+     * @param root: The root of the binary search tree.
+     * @param A and B: two nodes in a Binary.
+     * @return: Return the least common ancestor(LCA) of the two nodes.
+     */
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
+        TreeNode result = helper(root, A, B);
+        if (A == B) {
+            return result;
+        } else {
+            return (count == 2) ? result : null;
+        }
+    }
+    
+    private TreeNode helper(TreeNode root, TreeNode A, TreeNode B) {
+        if (root == null) return null;
+        
+        TreeNode lNode = helper(root.left, A, B);
+        TreeNode rNode = helper(root.right, A, B);
+        // root is the LCA of A and B
+        if (lNode != null && rNode != null) return root;
+        // root node is A/B(including the case below)
+        if (root == A || root == B) {
+            count++;
+            return root;
+        }
+        // return lNode/rNode if root is not LCA
+        return (lNode != null) ? lNode : rNode;
+    }
+}
 ```
 
 ### 源码分析
