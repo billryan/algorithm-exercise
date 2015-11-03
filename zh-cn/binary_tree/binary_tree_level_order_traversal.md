@@ -2,31 +2,43 @@
 
 ## Source
 
+- leetcode: [Binary Tree Level Order Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - lintcode: [(69) Binary Tree Level Order Traversal](http://www.lintcode.com/en/problem/binary-tree-level-order-traversal/)
 
-```
-Given a binary tree, return the level order traversal of its nodes' values.
+### Problem
+
+Given a binary tree, return the _level order_ traversal of its nodes' values.
 (ie, from left to right, level by level).
 
-Example
-Given binary tree {3,9,20,#,#,15,7},
+#### Example
 
-    3
-   / \
-  9  20
-    /  \
-   15   7
+Given binary tree `{3,9,20,#,#,15,7}`,
+
+
+
+        3
+       / \
+      9  20
+        /  \
+       15   7
+
 
 return its level order traversal as:
 
-[
-  [3],
-  [9,20],
-  [15,7]
-]
-Challenge
-Using only 1 queue to implement it.
-```
+
+
+    [
+      [3],
+      [9,20],
+      [15,7]
+    ]
+
+#### Challenge
+
+Challenge 1: Using only 1 queue to implement it.
+
+Challenge 2: Use DFS algorithm to do it.
+
 
 ## 题解 - 使用队列
 
@@ -89,39 +101,32 @@ public:
 
 ```java
 /**
- * Definition of TreeNode:
+ * Definition for a binary tree node.
  * public class TreeNode {
- *     public int val;
- *     public TreeNode left, right;
- *     public TreeNode(int val) {
- *         this.val = val;
- *         this.left = this.right = null;
- *     }
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
  * }
  */
-
-
 public class Solution {
-    /**
-     * @param root: The root of binary tree.
-     * @return: Level order a list of lists of integer
-     */
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (root == null) return result;
 
         Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.offer(root);
         while (!q.isEmpty()) {
-            int qLen = q.size();
-            ArrayList<Integer> aList = new ArrayList<Integer>();
-            for (int i = 0; i < qLen; i++) {
+            List<Integer> list = new ArrayList<Integer>();
+            int qSize = q.size();
+            for (int i = 0; i < qSize; i++) {
                 TreeNode node = q.poll();
-                aList.add(node.val);
+                list.add(node.val);
+                // push child node into queue
                 if (node.left != null) q.offer(node.left);
                 if (node.right != null) q.offer(node.right);
             }
-            result.add(aList);
+            result.add(new ArrayList<Integer>(list));
         }
 
         return result;

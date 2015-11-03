@@ -2,20 +2,27 @@
 
 ## Source
 
-- lintcode: [(94) Binary Tree Maximum Path Sum](http://www.lintcode.com/en/problem/binary-tree-maximum-path-sum/) <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+- leetcode: [Binary Tree Maximum Path Sum | LeetCode OJ](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+- lintcode: [(94) Binary Tree Maximum Path Sum](http://www.lintcode.com/en/problem/binary-tree-maximum-path-sum/)
 
-```
+### Problem
+
 Given a binary tree, find the maximum path sum.
 
 The path may start and end at any node in the tree.
-Example
-Given the below binary tree,
 
-       1
-      / \
-     2   3
-Return 6.
-```
+#### Example
+
+Given the below binary tree:
+
+    
+    
+      1
+     / \
+    2   3
+    
+
+return `6`.
 
 ## 题解1 - 递归中仅返回子树路径长度
 
@@ -174,7 +181,7 @@ public:
 
 如果还不理解的建议就以上面那个根节点为-10的例子画一画。
 
-### C++ using self-defined class
+### C++
 ```c++
 /**
  * Definition of TreeNode:
@@ -222,6 +229,51 @@ public:
         return result.maxPath;
     }
 };
+```
+
+### Java
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Result {
+    int singlePath, maxPath;
+    Result(int singlePath, int maxPath) {
+        this.singlePath = singlePath;
+        this.maxPath = maxPath;
+    }
+}
+
+public class Solution {
+    public int maxPathSum(TreeNode root) {
+        return helper(root).maxPath;
+    }
+    
+    private Result helper(TreeNode root) {
+        if (root == null) {
+            // maxPath should be MIN_VALUE to avoid negtive
+            return new Result(0, Integer.MIN_VALUE);
+        }
+        
+        Result left = helper(root.left);
+        Result right = helper(root.right);
+        
+        int singlePath = Math.max(left.singlePath, right.singlePath) + root.val;
+        singlePath = Math.max(0, singlePath); // drop negtive
+        
+        int maxPath = Math.max(left.maxPath, right.maxPath);
+        maxPath = Math.max(maxPath, root.val + left.singlePath + right.singlePath);
+        
+        return new Result(singlePath, maxPath);
+    }
+}
 ```
 
 ### 源码分析
