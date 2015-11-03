@@ -1,4 +1,5 @@
 {
+    "gitbook": "2.4.3",
     "plugins": [
         "disqus",
         "ga",

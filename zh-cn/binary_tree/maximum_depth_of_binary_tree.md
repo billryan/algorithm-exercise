@@ -2,6 +2,7 @@
 
 ## Source
 
+- leetcode: [Maximum Depth of Binary Tree | LeetCode OJ](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - lintcode: [(97) Maximum Depth of Binary Tree](http://www.lintcode.com/en/problem/maximum-depth-of-binary-tree/)
 
 ### Problem
@@ -15,14 +16,14 @@ node down to the farthest leaf node.
 
 Given a binary tree as follow:
 
-    
-    
+
+
       1
-     / \ 
+     / \
     2   3
        / \
       4   5
-    
+
 
 The maximum depth is `3`.
 
@@ -90,7 +91,7 @@ public class Solution {
         if (root == null) {
             return 0;
         }
-        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;  
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }
 ```
@@ -240,7 +241,7 @@ public class Solution {
         if (root == null) {
             return 0;
         }
-        
+
         int depth = 0;
         Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.offer(root);
@@ -253,7 +254,7 @@ public class Solution {
                 if (node.right != null) q.offer(node.right);
             }
         }
-        
+
         return depth;
     }
 }
