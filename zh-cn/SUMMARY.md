@@ -197,6 +197,7 @@
    * [Longest Increasing Continuous subsequence](dynamic_programming/longest_increasing_continuous_subsequence.md)
    * [Longest Increasing Continuous subsequence II](dynamic_programming/longest_increasing_continuous_subsequence_ii.md)
    * [Egg Dropping Puzzle](dynamic_programming/egg_dropping_puzzle.md)
+   * [Maximal Square](dynamic_programming/maximal_square.md)
 * [Graph](graph/README.md)
    * [Find the Connected Component in the Undirected Graph](graph/find_the_connected_component_in_the_undirected_graph.md)
    * [Route Between Two Nodes in Graph](graph/route_between_two_nodes_in_graph.md)
