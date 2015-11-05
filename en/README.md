@@ -12,6 +12,8 @@ This work is some notes of learning and practicing data structures and algorithm
 
 This project is hosted on <https://github.com/billryan/algorithm-exercise> and rendered by [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details). You can star the repository on the GitHub to keep track of updates. Another choice is to subscribe channel `#github_commit` via Slack <https://ds-algo.slack.com/messages/github_commit/>. ~~RSS feed is under development.~~
 
+Feel free to access <http://slackin4ds-algo.herokuapp.com> for Slack invite automation.
+
 You can view/search this document online or offline, feel free to read it. :)
 
 - Online(Rendered by Gitbook): <http://algorithm.yuanbin.me>
