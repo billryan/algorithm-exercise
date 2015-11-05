@@ -5,14 +5,16 @@
 - leetcode: [Remove Duplicates from Sorted List II | LeetCode OJ](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
 - lintcode: [(113) Remove Duplicates from Sorted List II](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list-ii/)
 
-```
-Given a sorted linked list, delete all nodes that have duplicate numbers,
-leaving only distinct numbers from the original list.
+### Problem
 
-Example
-Given 1->2->3->3->4->4->5, return 1->2->5.
-Given 1->1->1->2->3, return 2->3.
-```
+Given a sorted linked list, delete all nodes that have duplicate numbers,
+leaving only _distinct_ numbers from the original list.
+
+#### Example
+
+Given `1->2->3->3->4->4->5`, return `1->2->5`.  
+Given `1->1->1->2->3`, return `2->3`.
+
 
 ## 题解
 
@@ -139,10 +141,10 @@ class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
         if (head == NULL) return NULL;
-
-        ListNode *dummy = new ListNode(0);
-        dummy->next = head;
-        ListNode *node = dummy;
+        
+        ListNode dummy(0);
+        dummy.next = head;
+        ListNode *node = &dummy;
         while (node->next != NULL && node->next->next != NULL) {
             if (node->next->val == node->next->next->val) {
                 int val_prev = node->next->val;
@@ -156,8 +158,8 @@ public:
                 node = node->next;
             }
         }
-
-        return dummy->next;
+        
+        return dummy.next;
     }
 };
 ```
@@ -199,7 +201,7 @@ public class Solution {
 ### 源码分析
 
 1. 首先考虑异常情况，head 为 NULL 时返回 NULL
-2. new一个dummy变量，`dummy->next`指向原链表头。
+2. new一个dummy变量，`dummy->next`指向原链表头。(C++中最好不要使用 new 的方式生成 dummy, 否则会有内存泄露)
 3. 使用新变量node并设置其为dummy头节点，遍历用。
 4. 当前节点和下一节点val相同时先保存当前值，便于while循环终止条件判断和删除节点。注意这一段代码也比较精炼。
 5. 最后返回`dummy->next`，即题目所要求的头节点。
