@@ -1,6 +1,6 @@
 # 数据结构与算法/leetcode/lintcode题解
 
-[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](https://ds-algo.slack.com)
+[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](http://slackin4ds-algo.herokuapp.com)
 
 
 ## 简介
