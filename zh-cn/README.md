@@ -1,6 +1,6 @@
 # 数据结构与算法/leetcode/lintcode题解
 
-[![Join the chat at https://gitter.im/billryan/algorithm-exercise](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/billryan/algorithm-exercise?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
+[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](https://ds-algo.slack.com)
 
 
 ## 简介
@@ -9,11 +9,11 @@
 
 1. Part I为数据结构和算法基础，介绍一些基础的排序/链表/基础算法
 2. Part II为 OJ 上的编程题目实战，按题目的内容分章节编写，主要来源为 <https://leetcode.com/> 和 <http://www.lintcode.com/>.
-3. Part III 为附录部分，包含如何写简历和其他附加材料
+3. Part III 为附录部分，包含如何写简历和其他附加材料如系统设计
 
 本文参考了很多教材和博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
 
-本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。你可以在 GitHub 中 star 该项目查看更新，RSS 种子功能正在开发中。
+本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。你可以在 GitHub(不是 Gitbook ) 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
 
 你可以在线或者离线查看/搜索本文档，以下方式任君选择~
 
