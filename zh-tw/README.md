@@ -1,6 +1,6 @@
 # 資料結構與演算法/leetcode/lintcode題解
 
-[![Join the chat at https://gitter.im/billryan/algorithm-exercise](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/billryan/algorithm-exercise?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
+[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](https://ds-algo.slack.com)
 
 ## 簡介
 
@@ -12,7 +12,7 @@
 
 本文參考了很多教材和部落格，凡參考過的幾乎都給出明確超連結，如果不小心忘記了，請不要吝惜你的評論和issue :)
 
-本項目保管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 頁面。你可以在 GitHub 中 star 該項目查看更新，RSS 種子功能正在開發中。
+本項目保管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 頁面。你可以在 GitHub(不是 Gitbook) 中 star 該項目查看更新，也可以訂閱 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在郵件中查看更新細節。~~RSS 種子功能正在開發中。~~
 
 你可以線上或者離線查看/搜索本文檔，以下方式任君選擇~
 
