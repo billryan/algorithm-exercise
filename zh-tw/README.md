@@ -14,6 +14,8 @@
 
 本項目保管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 頁面。你可以在 GitHub(不是 Gitbook) 中 star 該項目查看更新，也可以訂閱 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在郵件中查看更新細節。~~RSS 種子功能正在開發中。~~
 
+Slack 的自助邀請註冊功能已啟用，訪問 <http://slackin4ds-algo.herokuapp.com> 即刻開啟~
+
 你可以線上或者離線查看/搜索本文檔，以下方式任君選擇~
 
 - 線上閱讀(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
