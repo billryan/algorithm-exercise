@@ -9,7 +9,15 @@
 3. 提交 Pull Request, fork 本文档的 GitHub repo, 发PR给我就好了。
 4. 成为本项目的 contributor, 发邮件并把你的 GitHub 账户名告诉我就可以了，我收到邮件后把你的 GitHub 账号加到Collaborators中。在对 git 操作不是特别熟悉的情况下建议通过方式3提交 PR，相对安全很多。
 
-方式3 和4 push 到 GitHub 前都需要先更新-`git pull origin master`, 可能需要处理冲突和合并。对 git 不熟的可以看看 [git - the simple guide - no deep shit!](http://rogerdudler.github.io/git-guide/), 大概只用到了 `add & commit`, `pushing changes`, `update & merge`. 可以先在自己的 Repo 内玩玩后再在 GitHub 上提交 Pull Request, 等你有足够信心掌握 git 的这些基本操作后可以大胆地申请为本项目的 Contributer, 这样就不用频繁提交 PR 啦~
+总结一下 git 的工作流程就是：
+
+1. 更新上游 - `git pull origin master`
+2. commit 本地更改 - `git commit -a -m 'xxx'`
+3. 推送到上游 - `git push origin master`
+
+有些时候在 commit 之前可能会忘记 pull, 那么此时 pull 将会产生一个 merge commit, 这显然是不太优雅的，建议使用`git rebase -i` 解决。
+
+git 的简明教程可参考 b哥的 [Git Manual](https://gist.github.com/bigeagle/3953973), 小清新极简教程可参考 [git - the simple guide - no deep shit!](http://rogerdudler.github.io/git-guide/), rebase 的使用可参考 [1](http://stackoverflow.com/questions/21115596/remove-a-merge-commit-keeping-current-changes), [2](https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88), [3](https://blog.yorkxin.org/posts/2011/07/29/git-rebase/)
 
 既然涉及到文档合作，那么最好是能有个像样的文档规范之类的东西方便大家更好的合(jiao)作(ji)，目前想到的有如下几点。
 
@@ -21,7 +29,7 @@ Gitbook 支持多语言书写，具体通过根目录下的 `LANGs.md` 目录指
 
 使用markdown编写，只使用 Gitbook 支持的 markdown 语法。Gitbook 底层的 markdown renderer 为改动的 kramdown，并增加了GFM支持, 支持的扩展 markdown 语法算是非常多了，具体特性详见 [GitbookIO/kramed](https://github.com/GitbookIO/kramed)
 
-推荐的 markdown 编辑器为 Gitbook 自家的 [GitbookIO/editor](https://github.com/GitbookIO/editor), 支持 Windows/Linux/MAC 三大平台，业界良心！但是实测在Arch Linux/OSX 下可能会出现占用内存/CPU过高的情况... 编辑界面如下图所示，最左边为章节预览，中间为 markdown 编辑框，右边为实时渲染页面，可选择使用全屏模式。
+推荐的 markdown 编辑器为 Gitbook 自家的 [editor](https://www.gitbook.com/editor), 目前新版的 bug 太多，而且是自动 commit 的，不便于版本控制，希望他们后续能改进。所以目前推荐老版，老版的见 [editor-lagecy](https://github.com/GitbookIO/editor-legacy/releases), 支持 Windows/Linux/MAC 三大平台，业界良心！但是实测在Arch Linux/OSX 下可能会出现占用内存/CPU过高的情况... 编辑界面如下图所示，最左边为章节预览，中间为 markdown 编辑框，右边为实时渲染页面，可选择使用全屏模式。
 
 ![Gitbook Editor](./images/gitbook_editor.png)
 
@@ -51,7 +59,8 @@ Part II为leetcode/lintcode题解，这部分的风格相对容易统一，感�
 2. 给出自己的题解，尽可能清晰易懂。
 3. 给出能AC的code, 如遇TLE或者错误的看情况给出错误的实现。使用blockquote, 给出语言类别以便高亮。具体可参看原markdown文件。
 4. 题解中的核心部分对应的代码，代码中不能明显看出来的逻辑和一些编程上常用的技巧。
-5. 如参考了其他资源，尽可能给出有用的参考链接，附简单的说明。
+5. 代码顺序：Python => C++ => Java 因为 Python 的代码一般最为简洁...
+6. 如参考了其他资源，尽可能给出有用的参考链接，附简单的说明。
 
 通过github合作时，添加/修改内容时给出能看懂的commit就好了。暂时就想到这么多，其实没那么多讲究啦，感觉看着清楚就好，其他想到的再补充。:-)
 
