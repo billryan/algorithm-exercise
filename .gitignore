@@ -19,3 +19,7 @@ _book
 *.py[cod]
 *$py.class
 .python-version
+
+# Auth
+#######
+scripts/auth.conf
