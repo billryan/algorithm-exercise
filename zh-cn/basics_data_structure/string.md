@@ -21,3 +21,27 @@ int index = s2.indexOf('r'); // return 4. if not found, return -1
 ```
 
 StringBuffer 与 StringBuilder, 前者保证线程安全，后者不是，但单线程下效率高一些，一般使用 StringBuilder.
+
+
+## Python
+
+```python
+s1 = str()
+# in python `''` or `""` is the same
+s2 = "shaunwei" # 'shuanwei'
+s2len = len(s2)
+# last 3 chars
+s2[-3:] # wei
+s2[5:8] # wei
+sb = s2[-3:]
+sb += 'shaun' # return 'shaunwei'
+# list in python is same as ArrayList in java
+s2list = list(sb)
+# string at index 4
+s2[4] # 'n'
+# find index at first
+s2.index('w')  # return 5, if not found, throw ValueError
+s2.find('w') # return 5, if not found, return -1
+```
+
+在Python里面， 没有StringBuffer 或者 StringBuilder。 但是在python 里面处理String本身就比较 cheap。
