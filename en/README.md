@@ -55,16 +55,12 @@ If you find any mistakes or want to update/translate the awesome notes, please f
 本文档为数据结构和算法学习笔记，全文大致分为以下三大部分：
 
 1. Part I为数据结构和算法基础，介绍一些基础的排序/链表/基础算法
-2. Part II为 OJ 上的编程题目实战，按题目的内容分章节编写，主要来源为 <https://leetcode.com/> 和 <http://www.lintcode.com/>.
+2. Part II为 OJ 上的编程题目实战，按题目的内容分章节编写，主要来源为 <https://leetcode.com/>, <http://www.lintcode.com/>, <http://www.geeksforgeeks.org/>, <http://hihocoder.com/>, <https://www.topcoder.com/>.
 3. Part III 为附录部分，包含如何写简历和其他附加材料
 
 本文参考了很多教材和博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
 
-本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。你可以在 GitHub 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
-
-Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.herokuapp.com> 即刻开启~
-
-你可以在线或者离线查看/搜索本文档，以下方式任君选择~
+你可以在线或者离线查看/搜索本文档，以下方式任选~
 
 - 在线阅读(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
 - 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的部分编译输出提供 GitHub 和 GitCafe 下载。
@@ -73,6 +69,14 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
     3. MOBI: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
 - Google 站内搜索: `keywords site:algorithm.yuanbin.me`
 - Swiftype 站内搜索: 可使用网页右下方的 `Search this site` 进行站内搜索
+
+### 订阅更新
+
+本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。
+
+你可以在 GitHub 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
+
+Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.herokuapp.com> 即刻开启~
 
 ## 许可证
 
