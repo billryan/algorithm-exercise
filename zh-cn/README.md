@@ -93,36 +93,30 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 
 ## 在线OJ及部分题解
 
-- [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，每道题都有 discuss 页面，可以看别人分享的代码和讨论，很有参考价值，相应的题解非常多。不过在线代码编辑框不太好用，写着写着框就拉下来了，最近评测速度比 lintcode 快很多，而且做完后可以看自己代码的运行时间分布，首推此 OJ 刷面试相关的题。
-- [LintCode | Coding interview questions online training system](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选和写代码时比较方便，左边为题目，右边为代码框。还可以在`source`处选择 CC150 或者其他来源的题。会根据系统locale选择中文或者英文，可以拿此 OJ 辅助 leetcode 进行练习。
-- [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分十分详细，比较容易理解，但部分题目不全。
+- [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，每道题都有 discuss 页面，可以看别人分享的代码和讨论，很有参考价值，相应的题解非常多。~~不过在线代码编辑框不太好用，写着写着框就拉下来了~~，最近没有这个问题了，评测速度通常比 lintcode 快很多，而且做完后可以看自己代码的运行时间分布，首推此 OJ 刷面试相关的题。
+- [LintCode](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选和写代码时比较方便，左边为题目，右边为代码框。还可以在`source`处选择 CC150 或者其他来源的题。会根据系统locale选择中文或者英文，可以拿此 OJ 辅助 leetcode 进行练习。
+- [hihoCoder](http://hihocoder.com/) - 非常不错的一个 OJ，每周都会推出一个专题供你学习，都是干货。
+- [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分详细，比较容易理解，但题目很不全。
 - [FreeTymeKiyan/LeetCode-Sol-Res](https://github.com/FreeTymeKiyan/LeetCode-Sol-Res) - Clean, Understandable Solutions and Resources on LeetCode Online Judge Algorithms Problems.
 - [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解。
-- [Woodstock Blog](http://okckd.github.io/) - IT，算法及面试。有知识点及类型题总结，特别赞。
+- [Shuatiblog.com](http://www.shuatiblog.com/) - IT，算法及面试。有知识点及类型题总结，特别赞。
 - [ITint5 | 专注于IT面试](http://www.itint5.com/) - 文章质量很高，也有部分公司面试题评测。
 - [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
-- [牛客网-专业IT笔试面试备考平台,最全求职题库,全面提升IT编程能力](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
+- [牛客网](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
 
 ## 其他资源
 
-- [九章算法](http://www.jiuzhang.com/) - 代码质量大多不错，但是不太全。这家也提供有偿辅导。
-- [七月算法 - julyedu.com](http://julyedu.com/) - july大神主导的在线算法辅导。
+- [九章算法](http://www.jiuzhang.com/) - 代码质量大多不错，但是不太全。这家也同时提供有偿辅导。
 - [刷题 | 一亩三分地论坛](http://www.1point3acres.com/bbs/forum-84-1.html) - 时不时就会有惊喜放出。
-- [VisuAlgo - visualising data structures and algorithms through animation](http://www.comp.nus.edu.sg/~stevenha/visualization/index.html) - 相当碉堡的数据结构和算法可视化。
+- [VisuAlgo - visualising data structures and algorithms through animation](http://www.comp.nus.edu.sg/~stevenha/visualization/index.html) - 相当厉害的数据结构和算法可视化网站。
 - [Data Structure Visualization](http://www.cs.usfca.edu/~galles/visualization/Algorithms.html) - 同上，非常好的动画演示！！涵盖了常用的各种数据结构/排序/算法。
-- [结构之法 算法之道](http://blog.csdn.net/v_JULY_v) - 不得不服！
-- [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) - 程序员面试艺术的电子版
-- [程序员面试、算法研究、编程艺术、红黑树、数据挖掘5大系列集锦](http://blog.csdn.net/v_july_v/article/details/6543438)
-- [专栏：算法笔记——《算法设计与分析》](http://blog.csdn.net/column/details/lf-algoritnote.html) - CSDN上对《算法设计与分析》一书的学习笔记。
-- [我的算法学习之路 - Lucida](http://zh.lucida.me/blog/on-learning-algorithms/) - Google 工程师的算法学习经验分享。
+- [我的算法学习之路 - Lucida](http://zh.lucida.me/blog/on-learning-algorithms/) - Lucida(签约 Google) 的算法学习经验分享。
+- [HiredInTech](http://www.hiredintech.com/) - System Design 的总结特别适合入门。
 
 ## 书籍推荐
 
-本节后三项参考自九章微信分享，谢过。
-
+- [挑战程序设计竞赛（第2版） (豆瓣)](http://book.douban.com/subject/24749842/) - ACM 高手总结的各类基础算法和经典问题，含金量非常高！算法进阶力荐！
 - [Algorithm Design (豆瓣)](http://book.douban.com/subject/1475870/)
 - [The Algorithm Design Manual](http://www.amazon.com/exec/obidos/ASIN/1848000693/thealgorithmrepo), 作者还放出了自己上课的视频和slides - [Skiena's Audio Lectures](http://www3.cs.stonybrook.edu/~algorith/video-lectures/)，[The Algorithm Design Manual (豆瓣)](http://book.douban.com/subject/3072383/)
 - 大部头有 *Introduction to Algorithm* 和 TAOCP
-- *Cracking The Coding Interview*. 著名的CTCI(又称CC150)，Google, Mircosoft, LinkedIn 前HR离职之后写的书，从很全面的角度剖析了面试的各个环节和题目。除了算法数据结构等题以外，还包含OO Design, Database, System Design, Brain Teaser等类型的题目。**准备北美面试的同学一定要看。**
-- *剑指Offer*。适合国内找工作的同学看看，英文版叫Coding Interviews. 作者是何海涛(Harry He)。Amazon上可以买到。有大概50多题，题目的分析比较全面，会从面试官的角度给出很多的建议和show各种坑。
-- *进军硅谷* -- 程序员面试揭秘。有差不多150题。
+- *Cracking The Coding Interview* - 著名的CTCI(又称CC150)，除了算法数据结构等题以外，还包含OO Design, Database, System Design, Brain Teaser等类型的题目。**准备技术面试的同学一定要看**
