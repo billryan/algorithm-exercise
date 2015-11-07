@@ -111,7 +111,7 @@
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
    * [Remove Duplicates from Unsorted List](linked_list/remove_duplicates_from_an_unsorted_linked_list.md)
    * [Partition List](linked_list/partition_list.md)
-   * [Two Lists Sum](linked_list/two_lists_sum.md)
+   * [Add Two Numbers](linked_list/add_two_numbers.md)
    * [Two Lists Sum Advanced](linked_list/two_lists_sum_advanced.md)
    * [Remove Nth Node From End of List](linked_list/remove_nth_node_from_end_of_list.md)
    * [Linked List Cycle](linked_list/linked_list_cycle.md)
