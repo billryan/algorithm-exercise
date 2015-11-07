@@ -19,6 +19,7 @@
 
 git 的简明教程可参考 b哥的 [Git Manual](https://gist.github.com/bigeagle/3953973), 小清新极简教程可参考 [git - the simple guide - no deep shit!](http://rogerdudler.github.io/git-guide/), rebase 的使用可参考 [1](http://stackoverflow.com/questions/21115596/remove-a-merge-commit-keeping-current-changes), [2](https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88), [3](https://blog.yorkxin.org/posts/2011/07/29/git-rebase/)
 
+disqus 的评论处直接粘贴代码十分难看，参考 [syntax highlighting](https://help.disqus.com/customer/portal/articles/665057-syntax-highlighting) 改进。
 既然涉及到文档合作，那么最好是能有个像样的文档规范之类的东西方便大家更好的合(jiao)作(ji)，目前想到的有如下几点。
 
 ## 更新/翻译特定语言
