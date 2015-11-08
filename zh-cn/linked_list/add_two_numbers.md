@@ -24,6 +24,40 @@ Given `3->1->5` and `5->9->2`, return `8->0->8`.
 
 首先由十进制加法可知应该注意进位的处理，但是这道题仅注意到这点就够了吗？还不够！因为两个链表长度有可能不等长！因此这道题的亮点在于边界和异常条件的处理，感谢 @wen 引入的 dummy 节点，处理起来更为优雅！
 
+### Python
+
+```python
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def add_two_numbers(self, l1, l2):
+        '''
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        '''
+        carry = 0
+        dummy = prev = ListNode(-1)
+        while l1 or l2 or carry:
+            v1 = l1.val if l1 else 0
+            v2 = l2.val if l2 else 0
+            val = (v1 + v2 + carry) % 10
+            carry = (v1 + v2 + carry) / 10
+
+            prev.next = ListNode(carry)
+            prev = prev.next
+            
+            if l1:
+                l1 = l1.next
+            if l2:
+                l2 = l2.next
+        return dummy.next
+```
+
 ### C++
 
 ```c++
@@ -41,19 +75,19 @@ public:
         ListNode dummy(0);
         ListNode *curr = &dummy;
         int carry = 0;
-        
+
         while ((l1 != NULL) || (l2 != NULL) || (carry != 0)) {
             int l1_val = (l1 != NULL) ? l1->val : 0;
             int l2_val = (l2 != NULL) ? l2->val : 0;
             int sum = carry + l1_val + l2_val;
             carry = sum / 10;
             curr->next = new ListNode(sum % 10);
-            
+
             curr = curr->next;
             if (l1 != NULL) l1 = l1->next;
             if (l2 != NULL) l2 = l2->next;
         }
-        
+
         return dummy.next;
     }
 };
@@ -75,7 +109,7 @@ public class Solution {
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
         int carry = 0;
-        
+
         while ((l1 != null) || (l2 != null) || (carry != 0)) {
             int l1_val = (l1 != null) ? l1.val : 0;
             int l2_val = (l2 != null) ? l2.val : 0;
@@ -83,12 +117,12 @@ public class Solution {
 	    // update carry
             carry = sum / 10;
             curr.next = new ListNode(sum % 10);
-            
+
             curr = curr.next;
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
         }
-        
+
         return dummy.next;
     }
 }
