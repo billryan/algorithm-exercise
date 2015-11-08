@@ -65,18 +65,15 @@ public:
      * @return: head node
      */
     ListNode *deleteDuplicates(ListNode *head) {
-        if (head == NULL) return head;
-
         ListNode *curr = head;
-        while (curr->next != NULL) {
-            if (curr->val == curr->next->val) {
+        while (curr != NULL) {
+            while (curr->next != NULL && curr->val == curr->next->val) {
                 ListNode *temp = curr->next;
                 curr->next = curr->next->next;
                 delete(temp);
                 temp = NULL;
-            } else {
-                curr = curr->next;
             }
+            curr = curr->next;
         }
 
         return head;
@@ -104,15 +101,12 @@ public class Solution {
      * @return: ListNode head of linked list
      */
     public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null) return head;
-
         ListNode curr = head;
-        while (curr.next != null) {
-            if (curr.val == curr.next.val) {
+        while (curr != null) {
+            while (curr.next != null && curr.val == curr.next.val) {
                 curr.next = curr.next.next;
-            } else {
-                curr = curr.next;
             }
+            curr = curr.next;
         }
 
         return head;
@@ -126,7 +120,7 @@ public class Solution {
 2. 遍历链表，`curr->val == curr->next->val`时，保存`curr->next`，便于后面释放内存(非C/C++无需手动管理内存)
 3. 不相等时移动当前节点至下一节点，注意这个步骤必须包含在`else`中，否则逻辑较为复杂
 
-`while` 循环处也可使用`curr != null && curr.next != null`, 这样就不用单独判断`head` 是否为空了，但是这样会降低遍历的效率，因为需要判断两处。
+~~`while` 循环处也可使用`curr != null && curr.next != null`, 这样就不用单独判断`head` 是否为空了，但是这样会降低遍历的效率，因为需要判断两处。~~使用双重`while`循环可只在内循环处判断，避免了冗余的判断，谢谢 @xuewei4d 提供的思路。
 
 ### 复杂度分析
 
