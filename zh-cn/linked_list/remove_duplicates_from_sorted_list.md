@@ -5,14 +5,15 @@
 - leetcode: [Remove Duplicates from Sorted List | LeetCode OJ](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 - lintcode: [(112) Remove Duplicates from Sorted List](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list/)
 
-```
-Given a sorted linked list,
-delete all duplicates such that each element appear only once.
+### Problem
 
-Example
-Given 1->1->2, return 1->2.
-Given 1->1->2->3->3, return 1->2->3.
-```
+Given a sorted linked list, delete all duplicates such that each element
+appear only _once_.
+
+#### Example
+
+Given `1->1->2`, return `1->2`.  
+Given `1->1->2->3->3`, return `1->2->3`.
 
 ## 题解
 
@@ -21,28 +22,30 @@ Given 1->1->2->3->3, return 1->2->3.
 ### Python
 
 ```python
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
+"""
+Definition of ListNode
+class ListNode(object):
+    def __init__(self, val, next=None):
+        self.val = val
+        self.next = next
+"""
 class Solution:
-    # @param {ListNode} head
-    # @return {ListNode}
+    """
+    @param head: A ListNode
+    @return: A ListNode
+    """
     def deleteDuplicates(self, head):
         if head is None:
-            return None
-
-        node = head
-        while node.next is not None:
-            if node.val == node.next.val:
-                node.next = node.next.next
+            return head
+        
+        curr = head
+        while curr.next is not None:
+            if curr.val == curr.next.val:
+                curr.next = curr.next.next
             else:
-                node = node.next
-
+                curr = curr.next
+        
         return head
-
 ```
 
 ### C++
@@ -67,21 +70,20 @@ public:
      * @return: head node
      */
     ListNode *deleteDuplicates(ListNode *head) {
-        if (head == NULL) {
-            return NULL;
-        }
-
-        ListNode *node = head;
-        while (node->next != NULL) {
-            if (node->val == node->next->val) {
-                ListNode *temp = node->next;
-                node->next = node->next->next;
-                delete temp;
+        if (head == NULL) return head;
+        
+        ListNode *curr = head;
+        while (curr->next != NULL) {
+            if (curr->val == curr->next->val) {
+                ListNode *temp = curr->next;
+                curr->next = curr->next->next;
+                delete(temp);
+                temp = NULL;
             } else {
-                node = node->next;
+                curr = curr->next;
             }
         }
-
+        
         return head;
     }
 };
@@ -91,26 +93,33 @@ public:
 
 ```java
 /**
- * Definition for singly-linked list.
+ * Definition for ListNode
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
  * }
  */
 public class Solution {
-    public ListNode deleteDuplicates(ListNode head) {
-        if (head == null) return null;
-
-        ListNode node = head;
-        while (node.next != null) {
-            if (node.val == node.next.val) {
-                node.next = node.next.next;
+    /**
+     * @param ListNode head is the head of the linked list
+     * @return: ListNode head of linked list
+     */
+    public static ListNode deleteDuplicates(ListNode head) { 
+        if (head == null) return head;
+        
+        ListNode curr = head;
+        while (curr.next != null) {
+            if (curr.val == curr.next.val) {
+                curr.next = curr.next.next;
             } else {
-                node = node.next;
+                curr = curr.next;
             }
         }
-
+        
         return head;
     }
 }
@@ -119,10 +128,10 @@ public class Solution {
 ### 源码分析
 
 1. 首先进行异常处理，判断head是否为NULL
-2. 遍历链表，`node->val == node->next->val`时，保存`node->next`，便于后面释放内存(非C/C++无需手动管理内存)
+2. 遍历链表，`curr->val == curr->next->val`时，保存`curr->next`，便于后面释放内存(非C/C++无需手动管理内存)
 3. 不相等时移动当前节点至下一节点，注意这个步骤必须包含在`else`中，否则逻辑较为复杂
 
-`while` 循环处也可使用`node != null && node->next != null`, 这样就不用单独判断`head` 是否为空了，但是这样会降低遍历的效率，因为需要判断两处。
+`while` 循环处也可使用`curr != null && curr.next != null`, 这样就不用单独判断`head` 是否为空了，但是这样会降低遍历的效率，因为需要判断两处。
 
 ### 复杂度分析
 
