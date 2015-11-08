@@ -35,16 +35,11 @@ class Solution:
     @return: A ListNode
     """
     def deleteDuplicates(self, head):
-        if head is None:
-            return head
-        
-        curr = head
-        while curr.next is not None:
-            if curr.val == curr.next.val:
-                curr.next = curr.next.next
-            else:
-                curr = curr.next
-        
+        curt = head
+        while curt:
+            while curt.next and curt.next.val == curt.val:
+                curt.next = curt.next.next
+            curt = curt.next
         return head
 ```
 
@@ -71,7 +66,7 @@ public:
      */
     ListNode *deleteDuplicates(ListNode *head) {
         if (head == NULL) return head;
-        
+
         ListNode *curr = head;
         while (curr->next != NULL) {
             if (curr->val == curr->next->val) {
@@ -83,7 +78,7 @@ public:
                 curr = curr->next;
             }
         }
-        
+
         return head;
     }
 };
@@ -108,9 +103,9 @@ public class Solution {
      * @param ListNode head is the head of the linked list
      * @return: ListNode head of linked list
      */
-    public static ListNode deleteDuplicates(ListNode head) { 
+    public static ListNode deleteDuplicates(ListNode head) {
         if (head == null) return head;
-        
+
         ListNode curr = head;
         while (curr.next != null) {
             if (curr.val == curr.next.val) {
@@ -119,7 +114,7 @@ public class Solution {
                 curr = curr.next;
             }
         }
-        
+
         return head;
     }
 }
