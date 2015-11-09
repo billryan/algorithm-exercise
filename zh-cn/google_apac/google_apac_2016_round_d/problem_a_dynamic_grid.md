@@ -1,4 +1,4 @@
-# Problem A. Password Attacker
+# Problem A. Dynamic Grid
 
 ## Source
 
