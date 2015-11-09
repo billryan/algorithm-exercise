@@ -80,7 +80,10 @@ public class Solution {
     public int woodCut(int[] L, int k) {
         if (L == null || L.length == 0) return 0;
 
-        int lb = 0, ub = Integer.MAX_VALUE;
+        int lb = 0, ub = Integer.MIN_VALUE;
+        // get the upper bound of L
+        for (int l : L) if (l > ub) ub = l + 1;
+
         while (lb + 1 < ub) {
             int mid = lb + (ub - lb) / 2;
             if (C(L, k, mid)) {
