@@ -233,6 +233,8 @@
 * [Google APAC](google_apac/README.md)
    * [APAC 2015 Round B](google_apac/google_apac_2015_round_b/README.md)
        * [Problem A. Password Attacker](google_apac/google_apac_2015_round_b/problem_a_password_attacker.md)
+   * [APAC 2016 Round D](google_apac/google_apac_2016_round_d/README.md)
+       * [Problem A. Dynamic Grid](google_apac/google_apac_2016_round_d/problem_a_dynamic_grid.md)
 * [Microsoft](microsoft/README.md)
    * [Microsoft 2015 April](microsoft/mstest2015april/README.md)
        * [Problem A. Magic Box](microsoft/mstest2015april/problem_a_magic_box.md)
