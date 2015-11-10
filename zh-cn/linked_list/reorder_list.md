@@ -5,17 +5,15 @@
 - leetcode: [Reorder List | LeetCode OJ](https://leetcode.com/problems/reorder-list/)
 - lintcode: [(99) Reorder List](http://www.lintcode.com/en/problem/reorder-list/)
 
-```
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
+### Problem
+
+Given a singly linked list _L_: _L_0→_L_1→…→_L__n_-1→_L_n,  
+reorder it to: _L_0→_L__n_→_L_1→_L__n_-1→_L_2→_L__n_-2→…
 
 You must do this in-place without altering the nodes' values.
 
-
-Example
-For example,
-Given 1->2->3->4->null, reorder it to 1->4->2->3->null.
-```
+For example,  
+Given `{1,2,3,4}`, reorder it to `{1,4,2,3}`.
 
 ### 题解1 - 链表长度(TLE) <i class="fa fa-thumbs-o-down"></i>
 
@@ -114,57 +112,37 @@ public:
      * @return: void
      */
     void reorderList(ListNode *head) {
-        if (NULL == head || NULL == head->next || NULL == head->next->next) {
-            return;
-        }
+        if (head == NULL || head->next == NULL) return;
 
-        ListNode *middle = findMiddle(head);
-        ListNode *right = reverse(middle->next);
-        middle->next = NULL;
-
-        merge(head, right);
-    }
-
-private:
-    void merge(ListNode *left, ListNode *right) {
-        ListNode *dummy = new ListNode(0);
-        while (NULL != left && NULL != right) {
-            dummy->next = left;
-            left = left->next;
-            dummy = dummy->next;
-            dummy->next = right;
-            right = right->next;
-            dummy = dummy->next;
-        }
-
-        dummy->next = (NULL != left) ? left : right;
-        //delete dummy; /* bug, delete the tail node */
-    }
-
-    ListNode *reverse(ListNode *head) {
-        ListNode *newHead = NULL;
-        while (NULL != head) {
-            ListNode *temp = head->next;
-            head->next = newHead;
-            newHead = head;
-            head = temp;
-        }
-
-        return newHead;
-    }
-
-    ListNode *findMiddle(ListNode *head) {
-        if (NULL == head || NULL == head->next) {
-            return head;
-        }
-
+        // find middle
         ListNode *slow = head, *fast = head->next;
-        while (NULL != fast && NULL != fast->next) {
-            fast = fast->next->next;
+        while (fast != NULL && fast->next != NULL) {
             slow = slow->next;
+            fast = fast->next->next;
+        }
+        ListNode *rHead = slow->next;
+        slow->next = NULL;
+
+        // reverse ListNode on the right side
+        ListNode *prev = NULL;
+        while (rHead != NULL) {
+            ListNode *temp = rHead->next;
+            rHead->next = prev;
+            prev = rHead;
+            rHead = temp;
         }
 
-        return slow;
+        // merge two list
+        rHead = prev;
+        ListNode *lHead = head;
+        while (lHead != NULL && rHead != NULL) {
+            ListNode *temp1 = lHead->next;
+            lHead->next = rHead;
+            ListNode *temp2 = rHead->next;
+            rHead->next = temp1;
+            lHead = temp1;
+            rHead = temp2;
+        }
     }
 };
 ```
@@ -190,7 +168,7 @@ public class Solution {
      */
     public void reorderList(ListNode head) {  
         if (head == null || head.next == null) return;
-        
+
         // find middle
         ListNode slow = head, fast = head.next;
         while (fast != null && fast.next != null) {
@@ -199,7 +177,7 @@ public class Solution {
         }
         ListNode rHead = slow.next;
         slow.next = null;
-        
+
         // reverse ListNode on the right side
         ListNode prev = null;
         while (rHead != null) {
@@ -208,7 +186,7 @@ public class Solution {
             prev = rHead;
             rHead = temp;
         }
-        
+
         // merge two list
         rHead = prev;
         ListNode lHead = head;
@@ -221,7 +199,6 @@ public class Solution {
         }
     }
 }
-
 ```
 
 ### 源码分析
@@ -231,7 +208,6 @@ public class Solution {
 1. 找中点：我在九章算法模板的基础上增加了对`head->next`的异常检测，增强了鲁棒性。
 2. 反转：非常精炼的模板，记牢！
 3. 合并：也可使用九章提供的模板，思想是一样的，需要注意`left`, `right`和`dummy`三者的赋值顺序，不能更改任何一步。
-4. 对于`new`出的内存如何释放？代码中注释掉的为错误方法，你知道为什么吗？
 
 ### 复杂度分析
 
