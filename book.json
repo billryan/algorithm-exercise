@@ -7,7 +7,9 @@
         "richquotes",
         "yahei",
         "swiftype",
-        "sitemap"
+        "sitemap",
+        "github",
+        "edit-link"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -25,6 +27,17 @@
         },
         "sitemap": {
             "hostname": "http://algorithm.yuanbin.me/"
+        },
+        "github": {
+            "url": "https://github.com/billryan/algorithm-exercise"
+        },
+        "edit-link": {
+            "base": "https://github.com/billryan/algorithm-exercise/edit/master",
+            "label": {
+                    "en": "Improve This Page",
+                    "zh-cn": "改进此页",
+                    "zh-tw": "改進此頁"
+            }
         }
     }
 }
