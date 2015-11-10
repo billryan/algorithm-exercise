@@ -6,7 +6,8 @@
         "katex",
         "richquotes",
         "yahei",
-        "swiftype"
+        "swiftype",
+        "sitemap"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -21,6 +22,9 @@
         "swiftype": {
             "token": "utQHy1R2XyiVqDqaZqws",
             "version": "2.0.0"
+        },
+        "sitemap": {
+            "hostname": "http://algorithm.yuanbin.me/"
         }
     }
 }
