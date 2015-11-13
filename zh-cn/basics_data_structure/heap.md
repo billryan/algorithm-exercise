@@ -34,6 +34,7 @@ class MaxHeap:
             self.heap = []
 
     def _sink(self, array, i):
+        # move node down the tree
         left, right = 2 * i + 1, 2 * i + 2
         max_index = i
         if left < len(array) and array[left] > array[max_index]:
@@ -45,6 +46,7 @@ class MaxHeap:
             self._sink(array, max_index)
 
     def _swim(self, array, i):
+        # move node up the tree
         if i == 0:
             return
         father = (i - 1) / 2
