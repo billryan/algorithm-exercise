@@ -4,9 +4,29 @@
 
 ## 编程实现
 
+### Python
+```python
+stack = []
+len(stack) # size of stack
+
+# more efficient stack
+import collections
+stack = collections.deque()
+```
+
+`list`作为最基本的`python`数据结构之一， 可以很轻松的实现`stack`。 如果需要更高效的`stack`， 建议使用`deque`。
+
+#### Methods
+
+- `len(stack) != 0` - 判断`stack`是否weikong
+- `stack[-1]` - 取栈顶元素，不移除
+- `pop()` - 移除栈顶元素并返回该元素
+- `append(item)` - 向栈顶添加元素
+
+
 ### Java
 
-```
+```java
 Deque<Integer> stack = new ArrayDeque<Integer>();
 s.size(); // size of stack
 ```
