@@ -51,20 +51,17 @@ class Solution:
         if sum(L) < k:
             return 0
 
-        max_len = max(L)
-        start, end = 1, max_len
+        start, end = 1, max(L)
         while start + 1 < end:
-            mid = start + (end - start) / 2
-            pieces_sum = sum([len_i / mid for len_i in L])
+            mid = (start + end) / 2
+            pieces_sum = sum(len_i / mid for len_i in L)
             if pieces_sum < k:
                 end = mid
             else:
                 start = mid
 
-        # corner case
-        if end == 2 and sum([len_i / 2 for len_i in L]) >= k:
-            return 2
-
+        if sum(len_i / end for len_i in L) >= k:
+            return end
         return start
 ```
 
