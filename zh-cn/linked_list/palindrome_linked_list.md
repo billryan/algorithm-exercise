@@ -115,7 +115,10 @@ public class Solution {
         ListNode rHead = reverse(slow);
         ListNode lCurr = head, rCurr = rHead;
         while (rCurr != null) {
-            if (rCurr.val != lCurr.val) return false;
+            if (rCurr.val != lCurr.val) {
+                reverse(rHead);
+                return false;
+            }
             lCurr = lCurr.next;
             rCurr = rCurr.next;
         }
