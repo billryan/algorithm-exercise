@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](http://slackin4ds-algo.herokuapp.com)
 
+Let us have a test!
 
 ## 简介
 
