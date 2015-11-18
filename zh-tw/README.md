@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](http://slackin4ds-algo.herokuapp.com)
 
+- English via [Data Structure and Algorithm notes](http://algorithm.yuanbin.me/en/index.html)
+- 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin.me/zh-cn/index.html)
+- 繁體中文請瀏覽 [資料結構與演算法/leetcode/lintcode題解](http://algorithm.yuanbin.me/zh-tw/index.html)
+
 ## 簡介
 
 本文檔為資料結構和演算法學習筆記，全文大致分為以下三大部分：
@@ -41,7 +45,7 @@ Slack 的自助邀請註冊功能已啟用，訪問 <http://slackin4ds-algo.hero
 
 ## 如何貢獻
 
-如果你發現任何有錯誤的地方或是想更新/翻譯本文檔，請毫不猶豫地猛點擊 [貢獻指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-tw.md).
+如果你發現任何有錯誤的地方或是想更新/翻譯本文檔，請毫不猶豫地猛點擊 [貢獻指南](http://algorithm.yuanbin.me/zh-tw/faq/guidelines_for_contributing.md).
 
 ## 如何練習演算法
 

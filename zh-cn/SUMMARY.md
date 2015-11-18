@@ -1,6 +1,9 @@
 # Summary
 
 * [Preface](README.md)
+* [FAQ](faq/README.md)
+   * [Guidelines for Contributing](faq/guidelines_for_contributing.md)
+   * [Contributors](faq/contributors.md)
 * [Part I - Basics](part_i_basics/README.md)
 * [Basics Data Structure](basics_data_structure/README.md)
    * [String](basics_data_structure/string.md)

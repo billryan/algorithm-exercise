@@ -1,6 +1,9 @@
 # Summary
 
 * [Preface](README.md)
+* [FAQ](faq/README.md)
+   * [Guidelines for Contributing](faq/guidelines_for_contributing.md)
+   * [Contributors](faq/contributors.md)
 * [Part I - Basics](part_i_basics/README.md)
 * [Basics Data Structure](basics_data_structure/README.md)
    * [Linked List](basics_data_structure/linked_list.md)
@@ -144,4 +147,3 @@
 * [Appendix I Interview and Resume](appendix_i_interview_and_resume/README.md)
    * [Interview](appendix_i_interview_and_resume/interview.md)
    * [Resume](appendix_i_interview_and_resume/resume.md)
-

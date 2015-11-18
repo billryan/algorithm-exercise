@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](http://slackin4ds-algo.herokuapp.com)
 
+- English via [Data Structure and Algorithm notes](http://algorithm.yuanbin.me/en/index.html)
+- 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin.me/zh-cn/index.html)
+- 繁體中文請瀏覽 [資料結構與演算法/leetcode/lintcode題解](http://algorithm.yuanbin.me/zh-tw/index.html)
 
 ## 简介
 
@@ -37,15 +40,9 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 
 本着独乐乐不如众乐乐的开源精神，我将自己的算法学习笔记公开和小伙伴们讨论，希望高手们不吝赐教。
 
-## 多国语言
-
-- [English](http://algorithm.yuanbin.me/en/index.html) maintained by who?
-- [简体中文](http://algorithm.yuanbin.me/zh-cn/index.html) maintained by [@billryan](https://github.com/billryan)
-- [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) maintained by [@CrossLuna](https://github.com/CrossLuna)
-
 ## 如何贡献
 
-如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [贡献指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-cn.md).
+如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [FAQ](http://algorithm.yuanbin.me/zh-cn/faq/index.html)  和 [贡献指南](http://algorithm.yuanbin.me/zh-cn/faq/guidelines_for_contributing.html).
 
 ## 捐助
 
