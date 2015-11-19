@@ -29,9 +29,39 @@ O(log(n)) time
 
 ## 题解
 
-仍然是 [Binary Search](http://algorithm.yuanbin.me/zh-cn/basics_algorithm/binary_search.html) 中`lower_bound`的变形，两大关键点：`start` 和`end` 的初始化；最终插入位置和`start` 以及`end` 之间的关系，由于`start`对应的索引一定是小于目标值的，那么`start + 1` 就是要求的值了，再检查下两端的边界，DONE
+### Python
+问题可以转化为， 寻找`first position that value is >= target`。如果没找到， 那么就插入在list的尾部。
+
+```python
+class Solution:
+    """
+    @param A : a list of integers
+    @param target : an integer to be inserted
+    @return : an integer
+    """
+    def searchInsert(self, A, target):
+        if not A:
+            return 0
+        st, ed = 0, len(A) - 1
+        while st + 1 < ed:
+            mid = (st + ed) / 2
+            if A[mid] == target:
+                ed = mid
+            elif A[mid] < target:
+                st = mid
+            else:
+                ed = mid
+        if A[st] >= target:
+            return st
+        elif A[ed] >= target:
+            return ed
+        else:
+            return len(A)
+```
+
 
 ### Java
+仍然是 [Binary Search](http://algorithm.yuanbin.me/zh-cn/basics_algorithm/binary_search.html) 中`lower_bound`的变形，两大关键点：`start` 和`end` 的初始化；最终插入位置和`start` 以及`end` 之间的关系，由于`start`对应的索引一定是小于目标值的，那么`start + 1` 就是要求的值了，再检查下两端的边界，DONE
 
 ```java
 public class Solution {

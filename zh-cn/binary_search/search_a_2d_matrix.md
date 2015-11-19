@@ -38,10 +38,34 @@ O(log(n) + log(m)) time
 - **一次二分搜索** - 由于矩阵按升序排列，因此可将二维矩阵转换为一维问题。对原始的二分搜索进行适当改变即可(求行和列)。时间复杂度为 $$O(log(mn))=O(log(m)+log(n))$$
 - **两次二分搜索** - 先按行再按列进行搜索，即两次二分搜索。时间复杂度相同。
 
-显然我们应该选择一次二分搜索，直接上 lower bound 二分模板。
+
+## 一次二分搜索
+
+### Python
+
+```python
+class Solution:
+    def search_matrix(self, matrix, target):
+        # Find the first position of target
+        if not matrix or not matrix[0]:
+            return False
+        m, n = len(matrix), len(matrix[0])
+        st, ed = 0, m * n - 1
+
+        while st + 1 < ed:
+            mid = (st + ed) / 2
+            if matrix[mid / n][mid % n] == target:
+                return True
+            elif matrix[mid / n][mid % n] < target:
+                st = mid
+            else:
+                ed = mid
+        return matrix[st / n][st % n] == target or \
+                matrix[ed / n][ed % n] == target
+```
 
 ### Java
-
+lower bound 二分模板。
 ```java
 public class Solution {
     /**
@@ -82,4 +106,52 @@ public class Solution {
 
 ### 复杂度分析
 
-二分搜索，$$O(\log n)$$.
+二分搜索，$$O(\log mn)$$.
+
+
+## 两次二分法
+
+### Python
+```python
+class Solution:
+    def search_matrix(self, matrix, target):
+        if not matrix or not matrix[0]:
+            return False
+
+        # first pos >= target
+        st, ed = 0, len(matrix) - 1
+        while st + 1 < ed:
+            mid = (st + ed) / 2
+            if matrix[mid][-1] == target:
+                st = mid
+            elif matrix[mid][-1] < target:
+                st = mid
+            else:
+                ed = mid
+        if matrix[st][-1] >= target:
+            row = matrix[st]
+        elif matrix[ed][-1] >= target:
+            row = matrix[ed]
+        else:
+            return False
+
+        # binary search in row
+        st, ed = 0, len(row) - 1
+        while st + 1 < ed:
+            mid = (st + ed) / 2
+            if row[mid] == target:
+                return True
+            elif row[mid] < target:
+                st = mid
+            else:
+                ed = mid
+        return row[st] == target or row[ed] == target
+```
+
+### 源码分析
+
+1. 先找到`first position`的行， 这一行的最后一个元素大于等于target
+2. 再在这一行中找target
+
+#### 复杂度分析
+二分搜索， $$O(\logm + \logn)$$
