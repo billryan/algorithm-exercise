@@ -22,13 +22,58 @@ O(log _n_) time.
 
 ## 题解
 
-lower/upper bound 的结合，做两次搜索即可。
+### Python
+first/last position 结合。
+```python
+class Solution:
+    """
+    @param A : a list of integers
+    @param target : an integer to be searched
+    @return : a list of length 2, [index1, index2]
+    """
+    def searchRange(self, A, target):
+        ret = [-1, -1]
+        if not A:
+            return ret
+
+        # find the first position of target
+        st, ed = 0, len(A) - 1
+        while st + 1 < ed:
+            mid = (st + ed) / 2
+            if A[mid] == target:
+                ed = mid
+            elif A[mid] < target:
+                st = mid
+            else:
+                ed = mid
+        if A[st] == target:
+            ret[0] = st
+        elif A[ed] == target:
+            ret[0] = ed
+        # find the last position of target
+        st, ed = 0, len(A) - 1
+        while st + 1 < ed:
+            mid = (st + ed) / 2
+            if A[mid] == target:
+                st = mid
+            elif A[mid] < target:
+                st = mid
+            else:
+                ed = mid
+        if A[ed] == target:
+            ret[1] = ed
+        elif A[st] == target:
+            ret[1] = st
+
+        return ret
+```
+
 
 ### Java
-
+lower/upper bound 的结合，做两次搜索即可。
 ```java
 public class Solution {
-    /** 
+    /**
      *@param A : an integer sorted array
      *@param target :  an integer to be inserted
      *return : a list of length 2, [index1, index2]
@@ -36,7 +81,7 @@ public class Solution {
     public int[] searchRange(int[] A, int target) {
         int[] result = new int[]{-1, -1};
         if (A == null || A.length == 0) return result;
-        
+
         int lb = -1, ub = A.length;
         // lower bound
         while (lb + 1 < ub) {
@@ -56,7 +101,7 @@ public class Solution {
             // target is not in the array
             return result;
         }
-        
+
         // upper bound, since ub >= lb, we do not reset lb
         ub = A.length;
         while (lb + 1 < ub) {
@@ -69,7 +114,7 @@ public class Solution {
         }
         // target must exist in the array
         result[1] = ub - 1;
-        
+
         return result;
     }
 }
