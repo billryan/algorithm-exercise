@@ -154,4 +154,4 @@ class Solution:
 2. 再在这一行中找target
 
 #### 复杂度分析
-二分搜索， $$O(\logm + \logn)$$
+二分搜索， $$O(\log m + \log n)$$
