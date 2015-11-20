@@ -40,10 +40,34 @@ disqus 的评论处直接粘贴代码十分难看，参考 [syntax highlighting]
 有两种方式：GitHub issues 和 Slack.
 你可以加入 Slack 群 - <http://slackin4ds-algo.herokuapp.com> 和我们一起讨论。
 
-## 如何订阅更新的内容
+## 如何订阅更新的内容？
 
 本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。
 你可以在 GitHub 中 star 该项目手动查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
 
 Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.herokuapp.com> 即刻开启~
 Gitbook 虽然也有 star 和 subscribe 功能，但目前来看还是非常鸡肋，通过 Slack 的 `#github_commit` channel 你可以看到对单文件`diff`级别的改动。
+
+## 我觉得这个文档整理的真好，接受捐助吗？
+
+当然！除了 GitHub 上 star 或者帮助改进内容外，你还可以以现金或者其他实物激励我们创造出更好的内容！
+
+### 邮寄明信片
+
+@billryan 喜欢收集各种明信片，来者不拒~ 邮寄的话可以邮寄至 `上海市闵行区上海交通大学闵行校区电院群楼5号楼307`，这个地址2016 年3月前有效，收件人：`袁斌`。
+
+### 送书
+
+除了邮寄明信片，你还可以买本书送给各位贡献者，@billryan 的地址见上节。
+
+### 支付宝打赏
+
+![alipay-billryan](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/images/alipay_billryan_qr15x15.png)
+
+金额随意。
+
+### PayPal
+
+账户名：yuanbin2014(at)gmail.com 付款时选择 friends and family
+
+金额随意。

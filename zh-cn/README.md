@@ -8,7 +8,7 @@
 
 ## 简介
 
-本文档为数据结构和算法学习笔记，全文大致分为以下三大部分：
+本文档为数据结构和算法学习笔记，我们希望这个笔记能给你在学习算法的过程提供思路和源码方面的参考，但绝不鼓励死记硬背！全文大致分为以下三大部分：
 
 1. Part I为数据结构和算法基础，介绍一些基础的排序/链表/基础算法
 2. Part II为 OJ 上的编程题目实战，按题目的内容分章节编写，主要来源为 <https://leetcode.com/>, <http://www.lintcode.com/>, <http://www.geeksforgeeks.org/>, <http://hihocoder.com/>, <https://www.topcoder.com/>.
@@ -25,6 +25,7 @@
     3. MOBI: [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/mobi/algorithm-ebook_zh-cn.mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-cn), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/mobi/algorithm-ebook_zh-cn.mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
 - Google 站内搜索: `keywords site:algorithm.yuanbin.me`
 - Swiftype 站内搜索: 可使用网页右下方的 `Search this site` 进行站内搜索
+- 微信公众号搜索：此功能预计2016年1月下旬添加，借助 Swiftype 的 API，微信可以仅作为一个查询界面，我个人是不接受把这个文档的内容放在微信这种封闭平台上的。
 
 ### 订阅更新
 
@@ -42,31 +43,7 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 
 ## 如何贡献
 
-如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [FAQ](http://algorithm.yuanbin.me/zh-cn/faq/index.html)  和 [贡献指南](http://algorithm.yuanbin.me/zh-cn/faq/guidelines_for_contributing.html).
-
-## 捐助
-
-添加这一小节其实是有点诚惶诚恐的，毕竟这本小书目前还很不完善，把捐助信息贴出来不脸红吗？:-( 但既然前些天有网友专门发邮件来问这个事，我就大概说下我目前的想法，先以 @billryan 为例，其他 Contributor 后续补充，捐助者后期会单独整理公布，当然这是在征得捐助人同意的前提下进行的。除了在 GitHub 上协助编写文档外，你还可以以下面几种方式回馈各位贡献者:
-
-### 邮寄明信片
-
-@billryan 喜欢收集各种明信片，来者不拒~ 邮寄的话可以邮寄至 `上海市闵行区上海交通大学闵行校区电院群楼5号楼307`，这个地址2016 年3月前有效，收件人：`袁斌`。
-
-### 送书
-
-除了邮寄明信片，你还可以买本书送给各位贡献者，@billryan 的地址见上节。
-
-### 支付宝打赏
-
-![alipay-billryan](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/images/alipay_billryan_qr15x15.png)
-
-金额随意。
-
-### PayPal
-
-账户名：yuanbin2014(at)gmail.com 付款时选择 friends and family
-
-金额随意。
+如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [FAQ](http://algorithm.yuanbin.me/zh-cn/faq/index.html) 和 [贡献指南](http://algorithm.yuanbin.me/zh-cn/faq/guidelines_for_contributing.html).
 
 ## 如何练习算法
 
