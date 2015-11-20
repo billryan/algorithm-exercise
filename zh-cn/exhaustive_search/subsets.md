@@ -16,7 +16,7 @@ Given a set of distinct integers, _nums_, return all possible subsets.
 
 For example,  
 If _nums_ = `[1,2,3]`, a solution is:
-    
+
     [
       [3],
       [1],
@@ -47,20 +47,38 @@ class Solution:
     def subsets(self, nums):
         if nums is None:
             return []
-        
+
         result = []
         nums.sort()
         self.dfs(nums, 0, [], result)
         return result
-    
+
     def dfs(self, nums, pos, list_temp, ret):
         # append new object with []
         ret.append([] + list_temp)
-        
+
         for i in xrange(pos, len(nums)):
             list_temp.append(nums[i])
             self.dfs(nums, i + 1, list_temp, ret)
             list_temp.pop()
+```
+
+#### less code style
+```python
+class Solution:
+    """
+    @param S: The set of numbers.
+    @return: A list of lists. See example.
+    """
+    def subsets(self, S):
+        ret = []
+        self.helper(sorted(S), ret, [])
+        return ret
+
+    def helper(self, vals, ret, tmp):
+        ret.append(tmp[:])
+        for i, val in enumerate(vals):
+            self.helper(vals[i + 1:], ret, tmp + [val])
 ```
 
 ### C++
@@ -71,20 +89,20 @@ public:
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int> > result;
         if (nums.empty()) return result;
-        
+
         sort(nums.begin(), nums.end());
         vector<int> list;
         dfs(nums, 0, list, result);
-        
+
         return result;
     }
 
 private:
     void dfs(vector<int>& nums, int pos, vector<int> &list,
              vector<vector<int> > &ret) {
-        
+
         ret.push_back(list);
-        
+
         for (int i = pos; i < nums.size(); ++i) {
             list.push_back(nums[i]);
             dfs(nums, i + 1, list, ret);
@@ -104,19 +122,19 @@ public class Solution {
         if (nums == null || nums.length == 0) {
             return result;
         }
-        
+
         Arrays.sort(nums);
         dfs(nums, 0, list, result);
-        
+
         return result;
     }
-    
+
     private void dfs(int[] nums, int pos, List<Integer> list,
                      List<List<Integer>> ret) {
 
         // add temp result first
         ret.add(new ArrayList<Integer>(list));
-        
+
         for (int i = pos; i < nums.length; i++) {
             list.add(nums[i]);
             dfs(nums, i + 1, list, ret);
