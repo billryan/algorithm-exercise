@@ -44,8 +44,8 @@ class Solution:
             for j in xrange(len(target)):
                 if source[i + j] != target[j]:
                     break
-                else:
-                    return i
+            else:
+                return i
         return -1
 ```
 
