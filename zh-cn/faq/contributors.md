@@ -14,7 +14,8 @@ Contributors are listed here.
 
 隐私考虑，以下名单隐去了部分个人信息。
 
-- `taoli**@gmail.com`, 支付宝转账
+- `taoli***@gmail.com`, 支付宝转账
 - `张亚*`, 支付宝转账
 - `俞卓*`, 支付宝转账
 - `季*`, 支付宝转账
+- `wen***@126.com`, 支付宝转账
