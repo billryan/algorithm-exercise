@@ -11,7 +11,7 @@
 This work is some notes of learning and practicing data structures and algorithm. 
 
 1. Part I is some brief introduction of basic data structures and algorithm, such as, linked lists, stack, queues, trees, sorting and etc.
-2. Part II is the analysis and summary of programming problems, and most of the programming problems come from <https://leetcode.com/> and <http://www.lintcode.com/>.
+2. Part II is the analysis and summary of programming problems, and most of the programming problems come from <https://leetcode.com/>, <http://www.lintcode.com/>, <http://www.geeksforgeeks.org/>, <http://hihocoder.com/>, <https://www.topcoder.com/>.
 3. Part III is the appendix of resume and other supplements.
 
 This project is hosted on <https://github.com/billryan/algorithm-exercise> and rendered by [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details). You can star the repository on the GitHub to keep track of updates. Another choice is to subscribe channel `#github_commit` via Slack <https://ds-algo.slack.com/messages/github_commit/>. ~~RSS feed is under development.~~
@@ -31,10 +31,6 @@ You can view/search this document online or offline, feel free to read it. :)
 ## License
 
 This work is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License**. To view a copy of this license, please visit <http://creativecommons.org/licenses/by-sa/4.0/>
-
-## How to Contribute
-
-If you find any mistakes or want to update/translate the awesome notes, please follow the [Guidelines for Contributing](http://algorithm.yuanbin.me/en/faq/guidelines_for_contributing.md). Any comments or suggestions would be greatly appreciated.
 
 ## To Do
 
