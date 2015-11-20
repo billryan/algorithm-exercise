@@ -5,29 +5,28 @@
 - leetcode: [Implement strStr() | LeetCode OJ](https://leetcode.com/problems/implement-strstr/)
 - lintcode: [lintcode - (13) strstr](http://www.lintcode.com/zh-cn/problem/strstr/)
 
-```
-strstr (a.k.a find sub string), is a useful function in string operation.
-You task is to implement this function.
+### Problem
 
-For a given source string and a target string,
-you should output the "first" index(from 0) of target string in source string.
+For a given source string and a target string, you should output the **first**
+index(from 0) of target string in source string.
 
-If target is not exist in source, just return -1.
+If target does not exist in source, just return `-1`.
 
-Example
-If source="source" and target="target", return -1.
+#### Example
 
-If source="abcdabcdefg" and target="bcd", return 1.
+If source = `"source"` and target = `"target"`, return `-1`.
 
-Challenge
-O(n) time.
+If source = `"abcdabcdefg"` and target = `"bcd"`, return `1`.
 
-Clarification
-Do I need to implement KMP Algorithm in an interview?
+#### Challenge
 
-    - Not necessary. When this problem occurs in an interview,
-    the interviewer just want to test your basic implementation ability.
-```
+O(n2) is acceptable. Can you implement an O(n) algorithm? (hint: _KMP_)
+
+#### Clarification
+
+Do I need to implement KMP Algorithm in a real interview?
+
+  * Not necessary. When you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.
 
 ## 题解
 
@@ -45,11 +44,10 @@ class Solution:
             for j in xrange(len(target)):
                 if source[i + j] != target[j]:
                     break
-            else:
-                return i
+                else:
+                    return i
         return -1
 ```
-
 
 ### Java
 
@@ -94,29 +92,8 @@ class Solution {
 2. 代码风格：（1）运算符`==`两边应加空格；（2）变量名不要起`s1``s2`这类，要有意义，如`target``source`；（3）即使if语句中只有一句话也要加大括号，即`{return -1;}`；（4）Java 代码的大括号一般在同一行右边，C++ 代码的大括号一般另起一行；（5）`int i, j;`声明前有一行空格，是好的代码风格。
 3. 不要在for的条件中声明`i`,`j`，容易在循环外再使用时造成编译错误，错误代码示例：
 
-## Another Similar Question
+需要注意的是有些题目要求并不是返回索引，而是返回字符串，此时还需要调用相应语言的`substring`方法。
 
-```java
-/**
- * http://www.jiuzhang.com//solutions/implement-strstr
- */
-public class Solution {
-    public String strStr(String haystack, String needle) {
-        if(haystack == null || needle == null) {
-            return null;
-        }
-        int i, j;
-        for(i = 0; i < haystack.length() - needle.length() + 1; i++) {
-            for(j = 0; j < needle.length(); j++) {
-                if(haystack.charAt(i + j) != needle.charAt(j)) {
-                    break;
-                }
-            }
-            if(j == needle.length()) {
-                return haystack.substring(i);
-            }
-        }
-        return null;
-    }
-}
-```
+### 复杂度分析
+
+双重 for 循环，时间复杂度为 $$O(n^2)$$.
