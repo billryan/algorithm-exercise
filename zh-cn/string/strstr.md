@@ -44,7 +44,7 @@ class Solution:
             for j in xrange(len(target)):
                 if source[i + j] != target[j]:
                     break
-            else:
+            else: # no break
                 return i
         return -1
 ```
@@ -89,11 +89,18 @@ class Solution {
 
 1. 边界检查：`source`和`target`有可能是空串。
 2. 边界检查之下标溢出：注意变量`i`的循环判断条件，如果是单纯的`i < source.length()`则在后面的`source.charAt(i + j)`时有可能溢出。
-2. 代码风格：（1）运算符`==`两边应加空格；（2）变量名不要起`s1``s2`这类，要有意义，如`target``source`；（3）即使if语句中只有一句话也要加大括号，即`{return -1;}`；（4）Java 代码的大括号一般在同一行右边，C++ 代码的大括号一般另起一行；（5）`int i, j;`声明前有一行空格，是好的代码风格。
-3. 不要在for的条件中声明`i`,`j`，容易在循环外再使用时造成编译错误，错误代码示例：
+3. 代码风格：
+    - 运算符`==`两边应加空格
+    - 变量名不要起`s1``s2`这类，要有意义，如`target``source`
+    - 即使if语句中只有一句话也要加大括号，即`{return -1;}`
+    - Java 代码的大括号一般在同一行右边，C++ 代码的大括号一般另起一行
+    - int i, j;`声明前有一行空格，是好的代码风格。
+3. 是否在for的条件中声明`i`,`j`，这个视情况而定，如果需要在循环外再使用时，则须在外部初始化，否则没有这个必要。
 
 需要注意的是有些题目要求并不是返回索引，而是返回字符串，此时还需要调用相应语言的`substring`方法。
 
+Python 代码中的`else`接的是`for` 而不是`if`, 其含义为`no break`, 属于比较 Pythonic 的用法，有兴趣的可以参考 [4. More Control Flow Tools](https://docs.python.org/3/tutorial/controlflow.html) 的 4.4 节和 [if statement - Why does python use 'else' after for and while loops?](http://stackoverflow.com/questions/9979970/why-does-python-use-else-after-for-and-while-loops)
+
 ### 复杂度分析
 
-双重 for 循环，时间复杂度为 $$O(n^2)$$.
+双重 for 循环，时间复杂度为 $$O(nm)$$.
