@@ -12,8 +12,8 @@ s2len = len(s2)
 # last 3 chars
 s2[-3:] # wei
 s2[5:8] # wei
-sb = s2[-3:]
-sb += 'shaun' # return 'shaunwei'
+sb = s2[:5]
+sb += 'wei' # return 'shaunwei'
 # list in python is same as ArrayList in java
 s2list = list(sb)
 # string at index 4
