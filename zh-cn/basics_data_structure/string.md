@@ -12,10 +12,10 @@ s2len = len(s2)
 # last 3 chars
 s2[-3:] # wei
 s2[5:8] # wei
-sb = s2[:5]
-sb += 'wei' # return 'shaunwei'
+s3 = s2[:5] # shaun
+s3 += 'wei' # return 'shaunwei'
 # list in python is same as ArrayList in java
-s2list = list(sb)
+s2list = list(s3)
 # string at index 4
 s2[4] # 'n'
 # find index at first
@@ -32,9 +32,9 @@ String s1 = new String();
 String s2 = "billryan";
 int s2Len = s2.length();
 s2.substring(4, 8); // return "ryan"
-StringBuilder sb = new StringBuilder(s2.substring(4, 8));
-sb.append("bill");
-String s2New = sb.toString(); // return "ryanbill"
+StringBuilder s3 = new StringBuilder(s2.substring(4, 8));
+s3.append("bill");
+String s2New = s3.toString(); // return "ryanbill"
 // convert String to char array
 char[] s2Char = s2.toCharArray();
 // char at index 4
