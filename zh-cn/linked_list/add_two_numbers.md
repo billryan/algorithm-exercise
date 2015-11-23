@@ -48,7 +48,7 @@ class Solution:
             val = (v1 + v2 + carry) % 10
             carry = (v1 + v2 + carry) / 10
 
-            prev.next = ListNode(carry)
+            prev.next = ListNode(val)
             prev = prev.next
             
             if l1:
