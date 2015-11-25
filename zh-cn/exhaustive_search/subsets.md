@@ -38,6 +38,38 @@ If _nums_ = `[1,2,3]`, a solution is:
 
 将上述过程转化为代码即为对数组遍历，每一轮都保存之前的结果并将其依次加入到最终返回结果中。
 
+### Iterative
+### Python
+```python
+class Solution:
+    """
+    @param S: The set of numbers.
+    @return: A list of lists. See example.
+    """
+    def subsets(self, S):
+        if not S:
+            return []
+        ret = []
+        S.sort()
+        n = len(S)
+        # 000 -> []
+        # 001 -> [1]
+        # 010 -> [2]
+        # ...
+        # 111 -> [1, 2, 3]
+        for i in xrange(2**n):
+            tmp = []
+            for j in xrange(n):
+                if i & (1 << j):
+                    tmp.append(S[j])
+            ret.append(tmp)
+        return ret
+```
+### 源码分析
+利用类似`bit map`的原理， 将 0 ~ $$2^n - 1$$个数值map到每个index上，如果index数值为1，就将该number加入。比如输入是`[1 ,2 ,3]`, 那么当`i = 0`时，`0`也就是`000`， 那么`000 -> []`； 当`i = 1`时， `001 -> [1]`; 直到`i = 7`, `111 -> [1, 2, 3]`.
+
+
+### Recursive
 ### Python
 
 ```python

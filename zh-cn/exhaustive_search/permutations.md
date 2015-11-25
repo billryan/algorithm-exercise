@@ -177,6 +177,22 @@ class Solution:
                 result.append(p + [item])
 
         return result
+
+class Solution2:
+    # 类似 subset的模版
+    def permute(self, nums):
+        if not nums:
+            return []
+        res = []
+        self.helper(sorted(nums), res, [])
+        return res
+
+    def helper(self, nums, res, tmp):
+        if not nums:
+            res.append(tmp[:])
+            return
+        for i, num in enumerate(nums, 1):
+            self.helper(nums[:i] + nums[i + 1:], res, tmp + [num])
 ```
 
 ### C++
