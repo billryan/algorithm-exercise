@@ -94,3 +94,6 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 - [The Algorithm Design Manual](http://www.amazon.com/exec/obidos/ASIN/1848000693/thealgorithmrepo), 作者还放出了自己上课的视频和slides - [Skiena's Audio Lectures](http://www3.cs.stonybrook.edu/~algorith/video-lectures/)，[The Algorithm Design Manual (豆瓣)](http://book.douban.com/subject/3072383/)
 - 大部头有 *Introduction to Algorithm* 和 TAOCP
 - *Cracking The Coding Interview* - 著名的CTCI(又称CC150)，除了算法数据结构等题以外，还包含OO Design, Database, System Design, Brain Teaser等类型的题目。**准备技术面试的同学一定要看**
+
+
+// just a test, please ignore.
