@@ -104,11 +104,11 @@ public:
      */
     ListNode *removeNthFromEnd(ListNode *head, int n) {
         if (NULL == head || n < 1) {
-            return NULL;
+            return head;
         }
 
-        ListNode *dummy = new ListNode(0);
-        dummy->next = head;
+        ListNode dummy(0);
+        dummy.next = head;
         ListNode *preDel = dummy;
 
         for (int i = 0; i != n; ++i) {
@@ -124,7 +124,7 @@ public:
         }
         preDel->next = preDel->next->next;
 
-        return dummy->next;
+        return dummy.next;
     }
 };
 ```
