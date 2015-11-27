@@ -188,28 +188,27 @@ public class Sort {
 #!/usr/bin/env python
 
 
-def qsort3(alist, l, u):
+def qsort3(alist, lower, upper):
     print(alist)
-    if l >= u:
+    if lower >= upper:
         return
 
-    t = alist[l]
-    i = l + 1
-    j = u
-    while True:
-        while i <= u and alist[i] < t:
-            i += 1
-        while alist[j] > t:
-            j -= 1
-        if i > j:
+    pivot = alist[lower]
+    left, right = lower + 1, upper
+    while left <= right:
+        while left <= right and alist[left] < pivot:
+            left += 1
+        while left <= right and alist[right] >= pivot:
+            right -= 1
+        if left > right:
             break
-        # swap after make sure i > j
-        alist[i], alist[j] = alist[j], alist[i]
-    # do not forget swap l and j
-    alist[l], alist[j] = alist[j], alist[l]
+        # swap while left <= right
+        alist[left], alist[right] = alist[right], alist[left]
+    # swap the smaller with pivot
+    alist[lower], alist[right] = alist[right], alist[lower]
 
-    qsort3(alist, l, j - 1)
-    qsort3(alist, j + 1, u)
+    qsort3(alist, lower, right - 1)
+    qsort3(alist, right + 1, upper)
 
 unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
 print(qsort3(unsortedArray, 0, len(unsortedArray) - 1))
