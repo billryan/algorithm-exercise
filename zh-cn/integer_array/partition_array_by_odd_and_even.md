@@ -51,6 +51,21 @@ public class Solution {
 }
 ```
 
+### C++
+``` c++
+  void partitionArray(vector<int> &nums) {
+        if (nums.empty()) return;
+       
+        int i=0, j=nums.size()-1;
+        while (i<j) {
+            while (i<j && nums[i]%2!=0) i++;
+            while (i<j && nums[j]%2==0) j--;
+            if (i != j) swap(nums[i], nums[j]);
+        }
+    }
+
+```
+
 ### 源码分析
 
 注意处理好边界即循环时保证`left < right`.
