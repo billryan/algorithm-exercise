@@ -158,7 +158,6 @@ Dummy node 是一个虚拟节点，也可以认为是标杆节点。Dummy node �
 - 判断单链表是否有环
 	利用快慢指针的原理，同样设置两个指针 `*fast`、`*slow` 都指向单链表的头节点，其中 `*fast`的移动速度是`*slow`的2倍。如果 `*fast = NULL`，说明该单链表 以 `NULL`结尾，不是循环链表；如果 `*fast = *slow`，则快指针追上慢指针，说明该链表是循环链表。
 
-
 ## Python
 
 ```python
@@ -177,8 +176,8 @@ class NodeCircle:
                 fast = fast.next
             if fast == slow:
                 break
-            if fast and slow and (fast == slow):
-                return True
-            else:
-                return False
+        if fast and slow and (fast == slow):
+            return True
+        else:
+            return False
 ```
