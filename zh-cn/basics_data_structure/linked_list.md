@@ -19,6 +19,16 @@ class ListNode:
         self.next = None
 ```
 
+###C++
+```cpp
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int val,ListNode *next=NULL):val(val),next(next){}
+};
+
+```
+
 ### Java
 
 ```java
@@ -59,6 +69,20 @@ class ListNode:
             prev = head
             head = temp
         return prev
+```
+
+###C++
+```cpp
+ListNode * ReverseList(ListNode *head){
+    ListNode *pre=NULL,*tmp;
+    while(head){
+        tmp=head->next;
+        head->next=pre;
+        pre=head;
+        head=tmp;
+    }
+    return pre;
+}
 ```
 
 ### Java
