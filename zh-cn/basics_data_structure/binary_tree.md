@@ -62,6 +62,42 @@ public class TreeNode {
 
 ![Binary Tree Traversal](../images/binary_tree_traversal.png)
 
+### Python
+
+```python
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left, self.right = None, None
+
+class Traversal(object):
+    def __init__(self):
+        self.traverse_path = list()
+
+    def pre_order(self, root):
+        if root:
+            self.traverse_path.append(root.val)
+            self.pre_order(root.left)
+            self.pre_order(root.right)
+
+    def mid_order(self,root):
+        if root:
+            if root.left:
+                self.mid_order(root.left)
+            self.traverse_path.append(root.val)
+            if root.right:
+                self.mid_order(root.right)
+
+    def reverse_order(self,root):
+        if root:
+            if root.left:
+                self.reverse_order(root.left)
+            if root.right:
+                self.reverse_order(root.right)
+            self.traverse_path.append(root.val)
+
+```
+
 ## 树类题的复杂度分析
 
 对树相关的题进行复杂度分析时可统计对每个节点被访问的次数，进而求得总的时间复杂度。
