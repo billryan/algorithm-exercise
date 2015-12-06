@@ -188,7 +188,7 @@ Dummy node 是一个虚拟节点，也可以认为是标杆节点。Dummy node �
 class NodeCircle:
     def __init__(self, val):
         self.val = val
-        self.next = null
+        self.next = None
 
     def has_circle(self, head):
         slow = head
