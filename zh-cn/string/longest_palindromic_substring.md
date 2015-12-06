@@ -142,6 +142,40 @@ public class Solution {
 
 穷举所有的子串，$$O(C_n^2) = O(n^2)$$, 每次判断字符串是否为回文，复杂度为 $$O(n)$$, 故总的时间复杂度为 $$O(n^3)$$. 故大数据集下可能 TLE. 使用了`substr`作为临时子串，空间复杂度为 $$O(n)$$.
 
+## 题解2
+### C++
+```c++
+string palindrome(string& s, int l, int r) {
+	while (l>=0 && r<s.size() && s[l]==s[r]) l--, r++;
+	return s.substr(l+1, r-l-1);
+}
+
+string longestPalindrome(string s) {
+	if (s.empty()) return s;
+
+	string res;
+	for (int i=0; i<s.size(); i++) {
+		string t;
+		t = palindrome(s, i, i);
+		if (t.size() > res.size()) res = t;
+	   
+		t = palindrome(s, i, i+1);
+		if (t.size() > res.size()) res = t;   
+	}
+	return res;
+}
+```
+
+### 源码分析
+假定扫描的每个字母是回文的中间位置（需要处理奇偶两种情况），从该位置向两头搜索寻找最大回文长度
+
+### 复杂度分析
+时间复杂度降到O(n^2)了
+
+## 题解3
+另外还有一个O（n）的解法，具体参考下面的链接
+http://articles.leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
+
 ## Reference
 
 - [Longest Palindromic Substring Part I | LeetCode](http://articles.leetcode.com/2011/11/longest-palindromic-substring-part-i.html)
