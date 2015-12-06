@@ -27,6 +27,28 @@ Do it in-place.
 
 需要注意的是这个题并未说明多个空格如何处理，如果多个连续空格也当做一个空格时稍有不同。
 
+### C++
+``` c++
+int replaceBlank(char string[], int length) {
+	int n = 0;
+	for (int i=0; i<length; i++)
+		if (string[i] == ' ') n++;
+	   
+	int new_len = length + n*2;
+	for (int i=length-1; i>=0; i--) {
+		if (string[i] != ' ') {
+			string[--new_len] = string[i];
+		} else {
+			string[--new_len] = '0';
+			string[--new_len] = '2';
+			string[--new_len] = '%';
+		}
+	}
+	return length + n*2;
+}
+```
+
+
 ### Java
 
 ```java
