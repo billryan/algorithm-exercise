@@ -29,6 +29,27 @@ The sequence of integers will be represented as a string.
 
 题目大意是找第 n 个数(字符串表示)，规则则是对于连续字符串，表示为重复次数+数本身。
 
+### C++
+```c++
+string countAndSay(int n) {
+    if (n == 0) return "";
+    string res = "1";
+    while (--n) {
+        string cur = "";
+        for (int i = 0; i < res.size(); i++) {
+            int count = 1;
+             while ((i + 1 < res.size()) && (res[i] == res[i + 1])){
+                count++;   
+                i++;
+            }
+            cur += to_string(count) + res[i];
+        }
+        res = cur;
+    }
+    return res;
+}
+```
+
 ### Java
 
 ```java
@@ -69,6 +90,31 @@ public class Solution {
 ### 复杂度分析
 
 略
+
+### 题解2 - 递归
+### C++
+``` c++
+class Solution {public:
+    string countAndSay(int n) {
+        if(n==1) return "1"; // base case
+        string res,tmp = countAndSay(n-1); // recursion
+        char c= tmp[0];
+        int count=1;
+        for(int i=1;i<tmp.size();i++)
+            if(tmp[i]==c)
+                count++;
+            else {
+                res+=to_string(count);
+                res.push_back(c);
+                c=tmp[i];
+                count=1;
+            }
+        res+=to_string(count);
+        res.push_back(c);
+        return res;
+    }
+};
+```
 
 ## Reference
 
