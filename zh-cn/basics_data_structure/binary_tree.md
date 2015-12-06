@@ -74,26 +74,22 @@ class Traversal(object):
     def __init__(self):
         self.traverse_path = list()
 
-    def pre_order(self, root):
+    def preorder(self, root):
         if root:
             self.traverse_path.append(root.val)
-            self.pre_order(root.left)
-            self.pre_order(root.right)
+            self.preorder(root.left)
+            self.preorder(root.right)
 
-    def mid_order(self,root):
+    def inorder(self,root):
         if root:
-            if root.left:
-                self.mid_order(root.left)
+            self.inorder(root.left)
             self.traverse_path.append(root.val)
-            if root.right:
-                self.mid_order(root.right)
+            self.inorder(root.right)
 
-    def reverse_order(self,root):
+    def postorder(self,root):
         if root:
-            if root.left:
-                self.reverse_order(root.left)
-            if root.right:
-                self.reverse_order(root.right)
+            self.postorder(root.left)
+            self.postorder(root.right)
             self.traverse_path.append(root.val)
 
 ```
