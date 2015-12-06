@@ -83,7 +83,26 @@ public class Solution {
 
 最坏情况下需要不断回溯，时间复杂度 $$O(n!) \times O(m!)$$, 空间复杂度 $$O(1)$$(不含栈空间)。
 
+
+## 题解2
+
+###C++
+```c++
+bool isMatch(string s, string p) {
+	int star = 0, ss = 0, i = 0, j = 0;
+	while (s[i]) {
+		if (p[j] == '?' || p[j] == s[i]) {j++; i++; continue;}
+		if (p[j] == '*') {star = ++j; ss = i; continue;}
+		if (star) {j = star; i = ++ss; continue;}
+		return false;
+	}
+	while (p[j] == '*') j++;
+	return !p[j];
+}
+```
+
+
 ## Reference
 
 - Soulmachine 的 leetcode 题解
-- 
+- [题解2的出处](http://yucoding.blogspot.com/2013/02/leetcode-question-123-wildcard-matching.html)
