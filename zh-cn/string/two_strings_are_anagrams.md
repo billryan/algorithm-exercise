@@ -2,7 +2,7 @@
 
 ## Source
 
-- CC150: [(158) Two Strings Are Anagrams](http://www.lintcode.com/en/problem/two-strings-are-anagrams/)
+- lintcode: [(158) Two Strings Are Anagrams](http://www.lintcode.com/en/problem/two-strings-are-anagrams/)
 
 ```
 Write a method anagram(s,t) to decide if two strings are anagrams or not.
