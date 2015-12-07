@@ -201,6 +201,68 @@ private:
 
 同上。
 
+## 题解3 - 归并排序(自底向上)
+
+归并排序，总的时间复杂度是（nlogn),但是递归的空间复杂度并不是常数（和递归的层数有着关；递归的过程是自顶向下，好理解；这里提供自底向上的非递归方法；
+
+### C++
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* sortList(ListNode* head) {
+        int len_list = 0;
+        ListNode *p=head;
+        while(p){
+            p = p->next;
+            len_list++;
+        }
+        ListNode *l_list,*r_list,**p_merge_list;
+        for(int i = 1; i < len_list; i <<= 1){
+            r_list = l_list = head;
+            p_merge_list = &head;
+            for(int j = 0; j < len_list - i ; j += i << 1){
+
+                for(int k = 0; k < i; ++k) r_list=r_list->next;
+                int l_len=i,r_len=min(i, len_list - j - i);
+
+                while(l_len || r_len ){
+                    if(r_len > 0 && (l_len == 0 || r_list->val <= l_list->val)){
+                        *p_merge_list = r_list;
+                        p_merge_list=&(r_list->next);
+                        r_list = r_list->next;
+                        --r_len;
+                    }
+                    else{
+                        *p_merge_list = l_list;
+                        p_merge_list=&(l_list->next);
+                        l_list = l_list->next;
+
+                        --l_len;
+                    }
+                }
+                l_list=r_list;
+            }
+            *p_merge_list = r_list;
+
+        }
+        return head;
+    }
+};
+```
+
+### 复杂度分析
+
+归并排序，分解子问题的过程是O(logn),合并子问题的过程是O(n);
+
+
 ## Reference
 
 - [Sort List | 九章算法](http://www.jiuzhang.com/solutions/sort-list/)
