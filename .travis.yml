@@ -17,8 +17,8 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-cache search fonts-noto-cjk
   # Install Gitbook
-  - npm install gitbook-cli -g &
-  - npm install svgexport -g &
+  - npm install gitbook-cli -g
+  - npm install svgexport -g
   - cd ~
   - git clone git@github.com:billryan/algorithm-exercise.git
   - cp algorithm-exercise/scripts/rename_ebook.sh ~/
@@ -45,9 +45,9 @@ script:
   # gitbook build
   - cd ~/algorithm-exercise/
   - gitbook install
-  - gitbook pdf . &
-  - gitbook epub . &
-  - gitbook mobi . &
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
   - mv *.pdf *.epub *.mobi ~/upload
   - cd ~/upload
   - sh ~/rename_ebook.sh
@@ -62,8 +62,8 @@ after_success:
   - cp ~/upload/*.mobi mobi
   - git add epub pdf mobi
   - git commit --amend -m "Updated $(date)"
-  - git push -u gitcafe HEAD:deploy --force &
-  - git push -u origin HEAD:deploy --force &
+  - git push -u gitcafe HEAD:deploy --force
+  - git push -u origin HEAD:deploy --force
 
 # blacklist
 branches:
