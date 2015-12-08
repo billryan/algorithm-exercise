@@ -1,6 +1,5 @@
 {
     "plugins": [
-        "-search",
-        "-sharing"
+        "-search"
     ]
 }
