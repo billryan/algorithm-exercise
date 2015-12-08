@@ -15,9 +15,10 @@ before_install:
   - git config --global user.email yuanbin2014@gmail.com
   # update first
   - sudo apt-get update -qq
+  - sudo apt-cache search fonts-noto-cjk
   # Install Gitbook
-  - npm install gitbook-cli -g
-  - npm install svgexport -g
+  - npm install gitbook-cli -g &
+  - npm install svgexport -g &
   - cd ~
   - git clone git@github.com:billryan/algorithm-exercise.git
   - cp algorithm-exercise/scripts/rename_ebook.sh ~/
@@ -29,7 +30,7 @@ before_script:
 
 script:
   - mkdir -p ~/upload
-  # install source code pro
+  # install noto
   - mkdir -p ~/fonts
   - cd ~/fonts
   - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
@@ -43,10 +44,10 @@ script:
   - sudo fc-cache -f -v
   # gitbook build
   - cd ~/algorithm-exercise/
-  - gitbook install && gitbook build .
-  - gitbook pdf .
-  - gitbook epub .
-  - gitbook mobi .
+  - gitbook install
+  - gitbook pdf . &
+  - gitbook epub . &
+  - gitbook mobi . &
   - mv *.pdf *.epub *.mobi ~/upload
   - cd ~/upload
   - sh ~/rename_ebook.sh
@@ -59,12 +60,10 @@ after_success:
   - cp ~/upload/*.epub epub
   - cp ~/upload/*.pdf pdf
   - cp ~/upload/*.mobi mobi
-  - git add epub
-  - git add pdf
-  - git add mobi
+  - git add epub pdf mobi
   - git commit --amend -m "Updated $(date)"
-  - git push -u gitcafe HEAD:deploy --force
-  - git push -u origin HEAD:deploy --force
+  - git push -u gitcafe HEAD:deploy --force &
+  - git push -u origin HEAD:deploy --force &
 
 # blacklist
 branches:
