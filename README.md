@@ -1,6 +1,7 @@
 # Data Structure and Algorithm/leetcode/lintcode
 
-[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise) [![Slack Team](https://img.shields.io/badge/Slack-ds--algo-blue.svg)](http://slackin4ds-algo.herokuapp.com)
+[![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
+[![Slack Status](https://slackin4ds-algo.herokuapp.com/badge.svg)](https://slackin4ds-algo.herokuapp.com/)
 
 - English via [Data Structure and Algorithm notes](http://algorithm.yuanbin.me/en/index.html)
 - 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin.me/zh-cn/index.html)
