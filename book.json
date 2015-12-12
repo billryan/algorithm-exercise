@@ -4,11 +4,11 @@
         "ga",
         "katex",
         "richquotes",
-        "yahei",
         "swiftype",
         "sitemap",
         "github",
-        "edit-link"
+        "edit-link",
+        "-search"
     ],
     "pluginsConfig": {
         "disqus": {

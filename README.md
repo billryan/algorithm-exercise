@@ -40,5 +40,5 @@ This work is licensed under the **Creative Commons Attribution-ShareAlike 4.0 In
 - [x] add implementations of `Python`, `C++`, `Java` code
 - [x] add time and space complexity analysis
 - [x] summary of basic data structure and algorithm
-- [x] add CSS for online website <http://algorithm.yuanbin.me>, `yahei` plugin works well
+- [x] add CSS for online website <http://algorithm.yuanbin.me>
 - [x] add proper Chinese fonts for PDF output
