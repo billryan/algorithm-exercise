@@ -2,7 +2,7 @@
 
 ## Source
 
-- [(31) Partition Array](http://www.lintcode.com/en/problem/partition-array/)
+- lintcode: [(31) Partition Array](http://www.lintcode.com/en/problem/partition-array/)
 
 ```
 Given an array nums of integers and an int k, partition the array
