@@ -4,26 +4,31 @@
 
 - lintcode: [(31) Partition Array](http://www.lintcode.com/en/problem/partition-array/)
 
-```
-Given an array nums of integers and an int k, partition the array
-(i.e move the elements in "nums") such that:
+### Problem
 
-All elements < k are moved to the left
-All elements >= k are moved to the right
-Return the partitioning index, i.e the first index i nums[i] >= k.
+Given an array `nums` of integers and an int `k`, partition the array (i.e
+move the elements in "nums") such that:
 
-Example
-If nums=[3,2,2,1] and k=2, a valid answer is 1.
+  * All elements &lt; _k_ are moved to the _left_
+  * All elements &gt;= _k_ are moved to the _right_
 
-Note
-You should do really partition in array nums instead of just
-counting the numbers of integers smaller than k.
+Return the partitioning index, i.e the first index _i_ nums[_i_] &gt;= _k_.
 
-If all elements in nums are smaller than k, then return nums.length
+#### Example
 
-Challenge
+If nums = `[3,2,2,1]` and `k=2`, a valid answer is `1`.
+
+#### Note
+
+You should do really partition in array _nums_ instead of just counting the
+numbers of integers smaller than k.
+
+If all elements in _nums_ are smaller than _k_, then return _nums.length_
+
+#### Challenge
+
 Can you partition the array in-place and in O(n)?
-```
+
 
 ## 题解1 - 自左向右
 
