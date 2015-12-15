@@ -48,6 +48,8 @@ disqus 的评论处直接粘贴代码十分难看，参考 [syntax highlighting]
 Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.herokuapp.com> 即刻开启~
 Gitbook 虽然也有 star 和 subscribe 功能，但目前来看还是非常鸡肋，通过 Slack 的 `#github_commit` channel 你可以看到对单文件`diff`级别的改动。
 
+**号外：Slack 的 [shua-shua-shua](https://ds-algo.slack.com/messages/shua-shua-shua/details/) channel 用于刷题小组讨论，大家可以在这个 channel 里一起讨论学习算法。**
+
 ## 我觉得这个文档整理的真好，接受捐助吗？
 
 当然！除了 GitHub 上 star 或者帮助改进内容外，你还可以以现金或者其他实物激励我们创造出更好的内容！

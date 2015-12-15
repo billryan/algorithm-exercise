@@ -32,9 +32,11 @@
 
 本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。
 
-你可以在 GitHub 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
+你可以在 GitHub/GitBook 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
 
 Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.herokuapp.com> 即刻开启~
+
+**号外：Slack 的 [shua-shua-shua](https://ds-algo.slack.com/messages/shua-shua-shua/details/) channel 用于刷题小组讨论，大家可以在这个 channel 里一起讨论学习算法。**
 
 ## 许可证
 
