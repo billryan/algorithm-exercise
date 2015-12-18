@@ -68,6 +68,35 @@ class Solution:
         return ret
 ```
 
+### C++
+```c++
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        vector<int> result = {-1, -1};
+        if (nums.empty()) return result;
+
+        int lb = -1, ub = nums.size();
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (nums[mid] < target) lb = mid;
+            else ub = mid;
+        }
+
+        if ((ub < nums.size()) && (nums[ub] == target)) result[0] = ub;
+        else return result;
+
+        ub = nums.size();
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (nums[mid] > target) ub = mid;
+            else lb = mid;
+        }
+        result[1] = ub - 1;
+        return result;
+    }
+};
+```
 
 ### Java
 lower/upper bound 的结合，做两次搜索即可。
