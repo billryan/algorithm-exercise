@@ -34,11 +34,30 @@ class Solution:
         return start
 ```
 
+### C++
+``` c++
+int sqrt(int x) {
+    // write your code here
+    if (x <= 0) return 0;
+
+    int lb = 0, ub = x;
+    while (lb + 1 < ub) {
+        long long mid = lb + (ub - lb) / 2; 
+        if (mid * mid == x) return mid; 
+        if (mid * mid < x) lb = mid;
+        else ub = mid;
+    }
+    return lb;
+}
+
+```
+
 ### 源码分析
 
 1. 异常检测，先处理小于等于0的值。
 2. 使用二分搜索的经典模板，注意不能使用`start < end`, 否则在给定值1时产生死循环。
 3. 最后返回平方根的整数部分`start`.
+4. C++代码mid需要定义为long long，否则计算平方时会溢出
 
 二分搜索过程很好理解，关键是最后的返回结果还需不需要判断？比如是取 start, end, 还是 mid? 我们首先来分析下二分搜索的循环条件，由`while`循环条件`start + 1 < end`可知，`start`和`end`只可能有两种关系，一个是`end == 1 || end ==2`这一特殊情况，返回值均为1，另一个就是循环终止时`start`恰好在`end`前一个元素。设值 x 的整数部分为 k, 那么在执行二分搜索的过程中 $$ start \leq k \leq end$$ 关系一直存在，也就是说在没有找到 $$mid^2 == x$$ 时，循环退出时有 $$start < k < end$$, 取整的话显然就是`start`了。
 
