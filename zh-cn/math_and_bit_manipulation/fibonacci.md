@@ -4,28 +4,31 @@
 
 - lintcode: [(366) Fibonacci](http://www.lintcode.com/en/problem/fibonacci/)
 
-```
-Find the Nth number in Fibonacci sequence.
+### Problem
+
+Find the _N_th number in Fibonacci sequence.
 
 A Fibonacci sequence is defined as follow:
 
-The first two numbers are 0 and 1.
-The i th number is the sum of i-1 th number and i-2 th number.
+  * The first two numbers are 0 and 1.
+  * The _i_ th number is the sum of _i_-1 th number and _i_-2 th number.
+
 The first ten numbers in Fibonacci sequence is:
 
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...
+`0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...`
 
-Example
-Given 1, return 0
+#### Example
 
-Given 2, return 1
+Given `1`, return `0`
 
-Given 10, return 34
+Given `2`, return `1`
 
-Note
-The Nth fibonacci number won't exceed the max value of
-signed 32-bit integer in the test cases.
-```
+Given `10`, return `34`
+
+#### Note
+
+The _N_th fibonacci number won't exceed the max value of signed 32-bit integer
+in the test cases.
 
 ## 题解
 
