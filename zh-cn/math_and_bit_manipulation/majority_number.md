@@ -29,7 +29,7 @@ int majorityNumber(vector<int> nums) {
     for (auto n : nums) {
         if (!count) k = n;
         if (k == n) count++;
-        else count --;
+        else count--;
     }
     return k;
 }
