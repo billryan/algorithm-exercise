@@ -17,6 +17,28 @@ we have FIVE 1's (1, 10, 11, 12)
 
 leetcode 上的有点简单，这里以 Lintcode 上的为例进行说明。找出从0至整数 n 中出现数位k的个数，与整数有关的题大家可能比较容易想到求模求余等方法，但其实很多与整数有关的题使用字符串的解法更为便利。将整数 i 分解为字符串，然后遍历之，自增 k 出现的次数即可。
 
+### C++
+```c++
+class Solution {
+public:
+    /*
+     * param k : As description.
+     * param n : As description.
+     * return: How many k's between 0 and n.
+     */
+    int digitCounts(int k, int n) {
+        char c = k + '0';
+        int count = 0;
+        for (int i = k; i <= n; i++) {
+            for (auto s : to_string(i)) {
+                if (s == c) count++;
+            }
+        }
+        return count;
+    }
+};
+```
+
 ### Java
 
 ```java
