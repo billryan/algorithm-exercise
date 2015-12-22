@@ -31,6 +31,30 @@ signed 32-bit integer in the test cases.
 
 斐波那契数列使用递归极其容易实现，其实使用非递归的方法也很容易，不断向前滚动即可。
 
+### C++
+```c++
+class Solution{
+public:
+    /**
+     * @param n: an integer
+     * @return an integer f(n)
+     */
+    int fibonacci(int n) {
+        if (n<=0) return -1;
+        if (n==1) return 0;
+        if (n==2) return 1;
+        
+        int fn, fn1 = 0, fn2 = 1;
+        for (int i = 3; i <= n; i++) {
+            fn = fn1 + fn2;
+            fn1 = fn2;
+            fn2 = fn;
+        }
+        return fn;
+    }
+};
+```
+
 ### Java
 
 ```java
@@ -40,7 +64,7 @@ class Solution {
      * @return an integer f(n)
      */
     public int fibonacci(int n) {
-        if (n < 0) return -1;
+        if (n <= 0) return -1;
         if (n == 1) return 0;
         if (n == 2) return 1;
 
