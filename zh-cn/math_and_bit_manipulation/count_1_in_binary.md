@@ -22,6 +22,25 @@ If the integer is n bits with m 1 bits. Can you do it in O(m) time?
 
 题 [O1 Check Power of 2](http://algorithm.yuanbin.me/zh-cn/math_and_bit_manipulation/o1_check_power_of_2.html) 的进阶版，`x & (x - 1)` 的含义为去掉二进制数中1的最后一位，无论 x 是正数还是负数都成立。
 
+### C++
+``` c++
+class Solution {
+public:
+    /**
+     * @param num: an integer
+     * @return: an integer, the number of ones in num
+     */
+    int countOnes(int num) {
+        int count=0;
+        while (num) {
+            num &= num-1;
+            count++;
+        }
+        return count;
+    }
+};
+```
+
 ### Java
 
 ```java
