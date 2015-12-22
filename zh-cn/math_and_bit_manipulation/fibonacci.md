@@ -40,11 +40,11 @@ public:
      * @return an integer f(n)
      */
     int fibonacci(int n) {
-        if (n<=0) return -1;
-        if (n==1) return 0;
-        if (n==2) return 1;
+        if (n <= 0) return -1;
+        if (n == 1) return 0;
+        if (n == 2) return 1;
         
-        int fn, fn1 = 0, fn2 = 1;
+        int fn = 0, fn1 = 0, fn2 = 1;
         for (int i = 3; i <= n; i++) {
             fn = fn1 + fn2;
             fn1 = fn2;
