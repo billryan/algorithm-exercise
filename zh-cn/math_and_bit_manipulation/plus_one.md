@@ -21,6 +21,31 @@ Given [9,9,9] which represents 999, return [1,0,0,0].
 
 又是一道两个整数按数位相加的题，自后往前累加，处理下进位即可。这道题中是加1，其实还可以扩展至加2，加3等。
 
+### C++
+```c++
+class Solution {
+public:
+    /**
+     * @param digits a number represented as an array of digits
+     * @return the result
+     */
+    vector<int> plusOne(vector<int>& digits) {
+        return plusN(digits, 1);
+    }
+    
+    vector<int> plusN(vector<int>& digits, int n) {
+        vector<int> result;
+        int carry = n;
+        for (int i = digits.size() - 1; i >= 0; i--) {
+            result.insert(result.begin(), (digits[i] + carry) % 10);
+            carry = (digits[i] + carry) / 10;
+        }
+        if (carry) result.insert(result.begin(), carry);
+        return result;
+    }
+};
+```
+
 ### Java
 
 ```java
