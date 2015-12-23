@@ -76,6 +76,31 @@ class Solution {
 
 除了这种找相邻递推关系的方法我们还可以尝试对前面的丑数依次乘3, 5, 7，直至找到比当前最大的丑数大的一个数，对乘积后的三种不同结果取最小值即可得下一个最大的丑数。这种方法需要保存之前的 N 个丑数，由于已按顺序排好，天然的二分法。
 
+### C++
+```c++
+class Solution {
+public:
+    /*
+     * @param k: The number k.
+     * @return: The kth prime number as description.
+     */
+    long long kthPrimeNumber(int k) {
+        vector<long long> ugly(k + 1);
+        ugly[0] = 1;
+        int index = 0, index3 = 0, index5 = 0, index7 = 0;
+        while (index <= k) {
+            long long val = ugly[index3]*3 < ugly[index5]*5 ? ugly[index3]*3 : ugly[index5]*5;
+            val = val < ugly[index7]*7 ? val : ugly[index7]*7;
+            if (val == ugly[index3]*3) ++index3;
+            if (val == ugly[index5]*5) ++index5;
+            if (val == ugly[index7]*7) ++index7;
+            ugly[++index] = val;
+        }
+        return ugly[k];
+    }
+};
+```
+
 ### Java
 
 ```java
