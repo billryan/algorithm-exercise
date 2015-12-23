@@ -85,6 +85,8 @@ public:
      * @return: The kth prime number as description.
      */
     long long kthPrimeNumber(int k) {
+        if (k <= 0) return -1;
+        
         vector<long long> ugly(k + 1);
         ugly[0] = 1;
         int index = 0, index3 = 0, index5 = 0, index7 = 0;
