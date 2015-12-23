@@ -34,14 +34,14 @@ public:
     }
     
     vector<int> plusN(vector<int>& digits, int n) {
-        vector<int> res;
-        int c = n;
+        vector<int> result;
+        int carry = n;
         for (int i = digits.size() - 1; i >= 0; i--) {
-            res.insert(res.begin(), (digits[i] + c) % 10);
-            c = (digits[i] + c) / 10;
+            result.insert(result.begin(), (digits[i] + carry) % 10);
+            carry = (digits[i] + carry) / 10;
         }
-        if (c) res.insert(res.begin(), c);
-        return res;
+        if (carry) result.insert(result.begin(), carry);
+        return result;
     }
 };
 ```
