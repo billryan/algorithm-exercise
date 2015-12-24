@@ -29,6 +29,60 @@ Super Star: Extra memory usage O(1)
 
 仍然考的是中序遍历，但是是非递归实现。其实这道题等价于写一个二叉树中序遍历的迭代器。需要内置一个栈，一开始先存储到最左叶子节点的路径。在遍历的过程中，只要当前节点存在右子树，则进入右子树，存储从此处开始到当前子树里最左叶子节点的路径。
 
+### C++
+```c++
+/**
+ * Definition of TreeNode:
+ * class TreeNode {
+ * public:
+ *     int val;
+ *     TreeNode *left, *right;
+ *     TreeNode(int val) {
+ *         this->val = val;
+ *         this->left = this->right = NULL;
+ *     }
+ * }
+ * Example of iterate a tree:
+ * BSTIterator iterator = BSTIterator(root);
+ * while (iterator.hasNext()) {
+ *    TreeNode * node = iterator.next();
+ *    do something for node
+ */
+    class BSTIterator {
+    private:
+        stack<TreeNode*> stack_;
+        TreeNode* cur_ = NULL;
+        
+    public:
+        //@param root: The root of binary tree.
+        BSTIterator(TreeNode *root) {
+            // write your code here
+            cur_ = root;
+        }
+    
+        //@return: True if there has next node, or false
+        bool hasNext() {
+            // write your code here
+            return (cur_ || !stack_.empty());
+        }
+        
+        //@return: return next node
+        TreeNode* next() {
+            // write your code here
+            while (cur_) {
+                stack_.push(cur_);
+                cur_ = cur_->left;
+            }
+            cur_ = stack_.top();
+            stack_.pop();
+            TreeNode* node = cur_;
+            cur_ = cur_->right;
+            
+            return node;
+        }
+    };
+```
+
 ### Java 
 
 ```java
