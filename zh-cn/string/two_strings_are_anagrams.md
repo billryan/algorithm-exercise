@@ -18,6 +18,19 @@ O(n) time, O(1) extra space
 
 判断两个字符串是否互为变位词，若区分大小写，考虑空白字符时，直接来理解可以认为两个字符串的拥有各不同字符的数量相同。对于比较字符数量的问题常用的方法为遍历两个字符串，统计其中各字符出现的频次，若不等则返回`false`. 有很多简单字符串类面试题都是此题的变形题。
 
+### Python
+
+``` python
+class Solution:
+    """
+    @param s: The first string
+    @param b: The second string
+    @return true or false
+    """
+    def anagram(self, s, t):
+        return collections.Counter(s) == collections.Counter(t)
+```
+
 ### C++
 
 ```c++
@@ -68,6 +81,19 @@ public:
 ## 题解2 - 排序字符串
 
 另一直接的解法是对字符串先排序，若排序后的字符串内容相同，则其互为变位词。题解1中使用 hashmap 的方法对于比较两个字符串是否互为变位词十分有效，但是在比较多个字符串时，使用 hashmap 的方法复杂度则较高。
+
+### Python
+
+```python
+class Solution:
+    """
+    @param s: The first string
+    @param b: The second string
+    @return true or false
+    """
+    def anagram(self, s, t):
+        return sorted(s) == sorted(t)
+```
 
 ### C++
 
