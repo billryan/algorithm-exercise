@@ -49,7 +49,7 @@ class Solution:
         if not matrix or not matrix[0]:
             return 0
         occur = 0
-        row, col = 0, len(matrix[0])
+        row, col = 0, len(matrix[0])-1
         while row < len(matrix) and col >= 0:
             if matrix[row][col] == target:
                 occur += 1
