@@ -34,7 +34,7 @@ Gitbook 中使用`SUMMARY.md`这个文件控制生成目录，添加新内容时
 
 推荐的 markdown 编辑器为 Gitbook 自家的 [editor](https://www.gitbook.com/editor), 目前新版的 bug 太多，而且是自动 commit 的，不便于版本控制，希望他们后续能改进。所以目前推荐老版，老版的见 [editor-lagecy](https://github.com/GitbookIO/editor-legacy/releases), 支持 Windows/Linux/MAC 三大平台，业界良心！但是实测在Arch Linux/OSX 下可能会出现占用内存/CPU过高的情况... 编辑界面如下图所示，最左边为章节预览，中间为 markdown 编辑框，右边为实时渲染页面，可选择使用全屏模式。
 
-![Gitbook Editor](./images/gitbook_editor.png)
+![Gitbook Editor](../images/gitbook_editor.png)
 
 使用其他如 Mou/Vim/Emacs/Sublime Text也不错，但是在新增Chapter/Section时就比较闹心了，嗯，你也可以新建 Section 后再使用其他编辑器编辑。
 
