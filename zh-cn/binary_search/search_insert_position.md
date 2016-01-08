@@ -59,6 +59,33 @@ class Solution:
             return len(A)
 ```
 
+### C++
+```c++
+class Solution {
+    /** 
+     * param A : an integer sorted array
+     * param target :  an integer to be inserted
+     * return : an integer
+     */
+public:
+    int searchInsert(vector<int> &A, int target) {
+        // write your code here
+        if (A.empty()) return 0;
+        
+        int n = A.size();
+        int lb = -1, ub = n;
+        while (lb + 1 < ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (A[mid] < target) {
+                lb = mid;
+            } else {
+                ub = mid;
+            }
+        }
+        return ub;
+    }
+};
+```
 
 ### Java
 仍然是 [Binary Search](http://algorithm.yuanbin.me/zh-cn/basics_algorithm/binary_search.html) 中`lower_bound`的变形，两大关键点：`start` 和`end` 的初始化；最终插入位置和`start` 以及`end` 之间的关系，由于`start`对应的索引一定是小于目标值的，那么`start + 1` 就是要求的值了，再检查下两端的边界，DONE
