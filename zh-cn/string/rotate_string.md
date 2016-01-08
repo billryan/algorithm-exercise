@@ -4,22 +4,26 @@
 
 - lintcode: [(8) Rotate String](http://www.lintcode.com/en/problem/rotate-string/)
 
-```
-Given a string and an offset, rotate string by offset. (rotate from left to right)
+### Problem
 
-Example
-Given "abcdefg"
+Given a string and an offset, rotate string by offset. (rotate from left to
+right)
 
-for offset=0, return "abcdefg"
+#### Example
 
-for offset=1, return "gabcdef"
+Given `"abcdefg"`.
 
-for offset=2, return "fgabcde"
 
-for offset=3, return "efgabcd"
 
-...
-```
+    offset=0 => "abcdefg"
+    offset=1 => "gabcdef"
+    offset=2 => "fgabcde"
+    offset=3 => "efgabcd"
+
+
+#### Challenge
+
+Rotate in-place with O(1) extra memory.
 
 ## 题解
 
