@@ -14,11 +14,11 @@ import collections
 stack = collections.deque()
 ```
 
-`list`作為最基本的`python`資料結構之一， 可以很輕松的實現`stack`。 如果需要更高效的`stack`， 建議使用`deque`。
+`list`作為最基本的`python`資料結構之一， 可以很輕鬆地實現`stack`。 如果需要更高效的`stack`， 建議使用`deque`。
 
 #### Methods
 
-- `len(stack) != 0` - 判斷`stack`是否weikong
+- `len(stack) != 0` - 判斷`stack`是否為空
 - `stack[-1]` - 取堆疊頂元素，不移除
 - `pop()` - 移除堆疊頂元素並返回該元素
 - `append(item)` - 向堆疊頂添加元素
