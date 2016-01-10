@@ -8,6 +8,40 @@
 
 鏈表就是鏈式儲存的線性表。根據指標域的不同，鏈表分為單向鏈表、雙向鏈表、循環鏈表等等。
 
+## 程式碼實現
+
+### Python
+
+```python
+class ListNode:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+```
+
+###C++
+```cpp
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int val, ListNode *next=NULL):val(val),next(next){}
+};
+
+```
+
+### Java
+
+```java
+public class ListNode {
+    public int val;
+    public ListNode next;
+    public ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+```
+
 ## 鏈表的基本操作
 
 ### 反轉單向鏈表(singly linked list)
@@ -26,6 +60,52 @@ public ListNode reverse(ListNode head) {
         head = next;
     }
     return prev;
+}
+```
+
+#### 雙向鏈表
+
+和單向鏈表的區別在於：雙向鏈表的反轉核心在於`next`和`prev`域的交換，還需要注意的是目前節點和上一個節點的遞推。
+
+### Python
+
+```python
+class DListNode:
+    def __init__(self, val):
+        self.val = val
+        self.prev = self.next = null
+
+    def reverse(self, head):
+        curt = None
+        while head:
+            curt = head
+            head = curt.next
+            curt.next = curt.prev
+            curt.prev = head
+        return curt
+```
+
+### Java
+
+```java
+class DListNode {
+    int val;
+    DListNode prev, next;
+    DListNode(int val) {
+        this.val = val;
+        this.prev = this.next = null;
+    }
+}
+
+public DListNode reverse(DListNode head) {
+    DListNode curr = null;
+    while (head != null) {
+        curr = head;
+        head = curr.next;
+        curr.next = curr.prev;
+        curr.prev = head;
+    }
+    return curr;
 }
 ```
 
@@ -57,3 +137,27 @@ Dummy node 是一個虛擬節點，也可以認為是標竿節點。Dummy node �
 - 判斷單向鏈表是否有環
 	利用快慢指標的原理，同樣設置兩個指標 `*fast`、`*slow` 都指向單向鏈表的頭節點，其中 `*fast`的移動速度是`*slow`的2倍。如果 `*fast = NULL`，說明該單向鏈表 以 `NULL`結尾，不是循環鏈表；如果 `*fast = *slow`，則快指標追上慢指標，說明該鏈表是循環鏈表。
 
+
+### Python
+
+```python
+class NodeCircle:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+    def has_circle(self, head):
+        slow = head
+        fast = head
+        while (slow and fast):
+            fast = fast.next
+            slow = slow.next
+            if fast:
+                fast = fast.next
+            if fast == slow:
+                break
+        if fast and slow and (fast == slow):
+            return True
+        else:
+            return False
+```
