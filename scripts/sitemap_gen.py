@@ -14,7 +14,7 @@ ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
 def sitemap(suffix='.md'):
     # ensure we are in the ROOT_DIR
     os.chdir(ROOT_DIR)
-    multilang = ['en/', 'zh-cn/', 'zh-tw/']
+    multilang = ['en/', 'zh-hans/', 'zh-tw/']
     pages = []
     raw_bytes = check_output('scripts/gitls.sh')
     # ignore last blank string

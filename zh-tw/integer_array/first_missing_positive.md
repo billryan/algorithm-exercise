@@ -17,7 +17,7 @@ Your algorithm should run in O(n) time and uses constant space.
 
 ## 題解
 
-容易想到的方案是先排序，然後遍歷求得缺的最小整數。排序算法中常用的基於比較的方法時間複雜度的理論下界為 $$O(n \log n)$$, 不符題目要求。常見的能達到線性時間複雜度的排序算法有 [基數排序](http://zh.wikipedia.org/wiki/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F)，[計數排序](http://algorithm.yuanbin.me/zh-cn/basics_sorting/counting_sort.html) 和 [桶排序](http://algorithm.yuanbin.me/zh-cn/basics_sorting/bucket_sort.html)。
+容易想到的方案是先排序，然後遍歷求得缺的最小整數。排序算法中常用的基於比較的方法時間複雜度的理論下界為 $$O(n \log n)$$, 不符題目要求。常見的能達到線性時間複雜度的排序算法有 [基數排序](http://zh.wikipedia.org/wiki/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F)，[計數排序](http://algorithm.yuanbin.zh-hans/basics_sorting/counting_sort.html) 和 [桶排序](http://algorithm.yuanbin.zh-hans/basics_sorting/bucket_sort.html)。
 
 基數排序顯然不太適合這道題，計數排序對元素落在一定區間且重複值較多的情況十分有效，且需要額外的 $$O(n)$$ 空間，對這道題不太合適。最後就只剩下桶排序了，桶排序通常需要按照一定規則將值放入桶中，一般需要額外的 $$O(n)$$ 空間，乍看之下似乎不太適合在這道題中使用，但是若能設定一定的規則原地交換原數組的值呢？這道題的難點就在於這種規則的設定。
 
