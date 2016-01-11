@@ -3,7 +3,7 @@
 ## Source
 
 - leetcode: [Implement strStr() | LeetCode OJ](https://leetcode.com/problems/implement-strstr/)
-- lintcode: [lintcode - (13) strstr](http://www.lintcode.com/zh-cn/problem/strstr/)
+- lintcode: [lintcode - (13) strstr](http://www.lintcode.en/problem/strstr/)
 
 ```
 strstr (a.k.a find sub string), is a useful function in string operation.

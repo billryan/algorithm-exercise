@@ -3,7 +3,7 @@
 ## Source
 
 - LeetCode - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
-- LintCode - [(167) Two Lists Sum](http://www.lintcode.com/zh-cn/problem/add-two-numbers/)
+- LintCode - [(167) Two Lists Sum](http://www.lintcode.en/problem/add-two-numbers/)
 
 ```
 You have two numbers represented by a linked list, where each node contains a single digit.

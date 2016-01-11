@@ -5,7 +5,7 @@
 [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://ds-algo.slack.com/)
 
 - English via [Data Structure and Algorithm notes](http://algorithm.yuanbin.me/en/index.html)
-- 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin.me/zh-cn/index.html)
+- 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin.me/zh-hans/index.html)
 - 繁體中文請瀏覽 [資料結構與演算法/leetcode/lintcode題解](http://algorithm.yuanbin.me/zh-tw/index.html)
 
 ## 簡介
@@ -42,7 +42,7 @@ Slack 的自助邀請註冊功能已啟用，訪問 <http://slackin4ds-algo.hero
 ## 多國文字
 
 - [English](http://algorithm.yuanbin.me/en/index.html) maintained by who?
-- [简体中文](http://algorithm.yuanbin.me/zh-cn/index.html) maintained by [@billryan](https://github.com/billryan)
+- [简体中文](http://algorithm.yuanbin.me/zh-hans/index.html) maintained by [@billryan](https://github.com/billryan)
 - [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) maintained by [@CrossLuna](https://github.com/CrossLuna)
 
 ## 如何貢獻
