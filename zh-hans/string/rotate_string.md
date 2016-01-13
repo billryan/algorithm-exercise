@@ -43,11 +43,7 @@ class Solution:
             return A
 
         offset %= len(A)
-        before = A[:len(A) - offset]
-        after = A[len(A) - offset:]
-        # [::-1] means reverse in Python
-        A = before[::-1] + after[::-1]
-        A = A[::-1]
+        A = A[len(A) - offset:] + A[:len(A) - offset]
 
         return A
 ```
