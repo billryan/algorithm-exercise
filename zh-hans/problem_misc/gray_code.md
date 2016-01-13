@@ -35,7 +35,7 @@ $$O(2^n)$$ time.
 
 第一次遇到这个题是在腾讯的在线笔试中，当时找到了规律，用的是递归，但是实现似乎有点问题... 直接从 n 位的格雷码分析不太好分析，比如题中`n = 2`的格雷码，我们不妨试试从小到大分析，以 `n = 1` 往后递推。
 
-![Gray Code](../images/Binary-reflected_Gray_code_construction.png)
+![Gray Code](../../shared-files/images/Binary-reflected_Gray_code_construction.png)
 
 从图中我们可以看出n 位的格雷码可由 n-1位的格雷码递推，在最高位前顺序加0，逆序加1即可。实际实现时我们可以省掉在最高位加0的过程，因为其在数值上和前 n-1位格雷码相同。另外一点则是初始化的处理，图中为从1开始，但若从0开始可进一步简化程序。而且根据 [格雷码](https://zh.wikipedia.org/wiki/%E6%A0%BC%E9%9B%B7%E7%A0%81) 的定义，n=0时确实应该返回0.
 

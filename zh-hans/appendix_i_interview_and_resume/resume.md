@@ -6,7 +6,7 @@
 
 推荐使用 Markdown 或者 Latex 撰写简历，可以使用 sharelatex 在线写简历，从 [CV or Resume](https://www.sharelatex.com/templates/cv-or-resume) 模板中挑，modernCV 的那些模板要写在一页里比较困难，这个 [Professional CV](https://www.sharelatex.com/templates/cv-or-resume/professional-cv) 相对紧凑一些，[LaTeX Templates » Curricula Vitae/Résumés](http://www.latextemplates.com/cat/curricula-vitae) 上还有更多更好的选择。另外推荐下自己写的一个还算简洁优雅的简历模板——[billryan/resume](https://github.com/billryan/resume), 同时支持中英文和 FontAwesome 字体，欢迎试用~ 中文的样式大概长成下面这个样子。
 
-![Resume Template](../images/resume-zh_CN.png)
+![Resume Template](../../shared-files/images/resume-zh_CN.png)
 
 ## Reference
 

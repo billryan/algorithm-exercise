@@ -31,7 +31,7 @@ BFS 从某个状态开始，搜索**所有可以到达的状态**，转移顺序
 ## Reference
 
 - 《挑战程序设计竞赛》Chaper 2.1 p26 最基础的“穷竭搜索”
-- [Steven Skiena: Lecture15 - Backtracking](../docs/lecture15-backtracking.pdf)
+- [Steven Skiena: Lecture15 - Backtracking](../../shared-files/docs/lecture15-backtracking.pdf)
 - [全面解析回溯法：算法框架与问题求解 - 五岳 - 博客园](http://www.cnblogs.com/wuyuegb2312/p/3273337.html)
 - [五大常用算法之四：回溯法 - 红脸书生 - 博客园](http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741376.html)
 - [演算法筆記 - Backtracking](http://www.csie.ntnu.edu.tw/~u91029/Backtracking.html)

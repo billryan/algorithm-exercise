@@ -90,7 +90,7 @@ public:
 1. 节点dummy的初始化有问题，对类的初始化应该使用`new`
 2. 在else语句中`node->next = node->next->next;`改写了`dummy-next`中的内容，返回的`dummy-next`不再是队首元素，而是队尾元素。原因很微妙，应该使用`node = node->next;`，node代表节点指针变量，而node->next代表当前节点所指向的下一节点地址。具体分析可自行在纸上画图分析，可对指针和链表的理解又加深不少。
 
-![remove_duplicates_from_sorted_listd内存分析](../images/remove_duplicates_from_sorted_list.jpg)
+![remove_duplicates_from_sorted_listd内存分析](../../shared-files/images/remove_duplicates_from_sorted_list.jpg)
 
 图中上半部分为ListNode的内存示意图，每个框底下为其内存地址。`dummy`指针变量本身的地址为ox7fff5d0d2500，其保存着指针变量值为0x7fbe7bc04c50. `head`指针变量本身的地址为ox7fff5d0d2508，其保存着指针变量值为0x7fbe7bc04c00.
 

@@ -237,4 +237,4 @@ private:
 
 ## Reference
 
-- [^soulmachine]: [soulmachine的LeetCode 题解](../docs/leetcode-cpp.pdf)
+- [^soulmachine]: [soulmachine的LeetCode 题解](../../shared-files/docs/leetcode-cpp.pdf)

@@ -60,7 +60,7 @@ public class TreeNode {
 
 如果已知中序遍历和前序遍历或者后序遍历，那么就可以完全恢复出原二叉树结构。其中最为关键的是前序遍历中第一个一定是根，而后序遍历最后一个一定是根，中序遍历在得知根节点后又可进一步递归得知左右子树的根节点。但是这种方法也是有适用范围的：元素不能重复！否则无法完成定位。
 
-![Binary Tree Traversal](../images/binary_tree_traversal.png)
+![Binary Tree Traversal](../../shared-files/images/binary_tree_traversal.png)
 
 ### Python
 

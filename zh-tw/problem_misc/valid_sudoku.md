@@ -15,7 +15,7 @@ Example
 The following partially filed sudoku is valid.
 ```
 
-![valid-sudoku.png](../images/valid-sudoku.png)
+![valid-sudoku.png](../../shared-files/images/valid-sudoku.png)
 
 ```
 Valid Sudoku

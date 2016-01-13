@@ -21,7 +21,7 @@
 
 其中步驟1是給步驟2和3用的。
 
-![Heapsort-example](../images/Heapsort-example.gif)
+![Heapsort-example](../../shared-files/images/Heapsort-example.gif)
 
 ## Python
 
