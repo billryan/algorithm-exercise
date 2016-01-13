@@ -39,7 +39,7 @@ Return a deep copy of the list.
 
 一图胜千文
 
-![Hashtable](../images/copy_list_with_random_pointer.jpg)
+![Hashtable](../../shared-files/images/copy_list_with_random_pointer.jpg)
 
 ### Python
 

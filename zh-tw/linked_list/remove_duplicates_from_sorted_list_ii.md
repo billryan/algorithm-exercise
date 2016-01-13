@@ -88,7 +88,7 @@ public:
 1. 節點dummy的初始化有問題，對class的初始化應該使用`new`
 2. 在else語句中`node->next = node->next->next;`改寫了`dummy-next`中的內容，返回的`dummy-next`不再是隊首元素，而是隊尾元素。原因很微妙，應該使用`node = node->next;`，node代表節點指標變數，而node->next代表當前節點所指向的下一節點地址。具體分析可自行在紙上畫圖分析，可對指標和鏈表的理解又加深不少。
 
-![remove_duplicates_from_sorted_list記憶體分析](../images/remove_duplicates_from_sorted_list.jpg)
+![remove_duplicates_from_sorted_list記憶體分析](../../shared-files/images/remove_duplicates_from_sorted_list.jpg)
 
 圖中上半部分為ListNode的記憶體示意圖，每個框底下為其內存地址。`dummy`指標本身的地址為ox7fff5d0d2500，其保存著指標值為0x7fbe7bc04c50. `head`指標本身的地址為ox7fff5d0d2508，其保存著指標值為0x7fbe7bc04c00.
 

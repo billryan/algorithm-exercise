@@ -15,7 +15,7 @@ Find any topological order for the given graph.
 Example
 For graph as follow:
 
-![Topological Sorting](../images/topological_sorting.jpeg)
+![Topological Sorting](../../shared-files/images/topological_sorting.jpeg)
 
 ```
 The topological order can be:

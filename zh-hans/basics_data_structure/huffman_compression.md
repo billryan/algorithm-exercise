@@ -13,6 +13,6 @@
 
 则对各符号进行霍夫曼编码的动态演示如下图所示。基本步骤是将出现频率由小到大排列，组成子树后频率相加作为整体再和其他未加入二叉树中的节点频率比较。加权路径长为节点的频率乘以树的深度。
 
-![Huffman](../images/huffman_algorithm.gif)
+![Huffman](../../shared-files/images/huffman_algorithm.gif)
 
 有关霍夫曼编码的具体步骤可参考 [Huffman 编码压缩算法 | 酷 壳 - CoolShell.cn](http://coolshell.cn/articles/7459.html) 和 [霍夫曼编码 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)，清晰易懂。

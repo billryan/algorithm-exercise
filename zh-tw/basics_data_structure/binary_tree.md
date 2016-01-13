@@ -22,7 +22,7 @@
 
 二元樹的廣度優先遍歷和樹的前序/中序/後序遍歷不太一樣，前/中/後序遍歷使用遞迴，也就是用堆疊(stack)的思想對二元樹進行遍歷，廣度優先一般使用隊列(queue)的思想對二元樹進行遍歷。
 
-![Binary Tree Traversal](../images/binary_tree_traversal.png)
+![Binary Tree Traversal](../../shared-files/images/binary_tree_traversal.png)
 
 ## 節點定義
 這裡的節點統一使用LeetCode的定義
