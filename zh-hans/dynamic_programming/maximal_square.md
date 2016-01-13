@@ -57,9 +57,11 @@ public class Solution {
         int[][] dp = new int[ROW][COL];
         for (int i = 0; i < ROW; i++) {
             dp[i][0] = matrix[i][0];
+            side = 1;
         }
         for (int i = 0; i < COL; i++) {
             dp[0][i] = matrix[0][i];
+            side = 1;
         }
 
         for (int i = 1; i < ROW; i++) {
