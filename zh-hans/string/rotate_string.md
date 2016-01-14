@@ -52,6 +52,31 @@ class Solution:
         return A
 ```
 
+#### 补充 :python 若要达空间复杂度为 O(1) 输入(input)须为串列(list)，若为字串(string)只能达成空间复杂度 O(n)，时间复杂度皆为O(n)
+#### 以下范例为LintCode原题解法
+
+```python
+class Solution:
+    # @param s: a list of char
+    # @param offset: an integer 
+    # @return: nothing
+    def rotateString(self, A, offset):
+        if A is None or len(A) == 0:
+            return 
+        offset %= len(A)
+        self.reverse(A, 0, len(A)-offset-1)
+        self.reverse(A, len(A)-offset, len(A)-1)
+        self.reverse(A, 0, len(A)-1)
+        return 
+    def reverse(self, str, start, end):
+        while start < end :            
+            str[start], str[end] = str[end], str[start]             
+            start += 1
+            end -= 1
+        
+```
+
+
 ### C++
 
 ```c++
