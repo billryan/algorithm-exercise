@@ -29,7 +29,7 @@ Rotate in-place with O(1) extra memory.
 
 常见的翻转法应用题，仔细观察规律可知翻转的分割点在从数组末尾数起的offset位置。先翻转前半部分，随后翻转后半部分，最后整体翻转。
 
-### Python
+### Python - immutable string
 
 ```python
 class Solution:
@@ -52,30 +52,28 @@ class Solution:
         return A
 ```
 
-#### 补充 :python 若要达空间复杂度为 O(1) 输入(input)须为串列(list)，若为字串(string)只能达成空间复杂度 O(n)，时间复杂度皆为O(n)
-#### 以下范例为LintCode原题解法
+### Python - mutable list
 
 ```python
 class Solution:
-    # @param s: a list of char
-    # @param offset: an integer 
+    # @param A: a list of char
+    # @param offset: an integer
     # @return: nothing
     def rotateString(self, A, offset):
         if A is None or len(A) == 0:
-            return 
+            return
+
         offset %= len(A)
         self.reverse(A, 0, len(A)-offset-1)
         self.reverse(A, len(A)-offset, len(A)-1)
         self.reverse(A, 0, len(A)-1)
-        return 
-    def reverse(self, str, start, end):
-        while start < end :            
-            str[start], str[end] = str[end], str[start]             
+
+    def reverse(self, str_l, start, end):
+        while start < end:
+            str_l[start], str_l[end] = str_l[end], str_l[start]
             start += 1
             end -= 1
-        
 ```
-
 
 ### C++
 
@@ -156,10 +154,14 @@ public class Solution {
 
 Python 虽没有提供字符串的翻转，但用 slice 非常容易实现，非常 Pythonic!
 
+**通常来说，字符串在各种编程语言中的实现一般为 immutable 的，对字符串做改变时往往会生成新的字符串，所以如果要达到空间复杂度为 O(1) 的效果，需要用可变数据结构来实现。**
+
 ### 复杂度分析
 
-翻转一次时间复杂度近似为 $$O(n)$$, 原地交换，空间复杂度为 $$O(1)$$. 总共翻转3次，总的时间复杂度为 $$O(n)$$, 空间复杂度为 $$O(1)$$.
+翻转一次时间复杂度近似为 $$O(n)$$, 原地交换的空间复杂度为 $$O(1)$$, 非原地交换的空间复杂度为 $$O(n)$$. 总共翻转3次，所以总的时间复杂度为 $$O(n)$$, 空间复杂度为 $$O(1)$$ 或者 $$O(n)$$.
 
 ## Reference
 
-- [Reverse a string in Python - Stack Overflow](http://stackoverflow.com/questions/931092/reverse-a-string-in-python)
+- [Reverse a string in Python](http://stackoverflow.com/questions/931092/reverse-a-string-in-python)
+- [What’s New in Python 2.3 — Extended Slices](https://docs.python.org/2/whatsnew/2.3.html#extended-slices)
+- 
