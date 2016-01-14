@@ -18,7 +18,7 @@
 
 ### Python 实现
 
-```
+```python
 """
 Use serveral ways to compress string `everyday is awesome!`
 1. use simple bits to replace ASCII value
