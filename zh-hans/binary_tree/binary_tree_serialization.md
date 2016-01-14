@@ -31,6 +31,134 @@ You can use other method to do serializaiton and deserialization.
 
 根据之前由前序，中序，后序遍历恢复二叉树的经验，确定根节点的位置十分重要（但是这里可能有重复元素，故和之前的题目不太一样）。能直接确定根节点的有前序遍历和广度优先搜索，其中较为简洁的为前序遍历。序列化较为简单，但是反序列化的实现不太容易。需要借助字符串解析工具。
 
+### Python
+
+```python
+"""
+Definition of TreeNode:
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left, self.right = None, None
+"""
+class Solution1:
+    '''
+    @param root: An object of TreeNode, denote the root of the binary tree.
+    This method will be invoked first, you should design your own algorithm
+    to serialize a binary tree which denote by a root node to a string which
+    can be easily deserialized by your own "deserialize" method later.
+    '''
+    def serialize(self, root):
+        if not root:
+            return ''
+
+        def post_order(root):
+            if root:
+                ret[0] += str(root.val) + ','
+                post_order(root.left)
+                post_order(root.right)
+            else:
+                ret[0] += '#,'
+
+        ret = ['']
+        post_order(root)
+
+        return ret[0][:-1]  # remove last ,
+
+    '''
+    @param data: A string serialized by your serialize method.
+    This method will be invoked second, the argument data is what exactly
+    you serialized at method "serialize", that means the data is not given by
+    system, it's given by your own serialize method. So the format of data is
+    designed by yourself, and deserialize it here as you serialize it in
+    "serialize" method.
+    '''
+    def deserialize(self, data):
+        if not data:
+            return
+
+        nodes = data.split(',')
+        self.i = 0
+        def post_order(nodes):
+            if nodes[self.i] == '#':
+                return None
+            root = TreeNode(int(nodes[self.i]))
+            self.i += 1
+            root.left = post_order(nodes)
+            self.i += 1
+            root.right = post_order(nodes)
+            return root
+        return post_order(nodes)
+
+
+import collections
+class Solution2:
+
+    '''
+    @param root: An object of TreeNode, denote the root of the binary tree.
+    This method will be invoked first, you should design your own algorithm
+    to serialize a binary tree which denote by a root node to a string which
+    can be easily deserialized by your own "deserialize" method later.
+    '''
+    def serialize(self, root):
+        if not root:
+            return
+
+        ret = []
+        queue = collections.deque()
+        queue.append(root)
+        while queue:
+            node = queue.popleft()
+            if node:
+                queue.append(node.left)
+                queue.append(node.right)
+                ret.append(str(node.val))
+            else:
+                ret.append('#')
+        return ','.join(ret)
+
+    '''
+    @param data: A string serialized by your serialize method.
+    This method will be invoked second, the argument data is what exactly
+    you serialized at method "serialize", that means the data is not given by
+    system, it's given by your own serialize method. So the format of data is
+    designed by yourself, and deserialize it here as you serialize it in
+    "serialize" method.
+    '''
+    def deserialize(self, data):
+        if not data:
+            return
+        nodes = data.split(',')
+        root = TreeNode(int(nodes[0]))
+        i = 1
+        queue = collections.deque()
+        queue.append(root)
+        while queue:
+            node = queue.popleft()
+            if nodes[i] == '#':
+                node.left = None
+            else:
+                t = TreeNode(int(nodes[i]))
+                node.left = t
+                queue.append(t)
+            i += 1
+            if nodes[i] == '#':
+                node.right = None
+            else:
+                t = TreeNode(int(nodes[i]))
+                node.right = t
+                queue.append(t)
+            i += 1
+        return root
+```
+
+### 源码分析
+
+第一种解法是前序遍历， 其中巧妙的利用了python的closure， 在`serialize`中， 利用了list mutable 的特性， 修改了ret中的值。 `deserialize`中， 利用了`self.i`来储存`instance variable`。
+
+第二种解法是广度遍历。 在`deserialize`的时候， 保持一个`index i`，记录用过的node。
+
+
 ### Java
 
 ```java
