@@ -41,7 +41,14 @@ class TreeNode:
         self.val = val
         self.left, self.right = None, None
 """
-class Solution1:
+"""
+Definition of TreeNode:
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left, self.right = None, None
+"""
+class Solution0:
     '''
     @param root: An object of TreeNode, denote the root of the binary tree.
     This method will be invoked first, you should design your own algorithm
@@ -54,9 +61,9 @@ class Solution1:
 
         def post_order(root):
             if root:
-                ret[0] += str(root.val) + ','
                 post_order(root.left)
                 post_order(root.right)
+                ret[0] += str(root.val) + ','
             else:
                 ret[0] += '#,'
 
@@ -78,17 +85,64 @@ class Solution1:
             return
 
         nodes = data.split(',')
-        self.i = 0
         def post_order(nodes):
+            if nodes[-1] == '#':
+                nodes.pop()
+                return None
+            root = TreeNode(int(nodes.pop()))
+            root.right = post_order(nodes)
+            root.left = post_order(nodes)
+            return root
+        return post_order(nodes)
+
+class Solution1:
+    '''
+    @param root: An object of TreeNode, denote the root of the binary tree.
+    This method will be invoked first, you should design your own algorithm
+    to serialize a binary tree which denote by a root node to a string which
+    can be easily deserialized by your own "deserialize" method later.
+    '''
+    def serialize(self, root):
+        if not root:
+            return ''
+
+        def pre_order(root):
+            if root:
+                ret[0] += str(root.val) + ','
+                pre_order(root.left)
+                pre_order(root.right)
+            else:
+                ret[0] += '#,'
+
+        ret = ['']
+        pre_order(root)
+
+        return ret[0][:-1]  # remove last ,
+
+    '''
+    @param data: A string serialized by your serialize method.
+    This method will be invoked second, the argument data is what exactly
+    you serialized at method "serialize", that means the data is not given by
+    system, it's given by your own serialize method. So the format of data is
+    designed by yourself, and deserialize it here as you serialize it in
+    "serialize" method.
+    '''
+    def deserialize(self, data):
+        if not data:
+            return
+
+        nodes = data.split(',')
+        self.i = 0
+        def pre_order(nodes):
             if nodes[self.i] == '#':
                 return None
             root = TreeNode(int(nodes[self.i]))
             self.i += 1
-            root.left = post_order(nodes)
+            root.left = pre_order(nodes)
             self.i += 1
-            root.right = post_order(nodes)
+            root.right = pre_order(nodes)
             return root
-        return post_order(nodes)
+        return pre_order(nodes)
 
 
 import collections
@@ -153,6 +207,8 @@ class Solution2:
 ```
 
 ### 源码分析
+
+第零种解法是后序遍历（推荐）， 在`serialize`的时候， 需要先左->右->中。 在`deserialize`的时候，因为是从最后一个值开始pop， 构成tree的时候， 就应该先中->右->左。
 
 第一种解法是前序遍历， 其中巧妙的利用了python的closure， 在`serialize`中， 利用了list mutable 的特性， 修改了ret中的值。 `deserialize`中， 利用了`self.i`来储存`instance variable`。
 
