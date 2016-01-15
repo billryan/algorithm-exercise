@@ -60,6 +60,7 @@ after_success:
   - cp ~/upload/*.epub epub
   - cp ~/upload/*.pdf pdf
   - cp ~/upload/*.mobi mobi
+  - rm */*shared-files*
   - git add epub pdf mobi
   - git commit --amend -m "Updated $(date)"
   - git push -u gitcafe HEAD:deploy --force
