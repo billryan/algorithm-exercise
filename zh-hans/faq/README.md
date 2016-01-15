@@ -14,7 +14,7 @@
 
 最简单的方式是通过网页最上方的『改进此页』在 GitHub 的 Web 界面上更改并提交 Pull Request. 也许你之前并没有 git 相关经验，没关系，下面的截图视频教你怎么玩儿。
 
-![Pull Request in the GitHub Web](http://7xojrx.com1.z0.glb.clouddn.com/images%2Fmisc%2Fcontributing_lite.gif)
+![Pull Request in the GitHub Web](http://7xojrx.com1.z0.glb.clouddn.com/images/misc/contributing_lite.gif)
 
 总结下来就是：
 
