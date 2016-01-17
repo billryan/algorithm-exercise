@@ -1,6 +1,6 @@
 # Merge k Sorted Lists
 
-## Source
+## Question
 
 - leetcode: [Merge k Sorted Lists | LeetCode OJ](https://leetcode.com/problems/merge-k-sorted-lists/)
 - lintcode: [(104) Merge k Sorted Lists](http://www.lintcode.com/en/problem/merge-k-sorted-lists/)

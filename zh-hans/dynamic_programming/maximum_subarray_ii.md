@@ -1,6 +1,6 @@
 # Maximum Subarray II
 
-## Source
+## Question
 
 - lintcode: [(42) Maximum Subarray II](http://www.lintcode.com/en/problem/maximum-subarray-ii/)
 

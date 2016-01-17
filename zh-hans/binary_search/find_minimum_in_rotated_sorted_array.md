@@ -1,11 +1,11 @@
 # Find Minimum in Rotated Sorted Array
 
-## Source
+## Question
 
 - leetcode: [Find Minimum in Rotated Sorted Array | LeetCode OJ](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 - lintcode: [(159) Find Minimum in Rotated Sorted Array](http://www.lintcode.com/en/problem/find-minimum-in-rotated-sorted-array/)
 
-### Problem
+### Problem Statement
 
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 

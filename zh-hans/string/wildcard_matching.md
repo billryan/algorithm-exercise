@@ -1,6 +1,6 @@
 # Wildcard Matching
 
-## Source
+## Question
 
 - leetcode: [Wildcard Matching | LeetCode OJ](https://leetcode.com/problems/wildcard-matching/)
 - lintcode: [(192) Wildcard Matching](http://www.lintcode.com/en/problem/wildcard-matching/)

@@ -1,11 +1,11 @@
 # Median of two Sorted Arrays
 
-## Source
+## Question
 
 - leetcode: [Median of Two Sorted Arrays | LeetCode OJ](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 - lintcode: [(65) Median of two Sorted Arrays](http://www.lintcode.com/en/problem/median-of-two-sorted-arrays/)
 
-### Problem
+### Problem Statement
 
 There are two sorted arrays *A* and *B* of size *m* and *n* respectively. Find the **median** of the two sorted arrays.
 

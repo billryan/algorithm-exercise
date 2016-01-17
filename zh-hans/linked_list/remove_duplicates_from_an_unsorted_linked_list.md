@@ -1,6 +1,6 @@
 # Remove Duplicates from Unsorted List
 
-## Source
+## Question
 
 - [Remove duplicates from an unsorted linked list - GeeksforGeeks](http://www.geeksforgeeks.org/remove-duplicates-from-an-unsorted-linked-list/)
 

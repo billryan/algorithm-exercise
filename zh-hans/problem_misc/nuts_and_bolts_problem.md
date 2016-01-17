@@ -1,7 +1,7 @@
 # Nuts and Bolts Problem
 
 
-## Source
+## Question
 
 - lintcode: [(399) Nuts & Bolts Problem](http://www.lintcode.com/en/problem/nuts-bolts-problem/)
 

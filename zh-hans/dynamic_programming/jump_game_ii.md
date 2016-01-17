@@ -1,6 +1,6 @@
 # Jump Game II
 
-## Source
+## Question
 
 - lintcode: [(117) Jump Game II](http://www.lintcode.com/en/problem/jump-game-ii/)
 

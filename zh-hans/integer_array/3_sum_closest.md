@@ -1,6 +1,6 @@
 # 3 Sum Closest
 
-## Source
+## Question
 
 - leetcode: [3Sum Closest | LeetCode OJ](https://leetcode.com/problems/3sum-closest/)
 - lintcode: [(59) 3 Sum Closest](http://www.lintcode.com/en/problem/3-sum-closest/)

@@ -1,6 +1,6 @@
 # Binary Tree Serialization
 
-## Source
+## Question
 
 - lintcode: [(7) Binary Tree Serialization](http://www.lintcode.com/en/problem/binary-tree-serialization/)
 

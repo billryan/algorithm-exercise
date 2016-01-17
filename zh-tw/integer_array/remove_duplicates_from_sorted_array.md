@@ -1,6 +1,6 @@
 # Remove Duplicates from Sorted Array
 
-## Source
+## Question
 
 - lintcode: [(100) Remove Duplicates from Sorted Array](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array/)
 

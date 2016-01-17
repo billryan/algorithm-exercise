@@ -1,6 +1,6 @@
 # Fast Power
 
-## Source
+## Question
 
 - lintcode: [(140) Fast Power](http://www.lintcode.com/en/problem/fast-power/)
 

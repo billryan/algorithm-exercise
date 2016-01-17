@@ -2,12 +2,12 @@
 
 - tags: [DP_Sequence]
 
-## Source
+## Question
 
 - lintcode: [(76) Longest Increasing Subsequence](http://www.lintcode.com/en/problem/longest-increasing-subsequence/)
 - [Dynamic Programming | Set 3 (Longest Increasing Subsequence) - GeeksforGeeks](http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/)
 
-### Problem
+### Problem Statement
 
 Given a sequence of integers, find the longest increasing subsequence (LIS).
 

@@ -1,6 +1,6 @@
 # Two Lists Sum <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="，"></i>
 
-## Source
+## Question
 
 - LeetCode - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
 - LintCode - [(167) Two Lists Sum](http://www.lintcode.en/problem/add-two-numbers/)

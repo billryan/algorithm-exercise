@@ -2,7 +2,7 @@
 
 - tags: [palindrome]
 
-## Source
+## Question
 
 - leetcode: [Longest Palindromic Substring | LeetCode OJ](https://leetcode.com/problems/longest-palindromic-substring/)
 - lintcode: [(200) Longest Palindromic Substring](http://www.lintcode.com/en/problem/longest-palindromic-substring/)

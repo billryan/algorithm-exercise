@@ -1,6 +1,6 @@
 # A plus B Problem
 
-## Source
+## Question
 
 - lintcode: [(1) A + B Problem](http://www.lintcode.com/en/problem/a-b-problem/)
 

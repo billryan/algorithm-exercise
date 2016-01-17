@@ -1,6 +1,6 @@
 # Space Replacement
 
-## Source
+## Question
 
 - lintcode: [(212) Space Replacement](http://www.lintcode.com/en/problem/space-replacement/)
 

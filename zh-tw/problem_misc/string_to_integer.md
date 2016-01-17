@@ -1,6 +1,6 @@
 # String to Integer
 
-## Source
+## Question
 
 - leetcode: [String to Integer (atoi) | LeetCode OJ](https://leetcode.com/problems/string-to-integer-atoi/)
 - lintcode: [(54) String to Integer(atoi)](http://www.lintcode.com/en/problem/string-to-integeratoi/)

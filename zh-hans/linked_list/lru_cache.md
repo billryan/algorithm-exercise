@@ -1,11 +1,11 @@
 # LRU Cache
 
-## Source
+## Question
 
 - leetcode: [LRU Cache | LeetCode OJ](https://leetcode.com/problems/lru-cache/)
 - lintcode: [(134) LRU Cache](http://www.lintcode.com/en/problem/lru-cache/)
 
-### Problem
+### Problem Statement
 
 
 Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: `get` and `set`.

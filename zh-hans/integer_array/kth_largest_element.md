@@ -1,6 +1,6 @@
 # Kth Largest Element
 
-## Source
+## Question
 
 - leetcode: [Kth Largest Element in an Array | LeetCode OJ](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 - lintcode: [(5) Kth Largest Element](http://www.lintcode.com/en/problem/kth-largest-element/)

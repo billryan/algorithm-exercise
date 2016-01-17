@@ -1,10 +1,10 @@
 # Permutation Index II
 
-## Source
+## Question
 
 - lintcode: [(198) Permutation Index II](http://www.lintcode.com/en/problem/permutation-index-ii/)
 
-### Problem
+### Problem Statement
 
 Given a permutation which may contain repeated numbers, find its index in all
 the permutations of these numbers, which are ordered in lexicographical order.

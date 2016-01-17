@@ -1,6 +1,6 @@
 # Delete Node in the Middle of Singly Linked List
 
-## Source
+## Question
 
 - lintcode: [(372) Delete Node in the Middle of Singly Linked List](http://www.lintcode.com/en/problem/delete-node-in-the-middle-of-singly-linked-list/)
 

@@ -2,7 +2,7 @@
 
 - tags: [palindrome]
 
-## Source
+## Question
 
 - leetcode: [Palindrome Partitioning | LeetCode OJ](https://leetcode.com/problems/palindrome-partitioning/)
 - lintcode: [(136) Palindrome Partitioning](http://www.lintcode.com/en/problem/palindrome-partitioning/)

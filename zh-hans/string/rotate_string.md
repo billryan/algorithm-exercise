@@ -1,10 +1,10 @@
 # Rotate String
 
-## Source
+## Question
 
 - lintcode: [(8) Rotate String](http://www.lintcode.com/en/problem/rotate-string/)
 
-### Problem
+### Problem Statement
 
 Given a string and an offset, rotate string by offset. (rotate from left to
 right)

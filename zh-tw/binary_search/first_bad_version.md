@@ -1,6 +1,6 @@
 # First Bad Version
 
-## Source
+## Question
 
 - leetcode: [First Bad Version](https://leetcode.com/problems/first-bad-version/)
 - lintcode: [(74) First Bad Version](http://www.lintcode.com/en/problem/first-bad-version/)

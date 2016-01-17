@@ -1,11 +1,11 @@
 # Reorder List
 
-## Source
+## Question
 
 - leetcode: [Reorder List | LeetCode OJ](https://leetcode.com/problems/reorder-list/)
 - lintcode: [(99) Reorder List](http://www.lintcode.com/en/problem/reorder-list/)
 
-### Problem
+### Problem Statement
 
 Given a singly linked list _L_: _L_0→_L_1→…→_L__n_-1→_L_n,  
 reorder it to: _L_0→_L__n_→_L_1→_L__n_-1→_L_2→_L__n_-2→…

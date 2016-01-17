@@ -1,10 +1,10 @@
 # Binary Search - 二分查找
 
-## Source
+## Question
 
 - lintcode: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
 
-### Problem
+### Problem Statement
 
 For a given sorted array (ascending order) and a `target` number, find the
 first index of this number in `O(log n)` time complexity.

@@ -1,11 +1,11 @@
 # Find the Missing Number
 
-## Source
+## Question
 
 - lintcode: [(196) Find the Missing Number](http://www.lintcode.com/en/problem/find-the-missing-number/)
 - [Find the Missing Number - GeeksforGeeks](http://www.geeksforgeeks.org/find-the-missing-number/)
 
-### Problem
+### Problem Statement
 
 Given an array contains _N_ numbers of 0 .. _N_, find which number doesn't exist in the array.
 

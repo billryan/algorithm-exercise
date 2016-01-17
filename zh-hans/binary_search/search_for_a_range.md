@@ -1,11 +1,11 @@
 # Search for a Range
 
-## Source
+## Question
 
 - leetcode: [Search for a Range | LeetCode OJ](https://leetcode.com/problems/search-for-a-range/)
 - lintcode: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-for-a-range/)
 
-### Problem
+### Problem Statement
 
 Given a sorted array of _n_ integers, find the starting and ending position of
 a given target value.

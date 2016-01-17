@@ -1,11 +1,11 @@
 # Search in Rotated Sorted Array
 
-## Source
+## Question
 
 - leetcode: [Search in Rotated Sorted Array | LeetCode OJ](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 - lintcode: [(62) Search in Rotated Sorted Array](http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/)
 
-### Problem
+### Problem Statement
 
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 

@@ -2,7 +2,7 @@
 
 - tags: [palindrome]
 
-## Source
+## Question
 
 - leetcode: [Valid Palindrome | LeetCode OJ](https://leetcode.com/problems/valid-palindrome/)
 - lintcode: [(415) Valid Palindrome](http://www.lintcode.com/en/problem/valid-palindrome/)

@@ -1,11 +1,11 @@
 # Word Search
 
-## Source
+## Question
 
 - leetcode: [Word Search | LeetCode OJ](https://leetcode.com/problems/word-search/)
 - lintcode: [(123) Word Search](http://www.lintcode.com/en/problem/word-search/)
 
-### Problem
+### Problem Statement
 
 Given a 2D board and a word, find if the word exists in the grid.
 The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.

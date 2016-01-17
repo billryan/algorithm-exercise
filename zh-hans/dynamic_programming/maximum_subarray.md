@@ -1,6 +1,6 @@
 # Maximum Subarray
 
-## Source
+## Question
 
 - leetcode: [Maximum Subarray | LeetCode OJ](https://leetcode.com/problems/maximum-subarray/)
 - lintcode: [(41) Maximum Subarray](http://www.lintcode.com/en/problem/maximum-subarray/)

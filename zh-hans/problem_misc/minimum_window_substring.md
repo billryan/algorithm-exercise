@@ -1,11 +1,11 @@
 # Minimum Window Substring
 
-## Source
+## Question
 
 - leetcode: [Minimum Window Substring | LeetCode OJ](https://leetcode.com/problems/minimum-window-substring/)
 - lintcode: [(32) Minimum Window Substring](http://www.lintcode.com/en/problem/minimum-window-substring/)
 
-### Problem
+### Problem Statement
 
 Given a string source and a string target, find the minimum window in source
 which will contain all the characters in target.

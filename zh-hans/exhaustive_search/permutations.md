@@ -1,11 +1,11 @@
 # Permutations
 
-## Source
+## Question
 
 - leetcode: [Permutations | LeetCode OJ](https://leetcode.com/problems/permutations/)
 - lintcode: [(15) Permutations](http://www.lintcode.com/en/problem/permutations/)
 
-### Problem
+### Problem Statement
 
 Given a list of numbers, return all possible permutations.
 

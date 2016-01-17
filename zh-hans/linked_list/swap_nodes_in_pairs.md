@@ -1,11 +1,11 @@
 # Swap Nodes in Pairs
 
-## Source
+## Question
 
 - leetcode: [Swap Nodes in Pairs | LeetCode OJ](https://leetcode.com/problems/swap-nodes-in-pairs/)
 - lintcode: [(451) Swap Nodes in Pairs](http://www.lintcode.com/en/problem/swap-nodes-in-pairs/)
 
-### Problem
+### Problem Statement
 
 Given a linked list, swap every two adjacent nodes and return its head.
 

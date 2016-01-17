@@ -1,6 +1,6 @@
 # Merge Sorted Array
 
-## Source
+## Question
 
 - leetcode: [Merge Sorted Array | LeetCode OJ](https://leetcode.com/problems/merge-sorted-array/)
 - lintcode: [(6) Merge Sorted Array](http://www.lintcode.com/en/problem/merge-sorted-array/)

@@ -1,6 +1,6 @@
 # Valid Sudoku
 
-## Source
+## Question
 
 - leetcode: [Valid Sudoku | LeetCode OJ](https://leetcode.com/problems/valid-sudoku/)
 - lintcode: [(389) Valid Sudoku](http://www.lintcode.com/en/problem/valid-sudoku/)

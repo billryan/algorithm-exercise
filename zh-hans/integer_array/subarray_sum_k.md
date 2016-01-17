@@ -1,6 +1,6 @@
 # Subarray Sum K
 
-## Source
+## Question
 
 - GeeksforGeeks: [Find subarray with given sum - GeeksforGeeks](http://www.geeksforgeeks.org/find-subarray-with-given-sum/)
 

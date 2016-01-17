@@ -1,11 +1,11 @@
 # Balanced Binary Tree
 
-## Source
+## Question
 
 - leetcode: [Balanced Binary Tree | LeetCode OJ](https://leetcode.com/problems/balanced-binary-tree/)
 - lintcode: [(93) Balanced Binary Tree](http://www.lintcode.com/en/problem/balanced-binary-tree/)
 
-### Problem
+### Problem Statement
 
 Given a binary tree, determine if it is height-balanced.
 

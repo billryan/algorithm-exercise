@@ -1,11 +1,11 @@
 # Maximal Square
 
-## Source
+## Question
 
 - leetcode: [Maximal Square | LeetCode OJ](https://leetcode.com/problems/maximal-square/)
 - lintcode: [Maximal Square](http://www.lintcode.com/en/problem/maximal-square/)
 
-### Problem
+### Problem Statement
 
 Given a 2D binary matrix filled with 0's and 1's, find the largest square
 containing all 1's and return its area.

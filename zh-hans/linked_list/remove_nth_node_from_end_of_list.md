@@ -1,6 +1,6 @@
 # Remove Nth Node From End of List
 
-## Source
+## Question
 
 - lintcode: [(174) Remove Nth Node From End of List](http://www.lintcode.com/en/problem/remove-nth-node-from-end-of-list/)
 

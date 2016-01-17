@@ -2,7 +2,7 @@
 
 - tags: [DP_Two_Sequence]
 
-## Source
+## Question
 
 - lintcode: [(77) Longest Common Subsequence](http://www.lintcode.com/en/problem/longest-common-subsequence/)
 

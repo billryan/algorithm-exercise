@@ -1,6 +1,6 @@
 # Minimum Depth of Binary Tree
 
-## Source
+## Question
 
 - leetcode: [Minimum Depth of Binary Tree | LeetCode OJ](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
 - lintcode: [(155) Minimum Depth of Binary Tree](http://www.lintcode.com/en/problem/minimum-depth-of-binary-tree/)

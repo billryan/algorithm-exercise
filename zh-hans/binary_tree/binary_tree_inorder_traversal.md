@@ -1,11 +1,11 @@
 # Binary Tree Inorder Traversal
 
-## Source
+## Question
 
 - leetcode: [Binary Tree Inorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 - lintcode: [(67) Binary Tree Inorder Traversal](http://www.lintcode.com/en/problem/binary-tree-inorder-traversal/)
 
-### Problem
+### Problem Statement
 
 Given a binary tree, return the _inorder_ traversal of its nodes' values.
 

@@ -1,6 +1,6 @@
 # Partition Array by Odd and Even
 
-## Source
+## Question
 
 - lintcode: [(373) Partition Array by Odd and Even](http://www.lintcode.com/en/problem/partition-array-by-odd-and-even/)
 - [Segregate Even and Odd numbers - GeeksforGeeks](http://www.geeksforgeeks.org/segregate-even-and-odd-numbers/)

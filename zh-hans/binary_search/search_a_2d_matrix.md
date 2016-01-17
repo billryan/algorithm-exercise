@@ -1,11 +1,11 @@
 # Search a 2D Matrix
 
-## Source
+## Question
 
 - leetcode: [Search a 2D Matrix | LeetCode OJ](https://leetcode.com/problems/search-a-2d-matrix/)
 - lintcode: [(28) Search a 2D Matrix](http://www.lintcode.com/en/problem/search-a-2d-matrix/)
 
-### Problem
+### Problem Statement
 
 Write an efficient algorithm that searches for a value in an _m_ x _n_ matrix.
 

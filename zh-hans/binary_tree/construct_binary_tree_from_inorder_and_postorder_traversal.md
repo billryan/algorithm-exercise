@@ -1,6 +1,6 @@
 # Construct Binary Tree from Inorder and Postorder Traversal
 
-## Source
+## Question
 
 - lintcode: [(72) Construct Binary Tree from Inorder and Postorder Traversal](http://www.lintcode.com/en/problem/construct-binary-tree-from-inorder-and-postorder-traversal/)
 

@@ -1,6 +1,6 @@
 # Binary Tree Level Order Traversal II
 
-## Source
+## Question
 
 - leetcode: [Binary Tree Level Order Traversal II | LeetCode OJ](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
 - lintcode: [(70) Binary Tree Level Order Traversal II](http://www.lintcode.com/en/problem/binary-tree-level-order-traversal-ii/)

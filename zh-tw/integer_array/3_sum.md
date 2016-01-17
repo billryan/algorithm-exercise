@@ -1,6 +1,6 @@
 # 3 Sum
 
-## Source
+## Question
 
 - leetcode: [3Sum | LeetCode OJ](https://leetcode.com/problems/3sum/)
 - lintcode: [(57) 3 Sum](http://www.lintcode.com/en/problem/3-sum/)

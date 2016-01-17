@@ -1,6 +1,6 @@
 # Compare Strings
 
-## Source
+## Question
 
 - lintcode: [(55) Compare Strings](http://www.lintcode.com/en/problem/compare-strings/)
 

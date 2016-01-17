@@ -1,11 +1,11 @@
 # Gray Code
 
-## Source
+## Question
 
 - leetcode: [Gray Code | LeetCode OJ](https://leetcode.com/problems/gray-code/)
 - lintcode: [(411) Gray Code](http://www.lintcode.com/en/problem/gray-code/)
 
-### Problem
+### Problem Statement
 
 The gray code is a binary numeral system where two successive values differ in only one bit.
 Given a non-negative integer n representing the total number of bits in the code, find the sequence of gray code. A gray code sequence must begin with 0 and with cover all $$2^n$$ integers.

@@ -1,6 +1,6 @@
 # Majority Number III
 
-## Source
+## Question
 
 - lintcode: [(48) Majority Number III](http://www.lintcode.com/en/problem/majority-number-iii/)
 

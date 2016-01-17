@@ -1,6 +1,6 @@
 # Count 1 in Binary
 
-## Source
+## Question
 
 - lintcode: [(365) Count 1 in Binary](http://www.lintcode.com/en/problem/count-1-in-binary/)
 

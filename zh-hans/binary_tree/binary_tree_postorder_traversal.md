@@ -1,11 +1,11 @@
 # Binary Tree Postorder Traversal
 
-## Source
+## Question
 
 - leetcode: [Binary Tree Postorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 - lintcode: [(68) Binary Tree Postorder Traversal](http://www.lintcode.com/en/problem/binary-tree-postorder-traversal/)
 
-### Problem
+### Problem Statement
 
 Given a binary tree, return the _postorder_ traversal of its nodes' values.
 

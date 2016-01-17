@@ -1,10 +1,10 @@
 # Search Range in Binary Search Tree
 
-## Source
+## Question
 
 - lintcode: [(11) Search Range in Binary Search Tree](http://www.lintcode.com/en/problem/search-range-in-binary-search-tree/)
 
-### Problem
+### Problem Statement
 
 Given two values k1 and k2 (where k1 &lt; k2) and a root pointer to a Binary
 Search Tree. Find all the keys of tree in range k1 to k2. i.e. print all x

@@ -1,11 +1,11 @@
 # Route Between Two Nodes in Graph
 
-## Source
+## Question
 
 - lintcode: [(176) Route Between Two Nodes in Graph](http://www.lintcode.com/en/problem/route-between-two-nodes-in-graph/)
 - [Find if there is a path between two vertices in a directed graph - GeeksforGeeks](http://www.geeksforgeeks.org/find-if-there-is-a-path-between-two-vertices-in-a-given-graph/)
 
-### Problem
+### Problem Statement
 
 Given a directed graph, design an algorithm to find out whether there is a
 route between two nodes.

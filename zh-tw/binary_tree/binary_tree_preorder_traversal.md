@@ -1,6 +1,6 @@
 # Binary Tree Preorder Traversal
 
-## Source
+## Question
 
 - leetcode: [Binary Tree Preorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 - lintcode: [(66) Binary Tree Preorder Traversal](http://www.lintcode.com/en/problem/binary-tree-preorder-traversal/)

@@ -1,6 +1,6 @@
 # Subarray Sum Closest
 
-## Source
+## Question
 
 - lintcode: [(139) Subarray Sum Closest](http://www.lintcode.com/en/problem/subarray-sum-closest/)
 

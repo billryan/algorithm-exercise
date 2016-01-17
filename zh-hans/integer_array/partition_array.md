@@ -1,10 +1,10 @@
 # Partition Array
 
-## Source
+## Question
 
 - lintcode: [(31) Partition Array](http://www.lintcode.com/en/problem/partition-array/)
 
-### Problem
+### Problem Statement
 
 Given an array `nums` of integers and an int `k`, partition the array (i.e
 move the elements in "nums") such that:

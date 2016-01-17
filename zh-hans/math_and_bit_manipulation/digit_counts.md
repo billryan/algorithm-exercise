@@ -1,6 +1,6 @@
 # Digit Counts
 
-## Source
+## Question
 
 - leetcode: [Number of Digit One | LeetCode OJ](https://leetcode.com/problems/number-of-digit-one/)
 - lintcode: [(3) Digit Counts](http://www.lintcode.com/en/problem/digit-counts/)

@@ -1,6 +1,6 @@
 # Merge Two Sorted Lists
 
-## Source
+## Question
 
 - lintcode: [(165) Merge Two Sorted Lists](http://www.lintcode.com/en/problem/merge-two-sorted-lists/)
 - leetcode: [Merge Two Sorted Lists | LeetCode OJ](https://leetcode.com/problems/merge-two-sorted-lists/)

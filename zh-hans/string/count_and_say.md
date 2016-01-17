@@ -1,6 +1,6 @@
 # Count and Say
 
-## Source
+## Question
 
 - leetcode: [Count and Say | LeetCode OJ](https://leetcode.com/problems/count-and-say/)
 - lintcode: [(420) Count and Say](http://www.lintcode.com/en/problem/count-and-say/)

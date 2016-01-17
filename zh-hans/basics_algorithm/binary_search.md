@@ -86,7 +86,7 @@ public class Main {
 
 以 [POJ No.1064](http://poj.org/problem?id=1064) 为例。
 
-### Problem
+### Problem Statement
 
 有 $$N$$ 条绳子，它们的长度分别为 $$L_i$$. 如果从它们中切割出 $$K$$ 条长度相同的绳子的话，这 $$K$$ 条绳子每条最长能有多长？答案保留到小数点后两位。
 
@@ -226,7 +226,7 @@ class Solution {
 }
 ```
 
-### Problem
+### Problem Statement
 [Search for a Range](http://www.lintcode.com/zh-hans/problem/search-for-a-range/)
 
 #### 样例

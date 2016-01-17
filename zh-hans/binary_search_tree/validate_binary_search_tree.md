@@ -1,6 +1,6 @@
 # Validate Binary Search Tree
 
-## Source
+## Question
 
 - lintcode: [(95) Validate Binary Search Tree](http://www.lintcode.com/en/problem/validate-binary-search-tree/)
 

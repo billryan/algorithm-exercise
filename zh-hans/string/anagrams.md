@@ -1,6 +1,6 @@
 # Anagrams
 
-## Source
+## Question
 
 - leetcode: [Anagrams | LeetCode OJ](https://leetcode.com/problems/anagrams/)
 - lintcode: [(171) Anagrams](http://www.lintcode.com/en/problem/anagrams/)

@@ -1,6 +1,6 @@
 # Two Lists Sum Advanced <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
 
-## Source
+## Question
 
 - CC150 - [Add two numbers represented by linked lists | Set 2 - GeeksforGeeks](http://www.geeksforgeeks.org/sum-of-two-linked-lists/)
 

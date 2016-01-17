@@ -1,6 +1,6 @@
 # Factorial Trailing Zeroes
 
-## Source
+## Question
 
 - leetcode: [Factorial Trailing Zeroes | LeetCode OJ](https://leetcode.com/problems/factorial-trailing-zeroes/)
 - lintcode: [(2) Trailing Zeros](http://www.lintcode.com/en/problem/trailing-zeros/)

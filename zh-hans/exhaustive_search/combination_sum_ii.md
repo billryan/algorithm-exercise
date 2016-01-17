@@ -1,6 +1,6 @@
 # Combination Sum II
 
-## Source
+## Question
 
 - leetcode: [Combination Sum II | LeetCode OJ](https://leetcode.com/problems/combination-sum-ii/)
 - lintcode: [(153) Combination Sum II](http://www.lintcode.com/en/problem/combination-sum-ii/)

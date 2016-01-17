@@ -1,6 +1,6 @@
 # Insert Node in a Binary Search Tree
 
-## Source
+## Question
 
 - lintcode: [(85) Insert Node in a Binary Search Tree](http://www.lintcode.com/en/problem/insert-node-in-a-binary-search-tree/)
 

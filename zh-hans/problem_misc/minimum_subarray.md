@@ -1,6 +1,6 @@
 # Minimum Subarray
 
-## Source
+## Question
 
 - lintcode: [(44) Minimum Subarray](http://www.lintcode.com/en/problem/minimum-subarray/)
 

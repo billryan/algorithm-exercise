@@ -1,11 +1,11 @@
 # Subsets - 子集
 
-## Source
+## Question
 
 - leetcode: [Subsets | LeetCode OJ](https://leetcode.com/problems/subsets/)
 - lintcode: [(17) Subsets](http://www.lintcode.com/en/problem/subsets/)
 
-### Problem
+### Problem Statement
 
 Given a set of distinct integers, _nums_, return all possible subsets.
 

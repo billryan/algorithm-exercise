@@ -1,6 +1,6 @@
 # ￼Remove Duplicates from Sorted List II
 
-## Source
+## Question
 
 - leetcode: [Remove Duplicates from Sorted List II | LeetCode OJ](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
 - lintcode: [(113) Remove Duplicates from Sorted List II](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list-ii/)
