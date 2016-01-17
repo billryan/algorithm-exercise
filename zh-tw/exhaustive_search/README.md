@@ -31,7 +31,7 @@ BFS 從某個狀態開始，搜索**所有可以到達的狀態**，轉移順序
 ## Reference
 
 - 《挑戰程序設計競賽》Chaper 2.1 p26 最基礎的「窮竭搜索」
-- [Steven Skiena: Lecture15 - Backtracking](../../shared-files/docs/lecture15-backtracking.pdf)
+- [Steven Skiena: Lecture15 - Backtracking](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/docs/lecture15-backtracking.pdf)
 - [全面解析回溯法：算法框架與問題求解 - 五嶽 - 博客園](http://www.cnblogs.com/wuyuegb2312/p/3273337.html)
 - [五大常用算法之四：回溯法 - 紅臉書生 - 博客園](http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741376.html)
 - [演算法筆記 - Backtracking](http://www.csie.ntnu.edu.tw/~u91029/Backtracking.html)

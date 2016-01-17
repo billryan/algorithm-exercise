@@ -18,7 +18,7 @@
 - 最坏情况下需要~N^2/2次比较和~N^2/2次交换，最好情况下需要N-1次比较和0次交换。
 - 平均情况下需要~N^2/4次比较和~N^2/4次交换
 
-![Insertion Sort](../../shared-files/images/insertion_sort.gif)
+![Insertion Sort](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/insertion_sort.gif)
 
 
 ## Implementation

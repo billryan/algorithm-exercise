@@ -22,7 +22,7 @@ Can you solve it without using extra space?
 
 快指標走到`NULL`退出循環即可確定此鏈表一定無環這個很好理解。那麼帶環的鏈表快慢指標一定會相遇嗎？先來看看下圖。
 
-![Linked List Cycle](../../shared-files/images/linked_list_cycle.png)
+![Linked List Cycle](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/linked_list_cycle.png)
 
 在有環的情況下，最終快慢指標一定都走在環內，加入第`i`次遍歷時快指標還需要`k`步才能追上慢指標，由於快指標比慢指標每次多走一步。那麼每遍歷一次快慢指標間的間距都會減少1，直至最終相遇。故快慢指標相遇一定能確定該鏈表有環。
 

@@ -13,7 +13,7 @@ the leaves that form the ends of a longest path are shaded
 but no path longer than nine nodes).
 ```
 
-![Diameter of a Binary Tree](../../shared-files/images/tree_diameter.gif)
+![Diameter of a Binary Tree](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/tree_diameter.gif)
 
 ## 题解
 
