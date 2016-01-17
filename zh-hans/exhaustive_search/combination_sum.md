@@ -1,6 +1,6 @@
 # Combination Sum
 
-## Source
+## Question
 
 - leetcode: [Combination Sum | LeetCode OJ](https://leetcode.com/problems/combination-sum/)
 - lintcode: [(135) Combination Sum](http://www.lintcode.com/en/problem/combination-sum/)

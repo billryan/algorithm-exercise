@@ -1,11 +1,11 @@
 # Word Ladder
 
-## Source
+## Question
 
 - leetcode: [Word Ladder | LeetCode OJ](https://leetcode.com/problems/word-ladder/)
 - lintcode: [(120) Word Ladder](http://www.lintcode.com/en/problem/word-ladder/)
 
-### Problem
+### Problem Statement
 
 Given two words (_start_ and _end_), and a dictionary, find the length of
 shortest transformation sequence from _start_ to _end_, such that:

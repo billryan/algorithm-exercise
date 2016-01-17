@@ -1,6 +1,6 @@
 # Subsets - 子集
 
-## Source
+## Question
 
 - leetcode: [Subsets | LeetCode OJ](https://leetcode.com/problems/subsets/)
 - lintcode: [(17) Subsets](http://www.lintcode.com/en/problem/subsets/)

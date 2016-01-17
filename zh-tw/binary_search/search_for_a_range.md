@@ -1,6 +1,6 @@
 # Search for a Range
 
-## Source
+## Question
 
 - lintcode: [(61) Search for a Range](http://www.lintcode.com/en/problem/search-for-a-range/)
 

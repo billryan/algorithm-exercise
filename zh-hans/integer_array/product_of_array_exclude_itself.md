@@ -1,6 +1,6 @@
 # Product of Array Exclude Itself
 
-## Source
+## Question
 
 - lintcode: [(50) Product of Array Exclude Itself](http://www.lintcode.com/en/problem/product-of-array-exclude-itself/)
 - GeeksforGeeks: [A Product Array Puzzle - GeeksforGeeks](http://www.geeksforgeeks.org/a-product-array-puzzle/)

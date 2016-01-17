@@ -1,6 +1,6 @@
 # Matrix Zigzag Traversal
 
-## Source
+## Question
 
 - lintcode: [(185) Matrix Zigzag Traversal](http://www.lintcode.com/en/problem/matrix-zigzag-traversal/)
 

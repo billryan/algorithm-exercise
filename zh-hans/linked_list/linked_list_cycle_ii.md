@@ -1,6 +1,6 @@
 # Linked List Cycle II
 
-## Source
+## Question
 
 - leetcode: [Linked List Cycle II | LeetCode OJ](https://leetcode.com/problems/linked-list-cycle-ii/)
 - lintcode: [(103) Linked List Cycle II](http://www.lintcode.com/en/problem/linked-list-cycle-ii/)

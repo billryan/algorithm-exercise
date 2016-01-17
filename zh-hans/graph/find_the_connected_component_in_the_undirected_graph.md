@@ -1,10 +1,10 @@
 # Find the Connected Component in the Undirected Graph
 
-## Source
+## Question
 
 - lintcode: [(431) Find the Connected Component in the Undirected Graph](http://www.lintcode.com/en/problem/find-the-connected-component-in-the-undirected-graph/)
 
-### Problem
+### Problem Statement
 
 Find the number connected component in the undirected graph. Each node in the
 graph contains a label and a list of its neighbors. (a connected component (or

@@ -2,7 +2,7 @@
 
 - tags: [DP_Two_Sequence]
 
-## Source
+## Question
 
 - leetcode: [Edit Distance | LeetCode OJ](https://leetcode.com/problems/edit-distance/)
 - lintcode: [(119) Edit Distance](http://www.lintcode.com/en/problem/edit-distance/)

@@ -1,11 +1,11 @@
 # Reverse Linked List II
 
-## Source
+## Question
 
 - leetcode: [Reverse Linked List II | LeetCode OJ](https://leetcode.com/problems/reverse-linked-list-ii/)
 - lintcode: [(36) Reverse Linked List II](http://www.lintcode.com/en/problem/reverse-linked-list-ii/)
 
-### Problem
+### Problem Statement
 
 Reverse a linked list from position m to n.
 

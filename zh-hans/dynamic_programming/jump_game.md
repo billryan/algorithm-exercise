@@ -1,6 +1,6 @@
 # Jump Game
 
-## Source
+## Question
 
 - lintcode:
 

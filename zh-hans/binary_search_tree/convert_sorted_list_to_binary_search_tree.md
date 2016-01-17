@@ -1,6 +1,6 @@
 # Convert Sorted List to Binary Search Tree
 
-## Source
+## Question
 
 - leetcode - [Convert Sorted List to Binary Search Tree | LeetCode OJ](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)
 - lintcode - [(106) Convert Sorted List to Binary Search Tree](http://www.lintcode.com/en/problem/convert-sorted-list-to-binary-search-tree/)

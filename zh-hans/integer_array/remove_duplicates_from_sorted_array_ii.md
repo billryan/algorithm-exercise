@@ -1,6 +1,6 @@
 # Remove Duplicates from Sorted Array II
 
-## Source
+## Question
 
 - leetcode: [Remove Duplicates from Sorted Array II | LeetCode OJ](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
 - lintcode: [(101) Remove Duplicates from Sorted Array II](http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array-ii/)

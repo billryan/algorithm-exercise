@@ -2,7 +2,7 @@
 
 - tags: [DP_Sequence]
 
-## Source
+## Question
 
 - leetcode: [Palindrome Partitioning II | LeetCode OJ](https://leetcode.com/problems/palindrome-partitioning-ii/)
 - lintcode: [(108) Palindrome Partitioning II](http://www.lintcode.com/en/problem/palindrome-partitioning-ii/)

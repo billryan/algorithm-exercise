@@ -2,7 +2,7 @@
 
 - tags: [DP_Sequence]
 
-## Source
+## Question
 
 - leetcode: [Word Break | LeetCode OJ](https://leetcode.com/problems/word-break/)
 - lintcode: [(107) Word Break](http://www.lintcode.com/en/problem/word-break/)

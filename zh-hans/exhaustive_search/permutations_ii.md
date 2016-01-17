@@ -1,11 +1,11 @@
 # Permutations II
 
-## Source
+## Question
 
 - leetcode: [Permutations II | LeetCode OJ](https://leetcode.com/problems/permutations-ii/)
 - lintcode: [(16) Permutations II](http://www.lintcode.com/en/problem/permutations-ii/)
 
-### Problem
+### Problem Statement
 
 Given a list of numbers with duplicate number in it. Find all **unique** permutations.
 

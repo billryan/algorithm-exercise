@@ -1,6 +1,6 @@
 # Distinct Subsequences
 
-## Source
+## Question
 
 - leetcode: [Distinct Subsequences | LeetCode OJ](https://leetcode.com/problems/distinct-subsequences/)
 - lintcode: [(118) Distinct Subsequences](http://www.lintcode.com/en/problem/distinct-subsequences/)

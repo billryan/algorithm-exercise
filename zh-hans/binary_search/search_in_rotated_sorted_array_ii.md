@@ -1,11 +1,11 @@
 # Search in Rotated Sorted Array II
 
-## Source
+## Question
 
 - leetcode: [Search in Rotated Sorted Array II | LeetCode OJ](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
 - lintcode: [(63) Search in Rotated Sorted Array II](http://www.lintcode.com/en/problem/search-in-rotated-sorted-array-ii/)
 
-### Problem
+### Problem Statement
 
 Follow up for "Search in Rotated Sorted Array":
 What if _duplicates_ are allowed?

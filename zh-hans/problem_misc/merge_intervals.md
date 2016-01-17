@@ -1,11 +1,11 @@
 # Merge Intervals
 
-## Source
+## Question
 
 - leetcode: [Merge Intervals | LeetCode OJ](https://leetcode.com/problems/merge-intervals/)
 - lintcode: [(156) Merge Intervals](http://www.lintcode.com/en/problem/merge-intervals/)
 
-### Problem
+### Problem Statement
 
 Given a collection of intervals, merge all overlapping intervals.
 

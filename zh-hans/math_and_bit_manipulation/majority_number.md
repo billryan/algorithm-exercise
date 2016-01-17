@@ -1,6 +1,6 @@
 # Majority Number
 
-## Source
+## Question
 
 - leetcode: [Majority Element | LeetCode OJ](https://leetcode.com/problems/majority-element/)
 - lintcode: [(46) Majority Number](http://www.lintcode.com/en/problem/majority-number/)

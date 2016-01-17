@@ -1,10 +1,10 @@
 # Hash Function
 
-## Source
+## Question
 
 - lintcode: [(128) Hash Function](http://www.lintcode.com/en/problem/hash-function/)
 
-### Problem
+### Problem Statement
 
 In data structure Hash, hash function is used to convert a string(or any other
 type) into an integer smaller than hash size and bigger or equal to zero. The

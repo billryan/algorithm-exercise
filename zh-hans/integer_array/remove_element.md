@@ -1,6 +1,6 @@
 # Remove Element
 
-## Source
+## Question
 
 - leetcode: [Remove Element | LeetCode OJ](https://leetcode.com/problems/remove-element/)
 - lintcode: [(172) Remove Element](http://www.lintcode.com/en/problem/remove-element/)

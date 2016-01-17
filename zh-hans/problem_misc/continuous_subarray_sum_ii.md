@@ -1,11 +1,11 @@
 # Continuous Subarray Sum II
 
-## Source
+## Question
 
 - lintcode: [(403) Continuous Subarray Sum II](http://www.lintcode.com/en/problem/continuous-subarray-sum-ii/)
 - [Maximum circular subarray sum - GeeksforGeeks](http://www.geeksforgeeks.org/maximum-contiguous-circular-sum/)
 
-### Problem
+### Problem Statement
 
 Given an integer array, find a continuous rotate subarray where the sum of
 numbers is the biggest. Your code should return the index of the first number

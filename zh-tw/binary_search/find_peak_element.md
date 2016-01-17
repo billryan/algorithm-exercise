@@ -1,6 +1,6 @@
 # Find Peak Element
 
-## Source
+## Question
 
 - leetcode: [Find Peak Element | LeetCode OJ](https://leetcode.com/problems/find-peak-element/)
 - lintcode: [(75) Find Peak Element](http://www.lintcode.com/en/problem/find-peak-element/)

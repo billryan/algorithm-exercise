@@ -1,10 +1,10 @@
 # Permutation Index
 
-## Source
+## Question
 
 - lintcode: [(197) Permutation Index](http://www.lintcode.com/en/problem/permutation-index/)
 
-### Problem
+### Problem Statement
 
 Given a permutation which contains no repeated number, find its index in all
 the permutations of these numbers, which are ordered in lexicographical order.

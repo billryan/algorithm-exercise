@@ -1,6 +1,6 @@
 # Topological Sorting
 
-## Source
+## Question
 
 - lintcode: [(127) Topological Sorting](http://www.lintcode.com/en/problem/topological-sorting/)
 - [Topological Sorting - GeeksforGeeks](http://www.geeksforgeeks.org/topological-sorting/)

@@ -1,6 +1,6 @@
 # Print Numbers by Recursion
 
-## Source
+## Question
 
 - lintcode: [(371) Print Numbers by Recursion](http://www.lintcode.com/en/problem/print-numbers-by-recursion/)
 

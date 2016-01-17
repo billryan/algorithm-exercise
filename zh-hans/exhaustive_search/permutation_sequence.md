@@ -1,11 +1,11 @@
 # Permutation Sequence
 
-## Source
+## Question
 
 - leetcode: [Permutation Sequence | LeetCode OJ](https://leetcode.com/problems/permutation-sequence/)
 - lintcode: [(388) Permutation Sequence](http://www.lintcode.com/en/problem/permutation-sequence/)
 
-### Problem
+### Problem Statement
 
 Given _n_ and _k_, return the _k_-th permutation sequence.
 

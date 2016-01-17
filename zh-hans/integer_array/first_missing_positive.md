@@ -1,6 +1,6 @@
 # First Missing Positive
 
-## Source
+## Question
 
 - leetcode: [First Missing Positive | LeetCode OJ](https://leetcode.com/problems/first-missing-positive/)
 - lintcode: [(189) First Missing Positive](http://www.lintcode.com/en/problem/first-missing-positive/)

@@ -1,11 +1,11 @@
 # Combinations
 
-## Source
+## Question
 
 - leetcode: [Combinations | LeetCode OJ](https://leetcode.com/problems/combinations/)
 - lintcode: [(152) Combinations](http://www.lintcode.com/en/problem/combinations/)
 
-### Problem
+### Problem Statement
 
 Given two integers n and k,
 return all possible combinations of k numbers out of 1 ... n.

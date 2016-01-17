@@ -2,7 +2,7 @@
 
 - tags: [DP_Matrix]
 
-## Source
+## Question
 
 - lintcode: [(110) Minimum Path Sum](http://www.lintcode.com/en/problem/minimum-path-sum/)
 

@@ -1,11 +1,11 @@
 # Reverse Integer
 
-## Source
+## Question
 
 - leetcode: [Reverse Integer | LeetCode OJ](https://leetcode.com/problems/reverse-integer/)
 - lintcode: [(413) Reverse Integer](http://www.lintcode.com/en/problem/reverse-integer/)
 
-### Problem
+### Problem Statement
 
 Reverse digits of an integer. Returns 0 when the reversed integer overflows (signed 32-bit integer).
 

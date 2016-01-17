@@ -1,6 +1,6 @@
 # Majority Number II
 
-## Source
+## Question
 
 - leetcode: [Majority Element II | LeetCode OJ](https://leetcode.com/problems/majority-element-ii/)
 - lintcode: [(47) Majority Number II](http://www.lintcode.com/en/problem/majority-number-ii/)

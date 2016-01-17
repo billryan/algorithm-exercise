@@ -1,11 +1,11 @@
 # Plus One
 
-## Source
+## Question
 
 - leetcode: [Plus One | LeetCode OJ](https://leetcode.com/problems/plus-one/)
 - lintcode: [(407) Plus One](http://www.lintcode.com/en/problem/plus-one/)
 
-### Problem
+### Problem Statement
 
 Given a non-negative number represented as an array of digits, plus one to the number.
 

@@ -1,11 +1,11 @@
 # Unique Subsets
 
-## Source
+## Question
 
 - leetcode: [Subsets II | LeetCode OJ](https://leetcode.com/problems/subsets-ii/)
 - lintcode: [(18) Unique Subsets](http://www.lintcode.com/en/problem/unique-subsets/)
 
-### Problem
+### Problem Statement
 
 Given a list of numbers that may has duplicate numbers, return all possible subsets.
 

@@ -1,6 +1,6 @@
 # Climbing Stairs
 
-## Source
+## Question
 
 - lintcode: [(111) Climbing Stairs](http://www.lintcode.com/en/problem/climbing-stairs/)
 

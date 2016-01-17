@@ -1,12 +1,12 @@
 # Longest Consecutive Sequence
 
-## Source
+## Question
 
 - leetcode: [Longest Consecutive Sequence | LeetCode OJ](https://leetcode.com/problems/longest-consecutive-sequence/)
 - lintcode: [(124) Longest Consecutive Sequence](http://www.lintcode.com/en/problem/longest-consecutive-sequence/)
 
 
-### Problem
+### Problem Statement
 
 Given an unsorted array of integers, find the length of the longest
 consecutive elements sequence.

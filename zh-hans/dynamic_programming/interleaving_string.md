@@ -1,6 +1,6 @@
 # Interleaving String
 
-## Source
+## Question
 
 - leetcode: [Interleaving String | LeetCode OJ](https://leetcode.com/problems/interleaving-string/)
 - lintcode: [(29) Interleaving String](http://www.lintcode.com/en/problem/interleaving-string/)

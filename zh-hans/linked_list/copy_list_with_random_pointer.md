@@ -1,6 +1,6 @@
 # Copy List with Random Pointer
 
-## Source
+## Question
 
 - leetcode: [Copy List with Random Pointer | LeetCode OJ](https://leetcode.com/problems/copy-list-with-random-pointer/)
 - lintcode: [(105) Copy List with Random Pointer](http://www.lintcode.com/en/problem/copy-list-with-random-pointer/)

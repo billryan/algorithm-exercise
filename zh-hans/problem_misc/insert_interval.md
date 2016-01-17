@@ -1,6 +1,6 @@
 # Insert Interval
 
-## Source
+## Question
 
 - leetcode: [Insert Interval | LeetCode OJ](https://leetcode.com/problems/insert-interval/)
 - lintcode: [(30) Insert Interval](http://www.lintcode.com/en/problem/insert-interval/)

@@ -1,10 +1,10 @@
 # Longest Increasing Continuous subsequence
 
-## Source
+## Question
 
 - lintcode: [(397) Longest Increasing Continuous subsequence](http://www.lintcode.com/en/problem/longest-increasing-continuous-subsequence/)
 
-### Problem
+### Problem Statement
 
 Give you an integer array (index from 0 to n-1, where n is the size of this array)，find the longest increasing continuous subsequence in this array. (The definition of the longest increasing continuous subsequence here can be from right to left or from left to right)
 

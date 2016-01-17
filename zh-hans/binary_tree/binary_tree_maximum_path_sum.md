@@ -1,11 +1,11 @@
 # Binary Tree Maximum Path Sum
 
-## Source
+## Question
 
 - leetcode: [Binary Tree Maximum Path Sum | LeetCode OJ](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 - lintcode: [(94) Binary Tree Maximum Path Sum](http://www.lintcode.com/en/problem/binary-tree-maximum-path-sum/)
 
-### Problem
+### Problem Statement
 
 Given a binary tree, find the maximum path sum.
 

@@ -1,11 +1,11 @@
 # strStr
 
-## Source
+## Question
 
 - leetcode: [Implement strStr() | LeetCode OJ](https://leetcode.com/problems/implement-strstr/)
 - lintcode: [lintcode - (13) strstr](http://www.lintcode.com/en/problem/strstr/)
 
-### Problem
+### Problem Statement
 
 For a given source string and a target string, you should output the **first**
 index(from 0) of target string in source string.

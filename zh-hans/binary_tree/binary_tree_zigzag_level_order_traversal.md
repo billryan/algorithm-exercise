@@ -1,6 +1,6 @@
 # Binary Tree Zigzag Level Order Traversal
 
-## Source
+## Question
 
 - leetcode: [Binary Tree Zigzag Level Order Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 - lintcode: [(71) Binary Tree Zigzag Level Order Traversal](http://www.lintcode.com/en/problem/binary-tree-zigzag-level-order-traversal/)

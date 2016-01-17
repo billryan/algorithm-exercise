@@ -1,6 +1,6 @@
 # strStr
 
-## Source
+## Question
 
 - leetcode: [Implement strStr() | LeetCode OJ](https://leetcode.com/problems/implement-strstr/)
 - lintcode: [lintcode - (13) strstr](http://www.lintcode.en/problem/strstr/)

@@ -1,6 +1,6 @@
 # O(1) Check Power of 2
 
-## Source
+## Question
 
 - lintcode: [(142) O(1) Check Power of 2](http://www.lintcode.com/en/problem/o1-check-power-of-2/)
 

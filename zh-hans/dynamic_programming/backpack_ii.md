@@ -1,10 +1,10 @@
 # Backpack II
 
-## Source
+## Question
 
 - lintcode: [(125) Backpack II](http://www.lintcode.com/en/problem/backpack-ii/)
 
-### Problem
+### Problem Statement
 
 Given _n_ items with size $$Ai$$ and value Vi, and a backpack with size _m_.
 What's the maximum value can you put into the backpack?

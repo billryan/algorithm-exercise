@@ -1,6 +1,6 @@
 # Median
 
-## Source
+## Question
 
 - lintcode: [(80) Median](http://www.lintcode.com/en/problem/median/)
 

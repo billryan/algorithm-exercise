@@ -1,10 +1,10 @@
 # Previous Permuation
 
-## Source
+## Question
 
 - lintcode: [(51) Previous Permuation](http://www.lintcode.com/en/problem/previous-permuation/)
 
-### Problem
+### Problem Statement
 
 Given a list of integers, which denote a permutation.
 

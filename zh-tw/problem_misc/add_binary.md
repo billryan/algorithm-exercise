@@ -1,6 +1,6 @@
 # Add Binary
 
-## Source
+## Question
 
 - leetcode: [Add Binary | LeetCode OJ](https://leetcode.com/problems/add-binary/)
 - lintcode: [(408) Add Binary](http://www.lintcode.com/en/problem/add-binary/)

@@ -1,6 +1,6 @@
 # Insertion Sort List
 
-## Source
+## Question
 
 - leetcode: [Insertion Sort List | LeetCode OJ](https://leetcode.com/problems/insertion-sort-list/)
 - lintcode: [(173) Insertion Sort List](http://www.lintcode.com/en/problem/insertion-sort-list/)

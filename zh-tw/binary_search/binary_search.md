@@ -1,6 +1,6 @@
 # Binary Search - 二分搜尋
 
-## Source
+## Question
 
 - lintcode: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
 

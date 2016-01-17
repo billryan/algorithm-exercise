@@ -1,6 +1,6 @@
 # Convert Sorted Array to Binary Search Tree
 
-## Source
+## Question
 
 - leetcode: [Convert Sorted Array to Binary Search Tree | LeetCode OJ](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
 - lintcode: [(177) Convert Sorted Array to Binary Search Tree With Minimal Height](http://www.lintcode.com/en/problem/convert-sorted-array-to-binary-search-tree-with-minimal-height/)

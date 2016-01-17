@@ -1,6 +1,6 @@
 # Sliding Window Maximum
 
-## Source
+## Question
 
 - leetcode: [Sliding Window Maximum | LeetCode OJ](https://leetcode.com/problems/sliding-window-maximum/)
 - lintcode: [(362) Sliding Window Maximum](http://www.lintcode.com/en/problem/sliding-window-maximum/)

@@ -1,6 +1,6 @@
 # Best Time to Buy and Sell Stock IV
 
-## Source
+## Question
 
 - leetcode: [Best Time to Buy and Sell Stock IV | LeetCode OJ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
 - lintcode: [(393) Best Time to Buy and Sell Stock IV](http://www.lintcode.com/en/problem/best-time-to-buy-and-sell-stock-iv/)

@@ -1,6 +1,6 @@
 # Single Number III
 
-## Source
+## Question
 
 - lintcode: [(84) Single Number III](http://www.lintcode.com/en/problem/single-number-iii/)
 

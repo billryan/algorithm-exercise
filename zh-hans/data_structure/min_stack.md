@@ -1,6 +1,6 @@
 # Min Stack
 
-## Source
+## Question
 
 - lintcode: [(12) Min Stack](http://www.lintcode.com/en/problem/min-stack/)
 

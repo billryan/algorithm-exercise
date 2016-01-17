@@ -1,11 +1,11 @@
 # Next Permutation
 
-## Source
+## Question
 
 - leetcode: [Next Permutation | LeetCode OJ](https://leetcode.com/problems/next-permutation/)
 - lintcode: [(52) Next Permutation](http://www.lintcode.com/en/problem/next-permutation/)
 
-### Problem
+### Problem Statement
 
 Given a list of integers, which denote a permutation.
 

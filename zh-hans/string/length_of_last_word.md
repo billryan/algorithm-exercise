@@ -1,6 +1,6 @@
 # Length of Last Word
 
-## Source
+## Question
 
 - leetcode: [Length of Last Word | LeetCode OJ](https://leetcode.com/problems/length-of-last-word/)
 - lintcode: [(422) Length of Last Word](http://www.lintcode.com/en/problem/length-of-last-word/)

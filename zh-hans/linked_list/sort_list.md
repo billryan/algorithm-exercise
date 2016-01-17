@@ -1,6 +1,6 @@
 # Sort List
 
-## Source
+## Question
 
 - leetcode: [Sort List | LeetCode OJ](https://leetcode.com/problems/sort-list/)
 - lintcode: [(98) Sort List](http://www.lintcode.com/en/problem/sort-list/)

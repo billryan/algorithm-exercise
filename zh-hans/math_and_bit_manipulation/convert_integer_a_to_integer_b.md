@@ -1,6 +1,6 @@
 # Convert Integer A to Integer B
 
-## Source
+## Question
 
 - CC150, lintcode: [(181) Convert Integer A to Integer B](http://www.lintcode.com/en/problem/convert-integer-a-to-integer-b/)
 

@@ -1,6 +1,6 @@
 # Merge Sorted Array II
 
-## Source
+## Question
 
 - lintcode: [(64) Merge Sorted Array II](http://www.lintcode.com/en/problem/merge-sorted-array-ii/)
 

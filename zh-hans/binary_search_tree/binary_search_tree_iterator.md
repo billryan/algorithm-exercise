@@ -1,6 +1,6 @@
 # Binary Search Tree Iterator
 
-## Source
+## Question
 
 - lintcode: [(86) Binary Search Tree Iterator](http://www.lintcode.com/en/problem/binary-search-tree-iterator/) <i class="fa fa-star"></i><i class="fa fa-star"></i>
 

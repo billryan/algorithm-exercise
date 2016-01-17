@@ -1,6 +1,6 @@
 # Implement Queue by Two Stacks
 
-## Source
+## Question
 
 - lintcode: [(40) Implement Queue by Two Stacks](http://www.lintcode.com/en/problem/implement-queue-by-two-stacks/)
 

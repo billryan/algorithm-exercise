@@ -1,12 +1,12 @@
 # Palindrome Linked List
 
-## Source
+## Question
 
 - leetcode: [Palindrome Linked List | LeetCode OJ](https://leetcode.com/problems/palindrome-linked-list/)
 - lintcode: [Palindrome Linked List](http://www.lintcode.com/en/problem/palindrome-linked-list/)
 - [Function to check if a singly linked list is palindrome - GeeksforGeeks](http://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/)
 
-### Problem
+### Problem Statement
 
 Implement a function to check if a linked list is a palindrome.
 

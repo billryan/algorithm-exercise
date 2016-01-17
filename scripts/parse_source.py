@@ -101,13 +101,13 @@ def main(argv):
     if url.startswith(lintcode_url):
         lintcode = Lintcode()
         src_body = lintcode.get_src_detail(url)['body']
-        print("### Problem")
+        print("### Problem Statement")
         print("")
         print(h.handle(src_body))
     elif url.startswith(leetcode_url):
         leetcode = Leetcode()
         src_body = leetcode.get_src_detail(url)['body']
-        print("### Problem")
+        print("### Problem Statement")
         print("")
         print(h.handle(src_body))
     else:
@@ -117,9 +117,9 @@ def main(argv):
         src_body = hihocoder.get_src_detail(url)['body']
         print("# " + src_title)
         print("")
-        print("## Source")
+        print("## Question")
         print("")
-        print("### Problem")
+        print("### Problem Statement")
         print("")
         print(h.handle(src_body))
 

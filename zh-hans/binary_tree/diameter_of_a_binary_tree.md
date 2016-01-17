@@ -1,6 +1,6 @@
 # Diameter of a Binary Tree
 
-## Source
+## Question
 
 - [Diameter of a Binary Tree - GeeksforGeeks](http://www.geeksforgeeks.org/diameter-of-a-binary-tree/)
 

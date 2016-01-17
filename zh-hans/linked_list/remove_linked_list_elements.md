@@ -1,11 +1,11 @@
 # Remove Linked List Elements
 
-## Source
+## Question
 
 - leetcode: [Remove Linked List Elements | LeetCode OJ](https://leetcode.com/problems/remove-linked-list-elements/)
 - lintcode: [(452) Remove Linked List Elements](http://www.lintcode.com/en/problem/remove-linked-list-elements/)
 
-### Problem
+### Problem Statement
 
 Remove all elements from a linked list of integers that have value `val`.
 

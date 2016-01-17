@@ -1,10 +1,10 @@
 # Wood Cut
 
-## Source
+## Question
 
 - lintcode: [(183) Wood Cut](http://www.lintcode.com/en/problem/wood-cut/)
 
-### Problem
+### Problem Statement
 
 Given n pieces of wood with length `L[i]` (integer array). Cut them into small
 pieces to guarantee you could have equal or more than k pieces with the same

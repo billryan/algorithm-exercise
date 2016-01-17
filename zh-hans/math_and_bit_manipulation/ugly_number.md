@@ -1,6 +1,6 @@
 # Ugly Number
 
-## Source
+## Question
 
 - leetcode: [Ugly Number | LeetCode OJ](https://leetcode.com/problems/ugly-number/)
 - lintcode: [(4) Ugly Number](http://www.lintcode.com/en/problem/ugly-number/)

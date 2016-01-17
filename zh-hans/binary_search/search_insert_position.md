@@ -1,10 +1,10 @@
 # Search Insert Position
 
-## Source
+## Question
 
 - lintcode: [(60) Search Insert Position](http://www.lintcode.com/en/problem/search-insert-position/)
 
-### Problem
+### Problem Statement
 
 Given a sorted array and a target value, return the index if the target is
 found. If not, return the index where it would be if it were inserted in

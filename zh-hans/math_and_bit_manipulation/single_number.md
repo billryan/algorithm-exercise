@@ -2,7 +2,7 @@
 
 「找单数」系列题，技巧性较强，需要灵活运用位运算的特性。
 
-## Source
+## Question
 
 - lintcode: [(82) Single Number](http://www.lintcode.com/en/problem/single-number/)
 

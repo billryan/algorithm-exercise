@@ -1,6 +1,6 @@
 # Rotate String
 
-## Source
+## Question
 
 - lintcode: [(8) Rotate String](http://www.lintcode.com/en/problem/rotate-string/)
 

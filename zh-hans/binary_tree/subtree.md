@@ -1,6 +1,6 @@
 # Subtree
 
-## Source
+## Question
 
 - lintcode: [(245) Subtree](http://www.lintcode.com/en/problem/subtree/#)
 

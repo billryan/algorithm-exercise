@@ -1,10 +1,10 @@
 # Fibonacci
 
-## Source
+## Question
 
 - lintcode: [(366) Fibonacci](http://www.lintcode.com/en/problem/fibonacci/)
 
-### Problem
+### Problem Statement
 
 Find the _N_th number in Fibonacci sequence.
 

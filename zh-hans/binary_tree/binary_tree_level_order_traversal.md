@@ -1,11 +1,11 @@
 # Binary Tree Level Order Traversal
 
-## Source
+## Question
 
 - leetcode: [Binary Tree Level Order Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - lintcode: [(69) Binary Tree Level Order Traversal](http://www.lintcode.com/en/problem/binary-tree-level-order-traversal/)
 
-### Problem
+### Problem Statement
 
 Given a binary tree, return the _level order_ traversal of its nodes' values.
 (ie, from left to right, level by level).

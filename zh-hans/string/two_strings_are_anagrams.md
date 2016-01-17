@@ -1,6 +1,6 @@
 # Two Strings Are Anagrams
 
-## Source
+## Question
 
 - lintcode: [(158) Two Strings Are Anagrams](http://www.lintcode.com/en/problem/two-strings-are-anagrams/)
 

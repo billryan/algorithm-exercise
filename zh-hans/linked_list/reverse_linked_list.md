@@ -1,6 +1,6 @@
 # ￼Reverse Linked List
 
-## Source
+## Question
 
 - leetcode: [Reverse Linked List | LeetCode OJ](https://leetcode.com/problems/reverse-linked-list/)
 - lintcode: [(35) Reverse Linked List](http://www.lintcode.com/en/problem/reverse-linked-list/)

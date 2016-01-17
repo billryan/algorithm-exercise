@@ -1,6 +1,6 @@
 # Heapify
 
-## Source
+## Question
 
 - lintcode: [(130) Heapify](http://www.lintcode.com/en/problem/heapify/)
 

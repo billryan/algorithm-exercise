@@ -1,6 +1,6 @@
 # Invert Binary Tree
 
-## Source
+## Question
 
 - leetcode: [Invert Binary Tree | LeetCode OJ](https://leetcode.com/problems/invert-binary-tree/)
 - lintcode: [(175) Invert Binary Tree](http://www.lintcode.com/en/problem/invert-binary-tree/)

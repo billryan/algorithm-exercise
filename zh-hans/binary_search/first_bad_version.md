@@ -1,10 +1,10 @@
 # First Bad Version
 
-## Source
+## Question
 
 - lintcode: [(74) First Bad Version](http://www.lintcode.com/en/problem/first-bad-version/)
 
-### Problem
+### Problem Statement
 
 The code base version is an integer start from 1 to n. One day, someone
 committed a bad version in the code case, so it caused this version and the

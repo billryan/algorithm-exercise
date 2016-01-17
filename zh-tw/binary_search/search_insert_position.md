@@ -1,6 +1,6 @@
 # Search Insert Position
 
-## Source
+## Question
 
 - lintcode: [(60) Search Insert Position](http://www.lintcode.com/en/problem/search-insert-position/)
 

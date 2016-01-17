@@ -1,12 +1,12 @@
 # Partition List
 
-## Source
+## Question
 
 - leetcode: [Partition List | LeetCode OJ](https://leetcode.com/problems/partition-list/)
 - lintcode: [(96) Partition List](http://www.lintcode.com/en/problem/partition-list/)
 
 
-### Problem
+### Problem Statement
 
 Given a linked list and a value _x_, partition it such that all nodes less
 than _x_ come before nodes greater than or equal to _x_.

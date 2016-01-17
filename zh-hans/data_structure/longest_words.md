@@ -1,6 +1,6 @@
 # Longest Words
 
-## Source
+## Question
 
 - lintcode: [(133) Longest Words](http://www.lintcode.com/en/problem/longest-words/)
 

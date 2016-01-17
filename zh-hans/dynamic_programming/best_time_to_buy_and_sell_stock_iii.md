@@ -1,6 +1,6 @@
 # Best Time to Buy and Sell Stock III
 
-## Source
+## Question
 
 - leetcode: [Best Time to Buy and Sell Stock III | LeetCode OJ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
 - lintcode: [(151) Best Time to Buy and Sell Stock III](http://www.lintcode.com/en/problem/best-time-to-buy-and-sell-stock-iii/)

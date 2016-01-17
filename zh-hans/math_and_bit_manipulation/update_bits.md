@@ -1,6 +1,6 @@
 # Update Bits
 
-## Source
+## Question
 
 - CTCI: [(179) Update Bits](http://www.lintcode.com/en/problem/update-bits/)
 

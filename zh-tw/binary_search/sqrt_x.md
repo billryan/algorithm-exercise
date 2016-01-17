@@ -1,6 +1,6 @@
 # Sqrt x
 
-## Source
+## Question
 
 - leetcode: [Sqrt(x) | LeetCode OJ](https://leetcode.com/problems/sqrtx/)
 - lintcode: [(141) Sqrt(x)](http://www.lintcode.com/en/problem/sqrtx/)

@@ -1,11 +1,11 @@
 # Single Number II
 
-## Source
+## Question
 
 - leetcode: [Single Number II | LeetCode OJ](https://leetcode.com/problems/single-number-ii/)
 - lintcode: [(83) Single Number II](http://www.lintcode.com/en/problem/single-number-ii/)
 
-### Problem
+### Problem Statement
 
 Given `3*n + 1` numbers, every numbers occurs triple times except one, find
 it.

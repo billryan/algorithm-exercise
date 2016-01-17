@@ -1,10 +1,10 @@
 # Longest Increasing Continuous subsequence II
 
-## Source
+## Question
 
 - lintcode: [(398) Longest Increasing Continuous subsequence II](http://www.lintcode.com/en/problem/longest-increasing-continuous-subsequence-ii/)
 
-### Problem
+### Problem Statement
 
 Give you an integer matrix (with row size n, column size m)，find the longest increasing continuous subsequence in this matrix. (The definition of the longest increasing continuous subsequence here can start at any row or column and go up/down/right/left any direction).
 

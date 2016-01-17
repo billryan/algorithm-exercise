@@ -1,6 +1,6 @@
 # Longest Common Substring
 
-## Source
+## Question
 
 - lintcode: [(79) Longest Common Substring](http://www.lintcode.com/en/problem/longest-common-substring/)
 

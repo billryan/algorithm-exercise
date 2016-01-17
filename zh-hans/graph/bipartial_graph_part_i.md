@@ -1,10 +1,10 @@
 # Bipartial Graph - Part I - 二分图一•二分图判定
 
-## Source
+## Question
 
 - [hihoCoder](http://hihocoder.com/problemset/problem/1121)
 
-### Problem
+### Problem Statement
 
 时间限制:10000ms
 

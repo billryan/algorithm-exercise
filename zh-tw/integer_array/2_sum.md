@@ -1,6 +1,6 @@
 # 2 Sum
 
-## Source
+## Question
 
 - leetcode: [Two Sum | LeetCode OJ](https://leetcode.com/problems/two-sum/)
 - lintcode: [(56) 2 Sum](http://www.lintcode.com/en/problem/2-sum/)
