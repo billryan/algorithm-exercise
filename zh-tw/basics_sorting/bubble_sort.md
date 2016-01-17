@@ -2,7 +2,7 @@
 
 核心：**氣泡**，持續比較相鄰元素，大的挪到後面，因此大的會逐步往後挪，故稱之為氣泡。
 
-![Bubble Sort](../../shared-files/images/bubble_sort.gif)
+![Bubble Sort](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/bubble_sort.gif)
 
 ## Implementation
 

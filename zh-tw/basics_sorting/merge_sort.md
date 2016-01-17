@@ -4,7 +4,7 @@
 
 先來看看動圖，合併排序是一種典型的分治(divide and conquer)應用。
 
-![Merge Sort](../../shared-files/images/merge_sort.gif)
+![Merge Sort](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/merge_sort.gif)
 
 ### Python
 

@@ -4,7 +4,7 @@
 
 先来看看动图，归并排序是一种典型的分治应用。
 
-![Merge Sort](../../shared-files/images/merge_sort.gif)
+![Merge Sort](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/merge_sort.gif)
 
 ### Python
 

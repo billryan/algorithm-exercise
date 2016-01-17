@@ -28,7 +28,7 @@ head = temp;
 
 要點在於維護兩個指針變量`prev`和`head`, 翻轉相鄰兩個節點之前保存下一節點的值，分析如下圖所示：
 
-![Reverse Linked List](../../shared-files/images/reverse_linked_list_i.jpg)
+![Reverse Linked List](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/reverse_linked_list_i.jpg)
 
 1. 保存head下一節點
 2. 將head所指向的下一節點改為prev
