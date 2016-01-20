@@ -121,6 +121,28 @@ private:
 
 **leetcode 上此题的 signature 已经更新，需要将 anagrams 按组输出，稍微麻烦一点点。**
 
+### Python lintcode
+
+```python 
+class Solution:
+    # @param strs: A list of strings
+    # @return: A list of strings
+    # @return: A list of strings
+    def anagrams(self, strs):
+        strDict={}
+        result=[]
+        for string in strs:
+            if  "".join(sorted(string)) not in strDict.keys():
+                strDict["".join(sorted(string))] = 1
+            else: 
+                strDict["".join(sorted(string))] += 1
+        for string in strs:
+            if strDict["".join(sorted(string))] >1:
+                result.append(string)
+        return result
+```
+
+
 ### C++ - lintcode
 
 ```c++
