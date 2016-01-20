@@ -20,6 +20,36 @@ All inputs will be in lower-case
 
 题 [Two Strings Are Anagrams](http://algorithm.yuanbin.me/zh-hans/string/two_strings_are_anagrams.html) 的升级版，容易想到的方法为使用双重`for`循环两两判断字符串数组是否互为变位字符串。但显然此法的时间复杂度较高。还需要 $$O(n)$$ 的数组来记录字符串是否被加入到最终结果中。
 
+### Python
+
+```python
+class Solution:
+    # @param strs: A list of strings
+    # @return: A list of strings
+    # @return: A list of strings
+    def anagrams(self, strs):
+
+        if len(strs) < 2 :
+            return strs
+        result=[]
+        visited=[False]*len(strs)
+        for index1,s1 in enumerate(strs):
+            hasAnagrams = False
+            for index2,s2 in enumerate(strs):
+                if index2 > index1 and not visited[index2] and self.isAnagrams(s1,s2):
+                    result.append(s2)
+                    visited[index2]=True
+                    hasAnagrams = True
+            if not visited[index1] and hasAnagrams:
+                result.append(s1)
+        return result
+
+    def isAnagrams(self, str1, str2):
+        if  sorted (str1) == sorted(str2):
+                return True
+        return False
+```
+
 ### C++
 
 ```c++
