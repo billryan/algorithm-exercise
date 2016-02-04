@@ -7,7 +7,7 @@ String 相关的题常出现在面试题中，实际开发也经常用到，这�
 ```python
 s1 = str()
 # in python `''` or `""` is the same
-s2 = "shaunwei" # 'shuanwei'
+s2 = "shaunwei" # 'shaunwei'
 s2len = len(s2)
 # last 3 chars
 s2[-3:] # wei
