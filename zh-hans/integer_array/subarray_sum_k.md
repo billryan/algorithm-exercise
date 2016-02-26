@@ -15,7 +15,7 @@ Given `[1, 4, 20, 3, 10, 5]`, sum k = 33, return `[2, 4]`.
 
 ## 题解1 - 哈希表
 
-题 [Zero Sum Subarray](http://algorithm.yuanbin.me/zh-hans/integer_array/zero_sum_subarray.html) 的升级版，这道题求子串和为 K 的索引。首先我们可以考虑使用时间复杂度相对较低的哈希表解决。前一道题的核心约束条件为 $$f(i_1) - f(i_2) = 0$$，这道题则变为 $$f(i_1) - f(i_2) = k$$, 那么相应的 index 则为 $$[i_1, i_2]$$.
+题 [Zero Sum Subarray](http://algorithm.yuanbin.me/zh-hans/integer_array/zero_sum_subarray.html) 的升级版，这道题求子串和为 K 的索引。首先我们可以考虑使用时间复杂度相对较低的哈希表解决。前一道题的核心约束条件为 $$f(i_1) - f(i_2) = 0$$，这道题则变为 $$f(i_1) - f(i_2) = k$$, 那么相应的 index 则为 $$[i_1 + 1, i_2]$$.
 
 ### C++
 
