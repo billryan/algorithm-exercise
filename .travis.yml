@@ -5,30 +5,35 @@ node_js:
 
 before_install:
   # add id_rsa private key
-  - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
-    -in id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
-  - eval "$(ssh-agent -s)"
-  - ssh-add ~/.ssh/id_rsa
-  - cp ssh_config ~/.ssh/config
-  - git config --global user.name "billryan"
-  - git config --global user.email yuanbin2014@gmail.com
+  #- openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
+  #  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  #- chmod 600 ~/.ssh/id_rsa
+  #- eval "$(ssh-agent -s)"
+  #- ssh-add ~/.ssh/id_rsa
+  #- cp ssh_config ~/.ssh/config
+  #- git config --global user.name "rhett"
+  #- git config --global user.email yuanbin2014@gmail.com
   # update first
-  - sudo apt-get update -qq
-  - sudo apt-cache search fonts-noto-cjk
+  #- sudo apt-get update -qq
   # Install Gitbook
   - npm install gitbook-cli -g
   - npm install svgexport -g
   - cd ~
   - git clone git@github.com:billryan/algorithm-exercise.git
   - cp algorithm-exercise/scripts/rename_ebook.sh ~/
-  - chmod +x rename_ebook.sh
 
 before_script:
   # install calibre latest version
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+  # install qiniu sync
+  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
+  - tar xfz qiniu-*.tar.gz
+  - cp algorithm-exercise/conf/qiniu_sync.json ~/
 
 script:
+  # replace with real key
+  - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
+  - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
   - mkdir -p ~/upload
   # install noto
   - mkdir -p ~/fonts
@@ -54,17 +59,19 @@ script:
 
 after_success:
   - cd ~/algorithm-exercise
-  - git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
-  - git push -u gitcafe HEAD:master --force
-  - git checkout deploy
+  #- git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
+  #- git push -u gitcafe HEAD:master --force
+  #- git checkout deploy
   - cp ~/upload/*.epub epub
   - cp ~/upload/*.pdf pdf
   - cp ~/upload/*.mobi mobi
   - rm */*shared-files*
-  - git add epub pdf mobi
-  - git commit --amend -m "Updated $(date)"
-  - git push -u gitcafe HEAD:deploy --force
-  - git push -u origin HEAD:deploy --force
+  #- git add epub pdf mobi
+  #- git commit --amend -m "Updated $(date)"
+  #- git push -u gitcafe HEAD:deploy --force
+  #- git push -u origin HEAD:deploy --force
+  # upload to qiniu
+  - ~/qrsync ~/qiniu_sync.json
 
 # blacklist
 branches:
