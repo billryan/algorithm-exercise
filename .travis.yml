@@ -50,9 +50,10 @@ script:
   # gitbook build
   - cd ~/algorithm-exercise/
   - gitbook install
-  - gitbook pdf .
-  - gitbook epub .
-  - gitbook mobi .
+  - gitbook build ./ --log=debug --debug
+  - gitbook pdf ./ --log=debug --debug
+  - gitbook epub ./ --log=debug --debug
+  - gitbook mobi ./ --log=debug --debug
   - mv *.pdf *.epub *.mobi ~/upload
   - cd ~/upload
   - sh ~/rename_ebook.sh
