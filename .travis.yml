@@ -5,16 +5,16 @@ node_js:
 
 before_install:
   # add id_rsa private key
-  #- openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
-  #  -in id_rsa.enc -out ~/.ssh/id_rsa -d
-  #- chmod 600 ~/.ssh/id_rsa
-  #- eval "$(ssh-agent -s)"
-  #- ssh-add ~/.ssh/id_rsa
-  #- cp ssh_config ~/.ssh/config
-  #- git config --global user.name "rhett"
-  #- git config --global user.email yuanbin2014@gmail.com
+  - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
+    -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - eval "$(ssh-agent -s)"
+  - ssh-add ~/.ssh/id_rsa
+  - cp ssh_config ~/.ssh/config
+  - git config --global user.name "rhett"
+  - git config --global user.email yuanbin2014@gmail.com
   # update first
-  #- sudo apt-get update -qq
+  - sudo apt-get update -qq
   # Install Gitbook
   - npm install gitbook-cli -g
   - npm install svgexport -g
