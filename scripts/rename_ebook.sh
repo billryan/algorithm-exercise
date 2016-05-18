@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for f in book*
+for old_file in book*
 do
-    a="$(echo $f | sed s/^book/algorithm-ebook/)"
-    mv "$f" "$a"
+    new_file="$(echo ${old_file} | sed s/^book/algorithm-ebook/)"
+    mv "${old_file}" "${new_file}"
 done
