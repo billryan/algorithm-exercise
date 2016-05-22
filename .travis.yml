@@ -18,59 +18,81 @@ before_install:
   # Install Gitbook
   - npm install gitbook-cli -g
   - npm install svgexport -g
-  - cd ~
-  - git clone git@github.com:billryan/algorithm-exercise.git
-  - cp algorithm-exercise/scripts/rename_ebook.sh ~/
-
-before_script:
   # install calibre latest version
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
-  # install qiniu sync
+  # install qiniu sync scripts
   - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
   - tar xfz qiniu-*.tar.gz
-  - cp algorithm-exercise/conf/qiniu_sync.json ~/
+
+before_script:
+  - git clone git@github.com:billryan/algorithm-exercise.git ~/
+  # install gitbook plugins
+  - cd ~/algorithm-exercise/
+  - cp LANGS.md LANGS_bak.md
+  - gitbook install
+  - cp ~/algorithm-exercise/scripts/rename_ebook.sh ~/
+  - cp ~/algorithm-exercise/conf/qiniu_sync.json ~/
+  - sed -i "s/AccessKey/$QAK/g" ~/qiniu_sync.json
+  - sed -i "s/SecretKey/$QSK/g" ~/qiniu_sync.json
+  - mkdir -p ~/upload
+  - mkdir -p ~/raw_fonts
+  - mkdir -p ~/.fonts/noto
 
 script:
-  # replace with real key
-  - sed -i "s/AccessKey/$QAK/g" qiniu_sync.json
-  - sed -i "s/SecretKey/$QSK/g" qiniu_sync.json
-  - mkdir -p ~/upload
-  # install noto
-  - mkdir -p ~/fonts
-  - cd ~/fonts
-  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
-  - wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
-  - unzip -o NotoSansCJKSC-hinted.zip
-  - unzip -o NotoSansCJKTC-hinted.zip
-  - mkdir -p ~/.fonts/noto
-  - mv *.otf ~/.fonts/noto
-  - mkdir -p ~/.fonts/fontconfig/conf.d/
-  - cp ~/algorithm-exercise/conf/20-noto-cjk.conf ~/.fonts/fontconfig/conf.d/
-  - sudo fc-cache -f -v
-  # gitbook build
   - cd ~/algorithm-exercise/
-  - gitbook install
+  # build English ebook
+  - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
   - gitbook build ./ --log=debug --debug
   - gitbook pdf ./ --log=debug --debug
   - gitbook epub ./ --log=debug --debug
   - gitbook mobi ./ --log=debug --debug
+
+  # build Simplified Chinese ebook
+  - sed '/\(zh-hans\/\)/! d' LANGS_bak.md > LANGS.md
+  # install fonts Noto Sans CJK SC for Simplified Chinese
+  - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
+  - cd ~/raw_fonts
+  - unzip -o NotoSansCJKSC-hinted.zip
+  # discard other fonts since fontconfig 2.11 cannot identify it
+  - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
+  - sudo fc-cache -f -v
+  - gitbook build ./ --log=debug --debug
+  - gitbook pdf ./ --log=debug --debug
+  - gitbook epub ./ --log=debug --debug
+  - gitbook mobi ./ --log=debug --debug
+  # clear CJK fonts(CJK fonts suffer in fontconfig :(
+  - rm ~/.fonts/noto/*.otf
+
+  # build Traditional Chinese ebook
+  - sed '/\(zh-tw\/\)/! d' LANGS_bak.md > LANGS.md
+  # install fonts Noto Sans CJK TC for Traditional Chinese
+  - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
+  - cd ~/raw_fonts
+  - unzip -o NotoSansCJKTC-hinted.zip
+  - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
+  - sudo fc-cache -f -v
+  - gitbook build ./ --log=debug --debug
+  - gitbook pdf ./ --log=debug --debug
+  - gitbook epub ./ --log=debug --debug
+  - gitbook mobi ./ --log=debug --debug
+
+  # rename ebook
   - mv *.pdf *.epub *.mobi ~/upload
   - cd ~/upload
   - sh ~/rename_ebook.sh
 
 after_success:
+  # upload to GitHub and Qiniu
   - cd ~/algorithm-exercise
-  #- git remote add gitcafe git@gitcafe.com:billryan/algorithm-exercise.git
-  #- git push -u gitcafe HEAD:master --force
+  #- git remote add github_bak git@gitcafe.com:sign4bill/algorithm-exercise.git
+  #- git push -u github_bak HEAD:master --force
   #- git checkout deploy
-  - cp ~/upload/*.epub epub
-  - cp ~/upload/*.pdf pdf
-  - cp ~/upload/*.mobi mobi
-  - rm */*shared-files*
+  #- cp ~/upload/*.epub epub
+  #- cp ~/upload/*.pdf pdf
+  #- cp ~/upload/*.mobi mobi
   #- git add epub pdf mobi
   #- git commit --amend -m "Updated $(date)"
-  #- git push -u gitcafe HEAD:deploy --force
-  #- git push -u origin HEAD:deploy --force
+  #- git push -u github_bak HEAD:deploy --force
   # upload to qiniu
   - ~/qrsync ~/qiniu_sync.json
 
