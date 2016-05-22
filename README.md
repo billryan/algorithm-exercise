@@ -24,9 +24,9 @@ You can view/search this document online or offline, feel free to read it. :)
 
 - Online(Rendered by Gitbook): <http://algorithm.yuanbin.me>
 - Offline(Compiled by Gitbook and Travis-CI):
-    1. EPUB: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/index.html) - Recommended for iPhone/iPad/MAC
-    2. PDF: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/index.html) - Recommended for Desktop
-    3. MOBI: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/index.html) - Recommended for Kindle
+    1. EPUB: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/index.html) - Recommended for iPhone/iPad/MAC
+    2. PDF: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/index.html) - Recommended for Desktop
+    3. MOBI: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/index.html) - Recommended for Kindle
 - Site Search via Google: `keywords site:algorithm.yuanbin.me`
 - Site Search via Swiftype: Click `Search this site` on the right bottom of webpages
 
