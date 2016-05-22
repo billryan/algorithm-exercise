@@ -20,9 +20,6 @@ before_install:
   - npm install svgexport -g
   # install calibre latest version
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
-  # install qiniu sync scripts
-  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
-  - tar xfz qiniu-*.tar.gz
 
 before_script:
   - git clone git@github.com:billryan/algorithm-exercise.git ~/algorithm-exercise
@@ -42,10 +39,10 @@ script:
   - cd ~/algorithm-exercise/
   - echo "build English ebook..."
   - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
-  - gitbook build ./ --log=debug --debug
-  - gitbook pdf ./ --log=debug --debug
-  - gitbook epub ./ --log=debug --debug
-  - gitbook mobi ./ --log=debug --debug
+  - gitbook build ./
+  - gitbook pdf ./
+  - gitbook epub ./
+  - gitbook mobi ./
 
   - echo "build Simplified Chinese ebook"
   - sed '/\(zh-hans\/\)/! d' LANGS_bak.md > LANGS.md
@@ -57,10 +54,10 @@ script:
   - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
-  - gitbook build ./ --log=debug --debug
-  - gitbook pdf ./ --log=debug --debug
-  - gitbook epub ./ --log=debug --debug
-  - gitbook mobi ./ --log=debug --debug
+  - gitbook build ./
+  - gitbook pdf ./
+  - gitbook epub ./
+  - gitbook mobi ./
   # clear CJK fonts(CJK fonts suffer in fontconfig :(
   - rm ~/.fonts/noto/*.otf
 
@@ -73,18 +70,18 @@ script:
   - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
-  - gitbook build ./ --log=debug --debug
-  - gitbook pdf ./ --log=debug --debug
-  - gitbook epub ./ --log=debug --debug
-  - gitbook mobi ./ --log=debug --debug
+  - gitbook build ./
+  - gitbook pdf ./
+  - gitbook epub ./
+  - gitbook mobi ./
 
 after_success:
-  # rename ebook
+  - echo "rename ebook"
+  - cd ~/algorithm-exercise
   - mv *.pdf *.epub *.mobi ~/upload
   - cd ~/upload
   - sh ~/rename_ebook.sh
   # upload to GitHub and Qiniu
-  - cd ~/algorithm-exercise
   #- git remote add github_bak git@gitcafe.com:sign4bill/algorithm-exercise.git
   #- git push -u github_bak HEAD:master --force
   #- git checkout deploy
@@ -94,7 +91,10 @@ after_success:
   #- git add epub pdf mobi
   #- git commit --amend -m "Updated $(date)"
   #- git push -u github_bak HEAD:deploy --force
-  # upload to qiniu
+  - echo "upload to Qiniu CDN for China Mainland"
+  - cd ~
+  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
+  - tar xfz qiniu-*.tar.gz
   - ~/qrsync ~/qiniu_sync.json
 
 # blacklist
