@@ -39,8 +39,15 @@ before_script:
   - mkdir -p ~/.fonts/noto
 
 script:
-  - cd ~/algorithm-exercise/
   - echo "build English ebook..."
+  - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
+  - cd ~/raw_fonts
+  - unzip -o NotoSans-unhinted.zip
+  - mv -t ~/.fonts/noto *.otf
+  - echo "remove serif fonts"
+  - rm /usr/share/fonts/*/*/*erif*
+  - sudo fc-cache -f -v
+  - cd ~/algorithm-exercise/
   - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
   #- gitbook build ./
   - gitbook pdf ./
@@ -49,7 +56,7 @@ script:
 
   - echo "build Simplified Chinese ebook"
   - sed '/\(zh-hans\/\)/! d' LANGS_bak.md > LANGS.md
-  # install fonts Noto Sans CJK SC for Simplified Chinese
+  - echo "install fonts Noto Sans CJK SC for Simplified Chinese"
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
   - cd ~/raw_fonts
   - unzip -o NotoSansCJKSC-hinted.zip
@@ -66,7 +73,7 @@ script:
 
   - echo "build Traditional Chinese ebook"
   - sed '/\(zh-tw\/\)/! d' LANGS_bak.md > LANGS.md
-  # install fonts Noto Sans CJK TC for Traditional Chinese
+  - echo "install fonts Noto Sans CJK TC for Traditional Chinese"
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
   - cd ~/raw_fonts
   - unzip -o NotoSansCJKTC-hinted.zip
