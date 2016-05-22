@@ -14,7 +14,7 @@
 
 下图来源为 [File:Selection-Sort-Animation.gif - IB Computer Science](http://wiki.ibcsstudent.org/index.php?title=File:Selection-Sort-Animation.gif)
 
-![Selection Sort](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/selection_sort.gif)
+![Selection Sort](../../shared-files/images/selection_sort.gif)
 
 ## Implementation
 

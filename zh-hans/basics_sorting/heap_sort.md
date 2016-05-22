@@ -12,7 +12,7 @@
 
 其中步骤1是给步骤2和3用的。
 
-![Heapsort-example](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/Heapsort-example.gif)
+![Heapsort-example](../../shared-files/images/Heapsort-example.gif)
 
 建堆时可以自顶向下，也可以采取自底向上，以下先采用自底向上的思路分析。我们可以将数组的后半部分节点想象为堆的最下面的那些节点，由于是单个节点，故显然满足二叉堆的定义，于是乎我们就可以从中间节点向上逐步构建二叉堆，每前进一步都保证其后的节点都是二叉堆，这样一来前进到第一个节点时整个数组就是一个二叉堆了。下面用 C++/Java 实现一个堆的类。C++/Java 中推荐使用 PriorityQueue 来使用堆。
 

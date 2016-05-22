@@ -13,6 +13,6 @@
 
 則對各符號進行霍夫曼編碼的動態示例如下圖所示。基本步驟是將出現頻率由小到大排列，組成子樹後頻率相加作為整體再和其他未加入二元樹中的節點頻率比較。加權路徑長為節點的頻率乘以樹的深度。
 
-![Huffman](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/huffman_algorithm.gif)
+![Huffman](../../shared-files/images/huffman_algorithm.gif)
 
 有關霍夫曼編碼的具體步驟可參考 [Huffman 編碼壓縮算法 | 酷 殼 - CoolShell.cn](http://coolshell.cn/articles/7459.html) 和 [霍夫曼編碼 - 維基百科，自由的百科全書](http://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)，清晰易懂。

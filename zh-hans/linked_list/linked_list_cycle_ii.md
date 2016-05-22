@@ -25,7 +25,7 @@ Can you solve it without using extra space?
 
 从以上两个容易得到的特性可知，在仅仅知道第一次相遇时的节点还不够，相遇后如果不改变既有策略则必然找不到环的入口。接下来我们分析下如何从第一次相遇的节点走到环的入口节点。还是让我们先从实际例子出发，以下图为例。
 
-![Linked List Cycle II](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/linked_list_cycle_ii.png)
+![Linked List Cycle II](../../shared-files/images/linked_list_cycle_ii.png)
 
 `slow`和`fast`节点分别初始化为节点`1`和`2`，假设快慢指针第一次相遇的节点为`0`, 对应于环中的第`i`个节点 $$C_i$$, 那么此时慢指针正好走了 $$n - r - 1 + i$$ 步，快指针则走了 $$2 \cdot (n - r - 1 + i)$$ 步，且存在[^1]: $$n - r - 1 + i + 1= l \cdot r$$. (之所以在`i`后面加1是因为快指针初始化时多走了一步) 快慢指针第一次相遇时慢指针肯定没有走完整个环，且慢指针走的步数即为整数个环节点个数，由性质1和性质2可联合推出。
 
