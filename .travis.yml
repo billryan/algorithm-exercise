@@ -54,7 +54,7 @@ script:
   - cd ~/raw_fonts
   - unzip -o NotoSansCJKSC-hinted.zip
   # discard other fonts since fontconfig 2.11 cannot identify it
-  - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
+  - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
   #- gitbook build ./
@@ -70,7 +70,7 @@ script:
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
   - cd ~/raw_fonts
   - unzip -o NotoSansCJKTC-hinted.zip
-  - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
+  - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
   #- gitbook build ./
