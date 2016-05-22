@@ -25,7 +25,7 @@ before_install:
   - tar xfz qiniu-*.tar.gz
 
 before_script:
-  - git clone git@github.com:billryan/algorithm-exercise.git ~/
+  - git clone git@github.com:billryan/algorithm-exercise.git ~/algorithm-exercise
   # install gitbook plugins
   - cd ~/algorithm-exercise/
   - cp LANGS.md LANGS_bak.md
