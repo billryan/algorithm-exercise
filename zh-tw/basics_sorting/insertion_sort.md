@@ -18,7 +18,7 @@
 - 最壞情況下需要~$$N^2/2$$次比較和$$~N^2/2$$次交換，最好情況下需要$$N-1$$次比較和0次交換。
 - 平均情況下需要~$$N^2/4$$次比較和~$$N^2/4$$次交換
 
-![Insertion Sort](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/insertion_sort.gif)
+![Insertion Sort](../../shared-files/images/insertion_sort.gif)
 
 
 ## Implementation

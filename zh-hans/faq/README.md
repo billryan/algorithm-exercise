@@ -64,7 +64,7 @@ Gitbook 虽然也有 star 和 subscribe 功能，但目前来看还是非常鸡�
 
 ### 支付宝打赏
 
-![alipay-billryan](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/images/alipay_billryan_qr15x15.png)
+![alipay-billryan](../images/alipay_billryan_qr15x15.png)
 
 金额随意。
 

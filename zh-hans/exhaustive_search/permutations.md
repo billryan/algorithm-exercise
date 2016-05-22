@@ -506,7 +506,7 @@ class Solution {
 
 ## Reference
 
-- [Permutation Generation](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/docs/permutation_generation.pdf) - Robert Sedgewick 的大作，总结了诸多 Permutation 的产生方法。
+- [Permutation Generation](../../shared-files/docs/permutation_generation.pdf) - Robert Sedgewick 的大作，总结了诸多 Permutation 的产生方法。
 - [Next lexicographical permutation algorithm](http://www.nayuki.io/page/next-lexicographical-permutation-algorithm) - 此题非递归方法更为详细的解释。
 - [Permutation - Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order) - 字典序实现。
 - [Programming Interview Questions 11: All Permutations of String | Arden DertatArden Dertat](http://www.ardendertat.com/2011/10/28/programming-interview-questions-11-all-permutations-of-string/)

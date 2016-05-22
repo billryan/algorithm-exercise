@@ -21,7 +21,7 @@
 
 其中步骤1是给步骤2和3用的。
 
-![Heapsort-example](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/Heapsort-example.gif)
+![Heapsort-example](../../shared-files/images/Heapsort-example.gif)
 
 ## Python
 

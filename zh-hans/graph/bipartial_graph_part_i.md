@@ -26,7 +26,7 @@ OK，让我们愉快的**暴力搜索**吧！
 
 对于拿到的相亲情况表，我们不妨将其转化成一个图。将每一个人作为一个点**(编号1..N)**，若两个人之间有一场相亲，则在对应的点之间连接一条无向边。(如下图)
 
-![img1](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/bipatial_graph_part_i_1.png)
+![img1](../../shared-files/images/bipatial_graph_part_i_1.png)
 
 因为相亲总是在男女之间进行的，所以每一条边的两边对应的人总是不同性别。假设表示男性的节点染成白色，女性的节点染色黑色。对于得到的无向图来说，即每一条边的两端
 一定是一白一黑。如果存在一条边两端同为白色或者黑色，则表示这一条边所表示的记录有误。
@@ -36,7 +36,7 @@ OK，让我们愉快的**暴力搜索**吧！
 那么，我们不妨将所有的点初始为未染色的状态。随机选择一个点，将其染成白色。再以它为起点，将所有相邻的点染成黑色。再以这些黑色的点为起点，将所有与其相邻未染色
 的点染成白色。不断重复直到整个图都染色完成。(如下图)
 
-![img2](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/bipatial_graph_part_i_2.png)
+![img2](../../shared-files/images/bipatial_graph_part_i_2.png)
 
 
 在染色的过程中，我们应该怎样发现错误的记录呢？相信你一定发现了吧。对于一个已经染色的点，如果存在一个与它相邻的已染色点和它的颜色相同，那么就一定存在一条错误

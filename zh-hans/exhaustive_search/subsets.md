@@ -184,7 +184,7 @@ Java 和 Python 的代码中在将临时list 添加到最终结果时新生成�
 
 回溯法可用图示和函数运行的堆栈图来理解，强烈建议**使用图形和递归的思想**分析，以数组`[1, 2, 3]`进行分析。下图所示为`list`及`result`动态变化的过程，箭头向下表示`list.add`及`result.add`操作，箭头向上表示`list.remove`操作。
 
-![Subsets运行递归调用图](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/subsets.jpg)
+![Subsets运行递归调用图](../../shared-files/images/subsets.jpg)
 
 ### 复杂度分析
 

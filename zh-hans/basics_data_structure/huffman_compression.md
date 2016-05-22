@@ -13,7 +13,7 @@
 
 则对各符号进行霍夫曼编码的动态演示如下图所示。基本步骤是将出现频率由小到大排列，组成子树后频率相加作为整体再和其他未加入二叉树中的节点频率比较。加权路径长为节点的频率乘以树的深度。
 
-![Huffman](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/huffman_algorithm.gif)
+![Huffman](../../shared-files/images/huffman_algorithm.gif)
 
 
 ### Python 实现

@@ -22,7 +22,7 @@ Can you solve it without using extra space?
 
 快指针走到`NULL`退出循环即可确定此链表一定无环这个很好理解。那么带环的链表快慢指针一定会相遇吗？先来看看下图。
 
-![Linked List Cycle](https://raw.githubusercontent.com/billryan/algorithm-exercise/master/shared-files/images/linked_list_cycle.png)
+![Linked List Cycle](../../shared-files/images/linked_list_cycle.png)
 
 在有环的情况下，最终快慢指针一定都走在环内，加入第`i`次遍历时快指针还需要`k`步才能追上慢指针，由于快指针比慢指针每次多走一步。那么每遍历一次快慢指针间的间距都会减少1，直至最终相遇。故快慢指针相遇一定能确定该链表有环。
 
