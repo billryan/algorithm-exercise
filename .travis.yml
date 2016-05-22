@@ -22,6 +22,9 @@ before_install:
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 before_script:
+  - cd ~
+  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
+  - tar xfz qiniu-*.tar.gz
   - git clone https://github.com/billryan/algorithm-exercise.git ~/algorithm-exercise
   - echo "install gitbook plugins..."
   - cd ~/algorithm-exercise/
@@ -39,7 +42,7 @@ script:
   - cd ~/algorithm-exercise/
   - echo "build English ebook..."
   - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
-  - gitbook build ./
+  #- gitbook build ./
   - gitbook pdf ./
   - gitbook epub ./
   - gitbook mobi ./
@@ -53,8 +56,12 @@ script:
   # discard other fonts since fontconfig 2.11 cannot identify it
   - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
+  - ls /etc/fonts/conf.d/
+  - ls /usr/share/fonts/* -l
+  - fc-match -a sans|head -n 20
+
   - cd ~/algorithm-exercise/
-  - gitbook build ./
+  #- gitbook build ./
   - gitbook pdf ./
   - gitbook epub ./
   - gitbook mobi ./
@@ -70,7 +77,7 @@ script:
   - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
-  - gitbook build ./
+  #- gitbook build ./
   - gitbook pdf ./
   - gitbook epub ./
   - gitbook mobi ./
@@ -92,9 +99,6 @@ after_success:
   #- git commit --amend -m "Updated $(date)"
   #- git push -u github_bak HEAD:deploy --force
   - echo "upload to Qiniu CDN for China Mainland"
-  - cd ~
-  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
-  - tar xfz qiniu-*.tar.gz
   - ~/qrsync ~/qiniu_sync.json
 
 # blacklist
