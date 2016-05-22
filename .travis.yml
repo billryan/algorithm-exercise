@@ -22,7 +22,7 @@ before_install:
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 before_script:
-  - git clone git@github.com:billryan/algorithm-exercise.git ~/algorithm-exercise
+  - git clone https://github.com/billryan/algorithm-exercise.git ~/algorithm-exercise
   - echo "install gitbook plugins..."
   - cd ~/algorithm-exercise/
   - cp LANGS.md LANGS_bak.md
