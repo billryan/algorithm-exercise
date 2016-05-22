@@ -23,9 +23,9 @@
 
 - 在线阅读(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
 - 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的部分编译输出提供 GitHub 和 GitCafe 下载。
-    1. EPUB: [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/epub/algorithm-ebook_zh-hans.epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-hans), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/epub/algorithm-ebook_zh-hans.epub) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
-    2. PDF: [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/pdf/algorithm-ebook_zh-hans.pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-hans), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/pdf/algorithm-ebook_zh-hans.pdf) - 推荐下载GitHub 和 GitCafe 的版本，Gitbook 官方使用的中文字体有点问题。
-    3. MOBI: [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/mobi/algorithm-ebook_zh-hans.mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-hans), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/mobi/algorithm-ebook_zh-hans.mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
+    1. EPUB: [GitHub](https://raw.githubusercontent.com/sign4bill/algorithm-exercise/deploy/epub/algorithm-ebook_zh-hans.epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-hans), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/algorithm-ebook_zh-hans.epub) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
+    2. PDF: [GitHub](https://raw.githubusercontent.com/sign4bill/algorithm-exercise/deploy/pdf/algorithm-ebook_zh-hans.pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-hans), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/algorithm-ebook_zh-hans.pdf) - 推荐下载 GitHub 和 七牛 CDN 的版本，Gitbook 官方使用的中文字体为楷体。
+    3. MOBI: [GitHub](https://raw.githubusercontent.com/sign4bill/algorithm-exercise/deploy/mobi/algorithm-ebook_zh-hans.mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-hans), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/algorithm-ebook_zh-hans.mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
 - Google 站内搜索: `keywords site:algorithm.yuanbin.me`
 - Swiftype 站内搜索: 可使用网页右下方的 `Search this site` 进行站内搜索
 - 微信公众号搜索：此功能预计2016年1月下旬添加，借助 Swiftype 的 API，微信可以仅作为一个查询界面，我个人是不接受把这个文档的内容放在微信这种封闭平台上的。

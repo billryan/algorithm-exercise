@@ -5,7 +5,7 @@
 [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://ds-algo.slack.com/)
 
 - English via [Data Structure and Algorithm notes](http://algorithm.yuanbin.me/en/index.html)
-- 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin/zh-hans/index.html)
+- 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin.me/zh-hans/index.html)
 - 繁體中文請瀏覽 [資料結構與演算法/leetcode/lintcode題解](http://algorithm.yuanbin.me/zh-tw/index.html)
 
 ## Introduction
@@ -24,9 +24,9 @@ You can view/search this document online or offline, feel free to read it. :)
 
 - Online(Rendered by Gitbook): <http://algorithm.yuanbin.me>
 - Offline(Compiled by Gitbook and Travis-CI):
-    1. EPUB: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [GitCafe(mainland China)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/epub) - Recommended for iPhone/iPad/MAC
-    2. PDF: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [GitCafe(mainland China)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/pdf) - Recommended for Desktop
-    3. MOBI: [GitHub](https://github.com/billryan/algorithm-exercise/tree/deploy/mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [GitCafe(mainland China)](https://gitcafe.com/billryan/algorithm-exercise/tree/deploy/mobi) - Recommended for Kindle
+    1. EPUB: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/index.html) - Recommended for iPhone/iPad/MAC
+    2. PDF: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/index.html) - Recommended for Desktop
+    3. MOBI: [GitHub](https://github.com/sign4bill/algorithm-exercise/tree/deploy/mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm), [七牛 CDN(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/index.html) - Recommended for Kindle
 - Site Search via Google: `keywords site:algorithm.yuanbin.me`
 - Site Search via Swiftype: Click `Search this site` on the right bottom of webpages
 
