@@ -45,7 +45,7 @@ script:
   - unzip -o NotoSans-unhinted.zip
   - mv -t ~/.fonts/noto *tf
   - echo "remove serif fonts"
-  - rm /usr/share/fonts/*/*/*erif*
+  - sudo rm /usr/share/fonts/*/*/*erif*
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
   - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
