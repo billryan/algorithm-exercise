@@ -4,7 +4,7 @@ node_js:
   - "stable"
 
 before_install:
-  # add id_rsa private key
+  - echo "add id_rsa private key"
   - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
     -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
@@ -26,7 +26,7 @@ before_install:
 
 before_script:
   - git clone git@github.com:billryan/algorithm-exercise.git ~/algorithm-exercise
-  # install gitbook plugins
+  - echo "install gitbook plugins..."
   - cd ~/algorithm-exercise/
   - cp LANGS.md LANGS_bak.md
   - gitbook install
@@ -40,14 +40,14 @@ before_script:
 
 script:
   - cd ~/algorithm-exercise/
-  # build English ebook
+  - echo "build English ebook..."
   - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
   - gitbook build ./ --log=debug --debug
   - gitbook pdf ./ --log=debug --debug
   - gitbook epub ./ --log=debug --debug
   - gitbook mobi ./ --log=debug --debug
 
-  # build Simplified Chinese ebook
+  - echo "build Simplified Chinese ebook"
   - sed '/\(zh-hans\/\)/! d' LANGS_bak.md > LANGS.md
   # install fonts Noto Sans CJK SC for Simplified Chinese
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
@@ -56,6 +56,7 @@ script:
   # discard other fonts since fontconfig 2.11 cannot identify it
   - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
+  - cd ~/algorithm-exercise/
   - gitbook build ./ --log=debug --debug
   - gitbook pdf ./ --log=debug --debug
   - gitbook epub ./ --log=debug --debug
@@ -63,7 +64,7 @@ script:
   # clear CJK fonts(CJK fonts suffer in fontconfig :(
   - rm ~/.fonts/noto/*.otf
 
-  # build Traditional Chinese ebook
+  - echo "build Traditional Chinese ebook"
   - sed '/\(zh-tw\/\)/! d' LANGS_bak.md > LANGS.md
   # install fonts Noto Sans CJK TC for Traditional Chinese
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
@@ -71,17 +72,17 @@ script:
   - unzip -o NotoSansCJKTC-hinted.zip
   - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
+  - cd ~/algorithm-exercise/
   - gitbook build ./ --log=debug --debug
   - gitbook pdf ./ --log=debug --debug
   - gitbook epub ./ --log=debug --debug
   - gitbook mobi ./ --log=debug --debug
 
+after_success:
   # rename ebook
   - mv *.pdf *.epub *.mobi ~/upload
   - cd ~/upload
   - sh ~/rename_ebook.sh
-
-after_success:
   # upload to GitHub and Qiniu
   - cd ~/algorithm-exercise
   #- git remote add github_bak git@gitcafe.com:sign4bill/algorithm-exercise.git
