@@ -26,9 +26,9 @@ Slack 的自助邀請註冊功能已啟用，訪問 <http://slackin4ds-algo.hero
 
 - 線上閱讀(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
 - 離線閱讀: 推送到GitHub後會觸發 travis-ci 的編譯，相應的部分編譯輸出提供七牛的靜態文件加速下載。
-    1. EPUB. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/epub/algorithm-ebook_zh-tw.epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/epub/algorithm-ebook_zh-tw.epub) - 適合在 iPhone/iPad/MAC 上離線查看，實測效果極好。
-    2. PDF. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/pdf/algorithm-ebook_zh-tw.pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/pdf/algorithm-ebook_zh-tw.pdf) - 推薦下載適合電子屏閱讀的版本，Gitbook 官方使用的中文字體有點問題。
-    3. MOBI. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/mobi/algorithm-ebook_zh-tw.mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](https://gitcafe.com/billryan/algorithm-exercise/raw/deploy/mobi/algorithm-ebook_zh-tw.mobi) - Kindle 專用. 未測試，感覺不適合在 Kindle 上看此類書籍，儘管 Kindle 的屏幕對眼睛很好...
+    1. EPUB. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/epub/algorithm-ebook_zh-tw.epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/algorithm-ebook_zh-tw.epub) - 適合在 iPhone/iPad/MAC 上離線查看，實測效果極好。
+    2. PDF. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/pdf/algorithm-ebook_zh-tw.pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/algorithm-ebook_zh-tw.pdf) - 推薦下載適合電子屏閱讀的版本，Gitbook 官方使用的中文字體有點問題。
+    3. MOBI. [GitHub](https://raw.githubusercontent.com/billryan/algorithm-exercise/deploy/mobi/algorithm-ebook_zh-tw.mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-tw), [GitCafe(中国大陆用户适用)](http://cdn4bill.gaojingbao.me/docs/algorithm-exercise/algorithm-ebook_zh-tw.mobi) - Kindle 專用. 未測試，感覺不適合在 Kindle 上看此類書籍，儘管 Kindle 的屏幕對眼睛很好...
 
 - Google 站內搜索: `keywords site:algorithm.yuanbin.me`
 - Swiftype 站內搜索: 可使用網頁右下方的 `Search this site` 進行站內搜索
@@ -41,7 +41,7 @@ Slack 的自助邀請註冊功能已啟用，訪問 <http://slackin4ds-algo.hero
 
 ## 多國文字
 
-- [English](http://algorithm.yuanbin.me/en/index.html) maintained by who?
+- [English](http://algorithm.yuanbin.me/en/index.html) maintained by [@billryan](https://github.com/billryan)
 - [简体中文](http://algorithm.yuanbin.me/zh-hans/index.html) maintained by [@billryan](https://github.com/billryan)
 - [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) maintained by [@CrossLuna](https://github.com/CrossLuna)
 
