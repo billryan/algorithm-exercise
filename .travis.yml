@@ -43,7 +43,7 @@ script:
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
   - cd ~/raw_fonts
   - unzip -o NotoSans-unhinted.zip
-  - mv -t ~/.fonts/noto *.otf
+  - mv -t ~/.fonts/noto *tf
   - echo "remove serif fonts"
   - rm /usr/share/fonts/*/*/*erif*
   - sudo fc-cache -f -v
