@@ -56,10 +56,6 @@ script:
   # discard other fonts since fontconfig 2.11 cannot identify it
   - mv -t ~/.fonts/noto *-Regular.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
-  - ls /etc/fonts/conf.d/
-  - ls /usr/share/fonts/* -l
-  - fc-match -a sans|head -n 20
-
   - cd ~/algorithm-exercise/
   #- gitbook build ./
   - gitbook pdf ./
