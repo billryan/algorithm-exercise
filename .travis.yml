@@ -41,9 +41,12 @@ before_script:
 script:
   - echo "build English ebook..."
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
+  - wget -P ~/raw_fonts https://github.com/billryan/algorithm-exercise/files/277714/migu-1m-20150712.zip
   - cd ~/raw_fonts
   - unzip -o NotoSans-unhinted.zip
-  - mv -t ~/.fonts/noto *tf
+  - unzip -o migu-1m-20150712.zip
+  - mv -t ~/.fonts/noto *tf */*tf
+  - sudo rm -r /usr/share/fonts/*
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
   - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
