@@ -44,8 +44,7 @@ script:
   - cd ~/raw_fonts
   - unzip -o NotoSans-unhinted.zip
   - mv -t ~/.fonts/noto *.otf
-  - echo "remove serif fonts"
-  - rm /usr/share/fonts/*/*/*erif*
+  - sudo wget -P /etc/fonts/conf.d https://gist.githubusercontent.com/billryan/068cd16baafb933b5ba0530b0f45a16c/raw/b9cdbe19aff88e27ecfaa73a7a12980914b7a9ab/99-noto-sans.conf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
   - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
@@ -113,3 +112,4 @@ branches:
 branches:
   only:
     - master
+    - test
