@@ -7,8 +7,7 @@
         "swiftype",
         "sitemap",
         "github",
-        "edit-link",
-        "-search"
+        "edit-link"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -38,5 +37,8 @@
                     "zh-tw": "編輯此頁"
             }
         }
+    },
+    "pdf": {
+        "fontFamily": "Noto Sans"
     }
 }
