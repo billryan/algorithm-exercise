@@ -43,7 +43,7 @@ script:
   - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
   - cd ~/raw_fonts
   - unzip -o NotoSans-unhinted.zip
-  - mv -t ~/.fonts/noto *.otf
+  - mv -t ~/.fonts/noto *tf
   - sudo wget -P /etc/fonts/conf.d https://gist.githubusercontent.com/billryan/068cd16baafb933b5ba0530b0f45a16c/raw/b9cdbe19aff88e27ecfaa73a7a12980914b7a9ab/99-noto-sans.conf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
