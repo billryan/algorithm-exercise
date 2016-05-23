@@ -28,7 +28,7 @@ import java.util.*;
 
 public class FastPow {
     public static long fastModPow(long x, long n, long mod) {
-        long res = 1;
+        long res = 1 % mod;
         while (n > 0) {
             // if lowest bit is 1
             if ((n & 1) != 0) res = res * x % mod;
