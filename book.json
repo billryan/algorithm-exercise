@@ -7,8 +7,7 @@
         "swiftype",
         "sitemap",
         "github",
-        "edit-link",
-        "-fontsettings"
+        "edit-link"
     ],
     "pluginsConfig": {
         "disqus": {
