@@ -7,10 +7,10 @@
 
 ### Problem Statement
 
-For a given source string and a target string, you should output the **first**
-index(from 0) of target string in source string.
+Implement strStr().
 
-If target does not exist in source, just return `-1`.
+Returns the index of the first occurrence of needle in haystack, or -1 if
+needle is not part of haystack.
 
 #### Example
 
@@ -78,17 +78,16 @@ public:
     int strStr(string haystack, string needle) {
         if (haystack.empty() && needle.empty()) return 0;
         if (haystack.empty()) return -1;
-        if (needle.empty()) return 0;
-        // in case of overflow for negative
         if (haystack.size() < needle.size()) return -1;
 
-        for (int i = 0; i < haystack.size() - needle.size() + 1; i++) {
+        for (string::size_type i = 0; i < haystack.size() - needle.size() + 1; i++) {
             string::size_type j = 0;
             for (; j < needle.size(); j++) {
                 if (haystack[i + j] != needle[j]) break;
             }
             if (j == needle.size()) return i;
         }
+        
         return -1;
     }
 };
