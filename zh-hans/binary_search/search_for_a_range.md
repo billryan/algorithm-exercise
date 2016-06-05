@@ -158,3 +158,7 @@ public class Solution {
 ### 复杂度分析
 
 两次二分搜索，时间复杂度仍为 $$O(\log n)$$.
+
+## Reference
+
+- [Binary Search – topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/) - 思路更清晰的 find first 模板，find last k 可转化为 find first `k + 1` 谢谢 @mckelvin 同学推荐
