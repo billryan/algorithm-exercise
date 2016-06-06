@@ -45,13 +45,13 @@ script:
   # - wget -P ~/raw_fonts https://github.com/billryan/algorithm-exercise/files/277714/migu-1m-20150712.zip
   - wget -P ~/raw_fonts https://github.com/billryan/algorithm-exercise/files/279471/arial.zip
   - echo "install fonts Noto Sans CJK SC for Simplified Chinese"
-  - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKSC-hinted.zip
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKsc-hinted.zip
   - cd ~/raw_fonts
   # - unzip -o NotoSans-unhinted.zip
   # - unzip -o migu-1m-20150712.zip
   - unzip -o arial.zip
   - mv -t ~/.fonts/arial Arial*ttf
-  - unzip -o NotoSansCJKSC-hinted.zip
+  - unzip -o NotoSansCJKsc-hinted.zip
   # discard other fonts since fontconfig 2.11 cannot identify it
   - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
@@ -75,9 +75,9 @@ script:
   - echo "build Traditional Chinese ebook"
   - sed '/\(zh-tw\/\)/! d' LANGS_bak.md > LANGS.md
   - echo "install fonts Noto Sans CJK TC for Traditional Chinese"
-  - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKTC-hinted.zip
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip
   - cd ~/raw_fonts
-  - unzip -o NotoSansCJKTC-hinted.zip
+  - unzip -o NotoSansCJKtc-hinted.zip
   - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
   - sudo fc-cache -f -v
   - cd ~/algorithm-exercise/
