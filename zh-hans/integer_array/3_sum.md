@@ -3,22 +3,26 @@
 ## Question
 
 - leetcode: [3Sum | LeetCode OJ](https://leetcode.com/problems/3sum/)
-- lintcode: [(57) 3 Sum](http://www.lintcode.com/en/problem/3-sum/)
+- lintcode: [(57) 3 Sum](http://www.lintcode.com/en/problem/3sum/)
 
-```
-Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0?
-Find all unique triplets in the array which gives the sum of zero.
+### Problem Statement
 
-Example
-For example, given array S = {-1 0 1 2 -1 -4}, A solution set is:
+Given an array _S_ of _n_ integers, are there elements _a_, _b_, _c_ in _S_
+such that _a_ + _b_ + _c_ = 0? Find all unique triplets in the array which
+gives the sum of zero.
 
-(-1, 0, 1)
-(-1, -1, 2)
-Note
-Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)
+#### Note:
 
 The solution set must not contain duplicate triplets.
-```
+    
+    For example, given array S = [-1, 0, 1, 2, -1, -4],
+    
+    A solution set is:
+    [
+      [-1, 0, 1],
+      [-1, -1, 2]
+    ]
+
 
 ## 题解1 - 排序 + 哈希表 + 2 Sum
 
@@ -129,7 +133,8 @@ i每轮只走一步，j和k根据S[i]+S[j]+S[k]=ans和0的关系进行移动，�
 如果ans>0说明S[k]过大，k向前移；如果ans<0说明S[j]过小，j向后移；ans==0即为所求。
 至于如何取到所有解，看代码即可理解，不再赘述。
 ```
-###复杂度分析
+
+### 复杂度分析
 
 外循环i走了n轮,每轮j和k一共走n-i步，所以时间复杂度为$$O(n^2)$$。
 最终运行时间为52ms
