@@ -92,6 +92,7 @@ after_success:
   - mv *.pdf *.epub *.mobi ~/upload
   - cd ~/upload
   - sh ~/rename_ebook.sh
+  - ls -lh
   # upload to GitHub and Qiniu
   #- git remote add github_bak git@gitcafe.com:sign4bill/algorithm-exercise.git
   #- git push -u github_bak HEAD:master --force
