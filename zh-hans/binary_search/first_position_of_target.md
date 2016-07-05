@@ -1,8 +1,8 @@
-# Binary Search - 二分查找
+# First Position of Target
 
 ## Question
 
-- lintcode: [lintcode - (14) Binary Search](http://www.lintcode.com/en/problem/binary-search/)
+- lintcode: [First Position of Target](http://www.lintcode.com/en/problem/first-position-of-target)
 
 ### Problem Statement
 
