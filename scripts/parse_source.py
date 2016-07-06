@@ -17,12 +17,12 @@ class Lintcode(object):
     def get_src_detail(self, src_url):
         src_page = self.get_src_page(src_url)
         src_detail = {}
-        problem_detail = src_page('#problem-detail')
-        difficulty_level = problem_detail('h4')('.label').text()
-        title = problem_detail('h4')('.m-l-sm').text()
+        problem_detail = src_page('#problem-aside')
+        # difficulty_level = problem_detail('h4')('.label').text()
+        title = problem_detail('h4')('a').text().strip()
         raw_tags = problem_detail('#tags')('a')
         tags = [tag.text for tag in raw_tags]
-        raw_detail = src_page('#problem-detail')('div').html()
+        raw_detail = src_page('#problem-aside')('#description').html()
         body_start = raw_detail.find('<p>')
         body_end = raw_detail.find('<b>Tags</b>')
         raw_body = raw_detail[body_start:body_end]
@@ -30,7 +30,7 @@ class Lintcode(object):
         body = body.replace('</b>', '</h4>')
         src_detail['title'] = title
         src_detail['tags'] = tags
-        src_detail['level'] = difficulty_level
+        # src_detail['level'] = difficulty_level
         src_detail['body'] = body
         return src_detail
 
