@@ -1,19 +1,21 @@
-# Convert Integer A to Integer B
+# [Flip Bits](http://www.lintcode.com/en/problem/flip-bits/)
 
 ## Question
 
-- CC150, lintcode: [(181) Convert Integer A to Integer B](http://www.lintcode.com/en/problem/convert-integer-a-to-integer-b/)
+- lintcode: [Flip Bits](http://www.lintcode.com/en/problem/flip-bits/)
 
-```
-Determine the number of bits required to convert integer A to integer B
+### Problem Statement
 
-Example
-Given n = 31, m = 14,return 2
+Determine the number of bits required to flip if you want to convert integer
+_n_ to integer _m_.
 
-(31)10=(11111)2
+##### Notice
 
-(14)10=(01110)2
-```
+Both _n_ and _m_ are 32-bit integers.
+
+#### Example
+
+Given _n_ = `31` (11111), _m_ = `14` (01110), return `2`.
 
 ## 题解
 
