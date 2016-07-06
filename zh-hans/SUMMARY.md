@@ -93,7 +93,7 @@
    * [Single Number II](math_and_bit_manipulation/single_number_ii.md)
    * [Single Number III](math_and_bit_manipulation/single_number_iii.md)
    * [O1 Check Power of 2](math_and_bit_manipulation/o1_check_power_of_2.md)
-   * [Convert Integer A to Integer B](math_and_bit_manipulation/convert_integer_a_to_integer_b.md)
+   * [Convert Integer A to Integer B](math_and_bit_manipulation/flip_bits.md)
    * [Factorial Trailing Zeroes](math_and_bit_manipulation/factorial_trailing_zeroes.md)
    * [Unique Binary Search Trees](math_and_bit_manipulation/unique_binary_search_trees.md)
    * [Update Bits](math_and_bit_manipulation/update_bits.md)
