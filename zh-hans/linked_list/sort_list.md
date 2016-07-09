@@ -187,6 +187,71 @@ private:
     }
 };
 ```
+###Java
+```java
+/**
+ * Definition for ListNode.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int val) {
+ *         this.val = val;
+ *         this.next = null;
+ *     }
+ * }
+ */ 
+public class Solution {
+    /**
+     * @param head: The head of linked list.
+     * @return: You should return the head of the sorted linked list,
+                    using constant space complexity.
+     */
+    public ListNode sortList(ListNode head) {
+        // write your code here
+        if (head == null || head.next == null) return head;
+        ListNode mid = findMid(head);
+        ListNode head1 = head;
+        ListNode head2 = mid.next;
+        mid.next = null;
+        ListNode left = sortList(head1);
+        ListNode right = sortList(head2);
+        return merge(left, right);
+    }
+    
+    // find mid
+    public ListNode findMid(ListNode head) {
+        if (head == null) return null;
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+    
+    // merge
+    public ListNode merge(ListNode head1, ListNode head2) {
+        ListNode dummy = new ListNode(0);
+        ListNode head = dummy;
+        while (head1 != null || head2 != null) {
+            int a = head1 == null ? Integer.MAX_VALUE : head1.val;
+            int b = head2 == null ? Integer.MAX_VALUE : head2.val;
+            if (a < b) {
+                head.next = new ListNode(a);
+                if (head1 != null) head1 = head1.next;
+            } else {
+                head.next = new ListNode(b);
+                if (head2 != null) head2 = head2.next;
+            }
+            head = head.next;
+        }
+        return dummy.next;
+    }
+    
+}
+
+```
 
 ### 源码分析
 
