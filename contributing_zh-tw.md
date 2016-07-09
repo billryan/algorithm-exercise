@@ -1,6 +1,6 @@
 # 如何貢獻
 
-简体中文请移步 [贡献指南](https://github.com/billryan/algorithm-exercise/blob/master/contributing_zh-cn.md)
+简体中文请移步 [贡献指南](http://algorithm.yuanbin.me/zh-hans/faq/guidelines_for_contributing.html)
 
 如果你發現本文檔有任何可以改進之處，歡迎提交你的改進，具體形式有如下幾種。
 
@@ -43,7 +43,7 @@ Gitbook 支援多語言書寫，具體透過根目錄下的 `LANGs.md` 目錄指
 2. 程式碼的函數名或短程式碼建議使用 \`code\`
 3. 使用空行進行分段，嗯，markdown通用
 
-Part II為leetcode/lintcode題解，這部分的風格相對容易統一，感覺還不錯的風格 - [Distinct Subsequences](https://github.com/billryan/algorithm-exercise/blob/master/zh-cn/dynamic_programming/distinct_subsequences.md)
+Part II為leetcode/lintcode題解，這部分的風格相對容易統一，感覺還不錯的風格 - [Distinct Subsequences](https://github.com/billryan/algorithm-exercise/blob/master/zh-hans/dynamic_programming/distinct_subsequences.md)
 
 大致遵循如下風格：
 
