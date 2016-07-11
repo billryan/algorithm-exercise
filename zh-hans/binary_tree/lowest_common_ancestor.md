@@ -243,6 +243,59 @@ public class Solution {
 
 在`A == B`时，计数器返回1的节点即为我们需要的节点，否则只取返回2的节点，如此便保证了该方法的正确性。对这种实现还有问题的在下面评论吧。
 
+## 题解3 - 自顶向下
+
+###Java
+
+```java
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+public class Solution {
+    /**
+     * @param root: The root of the binary search tree.
+     * @param A and B: two nodes in a Binary.
+     * @return: Return the least common ancestor(LCA) of the two nodes.
+     */
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
+        if (root.val == A.val || root.val == B.val) return root;
+        // A & B both in left child
+        if (contains(root.left, A) && contains(root.left, B)) {
+            return lowestCommonAncestor(root.left, A, B);
+        } 
+        // A & B both in right child
+        else if (contains(root.right, A) && contains(root.right, B)) {
+            return lowestCommonAncestor(root.right, A, B);
+        } 
+        // A & B in different children
+        else {
+            return root;
+        }
+    }
+    // check node in root or not
+    private boolean contains(TreeNode root, TreeNode node) {
+        if (root == null) return false;
+        else if (root.val == node.val) return true;
+        return contains(root.left, node) || contains(root.right, node);
+    }
+}
+```
+### 源码分析
+
+若root是A/B的最早公共祖先，只有两种情况：
+- root就是A或者B
+- A和B分别在root的左右子树中
+
+因此可以自顶向下递归调用contains函数来判断当前root是否是最早公共祖先
+
 ## Reference
 
 - [^leetcode]: [Lowest Common Ancestor of a Binary Tree Part I | LeetCode](http://articles.leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-tree-part-i.html) - 清晰易懂的题解和实现。
