@@ -3,7 +3,7 @@
 ## Question
 
 - leetcode: [Subsets II | LeetCode OJ](https://leetcode.com/problems/subsets-ii/)
-- lintcode: [(18) Unique Subsets](http://www.lintcode.com/en/problem/unique-subsets/)
+- lintcode: [(18) Unique Subsets](http://www.lintcode.com/en/problem/subsets-ii/)
 
 ### Problem Statement
 
