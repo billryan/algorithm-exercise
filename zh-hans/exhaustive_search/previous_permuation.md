@@ -2,7 +2,7 @@
 
 ## Question
 
-- lintcode: [(51) Previous Permuation](http://www.lintcode.com/en/problem/previous-permuation/)
+- lintcode: [(51) Previous Permuation](http://www.lintcode.com/en/problem/previous-permutation/)
 
 ### Problem Statement
 
