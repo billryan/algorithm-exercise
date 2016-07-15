@@ -47,11 +47,13 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 #### 支付宝
 
 ![支付宝打赏](../shared-files/images/alipay_billryan_qr15x15.png)
+
 账户名：yuanbin2014(at)gmail.com 金额随意
 
 #### Wechat
 
-![Red Packet](../shared-files/images/wechat_billryan_qr15x15.png)
+![Red Packet](../shared-files/images/wechat_billryan_qr15x15.jpg)
+
 金额随意
 
 #### PayPal
