@@ -267,3 +267,43 @@ public:
 
 自顶向下的实现略微有点复杂，在寻路时需要考虑最左边和最右边的边界，还需要在最后返回结果时比较最小值。
 
+### Java From Top to Bottom
+
+```java
+public class Solution {
+    /**
+     * @param triangle: a list of lists of integers.
+     * @return: An integer, minimum path sum.
+     */
+    public int minimumTotal(int[][] triangle) {
+        // write your code here
+        if (triangle == null || triangle.length == 0) return 0;
+        int[] last = new int[triangle.length];
+        int[] current = new int[triangle.length];
+        last[0] = triangle[0][0];
+        current[0] = last[0];
+        for (int i = 1; i < triangle.length; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                int sum = Integer.MAX_VALUE;
+                if (j != 0) {
+                    sum = triangle[i][j] + last[j - 1];
+                }
+                if (j != i) {
+                    sum = Math.min(sum, triangle[i][j] + last[j]);
+                }
+                current[j] = sum;
+            }
+            for (int k = 0; k < i + 1; k++) last[k] = current[k];
+        }
+        int min = Integer.MAX_VALUE;
+        for (int n : current) {
+            min = Math.min(n, min);
+        }
+        return min;
+    }
+}
+```
+
+#### 源码解析
+
+思路基本和上个解法一样，但是在数组last中保留上一层的最短和的，因此不用hashmap，空间复杂度是O(n)
