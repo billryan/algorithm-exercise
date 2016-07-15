@@ -100,3 +100,52 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 - [The Algorithm Design Manual](http://www.amazon.com/exec/obidos/ASIN/1848000693/thealgorithmrepo), 作者还放出了自己上课的视频和slides - [Skiena's Audio Lectures](http://www3.cs.stonybrook.edu/~algorith/video-lectures/)，[The Algorithm Design Manual (豆瓣)](http://book.douban.com/subject/3072383/)
 - 大部头有 *Introduction to Algorithm* 和 TAOCP
 - *Cracking The Coding Interview* - 著名的CTCI(又称CC150)，除了算法数据结构等题以外，还包含OO Design, Database, System Design, Brain Teaser等类型的题目。**准备技术面试的同学一定要看**
+
+## Contribution
+
+- [English](http://algorithm.yuanbin.me/en/index.html) is maintained by [@billryan](https://github.com/billryan)
+- [简体中文](http://algorithm.yuanbin.zh-hans/index.html) is maintained by [@billryan](https://github.com/billryan), [@Shaunwei](https://github.com/Shaunwei)
+- [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) is maintained by [@CrossLuna](https://github.com/CrossLuna)
+
+Other contributors can be found in [Contributors to algorithm-exercise](https://github.com/billryan/algorithm-exercise/graphs/contributors)
+
+### Donation
+
+#### 支付宝
+
+![支付宝打赏](../shared-files/images/alipay_billryan_qr15x15.png)
+账户名：yuanbin2014(at)gmail.com 金额随意
+
+#### Wechat
+
+![Red Packet](../shared-files/images/wechat_billryan_qr15x15.png)
+金额随意
+
+#### PayPal
+
+账户名：yuanbin2014(at)gmail.com 金额随意，付款时选择 friends and family
+
+隐私考虑，以下名单隐去了部分个人信息，有些名单若没来得及添加，可私下联系我加上。
+
+- `taoli***@gmail.com`, 支付宝转账
+- `张亚*`, 支付宝转账
+- `俞卓*`, 支付宝转账
+- `季*`, 支付宝转账
+- `wen***@126.com`, 支付宝转账
+- `she***@163.com`, 支付宝转账
+- `185****0032`, 支付宝转账
+- `136***0794`, 支付宝转账
+- `187***2296`, 支付宝转账
+- `don***@163.com`, 支付宝转账
+
+所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
+
+## To Do
+
+- [ ] add multiple languages support, currently 繁體中文, 简体中文 are available
+- [x] explore nice writing style
+- [x] add implementations of `Python`, `C++`, `Java` code
+- [x] add time and space complexity analysis
+- [x] summary of basic data structure and algorithm
+- [x] add CSS for online website <http://algorithm.yuanbin.me>
+- [x] add proper Chinese fonts for PDF output

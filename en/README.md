@@ -34,6 +34,45 @@ You can view/search this document online or offline, feel free to read it. :)
 
 This work is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License**. To view a copy of this license, please visit <http://creativecommons.org/licenses/by-sa/4.0/>
 
+## Contribution
+
+- [English](http://algorithm.yuanbin.me/en/index.html) is maintained by [@billryan](https://github.com/billryan)
+- [简体中文](http://algorithm.yuanbin.zh-hans/index.html) is maintained by [@billryan](https://github.com/billryan), [@Shaunwei](https://github.com/Shaunwei)
+- [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) is maintained by [@CrossLuna](https://github.com/CrossLuna)
+
+Other contributors can be found in [Contributors to algorithm-exercise](https://github.com/billryan/algorithm-exercise/graphs/contributors)
+
+### Donation
+
+#### 支付宝
+
+![支付宝打赏](../shared-files/images/alipay_billryan_qr15x15.png)
+账户名：yuanbin2014(at)gmail.com 金额随意
+
+#### Wechat
+
+![Red Packet](../shared-files/images/wechat_billryan_qr15x15.png)
+金额随意
+
+#### PayPal
+
+账户名：yuanbin2014(at)gmail.com 金额随意，付款时选择 friends and family
+
+隐私考虑，以下名单隐去了部分个人信息，有些名单若没来得及添加，可私下联系我加上。
+
+- `taoli***@gmail.com`, 支付宝转账
+- `张亚*`, 支付宝转账
+- `俞卓*`, 支付宝转账
+- `季*`, 支付宝转账
+- `wen***@126.com`, 支付宝转账
+- `she***@163.com`, 支付宝转账
+- `185****0032`, 支付宝转账
+- `136***0794`, 支付宝转账
+- `187***2296`, 支付宝转账
+- `don***@163.com`, 支付宝转账
+
+所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
+
 ## To Do
 
 - [ ] add multiple languages support, currently 繁體中文, 简体中文 are available
