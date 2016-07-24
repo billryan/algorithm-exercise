@@ -79,8 +79,6 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 - [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分详细，比较容易理解，但题目很不全。
 - [FreeTymeKiyan/LeetCode-Sol-Res](https://github.com/FreeTymeKiyan/LeetCode-Sol-Res) - Clean, Understandable Solutions and Resources on LeetCode Online Judge Algorithms Problems.
 - [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解。
-- [Shuatiblog.com](http://www.shuatiblog.com/) - IT，算法及面试。有知识点及类型题总结，特别赞。
-- [ITint5 | 专注于IT面试](http://www.itint5.com/) - 文章质量很高，也有部分公司面试题评测。
 - [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
 - [牛客网](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
 
