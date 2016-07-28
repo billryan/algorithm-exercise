@@ -109,6 +109,8 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 
 ### Donation
 
+本项目接受捐赠，形式不限，可以买书，可以寄明信片，也可以金额打赏 :)
+
 #### 支付宝
 
 ![支付宝打赏](../shared-files/images/alipay_billryan_qr15x15.jpg)
@@ -125,18 +127,17 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 
 账户名：yuanbin2014(at)gmail.com 金额随意，付款时选择 friends and family
 
-隐私考虑，以下名单隐去了部分个人信息，有些名单若没来得及添加，可私下联系我加上。
+隐私考虑，以下名单隐去了部分个人信息，有些名单若没来得及添加，可私下联系我加上，有些信息和金额因为时间久远可能有误，欢迎指正。
 
-- `taoli***@gmail.com`, 支付宝转账
-- `张亚*`, 支付宝转账
-- `俞卓*`, 支付宝转账
-- `季*`, 支付宝转账
-- `wen***@126.com`, 支付宝转账
-- `she***@163.com`, 支付宝转账
-- `185****0032`, 支付宝转账
-- `136***0794`, 支付宝转账
-- `187***2296`, 支付宝转账
-- `don***@163.com`, 支付宝转账
+- `taoli***@gmail.com`, 20
+- `张亚*`, 6.66
+- `wen***@126.com`, 20.16
+- `she***@163.com`, 10
+- `孙*`, 20
+- `石*`, 50
+- `文*`, 20
+- `don***@163.com`, 5
+- `129***@qq.com`, 50
 
 所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
 
