@@ -7,5 +7,4 @@
 
 下图是把本章中所有出现的题目归类总结了一下，便于记忆 
 
-![链表](../images/linked_list_summary.png)
-
+![链表](../../shared-files/images/linked_list_summary.png)

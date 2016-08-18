@@ -25,7 +25,7 @@ chain of modules**, which means eventually all the modules will be stoped.
 Professor Q generates some initial signals and want to know how many times
 each module is started.
 
-![d](../../../images/problem_b_professor_qs_software.png)
+![d](../../../shared-files/images/problem_b_professor_qs_software.png)
 
 ### 输入
 
