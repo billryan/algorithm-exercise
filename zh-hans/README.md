@@ -111,6 +111,14 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 
 本项目接受捐赠，形式不限，可以买书，可以寄明信片，也可以金额打赏 :)
 
+#### 邮寄明信片
+
+@billryan 喜欢收集各种明信片，来者不拒~ 邮寄的话可以邮寄至 `上海市闵行区上海交通大学闵行校区电院群楼5号楼307`，收件人：`袁斌`。
+
+#### 送书
+
+除了邮寄明信片，你还可以买本书送给各位贡献者，@billryan 的地址见上节。
+
 #### 支付宝
 
 ![支付宝打赏](../shared-files/images/alipay_billryan_qr15x15.jpg)
@@ -139,6 +147,7 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 - `don***@163.com`, 5
 - `129***@qq.com`, 50
 - `130****9675`, 5
+- `Tong W***`, 20 $
 
 所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
 
