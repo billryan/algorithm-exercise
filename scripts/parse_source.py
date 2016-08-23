@@ -128,7 +128,7 @@ def main(argv):
     raw_p_tags.append(p_difficulty)
     lines = []
     lines.append('# ' + p_title + '\n')
-    p_tags = ['TAG_' + tag for tag in raw_p_tags]
+    p_tags = ['TAG_' + tag.replace(' ', '_') for tag in raw_p_tags]
     tags = ' '.join(p_tags)
     lines.append('**TAGS:** ' + tags + '\n')
     lines.append('## Question' + '\n')
