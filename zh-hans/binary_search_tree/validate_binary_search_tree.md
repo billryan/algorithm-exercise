@@ -1,30 +1,36 @@
 # Validate Binary Search Tree
 
+**TAGS:** TAG_Divide_and_Conquer TAG_Recursion TAG_Binary_Search_Tree TAG_Binary_Tree TAG_Medium
+
 ## Question
 
-- leetcode: [(98) Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
-- lintcode: [(95) Validate Binary Search Tree](http://www.lintcode.com/en/problem/validate-binary-search-tree/)
+- leetcode: [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+- lintcode: [Validate Binary Search Tree](http://www.lintcode.com/en/problem/validate-binary-search-tree/)
 
-```
+### Problem Statement
+
 Given a binary tree, determine if it is a valid binary search tree (BST).
 
 Assume a BST is defined as follows:
 
-The left subtree of a node contains only nodes with keys less than the node's key.
-The right subtree of a node contains only nodes with keys greater than the node's key.
-Both the left and right subtrees must also be binary search trees.
-Example
+  * The left subtree of a node contains only nodes with keys **less than** the node's key.
+  * The right subtree of a node contains only nodes with keys **greater than** the node's key.
+  * Both the left and right subtrees must also be binary search trees.
+  * A single node tree is a BST
+
+**Example**
+
 An example:
 
-   1
-  / \
- 2   3
-    /
-   4
-    \
-     5
-The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}".
-```
+    
+      2
+     / \
+    1   4
+       / \
+      3   5
+    
+
+The above binary tree is serialized as `{2,1,4,#,#,3,5}` (in level order).
 
 ## 题解1 - recursion
 
