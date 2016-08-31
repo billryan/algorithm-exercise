@@ -8,7 +8,8 @@
         "sitemap",
         "github",
         "edit-link",
-        "rss"
+        "rss",
+        "toc"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -51,6 +52,10 @@
               "algorithm",
               "leetcode"
             ]
+        },
+        "toc": {
+            "addClass": true,
+            "className": "toc"
         }
     }
 }
