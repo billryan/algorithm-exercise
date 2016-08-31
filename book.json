@@ -7,7 +7,8 @@
         "swiftype",
         "sitemap",
         "github",
-        "edit-link"
+        "edit-link",
+        "rss"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -36,6 +37,20 @@
                     "zh-hans": "编辑此页",
                     "zh-tw": "編輯此頁"
             }
+        },
+        "rss": {
+            "title": "Data Structure and Algorithm notes",
+            "description": "Data Structure and Algorithm notes",
+            "author": "billryan",
+            "site_url": "http://algorithm.yuanbin.me/",
+            "feed_url": "rss.xml",
+            "managingEditor": "",
+            "webMaster": "",
+            "categories": [
+              "programming",
+              "algorithm",
+              "leetcode"
+            ]
         }
     }
 }
