@@ -1,24 +1,30 @@
-# Anagrams
+# Group Anagrams
+
+TAGS: Hash_Table String Medium
 
 ## Question
 
-- leetcode: [Anagrams | LeetCode OJ](https://leetcode.com/problems/anagrams/)
-- lintcode: [(171) Anagrams](http://www.lintcode.com/en/problem/anagrams/)
+- leetcode: [Group Anagrams](https://leetcode.com/problems/anagrams/)
+- lintcode: [Group Anagrams](http://www.lintcode.com/en/problem/anagrams/)
 
-```
-Given an array of strings, return all groups of strings that are anagrams.
+### Problem Statement
 
-Example
-Given ["lint", "intl", "inlt", "code"], return ["lint", "inlt", "intl"].
+Given an array of strings, group anagrams together.
 
-Given ["ab", "ba", "cd", "dc", "e"], return ["ab", "ba", "cd", "dc"].
-Note
-All inputs will be in lower-case
-```
+For example, given: `["eat", "tea", "tan", "ate", "nat", "bat"]`,  
+Return:
+    
+    [
+      ["ate", "eat","tea"],
+      ["nat","tan"],
+      ["bat"]
+    ]
+
+**Note:** All inputs will be in lower-case.
 
 ## 题解1 - 双重`for`循环(TLE)
 
-题 [Two Strings Are Anagrams](http://algorithm.yuanbin.me/zh-hans/string/two_strings_are_anagrams.html) 的升级版，容易想到的方法为使用双重`for`循环两两判断字符串数组是否互为变位字符串。但显然此法的时间复杂度较高。还需要 $$O(n)$$ 的数组来记录字符串是否被加入到最终结果中。
+题 [Two Strings Are Anagrams](../two_strings_are_anagrams.html) 的升级版，容易想到的方法为使用双重`for`循环两两判断字符串数组是否互为变位字符串。但显然此法的时间复杂度较高。还需要 $$O(n)$$ 的数组来记录字符串是否被加入到最终结果中。
 
 ### Python
 
