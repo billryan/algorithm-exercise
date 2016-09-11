@@ -10,7 +10,8 @@
         "edit-link",
         "rss",
         "etoc",
-        "algolia"
+        "algolia",
+        "tags"
     ],
     "pluginsConfig": {
         "disqus": {
