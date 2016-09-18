@@ -1,8 +1,6 @@
 # Two Strings Are Anagrams
 
-TAGS: String Cracking_The_Coding_Interview Easy
-
-<!-- toc -->
+Tags: String, Cracking The Coding Interview, Easy
 
 ## Question
 
