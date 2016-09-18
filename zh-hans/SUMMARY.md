@@ -258,4 +258,5 @@
    * [Statistics](appendix_ii_system_design/statistics.md)
    * [System Architecture](appendix_ii_system_design/system_architecture.md)
    * [Scalability](appendix_ii_system_design/scalability.md)
+* [Tags](tags.md)
 
