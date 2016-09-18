@@ -44,7 +44,7 @@
    * [strStr](string/strstr.md)
    * [Two Strings Are Anagrams](string/two_strings_are_anagrams.md)
    * [Compare Strings](string/compare_strings.md)
-   * [Anagrams](string/anagrams.md)
+   * [Group Anagrams](string/group_anagrams.md)
    * [Longest Common Substring](string/longest_common_substring.md)
    * [Rotate String](string/rotate_string.md)
    * [Reverse Words in a String](string/reverse_words_in_a_string.md)

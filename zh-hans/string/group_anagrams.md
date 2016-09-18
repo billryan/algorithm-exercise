@@ -1,6 +1,6 @@
 # Group Anagrams
 
-TAGS: Hash_Table String Medium
+Tags: Hash Table, String, Medium
 
 ## Question
 
