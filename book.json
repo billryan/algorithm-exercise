@@ -8,7 +8,7 @@
         "sitemap2",
         "github",
         "edit-link",
-        "rss",
+        "feed",
         "etoc",
         "algolia",
         "tags"
@@ -41,14 +41,13 @@
                     "zh-tw": "編輯此頁"
             }
         },
-        "rss": {
+        "feed": {
             "title": "Data Structure and Algorithm notes",
-            "description": "Data Structure and Algorithm notes",
+            "description": "Data Structure and Algorithm notes/数据结构与算法学习笔记/leetcode/lintcode 题解",
+            "hostname": "http://algorithm.yuanbin.me",
+            "filename": "rss2.xml",
+            "feed_type": "rss",
             "author": "billryan",
-            "site_url": "http://algorithm.yuanbin.me/",
-            "feed_url": "rss.xml",
-            "managingEditor": "",
-            "webMaster": "",
             "categories": [
               "programming",
               "algorithm",
