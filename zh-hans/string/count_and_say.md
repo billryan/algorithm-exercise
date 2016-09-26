@@ -1,122 +1,225 @@
 # Count and Say
 
+Tags: String, Easy
+
 ## Question
 
-- leetcode: [Count and Say | LeetCode OJ](https://leetcode.com/problems/count-and-say/)
-- lintcode: [(420) Count and Say](http://www.lintcode.com/en/problem/count-and-say/)
+- leetcode: [Count and Say](https://leetcode.com/problems/count-and-say/)
+- lintcode: [Count and Say](http://www.lintcode.com/en/problem/count-and-say/)
 
+### Problem Statement
+
+The count-and-say sequence is the sequence of integers beginning as follows:  
+`1, 11, 21, 1211, 111221, ...`
+
+`1` is read off as `"one 1"` or `11`.  
+`11` is read off as `"two 1s"` or `21`.  
+`21` is read off as `"one 2`, then `one 1"` or `1211`.  
+
+Given an integer _n_, generate the _n_th sequence.
+
+Note: The sequence of integers will be represented as a string.
+
+## 题解1 - 迭代
+
+题目大意是找第 n 个数(字符串表示)，规则则是对于连续字符串，表示为重复次数+数本身。那么其中的核心过程则是根据上一个字符串求得下一个字符串，从 `'1'` 开始迭代 n - 1 次即可。
+
+### Python
+
+```python
+class Solution(object):
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        if n <= 0:
+            return ''
+
+        curr_seq = '1'
+        for j in range(n - 1):
+            curr_seq = self._get_next_seq(curr_seq)
+
+        return curr_seq
+
+    def _get_next_seq(self, seq):
+        next_seq = ''
+        cnt = 1
+        for i in range(len(seq)):
+            if i + 1 < len(seq) and seq[i] == seq[i + 1]:
+                cnt += 1
+            else:
+                next_seq += str(cnt)
+                next_seq += seq[i]
+                cnt = 1
+
+        return next_seq
 ```
-The count-and-say sequence is the sequence of integers beginning as follows:
-
-1, 11, 21, 1211, 111221, ...
-
-1 is read off as "one 1" or 11.
-
-11 is read off as "two 1s" or 21.
-
-21 is read off as "one 2, then one 1" or 1211.
-
-Given an integer n, generate the nth sequence.
-
-Example
-Given n = 5, return "111221".
-
-Note
-The sequence of integers will be represented as a string.
-```
-
-## 题解
-
-题目大意是找第 n 个数(字符串表示)，规则则是对于连续字符串，表示为重复次数+数本身。
 
 ### C++
-```c++
-string countAndSay(int n) {
-    if (n == 0) return "";
-    string res = "1";
-    while (--n) {
-        string cur = "";
-        for (int i = 0; i < res.size(); i++) {
-            int count = 1;
-             while ((i + 1 < res.size()) && (res[i] == res[i + 1])){
-                count++;   
-                i++;
-            }
-            cur += to_string(count) + res[i];
+
+```cpp
+class Solution {
+public:
+    string countAndSay(int n) {
+        if (n <= 0) return "";
+
+        string curr_seq = "1";
+        while (--n) {
+            curr_seq = getNextSeq(curr_seq);
         }
-        res = cur;
+
+        return curr_seq;
     }
-    return res;
-}
+
+private:
+    string getNextSeq(string seq) {
+        string next_seq = "";
+        int cnt = 1;
+        for (int i = 0; i < seq.length(); i++) {
+            if (i + 1 < seq.length() && seq[i] == seq[i + 1]) {
+                cnt++;
+            } else {
+                next_seq.push_back('0' + cnt);
+                next_seq.push_back(seq[i]);
+                cnt = 1;
+            }
+        }
+
+        return next_seq;
+    }
+};
 ```
 
 ### Java
 
 ```java
 public class Solution {
-    /**
-     * @param n the nth
-     * @return the nth sequence
-     */
     public String countAndSay(int n) {
-        if (n <= 0) return null;
+        if (n <= 0) return "";
 
-        String s = "1";
+        StringBuilder currSeq = new StringBuilder("1");
+
         for (int i = 1; i < n; i++) {
-            int count = 1;
-            StringBuilder sb = new StringBuilder();
-            int sLen = s.length();
-            for (int j = 0; j < sLen; j++) {
-                if (j < sLen - 1 && s.charAt(j) == s.charAt(j + 1)) {
-                    count++;
-                } else {
-                    sb.append(count + "" + s.charAt(j));
-                    // reset
-                    count = 1;
-                }
-            }
-            s = sb.toString();
+            currSeq = getNextSeq(currSeq);
         }
 
-        return s;
+        return currSeq.toString();
+    }
+
+    private StringBuilder getNextSeq(StringBuilder seq) {
+        StringBuilder nextSeq = new StringBuilder();
+        int cnt = 1;
+        for (int i = 0; i < seq.length(); i++) {
+            if (i + 1 < seq.length() && seq.charAt(i) == seq.charAt(i + 1)) {
+                cnt++;
+            } else {
+                nextSeq.append(cnt);
+                nextSeq.append(seq.charAt(i));
+                cnt = 1;
+            }
+        }
+        return nextSeq;
     }
 }
 ```
 
 ### 源码分析
 
-字符串是动态生成的，故使用 StringBuilder 更为合适。注意s 初始化为"1", 第一重 for循环中注意循环的次数为 n-1.
+字符串是动态生成的，Python 中 `next_seq` 使用了两次 append 而不是字符串直接拼接，实测性能有一定提升，C++ 中对整型使用了 `push_back('0' + cnt)`, 容易证明 `cnt` 不会超过3，因为若出现`1111`，则逆向可得两个连续的1，而根据规则应为`21`，其他如`2222`推理方法类似。Java 中使用 StringBuilder 更为合适。
 
 ### 复杂度分析
 
-略
+略，与选用的数据结构有关。
 
 ### 题解2 - 递归
+
+注意递归终止条件即可，核心过程差不多。
+
+### Python
+
+```python
+class Solution(object):
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        if n <= 0:
+            return ''
+        if n == 1:
+            return '1'
+        seq = self.countAndSay(n - 1)
+        next_seq = ''
+        cnt = 1
+        for i in range(len(seq)):
+            if i + 1 < len(seq) and seq[i] == seq[i + 1]:
+                cnt += 1
+            else:
+                next_seq += str(cnt)
+                next_seq += seq[i]
+                cnt = 1
+
+        return next_seq
+```
+
 ### C++
+
 ``` c++
 class Solution {
 public:
     string countAndSay(int n) {
-        if (n == 1) return "1";             // base case
-        string res, tmp = countAndSay(n - 1);  // recursion
-        char c = tmp[0];
-        int count = 1;
-        for (int i = 1; i < tmp.size(); i++)
-            if (tmp[i] == c)
-                count++;
-            else {
-                res += to_string(count);
-                res.push_back(c);
-                c = tmp[i];
-                count = 1;
+        if (n <= 0) return "";
+        if (n == 1) return "1";
+
+        string seq = countAndSay(n - 1);
+        string next_seq = "";
+        int cnt = 1;
+        for (int i = 0; i < seq.length(); i++) {
+            if (i + 1 < seq.length() && seq[i] == seq[i + 1]) {
+                cnt++;
+            } else {
+                next_seq.push_back('0' + cnt);
+                next_seq.push_back(seq[i]);
+                cnt = 1;
             }
-        res += to_string(count);
-        res.push_back(c);
-        return res;
+        }
+
+        return next_seq;
     }
 };
 ```
 
-## Reference
+### Java
 
-- [[leetcode]Count and Say - 喵星人与汪星人](http://huntfor.iteye.com/blog/2059877)
+```java
+public class Solution {
+    public String countAndSay(int n) {
+        if (n <= 0) return "";
+        if (n == 1) return "1";
+
+        String seq = countAndSay(n - 1);
+        StringBuilder nextSeq = new StringBuilder();
+        int cnt = 1;
+        for (int i = 0; i < seq.length(); i++) {
+            if (i + 1 < seq.length() && seq.charAt(i) == seq.charAt(i + 1)) {
+                cnt++;
+            } else {
+                nextSeq.append(cnt);
+                nextSeq.append(seq.charAt(i));
+                cnt = 1;
+            }
+        }
+
+        return nextSeq.toString();
+    }
+}
+```
+
+### 源码分析
+
+略
+
+### 复杂度分析
+
+略，与选用的数据结构有关。
