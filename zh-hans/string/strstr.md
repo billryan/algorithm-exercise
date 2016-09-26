@@ -1,9 +1,11 @@
-# strStr
+# Implement strStr
+
+Tags: Two Pointers, String, Easy
 
 ## Question
 
-- leetcode: [Implement strStr() | LeetCode OJ](https://leetcode.com/problems/implement-strstr/)
-- lintcode: [lintcode - (13) strstr](http://www.lintcode.com/en/problem/strstr/)
+- leetcode: [Implement strStr()](https://leetcode.com/problems/implement-strstr/)
+- lintcode: [strstr](http://www.lintcode.com/en/problem/strstr/)
 
 ### Problem Statement
 
@@ -11,22 +13,6 @@ Implement strStr().
 
 Returns the index of the first occurrence of needle in haystack, or -1 if
 needle is not part of haystack.
-
-#### Example
-
-If source = `"source"` and target = `"target"`, return `-1`.
-
-If source = `"abcdabcdefg"` and target = `"bcd"`, return `1`.
-
-#### Challenge
-
-O(n2) is acceptable. Can you implement an O(n) algorithm? (hint: _KMP_)
-
-#### Clarification
-
-Do I need to implement KMP Algorithm in a real interview?
-
-  * Not necessary. When you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.
 
 ## 题解
 

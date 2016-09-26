@@ -41,7 +41,7 @@
    * [Bit Manipulation](basics_misc/bit_manipulation.md)
 * [Part II - Coding](part_ii_coding/README.md)
 * [String](string/README.md)
-   * [strStr](string/strstr.md)
+   * [Implement strStr](string/strstr.md)
    * [Two Strings Are Anagrams](string/two_strings_are_anagrams.md)
    * [Compare Strings](string/compare_strings.md)
    * [Group Anagrams](string/group_anagrams.md)
