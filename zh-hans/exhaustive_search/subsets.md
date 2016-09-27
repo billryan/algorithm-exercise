@@ -1,22 +1,21 @@
-# Subsets - 子集
+# Subsets
+
+Tags: Array, Backtracking, Bit Manipulation, Medium
 
 ## Question
 
-- leetcode: [Subsets | LeetCode OJ](https://leetcode.com/problems/subsets/)
-- lintcode: [(17) Subsets](http://www.lintcode.com/en/problem/subsets/)
+- leetcode: [Subsets](https://leetcode.com/problems/subsets/)
+- lintcode: [Subsets](http://www.lintcode.com/en/problem/subsets/)
 
 ### Problem Statement
 
 Given a set of distinct integers, _nums_, return all possible subsets.
 
-#### Note:
-
-  * Elements in a subset must be in non-descending order.
-  * The solution set must not contain duplicate subsets.
+**Note:** The solution set must not contain duplicate subsets.
 
 For example,  
-If _nums_ = `[1,2,3]`, a solution is:
-
+If **_nums_** = `[1,2,3]`, a solution is:
+    
     [
       [3],
       [1],
@@ -194,6 +193,5 @@ Java 和 Python 的代码中在将临时list 添加到最终结果时新生成�
 
 ## Reference
 
-- [[NineChap 1.2] Permutation - Woodstock Blog](http://okckd.github.io/blog/2014/06/12/NineChap-Permutation/)
 - [九章算法 - subsets模板](http://www.jiuzhang.com/solutions/subsets/)
 - [LeetCode: Subsets 解题报告 - Yu's Garden - 博客园](http://www.cnblogs.com/yuzhangcmu/p/4211815.html)
