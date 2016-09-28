@@ -17,6 +17,7 @@ before_install:
   - sudo apt-get update -qq
   # Install Gitbook
   - npm install gitbook-cli -g
+  - gitbook fetch 3.1.1 && gitbook uninstall 3.2.0
   - npm install svgexport -g
   # install calibre latest version
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
