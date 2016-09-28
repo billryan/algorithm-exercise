@@ -35,6 +35,24 @@ class Solution(object):
         """
         if n <= 0:
             return ''
+        seq = '1'
+        for _ in range(n - 1):
+            seq = re.sub(r'(.)\1*', lambda m: str(len(m.group(0))) + m.group(1), seq)
+
+        return seq
+```
+
+### Python
+
+```python
+class Solution(object):
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        if n <= 0:
+            return ''
 
         curr_seq = '1'
         for j in range(n - 1):
@@ -126,7 +144,7 @@ public class Solution {
 
 ### 源码分析
 
-字符串是动态生成的，Python 中 `next_seq` 使用了两次 append 而不是字符串直接拼接，实测性能有一定提升，C++ 中对整型使用了 `push_back('0' + cnt)`, 容易证明 `cnt` 不会超过3，因为若出现`1111`，则逆向可得两个连续的1，而根据规则应为`21`，其他如`2222`推理方法类似。Java 中使用 StringBuilder 更为合适。
+字符串是动态生成的，Python 中 `next_seq` 使用了两次 append 而不是字符串直接拼接，实测性能有一定提升，C++ 中对整型使用了 `push_back('0' + cnt)`, 容易证明 `cnt` 不会超过3，因为若出现`1111`，则逆向可得两个连续的1，而根据规则应为`21`，其他如`2222`推理方法类似。Java 中使用 StringBuilder 更为合适。除了通常方法外还可以使用正则表达式这一利器！
 
 ### 复杂度分析
 
@@ -223,3 +241,7 @@ public class Solution {
 ### 复杂度分析
 
 略，与选用的数据结构有关。
+
+## Reference
+
+- [4-5 lines Python solutions](https://discuss.leetcode.com/topic/32023/4-5-lines-python-solutions)
