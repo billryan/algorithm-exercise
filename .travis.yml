@@ -95,15 +95,15 @@ after_success:
   - sh ~/rename_ebook.sh
   - ls -lh
   # upload to GitHub and Qiniu
-  #- git remote add github_bak git@gitcafe.com:sign4bill/algorithm-exercise.git
+  - git remote add github_bak git@github.com:sign4bill/algorithm-exercise.git
   #- git push -u github_bak HEAD:master --force
-  #- git checkout deploy
-  #- cp ~/upload/*.epub epub
-  #- cp ~/upload/*.pdf pdf
-  #- cp ~/upload/*.mobi mobi
-  #- git add epub pdf mobi
-  #- git commit --amend -m "Updated $(date)"
-  #- git push -u github_bak HEAD:deploy --force
+  - git checkout --orphan deploy
+  - cp ~/upload/*.epub epub
+  - cp ~/upload/*.pdf pdf
+  - cp ~/upload/*.mobi mobi
+  - git add epub pdf mobi
+  - git commit -m "Updated $(date)"
+  - git push -u github_bak deploy --force
   - echo "upload to Qiniu CDN for China Mainland"
   - ~/qrsync ~/qiniu_sync.json
 
