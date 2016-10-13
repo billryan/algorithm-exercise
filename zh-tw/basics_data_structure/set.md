@@ -31,7 +31,7 @@ hash.contains("billryan");
 
 ### C++
 
-STL提供的資料結構有 Set 以及 Multiset ，分別提供不重複與重複元素的版本，自C++11以後，STL提供兩種 Set 的實現方式，一個是基於紅-黑樹的`set`與`multiset`，包含在`<set>`標頭檔之中，有序。另一個則是基於湊雜函數的`unordered_set`及`unordered_multiset`，無序。基本的 Set 使用如下所示
+STL提供的資料結構有 Set 以及 Multiset ，分別提供不重複與重複元素的版本，自C++11以後，STL提供兩種 Set 的實現方式，一個是基於紅-黑樹的`set`與`multiset`，包含在`<set>`標頭檔之中，有序。另一個則是基於湊雜函數的`unordered_set`及`unordered_multiset`，包含在標頭檔`<unordered_set>`，無序。基本的 Set 使用如下所示
 
 ```C++
 set<string> s;
@@ -42,4 +42,4 @@ if(it != s.end()) {
     // "lucifer" found
 }
 ```
-另外可以藉由傳遞自訂的 Functor 、 Hash Function 等進入參數模板以達成更彈性的使用，詳細用法及更多的介面請參考 STL 使用文檔
+另外可以藉由在建構時傳遞自訂的 Functor 、 Hash Function 以達成更彈性的使用，詳細用法及更多的介面請參考 STL 使用文檔。
