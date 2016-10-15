@@ -1,24 +1,26 @@
 # Distinct Subsequences
 
+Tags: Dynamic Programming, String, Hard
+
 ## Question
 
-- leetcode: [Distinct Subsequences | LeetCode OJ](https://leetcode.com/problems/distinct-subsequences/)
-- lintcode: [(118) Distinct Subsequences](http://www.lintcode.com/en/problem/distinct-subsequences/)
+- leetcode: [Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/)
+- lintcode: [Distinct Subsequences](http://www.lintcode.com/en/problem/distinct-subsequences/)
 
-```
-Given a string S and a string T, count the number of distinct subsequences of T in S.
-A subsequence of a string is a new string
-which is formed from the original string by deleting some (can be none) of the characters
-without disturbing the relative positions of the remaining characters.
-(ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
+### Problem Statement
 
-Example
-Given S = "rabbbit", T = "rabbit", return 3.
-Challenge
-Do it in O(n2) time and O(n) memory.
+Given a string **S** and a string **T**, count the number of distinct
+subsequences of **T** in **S**.
 
-O(n2) memory is also acceptable if you do not know how to optimize memory.
-```
+A subsequence of a string is a new string which is formed from the original
+string by deleting some (can be none) of the characters without disturbing the
+relative positions of the remaining characters. (ie, `"ACE"` is a subsequence
+of `"ABCDE"` while `"AEC"` is not).
+
+Here is an example:  
+**S** = `"rabbbit"`, **T** = `"rabbit"`
+
+Return `3`.
 
 ## 题解1
 
