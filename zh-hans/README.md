@@ -151,6 +151,7 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 - `ee.***@gmail.com`, 6.66
 - `abc***@126.com`, 6.66
 - `liaowen***@163.com`, 明信片
+- 2016-10-19 微信转账, 6.66
 
 所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
 
