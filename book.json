@@ -44,7 +44,7 @@
         "feed": {
             "title": "Data Structure and Algorithm notes",
             "description": "Data Structure and Algorithm notes/数据结构与算法学习笔记/leetcode/lintcode 题解",
-            "hostname": "http://algorithm.yuanbin.me",
+            "hostname": "https://algorithm.yuanbin.me",
             "author": "billryan",
             "categories": [
               "programming",
