@@ -141,6 +141,28 @@ Your solution should be in logarithmic complexity.
 
 如果一開始做的是 leetcode 上的版本而不是 lintcode 上的話，這道題難度要大一些。有了以上的分析基礎再來刷 leetcode 上的這道題就是小 case 了，注意題中的關鍵提示`num[-1] = num[n] = -∞`, 雖然不像 lintcode 上那麼直接，但是稍微變通下也能想到。即`num[-1] < num[0] && num[n-1] > num[n]`, 那麼問題來了，這樣一來就不能確定峰值一定存在了，因為給定數組為單調序列的話就咩有峰值了，但是實際情況是——題中有負無窮的假設，也就是說在單調序列的情況下，峰值為數組首部或者尾部元素，誰大就是誰了。
 
+### C++
+
+```C++
+class Solution {
+public:
+    int findPeakElement(vector<int>& arr) {
+        int N = arr.size();
+    	int lo = 0, hi = N;
+	    while(lo < hi) {
+		    int mi = lo + (hi - lo)/2;
+    		if( (mi == 0 || arr[mi-1] <= arr[mi] ) && (mi == N-1 || arr[mi] >= arr[mi+1]) ) 
+	    		return mi;
+		    else if((mi == 0 || arr[mi-1] <= arr[mi] ))
+			    lo = mi + 1;
+    		else
+	    		hi = mi;
+	    }
+	    return -1;
+    }
+};
+```
+
 ### Java
 
 ```java
