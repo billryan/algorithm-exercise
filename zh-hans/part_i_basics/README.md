@@ -1,8 +1,12 @@
 # Part I - Basics
 
-第一节主要总结一些算法要数据结构方面的基础知识，如基本的数据结构和基础算法。
+第一部分主要总结一些算法和数据结构方面的基础知识，如基本的数据结构和常见基础算法。
 
 本节主要由以下章节构成。
+- Basic Data Structure
+- Basic Sorting
+- Basic Algorithm
+- Basic Misc
 
 ## Reference
 
