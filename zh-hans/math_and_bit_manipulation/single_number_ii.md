@@ -1,18 +1,20 @@
 # Single Number II
 
+Tags: Bit Manipulation, Medium
+
 ## Question
 
-- leetcode: [Single Number II | LeetCode OJ](https://leetcode.com/problems/single-number-ii/)
-- lintcode: [(83) Single Number II](http://www.lintcode.com/en/problem/single-number-ii/)
+- leetcode: [Single Number II](https://leetcode.com/problems/single-number-ii/)
+- lintcode: [Single Number II](http://www.lintcode.com/en/problem/single-number-ii/)
 
 ### Problem Statement
 
-Given `3*n + 1` numbers, every numbers occurs triple times except one, find
-it.
+Given an array of integers, every element appears _three_ times except for
+one, which appears exactly once. Find that single one.
 
-#### Example
-
-Given `[1,1,2,3,3,3,2,2,4,1]` return `4`
+**Note:**  
+Your algorithm should have a linear runtime complexity. Could you implement it
+without using extra memory?
 
 #### Challenge
 
@@ -88,6 +90,27 @@ public:
         return result;
     }
 };
+```
+
+### Java
+
+```java
+public class Solution {
+    public int singleNumber(int[] nums) {
+        int single = 0;
+
+        final int INT_BITS = 32;
+        for (int i = 0; i < INT_BITS; i++) {
+            int bitSum = 0;
+            for (int num : nums) {
+                bitSum += ((num >>> i) & 1);
+            }
+            single |= ((bitSum % 3)<< i);
+        }
+
+        return single;
+    }
+}
 ```
 
 ### 源码解析
