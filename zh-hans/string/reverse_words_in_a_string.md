@@ -83,3 +83,16 @@ public:
 2. 处理多个空格及首尾空格
 3. 记住单词的头尾指针，翻转之
 4. 整体翻转
+
+
+###Python
+```python
+
+class Solution:
+	# @param s : A string
+	# @return : A string
+	def reverseWords(self,s):
+		# write your code here
+		return ' '.join(reversed(s.strip().split()))
+        
+```
