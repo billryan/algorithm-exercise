@@ -1,6 +1,6 @@
 # Remove Element
 
-**TAGS:** TAG_Array TAG_Two_Pointers
+Tags: Array, Two Pointers, Easy
 
 ## Question
 
@@ -75,13 +75,12 @@ func removeElement(nums []int, val int) int {
 public class Solution {
     public int removeElement(int[] nums, int val) {
         int left = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != val) {
-                nums[left] = nums[i];
-                left++;
+        for (int num : nums) {
+            if (num != val) {
+                nums[left++] = num;
             }
         }
-
+        
         return left;
     }
 }
