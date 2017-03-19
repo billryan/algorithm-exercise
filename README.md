@@ -94,6 +94,8 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 - 2017-01-01 明信片 Berkeley CA USA
 - 2017-01-09 微信 20
 - 2017-01-20 支付宝 `xin***@sina.com` 10
+- 2017-02-21 微信 10
+- 2017-03-15 微信 10
 
 所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
 
