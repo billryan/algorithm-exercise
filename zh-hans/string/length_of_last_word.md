@@ -117,23 +117,23 @@ public class Solution {
     public int lengthOfLastWord(String s) {
         if (s == null || s.isEmpty()) return 0;
 
-        int cnt = 0;
+        int len = 0;
         for (int i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) == ' ') {
-                if (cnt > 0) break;
+                if (len > 0) return len;
             } else {
-                cnt++;
+                len++;
             }
         }
 
-        return cnt;
+        return len;
     }
 }
 ```
 
 ### 源码分析
 
-注意检查输入参数和索引即可。
+注意检查输入参数和索引即可，当前长度信息和当前索引字符是否为空格这两种信息可以结合使用避免硬标记。
 
 ### 复杂度分析
 
