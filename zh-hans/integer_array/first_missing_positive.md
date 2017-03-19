@@ -1,19 +1,22 @@
 # First Missing Positive
 
+Tags: Array, Hard
+
 ## Question
 
-- leetcode: [First Missing Positive | LeetCode OJ](https://leetcode.com/problems/first-missing-positive/)
-- lintcode: [(189) First Missing Positive](http://www.lintcode.com/en/problem/first-missing-positive/)
+- leetcode: [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+- lintcode: [First Missing Positive](http://www.lintcode.com/en/problem/first-missing-positive/)
 
-```
+### Problem Statement
+
 Given an unsorted integer array, find the first missing positive integer.
 
-Example
-Given [1,2,0] return 3, and [3,4,-1,1] return 2.
+For example,  
+Given `[1,2,0]` return `3`,  
+and `[3,4,-1,1]` return `2`.
 
-Challenge
-Your algorithm should run in O(n) time and uses constant space.
-```
+Your algorithm should run in _O_(_n_) time and uses constant space.
+
 
 ## 题解
 
@@ -59,13 +62,41 @@ public:
 };
 ```
 
+### Java
+
+```java
+public class Solution {
+    public int firstMissingPositive(int[] nums) {
+        if (nums == null) return -1;
+        
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] > 0 
+                   && nums[i] <= nums.length
+                   && nums[i] != i + 1
+                   && (nums[i] != nums[nums[i] - 1])) {
+
+                    int temp = nums[nums[i] - 1];
+                    nums[nums[i] - 1] = nums[i];
+                    nums[i] = temp;
+            }
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) return i + 1;
+        }
+
+        return 1 + nums.length;
+    }
+}
+```
+
 ### 源码分析
 
 核心代码为那几行交换，但是要很好地处理各种边界条件则要下一番功夫了，要能正常的交换，需满足以下几个条件：
 
 1. `A[i]` 为正数，负数和零都无法在桶中找到生存空间...
 2. `A[i] \leq size` 当前索引处的值不能比原数组容量大，大了的话也没用啊，肯定不是缺的第一个正数。
-3. `A[i] != i + 1`, 都满足条件了还交换个毛线，交换也是自身的值。
+3. `A[i] != i + 1`, 已满足条件了无需交换。
 4. `A[i] != A[A[i] - 1]`, 避免欲交换的值和自身相同，否则有重复值时会产生死循环。
 
 如果满足以上四个条件就可以愉快地交换彼此了，使用`while`循环处理，此时`i`并不自增，直到将所有满足条件的索引处理完。

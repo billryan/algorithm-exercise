@@ -1,35 +1,28 @@
-# 2 Sum
+# Two Sum
+
+Tags: Array, Hash Table, Easy
 
 ## Question
 
-- leetcode: [Two Sum | LeetCode OJ](https://leetcode.com/problems/two-sum/)
-- lintcode: [(56) 2 Sum](http://www.lintcode.com/en/problem/2-sum/)
+- leetcode: [Two Sum](https://leetcode.com/problems/two-sum/)
+- lintcode: [Two Sum](http://www.lintcode.com/en/problem/two-sum/)
 
 ### Problem Statement
 
-Given an array of integers, find two numbers such that they add up to a
-specific target number.
+Given an array of integers, return **indices** of the two numbers such that
+they add up to a specific target.
 
-The function `twoSum` should return _indices_ of the two numbers such that
-they add up to the target, where index1 must be less than index2. Please note
-that your returned answers (both index1 and index2) are **NOT** zero-based.
+You may assume that each input would have **_exactly_** one solution, and you
+may not use the _same_ element twice.
 
-#### Example
+**Example:**  
 
-numbers=`[2, 7, 11, 15]`, target=`9`
+    
+    Given nums = [2, 7, 11, 15], target = 9,
+    
+    Because nums[**0**] + nums[**1**] = 2 + 7 = 9,
+    return [**0**, **1**].
 
-return `[1, 2]`
-
-#### Note
-
-You may assume that each input would have exactly one solution
-
-#### Challenge
-
-Either of the following solutions are acceptable:
-
-  * O(n) Space, O(nlogn) Time
-  * O(n) Space, O(n) Time
 
 ## 题解1 - 哈希表
 
@@ -94,27 +87,22 @@ public:
 
 ```java
 public class Solution {
-    /*
-     * @param numbers : An array of Integer
-     * @param target : target = numbers[index1] + numbers[index2]
-     * @return : [index1 + 1, index2 + 1] (index1 < index2)
-     */
-    public int[] twoSum(int[] numbers, int target) {
-        if (numbers == null || numbers.length == 0) return new int[]{0, 0};
+    public int[] twoSum(int[] nums, int target) {
+        if (nums == null || nums.length == 0) return null;
         
         Map<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
         int index1 = 0, index2 = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            if (hashmap.containsKey(target - numbers[i])) {
-                index1 = hashmap.get(target - numbers[i]);
+        for (int i = 0; i < nums.length; i++) {
+            if (hashmap.containsKey(target - nums[i])) {
+                index1 = hashmap.get(target - nums[i]);
                 index2 = i;
-                return new int[]{1 + index1, 1 + index2};
+                return new int[]{index1, index2};
             } else {
-                hashmap.put(numbers[i], i);
+                hashmap.put(nums[i], i);
             }
         }
-        
-        return new int[]{0, 0};
+
+        return null;
     }
 }
 ```
