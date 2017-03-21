@@ -1,25 +1,27 @@
-# Kth Largest Element
+# Kth Largest Element in an Array
+
+Tags: Heap, Divide and Conquer, Medium
 
 ## Question
 
-- leetcode: [Kth Largest Element in an Array | LeetCode OJ](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-- lintcode: [(5) Kth Largest Element](http://www.lintcode.com/en/problem/kth-largest-element/)
+- leetcode: [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- lintcode: [Kth Largest Element](http://www.lintcode.com/en/problem/kth-largest-element/)
 
-```
-Find K-th largest element in an array.
+### Problem Statement
 
-Example
-In array [9,3,2,4,8], the 3rd largest element is 4.
+Find the **k**th largest element in an unsorted array. Note that it is the kth
+largest element in the sorted order, not the kth distinct element.
 
-In array [1,2,3,4,5], the 1st largest element is 5,
-2nd largest element is 4, 3rd largest element is 3 and etc.
+For example,  
+Given `[3,2,1,5,6,4]` and k = 2, return 5.
 
-Note
-You can swap elements in the array
+**Note: **  
+You may assume k is always valid, 1 ≤ k ≤ array's length.
 
-Challenge
-O(n) time, O(1) extra memory.
-```
+**Credits:**  
+
+Special thanks to [@mithmatt](https://leetcode.com/discuss/user/mithmatt) for
+adding this problem and creating all test cases.
 
 ## 题解
 
@@ -28,38 +30,43 @@ O(n) time, O(1) extra memory.
 ### Java
 
 ```java
-class Solution {
-    //param k : description of k
-    //param numbers : array of numbers
-    //return: description of return
-    public int kthLargestElement(int k, ArrayList<Integer> numbers) {
-        if (numbers == null || numbers.isEmpty()) return -1;
+public class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return Integer.MIN_VALUE;
+        }
 
-        int result = qSort(numbers, 0, numbers.size() - 1, k);
-        return result;
+        int kthLargest = qSort(nums, 0, nums.length - 1, k);
+        return kthLargest;
     }
 
-    private int qSort(ArrayList<Integer> nums, int l, int u, int k) {
-        // l should not greater than u
-        if (l >= u) return nums.get(u);
+    private int qSort(int[] nums, int left, int right, int k) {
+        if (left >= right) {
+            return nums[right];
+        }
 
-        // index m of nums
-        int m = l;
-        for (int i = l + 1; i <= u; i++) {
-            if (nums.get(i) > nums.get(l)) {
+        int m = left;
+        for (int i = left + 1; i <= right; i++) {
+            if (nums[i] > nums[left]) {
                 m++;
-                Collections.swap(nums, m, i);
+                swap(nums, m, i);
             }
         }
-        Collections.swap(nums, m, l);
+        swap(nums, m, left);
 
-        if (m + 1 == k) {
-            return nums.get(m);
-        } else if (m + 1 > k) {
-            return qSort(nums, l, m - 1, k);
+        if (k == m + 1) {
+            return nums[m];
+        } else if (k > m + 1) {
+            return qSort(nums, m + 1, right, k);
         } else {
-            return qSort(nums, m + 1, u, k);
+            return qSort(nums, left, m - 1, k);
         }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 }
 ```
@@ -67,7 +74,7 @@ class Solution {
 ### 源码分析
 
 递归的终止条件有两个，一个是左边界的值等于右边界(实际中其实不会有 l > u), 另一个则是索引值 `m + 1 == k`.
-这里找的是第 K 大数，故为降序排列，for 循环中使用`nums.get(i) > nums.get(l)` 而不是小于号。
+这里找的是第 K 大数，故为降序排列，for 循环中使用`nums[i] > nums[left]` 而不是小于号。
 
 ### 复杂度分析
 
