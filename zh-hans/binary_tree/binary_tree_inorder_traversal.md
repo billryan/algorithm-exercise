@@ -1,32 +1,32 @@
 # Binary Tree Inorder Traversal
 
+Tags: Tree, Hash Table, Stack, Medium
+
 ## Question
 
-- leetcode: [Binary Tree Inorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-inorder-traversal/)
-- lintcode: [(67) Binary Tree Inorder Traversal](http://www.lintcode.com/en/problem/binary-tree-inorder-traversal/)
+- leetcode: [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+- lintcode: [Binary Tree Inorder Traversal](http://www.lintcode.com/en/problem/binary-tree-inorder-traversal/)
 
 ### Problem Statement
 
 Given a binary tree, return the _inorder_ traversal of its nodes' values.
 
-#### Example
+For example:  
+Given binary tree `[1,null,2,3]`,  
 
-Given binary tree `{1,#,2,3}`,
-
-
-
+    
+    
+    
        1
         \
          2
         /
        3
-
+    
 
 return `[1,3,2]`.
 
-#### Challenge
-
-Can you do it without recursion?
+**Note:** Recursive solution is trivial, could you do it iteratively?
 
 ## 题解1 - 递归版
 
@@ -145,7 +145,7 @@ public class Solution {
 ### 源码分析
 
 Python 这种动态语言在写递归时返回结果好处理点，无需声明类型。通用的方法为在递归函数入口参数中传入返回结果，
-也可使用分治的方法替代辅助函数。
+也可使用分治的方法替代辅助函数。Java 中 helper 的输入参数中 ret 不能和 inorderTraversal 中的 result 一样。
 
 ### 复杂度分析
 
@@ -247,7 +247,6 @@ public:
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
-        if (root == null) return result;
 
         Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
         while (root != null || (!stack.isEmpty())) {

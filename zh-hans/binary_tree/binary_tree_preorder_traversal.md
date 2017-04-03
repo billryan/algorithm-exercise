@@ -1,32 +1,32 @@
 # Binary Tree Preorder Traversal
 
+Tags: Tree, Stack, Medium
+
 ## Question
 
-- leetcode: [Binary Tree Preorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-preorder-traversal/)
-- lintcode: [(66) Binary Tree Preorder Traversal](http://www.lintcode.com/en/problem/binary-tree-preorder-traversal/)
+- leetcode: [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+- lintcode: [Binary Tree Preorder Traversal](http://www.lintcode.com/en/problem/binary-tree-preorder-traversal/)
 
 ### Problem Statement
 
-Given a binary tree, return the preorder traversal of its nodes' values.
+Given a binary tree, return the _preorder_ traversal of its nodes' values.
 
-#### Example
-
-Given binary tree `{1,#,2,3}`:
+For example:  
+Given binary tree `{1,#,2,3}`,  
 
     
     
-    1
-     \
-      2
-     /
-    3
+    
+       1
+        \
+         2
+        /
+       3
     
 
 return `[1,2,3]`.
 
-#### Challenge
-
-Can you do it without recursion?
+**Note:** Recursive solution is trivial, could you do it iteratively?
 
 ## 题解1 - 递归
 
@@ -83,7 +83,7 @@ public:
     vector<int> preorderTraversal(TreeNode *root) {
         vector<int> result;
         if (root != NULL) {
-            // Divide (分)
+            // Divide
             vector<int> left = preorderTraversal(root->left);
             vector<int> right = preorderTraversal(root->right);
             // Merge
@@ -167,16 +167,43 @@ public class Solution {
 }
 ```
 
+### Java - Traversal
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    private List<Integer> result = new ArrayList<Integer>();
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        if (root != null) {
+            result.add(root.val);
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+        }
+
+        return result;
+    }
+}
+```
+
 ### 源码分析
 
-使用遍历的方法保存递归返回结果需要使用辅助递归函数`traverse`，将结果作为参数传入递归函数中，传值时注意应使用`vector`的引用。
+使用遍历的方法保存递归返回结果需要使用辅助递归函数`traverse`，将结果作为参数传入递归函数中，传值时注意应使用`vector`的引用。另外一个方法则是使用类的私有变量保存最终结果。
 分治方法首先分开计算各结果，最后合并到最终结果中。
 C++ 中由于是使用vector, 将新的vector插入另一vector不能再使用push_back, 而应该使用insert。
 Java 中使用`addAll`方法.
 
 ### 复杂度分析
 
-遍历树中节点，时间复杂度 $$O(n)$$, 未使用额外空间。
+遍历树中节点，时间复杂度 $$O(n)$$, 遍历的方法未使用额外空间，分治的方法生成了临时变量，最差情况下空间复杂度为 $$(n)$$.
 
 ## 题解2 - 迭代
 
@@ -274,18 +301,16 @@ public:
 public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
-        if (root == null) return result;
-        
+
         Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
-        stack.push(root);
+        if (root != null) stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            result.add(node.val);
-            
-            if (node.right != null) stack.push(node.right);
-            if (node.left != null) stack.push(node.left);
+            root = stack.pop();
+            result.add(root.val);
+            if (root.right != null) stack.push(root.right);
+            if (root.left != null) stack.push(root.left);
         }
-        
+
         return result;
     }
 }
@@ -306,4 +331,4 @@ public class Solution {
 
 ### 复杂度分析
 
-使用辅助栈，最坏情况下栈空间与节点数相等，空间复杂度近似为 $$O(n)$$, 对每个节点遍历一次，时间复杂度近似为 $$O(n)$$.
+使用辅助栈，最坏情况下栈空间与节点数相等，其空间复杂度为 $$O(n)$$, 对每个节点遍历一次，时间复杂度为 $$O(n)$$.
