@@ -153,6 +153,7 @@
    * [Binary Tree Serialization](binary_tree/binary_tree_serialization.md)
 * [Binary Search Tree](binary_search_tree/README.md)
    * [Insert Node in a Binary Search Tree](binary_search_tree/insert_node_in_a_binary_search_tree.md)
+   * [Minimum Absolute Difference in BST](binary_search_tree/minimum_absolute_difference_in_bst.md)
    * [Validate Binary Search Tree](binary_search_tree/validate_binary_search_tree.md)
    * [Search Range in Binary Search Tree](binary_search_tree/search_range_in_binary_search_tree.md)
    * [Convert Sorted Array to Binary Search Tree](binary_search_tree/convert_sorted_array_to_binary_search_tree.md)
