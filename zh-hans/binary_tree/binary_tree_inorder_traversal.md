@@ -247,16 +247,17 @@ public:
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
-
         Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
-        while (root != null || (!stack.isEmpty())) {
-            if (root != null) {
-                stack.push(root);
-                root = root.left;
+
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            if (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
             } else {
-                root = stack.pop();
-                result.add(root.val);
-                root = root.right;
+                curr = stack.pop();
+                result.add(curr.val);
+                curr = curr.right;
             }
         }
 
@@ -267,7 +268,7 @@ public class Solution {
 
 ### 源码分析
 
-使用栈的思想模拟递归，注意迭代的演进和边界条件即可。
+使用栈的思想模拟递归，注意迭代的演进和边界条件即可。Java 中新建变量 curr 而不是复用 root 观察下来有一点性能提升。
 
 ### 复杂度分析
 
