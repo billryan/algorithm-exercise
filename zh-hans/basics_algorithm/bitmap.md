@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 {
         const int BIT_LEN = sizeof(int) * 8;
         const unsigned int N = 1 << (BIT_LEN - 1);
-        unsigned int *bits = (unsigned int *)calloc(N, sizeof(int));
+        unsigned int *bits = (unsigned int *)calloc(N / BIT_LEN, sizeof(int));
         for (unsigned int i = 0; i < N; i++) {
                 if (i % 10000001 == 0) setbit(bits, i, BIT_LEN);
         }
