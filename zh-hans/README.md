@@ -156,11 +156,13 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 - 2016-11-17 支付宝 `tf.***@gmail.com` 10.24
 - 2016-11-19 支付宝 `jat***@163.com` 20
 - 2016-11-20 支付宝 `bao***@163.com` 10
-- 2017-01-01 明信片 Berkeley CA USA
+- 2017-01-01 明信片 Berkeley CA USA - (智识)知识是不满足守恒律的事物
 - 2017-01-09 微信 20
 - 2017-01-20 支付宝 `xin***@sina.com` 10
 - 2017-02-21 微信 10
 - 2017-03-15 微信 10
+- 2017-04-07 微信 10
+- 2017-04-18 明信片 - @CrossLuna 非常感谢来自台湾的小伙伴维护繁体中文
 
 所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
 
