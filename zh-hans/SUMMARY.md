@@ -74,7 +74,7 @@
    * [Partition Array by Odd and Even](integer_array/partition_array_by_odd_and_even.md)
    * [Kth Largest Element](integer_array/kth_largest_element.md)
 * [Binary Search](binary_search/README.md)
-   * [Binary Search](binary_search/binary_search.md)
+   * [First Position of Target](binary_search/first_position_of_target.md)
    * [Search Insert Position](binary_search/search_insert_position.md)
    * [Search for a Range](binary_search/search_for_a_range.md)
    * [First Bad Version](binary_search/first_bad_version.md)
