@@ -30,7 +30,7 @@ print(bubbleSort(unsorted_list))
 ```java
 public class Sort {
 	public static void main(String[] args) {
-		int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+		int[] unsortedArray = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
 		bubbleSort(unsortedArray);
 		System.out.println("After sort: ");
 		for (int item : unsortedArray) {
@@ -38,18 +38,18 @@ public class Sort {
 		}
 	}
 
-	public static void bubbleSort(int[] array) {
-		int len = array.length;
+	public static void bubbleSort(int[] nums) {
+		int len = nums.length;
 		for (int i = 0; i < len; i++) {
-			for (int item : array) {
-				System.out.print(item + " ");
+			for (int num : nums) {
+				System.out.print(num + " ");
 			}
 			System.out.println();
 			for (int j = 1; j < len - i; j++) {
-				if (array[j - 1] > array[j]) {
-					int temp = array[j - 1];
-					array[j - 1] = array[j];
-					array[j] = temp;
+				if (nums[j - 1] > nums[j]) {
+					int temp = nums[j - 1];
+					nums[j - 1] = nums[j];
+					nums[j] = temp;
 				}
 			}
 		}
