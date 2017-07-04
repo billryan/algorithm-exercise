@@ -36,32 +36,32 @@ The list may contains duplicate integers.
 ### Python
 
 ```python
-class Solution:
-    # @param num :  a list of integer
-    # @return : a list of integer
-    def nextPermutation(self, num):
-        if num is None or len(num) <= 1:
-            return num
+class Solution(object):
+    def nextPermutation(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        if nums is None or len(nums) <= 1:
+            return
         # step1: find nums[i] < nums[i + 1], Loop backwards
         i = 0
-        for i in xrange(len(num) - 2, -1, -1):
-            if num[i] < num[i + 1]:
+        for i in xrange(len(nums) - 2, -1, -1):
+            if nums[i] < nums[i + 1]:
                 break
             elif i == 0:
                 # reverse nums if reach maximum
-                num = num[::-1]
-                return num
+                nums = nums.reverse()
+                return
         # step2: find nums[i] < nums[j], Loop backwards
         j = 0
-        for j in xrange(len(num) - 1, i, -1):
-            if num[i] < num[j]:
+        for j in xrange(len(nums) - 1, i, -1):
+            if nums[i] < nums[j]:
                 break
         # step3: swap betwenn nums[i] and nums[j]
-        num[i], num[j] = num[j], num[i]
+        nums[i], nums[j] = nums[j], nums[i]
         # step4: reverse between [i + 1, n - 1]
-        num[i + 1:len(num)] = num[len(num) - 1:i:-1]
-
-        return num
+        nums[i + 1:len(nums)] = nums[len(nums) - 1:i:-1]
 ```
 
 ### C++
