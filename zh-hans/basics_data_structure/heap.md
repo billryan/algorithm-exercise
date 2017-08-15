@@ -37,9 +37,11 @@ class MaxHeap:
         # move node down the tree
         left, right = 2 * i + 1, 2 * i + 2
         max_index = i
-        if left < len(array) and array[left] > array[max_index]:
+        # should compare two chidren then determine which one to swap with
+        flag = array[left] > array[right] 
+        if left < len(array) and array[left] > array[max_index] and flag:
             max_index = left
-        if right < len(array) and array[right] > array[max_index]:
+        if right < len(array) and array[right] > array[max_index] and not flag:
             max_index = right
         if max_index != i:
             array[i], array[max_index] = array[max_index], array[i]
