@@ -72,7 +72,7 @@ class MaxHeap:
         return item
 ```
 ## C++
-```
+```c++
 #ifndef HEAP_H
 #define HEAP_H
 
