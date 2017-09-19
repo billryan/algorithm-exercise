@@ -164,6 +164,8 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 - 2017-04-07 微信 10
 - 2017-04-18 明信片 - @CrossLuna 非常感谢来自台湾的小伙伴维护繁体中文
 - 2017-07-08 微信 13.14 - @盈盈 :)
+- 2017-08-08 支付宝 `mut***@gmail.com` 10
+- 2017-09-19 支付宝 `far***@sina.com` 66.66
 
 所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
 
