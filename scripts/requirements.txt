@@ -1,0 +1,9 @@
+certifi==2018.1.18
+chardet==3.0.4
+cssselect==1.0.3
+html2text==2018.1.9
+idna==2.6
+lxml==4.1.1
+pyquery==1.4.0
+requests==2.18.4
+urllib3==1.22
