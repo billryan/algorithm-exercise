@@ -24,17 +24,20 @@ class YamlContent(object):
 
 
 def leet_lint_url(url):
-    problem_slug = url.strip('/')[-1]
+    problem_slug = url.strip('/').split('/')[-1]
     leetcode_url = 'https://leetcode.com/problems/{}/'.format(problem_slug)
     lintcode_url = 'http://www.lintcode.com/en/problem/{}/'.format(problem_slug)
     urls = {}
     for url in [leetcode_url, lintcode_url]:
         response = requests.head(url)
-        if response.status_code == 200:
+        print(response)
+        if response.status_code != 404:
             if url.startswith('https://leetcode'):
                 urls['leetcode'] = url
             elif url.startswith('http://www.lintcode'):
                 urls['lintcode'] = url
+        else:
+            print(url)
     return urls
 
 
