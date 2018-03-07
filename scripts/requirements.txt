@@ -6,8 +6,10 @@ idna==2.6
 lxml==4.1.1
 pyquery==1.4.0
 python-frontmatter==0.4.2
+python-slugify==1.2.4
 PyYAML==3.12
 requests==2.18.4
 selenium==3.10.0
 six==1.11.0
+Unidecode==1.0.22
 urllib3==1.22
