@@ -30,14 +30,13 @@ def leet_lint_url(url):
     urls = {}
     for url in [leetcode_url, lintcode_url]:
         response = requests.head(url)
-        print(response)
         if response.status_code != 404:
             if url.startswith('https://leetcode'):
                 urls['leetcode'] = url
             elif url.startswith('http://www.lintcode'):
                 urls['lintcode'] = url
         else:
-            print(url)
+            print('cannot find url with: {}'.format(url))
     return urls
 
 
