@@ -6,6 +6,8 @@ import argparse
 from datetime import datetime
 
 from util import par_dir, mkdir_p
+from leetcode import Leetcode
+from ojhtml2markdown import problem2md
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -28,3 +30,9 @@ if __name__ == '__main__':
     print('Called with arguments: {}'.format(args))
 
     ROOTDIR = par_dir(BASEDIR)
+    raw_url = args.new
+    if raw_url.startswith('https://leetcode'):
+        leetcode = Leetcode()
+        problem = leetcode.get_problem_all(raw_url)
+        problem_md = problem2md(problem)
+        print(problem_md)

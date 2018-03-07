@@ -47,6 +47,12 @@ class Leetcode(object):
             tags.append(tag)
         return tags
     
+    def _clean_url(self, url):
+        new_url = ['https:/', 'leetcode.com', 'problems']
+        problem_slug = url[len('https://'):].strip('/').split('/')[2]
+        new_url.append(problem_slug)
+        return '/'.join(new_url)
+
     def get_problem_all(self, url):
         """获取所有细节"""
         print('get all the problem detail...')
@@ -59,7 +65,8 @@ class Leetcode(object):
             'title': title,
             'difficulty': difficulty,
             'tags': tags,
-            'description': description
+            'description': description,
+            'url': self._clean_url(url)
         }
         self.teardown()
         return problem
