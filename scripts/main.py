@@ -5,6 +5,9 @@ import os
 import argparse
 from datetime import datetime
 
+import frontmatter
+from slugify import slugify
+
 from util import par_dir, mkdir_p
 from leetcode import Leetcode
 from ojhtml2markdown import problem2md
@@ -20,6 +23,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Helper for GitBook algorithm')
     parser.add_argument('--new', type=str, dest='new',
                         help='create new post with given leetcode/lintcode url.')
+    parser.add_argument('--dir', type=str, dest='dir',
+                        help='create md under dir.')
     parser.add_argument('--update', nargs='*', dest='update',
                         help='update post with given title in post and summary.')
     parser.add_argument('--migrate', type=str, dest='migrate',
@@ -31,8 +36,24 @@ if __name__ == '__main__':
 
     ROOTDIR = par_dir(BASEDIR)
     raw_url = args.new
+    problem_md = ''
+    problem_slug = ''
     if raw_url.startswith('https://leetcode'):
         leetcode = Leetcode()
         problem = leetcode.get_problem_all(raw_url)
+        problem_slug = slugify(problem['title'], separator="_")
         problem_md = problem2md(problem)
-        print(problem_md)
+    
+    if args.dir:
+        post_dir = os.path.join(ROOTDIR, args.dir)
+        post_fn = os.path.join(post_dir, problem_slug + '.md')
+        summary_path = args.dir.strip('/').split('/')[-1] + '/' + problem_slug + '.md'
+        summary_line = '* [{title}]({path})'.format(title=problem['title'], path=summary_path)
+        print(summary_line)
+        mkdir_p(post_dir)
+        with open(post_fn, 'w', encoding='utf-8') as f:
+            print('create post file {}...'.format(post_fn))
+            f.write(problem_md)
+    
+    if args.fix_summary:
+        update_summary(ROOTDIR)
