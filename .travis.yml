@@ -2,47 +2,57 @@ sudo: required
 
 language: node_js
 
-services:
-  - docker
-
 node_js:
   - stable
 
 before_install:
-  - shopt -s expand_aliases
-  - docker pull billryan/gitbook:latest
-  - docker pull billryan/gitbook:zh-hans
-  - docker pull billryan/gitbook:zh-hant
-  - alias gitbook_en='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:latest gitbook'
-  - alias gitbook_zh_hans='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook'
-  - alias gitbook_zh_hant='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hant gitbook'
+  - npm install gitbook-cli -g
+  - npm install svgexport -g
+  - gitbook fetch 3.2.3
+  - sudo apt-get update -qq
+  # install calibre latest version
+  - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 install:
-  - gitbook_en install
+  - gitbook install
 
 before_script:
-- cp LANGS.md LANGS.md.bak
+  - cp LANGS.md LANGS.md.bak
+  - mkdir -p ~/.fonts/noto
+  - mkdir -p ~/raw_fonts/{NotoSans-unhinted,NotoSansCJKsc-hinted,NotoSansCJKtc-hinted}
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
+  - unzip ~/raw_fonts/NotoSans-unhinted.zip -d ~/raw_fonts/NotoSans-unhinted
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKsc-hinted.zip
+  - unzip ~/raw_fonts/NotoSansCJKsc-hinted.zip -d ~/raw_fonts/NotoSansCJKsc-hinted
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip
+  - unzip ~/raw_fonts/NotoSansCJKtc-hinted.zip -d ~/raw_fonts/NotoSansCJKtc-hinted
 
 script:
-  - echo "build English ebook"
   - sed '/\(en\/\)/! d' LANGS.md.bak > LANGS.md
-  - gitbook_en pdf .
-  - gitbook_en epub .
-  - gitbook_en mobi .
-  - echo "build Simplified Chinese ebook"
+  - mv -t ~/.fonts/noto ~/raw_fonts/NotoSans-unhinted/*-Regular.ttf ~/raw_fonts/NotoSans-unhinted/*-Bold.ttf ~/raw_fonts/NotoSans-unhinted/*-Black.ttf
+  - sudo fc-cache -f -v
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
+  - rm ~/.fonts/noto/*.ttf
+
   - sed '/\(zh-hans\/\)/! d' LANGS.md.bak > LANGS.md
-  - gitbook_zh_hans pdf .
-  - gitbook_zh_hans epub .
-  - gitbook_zh_hans mobi .
-  - echo "build Traditional Chinese ebook"
+  - mv -t ~/.fonts/noto ~/raw_fonts/NotoSansCJKsc-hinted/*-DemiLight.otf ~/raw_fonts/NotoSansCJKsc-hinted/*-Bold.otf ~/raw_fonts/NotoSansCJKsc-hinted/*-Black.otf
+  - sudo fc-cache -f -v
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
+  - rm ~/.fonts/noto/*.otf
+
   - sed '/\(zh-tw\/\)/! d' LANGS.md.bak > LANGS.md
-  - gitbook_zh_hant pdf .
-  - gitbook_zh_hant epub .
-  - gitbook_zh_hant mobi .
-  - echo "build HTML pages"
+  - mv -t ~/.fonts/noto ~/raw_fonts/NotoSansCJKtc-hinted/*-DemiLight.otf ~/raw_fonts/NotoSansCJKtc-hinted/*-Bold.otf ~/raw_fonts/NotoSansCJKtc-hinted/*-Black.otf
+  - sudo fc-cache -f -v
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
+
   - cp LANGS.md.bak LANGS.md
-  - gitbook_en build .
-  - ls -alh
+  - gitbook build .
 
 before_deploy:
   - tar czvf book_html.tar.gz _book/
