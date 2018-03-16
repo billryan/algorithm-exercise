@@ -3,72 +3,66 @@ sudo: required
 language: node_js
 
 services:
-  - docker
+- docker
 
 node_js:
-  - "stable"
+- stable
 
 before_install:
-  - shopt -s expand_aliases
-  - docker pull billryan/gitbook:latest
-  - docker pull billryan/gitbook:zh-hans
-  - docker pull billryan/gitbook:zh-hant
-  - alias gitbook_en='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:latest gitbook'
-  - alias gitbook_zh_hans='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook'
-  - alias gitbook_zh_hant='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hant gitbook'
+- shopt -s expand_aliases
+- docker pull billryan/gitbook:latest
+- docker pull billryan/gitbook:zh-hans
+- docker pull billryan/gitbook:zh-hant
+- alias gitbook_en='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:latest
+  gitbook'
+- alias gitbook_zh_hans='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hans
+  gitbook'
+- alias gitbook_zh_hant='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hant
+  gitbook'
 
 install:
-  # Install GitBook dependencies
-  - echo "install gitbook dependencies..."
-  - gitbook_en install
+- echo "install gitbook dependencies..."
+- gitbook_en install
 
 before_script:
-  - cp LANGS.md LANGS.md.bak
+- cp LANGS.md LANGS.md.bak
 
 script:
-  - echo "build English ebook"
-  - sed '/\(en\/\)/! d' LANGS.md.bak > LANGS.md
-  - gitbook_en pdf .
-  - gitbook_en epub .
-  - gitbook_en mobi .
-
-  - echo "build Simplified Chinese ebook"
-  - sed '/\(zh-hans\/\)/! d' LANGS.md.bak > LANGS.md
-  - gitbook_zh_hans pdf .
-  - gitbook_zh_hans epub .
-  - gitbook_zh_hans mobi .
-
-  - echo "build Traditional Chinese ebook"
-  - sed '/\(zh-tw\/\)/! d' LANGS.md.bak > LANGS.md
-  - gitbook_zh_hant pdf .
-  - gitbook_zh_hant epub .
-  - gitbook_zh_hant mobi .
-
-  - echo "build HTML pages"
-  - cp LANGS.md.bak LANGS.md
-  - gitbook_en build .
-  - ls -alh
+- echo "build English ebook"
+- sed '/\(en\/\)/! d' LANGS.md.bak > LANGS.md
+- gitbook_en pdf .
+- gitbook_en epub .
+- gitbook_en mobi .
+- echo "build Simplified Chinese ebook"
+- sed '/\(zh-hans\/\)/! d' LANGS.md.bak > LANGS.md
+- gitbook_zh_hans pdf .
+- gitbook_zh_hans epub .
+- gitbook_zh_hans mobi .
+- echo "build Traditional Chinese ebook"
+- sed '/\(zh-tw\/\)/! d' LANGS.md.bak > LANGS.md
+- gitbook_zh_hant pdf .
+- gitbook_zh_hant epub .
+- gitbook_zh_hant mobi .
+- echo "build HTML pages"
+- cp LANGS.md.bak LANGS.md
+- gitbook_en build .
+- ls -alh
 
 before_deploy:
-  - tar czvf blog.tar.gz _book/
+- tar czvf blog.tar.gz _book/
 
 deploy:
-  - provider: releases
-    api_key:
-      secure: QU4B9CIPUdelYJKnS72SUjOY/9/w9+m536RX8Ex4PsKYMJHEIW7rkbP16ZAvMDoqiQkfPwpQSE8tFOBxMmkgGIgWY86o0xr022ak0iGICFCkjedEfNkKBENjOA8JoMlCx+QRyGcRJKuHBAy8WQU+PKykJDzJzadGNs0ud/+P75k=
-    file:
-      - blog.tar.gz
-      - book_en.pdf
-      - book_zh-hans.pdf
-      - book_zh-hant.pdf
-    skip_cleanup: true
-    on:
-      branch: master
+  provider: releases
+  api_key:
+    secure: B/dqY0sC9I0Uu5o3HVHouX/mfLTUH/dt16IsBdm+sZQW+/YeTUTGwpx+Vl5lXpMhUoxrh60Qxt0KbnqvPqAxsPXGMH2Mhl1E5lgvMYViOGQyx9JJuuba+GWOzD+r2+XOUsqBzOCUhvC7iZbuGiWYvV2+4noAmAoKa1pO1j2yxiI=
+  file: book_*
+  skip_cleanup: true
+  on:
+    repo: billryan/algorithm-exercise
 
 after_success:
-  - ls -lh
+- ls -lh
 
-# whitelist
 branches:
   only:
-    - master
+  - master
