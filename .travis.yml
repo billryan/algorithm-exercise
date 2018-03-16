@@ -9,6 +9,7 @@ node_js:
   - "stable"
 
 before_install:
+  - shopt -s expand_aliases
   - docker pull billryan/gitbook:latest
   - docker pull billryan/gitbook:zh-hans
   - docker pull billryan/gitbook:zh-hant
