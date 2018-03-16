@@ -1,120 +1,73 @@
+sudo: required
+
 language: node_js
+
+services:
+  - docker
 
 node_js:
   - "stable"
 
 before_install:
-  - echo "add id_rsa private key"
-  - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
-    -in id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
-  - eval "$(ssh-agent -s)"
-  - ssh-add ~/.ssh/id_rsa
-  - cp ssh_config ~/.ssh/config
-  - git config --global user.name "rhett"
-  - git config --global user.email yuanbin2014@gmail.com
-  # update first
-  - sudo apt-get update -qq
-  # Install Gitbook
-  - npm install gitbook-cli -g
-  - npm install svgexport -g
-  # install calibre latest version
-  - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+  - docker pull billryan/gitbook:latest
+  - docker pull billryan/gitbook:zh-hans
+  - docker pull billryan/gitbook:zh-hant
+  - alias gitbook_en='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:latest gitbook'
+  - alias gitbook_zh_hans='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook'
+  - alias gitbook_zh_hant='docker run --rm -v "$PWD":/gitbook -p 4000:4000 billryan/gitbook:zh-hant gitbook'
+
+install:
+  # Install GitBook dependencies
+  - echo "install gitbook dependencies..."
+  - gitbook_en install
 
 before_script:
-  - cd ~
-  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
-  - tar xfz qiniu-*.tar.gz
-  - git clone https://github.com/billryan/algorithm-exercise.git ~/algorithm-exercise
-  - echo "install gitbook plugins..."
-  - cd ~/algorithm-exercise/
-  - cp LANGS.md LANGS_bak.md
-  - gitbook install
-  - cp ~/algorithm-exercise/scripts/rename_ebook.sh ~/
-  - cp ~/algorithm-exercise/conf/qiniu_sync.json ~/
-  - sed -i "s/AccessKey/$QAK/g" ~/qiniu_sync.json
-  - sed -i "s/SecretKey/$QSK/g" ~/qiniu_sync.json
-  - mkdir -p ~/upload
-  - mkdir -p ~/raw_fonts
-  - mkdir -p ~/.fonts/noto
-  - mkdir -p ~/.fonts/arial
+  - cp LANGS.md LANGS.md.bak
 
 script:
-  - echo "build English ebook..."
-  # - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
-  # - wget -P ~/raw_fonts https://github.com/billryan/algorithm-exercise/files/277714/migu-1m-20150712.zip
-  - wget -P ~/raw_fonts https://github.com/billryan/algorithm-exercise/files/279471/arial.zip
-  - echo "install fonts Noto Sans CJK SC for Simplified Chinese"
-  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKsc-hinted.zip
-  - cd ~/raw_fonts
-  # - unzip -o NotoSans-unhinted.zip
-  # - unzip -o migu-1m-20150712.zip
-  - unzip -o arial.zip
-  - mv -t ~/.fonts/arial Arial*ttf
-  - unzip -o NotoSansCJKsc-hinted.zip
-  # discard other fonts since fontconfig 2.11 cannot identify it
-  - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
-  - sudo fc-cache -f -v
-  - cd ~/algorithm-exercise/
-  - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
-  #- gitbook build ./
-  - gitbook pdf ./
-  - gitbook epub ./
-  - gitbook mobi ./
+  - echo "build English ebook"
+  - sed '/\(en\/\)/! d' LANGS.md.bak > LANGS.md
+  - gitbook_en pdf .
+  - gitbook_en epub .
+  - gitbook_en mobi .
 
   - echo "build Simplified Chinese ebook"
-  - sed '/\(zh-hans\/\)/! d' LANGS_bak.md > LANGS.md
-  - cd ~/algorithm-exercise/
-  #- gitbook build ./
-  - gitbook pdf ./
-  - gitbook epub ./
-  - gitbook mobi ./
-  # clear CJK fonts(CJK fonts suffer in fontconfig :(
-  - rm ~/.fonts/noto/*.otf
+  - sed '/\(zh-hans\/\)/! d' LANGS.md.bak > LANGS.md
+  - gitbook_zh_hans pdf .
+  - gitbook_zh_hans epub .
+  - gitbook_zh_hans mobi .
 
   - echo "build Traditional Chinese ebook"
-  - sed '/\(zh-tw\/\)/! d' LANGS_bak.md > LANGS.md
-  - echo "install fonts Noto Sans CJK TC for Traditional Chinese"
-  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip
-  - cd ~/raw_fonts
-  - unzip -o NotoSansCJKtc-hinted.zip
-  - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
-  - sudo fc-cache -f -v
-  - cd ~/algorithm-exercise/
-  #- gitbook build ./
-  - gitbook pdf ./
-  - gitbook epub ./
-  - gitbook mobi ./
+  - sed '/\(zh-tw\/\)/! d' LANGS.md.bak > LANGS.md
+  - gitbook_zh_hant pdf .
+  - gitbook_zh_hant epub .
+  - gitbook_zh_hant mobi .
+
+  - echo "build HTML pages"
+  - cp LANGS.md.bak LANGS.md
+  - gitbook_en build .
+  - ls -alh
+
+before_deploy:
+  - tar czvf blog.tar.gz _book/
+
+deploy:
+  - provider: releases
+    api_key:
+      secure: QU4B9CIPUdelYJKnS72SUjOY/9/w9+m536RX8Ex4PsKYMJHEIW7rkbP16ZAvMDoqiQkfPwpQSE8tFOBxMmkgGIgWY86o0xr022ak0iGICFCkjedEfNkKBENjOA8JoMlCx+QRyGcRJKuHBAy8WQU+PKykJDzJzadGNs0ud/+P75k=
+    file:
+      - blog.tar.gz
+      - book_en.pdf
+      - book_zh-hans.pdf
+      - book_zh-hant.pdf
+    skip_cleanup: true
+    on:
+      branch: master
 
 after_success:
-  - echo "rename ebook"
-  - cd ~/algorithm-exercise
-  - mv *.pdf *.epub *.mobi ~/upload
-  - cd ~/upload
-  - sh ~/rename_ebook.sh
   - ls -lh
-  # upload to GitHub and Qiniu
-  - cd ~/algorithm-exercise
-  - git remote add github_bak git@github.com:sign4bill/algorithm-exercise.git
-  #- git push -u github_bak HEAD:master --force
-  - git checkout --orphan deploy
-  - mkdir -p {epub,pdf,mobi}
-  - cp ~/upload/*.epub epub
-  - cp ~/upload/*.pdf pdf
-  - cp ~/upload/*.mobi mobi
-  - git add epub pdf mobi
-  - git commit -m "Updated $(date)"
-  - git push -u github_bak deploy --force
-  - echo "upload to Qiniu CDN for China Mainland"
-  - ~/qrsync ~/qiniu_sync.json
-
-# blacklist
-branches:
-  except:
-    - deploy
 
 # whitelist
 branches:
   only:
     - master
-    - test
