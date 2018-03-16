@@ -49,13 +49,32 @@ script:
 - ls -alh
 
 before_deploy:
-- tar czvf blog.tar.gz _book/
+- tar czvf book_html.tar.gz _book/
 
 deploy:
-  provider: releases
-  api_key:
-    secure: B/dqY0sC9I0Uu5o3HVHouX/mfLTUH/dt16IsBdm+sZQW+/YeTUTGwpx+Vl5lXpMhUoxrh60Qxt0KbnqvPqAxsPXGMH2Mhl1E5lgvMYViOGQyx9JJuuba+GWOzD+r2+XOUsqBzOCUhvC7iZbuGiWYvV2+4noAmAoKa1pO1j2yxiI=
-  file: book_*
+  - provider: pages
+    skip-cleanup: true
+    github-token:
+      secure: B/dqY0sC9I0Uu5o3HVHouX/mfLTUH/dt16IsBdm+sZQW+/YeTUTGwpx+Vl5lXpMhUoxrh60Qxt0KbnqvPqAxsPXGMH2Mhl1E5lgvMYViOGQyx9JJuuba+GWOzD+r2+XOUsqBzOCUhvC7iZbuGiWYvV2+4noAmAoKa1pO1j2yxiI=
+    keep-history: false
+    local-dir: _book
+    on:
+      branch: master
+    target-branch: gh-pages
+  - provider: releases
+    api_key:
+      secure: B/dqY0sC9I0Uu5o3HVHouX/mfLTUH/dt16IsBdm+sZQW+/YeTUTGwpx+Vl5lXpMhUoxrh60Qxt0KbnqvPqAxsPXGMH2Mhl1E5lgvMYViOGQyx9JJuuba+GWOzD+r2+XOUsqBzOCUhvC7iZbuGiWYvV2+4noAmAoKa1pO1j2yxiI=
+    file:
+    - book_html.tar.gz
+    - book_en.epub
+    - book_en.mobi
+    - book_en.pdf
+    - book_zh-hans.epub
+    - book_zh-hans.mobi
+    - book_zh-hans.pdf
+    - book_zh-tw.epub
+    - book_zh-tw.mobi
+    - book_zh-tw.pdf
   skip_cleanup: true
   on:
     repo: billryan/algorithm-exercise
