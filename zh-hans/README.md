@@ -21,20 +21,20 @@
 
 你可以在线或者离线查看/搜索本文档，以下方式任选~
 
-- 在线阅读(由 Gitbook 渲染) <http://algorithm.yuanbin.me>
-- 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的部分编译输出提供 GitHub 和 GitCafe 下载。
-    1. EPUB: [GitHub](https://raw.githubusercontent.com/sign4bill/algorithm-exercise/deploy/epub/algorithm-ebook_zh-hans.epub), [Gitbook](https://www.gitbook.com/download/epub/book/yuanbin/algorithm?lang=zh-hans), [七牛 CDN(中国大陆用户适用)](http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_zh-hans.epub) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
-    2. PDF: [GitHub](https://raw.githubusercontent.com/sign4bill/algorithm-exercise/deploy/pdf/algorithm-ebook_zh-hans.pdf), [Gitbook](https://www.gitbook.com/download/pdf/book/yuanbin/algorithm?lang=zh-hans), [七牛 CDN(中国大陆用户适用)](http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_zh-hans.pdf) - 推荐下载 GitHub 和 七牛 CDN 的版本，Gitbook 官方使用的中文字体为楷体。
-    3. MOBI: [GitHub](https://raw.githubusercontent.com/sign4bill/algorithm-exercise/deploy/mobi/algorithm-ebook_zh-hans.mobi), [Gitbook](https://www.gitbook.com/download/mobi/book/yuanbin/algorithm?lang=zh-hans), [七牛 CDN(中国大陆用户适用)](http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_zh-hans.mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
+- 在线阅读(由 GitBook 渲染) <https://algorithm.yuanbin.me>
+- 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的编译输出提供 GitHub 等多个网站镜像下载，不同镜像站点内容一致，国外请选择 GitHub, 中国大陆用户建议选择 Website 镜像站。
+    1. EPUB: [GitHub](https://github.com/billryan/algorithm-exercise/raw/gh-pages/book_zh-hans.epub), [Website](https://algorithm.yuanbin.me/book_zh-hans.epub) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
+    2. PDF: [GitHub](https://github.com/billryan/algorithm-exercise/raw/gh-pages/book_zh-hans.pdf), [Website](https://algorithm.yuanbin.me/book_zh-hans.pdf) - 中文字体使用思源黑体优化。
+    3. MOBI: [GitHub](https://github.com/billryan/algorithm-exercise/raw/gh-pages/book_zh-hans.mobi), [Website](https://algorithm.yuanbin.me/book_zh-hans.mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
 - Google 站内搜索: `keywords site:algorithm.yuanbin.me`
-- Swiftype 站内搜索: 可使用网页右下方的 `Search this site` 进行站内搜索
-- 微信公众号搜索：此功能预计2016年1月下旬添加，借助 Swiftype 的 API，微信可以仅作为一个查询界面，我个人是不接受把这个文档的内容放在微信这种封闭平台上的。
+- Algolia 站内搜索: 可使用网页左上方的 `输入并搜索` 进行站内搜索
+- ~~微信公众号搜索~~：此功能预计2016年1月下旬添加，借助 Swiftype 的 API，微信可以仅作为一个查询界面，我个人是不接受把这个文档的内容放在微信这种封闭平台上的。
 
 ### 订阅更新
 
-本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 [Gitbook](https://www.gitbook.com/book/yuanbin/algorithm/details) 渲染生成 HTML 页面。
+本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 Gitbook 渲染生成 HTML 页面。
 
-你可以在 GitHub/GitBook 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
+你可以在 GitHub 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
 
 Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.herokuapp.com> 即刻开启~
 
@@ -48,7 +48,7 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 
 ## 如何贡献
 
-如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [FAQ](http://algorithm.yuanbin.me/zh-hans/faq/index.html) 和 [贡献指南](http://algorithm.yuanbin.me/zh-hans/faq/guidelines_for_contributing.html).
+如果你发现任何有错误的地方或是想更新/翻译本文档，请毫不犹豫地猛击 [FAQ](https://algorithm.yuanbin.me/zh-hans/faq/index.html) 和 [贡献指南](https://algorithm.yuanbin.me/zh-hans/faq/guidelines_for_contributing.html).
 
 ## 如何练习算法
 
