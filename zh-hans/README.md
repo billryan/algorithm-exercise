@@ -1,20 +1,19 @@
-
 # 数据结构与算法/leetcode/lintcode题解
 
 [![Build Status](https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master)](https://travis-ci.org/billryan/algorithm-exercise)
 [![Slack Status](https://slackin4ds-algo.herokuapp.com/badge.svg)](https://slackin4ds-algo.herokuapp.com/)
 [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://ds-algo.slack.com/)
 
-- English via [Data Structure and Algorithm notes](http://algorithm.yuanbin.me/en/index.html)
-- 简体中文请戳 [数据结构与算法/leetcode/lintcode题解](http://algorithm.yuanbin.me/zh-hans/index.html)
-- 繁體中文請瀏覽 [資料結構與演算法/leetcode/lintcode題解](http://algorithm.yuanbin.me/zh-tw/index.html)
+- [English](https://algorithm.yuanbin.me/en/), 极少更新
+- [简体中文](https://algorithm.yuanbin.me/zh-hans/), 经常更新
+- [繁體中文](https://algorithm.yuanbin.me/zh-tw/), 极少更新
 
 ## 简介
 
-本文档为数据结构和算法学习笔记，我们希望这个笔记能给你在学习算法的过程提供思路和源码方面的参考，但绝不鼓励死记硬背！全文大致分为以下三大部分：
+本文档为数据结构和算法学习笔记，主要作者 @billryan 并不是专业算法选手，希望有专业的小伙伴一起来改进。我们希望这个笔记能给你在学习算法的过程提供思路和源码方面的参考，但绝不鼓励死记硬背！全文大致分为以下三大部分：
 
 1. Part I为数据结构和算法基础，介绍一些基础的排序/链表/基础算法
-2. Part II为 OJ 上的编程题目实战，按题目的内容分章节编写，主要来源为 <https://leetcode.com/>, <http://www.lintcode.com/>, <http://www.geeksforgeeks.org/>, <http://hihocoder.com/>, <https://www.topcoder.com/>.
+2. Part II为 OJ 上的编程题目实战，按题目的内容分章节编写，主要来源为 [leetcode](https://leetcode.com/), [lintcode](http://www.lintcode.com/), [geeksforgeeks](http://www.geeksforgeeks.org/), [hihocoder](http://hihocoder.com/), [topcoder](https://www.topcoder.com/).
 3. Part III 为附录部分，包含如何写简历和其他附加材料如系统设计
 
 本文参考了很多教材和博客，凡参考过的几乎都给出明确链接，如果不小心忘记了，请不要吝惜你的评论和issue :)
@@ -22,20 +21,18 @@
 你可以在线或者离线查看/搜索本文档，以下方式任选~
 
 - 在线阅读(由 GitBook 渲染) <https://algorithm.yuanbin.me>
-- 离线阅读: 推送到GitHub后会触发 travis-ci 的编译，相应的编译输出提供 GitHub 等多个网站镜像下载，不同镜像站点内容一致，国外请选择 GitHub, 中国大陆用户建议选择 Website 镜像站。
+    - Google 站内搜索: `keywords site:algorithm.yuanbin.me`
+    - Algolia 站内搜索: 可使用网页左上方的 `输入并搜索` 进行站内搜索
+- ~~微信公众号/小程序~~：微信可以仅作为一个查询和显示界面，我个人是不接受把这个文档的内容放在微信这种封闭平台上的
+- 离线阅读: 推送到 GitHub 后会触发 travis-ci 的编译，相应的编译输出提供 GitHub 等多个网站镜像下载，不同镜像站点内容一致，国外请选择 GitHub, 中国大陆用户建议选择 Website 镜像站。
     1. EPUB: [GitHub](https://github.com/billryan/algorithm-exercise/raw/gh-pages/book_zh-hans.epub), [Website](https://algorithm.yuanbin.me/book_zh-hans.epub) - 适合在 iPhone/iPad/MAC 上离线查看，实测效果极好。
     2. PDF: [GitHub](https://github.com/billryan/algorithm-exercise/raw/gh-pages/book_zh-hans.pdf), [Website](https://algorithm.yuanbin.me/book_zh-hans.pdf) - 中文字体使用思源黑体优化。
     3. MOBI: [GitHub](https://github.com/billryan/algorithm-exercise/raw/gh-pages/book_zh-hans.mobi), [Website](https://algorithm.yuanbin.me/book_zh-hans.mobi) - Kindle 专用，未测试，感觉不适合在 Kindle 上看此类书籍，尽管 Kindle 的屏幕对眼睛很好...
-- Google 站内搜索: `keywords site:algorithm.yuanbin.me`
-- Algolia 站内搜索: 可使用网页左上方的 `输入并搜索` 进行站内搜索
-- ~~微信公众号搜索~~：此功能预计2016年1月下旬添加，借助 Swiftype 的 API，微信可以仅作为一个查询界面，我个人是不接受把这个文档的内容放在微信这种封闭平台上的。
 
 ### 订阅更新
 
-本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 Gitbook 渲染生成 HTML 页面。
-
-你可以在 GitHub 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节，~~RSS 种子功能正在开发中~~。
-
+本项目托管在 <https://github.com/billryan/algorithm-exercise> 由 GitBook 渲染生成 HTML/PDF/MOBI/EPUB 
+你可以在 GitHub 中 star 该项目查看更新，也可以订阅 <https://ds-algo.slack.com/messages/github_commit/> 中的 `#github_commit` channel 在邮件中查看更新细节。
 Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.herokuapp.com> 即刻开启~
 
 **号外：Slack 的 [shua-shua-shua](https://ds-algo.slack.com/messages/shua-shua-shua/details/) channel 用于刷题小组讨论，大家可以在这个 channel 里一起讨论学习算法。**
@@ -72,15 +69,12 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 
 ## 在线OJ及部分题解
 
-- [数据结构与算法 - 实验楼](https://www.shiyanlou.com/courses/484) - 本书的同步练习平台。
 - [LeetCode Online Judge](https://leetcode.com/) - 找工作方面非常出名的一个OJ，每道题都有 discuss 页面，可以看别人分享的代码和讨论，很有参考价值，相应的题解非常多。~~不过在线代码编辑框不太好用，写着写着框就拉下来了~~，最近没有这个问题了，评测速度通常比 lintcode 快很多，而且做完后可以看自己代码的运行时间分布，首推此 OJ 刷面试相关的题。
 - [LintCode](http://www.lintcode.com) - 和leetcode类似的在线OJ，但是筛选和写代码时比较方便，左边为题目，右边为代码框。还可以在`source`处选择 CC150 或者其他来源的题。会根据系统locale选择中文或者英文，可以拿此 OJ 辅助 leetcode 进行练习。
-- [hihoCoder](http://hihocoder.com/) - 非常不错的一个 OJ，每周都会推出一个专题供你学习，都是干货。
-- [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分详细，比较容易理解，但题目很不全。
+- [hihoCoder](http://hihocoder.com/) - 非常不错的一个 OJ，每周都会推出一个专题供你学习，基本都是干货。
+- [LeetCode题解 - GitBook](https://www.gitbook.com/book/siddontang/leetcode-solution/details) - 题解部分详细，比较容易理解，但题目不全
 - [FreeTymeKiyan/LeetCode-Sol-Res](https://github.com/FreeTymeKiyan/LeetCode-Sol-Res) - Clean, Understandable Solutions and Resources on LeetCode Online Judge Algorithms Problems.
 - [soulmachine/leetcode](https://github.com/soulmachine/leetcode) - 含C++和Java两个版本的题解。
-- [Acm之家,专业的ACM学习网站](http://www.acmerblog.com/) - 各类题解
-- [牛客网](http://www.nowcoder.com/) - 国内一个IT求职方面的综合性网站，比较适合想在国内求职的看看。感谢某位美女的推荐 :)
 
 ## 其他资源
 
@@ -101,11 +95,12 @@ Slack 的自助邀请注册功能已启用，访问 <http://slackin4ds-algo.hero
 
 ## Contribution
 
-- [English](http://algorithm.yuanbin.me/en/index.html) is maintained by [@billryan](https://github.com/billryan)
-- [简体中文](http://algorithm.yuanbin.zh-hans/index.html) is maintained by [@billryan](https://github.com/billryan), [@Shaunwei](https://github.com/Shaunwei)
-- [繁體中文](http://algorithm.yuanbin.me/zh-tw/index.html) is maintained by [@CrossLuna](https://github.com/CrossLuna)
+非常感谢以下小伙伴一起维护
+- [@niangaotuantuan](https://github.com/niangaotuantuan) - 第一个邮件提出要一起维护的贡献者，现在潜心学术并维护了『程序媛的日常』微信公众号
+- [@Shaunwei](https://github.com/Shaunwei) - 贡献了大量文档和代码，现在在 Google 美国工作
+- [@CrossLuna](https://github.com/CrossLuna) - 开创了繁体中文版本
 
-Other contributors can be found in [Contributors to algorithm-exercise](https://github.com/billryan/algorithm-exercise/graphs/contributors)
+其他更多的贡献者可以点击 [Contributors](https://github.com/billryan/algorithm-exercise/graphs/contributors) 查看
 
 ### Donation
 
@@ -176,15 +171,10 @@ Other contributors can be found in [Contributors to algorithm-exercise](https://
 - 2018-03-09 微信 16.66 # 非常感谢算法项目!
 - 2018-03-12 支付宝 `189*******91` 10
 
-
-所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
+所得捐款用于 VPS 付费(优化大陆地区访问)/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料
 
 ## To Do
 
-- [ ] add multiple languages support, currently 繁體中文, 简体中文 are available
-- [x] explore nice writing style
-- [x] add implementations of `Python`, `C++`, `Java` code
-- [x] add time and space complexity analysis
-- [x] summary of basic data structure and algorithm
-- [x] add CSS for online website <http://algorithm.yuanbin.me>
-- [x] add proper Chinese fonts for PDF output
+- [ ] 添加多国语言支持，尤其是英语
+- [ ] 添加 `Python`, `C++` 和 `Java` 代码
+- [x] 添加空间和时间复杂度分析
