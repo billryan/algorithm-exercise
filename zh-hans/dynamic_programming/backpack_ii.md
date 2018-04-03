@@ -89,8 +89,8 @@ public class Solution {
                 if (A[i] > j) {
                     bp[i + 1][j] = bp[i][j];
                 } else {
-                    bp[i + 1][j] = Math.max(bp[i][j], bp[i][j - A[i]] + V[i]);
-                }
+                    bp[i + 1][j] = Math.max(bp[i][j], bp[i][j - A[i]] + V[i]);//此处与你之前在Knapsack中介绍的完全背包的状态转移方程不符，经验证这个可以ac，前面那个无法ac且在递推dp[i][j]时写的不够详细，还望能够回复
+                }
             }
         }
         
