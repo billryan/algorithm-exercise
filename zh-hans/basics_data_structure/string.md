@@ -2,6 +2,42 @@
 
 String 相关的题常出现在面试题中，实际开发也经常用到，这里总结下 C++, Java, Python 中字符串常用的方法。
 
+## C++
+```C++
+// string是C++的标准库类型，可表示变长的字符序列
+// 头文件
+#include <string>
+// 1. 定义和初始化
+string s // s是一个空串
+string s = "value" // s被初始化为字面值"value"的副本
+string s(n,'c') // s被初始化为n个字符c的字符串
+// 2. 对字符串对象的操作
+cin>>s // 读取到s，从第一个真正的字符开始读起，直到遇到空白停止
+getline(cin, s) // 读取一整行到s
+cout<<s // 输出s
+s.size() // 返回s中字符的个数
+s.empty() // 判断是否为空串，是空串返回true, 否则返回false
+s.clear() // 清空s，变成空字符串
+s[n] // 返回s中第n个字符的引用，n从0到N-1
+s.back() // 取s的最后一个字符
+s.pop_back() // 删除s的最后一个字符
+s.substr(startpos, length); // 取从startpos到startpos+length的字符子串
+s1+s2 // s1和s2拼接
+// 3. 对字符的处理
+// 头文件
+#include <cctype>
+isalpha(c) // c是字母时为真
+isdigit(c) // c是数字时为真
+islower(c) // c是小写字母时为真
+isupper(c) // c是大写字母时为真
+isspace(c) // c是空白时为真
+tolower(c) // 输出c对应的小写字母
+toupper(c) // 输出c对应的大写字母
+// 4. 注意
+// 用下标访问指定字符时，要先确认该位置上确实有值。
+```
+部分参考 《C++ Primer》（中文版）
+
 ## Python
 
 ```python
