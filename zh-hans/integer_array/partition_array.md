@@ -43,10 +43,12 @@ public:
         int right = 0;
         const int size = nums.size();
         for (int i = 0; i < size; ++i) {
-            if (nums[i] < k && i >= right) {
-                int temp = nums[i];
-                nums[i] = nums[right];
-                nums[right] = temp;
+            if (nums[i] < k) {
+                if (i != right) {
+                    int temp = nums[i];
+                    nums[i] = nums[right];
+                    nums[right] = temp;
+                }
                 ++right;
             }
         }
@@ -58,7 +60,7 @@ public:
 
 ### 源码分析
 
-自左向右遍历，遇到小于 k 的元素时即和`right`索引处元素交换，并自增`right`指向下一个元素，这样就能保证`right`之前的元素一定小于 k. 注意`if`判断条件中`i >= right`不能是`i > right`, 否则需要对特殊情况如全小于 k 时的考虑，而且即使考虑了这一特殊情况也可能存在其他 bug. 具体是什么 bug 呢？欢迎提出你的分析意见~
+自左向右遍历，遇到小于 k 的元素时即和`right`索引处元素交换，并自增`right`指向下一个元素，这样就能保证`right`之前的元素一定小于 k. 
 
 ### 复杂度分析
 
