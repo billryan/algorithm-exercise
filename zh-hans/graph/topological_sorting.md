@@ -1,42 +1,67 @@
+---
+difficulty: Medium
+tags:
+- Geeks for Geeks
+- Topological Sort
+- LintCode Copyright
+- BFS
+- DFS
+title: Topological Sorting
+---
+
 # Topological Sorting
 
-## Question
+## Problem
 
-- lintcode: [(127) Topological Sorting](http://www.lintcode.com/en/problem/topological-sorting/)
-- [Topological Sorting - GeeksforGeeks](http://www.geeksforgeeks.org/topological-sorting/)
+### Metadata
 
-```
+- tags: Geeks for Geeks, Topological Sort, LintCode Copyright, BFS, DFS
+- difficulty: Medium
+- source(lintcode): <https://www.lintcode.com/problem/topological-sorting/>
+- source(geeksforgeeks): <http://www.geeksforgeeks.org/topological-sorting/>
+
+### Description
+
 Given an directed graph, a topological order of the graph nodes is defined as follow:
 
-For each directed edge A -> B in graph, A must before B in the order list.
-The first node in the order can be any node in the graph with no nodes direct to it.
+- For each directed edge `A -> B` in graph, A must before B in the order list.
+- The first node in the order can be any node in the graph with no nodes direct to it.
+
 Find any topological order for the given graph.
-```
-Example
-For graph as follow:
 
-![Topological Sorting](../../shared-files/images/topological_sorting.jpeg)
+#### Notice
 
-```
-The topological order can be:
-
-[0, 1, 2, 3, 4, 5]
-[0, 2, 3, 1, 5, 4]
-...
-Note
 You can assume that there is at least one topological order in the graph.
 
-Challenge
+#### Clarification
+
+[Learn more about representation of graphs](http://www.lintcode.com/help/graph "Graph example")
+
+#### Example
+
+For graph as follow: 
+
+![picture](../../shared-files/images/topological-sorting.jpeg)
+
+
+The topological order can be:
+
+    [0, 1, 2, 3, 4, 5]
+    [0, 2, 3, 1, 5, 4]
+    ...
+
+#### Challenge
+
 Can you do it in both BFS and DFS?
-```
 
-## 题解1 - DFS and BFS
+## 题解1 - DFS
 
-图搜索相关的问题较为常见的解法是用 DFS，这里结合 BFS 进行求解，分为三步走：
+图搜索相关的问题较为常见的解法是用 DFS 或者 BFS，这里我们先分析一下拓扑排序的核心要求：对于有向边 `A -> B`, A 需要出现在 B 之前。用过 Linux/MAC 的人对包管理工具肯定不陌生，如 apt-get, yum, pacman, brew 等，安装一项软件时往往要先将其所有依赖的软件包安装完。这个需求实现起来大概可以分为如下几个步骤：
 
-1. 统计各定点的入度——只需统计节点在邻接列表中出现的次数即可知。
-2. 遍历图中各节点，找到入度为0的节点。
-3. 对入度为0的节点进行递归 DFS，将节点加入到最终返回结果中。
+1. 找出不依赖其他顶点的顶点，即入度为0，这一定是符合要求的某一个拓扑排序的第一个顶点。
+2. 在图中去掉入度为 0 的顶点，并重新计算一次各顶点的入度，递归调用邻居节点，迭代第一步。
+
+在具体实现中，考虑到每次取出某个顶点时重新计算其余顶点的入度存在较多重复计算，我们可以将计算量缩减到只计算入度有变化的部分顶点，即所取出顶点的邻居节点。
 
 ### C++
 
@@ -105,9 +130,65 @@ private:
 };
 ```
 
+### Java
+
+```java
+/**
+ * Definition for Directed graph.
+ * class DirectedGraphNode {
+ *     int label;
+ *     ArrayList<DirectedGraphNode> neighbors;
+ *     DirectedGraphNode(int x) { label = x; neighbors = new ArrayList<DirectedGraphNode>(); }
+ * };
+ */
+
+public class Solution {
+    /*
+     * @param graph: A list of Directed graph node
+     * @return: Any topological order for the given graph.
+     */
+    public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph) {
+        ArrayList<DirectedGraphNode> sorting = new ArrayList<>();
+        Map<DirectedGraphNode, Integer> inDegreeMap = getIndegreeMap(graph);
+        for (Map.Entry<DirectedGraphNode, Integer> degreeMap : inDegreeMap.entrySet()) {
+            if (degreeMap.getValue() == 0) {
+                dfs(inDegreeMap, degreeMap.getKey(), sorting);
+            }
+        }
+
+        return sorting;
+    }
+
+    private Map<DirectedGraphNode, Integer> getIndegreeMap(ArrayList<DirectedGraphNode> graph) {
+        Map<DirectedGraphNode, Integer> inDegreeMap = new HashMap<>();
+        for (DirectedGraphNode node : graph) {
+            inDegreeMap.putIfAbsent(node, 0);
+            for (DirectedGraphNode neighbor : node.neighbors) {
+                inDegreeMap.putIfAbsent(neighbor, 0);
+                inDegreeMap.put(neighbor, inDegreeMap.get(neighbor) + 1);
+            }
+        }
+
+        return inDegreeMap;
+    }
+
+    private void dfs(Map<DirectedGraphNode, Integer> inDegreeMap, DirectedGraphNode node, List<DirectedGraphNode> result) {
+
+        result.add(node);
+        inDegreeMap.put(node, inDegreeMap.get(node) - 1);
+        for (DirectedGraphNode neighbor : node.neighbors) {
+            inDegreeMap.put(neighbor, inDegreeMap.get(neighbor) - 1);
+            if (inDegreeMap.get(neighbor) == 0) {
+                dfs(inDegreeMap, neighbor, result);
+            }
+        }
+    }
+}
+```
+
 ### 源码分析
 
-C++中使用 unordered_map 可获得更高的性能，私有方法中使用引用传值。
+C++中使用 unordered_map 可获得更高的性能，私有方法中使用引用传值。在 `dfs` 递归的过程中，将节点加入到最终结果后需要对其入度减一，否则在上层循环邻居节点时会有重复。这里的 `dfs` 是伪 DFS, 因为这里只处理入度为 0 的节点。
 
 ### 复杂度分析
 
@@ -121,7 +202,7 @@ C++中使用 unordered_map 可获得更高的性能，私有方法中使用引�
 
 ## 题解2 - BFS
 
-拓扑排序除了可用 DFS 求解外，也可使用 BFS, 具体方法为：
+拓扑排序除了可用 DFS 求解外，也可使用 BFS, 相比题解1使用递归获取入度为 0 的节点，我们还可以通过队列获取非邻居节点的其他入度为 0 的节点。具体方法为：
 
 1. 获得图中各节点的入度。
 2. BFS 首先遍历求得入度数为0的节点，入队，便于下一次 BFS。
@@ -212,3 +293,4 @@ C++中在判断入度是否为0时将对 map 产生副作用，在求入度数�
 ## Reference
 
 - [Topological Sorting 参考程序 Java/C++/Python](http://www.jiuzhang.com/solutions/topological-sorting/)
+- [Topological Sorting - GeeksforGeeks](https://www.geeksforgeeks.org/topological-sorting/)
