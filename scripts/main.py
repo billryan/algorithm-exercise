@@ -40,14 +40,16 @@ if __name__ == '__main__':
     problem_md = ''
     problem_slug = ''
     xxxcode = None
+    convert_desc = True
     if raw_url.startswith('https://leetcode'):
         xxxcode = Leetcode()
-    elif raw_url.startswith('http://www.lintcode.com'):
+    elif raw_url.startswith('https://www.lintcode.com'):
         xxxcode = Lintcode()
+        convert_desc = False
     problem = xxxcode.get_problem_all(raw_url)
     problem_slug = slugify(problem['title'], separator="_")
-    problem_md = problem2md(problem)
-    
+    problem_md = problem2md(problem, convert_desc)
+
     if args.dir:
         post_dir = os.path.join(ROOTDIR, args.dir)
         post_fn = os.path.join(post_dir, problem_slug + '.md')

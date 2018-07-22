@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
-from pyquery import PyQuery as pq
+# from pyquery import PyQuery as pq
+import requests
 
 
 class Lintcode(object):
@@ -11,36 +12,52 @@ class Lintcode(object):
         self.driver = None
 
     def open_url(self, url):
-        self.url = url
         print('open URL: {}'.format(url))
-        self.driver = pq(url=url)
+        url = url.strip('description')
+        url = url.strip('/')
+        self.url = url
+        lintcode_unique_name = url.split('/')[-1]
+        req_url = 'https://www.lintcode.com/api/problems/detail/?unique_name_or_alias={}&_format=detail'.format(lintcode_unique_name)
+        self.driver = requests.get(req_url).json()
 
     def get_title(self):
         print('get title...')
-        title = self.driver('title').text()
+        title = self.driver['title']
         return title
 
     def get_description(self):
         print('get description...')
-        desc_pq = self.driver('#description')
-        desc_html = desc_pq('.m-t-lg:nth-child(1)').html()
-        example_html = desc_pq('.m-t-lg:nth-child(2)').html()
-        return desc_html + example_html
+        desc = self.driver['description']
+        notice = self.driver['notice']
+        clarification =  self.driver['clarification']
+        example = self.driver['example']
+        challenge = self.driver['challenge']
+        desc_full = desc
+        if notice:
+            desc_full += '\n\n#### Notice\n\n' + notice
+        if clarification:
+            desc_full += '\n\n#### Clarification\n\n' + clarification
+        if example:
+            desc_full += '\n\n#### Example\n\n' + example
+        if challenge:
+            desc_full += '\n\n#### Challenge\n\n' + challenge
+
+        return desc_full
 
     def get_difficulty(self):
         print('get difficulty...')
-        progress_bar = self.driver('.progress-bar')
-        original_title = progress_bar.attr('data-original-title')
-        splits = original_title.strip().split(' ')
-        difficulty = splits[1]
-        ac_rate = splits[-1]
+        mapping = {1: 'Easy', 2: 'Medium', 3: 'Hard'}
+        difficulty = mapping.get(self.driver['level'], 'unknown')
         return difficulty
 
     def get_tags(self):
         print('get tags...')
         tags = []
-        for i in self.driver('#tags.tags a'):
-            tags.append(i.text)
+        for i in self.driver['tags']:
+            if i['alias']:
+                tags.append(i['alias'])
+            else:
+                tags.append(i['name'])
         return tags
 
     def _get_related(self):
@@ -67,12 +84,12 @@ class Lintcode(object):
             'difficulty': difficulty,
             'tags': tags,
             'description': description,
-            'url': self._clean_url(url)
+            'url': self.url
         }
         return problem
 
 
 if __name__ == '__main__':
-    url = 'http://www.lintcode.com/en/problem/palindrome-number/'
-    leetcode = Lintcode()
-    print(leetcode.get_problem_all(url))
+    url = 'https://www.lintcode.com/problem/topological-sorting'
+    lintcode = Lintcode()
+    print(lintcode.get_problem_all(url))

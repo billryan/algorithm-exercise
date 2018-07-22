@@ -26,21 +26,21 @@ class YamlContent(object):
 def leet_lint_url(url):
     problem_slug = url.strip('/').split('/')[-1]
     leetcode_url = 'https://leetcode.com/problems/{}/'.format(problem_slug)
-    lintcode_url = 'http://www.lintcode.com/en/problem/{}/'.format(problem_slug)
+    lintcode_url = 'https://www.lintcode.com/problem/{}/'.format(problem_slug)
     urls = {}
     for url in [leetcode_url, lintcode_url]:
         response = requests.head(url)
         if response.status_code != 404:
             if url.startswith('https://leetcode'):
                 urls['leetcode'] = url
-            elif url.startswith('http://www.lintcode'):
+            elif url.startswith('https://www.lintcode'):
                 urls['lintcode'] = url
         else:
             print('cannot find url with: {}'.format(url))
     return urls
 
 
-def problem2md(problem):
+def problem2md(problem, convert_desc=True):
     metadata = {
         'title': problem['title'],
         'difficulty': problem['difficulty']
@@ -49,8 +49,10 @@ def problem2md(problem):
         metadata['tags'] = problem['tags']
 
     description = problem['description']
-    h = html2text.HTML2Text()
-    description_md = h.handle(description)
+    description_md = description
+    if convert_desc:
+        h = html2text.HTML2Text()
+        description_md = h.handle(description)
 
     lines = []
     lines.append('# ' + problem['title'] + '\n')
