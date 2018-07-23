@@ -71,8 +71,12 @@ class HuffmanCompression:
             self.coding = ''
             self.left = self.right = None
 
-        def __cmp__(self, other):
-            return self.val - other.val
+        def __lt__(self, other):
+            # return self.val - other.val
+            if self.val - other.val < 0:
+                return True
+            else:
+                return False
 
     def __init__(self, string):
         self.string = string
