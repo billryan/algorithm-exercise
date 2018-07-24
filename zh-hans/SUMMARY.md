@@ -111,6 +111,7 @@
    * [Ugly Number](math_and_bit_manipulation/ugly_number.md)
    * [Plus One](math_and_bit_manipulation/plus_one.md)
    * [Palindrome Number](math_and_bit_manipulation/palindrome_number.md)
+   * [Task Scheduler](math_and_bit_manipulation/task_scheduler.md)
 * [Linked List](linked_list/README.md)
    * [Remove Duplicates from Sorted List](linked_list/remove_duplicates_from_sorted_list.md)
    * [Remove Duplicates from Sorted List II](linked_list/remove_duplicates_from_sorted_list_ii.md)
