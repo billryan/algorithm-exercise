@@ -11,6 +11,7 @@ from slugify import slugify
 from util import par_dir, mkdir_p
 from leetcode import Leetcode
 from lintcode import Lintcode
+from summary import update_summary
 from ojhtml2markdown import problem2md
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
@@ -36,19 +37,20 @@ if __name__ == '__main__':
     print('Called with arguments: {}'.format(args))
 
     ROOTDIR = par_dir(BASEDIR)
-    raw_url = args.new
-    problem_md = ''
-    problem_slug = ''
-    xxxcode = None
-    convert_desc = True
-    if raw_url.startswith('https://leetcode'):
-        xxxcode = Leetcode()
-    elif raw_url.startswith('https://www.lintcode.com'):
-        xxxcode = Lintcode()
-        convert_desc = False
-    problem = xxxcode.get_problem_all(raw_url)
-    problem_slug = slugify(problem['title'], separator="_")
-    problem_md = problem2md(problem, convert_desc)
+    if args.new:
+        raw_url = args.new
+        problem_md = ''
+        problem_slug = ''
+        xxxcode = None
+        convert_desc = True
+        if raw_url.startswith('https://leetcode'):
+            xxxcode = Leetcode()
+        elif raw_url.startswith('https://www.lintcode.com'):
+            xxxcode = Lintcode()
+            convert_desc = False
+        problem = xxxcode.get_problem_all(raw_url)
+        problem_slug = slugify(problem['title'], separator="_")
+        problem_md = problem2md(problem, convert_desc)
 
     if args.dir:
         post_dir = os.path.join(ROOTDIR, args.dir)
