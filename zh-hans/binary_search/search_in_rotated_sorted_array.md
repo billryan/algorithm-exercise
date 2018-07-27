@@ -1,18 +1,35 @@
+---
+difficulty: Medium
+tags:
+- Binary Search
+- LinkedIn
+- Array
+- Facebook
+- Sorted Array
+- Uber
+- Microsoft
+- Bloomberg
+title: Search in Rotated Sorted Array
+---
+
 # Search in Rotated Sorted Array
 
-## Question
+## Problem
 
-- leetcode: [Search in Rotated Sorted Array | LeetCode OJ](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-- lintcode: [(62) Search in Rotated Sorted Array](http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/)
+### Metadata
 
-### Problem Statement
+- tags: Binary Search, LinkedIn, Array, Facebook, Sorted Array, Uber, Microsoft, Bloomberg
+- difficulty: Medium
+- source(leetcode): <https://leetcode.com/problems/search-in-rotated-sorted-array/>
+- source(lintcode): <https://www.lintcode.com/problem/search-in-rotated-sorted-array/>
+
+### Description
 
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 
 (i.e., `0 1 2 4 5 6 7` might become `4 5 6 7 0 1 2`).
 
-You are given a target value to search. If found in the array return its
-index, otherwise return -1.
+You are given a target value to search. If found in the array return its index, otherwise return -1.
 
 You may assume no duplicate exists in the array.
 
@@ -26,7 +43,7 @@ For `[4, 5, 1, 2, 3]` and `target=0`, return `-1`.
 
 O(logN) time
 
-## 题解 - 找到有序数组
+## 题解
 
 对于旋转数组的分析可使用画图的方法，如下图所示，升序数组经旋转后可能为如下两种形式。
 
