@@ -23,9 +23,9 @@
 
 ![Heapsort-example](../../shared-files/images/Heapsort-example.gif)
 
-## 堆排实现
+## 堆实现
 
-使用迭代实现也较为简单，注意索引值初始化和置位即可，尤其是记住最后一个索引的值 last，Java 的实现中 `pop()` 操作同时带有排序功能。
+使用迭代实现也较为简单，注意索引值初始化和置位即可，尤其是记住最后一个索引的值 last，Java 的实现中 `poll()` 操作同时带有排序功能。
 
 ### Python
 
@@ -79,6 +79,8 @@ class MaxHeap:
 ### Java
 
 ```java
+import java.util.*;
+
 /**
  * Created by billryan on 29/7/2018.
  */
@@ -130,10 +132,14 @@ public class MaxHeap {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("heap array: ");
-        for (int i : heap) {
-            sb.append(String.format("%d, ", i));
+        sb.append("maxHeap: [");
+        for (int i = 0; i < last - 1; i++) {
+            sb.append(String.format("%d, ", heap[i]));
         }
+        if (last > 0) {
+            sb.append(heap[last - 1]);
+        }
+        sb.append("]");
         return sb.toString();
     }
 
@@ -149,6 +155,23 @@ public class MaxHeap {
         for (int i = maxHeap.getLast() - 1; i >= 0; i--) {
             System.out.println("pop max heap value: " + maxHeap.pop());
             System.out.println(maxHeap);
+        }
+
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(10, Collections.reverseOrder());
+        for (int i : array) {
+            pq.offer(i);
+            System.out.println(pq);
+        }
+
+        // Top K problem
+        int k = 5;
+        for (int i = 0; i < k; i++) {
+            Integer topk = pq.poll();
+            if (topk != null) {
+                System.out.println("top " + (i + 1) + ": " + topk);
+            } else {
+                System.out.println("poll null value!!!");
+            }
         }
     }
 }
