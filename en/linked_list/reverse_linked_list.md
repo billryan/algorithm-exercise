@@ -2,7 +2,7 @@
 
 ## Question
 
-- leetcode: [Reverse Linked List | LeetCode OJ](https://leetcode.com/problems/reverse-linked-list/)
+- leetcode: [(206) Reverse Linked List | LeetCode OJ](https://leetcode.com/problems/reverse-linked-list/)
 - lintcode: [(35) Reverse Linked List](http://www.lintcode.com/en/problem/reverse-linked-list/)
 
 ```
@@ -19,7 +19,7 @@ Reverse it in-place and in one-pass
 
 It would be much easier to reverse an array than a linked list, since array supports random access with index, while singly linked list can ONLY be operated through its head node. So an approach without index is required.
 
-Think about how can '1->2->3' become '3->2->1'. Starting from '1', we should turn '1->2' into '2->1', then '2->3' into '3->2', and so on. The key is how to swap two adjacent nodes.
+Think about how '1->2->3' can become '3->2->1'. Starting from '1', we should turn '1->2' into '2->1', then '2->3' into '3->2', and so on. The key is how to swap two adjacent nodes.
 
 ```
 temp = head -> next;
@@ -128,7 +128,7 @@ Already covered in the solution part. One more word, the assignment of `prev` is
 
 ### Complexity
 
-Traversing the linked list, so the time complexity is $$O(n)$$. $$O(1)$$ auxiliary space complexity.
+Traversing the linked list leads to ***O(n)*** time complexity, and auxiliary space complexity is ***O(1)***.
 
 ## Solution2 - Recursively
 
@@ -136,9 +136,9 @@ Three cases when the recursion ceases:
 
 1. If given linked list is null, just return.
 2. If given linked list has only one node, return that node.
-3. If given linked list has at least two nodes, pick out the head node and regard the following nodes as a whole entity, swap them, then recurse that entity.
+3. If given linked list has at least two nodes, pick out the head node and regard the following nodes as a sub-linked-list, swap them, then recurse that sub-linked-list.
 
-Be careful when swapping the head node (refer as `Node0`) and head of the following nodes entity (refer as 'Node1' ): First, swap `Node0` and `Node1`; Second, assign `null` to `Node0`'s next (or it would fall into infinite loop, and tail of result list won't point to `null`).
+Be careful when swapping the head node (refer as `nodeY`) and head of the sub-linked-list (refer as 'nodeX' ): First, swap `nodeY` and `nodeX`; Second, assign `null` to `nodeY->next` (or it would fall into infinite loop, and tail of result list won't point to `null`).
 
 ### Python
 

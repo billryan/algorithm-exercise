@@ -1,6 +1,6 @@
 # Linked List
 
-This section includes common operations on linked list, such as deletion, insertion, and combination.
+This section includes common operations on linked list, such as deletion, insertion, and merging.
 
 Frequently made mistakes:
 
