@@ -138,7 +138,7 @@ Three cases when the recursion ceases:
 2. If given linked list has only one node, return that node.
 3. If given linked list has at least two nodes, pick out the head node and regard the following nodes as a sub-linked-list, swap them, then recurse that sub-linked-list.
 
-Be careful when swapping the head node (refer as `nodeY`) and head of the sub-linked-list (refer as 'nodeX' ): First, swap `nodeY` and `nodeX`; Second, assign `null` to `nodeY->next` (or it would fall into infinite loop, and tail of result list won't point to `null`).
+Be careful when swapping the head node (refer as `nodeY`) and head of the sub-linked-list (refer as `nodeX` ): First, swap `nodeY` and `nodeX`; Second, assign `null` to `nodeY->next` (or it would fall into infinite loop, and tail of result list won't point to `null`).
 
 ### Python
 
@@ -249,6 +249,10 @@ public class Solution {
 case1 and case2 can be combined.What case3 returns is head of reversed list, which means it is exact the same Node (tail of origin linked list) through the recursion.
 
 ### Complexity
+
+The depth of recursion: ***O(n)***. Time Complexity: ***O(N)***. Space Complexity (without considering the recursion stack): ***O(1)***.
+
+### Reference
 
 - [全面分析再动手的习惯：链表的反转问题（递归和非递归方式） - 木棉和木槿 - 博客园](http://www.cnblogs.com/kubixuesheng/p/4394509.html)
 - [data structures - Reversing a linked list in Java, recursively - Stack Overflow](http://stackoverflow.com/questions/354875/reversing-a-linked-list-in-java-recursively)
