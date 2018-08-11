@@ -114,14 +114,11 @@ private:
 ```java
 public class Solution {
     public String countAndSay(int n) {
-        if (n <= 0) return "";
-
+        assert n > 0;
         StringBuilder currSeq = new StringBuilder("1");
-
         for (int i = 1; i < n; i++) {
             currSeq = getNextSeq(currSeq);
         }
-
         return currSeq.toString();
     }
 
@@ -132,8 +129,7 @@ public class Solution {
             if (i + 1 < seq.length() && seq.charAt(i) == seq.charAt(i + 1)) {
                 cnt++;
             } else {
-                nextSeq.append(cnt);
-                nextSeq.append(seq.charAt(i));
+                nextSeq.append(cnt).append(seq.charAt(i));
                 cnt = 1;
             }
         }
@@ -150,7 +146,7 @@ public class Solution {
 
 略，与选用的数据结构有关。
 
-### 题解2 - 递归
+## 题解2 - 递归
 
 注意递归终止条件即可，核心过程差不多。
 
@@ -213,7 +209,7 @@ public:
 ```java
 public class Solution {
     public String countAndSay(int n) {
-        if (n <= 0) return "";
+        assert n > 0;
         if (n == 1) return "1";
 
         String seq = countAndSay(n - 1);
@@ -223,8 +219,7 @@ public class Solution {
             if (i + 1 < seq.length() && seq.charAt(i) == seq.charAt(i + 1)) {
                 cnt++;
             } else {
-                nextSeq.append(cnt);
-                nextSeq.append(seq.charAt(i));
+                nextSeq.append(cnt).append(seq.charAt(i));
                 cnt = 1;
             }
         }
@@ -236,7 +231,7 @@ public class Solution {
 
 ### 源码分析
 
-略
+判断相邻字符是否相同时需要判断索引是否越界。
 
 ### 复杂度分析
 

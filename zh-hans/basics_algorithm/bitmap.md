@@ -1,6 +1,6 @@
 # Bitmap
 
-最开始接触 bitmap 是在《编程珠玑》这本书上，书中所述的方法有点简单粗暴，不过思想倒是挺好——从信息论的角度来解释就是信息压缩了。即将原来32位表示一个 int 变为一位表示一个 int. 从空间的角度来说就是巨大的节省了(1/32)。可能的应用有**大数据排序/查找（非负整数）**。
+最开始接触 bitmap 是在《编程珠玑》这本书上，书中所述的方法有点简单粗暴，不过思想倒是挺好——从信息论的角度来解释就是信息压缩了。即将原来32位表示一个 int 变为一位表示一个 int. 从空间的角度来说就是巨大的节省了(1/32)。可能的应用有**大数据排序/查找（非负整数）**。核心思想为根据最大非负整数确定位数，对应的位依次排序。
 
 C++ 中有`bitset`容器，其他语言可用类似方法实现。
 
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 {
         const int BIT_LEN = sizeof(int) * 8;
         const unsigned int N = 1 << (BIT_LEN - 1);
-        unsigned int *bits = (unsigned int *)calloc(N, sizeof(int));
+        unsigned int *bits = (unsigned int *)calloc(N / BIT_LEN, sizeof(int));
         for (unsigned int i = 0; i < N; i++) {
                 if (i % 10000001 == 0) setbit(bits, i, BIT_LEN);
         }

@@ -58,7 +58,7 @@ class SimpleCompression:
 
     def uncompress(self, bits):
         string = ''
-        for i in xrange(0, len(bits), self.bit_len):
+        for i in range(0, len(bits), self.bit_len):
             string += self.b2s[bits[i:i + self.bit_len]]
         return string
 
@@ -71,8 +71,14 @@ class HuffmanCompression:
             self.coding = ''
             self.left = self.right = None
 
-        def __cmp__(self, other):
-            return self.val - other.val
+        def __eq__(self, other):
+            return self.val == other.val
+
+        def __lt__(self, other):
+            return self.val < other.val
+
+        def __gt__(self, other):
+            return self.val > other.val
 
     def __init__(self, string):
         self.string = string
@@ -168,7 +174,5 @@ Huffman Compression-compress rate: 45%
 
 简单压缩： 根据字符串出现的字符，将ASCII替换成更短的表示形式
 霍夫曼压缩： 根据字符串出现频率，构建Trie树， 对每个tree node进行定义，使得频率越高的字符离root节点越近
-
-
 
 有关霍夫曼编码的具体步骤可参考 [Huffman 编码压缩算法 | 酷 壳 - CoolShell.cn](http://coolshell.cn/articles/7459.html) 和 [霍夫曼编码 - 维基百科，自由的百科全书](http://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)，清晰易懂。

@@ -1,120 +1,76 @@
+sudo: required
+
 language: node_js
 
 node_js:
-  - "stable"
+  - stable
 
 before_install:
-  - echo "add id_rsa private key"
-  - openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv
-    -in id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
-  - eval "$(ssh-agent -s)"
-  - ssh-add ~/.ssh/id_rsa
-  - cp ssh_config ~/.ssh/config
-  - git config --global user.name "rhett"
-  - git config --global user.email yuanbin2014@gmail.com
-  # update first
-  - sudo apt-get update -qq
-  # Install Gitbook
   - npm install gitbook-cli -g
   - npm install svgexport -g
+  - gitbook fetch 3.2.3
+  - sudo apt-get update -qq
   # install calibre latest version
   - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
-before_script:
-  - cd ~
-  - wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
-  - tar xfz qiniu-*.tar.gz
-  - git clone https://github.com/billryan/algorithm-exercise.git ~/algorithm-exercise
-  - echo "install gitbook plugins..."
-  - cd ~/algorithm-exercise/
-  - cp LANGS.md LANGS_bak.md
+install:
   - gitbook install
-  - cp ~/algorithm-exercise/scripts/rename_ebook.sh ~/
-  - cp ~/algorithm-exercise/conf/qiniu_sync.json ~/
-  - sed -i "s/AccessKey/$QAK/g" ~/qiniu_sync.json
-  - sed -i "s/SecretKey/$QSK/g" ~/qiniu_sync.json
-  - mkdir -p ~/upload
-  - mkdir -p ~/raw_fonts
+
+before_script:
+  - cp LANGS.md LANGS.md.bak
   - mkdir -p ~/.fonts/noto
-  - mkdir -p ~/.fonts/arial
+  - mkdir -p ~/raw_fonts/{NotoSans-unhinted,NotoSansCJKsc-hinted,NotoSansCJKtc-hinted}
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
+  - unzip ~/raw_fonts/NotoSans-unhinted.zip -d ~/raw_fonts/NotoSans-unhinted
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKsc-hinted.zip
+  - unzip ~/raw_fonts/NotoSansCJKsc-hinted.zip -d ~/raw_fonts/NotoSansCJKsc-hinted
+  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip
+  - unzip ~/raw_fonts/NotoSansCJKtc-hinted.zip -d ~/raw_fonts/NotoSansCJKtc-hinted
 
 script:
-  - echo "build English ebook..."
-  # - wget -P ~/raw_fonts https://noto-website.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
-  # - wget -P ~/raw_fonts https://github.com/billryan/algorithm-exercise/files/277714/migu-1m-20150712.zip
-  - wget -P ~/raw_fonts https://github.com/billryan/algorithm-exercise/files/279471/arial.zip
-  - echo "install fonts Noto Sans CJK SC for Simplified Chinese"
-  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKsc-hinted.zip
-  - cd ~/raw_fonts
-  # - unzip -o NotoSans-unhinted.zip
-  # - unzip -o migu-1m-20150712.zip
-  - unzip -o arial.zip
-  - mv -t ~/.fonts/arial Arial*ttf
-  - unzip -o NotoSansCJKsc-hinted.zip
-  # discard other fonts since fontconfig 2.11 cannot identify it
-  - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
+  - sed '/\(en\/\)/! d' LANGS.md.bak > LANGS.md
+  - mv -t ~/.fonts/noto ~/raw_fonts/NotoSans-unhinted/*-Regular.ttf ~/raw_fonts/NotoSans-unhinted/*-Bold.ttf ~/raw_fonts/NotoSans-unhinted/*-Black.ttf
   - sudo fc-cache -f -v
-  - cd ~/algorithm-exercise/
-  - sed '/\(en\/\)/! d' LANGS_bak.md > LANGS.md
-  #- gitbook build ./
-  - gitbook pdf ./
-  - gitbook epub ./
-  - gitbook mobi ./
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
+  - rm ~/.fonts/noto/*.ttf
 
-  - echo "build Simplified Chinese ebook"
-  - sed '/\(zh-hans\/\)/! d' LANGS_bak.md > LANGS.md
-  - cd ~/algorithm-exercise/
-  #- gitbook build ./
-  - gitbook pdf ./
-  - gitbook epub ./
-  - gitbook mobi ./
-  # clear CJK fonts(CJK fonts suffer in fontconfig :(
+  - sed '/\(zh-hans\/\)/! d' LANGS.md.bak > LANGS.md
+  - mv -t ~/.fonts/noto ~/raw_fonts/NotoSansCJKsc-hinted/*-DemiLight.otf ~/raw_fonts/NotoSansCJKsc-hinted/*-Bold.otf ~/raw_fonts/NotoSansCJKsc-hinted/*-Black.otf
+  - sudo fc-cache -f -v
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
   - rm ~/.fonts/noto/*.otf
 
-  - echo "build Traditional Chinese ebook"
-  - sed '/\(zh-tw\/\)/! d' LANGS_bak.md > LANGS.md
-  - echo "install fonts Noto Sans CJK TC for Traditional Chinese"
-  - wget -P ~/raw_fonts https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip
-  - cd ~/raw_fonts
-  - unzip -o NotoSansCJKtc-hinted.zip
-  - mv -t ~/.fonts/noto *-DemiLight.otf *-Bold.otf *-Black.otf
+  - sed '/\(zh-tw\/\)/! d' LANGS.md.bak > LANGS.md
+  - mv -t ~/.fonts/noto ~/raw_fonts/NotoSansCJKtc-hinted/*-DemiLight.otf ~/raw_fonts/NotoSansCJKtc-hinted/*-Bold.otf ~/raw_fonts/NotoSansCJKtc-hinted/*-Black.otf
   - sudo fc-cache -f -v
-  - cd ~/algorithm-exercise/
-  #- gitbook build ./
-  - gitbook pdf ./
-  - gitbook epub ./
-  - gitbook mobi ./
+  - gitbook pdf .
+  - gitbook epub .
+  - gitbook mobi .
+
+  - cp LANGS.md.bak LANGS.md
+  - gitbook build .
+
+before_deploy:
+  - tar czvf book_html.tar.gz _book/
+
+deploy:
+  - provider: pages
+    skip-cleanup: true
+    github-token:
+      secure: B/dqY0sC9I0Uu5o3HVHouX/mfLTUH/dt16IsBdm+sZQW+/YeTUTGwpx+Vl5lXpMhUoxrh60Qxt0KbnqvPqAxsPXGMH2Mhl1E5lgvMYViOGQyx9JJuuba+GWOzD+r2+XOUsqBzOCUhvC7iZbuGiWYvV2+4noAmAoKa1pO1j2yxiI=
+    keep-history: false
+    local-dir: _book
+    on:
+      branch: master
+    target-branch: gh-pages
 
 after_success:
-  - echo "rename ebook"
-  - cd ~/algorithm-exercise
-  - mv *.pdf *.epub *.mobi ~/upload
-  - cd ~/upload
-  - sh ~/rename_ebook.sh
   - ls -lh
-  # upload to GitHub and Qiniu
-  - cd ~/algorithm-exercise
-  - git remote add github_bak git@github.com:sign4bill/algorithm-exercise.git
-  #- git push -u github_bak HEAD:master --force
-  - git checkout --orphan deploy
-  - mkdir -p {epub,pdf,mobi}
-  - cp ~/upload/*.epub epub
-  - cp ~/upload/*.pdf pdf
-  - cp ~/upload/*.mobi mobi
-  - git add epub pdf mobi
-  - git commit -m "Updated $(date)"
-  - git push -u github_bak deploy --force
-  - echo "upload to Qiniu CDN for China Mainland"
-  - ~/qrsync ~/qiniu_sync.json
 
-# blacklist
-branches:
-  except:
-    - deploy
-
-# whitelist
 branches:
   only:
-    - master
-    - test
+  - master

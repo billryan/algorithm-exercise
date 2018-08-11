@@ -2,6 +2,7 @@
 
 ## Question
 
+- leetcode: [Triangle | LeetCode OJ](https://leetcode.com/problems/triangle/)
 - lintcode: [(109) Triangle](http://www.lintcode.com/en/problem/triangle/)
 
 ```

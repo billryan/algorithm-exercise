@@ -1,29 +1,27 @@
 # Valid Palindrome
 
-- tags: [palindrome]
+Tags: Two Pointers, String, Easy
 
 ## Question
 
-- leetcode: [Valid Palindrome | LeetCode OJ](https://leetcode.com/problems/valid-palindrome/)
-- lintcode: [(415) Valid Palindrome](http://www.lintcode.com/en/problem/valid-palindrome/)
+- leetcode: [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+- lintcode: [Valid Palindrome](http://www.lintcode.com/en/problem/valid-palindrome/)
 
-```
-Given a string, determine if it is a palindrome,
-considering only alphanumeric characters and ignoring cases.
+### Problem Statement
 
-Example
-"A man, a plan, a canal: Panama" is a palindrome.
+Given a string, determine if it is a palindrome, considering only alphanumeric
+characters and ignoring cases.
 
-"race a car" is not a palindrome.
-Note
-Have you consider that the string might be empty?
-This is a good question to ask during an interview.
-For the purpose of this problem,
-we define empty string as valid palindrome.
+For example,  
+`"A man, a plan, a canal: Panama"` is a palindrome.  
+`"race a car"` is _not_ a palindrome.
 
-Challenge
-O(n) time without extra memory.
-```
+**Note:**  
+
+Have you consider that the string might be empty? This is a good question to
+ask during an interview.
+
+For the purpose of this problem, we define empty string as valid palindrome.
 
 ## 题解
 
@@ -102,26 +100,21 @@ public:
 
 ```java
 public class Solution {
-    /**
-     * @param s A string
-     * @return Whether the string is a valid palindrome
-     */
     public boolean isPalindrome(String s) {
-        if (s == null || s.isEmpty()) return true;
-
+        if (s == null || s.trim().isEmpty()) {
+            return true;
+        }
+        
         int l = 0, r = s.length() - 1;
         while (l < r) {
-            // find left alphanumeric character
-            if (!Character.isLetterOrDigit(s.charAt(l))) {
+            if(!Character.isLetterOrDigit(s.charAt(l))) {
                 l++;
                 continue;
             }
-            // find right alphanumeric character
-            if (!Character.isLetterOrDigit(s.charAt(r))) {
+            if(!Character.isLetterOrDigit(s.charAt(r))) {
                 r--;
                 continue;
             }
-            // case insensitive compare
             if (Character.toLowerCase(s.charAt(l)) == Character.toLowerCase(s.charAt(r))) {
                 l++;
                 r--;
@@ -142,7 +135,7 @@ public class Solution {
 1. 找到最左边和最右边的第一个合法字符(字母或者字符)
 2. 一致转换为小写进行比较
 
-字符的判断尽量使用语言提供的 API
+字符的判断尽量使用语言提供的 API, while 循环内部使用 if 而不是 while 可将 `l < r` 的逻辑移至一处。
 
 ### 复杂度分析
 

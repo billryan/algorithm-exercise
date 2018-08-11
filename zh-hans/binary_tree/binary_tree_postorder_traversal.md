@@ -1,32 +1,32 @@
 # Binary Tree Postorder Traversal
 
+Tags: Tree, Stack, Hard
+
 ## Question
 
-- leetcode: [Binary Tree Postorder Traversal | LeetCode OJ](https://leetcode.com/problems/binary-tree-postorder-traversal/)
-- lintcode: [(68) Binary Tree Postorder Traversal](http://www.lintcode.com/en/problem/binary-tree-postorder-traversal/)
+- leetcode: [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+- lintcode: [Binary Tree Postorder Traversal](http://www.lintcode.com/en/problem/binary-tree-postorder-traversal/)
 
 ### Problem Statement
 
 Given a binary tree, return the _postorder_ traversal of its nodes' values.
 
-#### Example
+For example:  
+Given binary tree `{1,#,2,3}`,  
 
-Given binary tree `{1,#,2,3}`,
-
-
-
+    
+    
+    
        1
         \
          2
         /
        3
-
+    
 
 return `[3,2,1]`.
 
-#### Challenge
-
-Can you do it without recursion?
+**Note:** Recursive solution is trivial, could you do it iteratively?
 
 
 ## 题解1 - 递归
@@ -119,6 +119,32 @@ public class Solution {
             result.add(root.val);
         }
 
+        return result;
+    }
+}
+```
+
+### Java - Traversal
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    private List<Integer> result = new ArrayList<Integer>();
+
+    public List<Integer> postorderTraversal(TreeNode root) {
+        if (root != null) {
+            postorderTraversal(root.left);
+            postorderTraversal(root.right);
+            result.add(root.val);
+        }
         return result;
     }
 }
@@ -238,10 +264,9 @@ public:
 public class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
-        if (root == null) return result;
-
         Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
-        stack.push(root);
+
+        if (root != null) stack.push(root);
         TreeNode prev = null;
         while (!stack.isEmpty()) {
             TreeNode curr = stack.peek();
@@ -250,10 +275,9 @@ public class Solution {
             if (prev != null && (curr.left == prev || curr.right == prev)) {
                 childVisited = true;
             }
-
             if (noChild || childVisited) {
+                curr = stack.pop();
                 result.add(curr.val);
-                stack.pop();
                 prev = curr;
             } else {
                 if (curr.right != null) stack.push(curr.right);
@@ -268,7 +292,7 @@ public class Solution {
 
 ### 源码分析
 
-遍历顺序为『左右根』，判断根节点是否应该从栈中剔除有两种条件，一为无子节点，二为子节点已遍历过。判断子节点是否遍历过需要排除`prev == null` 的情况，因为 prev 初始化为 null.
+遍历顺序为『左右根』，判断根节点是否应该从栈中剔除有两种条件，一为无子节点，二为子节点已遍历过。判断子节点是否遍历过需要排除`prev == null` 的情况，因为 prev 初始化为 null. Java 中在 while 内部新建 curr 变量而不是复用 root 有一定性能提升，不知是不是 JVM 运行时优化导致的。
 
 **将递归写成迭代的难点在于如何在迭代中体现递归本质及边界条件的确立，可使用简单示例和纸上画出栈调用图辅助分析。**
 
@@ -326,35 +350,28 @@ public:
 
 ```java
 /**
- * Definition of TreeNode:
+ * Definition for a binary tree node.
  * public class TreeNode {
- *     public int val;
- *     public TreeNode left, right;
- *     public TreeNode(int val) {
- *         this.val = val;
- *         this.left = this.right = null;
- *     }
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
  * }
  */
 public class Solution {
-    /**
-     * @param root: The root of binary tree.
-     * @return: Postorder in ArrayList which contains node values.
-     */
-    public ArrayList<Integer> postorderTraversal(TreeNode root) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        if (root == null) return result;
-
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
         Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            result.add(node.val);
-            if (node.left != null) stack.push(node.left);
-            if (node.right != null) stack.push(node.right);
-        }
-        Collections.reverse(result);
+        if (root != null) stack.push(root);
 
+        while (!stack.isEmpty()) {
+            TreeNode curr = stack.pop();
+            result.add(curr.val);
+            if (curr.left != null) stack.push(curr.left);
+            if (curr.right != null) stack.push(curr.right);
+        }
+
+        Collections.reverse(result);
         return result;
     }
 }
