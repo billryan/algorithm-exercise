@@ -4,8 +4,8 @@ Tags: Quick Sort, Divide and Conquer, Medium
 
 ## Question
 
-- leetcode: [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-- lintcode: [Kth Largest Element](http://www.lintcode.com/en/problem/kth-largest-element/)
+- leetcode: [(215) Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- lintcode: [(5) Kth Largest Element](http://www.lintcode.com/en/problem/kth-largest-element/)
 
 ### Problem Statement
 
@@ -23,9 +23,11 @@ You may assume k is always valid, 1 ≤ k ≤ array's length.
 Special thanks to [@mithmatt](https://leetcode.com/discuss/user/mithmatt) for
 adding this problem and creating all test cases.
 
-## 题解
+## Solution
 
-找第 K 大数，基于比较的排序的方法时间复杂度为 $$O(n)$$, 数组元素无区间限定，故无法使用线性排序。由于只是需要找第 K 大数，这种类型的题通常需要使用快排的思想解决。[Quick Sort](http://algorithm.yuanbin.me/zh-hans/basics_sorting/quick_sort.html) 总结了一些经典模板。这里比较基准值最后的位置的索引值和 K 的大小关系即可递归求解。
+Trail and error: Comparison-based sorting algorithms don't work because they incur ***O(n2)*** time complexity. Neither does Radix Sort which requires the elements to be in a certain range. In fact, Quick Sort is the answer to `kth largest` problems ([Here](http://algorithm.yuanbin.me/zh-hans/basics_sorting/quick_sort.html) are code templates of quick sort).
+
+By quick sorting, we get the final index of a pivot. And by comparing that index with `K`, we decide which side (the greater or the smaller) of the pivot to recurse on.
 
 ### Java
 
@@ -64,18 +66,21 @@ public class Solution {
     }
 
     private void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
+        int tmp = nums[i]; nums[i] = nums[j]; nums[j] = tmp;
     }
 }
 ```
 
-### 源码分析
+### Src Code Analysis
 
-递归的终止条件有两个，一个是左边界的值等于右边界(实际中其实不会有 l > u), 另一个则是索引值 `m + 1 == k`.
-这里找的是第 K 大数，故为降序排列，for 循环中使用`nums[i] > nums[left]` 而不是小于号。
+Two cases when the recursion ceases:
+a. left bound equals right bound;
+b. final index of pivot equals K.
 
-### 复杂度分析
+Since 'Kth **largest**' is wanted, numbers greater than pivot are placed to the left and numbers smaller to the right, which is a little different with typical quick sort code.
 
-最坏情况下需要遍历 $$ n + n - 1 + ... + 1 = O(n^2)$$, 平均情况下 $$n + n/2 + n/4 + ... + 1 = O(2n)=O(n)$$. 故平均情况时间复杂度为 $$O(n)$$. 交换数组的值时使用了额外空间，空间复杂度 $$O(1)$$.
+### Complexity
+
+Time Complexity. Worse case (when the array is sorted): ***n + n - 1 + ... + 1 = O(n^2)*** . Amortized complexity: ***n + n/2 + n/4 + ... + 1 = O(2n)=O(n)*** .
+
+Space complexity is ***O(1)*** .
