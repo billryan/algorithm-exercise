@@ -4,11 +4,11 @@
 [![Slack Status](https://slackin4ds-algo.herokuapp.com/badge.svg)](https://slackin4ds-algo.herokuapp.com/)
 [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://ds-algo.slack.com/)
 
-This book is some notes on learning data structure and algorithm. It was written in Simplified Chinese but other languages such as English and Traditional Chinese are work in progress.
+This book is notes about learning data structure and algorithm. It was written in Simplified Chinese but other languages such as English and Traditional Chinese are also working in progress. Contributions are welcome!
 
-- [English](https://algorithm.yuanbin.me/en/), seldom updated
+- [English](https://algorithm.yuanbin.me/en/), rarely updated
 - [简体中文](https://algorithm.yuanbin.me/zh-hans/), frequently updated
-- [繁體中文](https://algorithm.yuanbin.me/zh-tw/), seldom updated
+- [繁體中文](https://algorithm.yuanbin.me/zh-tw/), rarely updated
 
 ## Introduction
 
