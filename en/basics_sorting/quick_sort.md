@@ -2,9 +2,9 @@
 
 In essence, quick sort is an application of `divide and conquer` strategy. There are usually three steps:
 
-Step1. Pick a pivot -- a random element.
-Step2. Partition -- put the elements smaller than pivot to its left and greater ones to its right.
-Step3. Recurse -- apply above steps until the whole sequence is sorted.
+1. Pick a pivot -- a random element.
+2. Partition -- put the elements smaller than pivot to its left and greater ones to its right.
+3. Recurse -- apply above steps until the whole sequence is sorted.
 
 ## out-in-place implementation
 
@@ -286,7 +286,7 @@ The output:
 Having analyzed three implementations of quick sort, we may grasp one key difference between *quick sort* and *merge sort* :
 
 1. Merge sort divides the original array into two sub-arrays, and merges the sorted sub-arrays to form a totally ordered one. In this case, recursion happens before processing(merging) the whole array.
-2. Quick sort divides the original array into two sub-arrays, and then sort them. The whole array is ordered as soon as the sub-arrays get sorted. In this case, recursion happens after processing(partition) the whole array.
+2. Quick sort divides the original array into two sub-arrays, and then sort them. The whole array is sorted as soon as the sub-arrays get sorted. In this case, recursion happens after processing(partition) the whole array.
 
 Robert Sedgewick's presentation on [quick sort](http://algs4.cs.princeton.edu/23quicksort/) is strongly recommended.
 
