@@ -29,7 +29,7 @@ Trail and error: Comparison-based sorting algorithms don't work because they inc
 
 By quick sorting, we get the final index of a pivot. And by comparing that index with `K`, we decide which side (the greater or the smaller) of the pivot to recurse on.
 
-### Java
+### Java - Recursion
 
 ```java
 public class Solution {
@@ -78,6 +78,62 @@ a. left bound equals right bound;
 b. final index of pivot equals K.
 
 Since 'Kth **largest**' is wanted, numbers greater than pivot are placed to the left and numbers smaller to the right, which is a little different with typical quick sort code.
+
+### Java - Iteration
+
+Recursive code is easier to read than to write, and it demands some experience and skill. Here is an iterative implementation.
+
+```
+class Solution {
+    public int findKthLargest(int[] A, int k) {
+        if (A == null || A.length == 0 || k < 0 || k > A.length) {
+            return -1;
+        }
+
+        int lo = 0, hi = A.length - 1;
+        while (lo <= hi) {
+            int idx = partition(A, lo, hi);
+            if (idx == k - 1) {
+                return A[idx];
+            } else if (idx < k - 1) {
+                lo = idx + 1;
+            } else {
+                hi = idx - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private int partition(int[] A, int lo, int hi) {
+        int pivot = A[lo], i = lo + 1, j = hi;
+        while (i <= j) {
+            while (i <= j && A[i] > pivot) {
+                i++;
+            }
+            while (i <= j && A[j] <= pivot) {
+                j--;
+            }
+            if (i < j) {
+                swap(A, i, j);
+            }
+        }
+        swap(A, lo, j);
+
+        return j;
+    }
+
+    private void swap(int[] A, int i, int j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+    }
+}
+```
+
+### Src Code Analysis
+
+The `while` loop in `findKthLargest` is very much like that in `binary search`. And `partition` method is just the same as quick sort partition.
 
 ### Complexity
 

@@ -286,7 +286,7 @@ The output:
 Having analyzed three implementations of quick sort, we may grasp one key difference between *quick sort* and *merge sort* :
 
 1. Merge sort divides the original array into two sub-arrays, and merges the sorted sub-arrays to form a totally ordered one. In this case, recursion happens before processing(merging) the whole array.
-2. Quick sort divides the original array into two sub-arrays, and then sort them. The whole array is sorted as soon as the sub-arrays get sorted. In this case, recursion happens after processing(partition) the whole array.
+2. Quick sort divides the original array into two sub-arrays, and then sort them. The whole array is ordered as soon as the sub-arrays get sorted. In this case, recursion happens after processing(partition) the whole array.
 
 Robert Sedgewick's presentation on [quick sort](http://algs4.cs.princeton.edu/23quicksort/) is strongly recommended.
 
