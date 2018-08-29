@@ -8,6 +8,6 @@ Frequently made mistakes:
 - Not recording head node before traversing
 - returning incorrect pointer to node
 
-The image below serves as a summarization.
+The image below serves as a summarization of problems in this section.
 
 ![Linked List](../../shared-files/images/linked_list_summary_en.png)

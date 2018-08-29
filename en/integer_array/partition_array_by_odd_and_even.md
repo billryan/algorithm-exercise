@@ -72,4 +72,4 @@ Be careful not to forget `left < right` in while loop condition.
 
 ### Complexity
 
-To traverse the array, time complexity is $$O(n)$$. And maintain two pointers mean $$O(1)$$ space complexity.
+To traverse the array, time complexity is $$O(n)$$. And maintaining two pointers means $$O(1)$$ space complexity.

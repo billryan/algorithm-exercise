@@ -2,9 +2,9 @@
 
 In essence, quick sort is an application of `divide and conquer` strategy. There are usually three steps:
 
-Step1. Pick a pivot -- a random element.
-Step2. Partition -- put the elements smaller than pivot to its left and greater ones to its right.
-Step3. Recurse -- apply above steps until the whole sequence is sorted.
+1. Pick a pivot -- a random element.
+2. Partition -- put the elements smaller than pivot to its left and greater ones to its right.
+3. Recurse -- apply above steps until the whole sequence is sorted.
 
 ## out-in-place implementation
 

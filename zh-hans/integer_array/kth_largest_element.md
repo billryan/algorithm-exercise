@@ -27,7 +27,7 @@ adding this problem and creating all test cases.
 
 找第 K 大数，基于比较的排序的方法时间复杂度为 $$O(n)$$, 数组元素无区间限定，故无法使用线性排序。由于只是需要找第 K 大数，这种类型的题通常需要使用快排的思想解决。[Quick Sort](http://algorithm.yuanbin.me/zh-hans/basics_sorting/quick_sort.html) 总结了一些经典模板。这里比较基准值最后的位置的索引值和 K 的大小关系即可递归求解。
 
-### Java
+### Java - 递归求解
 
 ```java
 public class Solution {
@@ -75,6 +75,62 @@ public class Solution {
 
 递归的终止条件有两个，一个是左边界的值等于右边界(实际中其实不会有 l > u), 另一个则是索引值 `m + 1 == k`.
 这里找的是第 K 大数，故为降序排列，for 循环中使用`nums[i] > nums[left]` 而不是小于号。
+
+### Java - 迭代求解
+
+递归代码看上去顺理成章，实际上构造递归方法的参数、返回值是需要经验技巧的，自己写起来就会发现机关重重，一次性做到 bug-free 并不容易。下面是一个迭代版的实现。
+
+```
+class Solution {
+    public int findKthLargest(int[] A, int k) {
+        if (A == null || A.length == 0 || k < 0 || k > A.length) {
+            return -1;
+        }
+
+        int lo = 0, hi = A.length - 1;
+        while (lo <= hi) {
+            int idx = partition(A, lo, hi);
+            if (idx == k - 1) {
+                return A[idx];
+            } else if (idx < k - 1) {
+                lo = idx + 1;
+            } else {
+                hi = idx - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private int partition(int[] A, int lo, int hi) {
+        int pivot = A[lo], i = lo + 1, j = hi;
+        while (i <= j) {
+            while (i <= j && A[i] > pivot) {
+                i++;
+            }
+            while (i <= j && A[j] <= pivot) {
+                j--;
+            }
+            if (i < j) {
+                swap(A, i, j);
+            }
+        }
+        swap(A, lo, j);
+
+        return j;
+    }
+
+    private void swap(int[] A, int i, int j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+    }
+}
+```
+
+### 源码分析
+
+`findKthLargest` 里的 `while` 循环体有种二分搜索的既视感，`partition` 就是标典型的快排分区写法。
 
 ### 复杂度分析
 
