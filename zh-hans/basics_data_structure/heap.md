@@ -42,7 +42,10 @@ class MaxHeap:
         left, right = 2 * i + 1, 2 * i + 2
         max_index = i
         # should compare two chidren then determine which one to swap with
-        flag = array[left] > array[right] 
+        if left < len(array) and right < len(array):
+            flag = array[left] > array[right]
+        else:
+            flag = True
         if left < len(array) and array[left] > array[max_index] and flag:
             max_index = left
         if right < len(array) and array[right] > array[max_index] and not flag:
