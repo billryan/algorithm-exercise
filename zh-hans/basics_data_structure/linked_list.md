@@ -131,7 +131,7 @@ public ListNode reverse(ListNode head) {
 class DListNode:
     def __init__(self, val):
         self.val = val
-        self.prev = self.next = null
+        self.prev = self.next = None
 
     def reverse(self, head):
         curt = None
