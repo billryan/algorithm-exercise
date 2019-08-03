@@ -1,16 +1,44 @@
 # Insertion Sort List
 
+Tags: Linked List, Sort, Medium
+
 ## Question
 
-- leetcode: [Insertion Sort List | LeetCode OJ](https://leetcode.com/problems/insertion-sort-list/)
-- lintcode: [(173) Insertion Sort List](http://www.lintcode.com/en/problem/insertion-sort-list/)
+- leetcode: [Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)
+- lintcode: [Insertion Sort List](https://www.lintcode.com/problem/insertion-sort-list/)
 
-```
+### Problem Statement
+
 Sort a linked list using insertion sort.
 
-Example
-Given 1->3->2->0->null, return 0->1->2->3->null.
-```
+![](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-
+example-300px.gif)  
+A graphical example of insertion sort. The partial sorted list (black)
+initially contains only the first element in the list.  
+With each iteration one element (red) is removed from the input data and
+inserted in-place into the sorted list  
+
+
+**Algorithm of Insertion Sort:**
+
+  1. Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.
+  2. At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.
+  3. It repeats until no input elements remain.
+
+  
+**Example 1:**
+    
+    
+    **Input:** 4->2->1->3
+    **Output:** 1->2->3->4
+    
+
+**Example 2:**
+    
+    
+    **Input:** -1->5->3->4->0
+    **Output:** -1->0->3->4->5
+
 
 ## 题解1 - 从首到尾遍历
 
@@ -130,9 +158,9 @@ Python 的实现在 lintcode 上会提示 TLE, leetcode 上勉强通过，这里
 
 ### 复杂度分析
 
-最好情况：原链表已经有序，每得到一个新节点都需要 $$i$$ 次比较和一次交换, 时间复杂度为 $$1/2O(n^2) + O(n)$$, 使用了 dummy 和 pre, 空间复杂度近似为 $$O(1)$$.
+最好情况：原链表已经逆序，每得到一个新节点仅需要一次比较, 时间复杂度为 $$O(n)$$, 使用了 dummy 和 pre, 空间复杂度近似为 $$O(1)$$.
 
-最坏情况：原链表正好逆序，由于是单向链表只能从前往后依次遍历，交换和比较次数均为 $$1/2 O(n^2)$$, 总的时间复杂度近似为 $$O(n^2)$$, 空间复杂度同上，近似为 $$O(1)$$.
+最坏情况：原链表正好升序，由于是单向链表只能从前往后依次遍历，交换和比较次数均为 $$1/2 O(n^2)$$, 总的时间复杂度近似为 $$O(n^2)$$, 空间复杂度同上，近似为 $$O(1)$$.
 
 ## 题解2 - 优化有序链表
 
