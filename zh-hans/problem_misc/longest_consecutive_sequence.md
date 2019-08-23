@@ -1,26 +1,26 @@
 # Longest Consecutive Sequence
 
+Tags: Array, Union Find, Hard
+
 ## Question
 
-- leetcode: [Longest Consecutive Sequence | LeetCode OJ](https://leetcode.com/problems/longest-consecutive-sequence/)
-- lintcode: [(124) Longest Consecutive Sequence](http://www.lintcode.com/en/problem/longest-consecutive-sequence/)
-
+- leetcode: [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+- lintcode: [Longest Consecutive Sequence](https://www.lintcode.com/problem/longest-consecutive-sequence/)
 
 ### Problem Statement
 
 Given an unsorted array of integers, find the length of the longest
 consecutive elements sequence.
 
-#### Example
-
-Given `[100, 4, 200, 1, 3, 2]`,
-The longest consecutive elements sequence is `[1, 2, 3, 4]`. Return its
-length: `4`.
-
-#### Clarification
-
 Your algorithm should run in O(_n_) complexity.
 
+**Example:**
+    
+    
+    
+    **Input:** [100, 4, 200, 1, 3, 2]
+    **Output:** 4
+    **Explanation:** The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
 
 ## 题解
 
@@ -29,40 +29,33 @@ Your algorithm should run in O(_n_) complexity.
 ### Java
 
 ```java
-public class Solution {
-    /**
-     * @param nums: A list of integers
-     * @return an integer
-     */
-    public int longestConsecutive(int[] num) {
-        if (num == null || num.length == 0) return 0;
-
-        // add number to hashset
-        Set<Integer> hashset = new HashSet<Integer>();
-        for (int n : num) {
-            hashset.add(n);
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        if (nums == null || nums.length <= 0) return 0;
+        Set<Integer> sets = new HashSet<>(nums.length);
+        for (int num : nums) {
+            sets.add(num);
         }
 
-        int lcs = 0;
-        for (int n : num) {
-            int i = n, count = 1;
-            hashset.remove(n);
-            // i--
-            while (hashset.contains(--i)) {
-                count++;
-                hashset.remove(i);
+        int result = 1;
+        for (int num : nums) {
+            int seq = 1;
+            int right = num, left = num;
+            // right
+            while (sets.contains(++right)) {
+                seq++;
+                sets.remove(right);
             }
-            // i++
-            i = n;
-            while (hashset.contains(++i)) {
-                count++;
-                hashset.remove(i);
+            // left
+            while (sets.contains(--left)) {
+                seq++;
+                sets.remove(left);
             }
-            // update lcs
-            lcs = Math.max(lcs, count);
+            sets.remove(num);
+            if (seq > result) result = seq;
         }
 
-        return lcs;
+        return result;
     }
 }
 ```
