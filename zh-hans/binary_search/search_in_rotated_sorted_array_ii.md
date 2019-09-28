@@ -102,7 +102,7 @@ public class Solution {
                     ub = mid;
                 }
             } else {
-                // case3: A[mid] == target
+                // case3: A[mid] == A[lb]
                 lb++;
             }
         }
@@ -117,7 +117,7 @@ public class Solution {
 
 ### 源码分析
 
-在`A[start] == A[mid]`时递增start序号即可。
+在`A[lb] == A[mid]`时递增lb序号即可。
 
 ### 复杂度分析
 
