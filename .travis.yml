@@ -28,6 +28,7 @@ before_script:
   - unzip ~/raw_fonts/NotoSansCJKtc-hinted.zip -d ~/raw_fonts/NotoSansCJKtc-hinted
 
 script:
+  - while sleep 30; do echo "still alive"; done &
   - sed '/\(en\/\)/! d' LANGS.md.bak > LANGS.md
   - mv -t ~/.fonts/noto ~/raw_fonts/NotoSans-unhinted/*-Regular.ttf ~/raw_fonts/NotoSans-unhinted/*-Bold.ttf ~/raw_fonts/NotoSans-unhinted/*-Black.ttf
   - sudo fc-cache -f -v
