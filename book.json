@@ -4,7 +4,6 @@
         "ga",
         "katex",
         "richquotes",
-        "swiftype",
         "sitemap2",
         "github",
         "edit-link",
@@ -22,10 +21,6 @@
         },
         "richquotes": {
             "todos": true
-        },
-        "swiftype": {
-            "token": "utQHy1R2XyiVqDqaZqws",
-            "version": "2.0.0"
         },
         "sitemap2": {
             "hostname": "http://algorithm.yuanbin.me/"
