@@ -1,0 +1,73 @@
+/* Override gitbook picto size */
+.fa-2x
+{
+    font-size: 2em;
+}
+
+.fa-3x
+{
+    font-size: 3em;
+}
+
+.fa-4x
+{
+    font-size: 4em;
+}
+
+.fa-5x
+{
+    font-size: 5em;
+}
+
+blockquote.alert > strong
+{
+	display      : inline-block;
+	text-align   : center;
+	float        : left;
+	width        : 60px;
+  	height       : 80px;
+	margin-right : 10px;
+  	padding-top  : 14px;
+}
+
+blockquote.alert
+{
+	border-radius     : 5px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal blockquote > :last-child {
+	margin-bottom: inherit;
+	margin-top: 15px;
+}
+
+.alert-quote
+{
+	background-color : white;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}

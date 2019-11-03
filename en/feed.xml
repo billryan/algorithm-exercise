@@ -1,0 +1,2677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://algorithm.yuanbin.me/en/</id>
+    <title>Data Structure and Algorithm notes</title>
+    <updated>2019-11-03T15:41:56Z</updated>
+    <author>
+        <uri>function link() { [native code] }</uri>
+    </author>
+    <link rel="alternate" href="https://algorithm.yuanbin.me/en/"/>
+    <subtitle>Data Structure and Algorithm notes/数据结构与算法学习笔记/leetcode/lintcode 题解</subtitle>
+    <generator>Feed for Node.js</generator>
+    <category term="programming">
+    </category>
+    <category term="algorithm">
+    </category>
+    <category term="leetcode">
+    </category>
+    <entry>
+        <title type="html"><![CDATA[Preface]]></title>
+        <id>https://algorithm.yuanbin.me/en/</id>
+        <link href="https://algorithm.yuanbin.me/en/">
+        </link>
+        <updated>2019-11-03T15:41:53Z</updated>
+        <summary type="html"><![CDATA[<h1>Data Structure and Algorithm/leetcode/lintcode</h1>
+<!-- toc -->
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#contribution">Contribution</a><ul>
+<li><a href="#donation">Donation</a><ul>
+<li><a href="#邮寄明信片">邮寄明信片</a></li>
+<li><a href="#送书">送书</a></li>
+<li><a href="#支付宝">支付宝</a></li>
+<li><a href="#wechat">Wechat</a></li>
+<li><a href="#paypal">PayPal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#to-do">To Do</a></li>
+</ul>
+<!-- tocstop -->
+<p><a href="https://travis-ci.org/billryan/algorithm-exercise"><img src="https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master" alt="Build Status"></a>
+<a href="https://slackin4ds-algo.herokuapp.com/"><img src="https://slackin4ds-algo.herokuapp.com/badge.svg" alt="Slack Status"></a>
+<a href="https://ds-algo.slack.com/"><img src="https://img.shields.io/badge/chat-on_slack-orange.svg" alt="Chat on Slack"></a></p>
+<ul>
+<li>English via <a href="http://algorithm.yuanbin.me/en/index.html">Data Structure and Algorithm notes</a></li>
+<li>简体中文请戳 <a href="http://algorithm.yuanbin.me/zh-hans/index.html">数据结构与算法/leetcode/lintcode题解</a></li>
+<li>繁體中文請瀏覽 <a href="http://algorithm.yuanbin.me/zh-tw/index.html">資料結構與演算法/leetcode/lintcode題解</a></li>
+</ul>
+<h2>Introduction</h2>
+<p>This work is some notes of learning and practicing data structures and algorithm.</p>
+<ol>
+<li>Part I is some brief introduction of basic data structures and algorithm, such as, linked lists, stack, queues, trees, sorting and etc.</li>
+<li>Part II is the analysis and summary of programming problems, and most of the programming problems come from <a href="https://leetcode.com/">https://leetcode.com/</a>, <a href="http://www.lintcode.com/">http://www.lintcode.com/</a>, <a href="http://www.geeksforgeeks.org/">http://www.geeksforgeeks.org/</a>, <a href="http://hihocoder.com/">http://hihocoder.com/</a>, <a href="https://www.topcoder.com/">https://www.topcoder.com/</a>.</li>
+<li>Part III is the appendix of resume and other supplements.</li>
+</ol>
+<p>This project is hosted on <a href="https://github.com/billryan/algorithm-exercise">https://github.com/billryan/algorithm-exercise</a> and rendered by <a href="https://www.gitbook.com/book/yuanbin/algorithm/details">Gitbook</a>. You can star the repository on the GitHub to keep track of updates. Another choice is to subscribe channel <code>#github_commit</code> via Slack <a href="https://ds-algo.slack.com/messages/github_commit/">https://ds-algo.slack.com/messages/github_commit/</a>. <del>RSS feed is under development.</del></p>
+<p>Feel free to access <a href="http://slackin4ds-algo.herokuapp.com">http://slackin4ds-algo.herokuapp.com</a> for Slack invite automation.</p>
+<p>You can view/search this document online or offline, feel free to read it. :)</p>
+<ul>
+<li>Online(Rendered by Gitbook): <a href="http://algorithm.yuanbin.me">http://algorithm.yuanbin.me</a></li>
+<li>Offline(Compiled by Gitbook and Travis-CI):<ol>
+<li>EPUB: <a href="https://github.com/sign4bill/algorithm-exercise/tree/deploy/epub">GitHub</a>, <a href="https://www.gitbook.com/download/epub/book/yuanbin/algorithm">Gitbook</a>, <a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_en.epub">七牛 CDN(中国大陆用户适用)</a> - Recommended for iPhone/iPad/MAC</li>
+<li>PDF: <a href="https://github.com/sign4bill/algorithm-exercise/tree/deploy/pdf">GitHub</a>, <a href="https://www.gitbook.com/download/pdf/book/yuanbin/algorithm">Gitbook</a>, <a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_en.pdf">七牛 CDN(中国大陆用户适用)</a> - Recommended for Desktop</li>
+<li>MOBI: <a href="https://github.com/sign4bill/algorithm-exercise/tree/deploy/mobi">GitHub</a>, <a href="https://www.gitbook.com/download/mobi/book/yuanbin/algorithm">Gitbook</a>, <a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_en.mobi">七牛 CDN(中国大陆用户适用)</a> - Recommended for Kindle</li>
+</ol>
+</li>
+<li>Site Search via Google: <code>keywords site:algorithm.yuanbin.me</code></li>
+<li>Site Search via Swiftype: Click <code>Search this site</code> on the right bottom of webpages</li>
+</ul>
+<h2>License</h2>
+<p>This work is licensed under the <strong>Creative Commons Attribution-ShareAlike 4.0 International License</strong>. To view a copy of this license, please visit <a href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a></p>
+<h2>Contribution</h2>
+<ul>
+<li><a href="http://algorithm.yuanbin.me/en/index.html">English</a> is maintained by <a href="https://github.com/billryan">@billryan</a></li>
+<li><a href="http://algorithm.yuanbin.zh-hans/index.html">简体中文</a> is maintained by <a href="https://github.com/billryan">@billryan</a>, <a href="https://github.com/Shaunwei">@Shaunwei</a></li>
+<li><a href="http://algorithm.yuanbin.me/zh-tw/index.html">繁體中文</a> is maintained by <a href="https://github.com/CrossLuna">@CrossLuna</a></li>
+</ul>
+<p>Other contributors can be found in <a href="https://github.com/billryan/algorithm-exercise/graphs/contributors">Contributors to algorithm-exercise</a></p>
+<h3>Donation</h3>
+<p>本项目接受捐赠，形式不限，可以买书，可以寄明信片，也可以金额打赏 :)</p>
+<h4>邮寄明信片</h4>
+<p>@billryan 喜欢收集各种明信片，来者不拒~ 邮寄的话可以邮寄至 <code>上海市闵行区上海交通大学闵行校区电院群楼5号楼307</code>，收件人：<code>袁斌</code>。</p>
+<h4>送书</h4>
+<p>除了邮寄明信片，你还可以买本书送给各位贡献者，@billryan 的地址见上节。</p>
+<h4>支付宝</h4>
+<p><img src="../shared-files/images/alipay_billryan_qr15x15.jpg" alt="支付宝打赏"></p>
+<p>账户名：yuanbin2014(at)gmail.com 金额随意</p>
+<h4>Wechat</h4>
+<p><img src="../shared-files/images/wechat_billryan_qr15x15.jpg" alt="Red Packet"></p>
+<p>金额随意</p>
+<h4>PayPal</h4>
+<p>账户名：yuanbin2014(at)gmail.com 金额随意，付款时选择 friends and family</p>
+<p>隐私考虑，以下名单隐去了部分个人信息，有些名单若没来得及添加，可私下联系我加上，有些信息和金额因为时间久远可能有误，欢迎指正。</p>
+<ul>
+<li><code>taoli***@gmail.com</code>, 20</li>
+<li><code>张亚*</code>, 6.66</li>
+<li><code>wen***@126.com</code>, 20.16</li>
+<li><code>she***@163.com</code>, 10</li>
+<li><code>孙*</code>, 20</li>
+<li><code>石*</code>, 50</li>
+<li><code>文*</code>, 20</li>
+<li><code>don***@163.com</code>, 5</li>
+<li><code>129***@qq.com</code>, 50</li>
+<li><code>130****9675</code>, 5</li>
+<li><code>Tong W***</code>, 20 $</li>
+<li><code>ee.***@gmail.com</code>, 6.66</li>
+</ul>
+<p>所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料</p>
+<h2>To Do</h2>
+<ul>
+<li>[ ] add multiple languages support, currently 繁體中文, 简体中文 are available</li>
+<li>[x] explore nice writing style</li>
+<li>[x] add implementations of <code>Python</code>, <code>C++</code>, <code>Java</code> code</li>
+<li>[x] add time and space complexity analysis</li>
+<li>[x] summary of basic data structure and algorithm</li>
+<li>[x] add CSS for online website <a href="http://algorithm.yuanbin.me">http://algorithm.yuanbin.me</a></li>
+<li>[x] add proper Chinese fonts for PDF output</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Data Structure and Algorithm/leetcode/lintcode</h1>
+<!-- toc -->
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#contribution">Contribution</a><ul>
+<li><a href="#donation">Donation</a><ul>
+<li><a href="#邮寄明信片">邮寄明信片</a></li>
+<li><a href="#送书">送书</a></li>
+<li><a href="#支付宝">支付宝</a></li>
+<li><a href="#wechat">Wechat</a></li>
+<li><a href="#paypal">PayPal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#to-do">To Do</a></li>
+</ul>
+<!-- tocstop -->
+<p><a href="https://travis-ci.org/billryan/algorithm-exercise"><img src="https://travis-ci.org/billryan/algorithm-exercise.svg?branch=master" alt="Build Status"></a>
+<a href="https://slackin4ds-algo.herokuapp.com/"><img src="https://slackin4ds-algo.herokuapp.com/badge.svg" alt="Slack Status"></a>
+<a href="https://ds-algo.slack.com/"><img src="https://img.shields.io/badge/chat-on_slack-orange.svg" alt="Chat on Slack"></a></p>
+<ul>
+<li>English via <a href="http://algorithm.yuanbin.me/en/index.html">Data Structure and Algorithm notes</a></li>
+<li>简体中文请戳 <a href="http://algorithm.yuanbin.me/zh-hans/index.html">数据结构与算法/leetcode/lintcode题解</a></li>
+<li>繁體中文請瀏覽 <a href="http://algorithm.yuanbin.me/zh-tw/index.html">資料結構與演算法/leetcode/lintcode題解</a></li>
+</ul>
+<h2>Introduction</h2>
+<p>This work is some notes of learning and practicing data structures and algorithm.</p>
+<ol>
+<li>Part I is some brief introduction of basic data structures and algorithm, such as, linked lists, stack, queues, trees, sorting and etc.</li>
+<li>Part II is the analysis and summary of programming problems, and most of the programming problems come from <a href="https://leetcode.com/">https://leetcode.com/</a>, <a href="http://www.lintcode.com/">http://www.lintcode.com/</a>, <a href="http://www.geeksforgeeks.org/">http://www.geeksforgeeks.org/</a>, <a href="http://hihocoder.com/">http://hihocoder.com/</a>, <a href="https://www.topcoder.com/">https://www.topcoder.com/</a>.</li>
+<li>Part III is the appendix of resume and other supplements.</li>
+</ol>
+<p>This project is hosted on <a href="https://github.com/billryan/algorithm-exercise">https://github.com/billryan/algorithm-exercise</a> and rendered by <a href="https://www.gitbook.com/book/yuanbin/algorithm/details">Gitbook</a>. You can star the repository on the GitHub to keep track of updates. Another choice is to subscribe channel <code>#github_commit</code> via Slack <a href="https://ds-algo.slack.com/messages/github_commit/">https://ds-algo.slack.com/messages/github_commit/</a>. <del>RSS feed is under development.</del></p>
+<p>Feel free to access <a href="http://slackin4ds-algo.herokuapp.com">http://slackin4ds-algo.herokuapp.com</a> for Slack invite automation.</p>
+<p>You can view/search this document online or offline, feel free to read it. :)</p>
+<ul>
+<li>Online(Rendered by Gitbook): <a href="http://algorithm.yuanbin.me">http://algorithm.yuanbin.me</a></li>
+<li>Offline(Compiled by Gitbook and Travis-CI):<ol>
+<li>EPUB: <a href="https://github.com/sign4bill/algorithm-exercise/tree/deploy/epub">GitHub</a>, <a href="https://www.gitbook.com/download/epub/book/yuanbin/algorithm">Gitbook</a>, <a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_en.epub">七牛 CDN(中国大陆用户适用)</a> - Recommended for iPhone/iPad/MAC</li>
+<li>PDF: <a href="https://github.com/sign4bill/algorithm-exercise/tree/deploy/pdf">GitHub</a>, <a href="https://www.gitbook.com/download/pdf/book/yuanbin/algorithm">Gitbook</a>, <a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_en.pdf">七牛 CDN(中国大陆用户适用)</a> - Recommended for Desktop</li>
+<li>MOBI: <a href="https://github.com/sign4bill/algorithm-exercise/tree/deploy/mobi">GitHub</a>, <a href="https://www.gitbook.com/download/mobi/book/yuanbin/algorithm">Gitbook</a>, <a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/algorithm-ebook_en.mobi">七牛 CDN(中国大陆用户适用)</a> - Recommended for Kindle</li>
+</ol>
+</li>
+<li>Site Search via Google: <code>keywords site:algorithm.yuanbin.me</code></li>
+<li>Site Search via Swiftype: Click <code>Search this site</code> on the right bottom of webpages</li>
+</ul>
+<h2>License</h2>
+<p>This work is licensed under the <strong>Creative Commons Attribution-ShareAlike 4.0 International License</strong>. To view a copy of this license, please visit <a href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a></p>
+<h2>Contribution</h2>
+<ul>
+<li><a href="http://algorithm.yuanbin.me/en/index.html">English</a> is maintained by <a href="https://github.com/billryan">@billryan</a></li>
+<li><a href="http://algorithm.yuanbin.zh-hans/index.html">简体中文</a> is maintained by <a href="https://github.com/billryan">@billryan</a>, <a href="https://github.com/Shaunwei">@Shaunwei</a></li>
+<li><a href="http://algorithm.yuanbin.me/zh-tw/index.html">繁體中文</a> is maintained by <a href="https://github.com/CrossLuna">@CrossLuna</a></li>
+</ul>
+<p>Other contributors can be found in <a href="https://github.com/billryan/algorithm-exercise/graphs/contributors">Contributors to algorithm-exercise</a></p>
+<h3>Donation</h3>
+<p>本项目接受捐赠，形式不限，可以买书，可以寄明信片，也可以金额打赏 :)</p>
+<h4>邮寄明信片</h4>
+<p>@billryan 喜欢收集各种明信片，来者不拒~ 邮寄的话可以邮寄至 <code>上海市闵行区上海交通大学闵行校区电院群楼5号楼307</code>，收件人：<code>袁斌</code>。</p>
+<h4>送书</h4>
+<p>除了邮寄明信片，你还可以买本书送给各位贡献者，@billryan 的地址见上节。</p>
+<h4>支付宝</h4>
+<p><img src="../shared-files/images/alipay_billryan_qr15x15.jpg" alt="支付宝打赏"></p>
+<p>账户名：yuanbin2014(at)gmail.com 金额随意</p>
+<h4>Wechat</h4>
+<p><img src="../shared-files/images/wechat_billryan_qr15x15.jpg" alt="Red Packet"></p>
+<p>金额随意</p>
+<h4>PayPal</h4>
+<p>账户名：yuanbin2014(at)gmail.com 金额随意，付款时选择 friends and family</p>
+<p>隐私考虑，以下名单隐去了部分个人信息，有些名单若没来得及添加，可私下联系我加上，有些信息和金额因为时间久远可能有误，欢迎指正。</p>
+<ul>
+<li><code>taoli***@gmail.com</code>, 20</li>
+<li><code>张亚*</code>, 6.66</li>
+<li><code>wen***@126.com</code>, 20.16</li>
+<li><code>she***@163.com</code>, 10</li>
+<li><code>孙*</code>, 20</li>
+<li><code>石*</code>, 50</li>
+<li><code>文*</code>, 20</li>
+<li><code>don***@163.com</code>, 5</li>
+<li><code>129***@qq.com</code>, 50</li>
+<li><code>130****9675</code>, 5</li>
+<li><code>Tong W***</code>, 20 $</li>
+<li><code>ee.***@gmail.com</code>, 6.66</li>
+</ul>
+<p>所得捐款用于七牛 CDN 流量付费/激励 Contributors 写出更好的内容/购买书籍/西瓜/饮料</p>
+<h2>To Do</h2>
+<ul>
+<li>[ ] add multiple languages support, currently 繁體中文, 简体中文 are available</li>
+<li>[x] explore nice writing style</li>
+<li>[x] add implementations of <code>Python</code>, <code>C++</code>, <code>Java</code> code</li>
+<li>[x] add time and space complexity analysis</li>
+<li>[x] summary of basic data structure and algorithm</li>
+<li>[x] add CSS for online website <a href="http://algorithm.yuanbin.me">http://algorithm.yuanbin.me</a></li>
+<li>[x] add proper Chinese fonts for PDF output</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FAQ]]></title>
+        <id>https://algorithm.yuanbin.me/en/faq/</id>
+        <link href="https://algorithm.yuanbin.me/en/faq/">
+        </link>
+        <updated>2019-11-03T15:41:54Z</updated>
+        <summary type="html"><![CDATA[<h1>FAQ - Frequently Asked Question</h1>
+<p>Some guidelines for contributing and other questions are listed here.</p>
+<h2>How to Contribute?</h2>
+<ul>
+<li>Access <a href="http://algorithm.yuanbin.me/en/faq/guidelines_for_contributing.html">Guidelines for Contributing</a> for details.</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h1>FAQ - Frequently Asked Question</h1>
+<p>Some guidelines for contributing and other questions are listed here.</p>
+<h2>How to Contribute?</h2>
+<ul>
+<li>Access <a href="http://algorithm.yuanbin.me/en/faq/guidelines_for_contributing.html">Guidelines for Contributing</a> for details.</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Guidelines for Contributing]]></title>
+        <id>https://algorithm.yuanbin.me/en/faq/guidelines_for_contributing.html</id>
+        <link href="https://algorithm.yuanbin.me/en/faq/guidelines_for_contributing.html">
+        </link>
+        <updated>2019-11-03T15:41:54Z</updated>
+        <summary type="html"><![CDATA[<h1>Guidelines for Contributing</h1>
+<ul>
+<li>Access English via <a href="http://algorithm.yuanbin.me/en/faq/guidelines_for_contributing.html">Guidelines for Contributing</a></li>
+<li>繁體中文請移步 <a href="http://algorithm.yuanbin.me/zh-tw/faq/guidelines_for_contributing.html">貢獻指南</a></li>
+<li>简体中文请移步 <a href="http://algorithm.yuanbin.zh-hans/faq/guidelines_for_contributing.html">贡献指南</a></li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Guidelines for Contributing</h1>
+<ul>
+<li>Access English via <a href="http://algorithm.yuanbin.me/en/faq/guidelines_for_contributing.html">Guidelines for Contributing</a></li>
+<li>繁體中文請移步 <a href="http://algorithm.yuanbin.me/zh-tw/faq/guidelines_for_contributing.html">貢獻指南</a></li>
+<li>简体中文请移步 <a href="http://algorithm.yuanbin.zh-hans/faq/guidelines_for_contributing.html">贡献指南</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Part I - Basics]]></title>
+        <id>https://algorithm.yuanbin.me/en/part_i_basics/</id>
+        <link href="https://algorithm.yuanbin.me/en/part_i_basics/">
+        </link>
+        <updated>2019-11-03T15:41:54Z</updated>
+        <summary type="html"><![CDATA[<h1>Part I - Basics</h1>
+<p>The first part summarizes some of the main aspects of data structures and
+algorithms, such as implementation and usage.</p>
+<p>This chapter consists of the following sections.</p>
+<h2>Reference</h2>
+<ul>
+<li><a href="http://visualgo.net/">VisuAlgo</a> - Animated visualizations of data structures and algorithms</li>
+<li><a href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure Visualizations</a> - An alternative to VisuAlgo</li>
+<li><a href="https://www.toptal.com/developers/sorting-algorithms/">Sorting Algorithms</a> - Animations comparing various sorting algorithms</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Part I - Basics</h1>
+<p>The first part summarizes some of the main aspects of data structures and
+algorithms, such as implementation and usage.</p>
+<p>This chapter consists of the following sections.</p>
+<h2>Reference</h2>
+<ul>
+<li><a href="http://visualgo.net/">VisuAlgo</a> - Animated visualizations of data structures and algorithms</li>
+<li><a href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure Visualizations</a> - An alternative to VisuAlgo</li>
+<li><a href="https://www.toptal.com/developers/sorting-algorithms/">Sorting Algorithms</a> - Animations comparing various sorting algorithms</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Basics Data Structure]]></title>
+        <id>https://algorithm.yuanbin.me/en/basics_data_structure/</id>
+        <link href="https://algorithm.yuanbin.me/en/basics_data_structure/">
+        </link>
+        <updated>2019-11-03T15:41:54Z</updated>
+        <summary type="html"><![CDATA[<h1>Data Structure</h1>
+<p>This chapter describes the fundamental data structures and their implementations.</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Data Structure</h1>
+<p>This chapter describes the fundamental data structures and their implementations.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[String]]></title>
+        <id>https://algorithm.yuanbin.me/en/basics_data_structure/string.html</id>
+        <link href="https://algorithm.yuanbin.me/en/basics_data_structure/string.html">
+        </link>
+        <updated>2019-11-03T15:41:54Z</updated>
+        <summary type="html"><![CDATA[<h1>String</h1>
+<p>String-related problems often appear in interview questions. In actual
+development, strings are also frequently used. Summarized here are common uses
+of strings in C++, Java, and Python.</p>
+<h2>Python</h2>
+<pre><code class="lang-python">s1 = str()
+# in python, `&#39;&#39;` and `&quot;&quot;` are the same
+s2 = &quot;shaunwei&quot; # &#39;shaunwei&#39;
+s2len = len(s2)
+# last 3 chars
+s2[-3:] # wei
+s2[5:8] # wei
+s3 = s2[:5] # shaun
+s3 += &#39;wei&#39; # return &#39;shaunwei&#39;
+# list in python is same as ArrayList in java
+s2list = list(s3)
+# string at index 4
+s2[4] # &#39;n&#39;
+# find index at first
+s2.index(&#39;w&#39;)  # return 5, if not found, throw ValueError
+s2.find(&#39;w&#39;) # return 5, if not found, return -1
+</code></pre>
+<p>In Python, there&#39;s no StringBuffer or StringBuilder. However, string manipulations
+are fairly efficient already.</p>
+<h2>Java</h2>
+<pre><code class="lang-java">String s1 = new String();
+String s2 = &quot;billryan&quot;;
+int s2Len = s2.length();
+s2.substring(4, 8); // return &quot;ryan&quot;
+StringBuilder s3 = new StringBuilder(s2.substring(4, 8));
+s3.append(&quot;bill&quot;);
+String s2New = s3.toString(); // return &quot;ryanbill&quot;
+// convert String to char array
+char[] s2Char = s2.toCharArray();
+// char at index 4
+char ch = s2.charAt(4); // return &#39;r&#39;
+// find index at first
+int index = s2.indexOf(&#39;r&#39;); // return 4. if not found, return -1
+</code></pre>
+<p>The difference between StringBuffer and StringBuilder is that the former guarantees
+thread safety. In a single-threaded environment, StringBuilder is more efficient.</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1>String</h1>
+<p>String-related problems often appear in interview questions. In actual
+development, strings are also frequently used. Summarized here are common uses
+of strings in C++, Java, and Python.</p>
+<h2>Python</h2>
+<pre><code class="lang-python">s1 = str()
+# in python, `&#39;&#39;` and `&quot;&quot;` are the same
+s2 = &quot;shaunwei&quot; # &#39;shaunwei&#39;
+s2len = len(s2)
+# last 3 chars
+s2[-3:] # wei
+s2[5:8] # wei
+s3 = s2[:5] # shaun
+s3 += &#39;wei&#39; # return &#39;shaunwei&#39;
+# list in python is same as ArrayList in java
+s2list = list(s3)
+# string at index 4
+s2[4] # &#39;n&#39;
+# find index at first
+s2.index(&#39;w&#39;)  # return 5, if not found, throw ValueError
+s2.find(&#39;w&#39;) # return 5, if not found, return -1
+</code></pre>
+<p>In Python, there&#39;s no StringBuffer or StringBuilder. However, string manipulations
+are fairly efficient already.</p>
+<h2>Java</h2>
+<pre><code class="lang-java">String s1 = new String();
+String s2 = &quot;billryan&quot;;
+int s2Len = s2.length();
+s2.substring(4, 8); // return &quot;ryan&quot;
+StringBuilder s3 = new StringBuilder(s2.substring(4, 8));
+s3.append(&quot;bill&quot;);
+String s2New = s3.toString(); // return &quot;ryanbill&quot;
+// convert String to char array
+char[] s2Char = s2.toCharArray();
+// char at index 4
+char ch = s2.charAt(4); // return &#39;r&#39;
+// find index at first
+int index = s2.indexOf(&#39;r&#39;); // return 4. if not found, return -1
+</code></pre>
+<p>The difference between StringBuffer and StringBuilder is that the former guarantees
+thread safety. In a single-threaded environment, StringBuilder is more efficient.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Quick Sort]]></title>
+        <id>https://algorithm.yuanbin.me/en/basics_sorting/quick_sort.html</id>
+        <link href="https://algorithm.yuanbin.me/en/basics_sorting/quick_sort.html">
+        </link>
+        <updated>2019-11-03T15:41:54Z</updated>
+        <summary type="html"><![CDATA[<h1>Quick Sort</h1>
+<!-- toc -->
+<ul>
+<li><a href="#out-in-place-implementation">out-in-place implementation</a><ul>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+<li><a href="#in-place-implementation">in-place implementation</a><ul>
+<li><a href="#one-index-for-partition">one index for partition</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#two-way-partitioning">Two-way partitioning</a></li>
+<li><a href="#python-1">Python</a></li>
+<li><a href="#java-1">Java</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+<!-- tocstop -->
+<p>In essence, quick sort is an application of <code>divide and conquer</code> strategy. There are usually three steps:</p>
+<ol>
+<li>Pick a pivot -- a random element.</li>
+<li>Partition -- put the elements smaller than pivot to its left and greater ones to its right.</li>
+<li>Recurse -- apply above steps until the whole sequence is sorted.</li>
+</ol>
+<h2>out-in-place implementation</h2>
+<p>Recursive implementation is easy to understand and code. Python <code>list comprehension</code> looks even nicer:</p>
+<pre><code class="lang-python">#!/usr/bin/env python
+
+
+def qsort1(alist):
+    print(alist)
+    if len(alist) &lt;= 1:
+        return alist
+    else:
+        pivot = alist[0]
+        return qsort1([x for x in alist[1:] if x &lt; pivot]) + \
+               [pivot] + \
+               qsort1([x for x in alist[1:] if x &gt;= pivot])
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort1(unsortedArray))
+</code></pre>
+<p>The output：</p>
+<pre><code>[6, 5, 3, 1, 8, 7, 2, 4]
+[5, 3, 1, 2, 4]
+[3, 1, 2, 4]
+[1, 2]
+[]
+[2]
+[4]
+[]
+[8, 7]
+[7]
+[]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre><p>Despite of its simplicity, above quick sort code is not that &#39;quick&#39;: recursive calls keep creating new arrays which results in high space complexity. So <code>list comprehension</code> is not proper for quick sort implementation.</p>
+<h3>Complexity</h3>
+<p>Take a quantized look at how much space it actually cost.</p>
+<p>In the best case, the pivot happens to be the <strong>median</strong> value, and quick sort partition divides the sequence almost equally, so the recursions&#39; depth is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span></span></span></span> . As to the space complexity of each level (depth), it is worth some discussion.</p>
+<p>A common mistake can be: each level contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> elements, then the space complexity is surely <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> . The answer is right, while the approach is not. As we know, space complexity is usually measured by memory consumption of a running program. Take above out-in-place implementation as example, <strong>in the best case, each level costs half as much memory as its upper level does</strong> . Sums up to be:</p>
+<p> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow></mrow></msubsup><mfrac><mrow><mi>n</mi></mrow><mrow><msup><mn>2</mn><mi>i</mi></msup></mrow></mfrac><mo>=</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">\sum _{i=0} ^{} \frac {n}{2^i} = 2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.095em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">0</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="msupsub"><span class="vlist"><span style="top:-0.286em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord mathrm">2</span><span class="mord mathit">n</span></span></span></span> .</p>
+<p>For more detail, refer to the picture below as well as above python code. The first level of recursion saves 8 values, the second 4, and so on so forth.</p>
+<p>In the worst case, it will take <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span> times of swap on level <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>. Sums up to be:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></msubsup><mo>(</mo><mi>n</mi><mo>−</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\sum_{i=0}^n (n-i+1) = O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.114118em;vertical-align:-0.30001em;"></span><span class="base textstyle uncramped"><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">0</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathit">i</span><span class="mbin">+</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p><img src="../../shared-files/images/qsort1.png" alt="Quicksort Recursive"></p>
+<h2>in-place implementation</h2>
+<h3>one index for partition</h3>
+<p>One in-place implementation of quick sort is to use one index for partition, as the following image illustrates. Take example of <code>[6, 5, 3, 1, 8, 7, 2, 4]</code> again, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.01968em;">l</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">u</span></span></span></span> stand for the lower bound and upper bound of index respectively. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> traverses and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span></span></span></span> maintains index of partition which varies with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>a</mi><mi>r</mi><mi>g</mi><mi>e</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">target</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.61508em;"></span><span class="strut bottom" style="height:0.80952em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">e</span><span class="mord mathit">t</span></span></span></span> is the pivot.</p>
+<p><img src="../../shared-files/images/qsort2.png" alt="Quick Sort one index for partition"></p>
+<p>For each specific value of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span> will take one of the follwing cases: if <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>≥</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x[i] \geq t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mrel">≥</span><span class="mord mathit">t</span></span></span></span> , <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> increases and goes on traversing; else if <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x[i] &lt; t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mrel">&lt;</span><span class="mord mathit">t</span></span></span></span> , <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span> will be swapped to the left part, as statement <code>swap(x[++m], x[i])</code> does. Partition is done when <code>i == u</code>, and then we apply quick sort to the left and right parts, recursively. Under what circumstance does recursion terminate? Yes, <code>l &gt;= u</code>.</p>
+<h3>Python</h3>
+<pre><code class="lang-python">#!/usr/bin/env python
+
+
+def qsort2(alist, l, u):
+    print(alist)
+    if l &gt;= u:
+        return
+
+    m = l
+    for i in xrange(l + 1, u + 1):
+        if alist[i] &lt; alist[l]:
+            m += 1
+            alist[m], alist[i] = alist[i], alist[m]
+    # swap between m and l after partition, important!
+    alist[m], alist[l] = alist[l], alist[m]
+    qsort2(alist, l, m - 1)
+    qsort2(alist, m + 1, u)
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort2(unsortedArray, 0, len(unsortedArray) - 1))
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Sort {
+    public static void main(String[] args) {
+        int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+        quickSort(unsortedArray);
+        System.out.println(&quot;After sort: &quot;);
+        for (int item : unsortedArray) {
+            System.out.print(item + &quot; &quot;);
+        }
+    }
+
+    public static void quickSort1(int[] array, int l, int u) {
+        for (int item : array) {
+            System.out.print(item + &quot; &quot;);
+        }
+        System.out.println();
+
+        if (l &gt;= u) return;
+        int m = l;
+        for (int i = l + 1; i &lt;= u; i++) {
+            if (array[i] &lt; array[l]) {
+                m += 1;
+                int temp = array[m];
+                array[m] = array[i];
+                array[i] = temp;
+            }
+        }
+        // swap between array[m] and array[l]
+        // put pivot in the mid
+        int temp = array[m];
+        array[m] = array[l];
+        array[l] = temp;
+
+        quickSort1(array, l, m - 1);
+        quickSort1(array, m + 1, u);
+    }
+
+    public static void quickSort(int[] array) {
+        quickSort1(array, 0, array.length - 1);
+    }
+}
+</code></pre>
+<p>The swap of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>m</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[m]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">m</span><span class="mclose">]</span></span></span></span> should not be left out.</p>
+<p>The output:</p>
+<pre><code>[6, 5, 3, 1, 8, 7, 2, 4]
+[4, 5, 3, 1, 2, 6, 8, 7]
+[2, 3, 1, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre><h3>Two-way partitioning</h3>
+<p>Another implementation is to use two indexes for partition. It speeds up the partition by working two-way simultaneously, both from lower bound toward right and from upper bound toward left, instead of traversing one-way through the sequence.</p>
+<p>The gif below shows the complete process on <code>[6, 5, 3, 1, 8, 7, 2, 4]</code>.</p>
+<p><img src="../../shared-files/images/qsort3.gif" alt="Quick Sort two index for partition"></p>
+<ol>
+<li>Take <code>3</code> as the pivot.</li>
+<li>Let pointer <code>lo</code> start with number <code>6</code> and pointer <code>hi</code> start with number <code>4</code>. Keep increasing <code>lo</code> until it comes to an element ≥ the pivot, and decreasing <code>hi</code> until it comes to an element &lt; the pivot. Then swap these two elements.</li>
+<li>Increase <code>lo</code> and decrease <code>hi</code> (both by 1), and repeat step 2 so that <code>lo</code> comes to <code>5</code> and <code>hi</code> comes to <code>1</code>. Swap again.</li>
+<li>Increase <code>lo</code> and decrease <code>hi</code> (both by 1) until they meet (at <code>3</code>). The partition for pivot <code>3</code> ends. Apply the same operations on the left and right part of pivot <code>3</code>.</li>
+</ol>
+<p>A more general interpretation:</p>
+<ol>
+<li>Init <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> to be at the two ends of given array.</li>
+<li>Take the first element as the pivot.</li>
+<li>Perform partition, which is a loop with two inner-loops:<ul>
+<li>One that increases <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>, until it comes to an element ≥ pivot.</li>
+<li>The other that decreases <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span>, until it comes to an element &lt; pivot.</li>
+</ul>
+</li>
+<li>Check whether <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> meet or overlap. If so, swap the elements.</li>
+</ol>
+<p>Think of a sequence whose elements are <em>all equal</em>. In such case, each partition will return the middle element, thus recursion will happen <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span></span></span></span> times. For each level of recursion, it takes <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> times of comparison. The total comparison is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>log</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">n \log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span></span></span></span> then. <sup><a href="#fn_programming_pearls" id="reffn_programming_pearls">programming_pearls</a></sup></p>
+<h3>Python</h3>
+<pre><code class="lang-python">#!/usr/bin/env python
+
+def qsort3(alist, lower, upper):
+    print(alist)
+    if lower &gt;= upper:
+        return
+
+    pivot = alist[lower]
+    left, right = lower + 1, upper
+    while left &lt;= right:
+        while left &lt;= right and alist[left] &lt; pivot:
+            left += 1
+        while left &lt;= right and alist[right] &gt;= pivot:
+            right -= 1
+        if left &gt; right:
+            break
+        # swap while left &lt;= right
+        alist[left], alist[right] = alist[right], alist[left]
+    # swap the smaller with pivot
+    alist[lower], alist[right] = alist[right], alist[lower]
+
+    qsort3(alist, lower, right - 1)
+    qsort3(alist, right + 1, upper)
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort3(unsortedArray, 0, len(unsortedArray) - 1))
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Sort {
+    public static void main(String[] args) {
+        int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+        quickSort(unsortedArray);
+        System.out.println(&quot;After sort: &quot;);
+        for (int item : unsortedArray) {
+            System.out.print(item + &quot; &quot;);
+        }
+    }
+
+    public static void quickSort2(int[] array, int l, int u) {
+        for (int item : array) {
+            System.out.print(item + &quot; &quot;);
+        }
+        System.out.println();
+
+        if (l &gt;= u) return;
+        int pivot = array[l];
+        int left = l + 1;
+        int right = u;
+        while (left &lt;= right) {
+            while (left &lt;= right &amp;&amp; array[left] &lt; pivot) {
+                left++;
+            }
+            while (left &lt;= right &amp;&amp; array[right] &gt;= pivot) {
+                right--;
+            }
+            if (left &gt; right) break;
+            // swap array[left] with array[right] while left &lt;= right
+            int temp = array[left];
+            array[left] = array[right];
+            array[right] = temp;
+        }
+        /* swap the smaller with pivot */
+        int temp = array[right];
+        array[right] = array[l];
+        array[l] = temp;
+
+        quickSort2(array, l, right - 1);
+        quickSort2(array, right + 1, u);
+    }
+
+    public static void quickSort(int[] array) {
+        quickSort2(array, 0, array.length - 1);
+    }
+}
+</code></pre>
+<p>The output:</p>
+<pre><code>[6, 5, 3, 1, 8, 7, 2, 4]
+[2, 5, 3, 1, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre><p>Having analyzed three implementations of quick sort, we may grasp one key difference between <em>quick sort</em> and <em>merge sort</em> :</p>
+<ol>
+<li>Merge sort divides the original array into two sub-arrays, and merges the sorted sub-arrays to form a totally ordered one. In this case, recursion happens before processing(merging) the whole array.</li>
+<li>Quick sort divides the original array into two sub-arrays, and then sort them. The whole array is ordered as soon as the sub-arrays get sorted. In this case, recursion happens after processing(partition) the whole array.</li>
+</ol>
+<p>Robert Sedgewick&#39;s presentation on <a href="http://algs4.cs.princeton.edu/23quicksort/">quick sort</a> is strongly recommended.</p>
+<h2>Reference</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort - wikepedia</a></li>
+<li><a href="http://algs4.cs.princeton.edu/23quicksort/">Quicksort |  Robert Sedgewick</a></li>
+<li>Programming Pearls Column 11 Sorting - gives an in-depth discussion on insertion sort and quick sort</li>
+<li><a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/docs/quicksort_analysis.pdf">Quicksort Analysis</a></li>
+<li><blockquote id="fn_programming_pearls">
+<sup>programming_pearls</sup>. Programming Pearls<a href="#reffn_programming_pearls" title="Jump back to footnote [programming_pearls] in the text."> &#8617;</a>
+</blockquote>
+</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Quick Sort</h1>
+<!-- toc -->
+<ul>
+<li><a href="#out-in-place-implementation">out-in-place implementation</a><ul>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+<li><a href="#in-place-implementation">in-place implementation</a><ul>
+<li><a href="#one-index-for-partition">one index for partition</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#two-way-partitioning">Two-way partitioning</a></li>
+<li><a href="#python-1">Python</a></li>
+<li><a href="#java-1">Java</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+<!-- tocstop -->
+<p>In essence, quick sort is an application of <code>divide and conquer</code> strategy. There are usually three steps:</p>
+<ol>
+<li>Pick a pivot -- a random element.</li>
+<li>Partition -- put the elements smaller than pivot to its left and greater ones to its right.</li>
+<li>Recurse -- apply above steps until the whole sequence is sorted.</li>
+</ol>
+<h2>out-in-place implementation</h2>
+<p>Recursive implementation is easy to understand and code. Python <code>list comprehension</code> looks even nicer:</p>
+<pre><code class="lang-python">#!/usr/bin/env python
+
+
+def qsort1(alist):
+    print(alist)
+    if len(alist) &lt;= 1:
+        return alist
+    else:
+        pivot = alist[0]
+        return qsort1([x for x in alist[1:] if x &lt; pivot]) + \
+               [pivot] + \
+               qsort1([x for x in alist[1:] if x &gt;= pivot])
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort1(unsortedArray))
+</code></pre>
+<p>The output：</p>
+<pre><code>[6, 5, 3, 1, 8, 7, 2, 4]
+[5, 3, 1, 2, 4]
+[3, 1, 2, 4]
+[1, 2]
+[]
+[2]
+[4]
+[]
+[8, 7]
+[7]
+[]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre><p>Despite of its simplicity, above quick sort code is not that &#39;quick&#39;: recursive calls keep creating new arrays which results in high space complexity. So <code>list comprehension</code> is not proper for quick sort implementation.</p>
+<h3>Complexity</h3>
+<p>Take a quantized look at how much space it actually cost.</p>
+<p>In the best case, the pivot happens to be the <strong>median</strong> value, and quick sort partition divides the sequence almost equally, so the recursions&#39; depth is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span></span></span></span> . As to the space complexity of each level (depth), it is worth some discussion.</p>
+<p>A common mistake can be: each level contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> elements, then the space complexity is surely <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> . The answer is right, while the approach is not. As we know, space complexity is usually measured by memory consumption of a running program. Take above out-in-place implementation as example, <strong>in the best case, each level costs half as much memory as its upper level does</strong> . Sums up to be:</p>
+<p> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow></mrow></msubsup><mfrac><mrow><mi>n</mi></mrow><mrow><msup><mn>2</mn><mi>i</mi></msup></mrow></mfrac><mo>=</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">\sum _{i=0} ^{} \frac {n}{2^i} = 2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.095em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">0</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="msupsub"><span class="vlist"><span style="top:-0.286em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord mathrm">2</span><span class="mord mathit">n</span></span></span></span> .</p>
+<p>For more detail, refer to the picture below as well as above python code. The first level of recursion saves 8 values, the second 4, and so on so forth.</p>
+<p>In the worst case, it will take <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span> times of swap on level <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>. Sums up to be:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></msubsup><mo>(</mo><mi>n</mi><mo>−</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\sum_{i=0}^n (n-i+1) = O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.114118em;vertical-align:-0.30001em;"></span><span class="base textstyle uncramped"><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">0</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathit">i</span><span class="mbin">+</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p><img src="../../shared-files/images/qsort1.png" alt="Quicksort Recursive"></p>
+<h2>in-place implementation</h2>
+<h3>one index for partition</h3>
+<p>One in-place implementation of quick sort is to use one index for partition, as the following image illustrates. Take example of <code>[6, 5, 3, 1, 8, 7, 2, 4]</code> again, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.01968em;">l</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">u</span></span></span></span> stand for the lower bound and upper bound of index respectively. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> traverses and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span></span></span></span> maintains index of partition which varies with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>a</mi><mi>r</mi><mi>g</mi><mi>e</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">target</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.61508em;"></span><span class="strut bottom" style="height:0.80952em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">e</span><span class="mord mathit">t</span></span></span></span> is the pivot.</p>
+<p><img src="../../shared-files/images/qsort2.png" alt="Quick Sort one index for partition"></p>
+<p>For each specific value of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span> will take one of the follwing cases: if <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>≥</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x[i] \geq t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mrel">≥</span><span class="mord mathit">t</span></span></span></span> , <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> increases and goes on traversing; else if <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x[i] &lt; t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mrel">&lt;</span><span class="mord mathit">t</span></span></span></span> , <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span> will be swapped to the left part, as statement <code>swap(x[++m], x[i])</code> does. Partition is done when <code>i == u</code>, and then we apply quick sort to the left and right parts, recursively. Under what circumstance does recursion terminate? Yes, <code>l &gt;= u</code>.</p>
+<h3>Python</h3>
+<pre><code class="lang-python">#!/usr/bin/env python
+
+
+def qsort2(alist, l, u):
+    print(alist)
+    if l &gt;= u:
+        return
+
+    m = l
+    for i in xrange(l + 1, u + 1):
+        if alist[i] &lt; alist[l]:
+            m += 1
+            alist[m], alist[i] = alist[i], alist[m]
+    # swap between m and l after partition, important!
+    alist[m], alist[l] = alist[l], alist[m]
+    qsort2(alist, l, m - 1)
+    qsort2(alist, m + 1, u)
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort2(unsortedArray, 0, len(unsortedArray) - 1))
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Sort {
+    public static void main(String[] args) {
+        int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+        quickSort(unsortedArray);
+        System.out.println(&quot;After sort: &quot;);
+        for (int item : unsortedArray) {
+            System.out.print(item + &quot; &quot;);
+        }
+    }
+
+    public static void quickSort1(int[] array, int l, int u) {
+        for (int item : array) {
+            System.out.print(item + &quot; &quot;);
+        }
+        System.out.println();
+
+        if (l &gt;= u) return;
+        int m = l;
+        for (int i = l + 1; i &lt;= u; i++) {
+            if (array[i] &lt; array[l]) {
+                m += 1;
+                int temp = array[m];
+                array[m] = array[i];
+                array[i] = temp;
+            }
+        }
+        // swap between array[m] and array[l]
+        // put pivot in the mid
+        int temp = array[m];
+        array[m] = array[l];
+        array[l] = temp;
+
+        quickSort1(array, l, m - 1);
+        quickSort1(array, m + 1, u);
+    }
+
+    public static void quickSort(int[] array) {
+        quickSort1(array, 0, array.length - 1);
+    }
+}
+</code></pre>
+<p>The swap of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>[</mo><mi>m</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">x[m]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mopen">[</span><span class="mord mathit">m</span><span class="mclose">]</span></span></span></span> should not be left out.</p>
+<p>The output:</p>
+<pre><code>[6, 5, 3, 1, 8, 7, 2, 4]
+[4, 5, 3, 1, 2, 6, 8, 7]
+[2, 3, 1, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 7]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre><h3>Two-way partitioning</h3>
+<p>Another implementation is to use two indexes for partition. It speeds up the partition by working two-way simultaneously, both from lower bound toward right and from upper bound toward left, instead of traversing one-way through the sequence.</p>
+<p>The gif below shows the complete process on <code>[6, 5, 3, 1, 8, 7, 2, 4]</code>.</p>
+<p><img src="../../shared-files/images/qsort3.gif" alt="Quick Sort two index for partition"></p>
+<ol>
+<li>Take <code>3</code> as the pivot.</li>
+<li>Let pointer <code>lo</code> start with number <code>6</code> and pointer <code>hi</code> start with number <code>4</code>. Keep increasing <code>lo</code> until it comes to an element ≥ the pivot, and decreasing <code>hi</code> until it comes to an element &lt; the pivot. Then swap these two elements.</li>
+<li>Increase <code>lo</code> and decrease <code>hi</code> (both by 1), and repeat step 2 so that <code>lo</code> comes to <code>5</code> and <code>hi</code> comes to <code>1</code>. Swap again.</li>
+<li>Increase <code>lo</code> and decrease <code>hi</code> (both by 1) until they meet (at <code>3</code>). The partition for pivot <code>3</code> ends. Apply the same operations on the left and right part of pivot <code>3</code>.</li>
+</ol>
+<p>A more general interpretation:</p>
+<ol>
+<li>Init <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> to be at the two ends of given array.</li>
+<li>Take the first element as the pivot.</li>
+<li>Perform partition, which is a loop with two inner-loops:<ul>
+<li>One that increases <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>, until it comes to an element ≥ pivot.</li>
+<li>The other that decreases <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span>, until it comes to an element &lt; pivot.</li>
+</ul>
+</li>
+<li>Check whether <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> meet or overlap. If so, swap the elements.</li>
+</ol>
+<p>Think of a sequence whose elements are <em>all equal</em>. In such case, each partition will return the middle element, thus recursion will happen <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span></span></span></span> times. For each level of recursion, it takes <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> times of comparison. The total comparison is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>log</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">n \log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span></span></span></span> then. <sup><a href="#fn_programming_pearls" id="reffn_programming_pearls">programming_pearls</a></sup></p>
+<h3>Python</h3>
+<pre><code class="lang-python">#!/usr/bin/env python
+
+def qsort3(alist, lower, upper):
+    print(alist)
+    if lower &gt;= upper:
+        return
+
+    pivot = alist[lower]
+    left, right = lower + 1, upper
+    while left &lt;= right:
+        while left &lt;= right and alist[left] &lt; pivot:
+            left += 1
+        while left &lt;= right and alist[right] &gt;= pivot:
+            right -= 1
+        if left &gt; right:
+            break
+        # swap while left &lt;= right
+        alist[left], alist[right] = alist[right], alist[left]
+    # swap the smaller with pivot
+    alist[lower], alist[right] = alist[right], alist[lower]
+
+    qsort3(alist, lower, right - 1)
+    qsort3(alist, right + 1, upper)
+
+unsortedArray = [6, 5, 3, 1, 8, 7, 2, 4]
+print(qsort3(unsortedArray, 0, len(unsortedArray) - 1))
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Sort {
+    public static void main(String[] args) {
+        int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+        quickSort(unsortedArray);
+        System.out.println(&quot;After sort: &quot;);
+        for (int item : unsortedArray) {
+            System.out.print(item + &quot; &quot;);
+        }
+    }
+
+    public static void quickSort2(int[] array, int l, int u) {
+        for (int item : array) {
+            System.out.print(item + &quot; &quot;);
+        }
+        System.out.println();
+
+        if (l &gt;= u) return;
+        int pivot = array[l];
+        int left = l + 1;
+        int right = u;
+        while (left &lt;= right) {
+            while (left &lt;= right &amp;&amp; array[left] &lt; pivot) {
+                left++;
+            }
+            while (left &lt;= right &amp;&amp; array[right] &gt;= pivot) {
+                right--;
+            }
+            if (left &gt; right) break;
+            // swap array[left] with array[right] while left &lt;= right
+            int temp = array[left];
+            array[left] = array[right];
+            array[right] = temp;
+        }
+        /* swap the smaller with pivot */
+        int temp = array[right];
+        array[right] = array[l];
+        array[l] = temp;
+
+        quickSort2(array, l, right - 1);
+        quickSort2(array, right + 1, u);
+    }
+
+    public static void quickSort(int[] array) {
+        quickSort2(array, 0, array.length - 1);
+    }
+}
+</code></pre>
+<p>The output:</p>
+<pre><code>[6, 5, 3, 1, 8, 7, 2, 4]
+[2, 5, 3, 1, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 5, 4, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre><p>Having analyzed three implementations of quick sort, we may grasp one key difference between <em>quick sort</em> and <em>merge sort</em> :</p>
+<ol>
+<li>Merge sort divides the original array into two sub-arrays, and merges the sorted sub-arrays to form a totally ordered one. In this case, recursion happens before processing(merging) the whole array.</li>
+<li>Quick sort divides the original array into two sub-arrays, and then sort them. The whole array is ordered as soon as the sub-arrays get sorted. In this case, recursion happens after processing(partition) the whole array.</li>
+</ol>
+<p>Robert Sedgewick&#39;s presentation on <a href="http://algs4.cs.princeton.edu/23quicksort/">quick sort</a> is strongly recommended.</p>
+<h2>Reference</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort - wikepedia</a></li>
+<li><a href="http://algs4.cs.princeton.edu/23quicksort/">Quicksort |  Robert Sedgewick</a></li>
+<li>Programming Pearls Column 11 Sorting - gives an in-depth discussion on insertion sort and quick sort</li>
+<li><a href="http://7xojrx.com1.z0.glb.clouddn.com/docs/algorithm-exercise/docs/quicksort_analysis.pdf">Quicksort Analysis</a></li>
+<li><blockquote id="fn_programming_pearls">
+<sup>programming_pearls</sup>. Programming Pearls<a href="#reffn_programming_pearls" title="Jump back to footnote [programming_pearls] in the text."> &#8617;</a>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[String]]></title>
+        <id>https://algorithm.yuanbin.me/en/string/</id>
+        <link href="https://algorithm.yuanbin.me/en/string/">
+        </link>
+        <updated>2019-11-03T15:41:55Z</updated>
+        <summary type="html"><![CDATA[<h1>String</h1>
+<p>String related topics are discussed in this chapter.</p>
+<blockquote>
+<p><strong>Note</strong>
+In order to re-use most of the memory of an existing data structure, internal implementation of string is immutable in most programming languages(Java, Python). Take care if you want to modify character in place. </p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<h1>String</h1>
+<p>String related topics are discussed in this chapter.</p>
+<blockquote>
+<p><strong>Note</strong>
+In order to re-use most of the memory of an existing data structure, internal implementation of string is immutable in most programming languages(Java, Python). Take care if you want to modify character in place. </p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[strStr]]></title>
+        <id>https://algorithm.yuanbin.me/en/string/strstr.html</id>
+        <link href="https://algorithm.yuanbin.me/en/string/strstr.html">
+        </link>
+        <updated>2019-11-03T15:41:55Z</updated>
+        <summary type="html"><![CDATA[<h1>strStr</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a><ul>
+<li><a href="#problem-statement">Problem Statement</a><ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#challenge">Challenge</a></li>
+<li><a href="#clarification">Clarification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#problem-analysis">Problem Analysis</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#c">C</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#source-code-analysis">Source Code Analysis</a></li>
+<li><a href="#complexity-analysis">Complexity Analysis</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/implement-strstr/">Implement strStr() | LeetCode OJ</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/strstr/">lintcode - (13) strstr</a></li>
+</ul>
+<h3>Problem Statement</h3>
+<p>For a given source string and a target string, you should output the <strong>first</strong>
+index(from 0) of target string in source string.</p>
+<p>If target does not exist in source, just return <code>-1</code>.</p>
+<h4>Example</h4>
+<p>If source = <code>&quot;source&quot;</code> and target = <code>&quot;target&quot;</code>, return <code>-1</code>.</p>
+<p>If source = <code>&quot;abcdabcdefg&quot;</code> and target = <code>&quot;bcd&quot;</code>, return <code>1</code>.</p>
+<h4>Challenge</h4>
+<p>O(n2) is acceptable. Can you implement an O(n) algorithm? (hint: <em>KMP</em>)</p>
+<h4>Clarification</h4>
+<p>Do I need to implement KMP Algorithm in a real interview?</p>
+<ul>
+<li>Not necessary. When you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.</li>
+</ul>
+<h2>Problem Analysis</h2>
+<p>It&#39;s very straightforward to solve string match problem with nested for loops. Since we must iterate the target string, we can optimize the iteration of source string. It&#39;s unnecessary to iterate the source string if the length of remaining part does not exceed the length of target string. We can only iterate the valid part of source string. Apart from this naive algorithm, you can use a more effective algorithm such as KMP.</p>
+<h3>Python</h3>
+<pre><code class="lang-python">class Solution:
+    def strStr(self, source, target):
+        if source is None or target is None:
+            return -1
+
+        for i in range(len(source) - len(target) + 1):
+            for j in range(len(target)):
+                if source[i + j] != target[j]:
+                    break
+            else:  # no break
+                return i
+        return -1
+</code></pre>
+<h3>C</h3>
+<pre><code class="lang-c">int strStr(char* haystack, char* needle) {
+    if (haystack == NULL || needle == NULL) return -1;
+
+    const int len_h = strlen(haystack);
+    const int len_n = strlen(needle);
+    for (int i = 0; i &lt; len_h - len_n + 1; i++) {
+        int j = 0;
+        for (; j &lt; len_n; j++) {
+            if (haystack[i+j] != needle[j]) {
+                break;
+            }
+        }
+        if (j == len_n) return i;
+    }
+
+    return -1;
+}
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        if (haystack.empty() &amp;&amp; needle.empty()) return 0;
+        if (haystack.empty()) return -1;
+        if (needle.empty()) return 0;
+        // in case of overflow for negative
+        if (haystack.size() &lt; needle.size()) return -1;
+
+        for (int i = 0; i &lt; haystack.size() - needle.size() + 1; i++) {
+            string::size_type j = 0;
+            for (; j &lt; needle.size(); j++) {
+                if (haystack[i + j] != needle[j]) break;
+            }
+            if (j == needle.size()) return i;
+        }
+
+        return -1;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    public int strStr(String haystack, String needle) {
+        if (haystack == null &amp;&amp; needle == null) return 0;
+        if (haystack == null) return -1;
+        if (needle == null) return 0;
+
+        for (int i = 0; i &lt; haystack.length() - needle.length() + 1; i++) {
+            int j = 0;
+            for (; j &lt; needle.length(); j++) {
+                if (haystack.charAt(i+j) != needle.charAt(j)) break;
+            }
+            if (j == needle.length()) return i;
+        }
+
+        return -1;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<ol>
+<li>corner case: <code>haystack(source)</code> and <code>needle(target)</code> may be empty string.</li>
+<li>code convention:<ul>
+<li>space is needed for <code>==</code></li>
+<li>use meaningful variable names</li>
+<li>put a blank line before declaration <code>int i, j;</code></li>
+</ul>
+</li>
+<li>declare j outside for loop if and only if you want to use it outside.</li>
+</ol>
+<p>Some Pythonic notes: <a href="https://docs.python.org/3/tutorial/controlflow.html">4. More Control Flow Tools</a> section 4.4 and <a href="http://stackoverflow.com/questions/9979970/why-does-python-use-else-after-for-and-while-loops">if statement - Why does python use &#39;else&#39; after for and while loops?</a></p>
+<h3>Complexity Analysis</h3>
+<p>nested for loop, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mo>(</mo><mi>n</mi><mo>−</mo><mi>m</mi><mo>)</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O((n-m)m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathit">m</span><span class="mclose">)</span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span> for worst case.</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1>strStr</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a><ul>
+<li><a href="#problem-statement">Problem Statement</a><ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#challenge">Challenge</a></li>
+<li><a href="#clarification">Clarification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#problem-analysis">Problem Analysis</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#c">C</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#source-code-analysis">Source Code Analysis</a></li>
+<li><a href="#complexity-analysis">Complexity Analysis</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/implement-strstr/">Implement strStr() | LeetCode OJ</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/strstr/">lintcode - (13) strstr</a></li>
+</ul>
+<h3>Problem Statement</h3>
+<p>For a given source string and a target string, you should output the <strong>first</strong>
+index(from 0) of target string in source string.</p>
+<p>If target does not exist in source, just return <code>-1</code>.</p>
+<h4>Example</h4>
+<p>If source = <code>&quot;source&quot;</code> and target = <code>&quot;target&quot;</code>, return <code>-1</code>.</p>
+<p>If source = <code>&quot;abcdabcdefg&quot;</code> and target = <code>&quot;bcd&quot;</code>, return <code>1</code>.</p>
+<h4>Challenge</h4>
+<p>O(n2) is acceptable. Can you implement an O(n) algorithm? (hint: <em>KMP</em>)</p>
+<h4>Clarification</h4>
+<p>Do I need to implement KMP Algorithm in a real interview?</p>
+<ul>
+<li>Not necessary. When you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.</li>
+</ul>
+<h2>Problem Analysis</h2>
+<p>It&#39;s very straightforward to solve string match problem with nested for loops. Since we must iterate the target string, we can optimize the iteration of source string. It&#39;s unnecessary to iterate the source string if the length of remaining part does not exceed the length of target string. We can only iterate the valid part of source string. Apart from this naive algorithm, you can use a more effective algorithm such as KMP.</p>
+<h3>Python</h3>
+<pre><code class="lang-python">class Solution:
+    def strStr(self, source, target):
+        if source is None or target is None:
+            return -1
+
+        for i in range(len(source) - len(target) + 1):
+            for j in range(len(target)):
+                if source[i + j] != target[j]:
+                    break
+            else:  # no break
+                return i
+        return -1
+</code></pre>
+<h3>C</h3>
+<pre><code class="lang-c">int strStr(char* haystack, char* needle) {
+    if (haystack == NULL || needle == NULL) return -1;
+
+    const int len_h = strlen(haystack);
+    const int len_n = strlen(needle);
+    for (int i = 0; i &lt; len_h - len_n + 1; i++) {
+        int j = 0;
+        for (; j &lt; len_n; j++) {
+            if (haystack[i+j] != needle[j]) {
+                break;
+            }
+        }
+        if (j == len_n) return i;
+    }
+
+    return -1;
+}
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        if (haystack.empty() &amp;&amp; needle.empty()) return 0;
+        if (haystack.empty()) return -1;
+        if (needle.empty()) return 0;
+        // in case of overflow for negative
+        if (haystack.size() &lt; needle.size()) return -1;
+
+        for (int i = 0; i &lt; haystack.size() - needle.size() + 1; i++) {
+            string::size_type j = 0;
+            for (; j &lt; needle.size(); j++) {
+                if (haystack[i + j] != needle[j]) break;
+            }
+            if (j == needle.size()) return i;
+        }
+
+        return -1;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    public int strStr(String haystack, String needle) {
+        if (haystack == null &amp;&amp; needle == null) return 0;
+        if (haystack == null) return -1;
+        if (needle == null) return 0;
+
+        for (int i = 0; i &lt; haystack.length() - needle.length() + 1; i++) {
+            int j = 0;
+            for (; j &lt; needle.length(); j++) {
+                if (haystack.charAt(i+j) != needle.charAt(j)) break;
+            }
+            if (j == needle.length()) return i;
+        }
+
+        return -1;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<ol>
+<li>corner case: <code>haystack(source)</code> and <code>needle(target)</code> may be empty string.</li>
+<li>code convention:<ul>
+<li>space is needed for <code>==</code></li>
+<li>use meaningful variable names</li>
+<li>put a blank line before declaration <code>int i, j;</code></li>
+</ul>
+</li>
+<li>declare j outside for loop if and only if you want to use it outside.</li>
+</ol>
+<p>Some Pythonic notes: <a href="https://docs.python.org/3/tutorial/controlflow.html">4. More Control Flow Tools</a> section 4.4 and <a href="http://stackoverflow.com/questions/9979970/why-does-python-use-else-after-for-and-while-loops">if statement - Why does python use &#39;else&#39; after for and while loops?</a></p>
+<h3>Complexity Analysis</h3>
+<p>nested for loop, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mo>(</mo><mi>n</mi><mo>−</mo><mi>m</mi><mo>)</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O((n-m)m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathit">m</span><span class="mclose">)</span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span> for worst case.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Partition Array by Odd and Even]]></title>
+        <id>https://algorithm.yuanbin.me/en/integer_array/partition_array_by_odd_and_even.html</id>
+        <link href="https://algorithm.yuanbin.me/en/integer_array/partition_array_by_odd_and_even.html">
+        </link>
+        <updated>2019-11-03T15:41:55Z</updated>
+        <summary type="html"><![CDATA[<h1>Partition Array by Odd and Even</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#solution">Solution</a><ul>
+<li><a href="#java">Java</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#src-code-analysis">Src Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/partition-array-by-odd-and-even/">(373) Partition Array by Odd and Even</a></li>
+<li><a href="http://www.geeksforgeeks.org/segregate-even-and-odd-numbers/">Segregate Even and Odd numbers - GeeksforGeeks</a></li>
+</ul>
+<pre><code>Partition an integers array into odd number first and even number second.
+
+Example
+Given [1, 2, 3, 4], return [1, 3, 2, 4]
+
+Challenge
+Do it in-place.
+</code></pre><h2>Solution</h2>
+<p>Use <strong>two pointers</strong> to keep the odd before the even, and swap when necessary.</p>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    /**
+     * @param nums: an array of integers
+     * @return: nothing
+     */
+    public void partitionArray(int[] nums) {
+        if (nums == null) return;
+
+        int left = 0, right = nums.length - 1;
+        while (left &lt; right) {
+            // odd number
+            while (left &lt; right &amp;&amp; nums[left] % 2 != 0) {
+                left++;
+            }
+            // even number
+            while (left &lt; right &amp;&amp; nums[right] % 2 == 0) {
+                right--;
+            }
+            // swap
+            if (left &lt; right) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+            }
+        }
+    }
+}
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">void partitionArray(vector&lt;int&gt; &amp;nums) {
+      if (nums.empty()) return;
+
+      int i=0, j=nums.size()-1;
+      while (i&lt;j) {
+          while (i&lt;j &amp;&amp; nums[i]%2!=0) i++;
+          while (i&lt;j &amp;&amp; nums[j]%2==0) j--;
+          if (i != j) swap(nums[i], nums[j]);
+      }
+  }
+</code></pre>
+<h3>Src Code Analysis</h3>
+<p>Be careful not to forget <code>left &lt; right</code> in while loop condition.</p>
+<h3>Complexity</h3>
+<p>To traverse the array, time complexity is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>. And maintaining two pointers means <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> space complexity.</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Partition Array by Odd and Even</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#solution">Solution</a><ul>
+<li><a href="#java">Java</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#src-code-analysis">Src Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/partition-array-by-odd-and-even/">(373) Partition Array by Odd and Even</a></li>
+<li><a href="http://www.geeksforgeeks.org/segregate-even-and-odd-numbers/">Segregate Even and Odd numbers - GeeksforGeeks</a></li>
+</ul>
+<pre><code>Partition an integers array into odd number first and even number second.
+
+Example
+Given [1, 2, 3, 4], return [1, 3, 2, 4]
+
+Challenge
+Do it in-place.
+</code></pre><h2>Solution</h2>
+<p>Use <strong>two pointers</strong> to keep the odd before the even, and swap when necessary.</p>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    /**
+     * @param nums: an array of integers
+     * @return: nothing
+     */
+    public void partitionArray(int[] nums) {
+        if (nums == null) return;
+
+        int left = 0, right = nums.length - 1;
+        while (left &lt; right) {
+            // odd number
+            while (left &lt; right &amp;&amp; nums[left] % 2 != 0) {
+                left++;
+            }
+            // even number
+            while (left &lt; right &amp;&amp; nums[right] % 2 == 0) {
+                right--;
+            }
+            // swap
+            if (left &lt; right) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+            }
+        }
+    }
+}
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">void partitionArray(vector&lt;int&gt; &amp;nums) {
+      if (nums.empty()) return;
+
+      int i=0, j=nums.size()-1;
+      while (i&lt;j) {
+          while (i&lt;j &amp;&amp; nums[i]%2!=0) i++;
+          while (i&lt;j &amp;&amp; nums[j]%2==0) j--;
+          if (i != j) swap(nums[i], nums[j]);
+      }
+  }
+</code></pre>
+<h3>Src Code Analysis</h3>
+<p>Be careful not to forget <code>left &lt; right</code> in while loop condition.</p>
+<h3>Complexity</h3>
+<p>To traverse the array, time complexity is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>. And maintaining two pointers means <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> space complexity.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kth Largest Element]]></title>
+        <id>https://algorithm.yuanbin.me/en/integer_array/kth_largest_element.html</id>
+        <link href="https://algorithm.yuanbin.me/en/integer_array/kth_largest_element.html">
+        </link>
+        <updated>2019-11-03T15:41:55Z</updated>
+        <summary type="html"><![CDATA[<h1>Kth Largest Element in an Array</h1>
+<p>tagsstart</p>
+<p><i class="fa fa-tags" aria-hidden="true"></i> <a href="/tags.html#quick-sort">Quick Sort</a> <a href="/tags.html#divide-and-conquer">Divide and Conquer</a> <a href="/tags.html#medium">Medium</a></p>
+<p>tagsstop</p>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a><ul>
+<li><a href="#problem-statement">Problem Statement</a></li>
+</ul>
+</li>
+<li><a href="#solution">Solution</a><ul>
+<li><a href="#java---recursion">Java - Recursion</a></li>
+<li><a href="#src-code-analysis">Src Code Analysis</a></li>
+<li><a href="#java---iteration">Java - Iteration</a></li>
+<li><a href="#src-code-analysis-1">Src Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">(215) Kth Largest Element in an Array</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/kth-largest-element/">(5) Kth Largest Element</a></li>
+</ul>
+<h3>Problem Statement</h3>
+<p>Find the <strong>k</strong>th largest element in an unsorted array. Note that it is the kth
+largest element in the sorted order, not the kth distinct element.</p>
+<p>For example,<br>Given <code>[3,2,1,5,6,4]</code> and k = 2, return 5.</p>
+<p><strong>Note: </strong><br>You may assume k is always valid, 1 ≤ k ≤ array&#39;s length.</p>
+<p><strong>Credits:</strong>  </p>
+<p>Special thanks to <a href="https://leetcode.com/discuss/user/mithmatt">@mithmatt</a> for
+adding this problem and creating all test cases.</p>
+<h2>Solution</h2>
+<p>Trail and error: Comparison-based sorting algorithms don&#39;t work because they incur <strong><em>O(n2)</em></strong> time complexity. Neither does Radix Sort which requires the elements to be in a certain range. In fact, Quick Sort is the answer to <code>kth largest</code> problems (<a href="http://algorithm.yuanbin.me/zh-hans/basics_sorting/quick_sort.html">Here</a> are code templates of quick sort).</p>
+<p>By quick sorting, we get the final index of a pivot. And by comparing that index with <code>K</code>, we decide which side (the greater or the smaller) of the pivot to recurse on.</p>
+<h3>Java - Recursion</h3>
+<pre><code class="lang-java">public class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return Integer.MIN_VALUE;
+        }
+
+        int kthLargest = qSort(nums, 0, nums.length - 1, k);
+        return kthLargest;
+    }
+
+    private int qSort(int[] nums, int left, int right, int k) {
+        if (left &gt;= right) {
+            return nums[right];
+        }
+
+        int m = left;
+        for (int i = left + 1; i &lt;= right; i++) {
+            if (nums[i] &gt; nums[left]) {
+                m++;
+                swap(nums, m, i);
+            }
+        }
+        swap(nums, m, left);
+
+        if (k == m + 1) {
+            return nums[m];
+        } else if (k &gt; m + 1) {
+            return qSort(nums, m + 1, right, k);
+        } else {
+            return qSort(nums, left, m - 1, k);
+        }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i]; nums[i] = nums[j]; nums[j] = tmp;
+    }
+}
+</code></pre>
+<h3>Src Code Analysis</h3>
+<p>Two cases when the recursion ceases:
+a. left bound equals right bound;
+b. final index of pivot equals K.</p>
+<p>Since &#39;Kth <strong>largest</strong>&#39; is wanted, numbers greater than pivot are placed to the left and numbers smaller to the right, which is a little different with typical quick sort code.</p>
+<h3>Java - Iteration</h3>
+<p>Recursive code is easier to read than to write, and it demands some experience and skill. Here is an iterative implementation.</p>
+<pre><code>class Solution {
+    public int findKthLargest(int[] A, int k) {
+        if (A == null || A.length == 0 || k &lt; 0 || k &gt; A.length) {
+            return -1;
+        }
+
+        int lo = 0, hi = A.length - 1;
+        while (lo &lt;= hi) {
+            int idx = partition(A, lo, hi);
+            if (idx == k - 1) {
+                return A[idx];
+            } else if (idx &lt; k - 1) {
+                lo = idx + 1;
+            } else {
+                hi = idx - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private int partition(int[] A, int lo, int hi) {
+        int pivot = A[lo], i = lo + 1, j = hi;
+        while (i &lt;= j) {
+            while (i &lt;= j &amp;&amp; A[i] &gt; pivot) {
+                i++;
+            }
+            while (i &lt;= j &amp;&amp; A[j] &lt;= pivot) {
+                j--;
+            }
+            if (i &lt; j) {
+                swap(A, i, j);
+            }
+        }
+        swap(A, lo, j);
+
+        return j;
+    }
+
+    private void swap(int[] A, int i, int j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+    }
+}
+</code></pre><h3>Src Code Analysis</h3>
+<p>The <code>while</code> loop in <code>findKthLargest</code> is very much like that in <code>binary search</code>. And <code>partition</code> method is just the same as quick sort partition.</p>
+<h3>Complexity</h3>
+<p>Time Complexity. Worse case (when the array is sorted): <strong><em>n + n - 1 + ... + 1 = O(n^2)</em></strong> . Amortized complexity: <strong><em>n + n/2 + n/4 + ... + 1 = O(2n)=O(n)</em></strong> .</p>
+<p>Space complexity is <strong><em>O(1)</em></strong> .</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Kth Largest Element in an Array</h1>
+<p>tagsstart</p>
+<p><i class="fa fa-tags" aria-hidden="true"></i> <a href="/tags.html#quick-sort">Quick Sort</a> <a href="/tags.html#divide-and-conquer">Divide and Conquer</a> <a href="/tags.html#medium">Medium</a></p>
+<p>tagsstop</p>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a><ul>
+<li><a href="#problem-statement">Problem Statement</a></li>
+</ul>
+</li>
+<li><a href="#solution">Solution</a><ul>
+<li><a href="#java---recursion">Java - Recursion</a></li>
+<li><a href="#src-code-analysis">Src Code Analysis</a></li>
+<li><a href="#java---iteration">Java - Iteration</a></li>
+<li><a href="#src-code-analysis-1">Src Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">(215) Kth Largest Element in an Array</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/kth-largest-element/">(5) Kth Largest Element</a></li>
+</ul>
+<h3>Problem Statement</h3>
+<p>Find the <strong>k</strong>th largest element in an unsorted array. Note that it is the kth
+largest element in the sorted order, not the kth distinct element.</p>
+<p>For example,<br>Given <code>[3,2,1,5,6,4]</code> and k = 2, return 5.</p>
+<p><strong>Note: </strong><br>You may assume k is always valid, 1 ≤ k ≤ array&#39;s length.</p>
+<p><strong>Credits:</strong>  </p>
+<p>Special thanks to <a href="https://leetcode.com/discuss/user/mithmatt">@mithmatt</a> for
+adding this problem and creating all test cases.</p>
+<h2>Solution</h2>
+<p>Trail and error: Comparison-based sorting algorithms don&#39;t work because they incur <strong><em>O(n2)</em></strong> time complexity. Neither does Radix Sort which requires the elements to be in a certain range. In fact, Quick Sort is the answer to <code>kth largest</code> problems (<a href="http://algorithm.yuanbin.me/zh-hans/basics_sorting/quick_sort.html">Here</a> are code templates of quick sort).</p>
+<p>By quick sorting, we get the final index of a pivot. And by comparing that index with <code>K</code>, we decide which side (the greater or the smaller) of the pivot to recurse on.</p>
+<h3>Java - Recursion</h3>
+<pre><code class="lang-java">public class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return Integer.MIN_VALUE;
+        }
+
+        int kthLargest = qSort(nums, 0, nums.length - 1, k);
+        return kthLargest;
+    }
+
+    private int qSort(int[] nums, int left, int right, int k) {
+        if (left &gt;= right) {
+            return nums[right];
+        }
+
+        int m = left;
+        for (int i = left + 1; i &lt;= right; i++) {
+            if (nums[i] &gt; nums[left]) {
+                m++;
+                swap(nums, m, i);
+            }
+        }
+        swap(nums, m, left);
+
+        if (k == m + 1) {
+            return nums[m];
+        } else if (k &gt; m + 1) {
+            return qSort(nums, m + 1, right, k);
+        } else {
+            return qSort(nums, left, m - 1, k);
+        }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i]; nums[i] = nums[j]; nums[j] = tmp;
+    }
+}
+</code></pre>
+<h3>Src Code Analysis</h3>
+<p>Two cases when the recursion ceases:
+a. left bound equals right bound;
+b. final index of pivot equals K.</p>
+<p>Since &#39;Kth <strong>largest</strong>&#39; is wanted, numbers greater than pivot are placed to the left and numbers smaller to the right, which is a little different with typical quick sort code.</p>
+<h3>Java - Iteration</h3>
+<p>Recursive code is easier to read than to write, and it demands some experience and skill. Here is an iterative implementation.</p>
+<pre><code>class Solution {
+    public int findKthLargest(int[] A, int k) {
+        if (A == null || A.length == 0 || k &lt; 0 || k &gt; A.length) {
+            return -1;
+        }
+
+        int lo = 0, hi = A.length - 1;
+        while (lo &lt;= hi) {
+            int idx = partition(A, lo, hi);
+            if (idx == k - 1) {
+                return A[idx];
+            } else if (idx &lt; k - 1) {
+                lo = idx + 1;
+            } else {
+                hi = idx - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private int partition(int[] A, int lo, int hi) {
+        int pivot = A[lo], i = lo + 1, j = hi;
+        while (i &lt;= j) {
+            while (i &lt;= j &amp;&amp; A[i] &gt; pivot) {
+                i++;
+            }
+            while (i &lt;= j &amp;&amp; A[j] &lt;= pivot) {
+                j--;
+            }
+            if (i &lt; j) {
+                swap(A, i, j);
+            }
+        }
+        swap(A, lo, j);
+
+        return j;
+    }
+
+    private void swap(int[] A, int i, int j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+    }
+}
+</code></pre><h3>Src Code Analysis</h3>
+<p>The <code>while</code> loop in <code>findKthLargest</code> is very much like that in <code>binary search</code>. And <code>partition</code> method is just the same as quick sort partition.</p>
+<h3>Complexity</h3>
+<p>Time Complexity. Worse case (when the array is sorted): <strong><em>n + n - 1 + ... + 1 = O(n^2)</em></strong> . Amortized complexity: <strong><em>n + n/2 + n/4 + ... + 1 = O(2n)=O(n)</em></strong> .</p>
+<p>Space complexity is <strong><em>O(1)</em></strong> .</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Search in Rotated Sorted Array]]></title>
+        <id>https://algorithm.yuanbin.me/en/binary_search/search_in_rotated_sorted_array.html</id>
+        <link href="https://algorithm.yuanbin.me/en/binary_search/search_in_rotated_sorted_array.html">
+        </link>
+        <updated>2019-11-03T15:41:55Z</updated>
+        <summary type="html"><![CDATA[<h1>Search in Rotated Sorted Array</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a><ul>
+<li><a href="#problem-statement">Problem Statement</a><ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#challenge">Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#solution1---work-on-sorted-subarray">Solution1 - work on sorted subarray</a><ul>
+<li><a href="#c">C++</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#source-code-analysis">Source Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+<li><a href="#solution2---double-binary-search">Solution2 - double binary search</a><ul>
+<li><a href="#java-1">Java</a></li>
+<li><a href="#complexity-1">Complexity</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">(33) Search in Rotated Sorted Array</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/">(62) Search in Rotated Sorted Array</a></li>
+</ul>
+<h3>Problem Statement</h3>
+<p>Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p>
+<p>(i.e., <code>0 1 2 4 5 6 7</code> might become <code>4 5 6 7 0 1 2</code>).</p>
+<p>You are given a target value to search. If found in the array return its
+index, otherwise return -1.</p>
+<p>You may assume no duplicate exists in the array.</p>
+<h4>Example</h4>
+<p>For <code>[4, 5, 1, 2, 3]</code> and <code>target=1</code>, return <code>2</code>.</p>
+<p>For <code>[4, 5, 1, 2, 3]</code> and <code>target=0</code>, return <code>-1</code>.</p>
+<h4>Challenge</h4>
+<p>O(logN) time</p>
+<h2>Solution1 - work on sorted subarray</h2>
+<p>Draw it. Rotated sorted array will take one of the following two forms:</p>
+<p><img src="../../shared-files/images/rotated_array.png" alt="Rotated Array"></p>
+<p>Binary search does well in sorted array, while this problem gives an unordered one. Be patient. It is actually a combination of two sorted subarrayss. The solution takes full advantage of this. BTW, another approach can be comparing <code>target</code> with <code>A[mid]</code>, but dealing with lots of cases is kind of sophisticated.</p>
+<h3>C++</h3>
+<pre><code class="lang-c++">/**
+ * 本代码fork自
+ * http://www.jiuzhang.com/solutions/search-in-rotated-sorted-array/
+ */
+class Solution {
+    /**
+     * param A : an integer ratated sorted array
+     * param target :  an integer to be searched
+     * return : an integer
+     */
+public:
+    int search(vector&lt;int&gt; &amp;A, int target) {
+        if (A.empty()) {
+            return -1;
+        }
+
+        vector&lt;int&gt;::size_type start = 0;
+        vector&lt;int&gt;::size_type end = A.size() - 1;
+        vector&lt;int&gt;::size_type mid;
+
+        while (start + 1 &lt; end) {
+            mid = start + (end - start) / 2;
+            if (target == A[mid]) {
+                return mid;
+            }
+            if (A[start] &lt; A[mid]) {
+                // situation 1, numbers between start and mid are sorted
+                if (A[start] &lt;= target &amp;&amp; target &lt; A[mid]) {
+                    end = mid;
+                } else {
+                    start = mid;
+                }
+            } else {
+                // situation 2, numbers between mid and end are sorted
+                if (A[mid] &lt; target &amp;&amp; target &lt;= A[end]) {
+                    start = mid;
+                } else {
+                    end = mid;
+                }
+            }
+        }
+
+        if (A[start] == target) {
+            return start;
+        }
+        if (A[end] == target) {
+            return end;
+        }
+        return -1;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    /**
+     *@param A : an integer rotated sorted array
+     *@param target :  an integer to be searched
+     *return : an integer
+     */
+    public int search(int[] A, int target) {
+        if (A == null || A.length == 0) return -1;
+
+        int lb = 0, ub = A.length - 1;
+        while (lb + 1 &lt; ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (A[mid] == target) return mid;
+
+            if (A[mid] &gt; A[lb]) {
+                // case1: numbers between lb and mid are sorted
+                if (A[lb] &lt;= target &amp;&amp; target &lt;= A[mid]) {
+                    ub = mid;
+                } else {
+                    lb = mid;
+                }
+            } else {
+                // case2: numbers between mid and ub are sorted
+                if (A[mid] &lt;= target &amp;&amp; target &lt;= A[ub]) {
+                    lb = mid;
+                } else {
+                    ub = mid;
+                }
+            }
+        }
+
+        if (A[lb] == target) {
+            return lb;
+        } else if (A[ub] == target) {
+            return ub;
+        }
+        return -1;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<ol>
+<li>If <code>target == A[mid]</code>, just return.</li>
+<li>Observe the two sorted subarrays, we can find that the least one of the left is greater than the biggest of the right. So if <code>A[start] &lt; A[mid]</code>, then interval [start, mid] will be sorted.</li>
+<li>Do binary search on <code>A[start] ~ A[mid]</code> on condition that <code>A[start] &lt;= target &lt;= A[mid]</code>.</li>
+<li>Or do binary search on <code>A[mid]~A[end]</code> on condition that <code>A[mid] &lt;= target &lt;= A[end]</code>.</li>
+<li>If while loop ends and none <code>A[mid]</code> hits, then examine <code>A[start]</code> and <code>A[end]</code>.</li>
+<li>Return -1 if <code>target</code> is not found.</li>
+</ol>
+<h3>Complexity</h3>
+<p>The time complexity is approximately <strong><em>O(log n)</em></strong>.</p>
+<h2>Solution2 - double binary search</h2>
+<p>Do binary search twice: first on the given array to find the break point; then on the proper piece of subarray to search for the target.</p>
+<p>It may take a small step to see why the given array is binary-searchable. Though a rotated array itself is neither sorted nor monotone, there is implicit monotonicity. All elements on the left of break point are ≥A[0], and those on the right of break point are &lt;A[0]. In a binary search, we keep narrowing the search scope by dropping the left or right half of the sequence, and here in the rotated array, we can do that much similarly.</p>
+<p>To formalize, define an array <code>A&#39;</code> that <code>A&#39;[i] = A[i] &lt; A[0] ? true : false</code> . If <code>A</code> is <code>[4, 5, 6, 7, 0, 1, 2]</code>, <code>A&#39;</code> will be <code>[false, false, false, false, true, true, true]</code>. Surely <code>A&#39;</code> monotone.</p>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    /**
+     *@param A : an integer rotated sorted array
+     *@param target :  an integer to be searched
+     *return : an integer
+     */
+    public int search(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return -1;
+        }
+
+        int p = findBreakPoint(A);
+        if (target &gt;= A[0]) {
+            // search in [lo, segPoint]
+            return binSearch(A, target, 0, p);
+        } else {
+            // search in [segPoint, hi]
+            return binSearch(A, target, p, A.length - 1);
+        }
+    }
+
+    private int findBreakPoint(int[] A) {
+        // A[index] &lt; A[0], min[index]
+        int index;
+
+        int lo = 0, hi = A.length - 1, segValue = A[0];
+        while (lo + 1 &lt; hi) {
+            int md = lo + (hi - lo)/2;
+            if (A[md] &gt; segValue) {
+                lo = md;
+            } else {
+                hi = md;
+            }
+        }
+        index = A[lo] &lt; segValue ? lo : hi;
+
+        return index;
+    }
+
+    private int binSearch(int[] A, int target, int lo, int hi) {
+        while (lo + 1 &lt; hi) {
+            int md = lo + (hi - lo) / 2;
+            if (A[md] == target) {
+                lo = md;
+            } else if (A[md] &lt; target) {
+                lo = md;
+            } else {
+                hi = md;
+            }
+        }
+
+        if (A[lo] == target) {
+            return lo;
+        }
+        if (A[hi] == target) {
+            return hi;
+        }
+        return -1;
+    }
+}
+</code></pre>
+<h3>Complexity</h3>
+<p>The first binary search costs  <strong><em>O(log n)</em></strong> time complexity, and the second costs no more than  <strong><em>O(log n)</em></strong>.</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Search in Rotated Sorted Array</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a><ul>
+<li><a href="#problem-statement">Problem Statement</a><ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#challenge">Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#solution1---work-on-sorted-subarray">Solution1 - work on sorted subarray</a><ul>
+<li><a href="#c">C++</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#source-code-analysis">Source Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+<li><a href="#solution2---double-binary-search">Solution2 - double binary search</a><ul>
+<li><a href="#java-1">Java</a></li>
+<li><a href="#complexity-1">Complexity</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">(33) Search in Rotated Sorted Array</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/">(62) Search in Rotated Sorted Array</a></li>
+</ul>
+<h3>Problem Statement</h3>
+<p>Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p>
+<p>(i.e., <code>0 1 2 4 5 6 7</code> might become <code>4 5 6 7 0 1 2</code>).</p>
+<p>You are given a target value to search. If found in the array return its
+index, otherwise return -1.</p>
+<p>You may assume no duplicate exists in the array.</p>
+<h4>Example</h4>
+<p>For <code>[4, 5, 1, 2, 3]</code> and <code>target=1</code>, return <code>2</code>.</p>
+<p>For <code>[4, 5, 1, 2, 3]</code> and <code>target=0</code>, return <code>-1</code>.</p>
+<h4>Challenge</h4>
+<p>O(logN) time</p>
+<h2>Solution1 - work on sorted subarray</h2>
+<p>Draw it. Rotated sorted array will take one of the following two forms:</p>
+<p><img src="../../shared-files/images/rotated_array.png" alt="Rotated Array"></p>
+<p>Binary search does well in sorted array, while this problem gives an unordered one. Be patient. It is actually a combination of two sorted subarrayss. The solution takes full advantage of this. BTW, another approach can be comparing <code>target</code> with <code>A[mid]</code>, but dealing with lots of cases is kind of sophisticated.</p>
+<h3>C++</h3>
+<pre><code class="lang-c++">/**
+ * 本代码fork自
+ * http://www.jiuzhang.com/solutions/search-in-rotated-sorted-array/
+ */
+class Solution {
+    /**
+     * param A : an integer ratated sorted array
+     * param target :  an integer to be searched
+     * return : an integer
+     */
+public:
+    int search(vector&lt;int&gt; &amp;A, int target) {
+        if (A.empty()) {
+            return -1;
+        }
+
+        vector&lt;int&gt;::size_type start = 0;
+        vector&lt;int&gt;::size_type end = A.size() - 1;
+        vector&lt;int&gt;::size_type mid;
+
+        while (start + 1 &lt; end) {
+            mid = start + (end - start) / 2;
+            if (target == A[mid]) {
+                return mid;
+            }
+            if (A[start] &lt; A[mid]) {
+                // situation 1, numbers between start and mid are sorted
+                if (A[start] &lt;= target &amp;&amp; target &lt; A[mid]) {
+                    end = mid;
+                } else {
+                    start = mid;
+                }
+            } else {
+                // situation 2, numbers between mid and end are sorted
+                if (A[mid] &lt; target &amp;&amp; target &lt;= A[end]) {
+                    start = mid;
+                } else {
+                    end = mid;
+                }
+            }
+        }
+
+        if (A[start] == target) {
+            return start;
+        }
+        if (A[end] == target) {
+            return end;
+        }
+        return -1;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    /**
+     *@param A : an integer rotated sorted array
+     *@param target :  an integer to be searched
+     *return : an integer
+     */
+    public int search(int[] A, int target) {
+        if (A == null || A.length == 0) return -1;
+
+        int lb = 0, ub = A.length - 1;
+        while (lb + 1 &lt; ub) {
+            int mid = lb + (ub - lb) / 2;
+            if (A[mid] == target) return mid;
+
+            if (A[mid] &gt; A[lb]) {
+                // case1: numbers between lb and mid are sorted
+                if (A[lb] &lt;= target &amp;&amp; target &lt;= A[mid]) {
+                    ub = mid;
+                } else {
+                    lb = mid;
+                }
+            } else {
+                // case2: numbers between mid and ub are sorted
+                if (A[mid] &lt;= target &amp;&amp; target &lt;= A[ub]) {
+                    lb = mid;
+                } else {
+                    ub = mid;
+                }
+            }
+        }
+
+        if (A[lb] == target) {
+            return lb;
+        } else if (A[ub] == target) {
+            return ub;
+        }
+        return -1;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<ol>
+<li>If <code>target == A[mid]</code>, just return.</li>
+<li>Observe the two sorted subarrays, we can find that the least one of the left is greater than the biggest of the right. So if <code>A[start] &lt; A[mid]</code>, then interval [start, mid] will be sorted.</li>
+<li>Do binary search on <code>A[start] ~ A[mid]</code> on condition that <code>A[start] &lt;= target &lt;= A[mid]</code>.</li>
+<li>Or do binary search on <code>A[mid]~A[end]</code> on condition that <code>A[mid] &lt;= target &lt;= A[end]</code>.</li>
+<li>If while loop ends and none <code>A[mid]</code> hits, then examine <code>A[start]</code> and <code>A[end]</code>.</li>
+<li>Return -1 if <code>target</code> is not found.</li>
+</ol>
+<h3>Complexity</h3>
+<p>The time complexity is approximately <strong><em>O(log n)</em></strong>.</p>
+<h2>Solution2 - double binary search</h2>
+<p>Do binary search twice: first on the given array to find the break point; then on the proper piece of subarray to search for the target.</p>
+<p>It may take a small step to see why the given array is binary-searchable. Though a rotated array itself is neither sorted nor monotone, there is implicit monotonicity. All elements on the left of break point are ≥A[0], and those on the right of break point are &lt;A[0]. In a binary search, we keep narrowing the search scope by dropping the left or right half of the sequence, and here in the rotated array, we can do that much similarly.</p>
+<p>To formalize, define an array <code>A&#39;</code> that <code>A&#39;[i] = A[i] &lt; A[0] ? true : false</code> . If <code>A</code> is <code>[4, 5, 6, 7, 0, 1, 2]</code>, <code>A&#39;</code> will be <code>[false, false, false, false, true, true, true]</code>. Surely <code>A&#39;</code> monotone.</p>
+<h3>Java</h3>
+<pre><code class="lang-java">public class Solution {
+    /**
+     *@param A : an integer rotated sorted array
+     *@param target :  an integer to be searched
+     *return : an integer
+     */
+    public int search(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return -1;
+        }
+
+        int p = findBreakPoint(A);
+        if (target &gt;= A[0]) {
+            // search in [lo, segPoint]
+            return binSearch(A, target, 0, p);
+        } else {
+            // search in [segPoint, hi]
+            return binSearch(A, target, p, A.length - 1);
+        }
+    }
+
+    private int findBreakPoint(int[] A) {
+        // A[index] &lt; A[0], min[index]
+        int index;
+
+        int lo = 0, hi = A.length - 1, segValue = A[0];
+        while (lo + 1 &lt; hi) {
+            int md = lo + (hi - lo)/2;
+            if (A[md] &gt; segValue) {
+                lo = md;
+            } else {
+                hi = md;
+            }
+        }
+        index = A[lo] &lt; segValue ? lo : hi;
+
+        return index;
+    }
+
+    private int binSearch(int[] A, int target, int lo, int hi) {
+        while (lo + 1 &lt; hi) {
+            int md = lo + (hi - lo) / 2;
+            if (A[md] == target) {
+                lo = md;
+            } else if (A[md] &lt; target) {
+                lo = md;
+            } else {
+                hi = md;
+            }
+        }
+
+        if (A[lo] == target) {
+            return lo;
+        }
+        if (A[hi] == target) {
+            return hi;
+        }
+        return -1;
+    }
+}
+</code></pre>
+<h3>Complexity</h3>
+<p>The first binary search costs  <strong><em>O(log n)</em></strong> time complexity, and the second costs no more than  <strong><em>O(log n)</em></strong>.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linked List]]></title>
+        <id>https://algorithm.yuanbin.me/en/linked_list/</id>
+        <link href="https://algorithm.yuanbin.me/en/linked_list/">
+        </link>
+        <updated>2019-11-03T15:41:55Z</updated>
+        <summary type="html"><![CDATA[<h1>Linked List</h1>
+<p>This section includes common operations on linked list, such as deletion, insertion, and merging.</p>
+<p>Frequently made mistakes:</p>
+<ul>
+<li>Not updating runner-node when traversing linked list</li>
+<li>Not recording head node before traversing</li>
+<li>returning incorrect pointer to node</li>
+</ul>
+<p>The image below serves as a summarization of problems in this section.</p>
+<p><img src="../../shared-files/images/linked_list_summary_en.png" alt="Linked List"></p>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Linked List</h1>
+<p>This section includes common operations on linked list, such as deletion, insertion, and merging.</p>
+<p>Frequently made mistakes:</p>
+<ul>
+<li>Not updating runner-node when traversing linked list</li>
+<li>Not recording head node before traversing</li>
+<li>returning incorrect pointer to node</li>
+</ul>
+<p>The image below serves as a summarization of problems in this section.</p>
+<p><img src="../../shared-files/images/linked_list_summary_en.png" alt="Linked List"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Reverse Linked List]]></title>
+        <id>https://algorithm.yuanbin.me/en/linked_list/reverse_linked_list.html</id>
+        <link href="https://algorithm.yuanbin.me/en/linked_list/reverse_linked_list.html">
+        </link>
+        <updated>2019-11-03T15:41:56Z</updated>
+        <summary type="html"><![CDATA[<h1>Reverse Linked List</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#solution1---non-recursively">Solution1 - Non-recursively</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#source-code-analysis">Source Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+<li><a href="#solution2---recursively">Solution2 - Recursively</a><ul>
+<li><a href="#python-1">Python</a></li>
+<li><a href="#c-1">C++</a></li>
+<li><a href="#java-1">Java</a></li>
+<li><a href="#source-code-analysis-1">Source Code Analysis</a></li>
+<li><a href="#complexity-1">Complexity</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/reverse-linked-list/">(206) Reverse Linked List | LeetCode OJ</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/reverse-linked-list/">(35) Reverse Linked List</a></li>
+</ul>
+<pre><code>Reverse a linked list.
+
+Example
+For linked list 1-&gt;2-&gt;3, the reversed linked list is 3-&gt;2-&gt;1
+
+Challenge
+Reverse it in-place and in one-pass
+</code></pre><h2>Solution1 - Non-recursively</h2>
+<p>It would be much easier to reverse an array than a linked list, since array supports random access with index, while singly linked list can ONLY be operated through its head node. So an approach without index is required.</p>
+<p>Think about how &#39;1-&gt;2-&gt;3&#39; can become &#39;3-&gt;2-&gt;1&#39;. Starting from &#39;1&#39;, we should turn &#39;1-&gt;2&#39; into &#39;2-&gt;1&#39;, then &#39;2-&gt;3&#39; into &#39;3-&gt;2&#39;, and so on. The key is how to swap two adjacent nodes.</p>
+<pre><code>temp = head -&gt; next;
+head-&gt;next = prev;
+prev = head;
+head = temp;
+</code></pre><p>The above code maintains two pointer, <code>prev</code> and <code>head</code>, and keeps record of next node before swapping. More detailed analysis:</p>
+<p><img src="../../shared-files/images/reverse_linked_list_i.jpg" alt="Reverse Linked List"></p>
+<ol>
+<li>Keep record of next node</li>
+<li>change <code>head-&gt;next</code> to <code>prev</code></li>
+<li>update <code>prev</code> with <code>head</code>, to keep moving forward</li>
+<li>update <code>head</code> with the record in step 1, for the sake of next loop</li>
+</ol>
+<h3>Python</h3>
+<pre><code class="lang-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    # @param {ListNode} head
+    # @return {ListNode}
+    def reverseList(self, head):
+        prev = None
+        curr = head
+        while curr is not None:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        # fix head
+        head = prev
+
+        return head
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverse(ListNode* head) {
+        ListNode *prev = NULL;
+        ListNode *curr = head;
+        while (curr != NULL) {
+            ListNode *temp = curr-&gt;next;
+            curr-&gt;next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        // fix head
+        head = prev;
+
+        return head;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        // fix head
+        head = prev;
+
+        return head;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<p>Already covered in the solution part. One more word, the assignment of <code>prev</code> is neat and skilled.</p>
+<h3>Complexity</h3>
+<p>Traversing the linked list leads to <strong><em>O(n)</em></strong> time complexity, and auxiliary space complexity is <strong><em>O(1)</em></strong>.</p>
+<h2>Solution2 - Recursively</h2>
+<p>Three cases when the recursion ceases:</p>
+<ol>
+<li>If given linked list is null, just return.</li>
+<li>If given linked list has only one node, return that node.</li>
+<li>If given linked list has at least two nodes, pick out the head node and regard the following nodes as a sub-linked-list, swap them, then recurse that sub-linked-list.</li>
+</ol>
+<p>Be careful when swapping the head node (refer as <code>nodeY</code>) and head of the sub-linked-list (refer as <code>nodeX</code> ): First, swap <code>nodeY</code> and <code>nodeX</code>; Second, assign <code>null</code> to <code>nodeY-&gt;next</code> (or it would fall into infinite loop, and tail of result list won&#39;t point to <code>null</code>).</p>
+<h3>Python</h3>
+<pre><code class="lang-python">&quot;&quot;&quot;
+Definition of ListNode
+
+class ListNode(object):
+
+    def __init__(self, val, next=None):
+        self.val = val
+        self.next = next
+&quot;&quot;&quot;
+class Solution:
+    &quot;&quot;&quot;
+    @param head: The first node of the linked list.
+    @return: You should return the head of the reversed linked list.
+                  Reverse it in-place.
+    &quot;&quot;&quot;
+    def reverse(self, head):
+        # case1: empty list
+        if head is None:
+            return head
+        # case2: only one element list
+        if head.next is None:
+            return head
+        # case3: reverse from the rest after head
+        newHead = self.reverse(head.next)
+        # reverse between head and head-&gt;next
+        head.next.next = head
+        # unlink list from the rest
+        head.next = None
+
+        return newHead
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">/**
+ * Definition of ListNode
+ *
+ * class ListNode {
+ * public:
+ *     int val;
+ *     ListNode *next;
+ *
+ *     ListNode(int val) {
+ *         this-&gt;val = val;
+ *         this-&gt;next = NULL;
+ *     }
+ * }
+ */
+class Solution {
+public:
+    /**
+     * @param head: The first node of linked list.
+     * @return: The new head of reversed linked list.
+     */
+    ListNode *reverse(ListNode *head) {
+        // case1: empty list
+        if (head == NULL) return head;
+        // case2: only one element list
+        if (head-&gt;next == NULL) return head;
+        // case3: reverse from the rest after head
+        ListNode *newHead = reverse(head-&gt;next);
+        // reverse between head and head-&gt;next
+        head-&gt;next-&gt;next = head;
+        // unlink list from the rest
+        head-&gt;next = NULL;
+
+        return newHead;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode reverse(ListNode head) {
+        // case1: empty list
+        if (head == null) return head;
+        // case2: only one element list
+        if (head.next == null) return head;
+        // case3: reverse from the rest after head
+        ListNode newHead = reverse(head.next);
+        // reverse between head and head-&gt;next
+        head.next.next = head;
+        // unlink list from the rest
+        head.next = null;
+
+        return newHead;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<p>case1 and case2 can be combined.What case3 returns is head of reversed list, which means it is exact the same Node (tail of origin linked list) through the recursion.</p>
+<h3>Complexity</h3>
+<p>The depth of recursion: <strong><em>O(n)</em></strong>. Time Complexity: <strong><em>O(N)</em></strong>. Space Complexity (without considering the recursion stack): <strong><em>O(1)</em></strong>.</p>
+<h3>Reference</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/kubixuesheng/p/4394509.html">全面分析再动手的习惯：链表的反转问题（递归和非递归方式） - 木棉和木槿 - 博客园</a></li>
+<li><a href="http://stackoverflow.com/questions/354875/reversing-a-linked-list-in-java-recursively">data structures - Reversing a linked list in Java, recursively - Stack Overflow</a></li>
+<li><a href="http://ceeji.net/blog/reserve-linked-list-cpp/">反转单向链表的四种实现（递归与非递归，C++） | 宁心勉学，慎思笃行</a></li>
+<li><a href="https://leetcode.com/discuss/37804/iteratively-and-recursively-java-solution">iteratively and recursively Java Solution - Leetcode Discuss</a></li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Reverse Linked List</h1>
+<!-- toc -->
+<ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#solution1---non-recursively">Solution1 - Non-recursively</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#source-code-analysis">Source Code Analysis</a></li>
+<li><a href="#complexity">Complexity</a></li>
+</ul>
+</li>
+<li><a href="#solution2---recursively">Solution2 - Recursively</a><ul>
+<li><a href="#python-1">Python</a></li>
+<li><a href="#c-1">C++</a></li>
+<li><a href="#java-1">Java</a></li>
+<li><a href="#source-code-analysis-1">Source Code Analysis</a></li>
+<li><a href="#complexity-1">Complexity</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2>Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/reverse-linked-list/">(206) Reverse Linked List | LeetCode OJ</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/reverse-linked-list/">(35) Reverse Linked List</a></li>
+</ul>
+<pre><code>Reverse a linked list.
+
+Example
+For linked list 1-&gt;2-&gt;3, the reversed linked list is 3-&gt;2-&gt;1
+
+Challenge
+Reverse it in-place and in one-pass
+</code></pre><h2>Solution1 - Non-recursively</h2>
+<p>It would be much easier to reverse an array than a linked list, since array supports random access with index, while singly linked list can ONLY be operated through its head node. So an approach without index is required.</p>
+<p>Think about how &#39;1-&gt;2-&gt;3&#39; can become &#39;3-&gt;2-&gt;1&#39;. Starting from &#39;1&#39;, we should turn &#39;1-&gt;2&#39; into &#39;2-&gt;1&#39;, then &#39;2-&gt;3&#39; into &#39;3-&gt;2&#39;, and so on. The key is how to swap two adjacent nodes.</p>
+<pre><code>temp = head -&gt; next;
+head-&gt;next = prev;
+prev = head;
+head = temp;
+</code></pre><p>The above code maintains two pointer, <code>prev</code> and <code>head</code>, and keeps record of next node before swapping. More detailed analysis:</p>
+<p><img src="../../shared-files/images/reverse_linked_list_i.jpg" alt="Reverse Linked List"></p>
+<ol>
+<li>Keep record of next node</li>
+<li>change <code>head-&gt;next</code> to <code>prev</code></li>
+<li>update <code>prev</code> with <code>head</code>, to keep moving forward</li>
+<li>update <code>head</code> with the record in step 1, for the sake of next loop</li>
+</ol>
+<h3>Python</h3>
+<pre><code class="lang-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    # @param {ListNode} head
+    # @return {ListNode}
+    def reverseList(self, head):
+        prev = None
+        curr = head
+        while curr is not None:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        # fix head
+        head = prev
+
+        return head
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverse(ListNode* head) {
+        ListNode *prev = NULL;
+        ListNode *curr = head;
+        while (curr != NULL) {
+            ListNode *temp = curr-&gt;next;
+            curr-&gt;next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        // fix head
+        head = prev;
+
+        return head;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        // fix head
+        head = prev;
+
+        return head;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<p>Already covered in the solution part. One more word, the assignment of <code>prev</code> is neat and skilled.</p>
+<h3>Complexity</h3>
+<p>Traversing the linked list leads to <strong><em>O(n)</em></strong> time complexity, and auxiliary space complexity is <strong><em>O(1)</em></strong>.</p>
+<h2>Solution2 - Recursively</h2>
+<p>Three cases when the recursion ceases:</p>
+<ol>
+<li>If given linked list is null, just return.</li>
+<li>If given linked list has only one node, return that node.</li>
+<li>If given linked list has at least two nodes, pick out the head node and regard the following nodes as a sub-linked-list, swap them, then recurse that sub-linked-list.</li>
+</ol>
+<p>Be careful when swapping the head node (refer as <code>nodeY</code>) and head of the sub-linked-list (refer as <code>nodeX</code> ): First, swap <code>nodeY</code> and <code>nodeX</code>; Second, assign <code>null</code> to <code>nodeY-&gt;next</code> (or it would fall into infinite loop, and tail of result list won&#39;t point to <code>null</code>).</p>
+<h3>Python</h3>
+<pre><code class="lang-python">&quot;&quot;&quot;
+Definition of ListNode
+
+class ListNode(object):
+
+    def __init__(self, val, next=None):
+        self.val = val
+        self.next = next
+&quot;&quot;&quot;
+class Solution:
+    &quot;&quot;&quot;
+    @param head: The first node of the linked list.
+    @return: You should return the head of the reversed linked list.
+                  Reverse it in-place.
+    &quot;&quot;&quot;
+    def reverse(self, head):
+        # case1: empty list
+        if head is None:
+            return head
+        # case2: only one element list
+        if head.next is None:
+            return head
+        # case3: reverse from the rest after head
+        newHead = self.reverse(head.next)
+        # reverse between head and head-&gt;next
+        head.next.next = head
+        # unlink list from the rest
+        head.next = None
+
+        return newHead
+</code></pre>
+<h3>C++</h3>
+<pre><code class="lang-c++">/**
+ * Definition of ListNode
+ *
+ * class ListNode {
+ * public:
+ *     int val;
+ *     ListNode *next;
+ *
+ *     ListNode(int val) {
+ *         this-&gt;val = val;
+ *         this-&gt;next = NULL;
+ *     }
+ * }
+ */
+class Solution {
+public:
+    /**
+     * @param head: The first node of linked list.
+     * @return: The new head of reversed linked list.
+     */
+    ListNode *reverse(ListNode *head) {
+        // case1: empty list
+        if (head == NULL) return head;
+        // case2: only one element list
+        if (head-&gt;next == NULL) return head;
+        // case3: reverse from the rest after head
+        ListNode *newHead = reverse(head-&gt;next);
+        // reverse between head and head-&gt;next
+        head-&gt;next-&gt;next = head;
+        // unlink list from the rest
+        head-&gt;next = NULL;
+
+        return newHead;
+    }
+};
+</code></pre>
+<h3>Java</h3>
+<pre><code class="lang-java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode reverse(ListNode head) {
+        // case1: empty list
+        if (head == null) return head;
+        // case2: only one element list
+        if (head.next == null) return head;
+        // case3: reverse from the rest after head
+        ListNode newHead = reverse(head.next);
+        // reverse between head and head-&gt;next
+        head.next.next = head;
+        // unlink list from the rest
+        head.next = null;
+
+        return newHead;
+    }
+}
+</code></pre>
+<h3>Source Code Analysis</h3>
+<p>case1 and case2 can be combined.What case3 returns is head of reversed list, which means it is exact the same Node (tail of origin linked list) through the recursion.</p>
+<h3>Complexity</h3>
+<p>The depth of recursion: <strong><em>O(n)</em></strong>. Time Complexity: <strong><em>O(N)</em></strong>. Space Complexity (without considering the recursion stack): <strong><em>O(1)</em></strong>.</p>
+<h3>Reference</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/kubixuesheng/p/4394509.html">全面分析再动手的习惯：链表的反转问题（递归和非递归方式） - 木棉和木槿 - 博客园</a></li>
+<li><a href="http://stackoverflow.com/questions/354875/reversing-a-linked-list-in-java-recursively">data structures - Reversing a linked list in Java, recursively - Stack Overflow</a></li>
+<li><a href="http://ceeji.net/blog/reserve-linked-list-cpp/">反转单向链表的四种实现（递归与非递归，C++） | 宁心勉学，慎思笃行</a></li>
+<li><a href="https://leetcode.com/discuss/37804/iteratively-and-recursively-java-solution">iteratively and recursively Java Solution - Leetcode Discuss</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tags]]></title>
+        <id>https://algorithm.yuanbin.me/en/tags.html</id>
+        <link href="https://algorithm.yuanbin.me/en/tags.html">
+        </link>
+        <updated>2019-11-03T15:41:56Z</updated>
+        <summary type="html"><![CDATA[<h1>Tags</h1>
+<h2>Quick Sort</h2>
+<ul>
+<li><a href="integer_array/kth_largest_element.md">Kth Largest Element</a></li>
+</ul>
+<h2>Divide and Conquer</h2>
+<ul>
+<li><a href="integer_array/kth_largest_element.md">Kth Largest Element</a></li>
+</ul>
+<h2>Medium</h2>
+<ul>
+<li><a href="integer_array/kth_largest_element.md">Kth Largest Element</a></li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h1>Tags</h1>
+<h2>Quick Sort</h2>
+<ul>
+<li><a href="integer_array/kth_largest_element.md">Kth Largest Element</a></li>
+</ul>
+<h2>Divide and Conquer</h2>
+<ul>
+<li><a href="integer_array/kth_largest_element.md">Kth Largest Element</a></li>
+</ul>
+<h2>Medium</h2>
+<ul>
+<li><a href="integer_array/kth_largest_element.md">Kth Largest Element</a></li>
+</ul>
+]]></content>
+    </entry>
+</feed>

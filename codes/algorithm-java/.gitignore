@@ -1,0 +1,10 @@
+
+.idea/
+*.iml
+project/
+
+out/
+target/
+
+.DS_Store
+

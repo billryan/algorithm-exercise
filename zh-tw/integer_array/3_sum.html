@@ -1,0 +1,3995 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3 Sum · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-etoc/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-algolia/plugin-algolia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tags/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3_sum_closest.html" />
+    
+    
+    <link rel="prev" href="2_sum.html" />
+    
+
+    <link href="feed.xml" title="Data Structure and Algorithm notes" rel="alternate" type="application/atom+xml" />
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../faq/guidelines_for_contributing.html">
+            
+                <a href="../faq/guidelines_for_contributing.html">
+            
+                    
+                    Guidelines for Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../faq/contributors.md">
+            
+                <span>
+            
+                    
+                    Contributors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../part_i_basics/">
+            
+                <a href="../part_i_basics/">
+            
+                    
+                    Part I - Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../basics_data_structure/">
+            
+                <a href="../basics_data_structure/">
+            
+                    
+                    Basics Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../basics_data_structure/string.html">
+            
+                <a href="../basics_data_structure/string.html">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../basics_data_structure/linked_list.html">
+            
+                <a href="../basics_data_structure/linked_list.html">
+            
+                    
+                    Linked List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../basics_data_structure/binary_tree.html">
+            
+                <a href="../basics_data_structure/binary_tree.html">
+            
+                    
+                    Binary Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../basics_data_structure/huffman_compression.html">
+            
+                <a href="../basics_data_structure/huffman_compression.html">
+            
+                    
+                    Huffman Compression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../basics_data_structure/queue.html">
+            
+                <a href="../basics_data_structure/queue.html">
+            
+                    
+                    Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../basics_data_structure/heap.html">
+            
+                <a href="../basics_data_structure/heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../basics_data_structure/stack.html">
+            
+                <a href="../basics_data_structure/stack.html">
+            
+                    
+                    Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../basics_data_structure/set.html">
+            
+                <a href="../basics_data_structure/set.html">
+            
+                    
+                    Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../basics_data_structure/map.html">
+            
+                <a href="../basics_data_structure/map.html">
+            
+                    
+                    Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../basics_data_structure/graph.html">
+            
+                <a href="../basics_data_structure/graph.html">
+            
+                    
+                    Graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../basics_sorting/">
+            
+                <a href="../basics_sorting/">
+            
+                    
+                    Basics Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../basics_sorting/bubble_sort.html">
+            
+                <a href="../basics_sorting/bubble_sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../basics_sorting/selection_sort.html">
+            
+                <a href="../basics_sorting/selection_sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../basics_sorting/insertion_sort.html">
+            
+                <a href="../basics_sorting/insertion_sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../basics_sorting/merge_sort.html">
+            
+                <a href="../basics_sorting/merge_sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../basics_sorting/quick_sort.md">
+            
+                <span>
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../basics_sorting/heap_sort.html">
+            
+                <a href="../basics_sorting/heap_sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../basics_sorting/bucket_sort.html">
+            
+                <a href="../basics_sorting/bucket_sort.html">
+            
+                    
+                    Bucket Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../basics_sorting/counting_sort.html">
+            
+                <a href="../basics_sorting/counting_sort.html">
+            
+                    
+                    Counting Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../basics_sorting/radix_sort.html">
+            
+                <a href="../basics_sorting/radix_sort.html">
+            
+                    
+                    Radix Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../basics_algorithm/">
+            
+                <a href="../basics_algorithm/">
+            
+                    
+                    Basics Algorithm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../basics_algorithm/divide_and_conquer.html">
+            
+                <a href="../basics_algorithm/divide_and_conquer.html">
+            
+                    
+                    Divide and Conquer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../basics_algorithm/binary_search.html">
+            
+                <a href="../basics_algorithm/binary_search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../basics_algorithm/math/">
+            
+                <a href="../basics_algorithm/math/">
+            
+                    
+                    Math
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../basics_algorithm/math/gcd.html">
+            
+                <a href="../basics_algorithm/math/gcd.html">
+            
+                    
+                    Greatest Common Divisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../basics_algorithm/math/prime.html">
+            
+                <a href="../basics_algorithm/math/prime.html">
+            
+                    
+                    Prime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../basics_algorithm/knapsack.md">
+            
+                <span>
+            
+                    
+                    Knapsack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../basics_algorithm/counting_problem.md">
+            
+                <span>
+            
+                    
+                    Counting Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../basics_algorithm/probability/">
+            
+                <a href="../basics_algorithm/probability/">
+            
+                    
+                    Probability
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../basics_algorithm/probability/shuffle.html">
+            
+                <a href="../basics_algorithm/probability/shuffle.html">
+            
+                    
+                    Shuffle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../basics_algorithm/bitmap.html">
+            
+                <a href="../basics_algorithm/bitmap.html">
+            
+                    
+                    Bitmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../basics_misc/">
+            
+                <a href="../basics_misc/">
+            
+                    
+                    Basics Misc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../basics_misc/bit_manipulation.html">
+            
+                <a href="../basics_misc/bit_manipulation.html">
+            
+                    
+                    Bit Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../part_ii_coding/">
+            
+                <a href="../part_ii_coding/">
+            
+                    
+                    Part II - Coding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../string/">
+            
+                <a href="../string/">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../string/strstr.html">
+            
+                <a href="../string/strstr.html">
+            
+                    
+                    strStr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../string/two_strings_are_anagrams.html">
+            
+                <a href="../string/two_strings_are_anagrams.html">
+            
+                    
+                    Two Strings Are Anagrams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../string/compare_strings.html">
+            
+                <a href="../string/compare_strings.html">
+            
+                    
+                    Compare Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../string/anagrams.md">
+            
+                <span>
+            
+                    
+                    Anagrams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../string/longest_common_substring.md">
+            
+                <span>
+            
+                    
+                    Longest Common Substring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../string/rotate_string.html">
+            
+                <a href="../string/rotate_string.html">
+            
+                    
+                    Rotate String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../string/reverse_words_in_a_string.md">
+            
+                <span>
+            
+                    
+                    Reverse Words in a String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../string/valid_palindrome.html">
+            
+                <a href="../string/valid_palindrome.html">
+            
+                    
+                    Valid Palindrome
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../string/longest_palindromic_substring.html">
+            
+                <a href="../string/longest_palindromic_substring.html">
+            
+                    
+                    Longest Palindromic Substring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../string/space_replacement.html">
+            
+                <a href="../string/space_replacement.html">
+            
+                    
+                    Space Replacement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../string/wildcard_matching.md">
+            
+                <span>
+            
+                    
+                    Wildcard Matching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../string/length_of_last_word.md">
+            
+                <span>
+            
+                    
+                    Length of Last Word
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="../string/count_and_say.html">
+            
+                <a href="../string/count_and_say.html">
+            
+                    
+                    Count and Say
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Integer Array
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="remove_element.html">
+            
+                <a href="remove_element.html">
+            
+                    
+                    Remove Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="zero_sum_subarray.md">
+            
+                <span>
+            
+                    
+                    Zero Sum Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="subarray_sum_k.md">
+            
+                <span>
+            
+                    
+                    Subarray Sum K
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="subarray_sum_closest.md">
+            
+                <span>
+            
+                    
+                    Subarray Sum Closest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="recover_rotated_sorted_array.md">
+            
+                <span>
+            
+                    
+                    Recover Rotated Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="product_of_array_exclude_itself.md">
+            
+                <span>
+            
+                    
+                    Product of Array Exclude Itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="partition_array.md">
+            
+                <span>
+            
+                    
+                    Partition Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="first_missing_positive.html">
+            
+                <a href="first_missing_positive.html">
+            
+                    
+                    First Missing Positive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="2_sum.html">
+            
+                <a href="2_sum.html">
+            
+                    
+                    2 Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.10" data-path="3_sum.html">
+            
+                <a href="3_sum.html">
+            
+                    
+                    3 Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="3_sum_closest.html">
+            
+                <a href="3_sum_closest.html">
+            
+                    
+                    3 Sum Closest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="remove_duplicates_from_sorted_array.html">
+            
+                <a href="remove_duplicates_from_sorted_array.html">
+            
+                    
+                    Remove Duplicates from Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="remove_duplicates_from_sorted_array_ii.html">
+            
+                <a href="remove_duplicates_from_sorted_array_ii.html">
+            
+                    
+                    Remove Duplicates from Sorted Array II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="merge_sorted_array.html">
+            
+                <a href="merge_sorted_array.html">
+            
+                    
+                    Merge Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="merge_sorted_array_ii.html">
+            
+                <a href="merge_sorted_array_ii.html">
+            
+                    
+                    Merge Sorted Array II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="median.md">
+            
+                <span>
+            
+                    
+                    Median
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="partition_array_by_odd_and_even.md">
+            
+                <span>
+            
+                    
+                    Partition Array by Odd and Even
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.18" data-path="kth_largest_element.md">
+            
+                <span>
+            
+                    
+                    Kth Largest Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../binary_search/">
+            
+                <a href="../binary_search/">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../binary_search/binary_search.html">
+            
+                <a href="../binary_search/binary_search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../binary_search/search_insert_position.html">
+            
+                <a href="../binary_search/search_insert_position.html">
+            
+                    
+                    Search Insert Position
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../binary_search/search_for_a_range.html">
+            
+                <a href="../binary_search/search_for_a_range.html">
+            
+                    
+                    Search for a Range
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../binary_search/first_bad_version.html">
+            
+                <a href="../binary_search/first_bad_version.html">
+            
+                    
+                    First Bad Version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../binary_search/search_a_2d_matrix.md">
+            
+                <span>
+            
+                    
+                    Search a 2D Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../binary_search/search_a_2d_matrix_ii.md">
+            
+                <span>
+            
+                    
+                    Search a 2D Matrix II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../binary_search/find_peak_element.html">
+            
+                <a href="../binary_search/find_peak_element.html">
+            
+                    
+                    Find Peak Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../binary_search/search_in_rotated_sorted_array.md">
+            
+                <span>
+            
+                    
+                    Search in Rotated Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../binary_search/search_in_rotated_sorted_array_ii.md">
+            
+                <span>
+            
+                    
+                    Search in Rotated Sorted Array II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../binary_search/find_minimum_in_rotated_sorted_array.md">
+            
+                <span>
+            
+                    
+                    Find Minimum in Rotated Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../binary_search/find_minimum_in_rotated_sorted_array_ii.md">
+            
+                <span>
+            
+                    
+                    Find Minimum in Rotated Sorted Array II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.12" data-path="../binary_search/median_of_two_sorted_arrays.md">
+            
+                <span>
+            
+                    
+                    Median of two Sorted Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.13" data-path="../binary_search/sqrt_x.html">
+            
+                <a href="../binary_search/sqrt_x.html">
+            
+                    
+                    Sqrt x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.14" data-path="../binary_search/wood_cut.md">
+            
+                <span>
+            
+                    
+                    Wood Cut
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../math_and_bit_manipulation/README.md">
+            
+                <span>
+            
+                    
+                    Math and Bit Manipulation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../math_and_bit_manipulation/single_number.md">
+            
+                <span>
+            
+                    
+                    Single Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../math_and_bit_manipulation/single_number_ii.md">
+            
+                <span>
+            
+                    
+                    Single Number II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../math_and_bit_manipulation/single_number_iii.md">
+            
+                <span>
+            
+                    
+                    Single Number III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../math_and_bit_manipulation/o1_check_power_of_2.md">
+            
+                <span>
+            
+                    
+                    O1 Check Power of 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../math_and_bit_manipulation/convert_integer_a_to_integer_b.md">
+            
+                <span>
+            
+                    
+                    Convert Integer A to Integer B
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../math_and_bit_manipulation/factorial_trailing_zeroes.md">
+            
+                <span>
+            
+                    
+                    Factorial Trailing Zeroes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../math_and_bit_manipulation/unique_binary_search_trees.md">
+            
+                <span>
+            
+                    
+                    Unique Binary Search Trees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../math_and_bit_manipulation/update_bits.md">
+            
+                <span>
+            
+                    
+                    Update Bits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../math_and_bit_manipulation/fast_power.md">
+            
+                <span>
+            
+                    
+                    Fast Power
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../math_and_bit_manipulation/hash_function.md">
+            
+                <span>
+            
+                    
+                    Hash Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.11" data-path="../math_and_bit_manipulation/count_1_in_binary.html">
+            
+                <a href="../math_and_bit_manipulation/count_1_in_binary.html">
+            
+                    
+                    Count 1 in Binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.12" data-path="../math_and_bit_manipulation/fibonacci.md">
+            
+                <span>
+            
+                    
+                    Fibonacci
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.13" data-path="../math_and_bit_manipulation/a_plus_b_problem.html">
+            
+                <a href="../math_and_bit_manipulation/a_plus_b_problem.html">
+            
+                    
+                    A plus B Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.14" data-path="../math_and_bit_manipulation/print_numbers_by_recursion.md">
+            
+                <span>
+            
+                    
+                    Print Numbers by Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.15" data-path="../math_and_bit_manipulation/majority_number.md">
+            
+                <span>
+            
+                    
+                    Majority Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.16" data-path="../math_and_bit_manipulation/majority_number_ii.md">
+            
+                <span>
+            
+                    
+                    Majority Number II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.17" data-path="../math_and_bit_manipulation/majority_number_iii.md">
+            
+                <span>
+            
+                    
+                    Majority Number III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.18" data-path="../math_and_bit_manipulation/digit_counts.md">
+            
+                <span>
+            
+                    
+                    Digit Counts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.19" data-path="../math_and_bit_manipulation/ugly_number.md">
+            
+                <span>
+            
+                    
+                    Ugly Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.20" data-path="../math_and_bit_manipulation/plus_one.html">
+            
+                <a href="../math_and_bit_manipulation/plus_one.html">
+            
+                    
+                    Plus One
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../linked_list/">
+            
+                <a href="../linked_list/">
+            
+                    
+                    Linked List
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../linked_list/remove_duplicates_from_sorted_list.html">
+            
+                <a href="../linked_list/remove_duplicates_from_sorted_list.html">
+            
+                    
+                    Remove Duplicates from Sorted List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../linked_list/remove_duplicates_from_sorted_list_ii.html">
+            
+                <a href="../linked_list/remove_duplicates_from_sorted_list_ii.html">
+            
+                    
+                    Remove Duplicates from Sorted List II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../linked_list/remove_duplicates_from_an_unsorted_linked_list.md">
+            
+                <span>
+            
+                    
+                    Remove Duplicates from Unsorted List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../linked_list/partition_list.md">
+            
+                <span>
+            
+                    
+                    Partition List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../linked_list/add_two_numbers.md">
+            
+                <span>
+            
+                    
+                    Add Two Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../linked_list/two_lists_sum_advanced.md">
+            
+                <span>
+            
+                    
+                    Two Lists Sum Advanced
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../linked_list/remove_nth_node_from_end_of_list.md">
+            
+                <span>
+            
+                    
+                    Remove Nth Node From End of List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="../linked_list/linked_list_cycle.html">
+            
+                <a href="../linked_list/linked_list_cycle.html">
+            
+                    
+                    Linked List Cycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.9" data-path="../linked_list/linked_list_cycle_ii.md">
+            
+                <span>
+            
+                    
+                    Linked List Cycle II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.10" data-path="../linked_list/reverse_linked_list.html">
+            
+                <a href="../linked_list/reverse_linked_list.html">
+            
+                    
+                    Reverse Linked List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.11" data-path="../linked_list/reverse_linked_list_ii.md">
+            
+                <span>
+            
+                    
+                    Reverse Linked List II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.12" data-path="../linked_list/merge_two_sorted_lists.html">
+            
+                <a href="../linked_list/merge_two_sorted_lists.html">
+            
+                    
+                    Merge Two Sorted Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.13" data-path="../linked_list/merge_k_sorted_lists.md">
+            
+                <span>
+            
+                    
+                    Merge k Sorted Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.14" data-path="../linked_list/reorder_list.md">
+            
+                <span>
+            
+                    
+                    Reorder List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.15" data-path="../linked_list/copy_list_with_random_pointer.md">
+            
+                <span>
+            
+                    
+                    Copy List with Random Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.16" data-path="../linked_list/sort_list.md">
+            
+                <span>
+            
+                    
+                    Sort List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.17" data-path="../linked_list/insertion_sort_list.md">
+            
+                <span>
+            
+                    
+                    Insertion Sort List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.18" data-path="../linked_list/palindrome_linked_list.md">
+            
+                <span>
+            
+                    
+                    Palindrome Linked List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.19" data-path="../linked_list/delete_node_in_the_middle_of_singly_linked_list.md">
+            
+                <span>
+            
+                    
+                    Delete Node in the Middle of Singly Linked List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.20" data-path="../linked_list/lru_cache.md">
+            
+                <span>
+            
+                    
+                    LRU Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.21" data-path="../linked_list/rotate_list.md">
+            
+                <span>
+            
+                    
+                    Rotate List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.22" data-path="../linked_list/swap_nodes_in_pairs.md">
+            
+                <span>
+            
+                    
+                    Swap Nodes in Pairs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.23" data-path="../linked_list/remove_linked_list_elements.html">
+            
+                <a href="../linked_list/remove_linked_list_elements.html">
+            
+                    
+                    Remove Linked List Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../binary_tree/">
+            
+                <a href="../binary_tree/">
+            
+                    
+                    Binary Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../binary_tree/binary_tree_preorder_traversal.html">
+            
+                <a href="../binary_tree/binary_tree_preorder_traversal.html">
+            
+                    
+                    Binary Tree Preorder Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../binary_tree/binary_tree_inorder_traversal.html">
+            
+                <a href="../binary_tree/binary_tree_inorder_traversal.html">
+            
+                    
+                    Binary Tree Inorder Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../binary_tree/binary_tree_postorder_traversal.html">
+            
+                <a href="../binary_tree/binary_tree_postorder_traversal.html">
+            
+                    
+                    Binary Tree Postorder Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../binary_tree/binary_tree_level_order_traversal.html">
+            
+                <a href="../binary_tree/binary_tree_level_order_traversal.html">
+            
+                    
+                    Binary Tree Level Order Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../binary_tree/binary_tree_level_order_traversal_ii.html">
+            
+                <a href="../binary_tree/binary_tree_level_order_traversal_ii.html">
+            
+                    
+                    Binary Tree Level Order Traversal II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../binary_tree/maximum_depth_of_binary_tree.html">
+            
+                <a href="../binary_tree/maximum_depth_of_binary_tree.html">
+            
+                    
+                    Maximum Depth of Binary Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../binary_tree/balanced_binary_tree.md">
+            
+                <span>
+            
+                    
+                    Balanced Binary Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../binary_tree/binary_tree_maximum_path_sum.md">
+            
+                <span>
+            
+                    
+                    Binary Tree Maximum Path Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.9" data-path="../binary_tree/lowest_common_ancestor.md">
+            
+                <span>
+            
+                    
+                    Lowest Common Ancestor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.10" data-path="../binary_tree/invert_binary_tree.html">
+            
+                <a href="../binary_tree/invert_binary_tree.html">
+            
+                    
+                    Invert Binary Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.11" data-path="../binary_tree/diameter_of_a_binary_tree.md">
+            
+                <span>
+            
+                    
+                    Diameter of a Binary Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.12" data-path="../binary_tree/construct_binary_tree_from_preorder_and_inorder_traversal.md">
+            
+                <span>
+            
+                    
+                    Construct Binary Tree from Preorder and Inorder Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.13" data-path="../binary_tree/construct_binary_tree_from_inorder_and_postorder_traversal.md">
+            
+                <span>
+            
+                    
+                    Construct Binary Tree from Inorder and Postorder Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.14" data-path="../binary_tree/subtree.md">
+            
+                <span>
+            
+                    
+                    Subtree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.15" data-path="../binary_tree/binary_tree_zigzag_level_order_traversal.md">
+            
+                <span>
+            
+                    
+                    Binary Tree Zigzag Level Order Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.16" data-path="../binary_tree/binary_tree_serialization.md">
+            
+                <span>
+            
+                    
+                    Binary Tree Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../binary_search_tree/">
+            
+                <a href="../binary_search_tree/">
+            
+                    
+                    Binary Search Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../binary_search_tree/insert_node_in_a_binary_search_tree.html">
+            
+                <a href="../binary_search_tree/insert_node_in_a_binary_search_tree.html">
+            
+                    
+                    Insert Node in a Binary Search Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../binary_search_tree/validate_binary_search_tree.md">
+            
+                <span>
+            
+                    
+                    Validate Binary Search Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../binary_search_tree/search_range_in_binary_search_tree.md">
+            
+                <span>
+            
+                    
+                    Search Range in Binary Search Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../binary_search_tree/convert_sorted_array_to_binary_search_tree.md">
+            
+                <span>
+            
+                    
+                    Convert Sorted Array to Binary Search Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../binary_search_tree/convert_sorted_list_to_binary_search_tree.md">
+            
+                <span>
+            
+                    
+                    Convert Sorted List to Binary Search Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../binary_search_tree/binary_search_tree_iterator.md">
+            
+                <span>
+            
+                    
+                    Binary Search Tree Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../exhaustive_search/">
+            
+                <a href="../exhaustive_search/">
+            
+                    
+                    Exhaustive Search
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../exhaustive_search/subsets.html">
+            
+                <a href="../exhaustive_search/subsets.html">
+            
+                    
+                    Subsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../exhaustive_search/unique_subsets.md">
+            
+                <span>
+            
+                    
+                    Unique Subsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../exhaustive_search/permutations.md">
+            
+                <span>
+            
+                    
+                    Permutations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../exhaustive_search/permutations_ii.md">
+            
+                <span>
+            
+                    
+                    Unique Permutations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../exhaustive_search/next_permutation.html">
+            
+                <a href="../exhaustive_search/next_permutation.html">
+            
+                    
+                    Next Permutation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" data-path="../exhaustive_search/previous_permuation.md">
+            
+                <span>
+            
+                    
+                    Previous Permuation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" data-path="../exhaustive_search/permutation_index.md">
+            
+                <span>
+            
+                    
+                    Permutation Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" data-path="../exhaustive_search/permutation_index_ii.md">
+            
+                <span>
+            
+                    
+                    Permutation Index II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" data-path="../exhaustive_search/permutation_sequence.md">
+            
+                <span>
+            
+                    
+                    Permutation Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.10" data-path="../exhaustive_search/unique_binary_search_trees_ii.md">
+            
+                <span>
+            
+                    
+                    Unique Binary Search Trees II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.11" data-path="../exhaustive_search/palindrome_partitioning.md">
+            
+                <span>
+            
+                    
+                    Palindrome Partitioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.12" data-path="../exhaustive_search/combinations.md">
+            
+                <span>
+            
+                    
+                    Combinations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.13" data-path="../exhaustive_search/combination_sum.md">
+            
+                <span>
+            
+                    
+                    Combination Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.14" data-path="../exhaustive_search/combination_sum_ii.md">
+            
+                <span>
+            
+                    
+                    Combination Sum II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.15" data-path="../exhaustive_search/minimum_depth_of_binary_tree.html">
+            
+                <a href="../exhaustive_search/minimum_depth_of_binary_tree.html">
+            
+                    
+                    Minimum Depth of Binary Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.16" data-path="../exhaustive_search/word_search.md">
+            
+                <span>
+            
+                    
+                    Word Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../dynamic_programming/">
+            
+                <a href="../dynamic_programming/">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../dynamic_programming/triangle.html">
+            
+                <a href="../dynamic_programming/triangle.html">
+            
+                    
+                    Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../dynamic_programming/backpack.html">
+            
+                <a href="../dynamic_programming/backpack.html">
+            
+                    
+                    Backpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="../dynamic_programming/backpack_ii.md">
+            
+                <span>
+            
+                    
+                    Backpack II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="../dynamic_programming/minimum_path_sum.md">
+            
+                <span>
+            
+                    
+                    Minimum Path Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="../dynamic_programming/unique_paths.md">
+            
+                <span>
+            
+                    
+                    Unique Paths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.6" data-path="../dynamic_programming/unique_paths_ii.md">
+            
+                <span>
+            
+                    
+                    Unique Paths II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.7" data-path="../dynamic_programming/climbing_stairs.html">
+            
+                <a href="../dynamic_programming/climbing_stairs.html">
+            
+                    
+                    Climbing Stairs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.8" data-path="../dynamic_programming/jump_game.md">
+            
+                <span>
+            
+                    
+                    Jump Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.9" data-path="../dynamic_programming/word_break.md">
+            
+                <span>
+            
+                    
+                    Word Break
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.10" data-path="../dynamic_programming/longest_increasing_subsequence.md">
+            
+                <span>
+            
+                    
+                    Longest Increasing Subsequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.11" data-path="../dynamic_programming/palindrome_partitioning_ii.md">
+            
+                <span>
+            
+                    
+                    Palindrome Partitioning II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.12" data-path="../dynamic_programming/longest_common_subsequence.md">
+            
+                <span>
+            
+                    
+                    Longest Common Subsequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.13" data-path="../dynamic_programming/edit_distance.md">
+            
+                <span>
+            
+                    
+                    Edit Distance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.14" data-path="../dynamic_programming/jump_game_ii.md">
+            
+                <span>
+            
+                    
+                    Jump Game II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.15" data-path="../dynamic_programming/best_time_to_buy_and_sell_stock.md">
+            
+                <span>
+            
+                    
+                    Best Time to Buy and Sell Stock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.16" data-path="../dynamic_programming/best_time_to_buy_and_sell_stock_ii.md">
+            
+                <span>
+            
+                    
+                    Best Time to Buy and Sell Stock II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.17" data-path="../dynamic_programming/best_time_to_buy_and_sell_stock_iii.md">
+            
+                <span>
+            
+                    
+                    Best Time to Buy and Sell Stock III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.18" data-path="../dynamic_programming/best_time_to_buy_and_sell_stock_iv.md">
+            
+                <span>
+            
+                    
+                    Best Time to Buy and Sell Stock IV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.19" data-path="../dynamic_programming/distinct_subsequences.md">
+            
+                <span>
+            
+                    
+                    Distinct Subsequences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.20" data-path="../dynamic_programming/interleaving_string.md">
+            
+                <span>
+            
+                    
+                    Interleaving String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.21" data-path="../dynamic_programming/maximum_subarray.md">
+            
+                <span>
+            
+                    
+                    Maximum Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.22" data-path="../dynamic_programming/maximum_subarray_ii.md">
+            
+                <span>
+            
+                    
+                    Maximum Subarray II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.23" data-path="../dynamic_programming/longest_increasing_continuous_subsequence.md">
+            
+                <span>
+            
+                    
+                    Longest Increasing Continuous subsequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.24" data-path="../dynamic_programming/longest_increasing_continuous_subsequence_ii.md">
+            
+                <span>
+            
+                    
+                    Longest Increasing Continuous subsequence II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.25" data-path="../dynamic_programming/egg_dropping_puzzle.md">
+            
+                <span>
+            
+                    
+                    Egg Dropping Puzzle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.26" data-path="../dynamic_programming/maximal_square.md">
+            
+                <span>
+            
+                    
+                    Maximal Square
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../graph/">
+            
+                <a href="../graph/">
+            
+                    
+                    Graph
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../graph/find_the_connected_component_in_the_undirected_graph.md">
+            
+                <span>
+            
+                    
+                    Find the Connected Component in the Undirected Graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../graph/route_between_two_nodes_in_graph.md">
+            
+                <span>
+            
+                    
+                    Route Between Two Nodes in Graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../graph/topological_sorting.md">
+            
+                <span>
+            
+                    
+                    Topological Sorting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.4" data-path="../graph/word_ladder.md">
+            
+                <span>
+            
+                    
+                    Word Ladder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.5" data-path="../graph/bipartial_graph_part_i.md">
+            
+                <span>
+            
+                    
+                    Bipartial Graph Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../data_structure/">
+            
+                <a href="../data_structure/">
+            
+                    
+                    Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../data_structure/implement_queue_by_two_stacks.md">
+            
+                <span>
+            
+                    
+                    Implement Queue by Two Stacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../data_structure/min_stack.md">
+            
+                <span>
+            
+                    
+                    Min Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../data_structure/sliding_window_maximum.md">
+            
+                <span>
+            
+                    
+                    Sliding Window Maximum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.4" data-path="../data_structure/longest_words.md">
+            
+                <span>
+            
+                    
+                    Longest Words
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.5" data-path="../data_structure/heapify.md">
+            
+                <span>
+            
+                    
+                    Heapify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.6" data-path="../data_structure/kth_smallest_number_in_sorted_matrix.md">
+            
+                <span>
+            
+                    
+                    Kth Smallest Number in Sorted Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../problem_misc/">
+            
+                <a href="../problem_misc/">
+            
+                    
+                    Problem Misc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../problem_misc/nuts_and_bolts_problem.md">
+            
+                <span>
+            
+                    
+                    Nuts and Bolts Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../problem_misc/string_to_integer.html">
+            
+                <a href="../problem_misc/string_to_integer.html">
+            
+                    
+                    String to Integer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../problem_misc/insert_interval.md">
+            
+                <span>
+            
+                    
+                    Insert Interval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" data-path="../problem_misc/merge_intervals.md">
+            
+                <span>
+            
+                    
+                    Merge Intervals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.5" data-path="../problem_misc/minimum_subarray.html">
+            
+                <a href="../problem_misc/minimum_subarray.html">
+            
+                    
+                    Minimum Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.6" data-path="../problem_misc/matrix_zigzag_traversal.md">
+            
+                <span>
+            
+                    
+                    Matrix Zigzag Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.7" data-path="../problem_misc/valid_sudoku.html">
+            
+                <a href="../problem_misc/valid_sudoku.html">
+            
+                    
+                    Valid Sudoku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.8" data-path="../problem_misc/add_binary.html">
+            
+                <a href="../problem_misc/add_binary.html">
+            
+                    
+                    Add Binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.9" data-path="../problem_misc/reverse_integer.html">
+            
+                <a href="../problem_misc/reverse_integer.html">
+            
+                    
+                    Reverse Integer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.10" data-path="../problem_misc/gray_code.md">
+            
+                <span>
+            
+                    
+                    Gray Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.11" data-path="../problem_misc/find_the_missing_number.html">
+            
+                <a href="../problem_misc/find_the_missing_number.html">
+            
+                    
+                    Find the Missing Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.12" data-path="../problem_misc/n_queens.md">
+            
+                <span>
+            
+                    
+                    N Queens
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.13" data-path="../problem_misc/n_queens_ii.md">
+            
+                <span>
+            
+                    
+                    N Queens II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.14" data-path="../problem_misc/minimum_window_substring.md">
+            
+                <span>
+            
+                    
+                    Minimum Window Substring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.15" data-path="../problem_misc/continuous_subarray_sum.md">
+            
+                <span>
+            
+                    
+                    Continuous Subarray Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.16" data-path="../problem_misc/continuous_subarray_sum_ii.md">
+            
+                <span>
+            
+                    
+                    Continuous Subarray Sum II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.17" data-path="../problem_misc/longest_consecutive_sequence.md">
+            
+                <span>
+            
+                    
+                    Longest Consecutive Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../part_iii_contest/">
+            
+                <a href="../part_iii_contest/">
+            
+                    
+                    Part III - Contest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../google_apac/README.md">
+            
+                <span>
+            
+                    
+                    Google APAC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../google_apac/google_apac_2015_round_b/README.md">
+            
+                <span>
+            
+                    
+                    APAC 2015 Round B
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1.1" data-path="../google_apac/google_apac_2015_round_b/problem_a_password_attacker.md">
+            
+                <span>
+            
+                    
+                    Problem A. Password Attacker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../google_apac/google_apac_2016_round_d/README.md">
+            
+                <span>
+            
+                    
+                    APAC 2016 Round D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.2.1" data-path="../google_apac/google_apac_2016_round_d/problem_a_dynamic_grid.md">
+            
+                <span>
+            
+                    
+                    Problem A. Dynamic Grid
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../microsoft/README.md">
+            
+                <span>
+            
+                    
+                    Microsoft
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../microsoft/mstest2015april/README.md">
+            
+                <span>
+            
+                    
+                    Microsoft 2015 April
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1.1" data-path="../microsoft/mstest2015april/problem_a_magic_box.md">
+            
+                <span>
+            
+                    
+                    Problem A. Magic Box
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.1.2" data-path="../microsoft/mstest2015april/problem_b_professor_qs_software.md">
+            
+                <span>
+            
+                    
+                    Problem B. Professor Q's Software
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.1.3" data-path="../microsoft/mstest2015april/problem_c_islands_travel.md">
+            
+                <span>
+            
+                    
+                    Problem C. Islands Travel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.1.4" data-path="../microsoft/mstest2015april/problem_d_recruitment.md">
+            
+                <span>
+            
+                    
+                    Problem D. Recruitment
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../microsoft/mstest2015april2/README.md">
+            
+                <span>
+            
+                    
+                    Microsoft 2015 April 2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.2.1" data-path="../microsoft/mstest2015april2/problem_a_lucky_substrings.md">
+            
+                <span>
+            
+                    
+                    Problem A. Lucky Substrings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2.2" data-path="../microsoft/mstest2015april2/problem_b_numeric_keypad.md">
+            
+                <span>
+            
+                    
+                    Problem B. Numeric Keypad
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2.3" data-path="../microsoft/mstest2015april2/problem_c_spring_outing.md">
+            
+                <span>
+            
+                    
+                    Problem C. Spring Outing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.3" data-path="../microsoft/mstest2015sept2/README.md">
+            
+                <span>
+            
+                    
+                    Microsoft 2015 September 2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.3.1" data-path="../microsoft/mstest2015sept2/problem_a_farthest_point.md">
+            
+                <span>
+            
+                    
+                    Problem A. Farthest Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../appendix_i_interview_and_resume/">
+            
+                <a href="../appendix_i_interview_and_resume/">
+            
+                    
+                    Appendix I Interview and Resume
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../appendix_i_interview_and_resume/interview.md">
+            
+                <span>
+            
+                    
+                    Interview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2" data-path="../appendix_i_interview_and_resume/resume.md">
+            
+                <span>
+            
+                    
+                    Resume
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="../appendix_ii_system_design/README.md">
+            
+                <span>
+            
+                    
+                    Appendix II System Design
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../appendix_ii_system_design/the_system_design_process.md">
+            
+                <span>
+            
+                    
+                    The System Design Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" data-path="../appendix_ii_system_design/statistics.md">
+            
+                <span>
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.3" data-path="../appendix_ii_system_design/system_architecture.md">
+            
+                <span>
+            
+                    
+                    System Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.4" data-path="../appendix_ii_system_design/scalability.md">
+            
+                <span>
+            
+                    
+                    Scalability
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="../tags.html">
+            
+                <a href="../tags.html">
+            
+                    
+                    Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3 Sum</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3-sum">3 Sum</h1>
+<!-- toc --><div id="toc" class="toc">
+
+<ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#&#x984C;&#x89E3;1---&#x6392;&#x5E8F;--&#x54C8;&#x5E0C;&#x8868;--2-sum">&#x984C;&#x89E3;1 - &#x6392;&#x5E8F; + &#x54C8;&#x5E0C;&#x8868; + 2 Sum</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#&#x6E90;&#x78BC;&#x5206;&#x6790;">&#x6E90;&#x78BC;&#x5206;&#x6790;</a></li>
+<li><a href="#&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;">&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;</a></li>
+<li><a href="#c">C++</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#&#x6E90;&#x78BC;&#x5206;&#x6790;-1">&#x6E90;&#x78BC;&#x5206;&#x6790;</a></li>
+<li><a href="#&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;-1">&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+
+</div><!-- tocstop -->
+<h2 id="question">Question</h2>
+<ul>
+<li>leetcode: <a href="https://leetcode.com/problems/3sum/" target="_blank">3Sum | LeetCode OJ</a></li>
+<li>lintcode: <a href="http://www.lintcode.com/en/problem/3-sum/" target="_blank">(57) 3 Sum</a></li>
+</ul>
+<pre><code>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0?
+Find all unique triplets in the array which gives the sum of zero.
+
+Example
+For example, given array S = {-1 0 1 2 -1 -4}, A solution set is:
+
+(-1, 0, 1)
+(-1, -1, 2)
+Note
+Elements in a triplet (a,b,c) must be in non-descending order. (ie, a &#x2264; b &#x2264; c)
+
+The solution set must not contain duplicate triplets.
+</code></pre><h2 id="&#x984C;&#x89E3;1---&#x6392;&#x5E8F;--&#x54C8;&#x5E0C;&#x8868;--2-sum">&#x984C;&#x89E3;1 - &#x6392;&#x5E8F; + &#x54C8;&#x5E0C;&#x8868; + 2 Sum</h2>
+<p>&#x76F8;&#x6BD4;&#x4E4B;&#x524D;&#x7684; <a href="http://algorithm.yuanbin.zh-hans/integer_array/2_sum.html" target="_blank">2 Sum</a>, 3 Sum &#x53C8;&#x591A;&#x52A0;&#x4E86;&#x4E00;&#x500B;&#x6578;&#xFF0C;&#x6309;&#x7167;&#x4E4B;&#x524D; 2 Sum &#x7684;&#x5206;&#x89E3;&#x70BA;&#x300E;1 Sum + 1 Sum&#x300F;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x6211;&#x5011;&#x540C;&#x6A23;&#x53EF;&#x4EE5;&#x5C07; 3 Sum &#x5206;&#x89E3;&#x70BA;&#x300E;1 Sum + 2 Sum&#x300F;&#x7684;&#x554F;&#x984C;&#xFF0C;&#x5177;&#x9AD4;&#x5C31;&#x662F;&#x9996;&#x5148;&#x5C0D;&#x539F;&#x9663;&#x5217;&#x6392;&#x5E8F;&#xFF0C;&#x6392;&#x5E8F;&#x5F8C;&#x9078;&#x51FA;&#x7B2C;&#x4E00;&#x500B;&#x5143;&#x7D20;&#xFF0C;&#x96A8;&#x5F8C;&#x5728;&#x5269;&#x4E0B;&#x7684;&#x5143;&#x7D20;&#x4E2D;&#x4F7F;&#x7528; 2 Sum &#x7684;&#x89E3;&#x6CD5;&#x3002;</p>
+<h3 id="python">Python</h3>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    @param numbersbers : Give an array numbersbers of n integer
+    @return : Find all unique triplets in the array which gives the sum of zero.
+    &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">threeSum</span><span class="hljs-params">(self, numbers)</span>:</span>
+        triplets = []
+        length = len(numbers)
+        <span class="hljs-keyword">if</span> length &lt; <span class="hljs-number">3</span>:
+            <span class="hljs-keyword">return</span> triplets
+
+        numbers.sort()
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(length):
+            target = <span class="hljs-number">0</span> - numbers[i]
+            <span class="hljs-comment"># 2 Sum</span>
+            hashmap = {}
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> xrange(i + <span class="hljs-number">1</span>, length):
+                item_j = numbers[j]
+                <span class="hljs-keyword">if</span> (target - item_j) <span class="hljs-keyword">in</span> hashmap:
+                    triplet = [numbers[i], target - item_j, item_j]
+                    <span class="hljs-keyword">if</span> triplet <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> triplets:
+                        triplets.append(triplet)
+                <span class="hljs-keyword">else</span>:
+                    hashmap[item_j] = j
+
+        <span class="hljs-keyword">return</span> triplets
+</code></pre>
+<h3 id="&#x6E90;&#x78BC;&#x5206;&#x6790;">&#x6E90;&#x78BC;&#x5206;&#x6790;</h3>
+<ol>
+<li>&#x7570;&#x5E38;&#x8655;&#x7406;&#xFF0C;&#x5C0D;&#x9577;&#x5EA6;&#x5C0F;&#x65BC;3&#x7684;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x3002;</li>
+<li>&#x6392;&#x5E8F;&#x8F38;&#x5165;&#x9663;&#x5217;&#xFF0C;&#x6709;&#x52A9;&#x65BC;&#x63D0;&#x9AD8;&#x6548;&#x7387;&#x548C;&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x5217;&#x8868;&#x3002;</li>
+<li>&#x5FAA;&#x74B0;&#x904D;&#x6B77;&#x6392;&#x5E8F;&#x5F8C;&#x9663;&#x5217;&#xFF0C;&#x5148;&#x53D6;&#x51FA;&#x4E00;&#x500B;&#x5143;&#x7D20;&#xFF0C;&#x96A8;&#x5F8C;&#x6C42;&#x5F97; 2 Sum &#x4E2D;&#x9700;&#x8981;&#x7684;&#x76EE;&#x6A19;&#x6578;&#x3002;</li>
+<li>&#x7531;&#x65BC;&#x672C;&#x984C;&#x4E2D;&#x6700;&#x5F8C;&#x8FD4;&#x56DE;&#x7D50;&#x679C;&#x4E0D;&#x80FD;&#x91CD;&#x8907;&#xFF0C;&#x5728;&#x52A0;&#x5165;&#x5230;&#x6700;&#x7D42;&#x8FD4;&#x56DE;&#x503C;&#x4E4B;&#x524D;&#x67E5;&#x91CD;&#x3002;</li>
+</ol>
+<p>&#x7531;&#x65BC;&#x6392;&#x5E8F;&#x5F8C;&#x7684;&#x5143;&#x7D20;&#x5DF2;&#x7D93;&#x6309;&#x7167;&#x5927;&#x5C0F;&#x9806;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x4E14;&#x5728;2 Sum &#x4E2D;&#x5148;&#x904D;&#x6B77;&#x7684;&#x5143;&#x7D20;&#x8F03;&#x5C0F;&#xFF0C;&#x6240;&#x4EE5;&#x7121;&#x9700;&#x5C0D;&#x5217;&#x8868;&#x5167;&#x5143;&#x7D20;&#x518D;&#x6392;&#x5E8F;&#x3002;</p>
+<h3 id="&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;">&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;</h3>
+<p>&#x6392;&#x5E8F;&#x6642;&#x9593;&#x8907;&#x96DC;&#x5EA6; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, &#x5169;&#x91CD;<code>for</code>&#x5FAA;&#x74B0;&#xFF0C;&#x6642;&#x9593;&#x8907;&#x96DC;&#x5EA6;&#x8FD1;&#x4F3C;&#x70BA; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span>&#xFF0C;&#x4F7F;&#x7528;&#x54C8;&#x5E0C;&#x8868;(&#x5B57;&#x5178;)&#x5BE6;&#x73FE;&#xFF0C;&#x7A7A;&#x9593;&#x8907;&#x96DC;&#x5EA6;&#x70BA; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>.</p>
+<p>&#x76EE;&#x524D;&#x9019;&#x6BB5;&#x6E90;&#x78BC;&#x70BA;&#x6BD4;&#x8F03;&#x7C21;&#x6613;&#x7684;&#x5BE6;&#x73FE;&#xFF0C;leetcode &#x4E0A;&#x7684;&#x904B;&#x884C;&#x6642;&#x9593;&#x70BA;500 + ms, &#x9084;&#x6709;&#x8F03;&#x5927;&#x7684;&#x512A;&#x5316;&#x7A7A;&#x9593;&#xFF0C;&#x55EF;&#xFF0C;&#x5F8C;&#x7E8C;&#x518D;&#x9032;&#x884C;&#x512A;&#x5316;&#x3002;</p>
+<h3 id="c">C++</h3>
+<pre><code class="lang-c++"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; threeSum(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;num) 
+    {
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; result;
+        <span class="hljs-keyword">if</span> (num.size() &lt; <span class="hljs-number">3</span>) <span class="hljs-keyword">return</span> result;
+
+        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;
+
+        sort(num.begin(), num.end());
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; num.size() - <span class="hljs-number">2</span>; ++i)
+        {
+            <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span> &amp;&amp; num[i] == num[i - <span class="hljs-number">1</span>])  
+                <span class="hljs-keyword">continue</span>;
+            <span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">int</span> k = num.size() - <span class="hljs-number">1</span>;
+
+            <span class="hljs-keyword">while</span> (j &lt; k)
+            {
+                ans = num[i] + num[j] + num[k];
+
+                <span class="hljs-keyword">if</span> (ans == <span class="hljs-number">0</span>)
+                {
+                    result.push_back({num[i], num[j], num[k]});
+                    ++j;
+                    <span class="hljs-keyword">while</span> (j &lt; num.size() &amp;&amp; num[j] == num[j - <span class="hljs-number">1</span>])
+                        ++j;
+                    --k;
+                    <span class="hljs-keyword">while</span> (k &gt;= <span class="hljs-number">0</span> &amp;&amp; num[k] == num[k + <span class="hljs-number">1</span>])
+                        --k;
+                }
+                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ans &gt; <span class="hljs-number">0</span>) 
+                    --k;
+                <span class="hljs-keyword">else</span> 
+                    ++j;
+            }
+        }
+
+        <span class="hljs-keyword">return</span> result;
+    }
+};
+</code></pre>
+<h3 id="java">Java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="hljs-keyword">int</span>[] nums) {
+        <span class="hljs-comment">// Assumptions: array is not null, array.length &gt;= 3</span>
+        List&lt;List&lt;Integer&gt;&gt; result = <span class="hljs-keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();
+        Arrays.sort(nums);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">2</span>; i++) {
+            <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span> &amp;&amp; nums[i] == nums[i - <span class="hljs-number">1</span>]) {
+                <span class="hljs-keyword">continue</span>;
+            }
+            <span class="hljs-keyword">int</span> left = i + <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">int</span> right = nums.length - <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">while</span> (left &lt; right) {
+                <span class="hljs-keyword">int</span> tmp = nums[left] + nums[right];
+                <span class="hljs-keyword">if</span> (tmp + nums[i] == <span class="hljs-number">0</span>) {
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    left++;
+                    <span class="hljs-keyword">while</span> (left &lt; right &amp;&amp; nums[left] == nums[left - <span class="hljs-number">1</span>]) {
+                        left++;
+                    }
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (tmp + nums[i] &lt; <span class="hljs-number">0</span>) {
+                    left++;
+                } <span class="hljs-keyword">else</span> {
+                    right--;
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+}
+</code></pre>
+<h3 id="&#x6E90;&#x78BC;&#x5206;&#x6790;">&#x6E90;&#x78BC;&#x5206;&#x6790;</h3>
+<p>&#x540C;python&#x89E3;&#x6CD5;&#x4E0D;&#x540C;&#xFF0C;&#x6C92;&#x6709;&#x4F7F;&#x7528;hash map</p>
+<pre><code>S = {-1 0 1 2 -1 -4}
+&#x6392;&#x5E8F;&#x5F8C;&#xFF1A;
+S = {-4 -1 -1 0 1 2}
+      &#x2191;  &#x2191;        &#x2191;
+      i  j        k
+         &#x2192;        &#x2190;
+i&#x6BCF;&#x8F2A;&#x53EA;&#x8D70;&#x4E00;&#x6B65;&#xFF0C;j&#x548C;k&#x6839;&#x64DA;S[i]+S[j]+S[k]=ans&#x548C;0&#x7684;&#x95DC;&#x4FC2;&#x9032;&#x884C;&#x79FB;&#x52D5;&#xFF0C;&#x4E14;j&#x53EA;&#x5411;&#x5F8C;&#x8D70;&#xFF08;&#x5373;S[j]&#x53EA;&#x589E;&#x5927;&#xFF09;&#xFF0C;k&#x53EA;&#x5411;&#x524D;&#x8D70;&#xFF08;&#x5373;S[k]&#x53EA;&#x6E1B;&#x5C0F;&#xFF09;
+&#x5982;&#x679C;ans&gt;0&#x8AAA;&#x660E;S[k]&#x904E;&#x5927;&#xFF0C;k&#x5411;&#x524D;&#x79FB;&#xFF1B;&#x5982;&#x679C;ans&lt;0&#x8AAA;&#x660E;S[j]&#x904E;&#x5C0F;&#xFF0C;j&#x5411;&#x5F8C;&#x79FB;&#xFF1B;ans==0&#x5373;&#x70BA;&#x6240;&#x6C42;&#x3002;
+&#x81F3;&#x65BC;&#x5982;&#x4F55;&#x53D6;&#x5230;&#x6240;&#x6709;&#x89E3;&#xFF0C;&#x770B;&#x7A0B;&#x5F0F;&#x78BC;&#x5373;&#x53EF;&#x7406;&#x89E3;&#xFF0C;&#x4E0D;&#x518D;&#x8D05;&#x8FF0;&#x3002;
+</code></pre><h3 id="&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;">&#x8907;&#x96DC;&#x5EA6;&#x5206;&#x6790;</h3>
+<p>&#x5916;&#x5FAA;&#x74B0;i&#x8D70;&#x4E86;n&#x8F2A;,&#x6BCF;&#x8F2A;j&#x548C;k&#x4E00;&#x5171;&#x8D70;n-i&#x6B65;&#xFF0C;&#x6240;&#x4EE5;&#x6642;&#x9593;&#x8907;&#x96DC;&#x5EA6;&#x70BA;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span>&#x3002;
+&#x6700;&#x7D42;&#x904B;&#x884C;&#x6642;&#x9593;&#x70BA;52ms</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="http://www.jiuzhang.com/solutions/3sum/" target="_blank">3Sum | &#x4E5D;&#x7AE0;&#x7B97;&#x6CD5;</a></li>
+<li><a href="https://leetcode.com/discuss/32455/a-simply-python-version-based-on-2sum-o-n-2" target="_blank">A simply Python version based on 2sum - O(n^2) - Leetcode Discuss</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+    
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+
+    
+    <div class="powered-by-algolia">
+        powered by <a href="https://algolia.com" target="_blank"><img src="../../gitbook/gitbook-plugin-algolia/algolia-logo.jpg" /></a>
+    </div>
+    
+
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2_sum.html" class="navigation navigation-prev " aria-label="Previous page: 2 Sum">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3_sum_closest.html" class="navigation navigation-next " aria-label="Next page: 3 Sum Closest">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3 Sum","level":"1.10.10","depth":2,"next":{"title":"3 Sum Closest","level":"1.10.11","depth":2,"path":"integer_array/3_sum_closest.md","ref":"integer_array/3_sum_closest.md","articles":[]},"previous":{"title":"2 Sum","level":"1.10.9","depth":2,"path":"integer_array/2_sum.md","ref":"integer_array/2_sum.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","ga","katex","richquotes","sitemap2","github","edit-link","feed","etoc","algolia","tags"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"algorithm4bill"},"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/billryan/algorithm-exercise"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"algolia":{"freeAccount":"true","index":"algorithm","applicationID":"9YBMOZR89J","publicKey":"5860a3e55ee72831917b1b9e2a4649ca"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"todos":true},"highlight":{},"tags":{"placement":"top"},"ga":{"configuration":"auto","token":"UA-32317667-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit Page","zh-hans":"编辑此页","zh-tw":"編輯此頁"},"base":"https://github.com/billryan/algorithm-exercise/edit/master"},"sitemap2":{"hostname":"http://algorithm.yuanbin.me/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feed":{"author":"billryan","hostname":"https://algorithm.yuanbin.me/zh-tw/","format":"atom","feed_format":"atom-1.0","title":"Data Structure and Algorithm notes","link":"https://algorithm.yuanbin.me/zh-tw/","id":"https://algorithm.yuanbin.me/zh-tw/","categories":["programming","algorithm","leetcode"],"description":"Data Structure and Algorithm notes/数据结构与算法学习笔记/leetcode/lintcode 题解"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-tw","gitbook":"*"},"file":{"path":"integer_array/3_sum.md","mtime":"2019-11-03T15:21:27.224Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-03T15:41:51.347Z"},"basePath":"..","book":{"language":"zh-tw"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-feed/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-etoc/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-algolia/search-algolia.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

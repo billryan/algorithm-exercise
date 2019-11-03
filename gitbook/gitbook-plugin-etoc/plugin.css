@@ -1,0 +1,43 @@
+#toc, .toc {
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  padding: 7px;
+  display: table;
+  font-size: 95%;
+  line-height: 1.6em;
+}
+
+.toc ul, .toc p {
+  margin-bottom: 0;
+}
+
+.toc ul {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+.toc > ul {
+  padding: 0px 8px;
+}
+
+.toc ul > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+.toc ul > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+.toc li ul > li {
+  margin: 0;
+}
+
+.toc li ul > li:before {
+  content: counters(item, ".") " ";
+}
