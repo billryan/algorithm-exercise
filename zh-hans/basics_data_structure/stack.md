@@ -18,7 +18,7 @@ stack = collections.deque()
 
 #### Methods
 
-- `len(stack) != 0` - 判断`stack`是否weikong
+- `len(stack) != 0` - 判断`stack`是否为空
 - `stack[-1]` - 取栈顶元素，不移除
 - `pop()` - 移除栈顶元素并返回该元素
 - `append(item)` - 向栈顶添加元素
