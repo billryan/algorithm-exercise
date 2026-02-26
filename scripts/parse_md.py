@@ -4,7 +4,7 @@
 import os
 import re
 
-class parseMD:
+class parseMD(object):
     def __init__(self, fname, isSummary=False):
         self.fname = fname
         self.isSummary = isSummary
